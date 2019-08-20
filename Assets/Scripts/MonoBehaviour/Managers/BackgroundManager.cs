@@ -12,7 +12,6 @@ namespace Assets.Scripts
             foreach(var background in Backgrounds)
             {
                background.SetActive(background.name == LevelManager.Instance.SelectedChapter);
-
             }
         }
     }
