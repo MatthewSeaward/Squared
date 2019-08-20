@@ -1,0 +1,23 @@
+{
+	
+		"LevelStart" : 
+		[
+			"Come on!\r\nLet's go!",
+			"Play?\r\nLet's play",
+			"I'm ready\r\nAre you?",
+			"Yes!\r\nPlay Time!"
+		],
+		"ChallengeIncrease":
+		[
+			"Play again?",
+			"More?\r\nYou want more?",
+			"Too easy\r\nbefore?"
+		],
+		"Anger":
+		[
+			"Grrrr!",
+			"Rrrr!",
+			"Unfair!"
+		]
+}
+	

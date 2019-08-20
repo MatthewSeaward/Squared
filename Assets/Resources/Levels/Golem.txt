@@ -1,0 +1,284 @@
+{
+	"Items" :
+	[
+	{
+			"LevelNumber" : 1,
+			"Target": 40,
+			"colours":[0,5,6,7],
+			"StarsToUnlock": 0,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"--------",
+				"--------",
+				"--------",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "10"],
+			"Star2": ["Time", "30"],
+			"Star3": ["Turns", "10", "Min", "3"]
+
+		},
+		{
+			"LevelNumber": 2,
+			"Target": 20,
+			"NumberOfTurns": 8,		
+			"StarsToUnlock": 1,
+			"colours":[0,5,6,7],
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"--------",
+				"---xx---",
+				"-xxxxxx-",
+				"-xxxxxx-",
+				"-xxxxxx-",
+				"---xx---",
+				"--------",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "10"],
+			"Star2": ["Turns", "12", "Banned", "5"],
+			"Star3": ["Time", "20"]
+		},
+		{
+			"LevelNumber": 3,
+			"Target": 100,
+			"colours":[0,5,6,7],
+			"StarsToUnlock": 1,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"---xx---",
+				"--xxxx--",
+				"--xxxx--",
+				"--xxxx--",
+				"--xxxx--",
+				"--xxxx--",
+				"--x--x--",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "20"],
+			"Star2": ["Turns", "20", "Min", "3"],
+			"Star3": ["Turns", "17"]
+		},
+		{
+			"LevelNumber": 4,
+			"Target": 50,
+			"colours":[0,5,6,7],
+			"StarsToUnlock": 3,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"--------",
+				"-xxxxxx-",
+				"--xxxx--",
+				"-xxxxxx-",
+				"--xxxx--",
+				"-xxxxxx-",
+				"--------",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Time", "35"],
+			"Star2": ["Time", "30"],
+			"Star3": ["Time", "25"]
+		},
+		{
+			"LevelNumber": 5,
+			"Target": 30,
+			"colours":[0,5,6,7,2],
+			"StarsToUnlock": 6,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"-xxxxxx-",
+				"-xxxxxx-",
+				"--xxxx--",
+				"---xx---",
+				"--xxxx--",
+				"-xxxxxx-",
+				"-xxxxxx-",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "10"],
+			"Star2": ["Turns", "26", "Banned", "0"],
+			"Star3": ["Turns", "13", "Banned", "2"]
+		},		
+		{
+			"LevelNumber": 6,
+			"Target": 40,
+			"colours":[2,5,6,7],
+			"StarsToUnlock": 9,
+			"Pattern":
+			[
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"--------",
+				"--------",
+				"--------",
+				"--------",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"--------"
+			],
+			"Star1": ["Turns", "8"],
+			"Star2": ["Time", "15"],
+			"Star3": ["Turns", "10", "Min", "3"]
+		},
+		{
+			"LevelNumber": 7,
+			"Target": 25,
+			"colours":[0,6,2],
+			"StarsToUnlock": 11,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"--------",
+				"xxxxxxxx",
+				"xxxllxxx",
+				"xxxllxxx",
+				"xxxllxxx",
+				"xxxxxxxx",
+				"--------",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "5"],
+			"Star2": ["Time", "15"],
+			"Star3": ["Turns", "5", "Min", "4"]
+		},
+		{
+			"LevelNumber": 8,
+			"Target": 40,
+			"colours":[0,5,2,7],
+			"StarsToUnlock": 14,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"--------",
+				"-lxxxxl-",
+				"xxxxxxlx",
+				"xxxxxxlx",
+				"xxxxxxxx",
+				"-lxxxxl-",
+				"--------",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "10"],
+			"Star2": ["Time", "15"],
+			"Star3": ["Turns", "10", "Banned Locked", ""]
+		},
+		{
+			"LevelNumber": 9,
+			"Target": 40,
+			"colours":[0,5,2,7],
+			"StarsToUnlock": 16,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"--------",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"--l--l--",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"--------",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "10"],
+			"Star2": ["Turns", "10", "Min", "4"],
+			"Star3": ["Turns", "8"]
+		},
+		{
+			"LevelNumber": 10,
+			"Target": 100,
+			"colours":[0,5,6,2],
+			"StarsToUnlock": 18,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"xxx--xxx",
+				"xhx--hxh",
+				"hxh--xhx",
+				"xxxxxxxx",
+				"xxx--xxx",
+				"xxx--xxx",
+				"xxx--xxx",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "15"],
+			"Star2": ["Time", "50"],
+			"Star3": ["Turns", "13"]
+		},
+		{
+			"LevelNumber": 11,
+			"Target": 150,
+			"colours":[0,2,5,6,7],
+			"StarsToUnlock": 19,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"xxxxxxxx",
+				"xx--xxxx",
+				"xx---xxx",
+				"hr---lxh",
+				"xx---xxx",
+				"xx--xxxx",
+				"xxxxxxxx",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "25"],
+			"Star2": ["Turns", "20", "Banned Locked", ""],
+			"Star3": ["Time", "60", "Banned", "0"]
+		},
+		{
+			"LevelNumber": 12,
+			"Target": 60,
+			"colours":[0,5,6,2],
+			"SpecialDropPieces": ["h"],
+			"StarsToUnlock": 22,
+			"Pattern":
+			[
+				"xxxhhxxx",
+				"xxhxxhxx",
+				"xxxxxxxx",
+				"--x--x--",
+				"--x--x--",
+				"--x--x--",
+				"--x--x--",
+				"--xxxx--",
+				"--xxxx--",
+				"--------",
+				"--------"
+			],
+			"Star1": ["Turns", "20"],
+			"Star2": ["Time", "30"],
+			"Star3": ["Time", "40", "Min", "4"]
+		}
+	]
+}

@@ -1,0 +1,817 @@
+fileFormatVersion: 2
+guid: bf5bda0062f256e41bde84b7c4483cc4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: meadow_0
+  - first:
+      213: 21300002
+    second: meadow_1
+  - first:
+      213: 21300004
+    second: meadow_2
+  - first:
+      213: 21300006
+    second: meadow_3
+  - first:
+      213: 21300008
+    second: meadow_4
+  - first:
+      213: 21300010
+    second: meadow_5
+  - first:
+      213: 21300012
+    second: meadow_6
+  - first:
+      213: 21300014
+    second: meadow_7
+  - first:
+      213: 21300016
+    second: meadow_8
+  - first:
+      213: 21300018
+    second: meadow_9
+  - first:
+      213: 21300020
+    second: meadow_10
+  - first:
+      213: 21300022
+    second: meadow_11
+  - first:
+      213: 21300024
+    second: meadow_12
+  - first:
+      213: 21300026
+    second: meadow_13
+  - first:
+      213: 21300028
+    second: meadow_14
+  - first:
+      213: 21300030
+    second: meadow_15
+  - first:
+      213: 21300032
+    second: meadow_16
+  - first:
+      213: 21300034
+    second: meadow_17
+  - first:
+      213: 21300036
+    second: meadow_18
+  - first:
+      213: 21300038
+    second: meadow_19
+  - first:
+      213: 21300040
+    second: meadow_20
+  - first:
+      213: 21300042
+    second: meadow_21
+  - first:
+      213: 21300044
+    second: meadow_22
+  - first:
+      213: 21300046
+    second: meadow_23
+  - first:
+      213: 21300048
+    second: meadow_24
+  - first:
+      213: 21300050
+    second: meadow_25
+  - first:
+      213: 21300052
+    second: meadow_26
+  - first:
+      213: 21300054
+    second: meadow_27
+  - first:
+      213: 21300056
+    second: meadow_28
+  - first:
+      213: 21300058
+    second: meadow_29
+  - first:
+      213: 21300060
+    second: meadow_30
+  - first:
+      213: 21300062
+    second: meadow_31
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 16
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: meadow_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1432
+        width: 329
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_2
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1470
+        width: 172
+        height: 242
+      alignment: 9
+      pivot: {x: 0.50809515, y: 0.6777258}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_3
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1413
+        width: 402
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_4
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 1347
+        width: 92
+        height: 340
+      alignment: 9
+      pivot: {x: 0.5424997, y: 0.06300192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1354
+        width: 92
+        height: 73
+      alignment: 9
+      pivot: {x: 0.4858334, y: 0.85707575}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_6
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 1352
+        width: 77
+        height: 64
+      alignment: 9
+      pivot: {x: 0.48307383, y: 0.8461952}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2305410000000000800000000000000
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_7
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1119
+        width: 172
+        height: 257
+      alignment: 9
+      pivot: {x: 0.5, y: 0.69778097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2305410000000000800000000000000
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_8
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1286
+        width: 104
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03305410000000000800000000000000
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_9
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 1337
+        width: 68
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8191815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23305410000000000800000000000000
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_10
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 1336
+        width: 70
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5000009, y: 0.7811088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43305410000000000800000000000000
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1033
+        width: 352
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63305410000000000800000000000000
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_13
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 1288
+        width: 63
+        height: 49
+      alignment: 9
+      pivot: {x: 0.520688, y: 0.8191815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3305410000000000800000000000000
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_14
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 1287
+        width: 66
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5394953, y: 0.8649292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3305410000000000800000000000000
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_15
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 1103
+        width: 172
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3305410000000000800000000000000
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_16
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 971
+        width: 386
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04305410000000000800000000000000
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_17
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 750
+        width: 355
+        height: 418
+      alignment: 9
+      pivot: {x: 0.32377586, y: 0.4438757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24305410000000000800000000000000
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_18
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 951
+        width: 92
+        height: 73
+      alignment: 9
+      pivot: {x: 0.4858334, y: 0.87492895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44305410000000000800000000000000
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_19
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 949
+        width: 77
+        height: 64
+      alignment: 9
+      pivot: {x: 0.48307383, y: 0.8869238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64305410000000000800000000000000
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_20
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 766
+        width: 312
+        height: 295
+      alignment: 9
+      pivot: {x: 0.4958226, y: 0.56185263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84305410000000000800000000000000
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_21
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 661
+        width: 329
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4305410000000000800000000000000
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_22
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 379
+        width: 141
+        height: 350
+      alignment: 9
+      pivot: {x: 0.19496599, y: 0.2728487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4305410000000000800000000000000
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_23
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 504
+        width: 542
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4305410000000000800000000000000
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_24
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 566
+        width: 49
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5265986, y: 0.8723788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_25
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 563
+        width: 49
+        height: 83
+      alignment: 9
+      pivot: {x: 0.47340143, y: 0.8768649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 265
+        width: 386
+        height: 287
+      alignment: 9
+      pivot: {x: 0.89504987, y: 0.45912898}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_27
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 12
+        width: 491
+        height: 352
+      alignment: 9
+      pivot: {x: 0.73093575, y: 0.29265234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65305410000000000800000000000000
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_28
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 126
+        width: 183
+        height: 336
+      alignment: 9
+      pivot: {x: 0.6566843, y: 0.9615948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85305410000000000800000000000000
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_29
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 126
+        width: 150
+        height: 324
+      alignment: 9
+      pivot: {x: 0.46524414, y: 0.95857793}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 141
+        height: 261
+      alignment: 9
+      pivot: {x: 0.5092435, y: 0.9244549}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meadow_31
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 112
+        height: 234
+      alignment: 9
+      pivot: {x: 0.5349105, y: 0.912163}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

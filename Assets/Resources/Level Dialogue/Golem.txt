@@ -1,0 +1,43 @@
+{
+	"Items" :
+	[
+		{
+			"LevelNumber" : 1,
+			"Star1": 
+			[
+				"Draw a line between pieces of\r\nthe same colour to earn points.\r\nThe bigger the lines, the more points!",
+				"Try and reach my target!"
+			],
+			"Star2": 
+			[
+				"Can you do it before\r\nthe time runs out?"
+			],
+			"Star3": 
+			[
+				"This time you must make\r\na sequence greater\r\nthan 4"
+			]
+		},		
+		{
+			"LevelNumber" : 4,
+			"Star1": 
+			[
+				"Time is of the essence here!",
+				"complete the level before the\r\ntime runs out!"
+			]
+		},		
+		{
+			"LevelNumber" : 8,
+			"Star1": 
+			[
+				"Pieces that are\r\nchained will not move"
+			]
+		},
+		{
+			"LevelNumber" : 10,
+			"Star1": 
+			[
+				"These heavy rocks\r\nwill crush any\r\npiece below them"
+			]
+		}	
+	]
+}

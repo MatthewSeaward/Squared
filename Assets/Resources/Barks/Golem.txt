@@ -1,0 +1,25 @@
+{
+	
+		"LevelStart" : 
+		[
+			"Try and complete this one!",
+			"Try and reach my target!",
+			"Time for another challenge",
+			"This one is harder!",
+			"Try your luck on this level!"			
+		],
+		"ChallengeIncrease":
+		[
+			"Things get tougher now",
+			"Now try it will these restrictions",
+			"You won't do it this time!",
+			"It won't be as easy!"
+		],
+		"Anger":
+		[
+			"Grr!",
+			"Rawr!",
+			"Take This!"
+		]
+}
+	

@@ -1,0 +1,29 @@
+{
+	"Items" :
+	[
+		{
+			"LevelNumber" : 1,
+			"Star1": 
+			[
+				"I shall not be an\r\neasy opponent!",
+				"<Howl>"
+			]
+		},		
+		{
+			"LevelNumber" : 4,
+			"Star1": 
+			[
+				"Rainbows!\r\nConnect anything\r\nto anything",
+				"Make big sequences!"
+			]
+		},		
+		{
+			"LevelNumber" : 6,
+			"Star1": 
+			[
+				"Some pieces\r\nswap colours",
+				"Uncontrollable!"
+			]
+		}
+	]
+}
