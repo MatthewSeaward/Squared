@@ -1375,11 +1375,33 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3645526956407042012, guid: d19d6656a4c04dc49943815cc0a29b26,
+        type: 3}
+      propertyPath: Star2
+      value: 
+      objectReference: {fileID: 471654694}
+    - target: {fileID: 3645526956407042012, guid: d19d6656a4c04dc49943815cc0a29b26,
+        type: 3}
+      propertyPath: Star3
+      value: 
+      objectReference: {fileID: 471654693}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d19d6656a4c04dc49943815cc0a29b26, type: 3}
 --- !u!224 &471654692 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3645526956407042011, guid: d19d6656a4c04dc49943815cc0a29b26,
+    type: 3}
+  m_PrefabInstance: {fileID: 471654691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &471654693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4627698096857596676, guid: d19d6656a4c04dc49943815cc0a29b26,
+    type: 3}
+  m_PrefabInstance: {fileID: 471654691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &471654694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1636164062504559399, guid: d19d6656a4c04dc49943815cc0a29b26,
     type: 3}
   m_PrefabInstance: {fileID: 471654691}
   m_PrefabAsset: {fileID: 0}
