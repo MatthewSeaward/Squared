@@ -23,7 +23,6 @@
 			"Star1": ["Turns", "10"],
 			"Star2": ["Time", "30"],
 			"Star3": ["Turns", "10", "Min", "3"]
-
 		},
 		{
 			"LevelNumber": 2,
