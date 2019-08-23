@@ -123,12 +123,18 @@ public class ScoreKeeper : MonoBehaviour
 
     private void UpdateLimitText()
     {
-        Time.text = GameLimit.GetLimitText() + Environment.NewLine + Restriction.GetRestrictionText();
+        string restrictionText = Restriction.GetRestrictionText();
+        if (!string.IsNullOrWhiteSpace(restrictionText))
+        {
+            restrictionText = Environment.NewLine + restrictionText;
+        }
+
+        Time.text = GameLimit.GetLimitText() + restrictionText;
     }
 
     public void LoadNextLevel()
     {
         LevelManager.Instance.CurrentLevel++;
         SceneManager.LoadScene(1);
-           }
+    }
 }

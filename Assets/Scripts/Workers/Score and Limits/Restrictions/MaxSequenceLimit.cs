@@ -15,7 +15,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetDescription()
         {
-            return $"Sequences greater than {MaxLimit} are not allowed";
+            return $"Sequences greater than {MaxLimit}";
         }
 
         public string GetRestrictionText()

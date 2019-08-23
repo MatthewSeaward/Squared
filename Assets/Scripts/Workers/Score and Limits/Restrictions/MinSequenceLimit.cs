@@ -1,9 +1,5 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -19,7 +15,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetDescription()
         {
-            return $"Sequences less than {MinLimit} are not allowed";
+            return $"Sequences less than {MinLimit}";
         }
 
         public string GetRestrictionText()
