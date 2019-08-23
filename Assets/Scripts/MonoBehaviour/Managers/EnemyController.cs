@@ -5,8 +5,12 @@ using VikingCrew.Tools.UI;
 
 namespace Assets.Scripts
 {
-    class EnemyController : MonoBehaviour
+    public delegate void EnemyRaged();
+
+    public class EnemyController : MonoBehaviour
     {
+        public static EnemyRaged EnemyRaged;
+
         private EnemyScript enemy;
 
         private GameObject enemyHead;
@@ -121,6 +125,7 @@ namespace Assets.Scripts
             if (pieces.Count >= enemy.PiecesForRage)
             {
                 PlayRage();
+                EnemyRaged?.Invoke();
             }
         }
 

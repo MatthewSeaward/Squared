@@ -18,7 +18,7 @@ public class ScoreKeeper : MonoBehaviour
     private IGameLimit GameLimit;
     private IRestriction Restriction; 
     private int _currentScore = 0;
-
+    
     bool ReachedTarget => _currentScore >= LevelManager.Instance.SelectedLevel.Target;
 
     public void Start()
