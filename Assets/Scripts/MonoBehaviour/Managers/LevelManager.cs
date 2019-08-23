@@ -34,7 +34,10 @@ namespace Assets
             get
             {
                 int count = 0;
-                SelectedChapterLevels.ToList().ForEach(x =>  count += x.LevelProgress != null ? x.LevelProgress.StarAchieved : 0);
+                foreach (var lvl in Levels.Values)
+                {
+                    lvl.ToList().ForEach(x => count += x.LevelProgress != null ? x.LevelProgress.StarAchieved : 0);
+                }
                 return count;
             }
         }
