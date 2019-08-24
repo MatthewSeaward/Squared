@@ -49,6 +49,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public IPieceConnection PieceConnection { get; set; }
     public IPieceDestroy DestroyPieceHandler { get; set; }
     public IBehaviour PieceBehaviour { get; set; }
+    public IScoreable Scoring { get; set; }
 
     private Animator Animator => _animator = _animator ?? GetComponent<Animator>();
 

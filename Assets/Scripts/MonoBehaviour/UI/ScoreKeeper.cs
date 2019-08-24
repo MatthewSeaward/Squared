@@ -1,6 +1,7 @@
 ﻿using Assets;
 using Assets.Scripts;
 using Assets.Scripts.UI.Helpers;
+using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,9 @@ public class ScoreKeeper : MonoBehaviour
     public Text Time;
 
     private IGameLimit GameLimit;
-    private IRestriction Restriction; 
+    private IRestriction Restriction;
+    private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
+
     private int _currentScore = 0;
     
     bool ReachedTarget => _currentScore >= LevelManager.Instance.SelectedLevel.Target;
@@ -48,10 +51,12 @@ public class ScoreKeeper : MonoBehaviour
         GameLimit.SequenceCompleted(pieces);
         Restriction.SequenceCompleted(pieces);
 
-        _currentScore += pieces.Count;
+        int scoreEarned = ScoreCalculator.CalculateScore(pieces);
+
+        _currentScore += scoreEarned;
         UpdateScore();
 
-        PointsAwarded?.Invoke(pieces.Count, pieces);
+        PointsAwarded?.Invoke(scoreEarned, pieces);
     }
 
     private void UpdateScore()

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
 using static SquarePiece;
 using DataEntities;
@@ -44,9 +43,26 @@ public class PieceFactory : MonoBehaviour
         BuildConnection(pieceKey, squarePiece);
         BuildDestroyEffect(pieceKey, piece, squarePiece);
         BuildBehaviours(pieceKey, squarePiece);
+        BuildScoring(pieceKey, squarePiece);
         BuildLayers(piece, squarePiece);
 
         return piece;
+    }
+
+    private void BuildScoring(char pieceKey, SquarePiece squarePiece)
+    {
+        if (pieceKey == '2')
+        {
+            squarePiece.Scoring = new MultipliedScore(2);
+        }
+        else if (pieceKey == '3')
+        {
+            squarePiece.Scoring = new MultipliedScore(3);
+        }
+        else
+        {
+            squarePiece.Scoring = new SingleScore();
+        }
     }
 
     private void BuildBehaviours(char pieceKey, SquarePiece squarePiece)
@@ -121,6 +137,8 @@ public class PieceFactory : MonoBehaviour
         ApplyLayer(piece, squarePiece.PieceConnection as ILayeredSprite);
         ApplyLayer(piece, squarePiece.PieceBehaviour as ILayeredSprite);
         ApplyLayer(piece, squarePiece.DestroyPieceHandler as ILayeredSprite);
+        ApplyLayer(piece, squarePiece.Scoring as ILayeredSprite);
+
     }
 
     private void ApplyLayer(GameObject piece, ILayeredSprite layer)
