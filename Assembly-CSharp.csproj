@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\AwesomeText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ButtonLoadScene.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\GameStats.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\Helpers\AnimatedText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Helpers\ButtonArgs.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\InGameMenu.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\LevelStart.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\MenuProvider.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Popup.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ScoreKeeper.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\ShowScore.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\StarPanel.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\SwipeButton.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\UpNextSlot.cs" />
@@ -124,6 +126,7 @@
     <Compile Include="Assets\Scripts\Workers\Grid Generation\BasicGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\Interfaces\IGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ConnectionHelper.cs" />
+    <Compile Include="Assets\Scripts\Workers\Helpers\Extensions\TextureHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\BarkLoader.cs" />

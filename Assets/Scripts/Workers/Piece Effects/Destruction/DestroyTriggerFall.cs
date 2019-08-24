@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using System.Linq;
 using UnityEngine;
@@ -74,7 +75,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         {
             TobeDestroyed = true;
 
-            var colour = _squarePiece.Sprite.texture.GetPixel(_squarePiece.Sprite.texture.width / 2, _squarePiece.Sprite.texture.height / 2);
+            var colour = _squarePiece.Sprite.texture.GetTextureColour();
             GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position, colour);
         }
     }

@@ -1,17 +1,19 @@
 ﻿using Assets;
 using Assets.Scripts;
 using Assets.Scripts.UI.Helpers;
-using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public delegate void PointsAwarded(int points, LinkedList<ISquarePiece> pieces);
+
 public class ScoreKeeper : MonoBehaviour
 {
+    public static event PointsAwarded PointsAwarded;
+
     public Text Score;
     public Text Time;
 
@@ -48,6 +50,8 @@ public class ScoreKeeper : MonoBehaviour
 
         _currentScore += pieces.Count;
         UpdateScore();
+
+        PointsAwarded?.Invoke(pieces.Count, pieces);
     }
 
     private void UpdateScore()
