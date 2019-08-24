@@ -32,9 +32,9 @@ public class PieceFactory : MonoBehaviour
                
         if (!initlalSetup)
         {
-            if(specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= 10)
+            if(specialDropPieces != null && specialDropPieces.Length > 0 && Random.Range(0, 100) <= 10)
             {
-                pieceKey = char.Parse(specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)]);
+                pieceKey = char.Parse(specialDropPieces[Random.Range(0, specialDropPieces.Length)]);
             }            
         }
 

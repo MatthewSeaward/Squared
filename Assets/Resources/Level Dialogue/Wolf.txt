@@ -10,6 +10,14 @@
 			]
 		},		
 		{
+			"LevelNumber" : 2,
+			"Star1": 
+			[
+				"Some give\r\nmore points!",
+				"More points!"
+			]
+		},	
+		{
 			"LevelNumber" : 4,
 			"Star1": 
 			[
