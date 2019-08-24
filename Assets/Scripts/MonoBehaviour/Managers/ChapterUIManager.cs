@@ -10,14 +10,20 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            updateBackgrounds();
+            UpdateBackgrounds();
         }
 
-        private void updateBackgrounds()
+        private void UpdateBackgrounds()
         {
             foreach (var background in Backgrounds)
             {
-                background.SetActive(background.name == LevelManager.Instance.SelectedChapter);
+                bool active = background.name == LevelManager.Instance.SelectedChapter;
+                background.SetActive(active);
+
+                if (active)
+                {
+                    background.GetComponentInChildren<Animator>().SetTrigger("Load");
+                }
             }
             FindObjectOfType<MenuLevelSelection>().Refresh();
         }
@@ -25,13 +31,13 @@ namespace Assets.Scripts
         public void NextChapter()
         {
             LevelManager.Instance.NextChapter();
-            updateBackgrounds();
+            UpdateBackgrounds();
         }
 
         public void PreviousChapter()
         {
             LevelManager.Instance.PreviousChapter();
-            updateBackgrounds();
+            UpdateBackgrounds();
         }
     }
 }
