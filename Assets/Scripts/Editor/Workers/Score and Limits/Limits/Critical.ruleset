@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Critical" Description=" " ToolsVersion="15.0">
+  <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
+    <Rule Id="AD0001" Action="None" />
+    <Rule Id="CS0105" Action="None" />
+    <Rule Id="CS0197" Action="None" />
+    <Rule Id="CS0278" Action="None" />
+    <Rule Id="CS0279" Action="None" />
+    <Rule Id="CS0280" Action="None" />
+    <Rule Id="CS0282" Action="None" />
+    <Rule Id="CS0419" Action="None" />
+    <Rule Id="CS0435" Action="None" />
+    <Rule Id="CS0440" Action="None" />
+    <Rule Id="CS0465" Action="None" />
+    <Rule Id="CS0473" Action="None" />
+    <Rule Id="CS0626" Action="None" />
+    <Rule Id="CS0652" Action="None" />
+    <Rule Id="CS0659" Action="None" />
+    <Rule Id="CS0661" Action="None" />
+    <Rule Id="CS0809" Action="None" />
+  </Rules>
+</RuleSet>

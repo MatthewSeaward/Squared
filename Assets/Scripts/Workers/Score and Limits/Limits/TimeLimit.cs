@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class TimeLimit : IGameLimit
     {
-        private int Limit;
+        private readonly int Limit;
         private float TimeTaken;
 
         public TimeLimit(int limit)

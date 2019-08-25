@@ -22,9 +22,11 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_TwoMatchingPieces_Adjancent()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "1"));
-            pieces.Add(BuildPiece(1, 0, "1"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "1"),
+                BuildPiece(1, 0, "1")
+            };
 
             PieceController.Setup(pieces, new float[2], new float[1]);
 
@@ -34,9 +36,11 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_TwoMatchingPieces_AboveBelow()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "1"));
-            pieces.Add(BuildPiece(0, 1, "1"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "1"),
+                BuildPiece(0, 1, "1")
+            };
 
             PieceController.Setup(pieces, new float[1], new float[2]);
 
@@ -46,9 +50,11 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void False_NoMatchingPieces_AboveBelow()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "1"));
-            pieces.Add(BuildPiece(0, 1, "0"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "1"),
+                BuildPiece(0, 1, "0")
+            };
 
             PieceController.Setup(pieces, new float[1], new float[2]);
 
@@ -58,11 +64,13 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_TwoMatchingPieces_Diagonal_TopRight()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "1"));
-            pieces.Add(BuildPiece(0, 1, "2"));
-            pieces.Add(BuildPiece(1, 0, "0"));
-            pieces.Add(BuildPiece(1, 1, "1"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "1"),
+                BuildPiece(0, 1, "2"),
+                BuildPiece(1, 0, "0"),
+                BuildPiece(1, 1, "1")
+            };
 
             PieceController.Setup(pieces, new float[2], new float[2]);
 
@@ -72,11 +80,13 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void False_NoTwoMatchingPieces_Diagonal_TopRight()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "2"));
-            pieces.Add(BuildPiece(0, 1, "3"));
-            pieces.Add(BuildPiece(1, 0, "0"));
-            pieces.Add(BuildPiece(1, 1, "1"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "2"),
+                BuildPiece(0, 1, "3"),
+                BuildPiece(1, 0, "0"),
+                BuildPiece(1, 1, "1")
+            };
 
             PieceController.Setup(pieces, new float[2], new float[2]);
 
@@ -86,11 +96,13 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_TwoMatchingPieces_Diagonal_BottomRight()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "2"));
-            pieces.Add(BuildPiece(0, 1, "1"));
-            pieces.Add(BuildPiece(1, 0, "1"));
-            pieces.Add(BuildPiece(1, 1, "0"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "2"),
+                BuildPiece(0, 1, "1"),
+                BuildPiece(1, 0, "1"),
+                BuildPiece(1, 1, "0")
+            };
 
             PieceController.Setup(pieces, new float[2], new float[2]);
 
@@ -100,10 +112,12 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_ThreePieces_TwoMatchingPieces_Adjancent()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "0"));
-            pieces.Add(BuildPiece(1, 0, "1"));
-            pieces.Add(BuildPiece(2, 0, "1"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "0"),
+                BuildPiece(1, 0, "1"),
+                BuildPiece(2, 0, "1")
+            };
 
             PieceController.Setup(pieces, new float[3], new float[1]);
 
@@ -113,10 +127,12 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void False_ThreePieces_NoMatchingPieces_Adjancent()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "0"));
-            pieces.Add(BuildPiece(1, 0, "1"));
-            pieces.Add(BuildPiece(2, 0, "0"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "0"),
+                BuildPiece(1, 0, "1"),
+                BuildPiece(2, 0, "0")
+            };
 
             PieceController.Setup(pieces, new float[3], new float[1]);
 
@@ -126,9 +142,11 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_TwoMatchingPieces_Adjancent_AnyConnection()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "1"));
-            pieces.Add(BuildAnyConnectionPiece(1, 0, "2"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "1"),
+                BuildAnyConnectionPiece(1, 0, "2")
+            };
 
             PieceController.Setup(pieces, new float[2], new float[1]);
 
@@ -138,11 +156,13 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void True_TwoMatchingPieces_Diagonal_BottomRight_AnyConnection()
         {
-            var pieces = new List<ISquarePiece>();
-            pieces.Add(BuildPiece(0, 0, "2"));
-            pieces.Add(BuildAnyConnectionPiece(0, 1, "1"));
-            pieces.Add(BuildPiece(1, 0, "3"));
-            pieces.Add(BuildPiece(1, 1, "0"));
+            var pieces = new List<ISquarePiece>
+            {
+                BuildPiece(0, 0, "2"),
+                BuildAnyConnectionPiece(0, 1, "1"),
+                BuildPiece(1, 0, "3"),
+                BuildPiece(1, 1, "0")
+            };
 
             PieceController.Setup(pieces, new float[2], new float[2]);
         }

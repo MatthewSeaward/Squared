@@ -26,9 +26,8 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     [SerializeField]
     public SpriteRenderer InnerSprite = null;
 
-    private MenuProvider _menuProvider;
+    private readonly MenuProvider _menuProvider;
     private Sprite _sprite;
-    private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private static Vector3 _initialScale;
     private Vector2Int _position;
@@ -53,7 +52,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     private Animator Animator => _animator = _animator ?? GetComponent<Animator>();
 
-    public SpriteRenderer SpriteRenderer => _spriteRenderer ??  _spriteRenderer ?? GetComponent<SpriteRenderer>();
+    public SpriteRenderer SpriteRenderer => GetComponent<SpriteRenderer>();
     
     public Sprite Sprite
     {
