@@ -34,7 +34,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             pieceDestroyed = true;
         }
 
-        private bool PieceCanBeDestroyed(SquarePiece pieceBelow)
+        private bool PieceCanBeDestroyed(ISquarePiece pieceBelow)
         {
             if (pieceBelow.DestroyPieceHandler is HeavyDestroyTriggerFall)
             {

@@ -28,7 +28,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         protected void CheckForAbove()
         {
-            SquarePiece[] pieces = PieceController.GetPiecesAbove(_squarePiece.Position.x, _squarePiece.Position.y);
+            ISquarePiece[] pieces = PieceController.GetPiecesAbove(_squarePiece.Position.x, _squarePiece.Position.y);
 
             var sorted = pieces.OrderByDescending(x => x.Position.y);
             

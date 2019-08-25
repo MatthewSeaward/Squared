@@ -56,7 +56,7 @@ namespace Assets.Scripts
             CurrentPieces.Clear();
         }
 
-        public bool PieceCanBeRemoved(SquarePiece piece)
+        public bool PieceCanBeRemoved(ISquarePiece piece)
         {
             return (CurrentPieces.Count > 1 && piece == CurrentPieces.Last.Previous.Value);
         }
@@ -68,7 +68,7 @@ namespace Assets.Scripts
             lastPiece.Deselected();
         }
 
-        public bool AlreadySelected(SquarePiece piece)
+        public bool AlreadySelected(ISquarePiece piece)
         {
             return CurrentPieces.Contains(piece);
         }
@@ -82,7 +82,7 @@ namespace Assets.Scripts
             CurrentPieces.Clear();
         }
 
-        public void Add(SquarePiece squarePiece)
+        public void Add(ISquarePiece squarePiece)
         {
             CurrentPieces.AddLast(squarePiece);
         }

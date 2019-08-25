@@ -5,9 +5,11 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
+    public delegate void BoardRefreshed();
+
     class PieceDropper : MonoBehaviour
     {
-
+        public static BoardRefreshed BoardRefreshed;
         public static PieceDropper Instance;
 
         private GridGenerator _gridGenerator;
@@ -74,6 +76,7 @@ namespace Assets.Scripts
                     yield return new WaitForFixedUpdate();
                 }
             }
+            BoardRefreshed?.Invoke();
         }
     }
 }

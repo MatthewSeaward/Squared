@@ -20,7 +20,7 @@ namespace GridGeneration
 
             var parent = GameObject.FindObjectOfType<PieceSelectionManager>();
             
-            var pieces = new List<SquarePiece>();
+            var pieces = new List<ISquarePiece>();
             
             string[] pattern = LevelManager.Instance.SelectedLevel.Pattern;
 
@@ -56,7 +56,7 @@ namespace GridGeneration
                     XPositions[x] = xPos;
                 }
             }
-            PieceController.Setup(pieces,YPositions, XPositions);
+            PieceController.Setup(pieces,XPositions, YPositions);
 
             GridGenerated?.Invoke();
         }

@@ -5,7 +5,7 @@ using System.Linq;
 
 public class PieceController 
 {
-    public static List<SquarePiece> Pieces { get; private set; }
+    public static List<ISquarePiece> Pieces { get; private set; }
     public static float[] YPositions { get; private set; }
     public static float[] XPositions { get; private set; }
 
@@ -25,7 +25,7 @@ public class PieceController
         return false;
     }
     
-    internal static void Setup(List<SquarePiece> Pieces, float[] YPositions, float[] XPositions)
+    public static void Setup(List<ISquarePiece> Pieces, float[] XPositions, float[] YPositions)
     {
         PieceController.Pieces = Pieces;
         PieceController.YPositions = YPositions;
@@ -83,17 +83,17 @@ public class PieceController
     }
 
 
-    internal static SquarePiece GetPiece(int x, int y)
+    internal static ISquarePiece GetPiece(int x, int y)
     {
         return Pieces.FirstOrDefault(p => p.Position.x == x && p.Position.y == y);
     }
 
-    internal static SquarePiece[] GetPiecesAbove(int x, int y)
+    internal static ISquarePiece[] GetPiecesAbove(int x, int y)
     {
         return Pieces.Where(p => p.Position.x == x && p.Position.y < y).ToArray();
     }
 
-    internal static SquarePiece GetPieceAbove(int x, int y)
+    internal static ISquarePiece GetPieceAbove(int x, int y)
     {
         return Pieces.Where(p => p.Position.x == x && p.Position.y < y).Min();
     }

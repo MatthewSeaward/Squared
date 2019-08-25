@@ -5,25 +5,30 @@ namespace Assets.Scripts.Workers.Piece_Effects
 {
     public class StandardConnection : IPieceConnection
     {
-        public bool ConnectionValid(ISquarePiece selectedPiece)
+        public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
         {
-            if (!ConnectionHelper.AdjancentToLastPiece(selectedPiece))
+            if (!ConnectionHelper.AdjancentToLastPiece(selectedPiece, nextPiece))
             {
                 return false;
             }
 
-            if (PieceSelectionManager.Instance.LastPiece != null  && PieceSelectionManager.Instance.LastPiece.PieceConnection is AnyAdjancentConnection)
+            if (nextPiece != null  && nextPiece.PieceConnection is AnyAdjancentConnection)
             {
                 return true;
             }
 
-            if (PieceSelectionManager.Instance.LastPiece != null && PieceSelectionManager.Instance.LastPiece.Sprite != selectedPiece.Sprite)
+            if (nextPiece != null && nextPiece.Sprite != selectedPiece.Sprite)
             {
                 return false;
             }
        
 
             return true;
+        }
+
+        public bool ConnectionValid(ISquarePiece selectedPiece)
+        {
+            return ConnectionValid(selectedPiece, PieceSelectionManager.Instance.LastPiece);
         }
     }
 }

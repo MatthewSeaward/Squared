@@ -60,7 +60,7 @@ namespace Assets.Scripts.Workers.Enemy
             }
         }
 
-        private bool ValidDestruction(SquarePiece piece)
+        private bool ValidDestruction(ISquarePiece piece)
         {
             if (piece == null || !piece.gameObject.activeInHierarchy)
             {

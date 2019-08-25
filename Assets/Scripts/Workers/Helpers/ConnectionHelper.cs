@@ -4,7 +4,12 @@
     {
         public static bool AdjancentToLastPiece(ISquarePiece selectedPiece)
         {
-            if (PieceSelectionManager.Instance.CurrentPieces.Count == 0)
+            return AdjancentToLastPiece(selectedPiece, PieceSelectionManager.Instance.LastPiece);
+        }
+
+        public static bool AdjancentToLastPiece(ISquarePiece selectedPiece, ISquarePiece lastPiece)
+        {
+            if (lastPiece == null)
             {
                 return true;
             }
@@ -12,7 +17,6 @@
             var myx = selectedPiece.Position.x;
             var myy = selectedPiece.Position.y;
 
-            var lastPiece = PieceSelectionManager.Instance.LastPiece;
             var lastx = lastPiece.Position.x;
             var lasty = lastPiece.Position.y;
 
