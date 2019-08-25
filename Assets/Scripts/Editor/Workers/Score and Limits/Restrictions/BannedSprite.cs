@@ -3,9 +3,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using NSubstitute;
 
+[Category("Restrictions")]
 public class BannedSprite
 {
-
     Sprite bannedSprite;
     Sprite defaultSprite;
 
@@ -13,10 +13,10 @@ public class BannedSprite
     public void TestSetup()
     {
         bannedSprite = GetSprite();
-        bannedSprite.name = "Red";
+        bannedSprite.name = "1";
 
         defaultSprite = GetSprite();
-        defaultSprite.name = "White";
+        defaultSprite.name = "2";
     }
 
     [Test]

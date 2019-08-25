@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers.Piece_Effects;
-using Assets.Scripts.Workers.Piece_Effects.Interfaces;
+﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 
 public interface ISquarePiece
@@ -8,7 +7,8 @@ public interface ISquarePiece
     Transform transform { get; }
     Vector2Int Position { get; }
     IPieceConnection PieceConnection { get; set; }
-    ISwapEffect SwapEffect { get; }
+    ISwapEffect SwapEffect { get; set; }
+    IScoreable Scoring { get; set; }
     SpriteRenderer SpriteRenderer { get; }
 
     void Deselected();

@@ -1,11 +1,9 @@
-﻿using UnityEngine;
-using UnityEditor;
-using UnityEngine.TestTools;
-using NUnit.Framework;
-using System.Collections;
+﻿using NUnit.Framework;
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
+using static Assets.Scripts.Workers.TestHelpers;
 
+[Category("Restrictions")]
 public class MinPieceLimit
 {
 
@@ -15,9 +13,9 @@ public class MinPieceLimit
         var sut = new MinSequenceLimit(3);
 
         var sequence = new LinkedList<ISquarePiece>();
-        sequence.AddLast(new SquarePiece());
-        sequence.AddLast(new SquarePiece());
-        sequence.AddLast(new SquarePiece());
+        sequence.AddLast(CreatePiece());
+        sequence.AddLast(CreatePiece());
+        sequence.AddLast(CreatePiece());
         sut.SequenceCompleted(sequence);
 
         Assert.IsFalse(sut.ViolatedRestriction());
@@ -29,10 +27,10 @@ public class MinPieceLimit
         var sut = new MinSequenceLimit(3);
 
         var sequence = new LinkedList<ISquarePiece>();
-        sequence.AddLast(new SquarePiece());
-        sequence.AddLast(new SquarePiece());
-        sequence.AddLast(new SquarePiece());
-        sequence.AddLast(new SquarePiece());
+        sequence.AddLast(CreatePiece());
+        sequence.AddLast(CreatePiece());
+        sequence.AddLast(CreatePiece());
+        sequence.AddLast(CreatePiece());
         sut.SequenceCompleted(sequence);
 
         Assert.IsFalse(sut.ViolatedRestriction());
@@ -44,8 +42,8 @@ public class MinPieceLimit
         var sut = new MinSequenceLimit(3);
 
         var sequence = new LinkedList<ISquarePiece>();
-        sequence.AddLast(new SquarePiece());
-        sequence.AddLast(new SquarePiece());
+        sequence.AddLast(CreatePiece());
+        sequence.AddLast(CreatePiece());
         sut.SequenceCompleted(sequence);
 
         Assert.IsTrue(sut.ViolatedRestriction());
