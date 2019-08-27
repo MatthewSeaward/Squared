@@ -9,7 +9,7 @@ namespace Assets.Scripts
         private EnemyInfo EnemyInfo;
 
         [SerializeField]
-        private GameObject EnemyHead;
+        public GameObject EnemyHead;
 
         public int PiecesForRage => EnemyInfo.PiecesForRage;
 

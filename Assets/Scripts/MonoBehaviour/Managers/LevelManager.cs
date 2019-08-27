@@ -11,7 +11,7 @@ namespace Assets
     {
         public Dictionary<string, Level[]> Levels;
 
-        public string[] LevelOrder { get; }
+        public string[] LevelOrder { get; set; }
 
         private LevelIO LevelIO = new LevelIO();
         private int chapterInt = 0;
@@ -80,8 +80,10 @@ namespace Assets
             }
         }
 
-       private LevelManager()
-       {
+       private LevelManager()  { }
+
+        public void LoadData()
+        {
             LevelIO.LoadLevelData();
             Levels = LevelIO.Levels;
             LevelOrder = LevelIO.LevelOrder;

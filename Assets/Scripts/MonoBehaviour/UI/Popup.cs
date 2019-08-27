@@ -55,7 +55,7 @@ public class Popup : MonoBehaviour
         
     public void Menu_Click()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 }

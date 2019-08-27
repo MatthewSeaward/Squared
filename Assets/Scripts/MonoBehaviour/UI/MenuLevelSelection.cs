@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using Assets.Scripts.Workers.IO;
+using Assets.Scripts.Workers.IO.Data_Entities;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -15,7 +18,7 @@ namespace Assets.Scripts
         private void Start()
         {
             Refresh();
-        }
+        }      
 
         public void Refresh()
         {
@@ -60,7 +63,7 @@ namespace Assets.Scripts
         private void LoadLevel(int i)
         {
             LevelManager.Instance.CurrentLevel = i;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }

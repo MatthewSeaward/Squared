@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "59961411311",
+    "firebase_url": "https://squared-105cf.firebaseio.com",
+    "project_id": "squared-105cf",
+    "storage_bucket": "squared-105cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59961411311:android:7a131f2d4f3fddca",
+        "android_client_info": {
+          "package_name": "com.MatthewSeaward.Squared"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59961411311-o5jeualb02q626c4h2o19knleod44sio.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh7krZuhW3SzvFu46_9ZmOik12_QMd_Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59961411311-o5jeualb02q626c4h2o19knleod44sio.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

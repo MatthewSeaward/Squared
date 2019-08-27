@@ -9,11 +9,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+[Serializable]
+public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
+
 public delegate void PointsAwarded(int points, LinkedList<ISquarePiece> pieces);
+public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result);
 
 public class ScoreKeeper : MonoBehaviour
 {
     public static event PointsAwarded PointsAwarded;
+    public static event GameCompleted GameCompleted;
 
     public Text Score;
     public Text Time;
@@ -82,11 +87,13 @@ public class ScoreKeeper : MonoBehaviour
 
         if (Restriction.ViolatedRestriction())
         {
+            SaveProgress(GameResult.ViolatedRestriction);
+
             MenuProvider.Instance.ShowPopup("Failed", "You violated the restriction.", 
                 new ButtonArgs()
                 {
                     Text = "Retry",
-                    Action = () => SceneManager.LoadScene(1)
+                    Action = () => SceneManager.LoadScene(2)
                 });
         }
     }
@@ -94,40 +101,51 @@ public class ScoreKeeper : MonoBehaviour
     private void UpdateLimit(float deltaTime)
     {
         GameLimit.Update(UnityEngine.Time.deltaTime);
-        
-        if (ReachedTarget)
+                
+        if (GameLimit.ReachedLimit())
         {
-            MenuProvider.Instance.ShowPopup("Victory", $"You scored {_currentScore} out of {LevelManager.Instance.SelectedLevel.Target}!",
-                   new ButtonArgs()
-                   {
-                       Text = "Continue",
-                       Enabled = LevelManager.Instance.LevelUnlocked(LevelManager.Instance.CurrentLevel + 1),
-                       Action = () => LoadNextLevel()
-                   },
-                   new ButtonArgs()
-                   {
-                         Text = "Retry",
-                         Action = () => SceneManager.LoadScene(1)
-                   }
-                   );
-
-
-
-            int star =  LevelManager.Instance.SelectedLevel.LevelProgress != null ? LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved : 0;                    
-            LevelManager.Instance.RegisterLevelCompleted(star, _currentScore);
-        }
-        else if (GameLimit.ReachedLimit())
-        {
-            MenuProvider.Instance.ShowPopup("Failed", "You did not reach the target score within the limit.", new ButtonArgs()
+            if (ReachedTarget)
             {
-                Text = "Retry",
-                Action = () => SceneManager.LoadScene(1)
-            });
+                SaveProgress(GameResult.ReachedTarget);
+
+                MenuProvider.Instance.ShowPopup("Victory", $"You scored {_currentScore} out of {LevelManager.Instance.SelectedLevel.Target}!",
+                       new ButtonArgs()
+                       {
+                           Text = "Continue",
+                           Enabled = LevelManager.Instance.LevelUnlocked(LevelManager.Instance.CurrentLevel + 1),
+                           Action = () => LoadNextLevel()
+                       },
+                       new ButtonArgs()
+                       {
+                           Text = "Retry",
+                           Action = () => SceneManager.LoadScene(2)
+                       }
+                       );
+
+                int star = LevelManager.Instance.SelectedLevel.LevelProgress != null ? LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved : 0;
+                LevelManager.Instance.RegisterLevelCompleted(star, _currentScore);
+            }
+            else
+            {
+                SaveProgress(GameResult.LimitExpired);
+
+                MenuProvider.Instance.ShowPopup("Failed", "You did not reach the target score within the limit.", new ButtonArgs()
+                {
+                    Text = "Retry",
+                    Action = () => SceneManager.LoadScene(2)
+                });
+            }
+
         }
         else
         {
             UpdateLimitText();
         }
+    }
+
+    private void SaveProgress(GameResult result)
+    {
+        GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, _currentScore, result);
     }
 
     private void UpdateLimitText()
@@ -144,6 +162,6 @@ public class ScoreKeeper : MonoBehaviour
     public void LoadNextLevel()
     {
         LevelManager.Instance.CurrentLevel++;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

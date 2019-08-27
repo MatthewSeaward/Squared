@@ -9,11 +9,15 @@ using System.Linq;
 
 namespace Assets.Scripts.Workers.IO
 {
+    public delegate void DataLoaded();
+
     public class LevelIO
     {
+        public static DataLoaded DataLoaded;
+
         private ILevelLoader levelLoader = new FileLevelLoader();
 
-        private ILevelProgressLoader progressLoader = new PlayerPrefsLevelProgressLoader();
+        private ILevelProgressLoader progressLoader = new FireBaseLevelProgressLoader();
 
         public Dictionary<string, Level[]> Levels;
 
@@ -25,10 +29,22 @@ namespace Assets.Scripts.Workers.IO
             Levels = levelLoader.GetLevels();
             LoadLevelStars();
 
+            FireBaseLevelProgressLoader.UserDataLoaded += UserDataLoaded;
+
+            progressLoader.LoadLevelProgress();
+
+            ILevelOrderLoader loader = new LevelOrderLoader();
+            LevelOrder = loader.LoadLevelOrder();
+        }
+
+        private void UserDataLoaded(LevelProgress[] levelProgresses)
+        {
+            FireBaseLevelProgressLoader.UserDataLoaded -= UserDataLoaded;
+
             LevelProgress = new List<LevelProgress>();
-            LevelProgress.AddRange(progressLoader.LoadLevelProgress());
-            
-            foreach (var progress in LevelProgress)
+            LevelProgress.AddRange(levelProgresses);
+
+            foreach (var progress in levelProgresses)
             {
                 if (!Levels.ContainsKey(progress.Chapter))
                 {
@@ -36,9 +52,7 @@ namespace Assets.Scripts.Workers.IO
                 }
                 Levels[progress.Chapter][progress.Level].LevelProgress = progress;
             }
-
-            ILevelOrderLoader loader = new LevelOrderLoader();
-            LevelOrder = loader.LoadLevelOrder();
+            DataLoaded?.Invoke();
         }
 
         private void LoadLevelStars()

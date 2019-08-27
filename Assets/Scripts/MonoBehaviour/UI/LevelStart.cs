@@ -35,12 +35,13 @@ namespace Assets.Scripts
         public void Play_Clicked()
         {
             MenuProvider.Instance.HideMenu<LevelStart>();
+            Firebase.Analytics.FirebaseAnalytics.LogEvent("GameStarted", "Level", LevelManager.Instance.CurrentLevel.ToString());
             GameStarted?.Invoke();
         }
 
         public void Menu_Clicked()
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
