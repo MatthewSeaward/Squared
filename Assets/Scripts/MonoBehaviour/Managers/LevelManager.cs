@@ -136,5 +136,10 @@ namespace Assets
         {
             chapterInt = Mathf.Clamp(chapterInt + direction, 0, LevelOrder.Length-1);
         }
+
+        public void ResetSavedData()
+        {
+            LevelIO.ResetSavedData();
+        }
     }
 }

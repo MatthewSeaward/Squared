@@ -35,8 +35,12 @@ namespace Assets.Scripts.Workers.IO
                                      {
                                          DataSnapshot snapshot = task.Result;
 
-                                         string info = snapshot.GetRawJsonValue().ToString();
-                                         result = JsonHelper.FromJson<LevelProgress>(info);
+                                        
+                                        string info = snapshot?.GetRawJsonValue()?.ToString();
+                                        if (info != null)
+                                         {
+                                             result = JsonHelper.FromJson<LevelProgress>(info);
+                                         }
                                          UserDataLoaded?.Invoke(result);
                                      }
                                      catch(Exception ex)
@@ -51,6 +55,10 @@ namespace Assets.Scripts.Workers.IO
             return result;
         }
 
+        public void ResetData()
+        {
+            SaveLevelProgress(new LevelProgress[0]);
+        }
 
         public void SaveLevelProgress(LevelProgress[] levelProgress)
         {

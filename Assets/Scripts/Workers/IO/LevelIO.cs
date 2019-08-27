@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Level_Loader.Order;
-using Assets.Scripts.Workers.IO.Player_Progress;
 using DataEntities;
 using LevelLoader;
 using LevelLoader.Interfaces;
@@ -17,7 +16,7 @@ namespace Assets.Scripts.Workers.IO
 
         private ILevelLoader levelLoader = new FileLevelLoader();
 
-        private ILevelProgressLoader progressLoader = new FireBaseLevelProgressLoader();
+         ILevelProgressLoader progressLoader = new FireBaseLevelProgressLoader();
 
         public Dictionary<string, Level[]> Levels;
 
@@ -42,9 +41,12 @@ namespace Assets.Scripts.Workers.IO
             FireBaseLevelProgressLoader.UserDataLoaded -= UserDataLoaded;
 
             LevelProgress = new List<LevelProgress>();
-            LevelProgress.AddRange(levelProgresses);
+            if (levelProgresses != null)
+            {
+                LevelProgress.AddRange(levelProgresses);
+            }
 
-            foreach (var progress in levelProgresses)
+            foreach (var progress in LevelProgress)
             {
                 if (!Levels.ContainsKey(progress.Chapter))
                 {
@@ -94,6 +96,12 @@ namespace Assets.Scripts.Workers.IO
                 selected = levelinfo;
             }
             progressLoader.SaveLevelProgress(LevelProgress.ToArray());
+        }
+
+        public void ResetSavedData()
+        {
+            LevelProgress.Clear();
+            progressLoader.ResetData();
         }
     }
 }

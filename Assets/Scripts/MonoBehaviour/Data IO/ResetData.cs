@@ -8,7 +8,7 @@ namespace Assets.Scripts
     {
         public void OnClick()
         {
-            PlayerPrefs.DeleteAll();
+            LevelManager.Instance.ResetSavedData();
             SceneManager.LoadScene(Scenes.Loading);
         }
     }
