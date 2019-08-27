@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Constants;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
@@ -12,12 +13,12 @@ namespace Assets.Scripts
 
         public void Restart_Clicked()
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(Scenes.Game);
         }
 
         public void Menu_Clicked()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(Scenes.MainMenu);
         }
     }
 }

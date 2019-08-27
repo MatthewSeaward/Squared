@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Writer;
 using UnityEngine;
@@ -28,7 +29,7 @@ namespace Assets.Scripts
         {
             if (_loaded)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(Scenes.MainMenu);
             }
         }
 

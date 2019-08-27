@@ -9,6 +9,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using static Assets.Scripts.Constants.Scenes;
+
 [Serializable]
 public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
 
@@ -93,7 +95,7 @@ public class ScoreKeeper : MonoBehaviour
                 new ButtonArgs()
                 {
                     Text = "Retry",
-                    Action = () => SceneManager.LoadScene(2)
+                    Action = () => SceneManager.LoadScene(Game)
                 });
         }
     }
@@ -118,7 +120,7 @@ public class ScoreKeeper : MonoBehaviour
                        new ButtonArgs()
                        {
                            Text = "Retry",
-                           Action = () => SceneManager.LoadScene(2)
+                           Action = () => SceneManager.LoadScene(Game)
                        }
                        );
 
@@ -132,7 +134,7 @@ public class ScoreKeeper : MonoBehaviour
                 MenuProvider.Instance.ShowPopup("Failed", "You did not reach the target score within the limit.", new ButtonArgs()
                 {
                     Text = "Retry",
-                    Action = () => SceneManager.LoadScene(2)
+                    Action = () => SceneManager.LoadScene(Game)
                 });
             }
 
@@ -162,6 +164,6 @@ public class ScoreKeeper : MonoBehaviour
     public void LoadNextLevel()
     {
         LevelManager.Instance.CurrentLevel++;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(Game);
     }
 }

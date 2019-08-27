@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Assets.Scripts.Constants;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +9,7 @@ namespace Assets.Scripts
         public void OnClick()
         {
             PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(Scenes.Loading);
         }
     }
 }

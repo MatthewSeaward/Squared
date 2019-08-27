@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using Assets.Scripts.UI.Helpers;
+using Assets.Scripts.Constants;
 
 public class Popup : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class Popup : MonoBehaviour
         
     public void Menu_Click()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Scenes.MainMenu);
     }
 
 }

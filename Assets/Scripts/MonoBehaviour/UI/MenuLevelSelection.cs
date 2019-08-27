@@ -1,4 +1,5 @@
 ﻿using System;
+using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
@@ -63,7 +64,7 @@ namespace Assets.Scripts
         private void LoadLevel(int i)
         {
             LevelManager.Instance.CurrentLevel = i;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(Scenes.Game);
         }
     }
 }

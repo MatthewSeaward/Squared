@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Constants;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -41,7 +42,7 @@ namespace Assets.Scripts
 
         public void Menu_Clicked()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(Scenes.MainMenu);
         }
     }
 }
