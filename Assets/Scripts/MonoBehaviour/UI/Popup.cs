@@ -41,7 +41,7 @@ public class Popup : MonoBehaviour
 
     private void SetupButton(Button button, ButtonArgs buttonArgs)
     {
-        if (string.IsNullOrEmpty(buttonArgs.Text))
+        if (buttonArgs == null || string.IsNullOrEmpty(buttonArgs.Text))
         {
             button.gameObject.SetActive(false);
         }
