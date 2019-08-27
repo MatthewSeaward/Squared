@@ -85,6 +85,7 @@
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleBehaviour.cs" />
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleManager.cs" />
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleTmp.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\DataLoader.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\ResetData.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\ResourceLoader.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\EnemyScript.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\SquarePiece.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\DisableWhenDone.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\Lerp.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Managers\AvailableMoveChecker.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\ChapterUIManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\EnemyController.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\SwipeButton.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\UpNextSlot.cs" />
     <Compile Include="Assets\Scripts\Scriptables\EnemyInfo.cs" />
+    <Compile Include="Assets\Scripts\Workers\Constants\Constants.cs" />
     <Compile Include="Assets\Scripts\Workers\Data Managers\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\DestroyRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Interfaces\IEnemyRage.cs" />
@@ -125,10 +128,12 @@
     <Compile Include="Assets\Scripts\Workers\Factorys\LevelStarFactory.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\BasicGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\Interfaces\IGridGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\MoveChecker.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ConnectionHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\Extensions\TextureHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\Workers\Helpers\TestHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\BarkLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\IBarkLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\Barks.cs" />
@@ -137,6 +142,7 @@
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelDialogue.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelProgress.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PieceColour.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Data Entities\ScoreEntry.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\StarProgress.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Loaders\IDataReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Loaders\JSONDataReader.cs" />
@@ -146,30 +152,39 @@
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\LevelLoader\FileLevelLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\Order\LevelOrderLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\LevelIO.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Player Progress\FireBaseLevelProgressLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\ILevelProgressLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\PlayerPrefsLevelProgressLoader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Score\DataWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Score\FireBaseScoreLoader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Score\IScoreLoader.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Behaviours\SwapSpriteBehaviour.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\DestroyTriggerFall.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\HeavyDestroyTriggerFall.cs" />
-    <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\Interfaces\IPieceDestroy.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\SwapSpriteDestroy.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Interfaces\IBehaviour.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Interfaces\ILayeredSprite.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Interfaces\IPieceConnection.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Interfaces\IPieceDestroy.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Interfaces\IScoreable.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Interfaces\ISwapEffect.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Piece Connection\AnyAdjancentConnection.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Piece Connection\StandardConnection.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Scoring\MultipliedScore.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Scoring\SingleSCore.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapEffects\LockedSwap.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapEffects\SwapToNext.cs" />
-    <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapSpriteBehaviour.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IGameLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IRestriction.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IScoreCalculator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\Limits\TimeLimit.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\Limits\TurnLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\BannedSprite.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\MaxSequenceLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\MinSequenceLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\NoRestriction.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\SwapEffectLimit.cs" />
-    <Compile Include="Assets\Scripts\Workers\Score and Limits\TimeLimit.cs" />
-    <Compile Include="Assets\Scripts\Workers\Score and Limits\TurnLimit.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\ScoreCalculation\StandardScoreCalculator.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Resources\Level Dialogue\Golem.txt" />
@@ -177,6 +192,9 @@
     <None Include="Assets\Resources\Barks\Golem.txt" />
     <None Include="Assets\Resources\Levels\Wolf.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -194,6 +212,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Resources\Level Order\Level Order.txt" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
@@ -423,6 +442,36 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.App">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Auth">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Database">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Platform">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.TaskExtension">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MiniJson">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Sharpen">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Google.Sharpen.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Compat">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Tasks">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="NSubstitute">
       <HintPath>D:/Development/Unity Projects/Squared/Assets/Plugins/NSubstitute.dll</HintPath>

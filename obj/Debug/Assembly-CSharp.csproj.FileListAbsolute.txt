@@ -296,3 +296,13 @@ D:\Development\Unity Projects\Squared\obj\Debug\Assembly-CSharp.csproj.CoreCompi
 D:\Development\Unity Projects\Squared\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Development\Unity Projects\Squared\obj\Debug\Assembly-CSharp.dll
 D:\Development\Unity Projects\Squared\obj\Debug\Assembly-CSharp.pdb
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.Analytics.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.App.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.Auth.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.Database.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.Platform.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.TaskExtension.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Google.MiniJson.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Google.Sharpen.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Unity.Compat.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Unity.Tasks.dll
