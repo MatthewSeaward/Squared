@@ -15,7 +15,7 @@ namespace Assets.Scripts
             PieceDropper.BoardRefreshed += CheckForMoves;
             BasicGridGenerator.GridGenerated += CheckForMoves;
 
-            rage.AmountToDestroy = 5;
+            rage.SelectionAmount = 5;
                        
         }
 

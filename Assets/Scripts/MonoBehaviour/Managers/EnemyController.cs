@@ -133,14 +133,14 @@ namespace Assets.Scripts
         {
             _queuedTrigger = "Angry1";
 
+            enemy.GetComponent<Lerp>().LerpCompleted += PlayEnemyRage;
+
             ShowEnemyText(DialogueManager.Instance.GetAngryText());
-            SpeechBubbleManager.SpeechBubbleFinishedEvent += PlayEnemyRage;
         }
 
         private void PlayEnemyRage()
         {
-            SpeechBubbleManager.SpeechBubbleFinishedEvent -= PlayEnemyRage;
-
+            enemy.GetComponent<Lerp>().LerpCompleted -= PlayEnemyRage;
             enemy.GetComponent<EnemyScript>().EnemyRage.InvokeRage();
         }
     }

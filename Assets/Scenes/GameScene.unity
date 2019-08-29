@@ -982,32 +982,32 @@ PrefabInstance:
     - target: {fileID: 212000013636007994, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3005
       objectReference: {fileID: 0}
     - target: {fileID: 212000011168272022, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 7
+      value: 3002
       objectReference: {fileID: 0}
     - target: {fileID: 212000011567393698, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 9
+      value: 3009
       objectReference: {fileID: 0}
     - target: {fileID: 212000010544904116, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 212000013627440250, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 212000010455360210, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61000013994179018, guid: 3d0b55408c4c74c46b31fd1be5033834, type: 3}
@@ -2711,6 +2711,46 @@ PrefabInstance:
     - target: {fileID: 4000013583325678, guid: 35cd64e322e7f4c41a8e1be77e039c51, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000013691291870, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000010811034474, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000012514225144, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000012067385396, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000014021183074, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000010833809188, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3002
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000014264322724, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3002
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000012698703158, guid: 35cd64e322e7f4c41a8e1be77e039c51,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35cd64e322e7f4c41a8e1be77e039c51, type: 3}
@@ -5524,6 +5564,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1584904636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584904638}
+  - component: {fileID: 1584904637}
+  m_Layer: 0
+  m_Name: Lightning Bolt Producer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1584904637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584904636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb2a28f981d38a349a8febbc2fe357de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightningBolt: {fileID: 1624734278754126242, guid: 915084c7a7617f64c8bfdfa266f57070,
+    type: 3}
+--- !u!4 &1584904638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584904636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.23910269, y: 1.01926, z: 0.18390192}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1588367488
 GameObject:
   m_ObjectHideFlags: 0

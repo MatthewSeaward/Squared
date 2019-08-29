@@ -15,12 +15,12 @@ public class EnemyInfo : ScriptableObject
             case "Golem":
                 return new DestroyRage(position)
                 {
-                    AmountToDestroy = PiecesAffectedByRage
+                    SelectionAmount = PiecesAffectedByRage
                 };
             case "Wolf":
                 return new SwapRage(position)
                 {
-                    AmountToSwap = PiecesAffectedByRage
+                    SelectionAmount = PiecesAffectedByRage
                 };
         }
     }
