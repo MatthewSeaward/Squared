@@ -10,7 +10,7 @@ namespace Assets.Scripts.Workers.Enemy
         public int AmountToDestroy;
         private const float DisplayTime = 0.5f;
 
-        private List<Vector2> lines = new List<Vector2>();
+        private Dictionary<Vector2Int, Vector2> lines = new Dictionary<Vector2Int, Vector2>();
         private float timer;
 
         public Vector3 Position { get; }
@@ -37,7 +37,12 @@ namespace Assets.Scripts.Workers.Enemy
                     PieceSelectionManager.Instance.ClearCurrentPieces();
                 }
 
-                lines.Add(new Vector2(piece.transform.position.x, piece.transform.position.y));
+                if (lines.ContainsKey(piece.Position))
+                {
+                    continue;
+                }
+
+                lines.Add(piece.Position, new Vector2(piece.transform.position.x, piece.transform.position.y));
 
                 piece.Destroy();
             }
@@ -52,7 +57,7 @@ namespace Assets.Scripts.Workers.Enemy
                 lines.Clear();
             }
 
-            foreach(var line in lines)
+            foreach(var line in lines.Values)
             {
                 LineFactory.Instance.GetLine(new Vector2(Position.x, Position.y), line, 0.02f, Color.blue);
             }
