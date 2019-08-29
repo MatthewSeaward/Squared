@@ -8,7 +8,7 @@ namespace Assets.Scripts
         [SerializeField]
         private GameObject LightningBolt;
 
-        private List<GameObject> currentBolts = new List<GameObject>();
+        private Dictionary<ISquarePiece, GameObject> currentBolts = new Dictionary<ISquarePiece, GameObject>();
 
         public static LightningBoltProducer Instance;
 
@@ -17,19 +17,28 @@ namespace Assets.Scripts
             Instance = this;
         }
 
-        public void ProduceBolt(Vector3 position)
+        public void ProduceBolt(ISquarePiece piece, Vector3 position)
         {
-            var newBolt = ObjectPool.Instantiate(LightningBolt, new Vector3(0, 0, 0));
+            GameObject bolt = null;
 
-            var line = newBolt.GetComponent<LineRenderer>();
+            if (currentBolts.ContainsKey(piece))
+            {
+                bolt = currentBolts[piece];
+            }
+            else
+            {
+                bolt = ObjectPool.Instantiate(LightningBolt, new Vector3(0, 0, 0));
+                currentBolts.Add(piece, bolt);
+            }
+
+            var line = bolt.GetComponent<LineRenderer>();
             line.SetPositions(new Vector3[] { new Vector3(0, -5), position });
 
-            currentBolts.Add(newBolt);
         }
 
         public void ClearBolts()
         {
-            foreach(GameObject bolt in currentBolts)
+            foreach(GameObject bolt in currentBolts.Values)
             {
                 bolt.SetActive(false);
             }

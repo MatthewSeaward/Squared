@@ -38,7 +38,6 @@ namespace Assets.Scripts.Workers.Enemy
 
                 selectedPieces.Add(piece);
 
-                LightningBoltProducer.Instance.ProduceBolt(piece.transform.position);
             }
         }
 
@@ -56,6 +55,11 @@ namespace Assets.Scripts.Workers.Enemy
 
                 selectedPieces.Clear();
                 LightningBoltProducer.Instance.ClearBolts();
+            }
+
+            foreach(var piece in selectedPieces)
+            {
+                LightningBoltProducer.Instance.ProduceBolt(piece, piece.transform.position);
             }
         }
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -20,7 +21,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetLimitText()
         {
-            var timeLeft = Limit - TimeTaken;
+            var timeLeft = Mathf.Clamp(Limit - TimeTaken, 0, Limit);
             return $"Time Left: {timeLeft.ToString("0.00")}";
         }
 
