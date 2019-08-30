@@ -27,7 +27,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool ReachedLimit()
         {
-            return TimeTaken > Limit;
+            return TimeTaken >= Limit;
         }
 
         public void Reset()

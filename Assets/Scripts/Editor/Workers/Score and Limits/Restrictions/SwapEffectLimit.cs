@@ -27,7 +27,7 @@ public class SwapEffectLimit
         var sut = new Assets.Scripts.Workers.Score_and_Limits.SwapEffectLimit();
 
         var lockedPiece = CreatePiece();
-        lockedPiece.SwapEffect = new LockedSwap();
+        lockedPiece.SwapEffect = new Assets.Scripts.Workers.Piece_Effects.SwapEffects.LockedSwap();
 
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(CreatePiece());
