@@ -8,6 +8,12 @@ namespace Assets.Scripts
         [SerializeField]
         private GameObject[] Backgrounds;
 
+        [SerializeField]
+        private GameObject PreviousButton;
+
+        [SerializeField]
+        private GameObject NextButton;
+
         private void Start()
         {
             UpdateBackgrounds();
@@ -26,6 +32,9 @@ namespace Assets.Scripts
                 }
             }
             FindObjectOfType<MenuLevelSelection>().Refresh();
+
+            PreviousButton.SetActive(LevelManager.Instance.IsPreviousChapter());
+            NextButton.SetActive(LevelManager.Instance.IsNextChapter());
         }
 
         public void NextChapter()

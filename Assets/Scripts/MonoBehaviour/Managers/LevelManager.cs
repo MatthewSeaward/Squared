@@ -129,8 +129,13 @@ namespace Assets
             LevelIO.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
         }
 
+        public bool IsNextChapter() =>  chapterInt + 1 < LevelOrder.Length;
+        public bool IsPreviousChapter() => chapterInt - 1 >= 0;
+
         public void NextChapter() =>   ChangeChapter(1);
         public void PreviousChapter() => ChangeChapter(-1);
+
+
 
         private void ChangeChapter(int direction)
         {
