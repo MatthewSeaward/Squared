@@ -34,7 +34,7 @@
 
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
         {
-            _dataWriter.SaveScore(chapter, level, star, score, result);
+            _dataWriter.SaveScore(chapter, level+1, star, score, result);
         }
     }
 }
