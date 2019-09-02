@@ -14,6 +14,8 @@ namespace Assets.Scripts
         private float speed = 10f;
         public event LerpCompleted LerpCompleted;
 
+        private bool AtTarget => Vector3.Distance(transform.localPosition, Target) < 0.01f;
+
         public void Setup(Vector3 target)
         {
             _start = transform.position;
@@ -21,13 +23,16 @@ namespace Assets.Scripts
             journeyLength = Vector3.Distance(_start, Target);
             startTime = Time.time;
 
-            StartCoroutine(nameof(StartLerp));
+            if (!AtTarget)
+            {
+                StartCoroutine(nameof(StartLerp));
+            }
 
         }
 
         private IEnumerator StartLerp()
         {
-            while (transform.position != Target)
+            while (!AtTarget)
             {
                 // Distance moved = time * speed.
                 float distCovered = (Time.time - startTime) * speed;
