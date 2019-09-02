@@ -1,4 +1,5 @@
-﻿using DataEntities;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using DataEntities;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
@@ -23,7 +24,7 @@ namespace Assets.Scripts.Workers.IO
                 Date = DateTime.Now.ToString(),
                 Result = result,
                 Score = score,
-                User = "me"
+                User = UserManager.UserID
             };
 
             var jsonValue = JsonUtility.ToJson(entry);

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
@@ -23,7 +24,7 @@ namespace Assets.Scripts.Workers.IO
             try
             {
                 FirebaseDatabase.DefaultInstance
-                             .GetReference("LevelProgress/Me")
+                             .GetReference($"LevelProgress/{UserManager.UserID}")
                              .GetValueAsync().ContinueWith(task =>
                              {
                                  if (task.IsFaulted)
@@ -66,7 +67,7 @@ namespace Assets.Scripts.Workers.IO
 
             var toJson = JsonHelper.ToJson(levelProgress);
 
-           var result = System.Threading.Tasks.Task.Run(() => Database.Child("LevelProgress").Child("Me").SetRawJsonValueAsync(toJson));
+           var result = System.Threading.Tasks.Task.Run(() => Database.Child("LevelProgress").Child(UserManager.UserID).SetRawJsonValueAsync(toJson));
             if (result.IsCanceled || result.IsFaulted)
             {
                 Debug.LogWarning(result.Exception);
