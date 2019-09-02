@@ -19,7 +19,8 @@ namespace Assets.Scripts.Workers.IO.Data_Entities
             var obj = ParticleEffects[name];           
 
             var effect = ObjectPool.GetGameObject(obj);
-            
+
+            effect.SetActive(true);
             ParticleSystem.MainModule settings = effect.GetComponent<ParticleSystem>().main;
             settings.startColor = new ParticleSystem.MinMaxGradient(colour);
 

@@ -34,7 +34,21 @@ public class ObjectPool
     {
         for (int i = 0; i < count; i++)
         {
-            var obj = Instantiate(key, objectToSpawn, Vector3.zero, new Quaternion(0, 0, 0, 0));
+
+            List<GameObject> list = null;
+            if (Pool.ContainsKey(key))
+            {
+                list = Pool[key];
+            }
+            else
+            {
+                list = new List<GameObject>();
+                Pool.Add(key, list);
+            }
+
+            var obj = GameObject.Instantiate(objectToSpawn);
+            list.Add(obj);
+
             obj.SetActive(false);
         }
     }
