@@ -987,7 +987,7 @@ PrefabInstance:
     - target: {fileID: 212000011168272022, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3002
+      value: 3004
       objectReference: {fileID: 0}
     - target: {fileID: 212000011567393698, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
@@ -1007,7 +1007,7 @@ PrefabInstance:
     - target: {fileID: 212000010455360210, guid: 3d0b55408c4c74c46b31fd1be5033834,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3006
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61000013994179018, guid: 3d0b55408c4c74c46b31fd1be5033834, type: 3}
@@ -5589,8 +5589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2a28f981d38a349a8febbc2fe357de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LightningBolt: {fileID: 1624734278754126242, guid: 915084c7a7617f64c8bfdfa266f57070,
-    type: 3}
 --- !u!4 &1584904638
 Transform:
   m_ObjectHideFlags: 0
