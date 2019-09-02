@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +7,6 @@ namespace Assets.Scripts
 {
     public class ShowScore : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject TextPrefab;
 
         public static ShowScore Instance;
 
@@ -40,7 +39,7 @@ namespace Assets.Scripts
         {
             var position = RectTransformUtility.WorldToScreenPoint(Camera.main, spawnPosition);
 
-            var gameObject = ObjectPool.Instantiate(TextPrefab, position);
+            var gameObject = ObjectPool.Instantiate(GameResources.GameObjects["Animated Text"], position);
 
             gameObject.transform.parent = transform.parent;
             gameObject.transform.localScale = new Vector3(1, 1, 1);
