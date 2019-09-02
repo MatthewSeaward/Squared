@@ -86,7 +86,7 @@ namespace Assets.Scripts.Workers.IO
 
         internal void SaveLevelProgress(int level, LevelProgress levelinfo)
         {
-            var selected = LevelProgress.FirstOrDefault(x => x.Level == level);
+            var selected = LevelProgress.FirstOrDefault(x => x.Level == level && x.Chapter == levelinfo.Chapter);
             if (selected == null)
             {
                 LevelProgress.Add(levelinfo);
