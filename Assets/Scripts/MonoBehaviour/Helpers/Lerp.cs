@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public delegate void LerpCompleted();
 
@@ -11,8 +12,6 @@ namespace Assets.Scripts
         private float journeyLength;
         private float startTime;
         private float speed = 10f;
-        bool start;
-        private float timer;
         public event LerpCompleted LerpCompleted;
 
         public void Setup(Vector3 target)
@@ -22,31 +21,28 @@ namespace Assets.Scripts
             journeyLength = Vector3.Distance(_start, Target);
             startTime = Time.time;
 
-            start = true;
+            StartCoroutine(nameof(StartLerp));
 
         }
 
-        private void Update()
+        private IEnumerator StartLerp()
         {
-            if (!start)
+            while (transform.position != Target)
             {
-                return;
+                // Distance moved = time * speed.
+                float distCovered = (Time.time - startTime) * speed;
+
+                // Fraction of journey completed = current distance divided by total distance.
+                float fracJourney = distCovered / journeyLength;
+
+                transform.position = Vector3.Lerp(_start, Target, fracJourney);
+                yield return new WaitForFixedUpdate();
+
             }
 
-            // Distance moved = time * speed.
-            float distCovered = (Time.time - startTime) * speed;
-
-            // Fraction of journey completed = current distance divided by total distance.
-            float fracJourney = distCovered / journeyLength;
-
-            // Set our position as a fraction of the distance between the markers.
-            transform.position = Vector3.Lerp(_start, Target, fracJourney);
-
-            if (transform.position == Target)
-            {
-                LerpCompleted?.Invoke();
-                start = false;
-            }
+            LerpCompleted?.Invoke();
+            yield return null;
         }
+        
     }
 }
