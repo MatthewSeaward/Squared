@@ -25,6 +25,20 @@ public class ObjectPool
         Pool.Clear();
     }
 
+    public static void PreLoad(GameObject objectToSpawn, int count)
+    {
+        PreLoad(objectToSpawn.name, objectToSpawn, count);
+    }
+
+    public static void PreLoad(string key, GameObject objectToSpawn, int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            var obj = Instantiate(key, objectToSpawn, Vector3.zero, new Quaternion(0, 0, 0, 0));
+            obj.SetActive(false);
+        }
+    }
+
     public static GameObject Instantiate(GameObject objectToSpawn, Vector3 position)
     {
        return Instantiate(objectToSpawn, position, new Quaternion(0, 0, 0, 0));

@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
     public class LightningBoltProducer : MonoBehaviour
     {
-        [SerializeField]
-        private GameObject LightningBolt;
-
         private Dictionary<ISquarePiece, GameObject> currentBolts = new Dictionary<ISquarePiece, GameObject>();
 
         public static LightningBoltProducer Instance;
@@ -27,7 +25,7 @@ namespace Assets.Scripts
             }
             else
             {
-                bolt = ObjectPool.Instantiate(LightningBolt, new Vector3(0, 0, 0));
+                bolt = ObjectPool.Instantiate(GameResources.GameObjects["LightningBolt"], new Vector3(0, 0, 0));
                 currentBolts.Add(piece, bolt);
             }
 

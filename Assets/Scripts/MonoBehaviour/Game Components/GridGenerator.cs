@@ -5,10 +5,7 @@ using UnityEngine;
 public class GridGenerator : MonoBehaviour
 {
     IGridGenerator gridGenerator = new BasicGridGenerator();
-
-    [SerializeField]
-    GameObject EmptyCell;
-
+    
     [SerializeField]
     Vector2 Startx;
 
@@ -17,7 +14,6 @@ public class GridGenerator : MonoBehaviour
 
     public void Start()
     {
-        (gridGenerator as BasicGridGenerator).GridCell = EmptyCell;
         gridGenerator.GenerateTiles(Startx, TileSpacing);
     }
 

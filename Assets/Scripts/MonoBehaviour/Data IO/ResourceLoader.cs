@@ -26,6 +26,12 @@ namespace Assets.Scripts
             {
                 GameResources.ParticleEffects.Add(item.name, item);
             }
+
+            GameResources.GameObjects.Clear();
+            foreach (var item in Resources.LoadAll<GameObject>("Game Objects"))
+            {
+                GameResources.GameObjects.Add(item.name, item);
+            }
         }
     }
 }

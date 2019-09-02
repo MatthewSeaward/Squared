@@ -12,8 +12,6 @@ using Assets;
 public class PieceFactory : MonoBehaviour
 {
     public PieceColour[] Sprites;
-    public GameObject prefab;
-    public GameObject layered;
 
     public static PieceFactory Instance { private set; get; }
 
@@ -26,7 +24,7 @@ public class PieceFactory : MonoBehaviour
     {
         string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
 
-       var piece = ObjectPool.Instantiate(prefab, Vector3.zero);
+       var piece = ObjectPool.Instantiate(GameResources.GameObjects["Piece"], Vector3.zero);
 
         var squarePiece = piece.GetComponent<SquarePiece>();
                
@@ -145,7 +143,7 @@ public class PieceFactory : MonoBehaviour
     {
         if (layer != null)
         {
-            var l = ObjectPool.Instantiate(layered, Vector3.zero);
+            var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
             l.GetComponent<SpriteRenderer>().sprite = layer.GetSprite();
             l.transform.parent = piece.transform;
         }
@@ -163,13 +161,11 @@ public class PieceFactory : MonoBehaviour
         }
     }
 
-  
-
     public Sprite CreateRandomSprite()
     {
         var permittedValues = LevelManager.Instance.SelectedLevel.colours;
 
-        Colour selectedColour = permittedValues[UnityEngine.Random.Range(0, permittedValues.Length)];
+        Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Length)];
 
         return Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite;
     }

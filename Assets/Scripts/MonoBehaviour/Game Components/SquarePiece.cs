@@ -92,6 +92,12 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     void Update()
     {
+
+        if (MenuProvider.Instance.OnDisplay)
+        {
+            return;
+        }
+
         DestroyPieceHandler?.Update();
         PieceBehaviour?.Update(this, Time.deltaTime);
     }

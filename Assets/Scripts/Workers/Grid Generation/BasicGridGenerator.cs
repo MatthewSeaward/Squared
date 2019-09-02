@@ -1,5 +1,5 @@
 ﻿using Assets;
-using Assets.Scripts;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using GridGeneration.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,16 +12,13 @@ namespace GridGeneration
     {
         public static event GridGenerated GridGenerated;
 
-        public GameObject GridCell;
+        [SerializeField]
+        private Transform GridParent;
        
         public void GenerateTiles(Vector2 Start, float tileSpacing)
         {
             LevelManager.Instance.SelectedLevel = LevelManager.Instance.GetNextLevel();
-
-            var parent = GameObject.FindObjectOfType<PieceSelectionManager>();
-            
-            var pieces = new List<ISquarePiece>();
-            
+                       
             string[] pattern = LevelManager.Instance.SelectedLevel.Pattern;
 
             int rows = pattern.Length;
@@ -29,6 +26,7 @@ namespace GridGeneration
 
             var YPositions = new float[rows];
             var XPositions = new float[columns];
+            var pieces = new List<ISquarePiece>(rows * columns);
 
             for (int x = 0; x < columns; x++)
             {
@@ -46,10 +44,10 @@ namespace GridGeneration
                     float yPos = Start.y - (y * tileSpacing);
 
                     var piece = GenerateTile(pieceKey, xPos, yPos, x, y, true);
-                    var cell = ObjectPool.Instantiate(GridCell, new Vector3(xPos, yPos, 0));
+                    var cell = ObjectPool.Instantiate(GameResources.GameObjects["Piece Slot"], new Vector3(xPos, yPos, 0));
 
-                    piece.transform.parent = parent.transform;
-                    cell.transform.parent = parent.transform;
+                    piece.transform.parent = GridParent;
+                    cell.transform.parent = GridParent;
 
                     pieces.Add(piece.GetComponent<SquarePiece>());
                     YPositions[y] = yPos;
@@ -64,7 +62,7 @@ namespace GridGeneration
         public GameObject GenerateTile(char pieceKey, float xPos, float yPos, int x, int y, bool initialSetup = false)
         {
             var piece = PieceFactory.Instance.CreateRandomSquarePiece(pieceKey, initialSetup);                
-            piece.transform.position = new Vector3(xPos, yPos, 0);
+            piece.transform.position = new Vector3(xPos, yPos);
 
             var square = piece.GetComponent<SquarePiece>();
             square.Position = new Vector2Int(x, y);
