@@ -118,6 +118,9 @@ public class ScoreKeeper : MonoBehaviour
         {
             SaveProgress(GameResult.ReachedTarget);
 
+            int star = LevelManager.Instance.SelectedLevel.LevelProgress != null ? LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved : 0;
+            LevelManager.Instance.RegisterLevelCompleted(star, _currentScore);
+
             MenuProvider.Instance.ShowPopup("Victory", $"You scored {_currentScore} out of {Target}!",
                    new ButtonArgs()
                    {
@@ -130,10 +133,7 @@ public class ScoreKeeper : MonoBehaviour
                        Text = "Retry",
                        Action = () => SceneManager.LoadScene(Game)
                    }
-                   );
-
-            int star = LevelManager.Instance.SelectedLevel.LevelProgress != null ? LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved : 0;
-            LevelManager.Instance.RegisterLevelCompleted(star, _currentScore);
+          );
         }
         else
         {
