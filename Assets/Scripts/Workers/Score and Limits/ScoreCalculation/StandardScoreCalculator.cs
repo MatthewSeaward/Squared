@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -12,7 +13,9 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 totalScore = piece.Scoring.ScorePiece(totalScore);
             }
 
-            return totalScore;
+            var bonus = Constants.BonusPoints.Points.OrderByDescending(x => x.Item1).FirstOrDefault(x => pieces.Count >= x.Item1);
+
+            return totalScore + bonus.Item2;
         }
     }
 }

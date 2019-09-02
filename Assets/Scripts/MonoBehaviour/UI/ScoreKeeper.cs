@@ -21,7 +21,7 @@ public class ScoreKeeper : MonoBehaviour
 {
     public static event PointsAwarded PointsAwarded;
     public static event GameCompleted GameCompleted;
-
+       
     public Text Score;
     public Text Time;
 
