@@ -9,13 +9,11 @@ namespace Assets.Scripts
         {
             ObjectPool.PreLoad(GameResources.GameObjects["Piece"], 50);
             ObjectPool.PreLoad(GameResources.GameObjects["PieceLayer"], 50);
-            ObjectPool.PreLoad(GameResources.GameObjects["PieceSlot"], 50);
-            ObjectPool.PreLoad(GameResources.GameObjects["Landing"], 50);
-            ObjectPool.PreLoad(GameResources.GameObjects["PieceDestroy"], 50);
-
+            ObjectPool.PreLoad(GameResources.GameObjects["Piece Slot"], 50);
             ObjectPool.PreLoad(GameResources.GameObjects["LightningBolt"], 10);
 
-
+            ObjectPool.PreLoad(GameResources.ParticleEffects["Landing"], 50);
+            ObjectPool.PreLoad(GameResources.ParticleEffects["Piece Destroy"], 50);
         }
 
     }
