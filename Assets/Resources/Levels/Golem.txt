@@ -243,10 +243,10 @@
 			[
 				"--------",
 				"--------",
-				"xxxxxxxx",
-				"xx--xxxx",
+				"xxxxxhxx",
+				"xh--xxxx",
 				"xx---xxx",
-				"hr---lxh",
+				"hl---lxh",
 				"xx---xxx",
 				"xx--xxxx",
 				"xxxxxxxx",
