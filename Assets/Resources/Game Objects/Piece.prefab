@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7003732642527330867}
   - component: {fileID: 7003732642527330876}
-  - component: {fileID: 7003732642527330865}
   - component: {fileID: 7003732642527330866}
   - component: {fileID: 7003732642527330864}
   - component: {fileID: 7003732642527330877}
   - component: {fileID: -703752806462069069}
   m_Layer: 0
-  m_Name: Eye
+  m_Name: Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,23 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &7003732642527330865
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7003732642527330878}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: f5f7580f1807e8b4981c06edecda8c02, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 01a04b6d05820a147a887c979e86da95, type: 2}
-  - {fileID: 7400000, guid: f5f7580f1807e8b4981c06edecda8c02, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &7003732642527330866
 Animator:
   serializedVersion: 3

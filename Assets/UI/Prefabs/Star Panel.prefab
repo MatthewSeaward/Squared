@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1854215662083286617}
   - component: {fileID: 1285869998476597582}
   - component: {fileID: 2595264307634635668}
-  - component: {fileID: 7008878612893086073}
   m_Layer: 5
   m_Name: Star 2
   m_TagString: Untagged
@@ -96,18 +95,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!122 &7008878612893086073
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636164062504559399}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4279420923
-  m_Size: 5
 --- !u!1 &3561160344432204404
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +182,6 @@ GameObject:
   - component: {fileID: 3645526955556454429}
   - component: {fileID: 3645526955556454428}
   - component: {fileID: 6148000467072579660}
-  - component: {fileID: 3529960860273722658}
-  - component: {fileID: 9129158886029656447}
   m_Layer: 5
   m_Name: Star 1
   m_TagString: Untagged
@@ -280,34 +265,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!122 &3529960860273722658
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645526955556454426}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4279420923
-  m_Size: 5
---- !u!111 &9129158886029656447
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645526955556454426}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 269ea4e4f46c03b4794b8552905acec0, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e89e2772bdbd3424b9013780e4cfc1b8, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &3645526956407042010
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +343,6 @@ GameObject:
   - component: {fileID: 2608633123521017696}
   - component: {fileID: 7225852167532252398}
   - component: {fileID: 2622606789563027361}
-  - component: {fileID: 172468523796893675}
   m_Layer: 5
   m_Name: Star 3
   m_TagString: Untagged
@@ -470,18 +426,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!122 &172468523796893675
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4627698096857596676}
-  m_Enabled: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4279420923
-  m_Size: 5
 --- !u!1 &8396418845942248482
 GameObject:
   m_ObjectHideFlags: 0

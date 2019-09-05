@@ -41,7 +41,7 @@ namespace Assets.Scripts
 
             var gameObject = ObjectPool.Instantiate(GameResources.GameObjects["Animated Text"], position);
 
-            gameObject.GetComponent<RectTransform>().parent = transform;
+            gameObject.GetComponent<RectTransform>().SetParent(transform);
             gameObject.transform.localScale = new Vector3(1, 1, 1);
 
             gameObject.GetComponent<AnimatedText>().Show($"+{points}", colour);
