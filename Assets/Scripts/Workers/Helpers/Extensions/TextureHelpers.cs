@@ -6,7 +6,14 @@ namespace Assets.Scripts.Workers.Helpers.Extensions
     {
         public static Color GetTextureColour(this Texture2D texture)
         {
-            return texture.GetPixel(40, texture.height / 2);
+            if (!texture.isReadable)
+            {
+                return Color.white;
+            }
+            else
+            {
+                return texture.GetPixel(40, texture.height / 2);
+            }
         }
     }
 }

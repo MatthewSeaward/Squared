@@ -12,7 +12,7 @@ namespace Assets.Scripts.Workers.Piece_Effects
 
         public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
         {
-            if (!ConnectionHelper.AdjancentToLastPiece(nextPiece, nextPiece))
+            if (!ConnectionHelper.AdjancentToLastPiece(selectedPiece, nextPiece))
             {
                 return false;
             }

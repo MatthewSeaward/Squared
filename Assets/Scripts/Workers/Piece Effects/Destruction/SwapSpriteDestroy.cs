@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 
@@ -26,7 +27,8 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public void OnDestroy()
         {
-            GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position);
+            var colour = _squarePiece.Sprite.texture.GetTextureColour();
+            GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position, colour);
 
             _squarePiece.Sprite = _nextPiece;
             _squarePiece.Deselected();
