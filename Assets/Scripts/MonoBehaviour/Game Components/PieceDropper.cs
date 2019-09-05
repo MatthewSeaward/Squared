@@ -11,8 +11,10 @@ namespace Assets.Scripts
     {
         public static BoardRefreshed BoardRefreshed;
         public static PieceDropper Instance;
-
+        private static int spawnedInRow = 0;
+        private static bool checkInProgress = false;
         private GridGenerator _gridGenerator;
+        private static int QueuedChecks;
     
         private GridGenerator GridGenerator
         {
@@ -33,14 +35,23 @@ namespace Assets.Scripts
 
         public void CheckForEmptySlots()
         {
-            StartCoroutine(CheckForEmptySlots_Async());
+            if (!checkInProgress)
+            {
+                StartCoroutine(CheckForEmptySlots_Async());
+            }
+            else
+            {
+                QueuedChecks++;
+            }
         }
 
         private IEnumerator CheckForEmptySlots_Async()
-        {      
+        {
+            checkInProgress = true;
             for (int column = 0; column < PieceController.NumberOfColumns; column++)
             {
                 int row = 0;
+                spawnedInRow = 0;
                 while (PieceController.HasEmptySlotInColumn(column, ref row))
                 {
                     for (int i = row; i < PieceController.NumberOfRows; i++)
@@ -59,7 +70,7 @@ namespace Assets.Scripts
                     float worldPosY = PieceController.YPositions[row];
                     float worldPosX = PieceController.XPositions[column];
                     
-                    var piece = GridGenerator.GenerateTile(worldPosX, 5,column, column);
+                    var piece = GridGenerator.GenerateTile(worldPosX, 5 + spawnedInRow++,column, column);
                     SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
 
                     if (!PieceController.Pieces.Contains(squarePiece))
@@ -76,7 +87,15 @@ namespace Assets.Scripts
                     yield return new WaitForFixedUpdate();
                 }
             }
+
             BoardRefreshed?.Invoke();
+            checkInProgress = false;
+
+            if (QueuedChecks > 0)
+            {
+                QueuedChecks--;
+                StartCoroutine(CheckForEmptySlots_Async());
+            }
         }
     }
 }
