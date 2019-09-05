@@ -3,7 +3,7 @@
 	[
 	{
 			"LevelNumber" : 1,
-			"Target": 120,
+			"Target": 160,
 			"colours":[0,1,6,8],
 			"StarsToUnlock": 5,
 			"Pattern":
@@ -27,7 +27,7 @@
 		},
 		{
 			"LevelNumber": 2,
-			"Target": 30,
+			"Target": 170,
 			"StarsToUnlock": 10,
 			"SpecialDropPieces": ["2"],
 			"colours":[1,6,8],
@@ -51,7 +51,7 @@
 		},
 		{
 			"LevelNumber": 3,
-			"Target": 20,
+			"Target": 65,
 			"colours":[0,1,6,8],
 			"SpecialDropPieces": ["2"],
 			"StarsToUnlock": 20,

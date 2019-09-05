@@ -26,7 +26,7 @@
 		},
 		{
 			"LevelNumber": 2,
-			"Target": 20,
+			"Target": 60,
 			"NumberOfTurns": 8,		
 			"StarsToUnlock": 1,
 			"colours":[0,5,6,7],
@@ -50,7 +50,7 @@
 		},
 		{
 			"LevelNumber": 3,
-			"Target": 100,
+			"Target": 200,
 			"colours":[0,5,6,7],
 			"StarsToUnlock": 1,
 			"Pattern":
@@ -73,7 +73,7 @@
 		},
 		{
 			"LevelNumber": 4,
-			"Target": 50,
+			"Target": 90,
 			"colours":[0,5,6,7],
 			"StarsToUnlock": 3,
 			"Pattern":
@@ -96,7 +96,7 @@
 		},
 		{
 			"LevelNumber": 5,
-			"Target": 30,
+			"Target": 35,
 			"colours":[0,5,6,7,2],
 			"StarsToUnlock": 6,
 			"Pattern":
@@ -119,7 +119,7 @@
 		},		
 		{
 			"LevelNumber": 6,
-			"Target": 40,
+			"Target": 75,
 			"colours":[2,5,6,7],
 			"StarsToUnlock": 9,
 			"Pattern":
@@ -142,7 +142,7 @@
 		},
 		{
 			"LevelNumber": 7,
-			"Target": 25,
+			"Target": 110,
 			"colours":[0,6,2],
 			"StarsToUnlock": 11,
 			"Pattern":
@@ -165,7 +165,7 @@
 		},
 		{
 			"LevelNumber": 8,
-			"Target": 40,
+			"Target": 120,
 			"colours":[0,5,2,7],
 			"StarsToUnlock": 14,
 			"Pattern":
@@ -188,7 +188,7 @@
 		},
 		{
 			"LevelNumber": 9,
-			"Target": 40,
+			"Target": 55,
 			"colours":[0,5,2,7],
 			"StarsToUnlock": 16,
 			"Pattern":
@@ -211,7 +211,7 @@
 		},
 		{
 			"LevelNumber": 10,
-			"Target": 100,
+			"Target": 160,
 			"colours":[0,5,6,2],
 			"SpecialDropPieces": ["h"],
 			"StarsToUnlock": 18,
@@ -259,7 +259,7 @@
 		},
 		{
 			"LevelNumber": 12,
-			"Target": 60,
+			"Target": 180,
 			"colours":[0,5,6,2],
 			"SpecialDropPieces": ["h"],
 			"StarsToUnlock": 22,
