@@ -36,7 +36,7 @@ namespace Assets.Scripts
 
                 AddEventListener(button, i);
                 button.GetComponentInChildren<Text>().text = (i + 1).ToString();
-                button.transform.parent = ScrollContent;
+                button.transform.parent.SetParent(ScrollContent);
                 button.transform.localScale = new Vector3(1, 1, 1);
 
 
