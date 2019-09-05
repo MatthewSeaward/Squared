@@ -19,12 +19,11 @@ namespace Assets.Scripts.Workers.IO.Data_Entities
             var obj = ParticleEffects[name];           
 
             var effect = ObjectPool.GetGameObject(obj);
-
+            effect.transform.position = pos;
             effect.SetActive(true);
+
             ParticleSystem.MainModule settings = effect.GetComponent<ParticleSystem>().main;
             settings.startColor = new ParticleSystem.MinMaxGradient(colour);
-
-            GameObject.Instantiate(effect, pos, new Quaternion(0, 0, 0, 0));
         }
     }
 }
