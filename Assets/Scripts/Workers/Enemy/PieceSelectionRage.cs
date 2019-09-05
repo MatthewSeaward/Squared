@@ -79,7 +79,7 @@ namespace Assets.Scripts.Workers.Enemy
 
             if (piece.DestroyPieceHandler is DestroyTriggerFall)
             {
-                if ((piece.DestroyPieceHandler as DestroyTriggerFall).TobeDestroyed)
+                if ((piece.DestroyPieceHandler as DestroyTriggerFall).ToBeDestroyed)
                 {
                     return false;
                 }

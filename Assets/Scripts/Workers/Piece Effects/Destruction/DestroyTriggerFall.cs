@@ -10,7 +10,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
     {
         protected SquarePiece _squarePiece;
 
-        public bool TobeDestroyed { get; private set; }
+        public bool ToBeDestroyed { get; private set; }
 
         public DestroyTriggerFall (SquarePiece squarePiece)
         {
@@ -35,7 +35,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             foreach (var p in sorted)
             {
                 var dest = p.DestroyPieceHandler as DestroyTriggerFall;
-                if (dest == null || dest.TobeDestroyed)
+                if (dest == null || dest.ToBeDestroyed)
                 {
                     continue;
                 }
@@ -68,12 +68,12 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public virtual void Reset()
         {
-            TobeDestroyed = false;
+            ToBeDestroyed = false;
         }
 
         public void NotifyOfDestroy()
         {
-            TobeDestroyed = true;
+            ToBeDestroyed = true;
 
             var colour = _squarePiece.Sprite.texture.GetTextureColour();
             GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position, colour);

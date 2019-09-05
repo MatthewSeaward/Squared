@@ -46,6 +46,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
                 return false;
             }
 
+            if (pieceBelow.DestroyPieceHandler is DestroyTriggerFall && (pieceBelow.DestroyPieceHandler as DestroyTriggerFall).ToBeDestroyed)
+            {
+                return false;
+            }
+
             return true; 
         }
 
