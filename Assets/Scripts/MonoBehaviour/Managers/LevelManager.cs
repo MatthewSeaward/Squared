@@ -49,7 +49,14 @@ namespace Assets
 
         internal bool LevelUnlocked(int i)
         {
-            return CurrentStars >= SelectedChapterLevels[i].StarsToUnlock;
+            if (i >= SelectedChapterLevels.Length)
+            {
+                return false;
+            }
+            else
+            {
+                return CurrentStars >= SelectedChapterLevels[i].StarsToUnlock;
+            }
         }
 
         public int CurrentLevel
