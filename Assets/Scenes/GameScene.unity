@@ -844,7 +844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010699719262, guid: 3d0b55408c4c74c46b31fd1be5033834, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000013473707048, guid: 3d0b55408c4c74c46b31fd1be5033834, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2731,7 +2731,7 @@ PrefabInstance:
     - target: {fileID: 212000014021183074, guid: 35cd64e322e7f4c41a8e1be77e039c51,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3000
+      value: 3005
       objectReference: {fileID: 0}
     - target: {fileID: 212000010833809188, guid: 35cd64e322e7f4c41a8e1be77e039c51,
         type: 3}
@@ -5723,8 +5723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44206c672f824c14891fb25c0b6129aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextPrefab: {fileID: 8779984425935061366, guid: 84a9786fe48243c42a1c89183a1fa61d,
-    type: 3}
 --- !u!1 &1623239199
 GameObject:
   m_ObjectHideFlags: 0
