@@ -86,8 +86,10 @@
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleManager.cs" />
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleTmp.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\DataLoader.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\PreLoader.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\ResetData.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\ResourceLoader.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\Authentication.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\GridGenerator.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\Interfaces\ISquarePiece.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\SquarePiece.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\DisableWhenDone.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\Lerp.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\LightningBoltProducer.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\AvailableMoveChecker.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\ChapterUIManager.cs" />
@@ -122,8 +125,10 @@
     <Compile Include="Assets\Scripts\Scriptables\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Workers\Constants\Constants.cs" />
     <Compile Include="Assets\Scripts\Workers\Data Managers\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Workers\Data Managers\UserManager.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\DestroyRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Interfaces\IEnemyRage.cs" />
+    <Compile Include="Assets\Scripts\Workers\Enemy\PieceSelectionRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\SwapRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Factorys\LevelStarFactory.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\BasicGridGenerator.cs" />

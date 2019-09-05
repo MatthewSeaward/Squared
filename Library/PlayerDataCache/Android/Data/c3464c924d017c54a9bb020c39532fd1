@@ -26,7 +26,7 @@
 			]
 		},		
 		{
-			"LevelNumber" : 8,
+			"LevelNumber" : 7,
 			"Star1": 
 			[
 				"Pieces that are\r\nchained will not move"
