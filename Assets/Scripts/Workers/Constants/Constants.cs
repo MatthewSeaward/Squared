@@ -24,5 +24,6 @@ namespace Assets.Scripts.Constants
     public static class GameSettings
     {
         public const int ChanceToUseBannedPiece = 60;
+        public const int ChanceToUseSpecialPiece = 10;
     }
 }

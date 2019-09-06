@@ -10,6 +10,8 @@ using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using Assets;
 using Assets.Scripts.Constants;
 using System.Collections.Generic;
+using Assets.Scripts.Workers.Helpers.Extensions;
+using System;
 
 public class PieceFactory : MonoBehaviour
 {
@@ -17,12 +19,24 @@ public class PieceFactory : MonoBehaviour
 
     public static PieceFactory Instance { private set; get; }
 
+    public enum PieceTypes 
+    {
+        Empty = '-',
+        Normal = 'x',
+        Rainbow = 'r',
+        Locked = 'l',
+        Swapping = 's',
+        Heavy = 'h',
+        DoublePoints = '2',
+        TriplePoints = '3'        
+     }
+
     private void Awake()
     {
         Instance = this;
     }
     
-    public GameObject CreateRandomSquarePiece(char pieceKey, bool initlalSetup)
+    public GameObject CreateRandomSquarePiece(PieceTypes type, bool initlalSetup)
     {
         string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
 
@@ -32,67 +46,27 @@ public class PieceFactory : MonoBehaviour
                
         if (!initlalSetup)
         {
-            if(specialDropPieces != null && specialDropPieces.Length > 0 && Random.Range(0, 100) <= 10)
+            if(specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
             {
-                pieceKey = char.Parse(specialDropPieces[Random.Range(0, specialDropPieces.Length)]);
+                Enum.TryParse(specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)], out type);
             }            
         }
 
-        BuildSprite(pieceKey, piece);
-        BuildSwapEffects(pieceKey, squarePiece, initlalSetup);
-        BuildConnection(pieceKey, squarePiece);
-        BuildDestroyEffect(pieceKey, piece, squarePiece);
-        BuildBehaviours(pieceKey, squarePiece);
-        BuildScoring(pieceKey, squarePiece);
+        BuildSprite(type, piece);
+        BuildSwapEffects(type, squarePiece, initlalSetup);
+        BuildConnection(type, squarePiece);
+        BuildDestroyEffect(type, piece, squarePiece);
+        BuildBehaviours(type, squarePiece);
+        BuildScoring(type, squarePiece);
         BuildLayers(piece, squarePiece);
 
         return piece;
     }
 
-    private void BuildScoring(char pieceKey, SquarePiece squarePiece)
-    {
-        if (pieceKey == '2')
-        {
-            squarePiece.Scoring = new MultipliedScore(2);
-        }
-        else if (pieceKey == '3')
-        {
-            squarePiece.Scoring = new MultipliedScore(3);
-        }
-        else
-        {
-            squarePiece.Scoring = new SingleScore();
-        }
-    }
-
-    private void BuildBehaviours(char pieceKey, SquarePiece squarePiece)
-    {
-        if (pieceKey == 's')
-        {
-            squarePiece.PieceBehaviour = new SwapSpriteBehaviour();
-        }
-    }
-
-    private void BuildDestroyEffect(char pieceKey, GameObject piece, SquarePiece squarePiece)
-    {
-        if (squarePiece.SwapEffect is LockedSwap)
-        {
-            squarePiece.DestroyPieceHandler = new SwapSpriteDestroy(squarePiece.SwapEffect, squarePiece.InnerSprite, squarePiece, transform.localScale);
-        }
-        else if (pieceKey == 'h')
-        {
-            squarePiece.DestroyPieceHandler = new HeavyDestroyTriggerFall(squarePiece);
-        }
-        else
-        {
-            squarePiece.DestroyPieceHandler = new DestroyTriggerFall(squarePiece);
-        }
-    }
-
-    private void BuildSprite(char pieceKey, GameObject piece)
+    private void BuildSprite(PieceTypes type, GameObject piece)
     {
         Sprite sprite; 
-        if (pieceKey == 'r')
+        if (type == PieceTypes.Rainbow)
         {
             sprite = GameResources.Sprites["Rainbow"];
         }
@@ -104,9 +78,21 @@ public class PieceFactory : MonoBehaviour
 
     }
 
-    private void BuildConnection(char pieceKey, SquarePiece squarePiece)
+    private void BuildSwapEffects(PieceTypes type, SquarePiece squarePiece, bool initialSetup)
     {
-        if (pieceKey == 'r')
+        if (initialSetup && type.EqualsAny(PieceTypes.Locked, PieceTypes.Rainbow, PieceTypes.Swapping))
+        {
+            squarePiece.SwapEffect = new LockedSwap();
+        }
+        else
+        {
+            squarePiece.SwapEffect = new SwapToNext();
+        }
+    }
+
+    private void BuildConnection(PieceTypes type, SquarePiece squarePiece)
+    {
+        if (type == PieceTypes.Rainbow)
         {
             squarePiece.PieceConnection = new AnyAdjancentConnection();
         }
@@ -116,6 +102,46 @@ public class PieceFactory : MonoBehaviour
         }
     }
 
+    private void BuildDestroyEffect(PieceTypes type, GameObject piece, SquarePiece squarePiece)
+    {
+        if (squarePiece.SwapEffect is LockedSwap)
+        {
+            squarePiece.DestroyPieceHandler = new SwapSpriteDestroy(squarePiece.SwapEffect, squarePiece.InnerSprite, squarePiece, transform.localScale);
+        }
+        else if (type == PieceTypes.Heavy)
+        {
+            squarePiece.DestroyPieceHandler = new HeavyDestroyTriggerFall(squarePiece);
+        }
+        else
+        {
+            squarePiece.DestroyPieceHandler = new DestroyTriggerFall(squarePiece);
+        }
+    }
+
+    private void BuildBehaviours(PieceTypes type, SquarePiece squarePiece)
+    {
+        if (type == PieceTypes.Swapping)
+        {
+            squarePiece.PieceBehaviour = new SwapSpriteBehaviour();
+        }
+    }
+ 
+    private void BuildScoring(PieceTypes type, SquarePiece squarePiece)
+    {
+        if (type == PieceTypes.DoublePoints)
+        {
+            squarePiece.Scoring = new MultipliedScore(2);
+        }
+        else if (type == PieceTypes.TriplePoints)
+        {
+            squarePiece.Scoring = new MultipliedScore(3);
+        }
+        else
+        {
+            squarePiece.Scoring = new SingleScore();
+        }
+    }
+     
     private void BuildLayers(GameObject piece, SquarePiece squarePiece)
     {
         for (int i = 0; i < squarePiece.transform.childCount; i++)
@@ -151,24 +177,12 @@ public class PieceFactory : MonoBehaviour
         }
     }
 
-    private static void BuildSwapEffects(char pieceKey, SquarePiece squarePiece, bool initialSetup)
-    {
-        if (initialSetup && (pieceKey == 'l' || pieceKey == 'r' || pieceKey == 's'))
-        {
-            squarePiece.SwapEffect = new LockedSwap();
-        }
-        else
-        {
-            squarePiece.SwapEffect = new SwapToNext();
-        }
-    }
-
     public Sprite CreateRandomSprite()
     {
         var permittedValues = new List<Colour>();
         permittedValues.AddRange((Colour[]) LevelManager.Instance.SelectedLevel.colours.Clone());
         
-        if (Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
+        if (UnityEngine.Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
         {
             var bannedSprite = LevelManager.Instance.SelectedLevel.BannedPiece();
             if (bannedSprite >= 0)
@@ -177,7 +191,7 @@ public class PieceFactory : MonoBehaviour
              }
         }
 
-        Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Count)];
+        Colour selectedColour = permittedValues[UnityEngine.Random.Range(0, permittedValues.Count)];
         
         return Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite;
     }

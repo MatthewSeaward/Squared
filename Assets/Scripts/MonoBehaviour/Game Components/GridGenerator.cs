@@ -19,7 +19,7 @@ public class GridGenerator : MonoBehaviour
 
     public GameObject GenerateTile(float xPos, float yPos, int x, int y)
     {
-        return gridGenerator.GenerateTile('x', xPos, yPos, x, y, false);
+        return gridGenerator.GenerateTile(PieceFactory.PieceTypes.Normal, xPos, yPos, x, y, false);
     }
 
 }

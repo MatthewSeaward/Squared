@@ -3,6 +3,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using GridGeneration.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
+using static PieceFactory;
 
 namespace GridGeneration
 {
@@ -33,9 +34,9 @@ namespace GridGeneration
                 for (int y = 0; y < rows; y++)
                 {
                     string row = pattern[y];
-                    char pieceKey = row[x];
+                    PieceTypes type = (PieceTypes) row[x];
 
-                    if (pieceKey == '-')
+                    if (type == PieceTypes.Empty)
                     {
                         continue;
                     }                    
@@ -43,7 +44,7 @@ namespace GridGeneration
                     float xPos = Start.x + (x * tileSpacing);
                     float yPos = Start.y - (y * tileSpacing);
 
-                    var piece = GenerateTile(pieceKey, xPos, yPos, x, y, true);
+                    var piece = GenerateTile(type, xPos, yPos, x, y, true);
                     var cell = ObjectPool.Instantiate(GameResources.GameObjects["Piece Slot"], new Vector3(xPos, yPos, 0));
 
                     piece.transform.parent = GridParent;
@@ -59,9 +60,9 @@ namespace GridGeneration
             GridGenerated?.Invoke();
         }
 
-        public GameObject GenerateTile(char pieceKey, float xPos, float yPos, int x, int y, bool initialSetup = false)
+        public GameObject GenerateTile(PieceTypes type, float xPos, float yPos, int x, int y, bool initialSetup = false)
         {
-            var piece = PieceFactory.Instance.CreateRandomSquarePiece(pieceKey, initialSetup);                
+            var piece = PieceFactory.Instance.CreateRandomSquarePiece(type, initialSetup);                
             piece.transform.position = new Vector3(xPos, yPos);
 
             var square = piece.GetComponent<SquarePiece>();
