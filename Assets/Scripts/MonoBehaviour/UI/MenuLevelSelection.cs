@@ -1,7 +1,4 @@
-﻿using System;
-using Assets.Scripts.Constants;
-using Assets.Scripts.Workers.IO;
-using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Constants;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -36,7 +33,7 @@ namespace Assets.Scripts
 
                 AddEventListener(button, i);
                 button.GetComponentInChildren<Text>().text = (i + 1).ToString();
-                button.transform.parent.SetParent(ScrollContent);
+                button.transform.SetParent(ScrollContent);
                 button.transform.localScale = new Vector3(1, 1, 1);
 
 
