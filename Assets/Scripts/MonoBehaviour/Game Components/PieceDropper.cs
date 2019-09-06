@@ -61,6 +61,10 @@ namespace Assets.Scripts
                         {
                             row++;
                         }
+                        else if (PieceController.IsEmptySlot(column, row + 1))
+                        {
+                            row++;
+                        }
                         else
                         {
                             break;
@@ -69,22 +73,22 @@ namespace Assets.Scripts
 
                     float worldPosY = PieceController.YPositions[row];
                     float worldPosX = PieceController.XPositions[column];
-                    
-                    var piece = GridGenerator.GenerateTile(worldPosX, 5 + spawnedInRow++,column, column);
+
+                    var piece = GridGenerator.GenerateTile(worldPosX, 5, column, row);
                     SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
 
                     if (!PieceController.Pieces.Contains(squarePiece))
                     {
                         PieceController.Pieces.Add(squarePiece);
                     }
-                    var fallC = squarePiece.DestroyPieceHandler as DestroyTriggerFall;                    
+                    var fallC = squarePiece.DestroyPieceHandler as DestroyTriggerFall;
 
                     Lerp lerp = squarePiece.GetComponent<Lerp>();
                     lerp.Setup(new Vector3(worldPosX, worldPosY));
 
                     squarePiece.Position = new Vector2Int(column, row);
 
-                    yield return new WaitForFixedUpdate();
+                    yield return new WaitForSeconds(0.1f);
                 }
             }
 
