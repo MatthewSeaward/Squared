@@ -11,20 +11,20 @@ namespace Assets.Scripts
         public Vector3 Target = new Vector3 (0, float.MaxValue);
         private float journeyLength;
         private float startTime;
-        private float speed = 10f;
+        protected float speed = 10f;
         public bool LerpInProgress { get; private set; }
 
         public event LerpCompleted LerpCompleted;
 
         private bool AtTarget => Vector3.Distance(transform.localPosition, Target) < 0.01f;
 
-        public void Setup(Vector3 target)
+        public virtual void Setup(Vector3 target)
         {
             _start = transform.position;
             Target = target;
             journeyLength = Vector3.Distance(_start, Target);
             startTime = Time.time;
-
+       
             if (!AtTarget && !LerpInProgress)
             {
                 StartCoroutine(nameof(StartLerp));
@@ -48,9 +48,14 @@ namespace Assets.Scripts
 
             }
 
+            LerpComplete();
+            yield return null;
+        }
+
+        protected virtual void LerpComplete()
+        {
             LerpCompleted?.Invoke();
             LerpInProgress = false;
-            yield return null;
         }
         
     }

@@ -49,10 +49,10 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         {
            float worldPos = PieceController.YPositions[y];            
             
-            CheckForAbove();            
+            CheckForAbove();
 
-            Lerp lerp = _squarePiece.GetComponent<Lerp>();
-            if (lerp == null) lerp = _squarePiece.gameObject.AddComponent<Lerp>();
+            PieceFallLerp lerp = _squarePiece.GetComponent<PieceFallLerp>();
+            if (lerp == null) lerp = _squarePiece.gameObject.AddComponent<PieceFallLerp>();
             lerp.Setup(new Vector3(_squarePiece.transform.position.x, worldPos));
 
             _squarePiece.Position = new Vector2Int(_squarePiece.Position.x, y);
