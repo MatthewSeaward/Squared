@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
 
@@ -57,6 +58,18 @@ namespace DataEntities
             else
             {
                 return Star1Progress;
+            }
+        }
+
+        public int BannedPiece()
+        {
+            if (GetCurrentRestriction() is BannedSprite)
+            {
+                return (GetCurrentRestriction() as BannedSprite).SpriteValue;
+            }
+            else
+            {
+                return -1;
             }
         }
     }

@@ -7,7 +7,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     {
         private string Sprite;
         private bool failed = false;
-        private readonly int SpriteValue;
+        public int SpriteValue { get; private set; }
 
         public BannedSprite(int spriteValue)
         {

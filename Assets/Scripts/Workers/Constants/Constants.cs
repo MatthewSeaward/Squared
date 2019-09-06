@@ -20,4 +20,9 @@ namespace Assets.Scripts.Constants
            (12, 10)
         };
     }
+
+    public static class GameSettings
+    {
+        public const int ChanceToUseBannedPiece = 60;
+    }
 }

@@ -8,6 +8,8 @@ using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using Assets;
+using Assets.Scripts.Constants;
+using System.Collections.Generic;
 
 public class PieceFactory : MonoBehaviour
 {
@@ -163,10 +165,20 @@ public class PieceFactory : MonoBehaviour
 
     public Sprite CreateRandomSprite()
     {
-        var permittedValues = LevelManager.Instance.SelectedLevel.colours;
+        var permittedValues = new List<Colour>();
+        permittedValues.AddRange((Colour[]) LevelManager.Instance.SelectedLevel.colours.Clone());
+        
+        if (Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
+        {
+            var bannedSprite = LevelManager.Instance.SelectedLevel.BannedPiece();
+            if (bannedSprite >= 0)
+            {
+                permittedValues.Remove((Colour)bannedSprite);
+             }
+        }
 
-        Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Length)];
-
+        Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Count)];
+        
         return Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite;
     }
 }
