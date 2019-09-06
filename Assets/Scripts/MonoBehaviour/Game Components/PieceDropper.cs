@@ -88,7 +88,7 @@ namespace Assets.Scripts
 
                     squarePiece.Position = new Vector2Int(column, row);
 
-                    yield return new WaitForSeconds(0.1f);
+                    yield return new WaitForSeconds(0.08f);
                 }
             }
 
