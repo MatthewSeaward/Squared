@@ -72,6 +72,12 @@ namespace Assets.Scripts.Workers.Enemy
             {
                 return false;
             }
+
+            if (piece.gameObject.GetComponent<Lerp>() != null && piece.gameObject.GetComponent<Lerp>().LerpInProgress)
+            {
+                return false;
+            }
+
             if (piece.SwapEffect is LockedSwap)
             {
                 return false;

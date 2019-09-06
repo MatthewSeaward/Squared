@@ -12,7 +12,7 @@ namespace Assets.Scripts
         private float journeyLength;
         private float startTime;
         private float speed = 10f;
-        private bool _lerpInProgress;
+        public bool LerpInProgress { get; private set; }
 
         public event LerpCompleted LerpCompleted;
 
@@ -25,7 +25,7 @@ namespace Assets.Scripts
             journeyLength = Vector3.Distance(_start, Target);
             startTime = Time.time;
 
-            if (!AtTarget && !_lerpInProgress)
+            if (!AtTarget && !LerpInProgress)
             {
                 StartCoroutine(nameof(StartLerp));
             }
@@ -34,7 +34,7 @@ namespace Assets.Scripts
 
         private IEnumerator StartLerp()
         {
-            _lerpInProgress = true;
+            LerpInProgress = true;
             while (!AtTarget)
             {
                 // Distance moved = time * speed.
@@ -49,7 +49,7 @@ namespace Assets.Scripts
             }
 
             LerpCompleted?.Invoke();
-            _lerpInProgress = false;
+            LerpInProgress = false;
             yield return null;
         }
         
