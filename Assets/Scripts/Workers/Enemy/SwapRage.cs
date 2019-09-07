@@ -1,6 +1,4 @@
-﻿
-using Assets.Scripts.Workers.IO.Data_Entities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy
 {
@@ -13,8 +11,13 @@ namespace Assets.Scripts.Workers.Enemy
 
         protected override void InvokeRageAction(ISquarePiece piece)
         {
-            piece.Sprite = PieceFactory.Instance.CreateRandomSprite();
-            GameResources.PlayEffect("Piece Destroy", piece.transform.position);
+            Sprite newSprite = null;
+            do
+            {
+                newSprite = PieceFactory.Instance.CreateRandomSprite();
+            } while (newSprite == piece.Sprite);
+
+            piece.gameObject.GetComponent<PieceSwapSprite>().SwapSprite(newSprite);
         }
     }
 }
