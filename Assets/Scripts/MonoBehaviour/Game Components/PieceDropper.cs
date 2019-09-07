@@ -60,7 +60,7 @@ namespace Assets.Scripts
         private IEnumerator CheckForEmptySlotsInColumn(int column)
         {
             int row = 0;
-            spawnedInRow = 0;
+
             while (PieceController.HasEmptySlotInColumn(column, ref row))
             {
                 row = GetFirstEmptySlotInRow(column, row);
