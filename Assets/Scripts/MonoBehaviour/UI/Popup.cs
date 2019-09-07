@@ -1,8 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Events;
 using Assets.Scripts.UI.Helpers;
 using Assets.Scripts.Constants;
 
@@ -17,16 +15,6 @@ public class Popup : MonoBehaviour
     [SerializeField]
     private Button Button2;
 
- 
-    public void Show(string title, string body)
-    {
-        Show(title, body, null, null);
-    }
-
-    public void Show(string title, string body, ButtonArgs button1)
-    {
-        Show(title, body, button1, null);
-    }
 
     public void Show(string title, string body, ButtonArgs button1, ButtonArgs button2)
     {

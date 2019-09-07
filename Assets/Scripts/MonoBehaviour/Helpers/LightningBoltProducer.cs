@@ -13,12 +13,22 @@ namespace Assets.Scripts
         private void Awake()
         {
             Instance = this;
+            MenuProvider.MenuDisplayed += ClearBolts;
+        }
+
+        private void OnDestroy()
+        {
+            MenuProvider.MenuDisplayed -= ClearBolts;
         }
 
         public void ProduceBolt(ISquarePiece piece, Vector3 position)
         {
-            GameObject bolt = null;
+            if (MenuProvider.Instance.OnDisplay)
+            {
+                return;
+            }
 
+            GameObject bolt = null;
             if (currentBolts.ContainsKey(piece))
             {
                 bolt = currentBolts[piece];

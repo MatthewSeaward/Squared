@@ -12,9 +12,7 @@ namespace Assets.Scripts
         public static EnemyRaged EnemyRaged;
 
         private EnemyScript enemy;
-
         private GameObject enemyHead;
-
 
         public static EnemyController Instance { get; private set; }
 
@@ -45,6 +43,7 @@ namespace Assets.Scripts
             enemy.transform.position = _startPos;
             enemy.gameObject.AddComponent<Lerp>();
 
+            MenuProvider.MenuDisplayed += MenuDisplayed;
             PieceSelectionManager.SequenceCompleted += SequenceCompletedEvent;
             SpeechBubbleManager.SpeechBubbleFinishedEvent += DisplayNextText;
             LevelStart.GameStarted += GameStarted;
@@ -78,6 +77,7 @@ namespace Assets.Scripts
             PieceSelectionManager.SequenceCompleted -= SequenceCompletedEvent;
             SpeechBubbleManager.SpeechBubbleFinishedEvent -= DisplayNextText;
             LevelStart.GameStarted -= GameStarted;
+            MenuProvider.MenuDisplayed -= MenuDisplayed;
         }
 
         public void ShowEnemyText(params string[] text)
@@ -88,7 +88,6 @@ namespace Assets.Scripts
             }
             MoveEnemyOnScreen();
         }
-
        
         private void MoveEnemyOnScreen()
         {
@@ -142,6 +141,14 @@ namespace Assets.Scripts
         {
             enemy.GetComponent<Lerp>().LerpCompleted -= PlayEnemyRage;
             enemy.GetComponent<EnemyScript>().EnemyRage.InvokeRage();
+        }
+
+        private void MenuDisplayed()
+        {
+            if (!string.IsNullOrWhiteSpace(_queuedTrigger))
+            {
+                MoveEnemyOffScreen();
+            }
         }
     }
 }

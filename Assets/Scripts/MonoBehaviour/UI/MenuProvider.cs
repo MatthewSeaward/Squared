@@ -1,12 +1,13 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.UI.Helpers;
 using GridGeneration;
-using System;
 using UnityEngine;
-using UnityEngine.Events;
+
+public delegate void MenuDisplayed();
 
 public class MenuProvider : MonoBehaviour
 {
+    public static MenuDisplayed MenuDisplayed;
 
     public bool OnDisplay
     {
@@ -38,17 +39,18 @@ public class MenuProvider : MonoBehaviour
 
     public void ShowPopup(string title, string body)
     {
-        GetComponentInChildren<Popup>(true).Show(title, body);
+        ShowPopup(title, body, null);
     }
 
     public void ShowPopup(string title, string body, ButtonArgs button)
     {
-        GetComponentInChildren<Popup>(true).Show(title, body, button);
+        ShowPopup(title, body, button);
     }
 
     public void ShowPopup(string title, string body, ButtonArgs button1, ButtonArgs button2)
     {
         GetComponentInChildren<Popup>(true).Show(title, body, button1, button2);
+        MenuDisplayed?.Invoke();
     }
 
     public void ShowLevelStart()
@@ -79,6 +81,7 @@ public class MenuProvider : MonoBehaviour
         }
 
         ToggleMenuVisiblity<T>(true);
+        MenuDisplayed?.Invoke();
     }
 
     public void HideMenu<T>()

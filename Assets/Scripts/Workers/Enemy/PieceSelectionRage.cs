@@ -17,6 +17,11 @@ namespace Assets.Scripts.Workers.Enemy
 
         public void InvokeRage()
         {
+            if (MenuProvider.Instance.OnDisplay)
+            {
+                return;
+            }
+
             for (int i = 0; i < SelectionAmount; i++)
             {
                 var piece = PieceController.Pieces[Random.Range(0, PieceController.Pieces.Count)];

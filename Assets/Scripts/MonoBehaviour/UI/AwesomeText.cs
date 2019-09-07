@@ -16,6 +16,7 @@ namespace Assets.Scripts
         public void Awake()
         {
             EnemyController.EnemyRaged += ShowText;
+            MenuProvider.MenuDisplayed += HideText;
 
             animator = GetComponent<Animator>();
             textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
@@ -27,12 +28,14 @@ namespace Assets.Scripts
         public void OnDestroy()
         {
             EnemyController.EnemyRaged -= ShowText;
+            MenuProvider.MenuDisplayed -= HideText;
         }
 
         private void ShowText()
         {
             if (MenuProvider.Instance.OnDisplay)
             {
+                HideText();
                 return;
             }
 
@@ -53,6 +56,7 @@ namespace Assets.Scripts
             {
                 child.gameObject.SetActive(enabled);
             }
+            animator.enabled = enabled;
         }
     }
 }
