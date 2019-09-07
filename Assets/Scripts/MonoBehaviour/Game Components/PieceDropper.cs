@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
 using System.Collections;
 using UnityEngine;
 
@@ -10,9 +9,11 @@ namespace Assets.Scripts
     class PieceDropper : MonoBehaviour
     {
         public static BoardRefreshed BoardRefreshed;
+
         public static PieceDropper Instance;
-        private static int spawnedInRow = 0;
+
         private static bool checkInProgress = false;
+        private int columnsToCheck;
         private GridGenerator _gridGenerator;
         private static int QueuedChecks;
     
@@ -37,7 +38,7 @@ namespace Assets.Scripts
         {
             if (!checkInProgress)
             {
-                StartCoroutine(CheckForEmptySlots_Async());
+                CheckForEmptySlots_Async();
             }
             else
             {
@@ -45,60 +46,83 @@ namespace Assets.Scripts
             }
         }
 
-        private IEnumerator CheckForEmptySlots_Async()
+        private void CheckForEmptySlots_Async()
         {
             checkInProgress = true;
+            columnsToCheck = PieceController.NumberOfColumns;
+
             for (int column = 0; column < PieceController.NumberOfColumns; column++)
             {
-                int row = 0;
-                spawnedInRow = 0;
-                while (PieceController.HasEmptySlotInColumn(column, ref row))
+                StartCoroutine(CheckForEmptySlotsInColumn(column));
+            }
+        }
+
+        private IEnumerator CheckForEmptySlotsInColumn(int column)
+        {
+            int row = 0;
+            spawnedInRow = 0;
+            while (PieceController.HasEmptySlotInColumn(column, ref row))
+            {
+                row = GetFirstEmptySlotInRow(column, row);
+
+                float worldPosY = PieceController.YPositions[row];
+                float worldPosX = PieceController.XPositions[column];
+
+                var piece = GridGenerator.GenerateTile(worldPosX, 5, column, row);
+                SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
+
+                if (!PieceController.Pieces.Contains(squarePiece))
                 {
-                    for (int i = row; i < PieceController.NumberOfRows; i++)
-                    {
-                        var currentPiece = PieceController.GetPiece(column, row);
-                        if (currentPiece != null && currentPiece.SwapEffect is LockedSwap)
-                        {
-                            row++;
-                        }
-                        else if (PieceController.IsEmptySlot(column, row + 1))
-                        {
-                            row++;
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
+                    PieceController.Pieces.Add(squarePiece);
+                }
 
-                    float worldPosY = PieceController.YPositions[row];
-                    float worldPosX = PieceController.XPositions[column];
+                Lerp lerp = squarePiece.GetComponent<Lerp>();
+                lerp.Setup(new Vector3(worldPosX, worldPosY));
 
-                    var piece = GridGenerator.GenerateTile(worldPosX, 5, column, row);
-                    SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
+                squarePiece.Position = new Vector2Int(column, row);
 
-                    if (!PieceController.Pieces.Contains(squarePiece))
-                    {
-                        PieceController.Pieces.Add(squarePiece);
-                    }
-                    var fallC = squarePiece.DestroyPieceHandler as DestroyTriggerFall;
+                yield return new WaitForSeconds(0.08f);
+            }
 
-                    Lerp lerp = squarePiece.GetComponent<Lerp>();
-                    lerp.Setup(new Vector3(worldPosX, worldPosY));
+            ColumnCheckCompleted(column);
+        }
 
-                    squarePiece.Position = new Vector2Int(column, row);
-
-                    yield return new WaitForSeconds(0.08f);
+        private static int GetFirstEmptySlotInRow(int column, int row)
+        {
+            for (int i = row; i < PieceController.NumberOfRows; i++)
+            {
+                var currentPiece = PieceController.GetPiece(column, row);
+                if (currentPiece != null && currentPiece.SwapEffect is LockedSwap)
+                {
+                    row++;
+                }
+                else if (PieceController.IsEmptySlot(column, row + 1))
+                {
+                    row++;
+                }
+                else
+                {
+                    break;
                 }
             }
 
-            BoardRefreshed?.Invoke();
-            checkInProgress = false;
+            return row;
+        }
 
-            if (QueuedChecks > 0)
+        private void ColumnCheckCompleted(int column)
+        {
+            columnsToCheck--;
+
+            if (columnsToCheck == 0)
             {
-                QueuedChecks--;
-                StartCoroutine(CheckForEmptySlots_Async());
+                BoardRefreshed?.Invoke();
+                checkInProgress = false;
+
+                if (QueuedChecks > 0)
+                {
+                    QueuedChecks--;
+                    CheckForEmptySlots_Async();
+                }
             }
         }
     }
