@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers;
+﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers;
 using System.Collections.Generic;
 using UnityEngine;
 using VikingCrew.Tools.UI;
@@ -20,6 +21,7 @@ namespace Assets.Scripts
         private Vector3 _targetPos;
         private Vector3 _startPos;
         private string _queuedTrigger;
+        private float RageTimer = 0;
 
         public void Start()
         {
@@ -49,6 +51,14 @@ namespace Assets.Scripts
             LevelStart.GameStarted += GameStarted;
 
             ShowEnemyText(DialogueManager.Instance.GetLevelText());
+        }
+
+        public void Update()
+        {
+            if (RageTimer > 0)
+            {
+                RageTimer -= Time.deltaTime;
+            }
         }
 
         private void DisplayNextText()
@@ -121,10 +131,11 @@ namespace Assets.Scripts
                 return;
             }
 
-            if (pieces.Count >= enemy.PiecesForRage)
+            if (RageTimer <= 0 && pieces.Count >= enemy.PiecesForRage)
             {
                 PlayRage();
                 EnemyRaged?.Invoke();
+                RageTimer = GameSettings.EnemyRageInterval;
             }
         }
 

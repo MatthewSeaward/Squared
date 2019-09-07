@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using Assets.Scripts.Constants;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +9,7 @@ namespace Assets.Scripts
     class AwesomeText : MonoBehaviour
     {
         [SerializeField]
-        private string[] Words = new string[] { "Awesome", "Fantasic", "Great", "Nice", "Epic", "Fantasic", "Perfect" };
+        private string[] Words = new string[] { "Awesome", "Fantasic", "Great", "Nice", "Epic", "Fantasic", "Perfect", "Amazing", "Incredible" };
 
         Animator animator;
         TextMeshProUGUI textMeshPro;
@@ -15,7 +17,7 @@ namespace Assets.Scripts
 
         public void Awake()
         {
-            EnemyController.EnemyRaged += ShowText;
+            PieceSelectionManager.SequenceCompleted += ShowText;
             MenuProvider.MenuDisplayed += HideText;
 
             animator = GetComponent<Animator>();
@@ -27,11 +29,11 @@ namespace Assets.Scripts
         
         public void OnDestroy()
         {
-            EnemyController.EnemyRaged -= ShowText;
+            PieceSelectionManager.SequenceCompleted -= ShowText;
             MenuProvider.MenuDisplayed -= HideText;
         }
 
-        private void ShowText()
+        private void ShowText(LinkedList<ISquarePiece> pieces)
         {
             if (MenuProvider.Instance.OnDisplay)
             {
@@ -39,9 +41,12 @@ namespace Assets.Scripts
                 return;
             }
 
-            SetEnabled(true);
-            textMeshPro.SetText(Words[Random.Range(0, Words.Length)]);
-            animator.SetTrigger("Show");
+            if (pieces.Count >= GameSettings.AmountForAwesomeText)
+            {
+                SetEnabled(true);
+                textMeshPro.SetText(Words[Random.Range(0, Words.Length)]);
+                animator.SetTrigger("Show");
+            }
         }
 
         public void HideText()
