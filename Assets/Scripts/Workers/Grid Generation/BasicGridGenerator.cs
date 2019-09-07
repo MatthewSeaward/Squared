@@ -45,10 +45,8 @@ namespace GridGeneration
                     float yPos = Start.y - (y * tileSpacing);
 
                     var piece = GenerateTile(type, xPos, yPos, x, y, true);
-                    var cell = ObjectPool.Instantiate(GameResources.GameObjects["Piece Slot"], new Vector3(xPos, yPos, 0));
 
                     piece.transform.parent = GridParent;
-                    cell.transform.parent = GridParent;
 
                     pieces.Add(piece.GetComponent<SquarePiece>());
                     YPositions[y] = yPos;

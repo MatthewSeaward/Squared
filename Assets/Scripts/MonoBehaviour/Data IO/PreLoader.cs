@@ -9,7 +9,6 @@ namespace Assets.Scripts
         {
             ObjectPool.PreLoad(GameResources.GameObjects["Piece"], 50);
             ObjectPool.PreLoad(GameResources.GameObjects["PieceLayer"], 50);
-            ObjectPool.PreLoad(GameResources.GameObjects["Piece Slot"], 50);
             ObjectPool.PreLoad(GameResources.GameObjects["LightningBolt"], 10);            
             ObjectPool.PreLoad(GameResources.GameObjects["Animated Text"], 5);
 
