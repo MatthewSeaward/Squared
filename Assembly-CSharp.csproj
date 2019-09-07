@@ -95,10 +95,11 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\Interfaces\ISquarePiece.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\PieceDropper.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\PieceFactory.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\PieceSwapSprite.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\SquarePiece.cs" />
-    <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\DisableWhenDone.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\Lerp.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\LightningBoltProducer.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\PieceFallLerp.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\AvailableMoveChecker.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\BackgroundManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\ChapterUIManager.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Assets\Scripts\Workers\Grid Generation\Interfaces\IGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\MoveChecker.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ConnectionHelper.cs" />
+    <Compile Include="Assets\Scripts\Workers\Helpers\Extensions\GenericExtensions.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\Extensions\TextureHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ObjectPool.cs" />
