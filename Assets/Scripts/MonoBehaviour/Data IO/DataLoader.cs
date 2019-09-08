@@ -12,12 +12,18 @@ namespace Assets.Scripts
     class DataLoader : MonoBehaviour
     {
         private bool _loaded = false;
+        private int width = 0;
+
+        [SerializeField]
+        private Text text;
 
         public void Start()
         {
             LevelIO.DataLoaded += DataLoaded;
             LevelManager.Instance.LoadData();
             ScoreManager.Instance.Initialise();
+
+            StartCoroutine(LoadingText());
         }
      
         public void OnDestroy()
@@ -29,13 +35,36 @@ namespace Assets.Scripts
         {
             if (_loaded)
             {
-                SceneManager.LoadScene(Scenes.MainMenu);
+                StartCoroutine(LoadSceneAsync());
             }
         }
 
         public void DataLoaded()
         {
             _loaded = true;
+        }
+
+        IEnumerator LoadSceneAsync()
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Scenes.MainMenu);
+
+            while(!asyncLoad.isDone)
+            {
+                yield return null;
+            }
+        }
+
+        IEnumerator LoadingText()
+        {
+            while(true)
+            {
+                text.text = "LOADING" +  "".PadRight(width++, '.');
+                if (width > 3)
+                {
+                    width = 0;
+                }
+                yield return new WaitForSeconds(0.1f);
+            }
         }
 
     }
