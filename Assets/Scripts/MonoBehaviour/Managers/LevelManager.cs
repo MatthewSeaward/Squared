@@ -87,7 +87,24 @@ namespace Assets
             }
         }
 
-       private LevelManager()  { }
+        private LevelManager()
+        {
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+        }
+
+        ~LevelManager()
+        {
+            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
+
+        }
+
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        {
+            if (result == GameResult.ReachedTarget)
+            {                
+                RegisterLevelCompleted(star, score);
+            }
+        }
 
         public void LoadData()
         {

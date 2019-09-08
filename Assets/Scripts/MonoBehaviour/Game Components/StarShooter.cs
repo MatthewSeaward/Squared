@@ -14,17 +14,20 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            ScoreKeeper.GameVictory += ScoreKeeper_GameVictory;
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
         }
 
         private void OnDestroy()
         {
-            ScoreKeeper.GameVictory -= ScoreKeeper_GameVictory;
+            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
         }
 
-        private void ScoreKeeper_GameVictory()
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
         {
-            InvokeRepeating(nameof(ShootStar), 0f, GameSettings.StarShooterFreq);
+            if (result == GameResult.ReachedTarget)
+            {
+                InvokeRepeating(nameof(ShootStar), 0f, GameSettings.StarShooterFreq);
+            }
         }
 
         private void ShootStar()
