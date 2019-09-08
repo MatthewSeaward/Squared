@@ -146,7 +146,7 @@ namespace Assets
                 SelectedChapterLevels[CurrentLevel].LevelProgress = new LevelProgress() { Level = CurrentLevel };
             }
 
-            SelectedChapterLevels[CurrentLevel].LevelProgress.StarAchieved = Mathf.Clamp(star + 1, 0, 3);
+            SelectedChapterLevels[CurrentLevel].LevelProgress.StarAchieved = Mathf.Clamp(star, 0, 3);
             SelectedChapterLevels[CurrentLevel].LevelProgress.HighestScore = Mathf.Max(SelectedChapterLevels[CurrentLevel].LevelProgress.HighestScore, score);
             SelectedChapterLevels[CurrentLevel].LevelProgress.Chapter = SelectedChapter;
 
