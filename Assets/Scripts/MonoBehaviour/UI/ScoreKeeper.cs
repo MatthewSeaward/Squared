@@ -16,11 +16,13 @@ public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
 
 public delegate void PointsAwarded(int points, LinkedList<ISquarePiece> pieces);
 public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result);
+public delegate void GameVictory();
 
 public class ScoreKeeper : MonoBehaviour
 {
     public static event PointsAwarded PointsAwarded;
     public static event GameCompleted GameCompleted;
+    public static event GameVictory GameVictory;
        
     public Text Score;
     public Text Time;
@@ -116,6 +118,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         if (ReachedTarget)
         {
+            GameVictory?.Invoke();
             SaveProgress(GameResult.ReachedTarget);
 
             int star = LevelManager.Instance.SelectedLevel.LevelProgress != null ? LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved : 0;

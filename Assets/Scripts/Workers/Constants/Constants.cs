@@ -27,5 +27,6 @@ namespace Assets.Scripts.Constants
         public const int ChanceToUseSpecialPiece = 10;
         public const int AmountForAwesomeText = 7;
         public const float EnemyRageInterval = 10;
+        public const float StarShooterFreq = 1f;
     }
 }
