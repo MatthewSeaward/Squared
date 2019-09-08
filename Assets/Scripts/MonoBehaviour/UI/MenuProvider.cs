@@ -44,7 +44,7 @@ public class MenuProvider : MonoBehaviour
 
     public void ShowPopup(string title, string body, ButtonArgs button)
     {
-        ShowPopup(title, body, button);
+        ShowPopup(title, body, button, null);
     }
 
     public void ShowPopup(string title, string body, ButtonArgs button1, ButtonArgs button2)
