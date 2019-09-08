@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Constants;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -55,13 +56,25 @@ namespace Assets.Scripts
 
         private void AddEventListener(GameObject button, int i)
         {
-            button.GetComponent<Button>().onClick.AddListener(() => LoadLevel(i));
+            button.GetComponent<Button>().onClick.AddListener(() => LoadLevel(button, i));
         }
 
-        private void LoadLevel(int i)
+        private void LoadLevel(GameObject button, int i)
         {
             LevelManager.Instance.CurrentLevel = i;
-            SceneManager.LoadScene(Scenes.Game);
+            StartCoroutine(LoadSceneAsync(button));
+        }
+
+        private IEnumerator LoadSceneAsync(GameObject button)
+        {
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Scenes.Game);
+
+            while(!asyncLoad.isDone)
+            {
+                button.GetComponentInChildren<Text>().text = "PLEASE WAIT";
+                yield return null;
+            }
+
         }
     }
 }
