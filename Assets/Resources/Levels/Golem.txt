@@ -46,7 +46,7 @@
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "12", "Banned", "5"],
-			"Star3": ["Time", "20"]
+			"Star3": ["Time", "26"]
 		},
 		{
 			"LevelNumber": 3,
@@ -137,7 +137,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "8"],
-			"Star2": ["Time", "15"],
+			"Star2": ["Time", "30"],
 			"Star3": ["Turns", "10", "Min", "3"]
 		},
 		{
@@ -160,7 +160,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "5"],
-			"Star2": ["Time", "15"],
+			"Star2": ["Time", "40"],
 			"Star3": ["Turns", "5", "Min", "4"]
 		},
 		{
@@ -183,7 +183,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Time", "15"],
+			"Star2": ["Time", "60"],
 			"Star3": ["Turns", "10", "Banned Locked", ""]
 		},
 		{
@@ -219,12 +219,12 @@
 			[
 				"--------",
 				"--------",
-				"xxx--xxx",
+				"hxh--xhx",
 				"xhx--hxh",
 				"hxh--xhx",
 				"xxxxxxxx",
-				"xxx--xxx",
-				"xxx--xxx",
+				"xhx--xhx",
+				"hxx--xxh",
 				"xxx--xxx",
 				"--------",
 				"--------"
@@ -243,12 +243,12 @@
 			[
 				"--------",
 				"--------",
-				"xxxxxhxx",
-				"xh--xxxx",
-				"xx---xxx",
-				"hl---lxh",
-				"xx---xxx",
-				"xx--xxxx",
+				"xxxhxhxh",
+				"xhxxxxxx",
+				"xxx--xxx",
+				"hlh--lxh",
+				"xxx--xxx",
+				"xxx-xxxx",
 				"xxxxxxxx",
 				"--------",
 				"--------"
@@ -268,13 +268,13 @@
 				"xxxhhxxx",
 				"xxhxxhxx",
 				"xxxxxxxx",
-				"--x--x--",
-				"--x--x--",
-				"--x--x--",
-				"--x--x--",
 				"--xxxx--",
+				"-xx--xx-",
+				"-xx--xx-",
 				"--xxxx--",
-				"--------",
+				"xxxxxxxx",
+				"xxxxxxxx",
+				"xxxxxxxx",
 				"--------"
 			],
 			"Star1": ["Turns", "20"],
