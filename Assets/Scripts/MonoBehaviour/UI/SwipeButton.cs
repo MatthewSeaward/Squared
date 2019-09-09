@@ -8,8 +8,13 @@ namespace Assets.Scripts
 
         public void OnDrag(PointerEventData eventData)
         {
-            var input = Input.GetAxis("Mouse X");
+            if (Input.GetAxis("Mouse Y") != 0)
+            {
+                return;
+            }
 
+            var input = Input.GetAxis("Mouse X");
+            
             if (input < 0)
             {
                 FindObjectOfType<ChapterUIManager>().NextChapter();
