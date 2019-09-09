@@ -22,8 +22,10 @@ namespace Assets.Scripts.Workers.Enemy
                 return;
             }
 
-            for (int i = 0; i < SelectionAmount; i++)
+            int iterationCount = 0;
+            while (selectedPieces.Count < SelectionAmount && iterationCount < 100)
             {
+                iterationCount++;
                 var piece = PieceController.Pieces[Random.Range(0, PieceController.Pieces.Count)];
 
                 if (!ValidForRage(piece))
@@ -42,7 +44,6 @@ namespace Assets.Scripts.Workers.Enemy
                 }
 
                 selectedPieces.Add(piece);
-
             }
         }
 
