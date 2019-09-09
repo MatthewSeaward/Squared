@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -15,6 +16,8 @@ namespace Assets.Scripts
             ObjectPool.PreLoad(GameResources.ParticleEffects["Landing"], 50);
             ObjectPool.PreLoad(GameResources.ParticleEffects["Piece Destroy"], 50);
             ObjectPool.PreLoad(GameResources.ParticleEffects["Star Shot"], 5);
+
+            BonusPoints.Setup();
         }
     }
 }

@@ -12,13 +12,18 @@ namespace Assets.Scripts.Constants
 
     public static class BonusPoints
     {
-        public static List<ValueTuple<int, int>> Points = new List<(int, int)>()
+        public static List<ValueTuple<int, int>> Points;
+
+        public static void Setup()
         {
-           (5, 3),
-           (7, 5),
-           (10, 8),
-           (12, 10)
-        };
+            Points = new List<(int, int)>()
+            {
+               (5, 3),
+               (7, 5),
+               (10, 8),
+               (12, 10)
+            };
+        }
     }
 
     public static class GameSettings

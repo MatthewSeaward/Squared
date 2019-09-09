@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -14,8 +15,8 @@ namespace Assets.Scripts
         {
             gameObject.SetActive(true);
 
-            gameObject.GetComponentInChildren<TextMeshProUGUI>().text = text;
-            gameObject.GetComponentInChildren<TextMeshProUGUI>().faceColor = colour;
+            gameObject.GetComponentInChildren<Text>().text = text;
+            gameObject.GetComponentInChildren<Text>().color = colour;
 
             gameObject.GetComponentInChildren<Animator>().SetTrigger("Show");
         }

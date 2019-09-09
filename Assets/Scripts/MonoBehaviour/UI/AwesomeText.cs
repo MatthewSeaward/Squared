@@ -12,7 +12,7 @@ namespace Assets.Scripts
         private string[] Words = new string[] { "Awesome", "Fantasic", "Great", "Nice", "Epic", "Fantasic", "Perfect", "Amazing", "Incredible" };
 
         Animator animator;
-        TextMeshProUGUI textMeshPro;
+        Text text;
         Image image;
 
         public void Awake()
@@ -21,7 +21,7 @@ namespace Assets.Scripts
             MenuProvider.MenuDisplayed += HideText;
 
             animator = GetComponent<Animator>();
-            textMeshPro = GetComponentInChildren<TextMeshProUGUI>();
+            text = GetComponentInChildren<Text>();
             image = GetComponent<Image>();
 
             HideText();
@@ -44,7 +44,7 @@ namespace Assets.Scripts
             if (pieces.Count >= GameSettings.AmountForAwesomeText)
             {
                 SetEnabled(true);
-                textMeshPro.SetText(Words[Random.Range(0, Words.Length)]);
+                text.text = Words[Random.Range(0, Words.Length)];
                 animator.SetTrigger("Show");
             }
         }
