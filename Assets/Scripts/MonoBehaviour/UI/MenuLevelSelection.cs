@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Constants;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ namespace Assets.Scripts
 
         [SerializeField]
         private Transform ScrollContent;
+
+        private bool _alreadyLoading = false;
 
         private void Start()
         {
@@ -61,20 +64,33 @@ namespace Assets.Scripts
 
         private void LoadLevel(GameObject button, int i)
         {
+            if (_alreadyLoading)
+            {
+                return;
+            }
+
             LevelManager.Instance.CurrentLevel = i;
             StartCoroutine(LoadSceneAsync(button));
         }
 
         private IEnumerator LoadSceneAsync(GameObject button)
         {
+            _alreadyLoading = true;
+
+            FindObjectOfType<EventSystem>().gameObject.SetActive(false);
+
+            button.GetComponentInChildren<Text>().text = "PLEASE WAIT";
+
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Scenes.Game);
 
-            while(!asyncLoad.isDone)
+            asyncLoad.allowSceneActivation = false;
+
+            while (asyncLoad.progress < 0.9f)
             {
-                button.GetComponentInChildren<Text>().text = "PLEASE WAIT";
                 yield return null;
             }
 
+            asyncLoad.allowSceneActivation = true;
         }
     }
 }

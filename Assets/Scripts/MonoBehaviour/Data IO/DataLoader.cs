@@ -13,6 +13,7 @@ namespace Assets.Scripts
     {
         private bool _loaded = false;
         private int width = 0;
+        private bool _alreadyLoading = false;
 
         [SerializeField]
         private Text text;
@@ -33,7 +34,7 @@ namespace Assets.Scripts
 
         private void Update()
         {
-            if (_loaded)
+            if (_loaded && !_alreadyLoading)
             {
                 StartCoroutine(LoadSceneAsync());
             }
@@ -46,12 +47,17 @@ namespace Assets.Scripts
 
         IEnumerator LoadSceneAsync()
         {
+            _alreadyLoading = true;
+    
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Scenes.MainMenu);
+            asyncLoad.allowSceneActivation = false;
 
-            while(!asyncLoad.isDone)
+            while (asyncLoad.progress < 0.9f)
             {
                 yield return null;
             }
+
+            asyncLoad.allowSceneActivation = true;
         }
 
         IEnumerator LoadingText()
