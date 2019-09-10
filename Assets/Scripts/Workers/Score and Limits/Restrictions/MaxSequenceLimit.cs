@@ -5,7 +5,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class MaxSequenceLimit : IRestriction
     {
-        private int MaxLimit;
+        private readonly int MaxLimit;
         private bool reachedLimit = false;
 
         public MaxSequenceLimit(int limit)
