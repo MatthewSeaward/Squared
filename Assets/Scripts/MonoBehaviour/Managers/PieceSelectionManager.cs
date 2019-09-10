@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Workers.IO.Heatmap;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -7,8 +8,9 @@ namespace Assets.Scripts
 
     public class PieceSelectionManager : MonoBehaviour
     {
-
         public LinkedList<ISquarePiece> CurrentPieces = new LinkedList<ISquarePiece>();
+        public Dictionary<Vector2Int, int> UsedPieces = new Dictionary<Vector2Int, int>();
+
         public static event SequenceCompleted SequenceCompleted;
 
         public static PieceSelectionManager Instance { private set;  get; }
@@ -16,8 +18,15 @@ namespace Assets.Scripts
         private void Awake()
         {
             Instance = this;
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+            UsedPieces = new Dictionary<Vector2Int, int>();
         }
 
+        private void OnDestroy()
+        {
+            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
+        }
+               
         public ISquarePiece LastPiece
         {
             get
@@ -41,6 +50,7 @@ namespace Assets.Scripts
             if (CurrentPieces.Count > 1)
             {
                 SequenceCompleted(CurrentPieces);
+                LogUsedPieces(CurrentPieces);
 
                 foreach (var square in CurrentPieces)
                 {
@@ -54,6 +64,21 @@ namespace Assets.Scripts
             }
 
             CurrentPieces.Clear();
+        }
+
+        private void LogUsedPieces(LinkedList<ISquarePiece> pieces)
+        {
+            foreach(var piece in pieces)
+            {
+                if (!UsedPieces.ContainsKey(piece.Position))
+                {
+                    UsedPieces.Add(piece.Position, 1);
+                }
+                else
+                {
+                    UsedPieces[piece.Position]++;
+                }
+            }
         }
 
         public bool PieceCanBeRemoved(ISquarePiece piece)
@@ -86,5 +111,12 @@ namespace Assets.Scripts
         {
             CurrentPieces.AddLast(squarePiece);
         }
+
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        {
+            IHeatmapWriter heatmap = new FirebaseHeatMapWriter();
+            heatmap.WriteHeatmapData(chapter, level, UsedPieces);
+        }
     }
+
 }

@@ -21,6 +21,8 @@ public class ScoreKeeper : MonoBehaviour
     public Text Score;
     public Text Time;
 
+    private bool GameOver = false;
+
     private IGameLimit GameLimit;
     private IRestriction Restriction;
     private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
@@ -108,6 +110,12 @@ public class ScoreKeeper : MonoBehaviour
 
     private void SaveProgress(GameResult result)
     {
+        if (GameOver)
+        {
+            return;
+        }
+
+        GameOver = true;
         GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, _currentScore, result);
     }
 
