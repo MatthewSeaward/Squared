@@ -48,7 +48,8 @@ public class PieceFactory : MonoBehaviour
         {
             if(specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
             {
-                Enum.TryParse(specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)], out type);
+                var randomSpecial = specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)];
+                type = (PieceTypes)randomSpecial[0];
             }            
         }
 
