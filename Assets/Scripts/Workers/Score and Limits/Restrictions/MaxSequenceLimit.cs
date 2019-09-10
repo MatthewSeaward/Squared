@@ -13,11 +13,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             this.MaxLimit = limit;
         }
 
-        public string GetDescription()
-        {
-            return $"Sequences greater than {MaxLimit}";
-        }
-
         public string GetRestrictionText()
         {
             return $"Max Sequence: {MaxLimit}";

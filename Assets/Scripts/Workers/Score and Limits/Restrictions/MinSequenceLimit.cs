@@ -13,11 +13,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             this.MinLimit = limit;
         }
 
-        public string GetDescription()
-        {
-            return $"Sequences less than {MinLimit}";
-        }
-
         public string GetRestrictionText()
         {
             return $"Min Sequence: {MinLimit}";

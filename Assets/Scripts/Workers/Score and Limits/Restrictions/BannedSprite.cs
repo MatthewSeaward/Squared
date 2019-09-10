@@ -20,11 +20,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             Sprite = sprite;
         }
 
-        public string GetDescription()
-        {
-            return $"{Sprite} pieces are banned";
-        }
-
         public string GetRestrictionText()
         {
             return $"Banned: {Sprite}";
