@@ -11,8 +11,6 @@ using Assets;
 using Assets.Scripts.Constants;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
-using System;
-using UnityEngine.UI;
 
 public class PieceFactory : MonoBehaviour
 {
@@ -44,19 +42,41 @@ public class PieceFactory : MonoBehaviour
     {
         string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
 
-       var piece = ObjectPool.Instantiate(GameResources.GameObjects["Piece"], Vector3.zero);
+        var piece = ObjectPool.Instantiate(GameResources.GameObjects["Piece"], Vector3.zero);
 
         var squarePiece = piece.GetComponent<SquarePiece>();
-               
-        if (!initlalSetup)
+
+        GetSpecialPiece(ref type, initlalSetup, specialDropPieces);
+
+        int scoreValue = GetScoreValue(ref type);
+
+        BuildSprite(type, piece);
+        BuildSwapEffects(type, squarePiece, initlalSetup);
+        BuildConnection(type, squarePiece);
+        BuildDestroyEffect(type, piece, squarePiece);
+        BuildBehaviours(type, squarePiece);
+        BuildScoring(type, squarePiece, scoreValue);
+        BuildLayers(piece, squarePiece);
+
+        return piece;
+    }
+
+    private static void GetSpecialPiece(ref PieceTypes type, bool initlalSetup, string[] specialDropPieces)
+    {
+        if (initlalSetup)
         {
-            if(specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
-            {
-                var randomSpecial = specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)];
-                type = (PieceTypes)randomSpecial[0];
-            }            
+            return;
         }
 
+        if (specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
+        {
+            var randomSpecial = specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)];
+            type = (PieceTypes) randomSpecial[0];
+        }
+    }
+
+    private static int GetScoreValue(ref PieceTypes type)
+    {
         int scoreValue = 1;
         char typeAsString = (char)type;
         if (int.TryParse(typeAsString.ToString(), out scoreValue))
@@ -69,15 +89,7 @@ public class PieceFactory : MonoBehaviour
             scoreValue = 1;
         }
 
-        BuildSprite(type, piece);
-        BuildSwapEffects(type, squarePiece, initlalSetup);
-        BuildConnection(type, squarePiece);
-        BuildDestroyEffect(type, piece, squarePiece);
-        BuildBehaviours(type, squarePiece);
-        BuildScoring(type, squarePiece, scoreValue);
-        BuildLayers(piece, squarePiece);
-
-        return piece;
+        return scoreValue;
     }
 
     private void BuildSprite(PieceTypes type, GameObject piece)
@@ -198,7 +210,7 @@ public class PieceFactory : MonoBehaviour
         var permittedValues = new List<Colour>();
         permittedValues.AddRange((Colour[]) LevelManager.Instance.SelectedLevel.colours.Clone());
         
-        if (UnityEngine.Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
+        if (Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
         {
             var bannedSprite = LevelManager.Instance.SelectedLevel.BannedPiece();
             if (bannedSprite >= 0)
@@ -207,7 +219,7 @@ public class PieceFactory : MonoBehaviour
              }
         }
 
-        Colour selectedColour = permittedValues[UnityEngine.Random.Range(0, permittedValues.Count)];
+        Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Count)];
         
         return Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite;
     }
