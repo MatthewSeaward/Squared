@@ -8,7 +8,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public int CalculateScore(LinkedList<ISquarePiece> pieces)
         {
             int totalScore = 0;
-            foreach(ISquarePiece piece in pieces)
+            foreach(ISquarePiece piece in pieces.OrderBy(x => x.Scoring.Prority))
             {
                 totalScore = piece.Scoring.ScorePiece(totalScore);
             }

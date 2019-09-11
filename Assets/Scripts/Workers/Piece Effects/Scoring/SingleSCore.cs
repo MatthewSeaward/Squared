@@ -8,6 +8,8 @@ namespace Assets.Scripts.Workers.Piece_Effects
     {
         private int scoreValue;
 
+        public Priority Prority => Priority.Low;
+
         public SingleScore(int scoreValue = 1)
         {
             this.scoreValue = scoreValue;

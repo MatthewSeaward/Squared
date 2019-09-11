@@ -8,6 +8,8 @@ namespace Assets.Scripts.Workers.Piece_Effects
     {
         private readonly int _factor;
 
+        public Priority Prority => Priority.High;
+
         public MultipliedScore(int factor)
         {
             _factor = factor;
