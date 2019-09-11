@@ -12,6 +12,7 @@ using Assets.Scripts.Constants;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
 using System;
+using UnityEngine.UI;
 
 public class PieceFactory : MonoBehaviour
 {
@@ -28,7 +29,10 @@ public class PieceFactory : MonoBehaviour
         Swapping = 's',
         Heavy = 'h',
         DoublePoints = 'd',
-        TriplePoints = 't'        
+        TriplePoints = 't',
+        TwoPoints = '2',
+        ThreePoints = '3',
+        FourPoints = '4'
      }
 
     private void Awake()
@@ -53,12 +57,24 @@ public class PieceFactory : MonoBehaviour
             }            
         }
 
+        int scoreValue = 1;
+        char typeAsString = (char)type;
+        if (int.TryParse(typeAsString.ToString(), out scoreValue))
+        {
+            // If it's a numeric value - make note of the scorevalue and consider the piece to be normal.
+            type = PieceTypes.Normal;
+        }
+        else
+        {
+            scoreValue = 1;
+        }
+
         BuildSprite(type, piece);
         BuildSwapEffects(type, squarePiece, initlalSetup);
         BuildConnection(type, squarePiece);
         BuildDestroyEffect(type, piece, squarePiece);
         BuildBehaviours(type, squarePiece);
-        BuildScoring(type, squarePiece);
+        BuildScoring(type, squarePiece, scoreValue);
         BuildLayers(piece, squarePiece);
 
         return piece;
@@ -127,7 +143,7 @@ public class PieceFactory : MonoBehaviour
         }
     }
  
-    private void BuildScoring(PieceTypes type, SquarePiece squarePiece)
+    private void BuildScoring(PieceTypes type, SquarePiece squarePiece, int scoreValue)
     {
         if (type == PieceTypes.DoublePoints)
         {
@@ -139,7 +155,7 @@ public class PieceFactory : MonoBehaviour
         }
         else
         {
-            squarePiece.Scoring = new SingleScore();
+            squarePiece.Scoring = new SingleScore(scoreValue);
         }
     }
      
@@ -165,12 +181,11 @@ public class PieceFactory : MonoBehaviour
         ApplyLayer(piece, squarePiece.PieceBehaviour as ILayeredSprite);
         ApplyLayer(piece, squarePiece.DestroyPieceHandler as ILayeredSprite);
         ApplyLayer(piece, squarePiece.Scoring as ILayeredSprite);
-
     }
 
     private void ApplyLayer(GameObject piece, ILayeredSprite layer)
     {
-        if (layer != null)
+        if (layer != null && layer.GetSprite() != null)
         {
             var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
             l.GetComponent<SpriteRenderer>().sprite = layer.GetSprite();
