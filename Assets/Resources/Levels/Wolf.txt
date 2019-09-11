@@ -29,16 +29,16 @@
 			"LevelNumber": 2,
 			"Target": 170,
 			"StarsToUnlock": 10,
-			"SpecialDropPieces": ["2", "3"],
+			"SpecialDropPieces": ["d", "2"],
 			"colours":[1,6,8],
 			"Pattern":
 			[
 				"--xxxx--",
 				"---xx---",
 				"---xx---",
-				"--x2xx--",
+				"--xdxx--",
 				"-xxxxxx-",
-				"--xx2x--",
+				"--xxdx--",
 				"---xx---",
 				"--------",
 				"--------",
@@ -53,19 +53,19 @@
 			"LevelNumber": 3,
 			"Target": 65,
 			"colours":[0,1,6,8],
-			"SpecialDropPieces": ["2"],
+			"SpecialDropPieces": ["2", "d"],
 			"StarsToUnlock": 20,
 			"Pattern":
 			[
 				"--------",
 				"--------",
 				"-xxxxxx-",
-				"2x----xx",
+				"dx----xx",
 				"xx----xx",
 				"ll-ll-ll",
 				"xx----xx",
 				"xx----xx",
-				"-xxx2xx-",
+				"-xxxdxx-",
 				"--------",
 				"--------"
 			],
@@ -77,6 +77,7 @@
 			"LevelNumber": 4,
 			"Target": 50,
 			"colours":[0,1,6,8],
+			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 25,
 			"Pattern":
 			[
@@ -100,7 +101,7 @@
 			"LevelNumber": 5,
 			"Target": 150,
 			"colours":[0, 1,6,8],
-			"SpecialDropPieces": ["r"],
+			"SpecialDropPieces": ["r", "2"],
 			"StarsToUnlock": 30,
 			"Pattern":
 			[
@@ -123,7 +124,7 @@
 		{
 			"LevelNumber": 6,
 			"Target": 40,
-			"SpecialDropPieces": ["2"],
+			"SpecialDropPieces": ["2", "d"],
 			"colours":[0,1,6,8],
 			"StarsToUnlock": 35,
 			"Pattern":
@@ -147,7 +148,7 @@
 		{
 			"LevelNumber": 7,
 			"Target": 100,
-			"SpecialDropPieces": ["r","s", "3"],
+			"SpecialDropPieces": ["r","s", "t", "3"],
 			"colours":[0,1,2,6,8],
 			"StarsToUnlock": 40,
 			"Pattern":
@@ -156,9 +157,9 @@
 				"--------",
 				"--------",
 				"xxxxxxxx",
+				"xxtxxxxx",
 				"xxxxxxxx",
-				"xxxxxxxx",
-				"xxxxxxxx",
+				"xxxxxtxx",
 				"xxxxxxxx",
 				"--xxxx--",
 				"---xx---",
@@ -196,7 +197,7 @@
 			"LevelNumber": 9,
 			"Target": 20,
 			"colours":[0,6],
-			"SpecialDropPieces": ["s"],
+			"SpecialDropPieces": ["s", "2"],
 			"StarsToUnlock": 46,
 			"Pattern":
 			[
@@ -220,7 +221,7 @@
 			"LevelNumber": 10,
 			"Target": 110,
 			"colours":[0,8,6,2],
-			"SpecialDropPieces": ["2"],
+			"SpecialDropPieces": ["2", "d"],
 			"StarsToUnlock": 60,
 			"Pattern":
 			[
@@ -245,7 +246,7 @@
 			"Target": 100,
 			"colours":[0,2,8,6,1],
 			"StarsToUnlock": 80,
-			"SpecialDropPieces": ["r","s"],
+			"SpecialDropPieces": ["r","s", "t"],
 			"Pattern":
 			[
 				"--------",
@@ -268,7 +269,7 @@
 			"LevelNumber": 12,
 			"Target": 60,
 			"colours":[0,8,6,2],
-			"SpecialDropPieces": ["r","s"],
+			"SpecialDropPieces": ["r","s", "d", "t"],
 			"StarsToUnlock": 90,
 			"Pattern":
 			[

@@ -27,8 +27,8 @@ public class PieceFactory : MonoBehaviour
         Locked = 'l',
         Swapping = 's',
         Heavy = 'h',
-        DoublePoints = '2',
-        TriplePoints = '3'        
+        DoublePoints = 'd',
+        TriplePoints = 't'        
      }
 
     private void Awake()
