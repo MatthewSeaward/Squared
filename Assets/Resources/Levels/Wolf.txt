@@ -5,6 +5,7 @@
 			"LevelNumber" : 1,
 			"Target": 160,
 			"colours":[0,1,6,8],
+			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 5,
 			"Pattern":
 			[				

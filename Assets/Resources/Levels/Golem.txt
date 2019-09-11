@@ -85,7 +85,7 @@
 				"--xxxx--",
 				"-xxxxxx-",
 				"--xxxx--",
-				"-xxxxxx-",
+				"-x2xxxx-",
 				"--------",
 				"--------",
 				"--------"
@@ -98,17 +98,18 @@
 			"LevelNumber": 5,
 			"Target": 35,
 			"colours":[0,5,6,7,2],
+			"SpecialDropPieces": ["2"],
 			"StarsToUnlock": 6,
 			"Pattern":
 			[
 				"--------",
 				"--------",
+				"-x2xxxx-",
 				"-xxxxxx-",
-				"-xxxxxx-",
-				"--xxxx--",
+				"--xx2x--",
 				"---xx---",
 				"--xxxx--",
-				"-xxxxxx-",
+				"-xx2xxx-",
 				"-xxxxxx-",
 				"--------",
 				"--------"
@@ -121,19 +122,20 @@
 			"LevelNumber": 6,
 			"Target": 75,
 			"colours":[2,5,6,7],
+			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 10,
 			"Pattern":
 			[
+				"x3xxxxxx",
 				"xxxxxxxx",
-				"xxxxxxxx",
-				"xxxxxxxx",
+				"xxxxx3xx",
 				"--------",
 				"--------",
 				"--------",
 				"--------",
 				"xxxxxxxx",
-				"xxxxxxxx",
-				"xxxxxxxx",
+				"xx2xxxxx",
+				"xxxxx2xx",
 				"--------"
 			],
 			"Star1": ["Turns", "8"],
@@ -144,6 +146,7 @@
 			"LevelNumber": 7,
 			"Target": 110,
 			"colours":[0,6,2],
+			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 14,
 			"Pattern":
 			[
@@ -167,6 +170,7 @@
 			"LevelNumber": 8,
 			"Target": 120,
 			"colours":[0,5,2,7],
+			"SpecialDropPieces": ["2", "3", "4"],
 			"StarsToUnlock": 16,
 			"Pattern":
 			[
@@ -190,6 +194,7 @@
 			"LevelNumber": 9,
 			"Target": 55,
 			"colours":[0,5,2,7],
+			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 20,
 			"Pattern":
 			[
@@ -237,7 +242,7 @@
 			"LevelNumber": 11,
 			"Target": 150,
 			"colours":[0,2,5,6,7],
-			"SpecialDropPieces": ["h"],
+			"SpecialDropPieces": ["h", "2"],
 			"StarsToUnlock": 22,
 			"Pattern":
 			[
@@ -261,7 +266,7 @@
 			"LevelNumber": 12,
 			"Target": 180,
 			"colours":[0,5,6,2],
-			"SpecialDropPieces": ["h"],
+			"SpecialDropPieces": ["h", "2", "3"],
 			"StarsToUnlock": 25,
 			"Pattern":
 			[
@@ -271,7 +276,7 @@
 				"--xxxx--",
 				"-xx--xx-",
 				"-xx--xx-",
-				"--xxxx--",
+				"--x44x--",
 				"xxxxxxxx",
 				"xxxxxxxx",
 				"xxxxxxxx",

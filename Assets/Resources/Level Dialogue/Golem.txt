@@ -24,7 +24,15 @@
 				"Time is of the essence here!",
 				"complete the level before the\r\ntime runs out!"
 			]
-		},		
+		},	
+		{
+			"LevelNumber" : 5,
+			"Star1": 
+			[
+				"Look for pieces\r\nwith numbers on",
+				"They score more points"
+			]
+		},
 		{
 			"LevelNumber" : 7,
 			"Star1": 
