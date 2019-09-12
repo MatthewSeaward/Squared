@@ -85,6 +85,7 @@
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleBehaviour.cs" />
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleManager.cs" />
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\SpeechBubbleTmp.cs" />
+    <Compile Include="Assets\Scripts\Diagnostics\Heatmap\HeatmapScene.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\DataLoader.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\PreLoader.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Data IO\ResetData.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\PieceFactory.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\PieceSwapSprite.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\SquarePiece.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\StarShooter.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\Lerp.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\LightningBoltProducer.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\PieceFallLerp.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\PieceSelectionManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\AwesomeText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ButtonLoadScene.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\EndOfGameMenuProvider.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\GameStats.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Helpers\AnimatedText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Helpers\ButtonArgs.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\MenuLevelSelection.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\MenuProvider.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Popup.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\RestrictionText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ShowScore.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\StarPanel.cs" />
@@ -153,6 +157,12 @@
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\StarProgress.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Loaders\IDataReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Loaders\JSONDataReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Heatmap\DebugHeatmapReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Heatmap\FireBaseHeatmapReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Heatmap\FirebaseHeatMapWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Heatmap\HeatMapWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Heatmap\IHeatMapReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Heatmap\IHeatmapWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\Interfaces\ILevelLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\Interfaces\ILevelOrderLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\LevelLoader\DummyLevelLoader.cs" />
@@ -187,6 +197,8 @@
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Limits\TimeLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Limits\TurnLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\BannedSprite.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\DiagonalOnlyRestriction.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\DiagonalRestriction.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\MaxSequenceLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\MinSequenceLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\NoRestriction.cs" />
