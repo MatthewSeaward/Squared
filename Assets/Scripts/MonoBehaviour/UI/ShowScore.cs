@@ -43,9 +43,9 @@ namespace Assets.Scripts
 
             gameObject.GetComponent<RectTransform>().SetParent(transform);
             gameObject.transform.localScale = new Vector3(1, 1, 1);
+            gameObject.transform.SetSiblingIndex(transform.childCount - 1);          
 
             gameObject.GetComponent<AnimatedText>().Show($"+{points}", colour);
-          
         }
     }
 }
