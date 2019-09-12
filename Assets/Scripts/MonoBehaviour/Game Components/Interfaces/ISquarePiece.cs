@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
+using static PieceFactory;
 
 public interface ISquarePiece
 {
@@ -12,6 +13,7 @@ public interface ISquarePiece
     SpriteRenderer SpriteRenderer { get; }
     GameObject gameObject { get; }
     IPieceDestroy DestroyPieceHandler { get; }
+    PieceTypes Type { get; set; }
 
     void Deselected();
     void DestroyPiece();

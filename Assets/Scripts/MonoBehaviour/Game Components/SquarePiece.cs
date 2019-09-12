@@ -4,6 +4,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
+using static PieceFactory;
 
 public class SquarePiece : MonoBehaviour, ISquarePiece
 {
@@ -49,6 +50,8 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public IPieceDestroy DestroyPieceHandler { get; set; }
     public IBehaviour PieceBehaviour { get; set; }
     public IScoreable Scoring { get; set; }
+
+    public PieceTypes Type { get; set; }
 
     private Animator Animator => _animator = _animator ?? GetComponent<Animator>();
 

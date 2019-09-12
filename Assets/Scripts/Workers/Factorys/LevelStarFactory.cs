@@ -40,10 +40,9 @@ namespace Assets.Scripts.Workers.IO
                         { 
                             return new BannedSprite(enumValue);
                         }
-                        else
-                        {
-                            return new BannedSprite(element);
-                        }
+                        break;
+                    case "Type":
+                            return new BannedPieceType(element);
                     case "Banned Locked":
                         return new SwapEffectLimit();
                     case "No Diagonal":

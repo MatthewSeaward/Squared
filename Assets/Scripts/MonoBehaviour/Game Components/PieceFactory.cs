@@ -45,6 +45,7 @@ public class PieceFactory : MonoBehaviour
         var piece = ObjectPool.Instantiate(GameResources.GameObjects["Piece"], Vector3.zero);
 
         var squarePiece = piece.GetComponent<SquarePiece>();
+        squarePiece.Type = type;
 
         GetSpecialPiece(ref type, initlalSetup, specialDropPieces);
 

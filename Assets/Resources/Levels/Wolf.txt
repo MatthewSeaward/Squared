@@ -96,7 +96,7 @@
 			],
 			"Star1": ["Turns", "12"],
 			"Star2": ["Turns", "10", "Only Diagonal", ""],
-			"Star3": ["Turns", "15", "Banned", "Rainbow"]
+			"Star3": ["Turns", "15", "Type", "r"]
 		},
 		{
 			"LevelNumber": 5,
@@ -143,7 +143,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "8"],
-			"Star2": ["Time", "15"],
+			"Star2": ["Time", "15", "Type", "s"],
 			"Star3": ["Turns", "10", "Min", "3"]
 		},
 		{
@@ -168,7 +168,7 @@
 			],
 			"Star1": ["Time", "30"],
 			"Star2": ["Time", "28", "No Diagonal", ""],
-			"Star3": ["Turns", "10", "Max", "4"]
+			"Star3": ["Turns", "20", "Type", "t"]
 		},
 		{
 			"LevelNumber": 8,
@@ -192,7 +192,7 @@
 			],
 			"Star1": ["Turns", "12"],
 			"Star2": ["Time", "15", "Banned", "2"],
-			"Star3": ["Turns", "10", "Banned Swap", ""]
+			"Star3": ["Turns", "10", "Type", "s"]
 		},
 		{
 			"LevelNumber": 9,
@@ -238,8 +238,8 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "25", "Banned Swap", ""],
-			"Star2": ["Time", "50", "Banned", "8"],
+			"Star1": ["Turns", "25","Type", "s"],
+			"Star2": ["Time", "50"],
 			"Star3": ["Turns", "20"]
 		},
 		{
@@ -264,7 +264,7 @@
 			],
 			"Star1": ["Turns", "25"],
 			"Star2": ["Turns", "20", "Max", "4"],
-			"Star3": ["Turns", "20", "Min", "4"]
+			"Star3": ["Turns", "20", "Type", "r"]
 		},
 		{
 			"LevelNumber": 12,

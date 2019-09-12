@@ -114,9 +114,9 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "10"],
+			"Star1": ["Turns", "10", "Type", "2"],
 			"Star2": ["Turns", "26", "Banned", "0"],
-			"Star3": ["Turns", "13", "Banned", "2"]
+			"Star3": ["Turns", "13", "Type", "2"]
 		},		
 		{
 			"LevelNumber": 6,
@@ -260,7 +260,7 @@
 			],
 			"Star1": ["Turns", "25"],
 			"Star2": ["Turns", "20", "Banned Locked", ""],
-			"Star3": ["Time", "60", "Banned", "0"]
+			"Star3": ["Time", "60", "Type", "h"]
 		},
 		{
 			"LevelNumber": 12,

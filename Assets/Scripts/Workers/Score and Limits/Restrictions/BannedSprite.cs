@@ -15,11 +15,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             SpriteValue = spriteValue;
         }
 
-        public BannedSprite(string sprite)
-        {
-            Sprite = sprite;
-        }
-
         public string GetRestrictionText()
         {
             return $"Banned: {Sprite}";
