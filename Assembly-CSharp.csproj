@@ -196,6 +196,7 @@
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IScoreCalculator.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Limits\TimeLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Limits\TurnLimit.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\BannedPieceType.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\BannedSprite.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\DiagonalOnlyRestriction.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\DiagonalRestriction.cs" />

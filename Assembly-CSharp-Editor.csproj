@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Swap Effects\LockedSwap.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Limits\TimeLimitTest.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Limits\TurnLimitTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\BannedPieceTypeTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\BannedSprite.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\DiagonalConnectionRestrictionTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\MaxPieceLimit.cs" />
