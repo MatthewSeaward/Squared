@@ -69,7 +69,7 @@
 			],
 			"Star1": ["Turns", "20"],
 			"Star2": ["Turns", "20", "Min", "3"],
-			"Star3": ["Turns", "17"]
+			"Star3": ["Turns", "25", "No Diagonal", ""]
 		},
 		{
 			"LevelNumber": 4,
@@ -212,7 +212,7 @@
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "10", "Min", "4"],
-			"Star3": ["Turns", "8"]
+			"Star3": ["Turns", "13", "No Diagonal", ""]
 		},
 		{
 			"LevelNumber": 10,
@@ -236,7 +236,7 @@
 			],
 			"Star1": ["Turns", "15"],
 			"Star2": ["Time", "50"],
-			"Star3": ["Turns", "13"]
+			"Star3": ["Turns", "18", "Diagonal Only", ""]
 		},
 		{
 			"LevelNumber": 11,

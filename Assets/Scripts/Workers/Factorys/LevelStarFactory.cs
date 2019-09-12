@@ -46,6 +46,10 @@ namespace Assets.Scripts.Workers.IO
                         }
                     case "Banned Locked":
                         return new SwapEffectLimit();
+                    case "No Diagonal":
+                        return new DiagonalRestriction();
+                    case "Diagonal Only":
+                        return new DiagonalOnlyRestriction();
                     default:
                         return new NoRestriction();
                 }

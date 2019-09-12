@@ -41,5 +41,11 @@
         {
             return myx == lastx && myy == lasty;
         }
+
+        public static bool DiagonalConnection(ISquarePiece firstPiece, ISquarePiece secondPiece)
+        {
+            return firstPiece.Position.x != secondPiece.Position.x &&
+                   firstPiece.Position.y != secondPiece.Position.y;
+        }
     }
 }

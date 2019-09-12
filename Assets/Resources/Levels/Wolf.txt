@@ -72,7 +72,7 @@
 			],
 			"Star1": ["Turns", "20", "Max", "4"],
 			"Star2": ["Turns", "20", "Banned Locked", ""],
-			"Star3": ["Turns", "15"]
+			"Star3": ["Turns", "25", "No Diagonal", ""]
 		},
 		{
 			"LevelNumber": 4,
@@ -95,7 +95,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "12"],
-			"Star2": ["Turns", "10"],
+			"Star2": ["Turns", "10", "Only Diagonal", ""],
 			"Star3": ["Turns", "15", "Banned", "Rainbow"]
 		},
 		{
@@ -167,7 +167,7 @@
 				"--------"
 			],
 			"Star1": ["Time", "30"],
-			"Star2": ["Time", "28"],
+			"Star2": ["Time", "28", "No Diagonal", ""],
 			"Star3": ["Turns", "10", "Max", "4"]
 		},
 		{
@@ -214,9 +214,9 @@
 				"---xxxx-",
 				"----x2xx"
 			],
-			"Star1": ["Turns", "8"],
-			"Star2": ["Time", "10"],
-			"Star3": ["Time", "8"]
+			"Star1": ["Turns", "8", "No Diagonal", ""],
+			"Star2": ["Time", "12"],
+			"Star3": ["Time", "10"]
 		},
 		{
 			"LevelNumber": 10,
@@ -288,7 +288,7 @@
 			],
 			"Star1": ["Time", "20"],
 			"Star2": ["Time", "30", "Min", "4"],
-			"Star3": ["Time", "20", "Min", "4"]
+			"Star3": ["Time", "20", "Only Diagonal", ""]
 		}
 	]
 }
