@@ -46,7 +46,6 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public void Reset()
         {
-            _nextPiece = null;
             _innerSprite.gameObject.SetActive(false);
         }
 

@@ -69,6 +69,11 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         }
         set
         {
+            if (value == null)
+            {
+                return;
+            }
+
             SpriteRenderer.sprite = value;
             _sprite = value;
         }
