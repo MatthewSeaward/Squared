@@ -33,11 +33,6 @@ namespace Assets.Scripts.Workers.Enemy
                     continue;
                 }
 
-                if (PieceSelectionManager.Instance.AlreadySelected(piece))
-                {
-                    PieceSelectionManager.Instance.ClearCurrentPieces();
-                }
-
                 if (selectedPieces.Contains(piece))
                 {
                     continue;
@@ -56,6 +51,8 @@ namespace Assets.Scripts.Workers.Enemy
 
                 foreach (var piece in selectedPieces)
                 {
+                   PieceSelectionManager.Instance.ClearCurrentPieces();
+
                     InvokeRageAction(piece);
                 }
 
