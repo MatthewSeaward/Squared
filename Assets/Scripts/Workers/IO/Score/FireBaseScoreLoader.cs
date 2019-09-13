@@ -31,7 +31,7 @@ namespace Assets.Scripts.Workers.IO
 
             var key = Database.Child("Scores").Push().Key;
 
-            Database.Child("Scores").Child("LVL " + level).Child("Star " +star).Child(key).SetRawJsonValueAsync(jsonValue);
+            Database.Child("Scores").Child(chapter).Child("LVL " + level).Child("Star " +star).Child(key).SetRawJsonValueAsync(jsonValue);
         }
 
         public void WriteData(string path, string data)

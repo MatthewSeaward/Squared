@@ -1,4 +1,6 @@
 ﻿using Assets.Scripts.Workers.IO.Heatmap;
+using Assets.Scripts.Workers.IO.Score;
+using DataEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +18,18 @@ namespace Assets.Scripts
         private Text Text;
 
         [SerializeField]
+        private Text star1, star2, star3, average;
+
+        [SerializeField]
         InputField chapterField;
 
         private IHeatMapReader heatMapReader = new FireBaseHeatmapReader();
+        private IScoreReader scoreReader = new FireBaseScoreReader();
+
         private Dictionary<string, int> data;
-        bool drawn = true;
+        private List<ScoreEntry> scores;
+
+        bool drawn = true, drawnScores = true;
         int selectedLevel = 0;
         string chapter = "Golem";
         List<GameObject> squares = new List<GameObject>();
@@ -28,6 +37,7 @@ namespace Assets.Scripts
         private void Start()
         {
             FireBaseHeatmapReader.HeatmapLoaded += HeatmapLoaded;
+            FireBaseScoreReader.ScoresLoaded += ScoresLaodedHandler;
 
             for (int y = 0; y < 11; y++)
             {
@@ -42,6 +52,12 @@ namespace Assets.Scripts
                 }
             }
             Refresh();
+        }
+
+        private void ScoresLaodedHandler(List<ScoreEntry> scores)
+        {
+            this.scores = scores;
+            drawnScores = false;
         }
 
         public void NextLevel()
@@ -69,33 +85,85 @@ namespace Assets.Scripts
 
             Clear();
             var data = heatMapReader.GetHeatmap(chapter, selectedLevel);
+            var scores = scoreReader.GetScores(chapter, selectedLevel);
+
+        }
+
+        private void RefreshScores(List<ScoreEntry> scores)
+        {          
+            AddScores(star1, 1, scores);
+            AddScores(star2, 2, scores);
+            AddScores(star3, 3, scores);
+            AddAverage(average, scores);
+        }
+
+        private void AddScores(Text text, int star, List<ScoreEntry> scores)
+        {
+            text.text = "Star " + star;
+
+            int total = 0;
+            var filteredScores = scores.Where(x => x.Star == star);
+
+            if (filteredScores.Count() > 0)
+            {
+                foreach (var score in filteredScores)
+                {
+                    text.text += Environment.NewLine + score.Score;
+                    total += score.Score;
+                }
+
+                text.text += Environment.NewLine + "Avg: " + (total / filteredScores.Count());
+            }
+        }
+
+        private void AddAverage(Text text, List<ScoreEntry> scores)
+        {
+            int total = 0;
+
+            foreach(var list in scores)
+            {
+                total += list.Score;
+            }
+
+            text.text = "Average";
+
+            if (scores.Count > 0)
+                text.text += Environment.NewLine + (total / scores.Count());
         }
 
         private void Update()
         {
-            if (drawn) return;
-
-            Clear();
-
-            var largestNumber = data.Values.Max();
-
-            float gradientAmount = (float)1 / (float)largestNumber;
-
-            foreach (var item in data)
+            if (!drawn)
             {
-                var go = squares.FirstOrDefault(x => x.name == item.Key);
-                if (go == null)
+
+                Clear();
+
+                var largestNumber = data.Values.Max();
+
+                float gradientAmount = (float)1 / (float)largestNumber;
+
+                foreach (var item in data)
                 {
-                    go.GetComponent<SpriteRenderer>().color = Color.white;
+                    var go = squares.FirstOrDefault(x => x.name == item.Key);
+                    if (go == null)
+                    {
+                        go.GetComponent<SpriteRenderer>().color = Color.white;
+                    }
+                    else
+                    {
+                        var newColour = item.Value * gradientAmount;
+                        go.GetComponent<SpriteRenderer>().color = new Color(newColour, 0, 0);
+                    }
                 }
-                else
-                {
-                    var newColour = item.Value * gradientAmount;
-                    go.GetComponent<SpriteRenderer>().color = new Color(newColour, 0, 0);
-                }
+
+                drawn = true;
             }
 
-            drawn = true;
+            if (!drawnScores)
+            {
+                RefreshScores(scores);
+                drawnScores = true;
+            }
         }
 
         private void Clear()
