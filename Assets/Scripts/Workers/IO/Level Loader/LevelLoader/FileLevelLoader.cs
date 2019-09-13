@@ -13,32 +13,29 @@ namespace LevelLoader
         private IDataReader DataReader = new JSONDataReader();
 
         public Dictionary<string, Level[]> GetLevels()
-        {
-            if (Levels == null)
+        {            
+            Levels = LoadData<Level>("Levels");
+
+            var dialogue = LoadData<LevelDialogue>("Level Dialogue");
+
+            foreach (var chapter in Levels)
             {
-               Levels = LoadData<Level>("Levels");
-
-               var dialogue = LoadData<LevelDialogue>("Level Dialogue");
-
-                foreach (var chapter in Levels)
+                if (!dialogue.ContainsKey(chapter.Key))
                 {
-                    if (!dialogue.ContainsKey(chapter.Key))
+                    continue;
+                }
+
+                foreach (var lvl in chapter.Value)
+                {
+                    var dialogueItem = dialogue[chapter.Key].FirstOrDefault(x => x.LevelNumber == lvl.LevelNumber);
+                    if (dialogueItem == null)
                     {
                         continue;
                     }
 
-                    foreach (var lvl in chapter.Value)
-                    {
-                        var dialogueItem = dialogue[chapter.Key].FirstOrDefault(x => x.LevelNumber == lvl.LevelNumber);
-                        if (dialogueItem == null)
-                        {
-                            continue;
-                        }
-
-                        lvl.DiaglogueItems = dialogueItem;
-                    }
+                    lvl.DiaglogueItems = dialogueItem;
                 }
-            }
+            }            
 
             return Levels;
         }
