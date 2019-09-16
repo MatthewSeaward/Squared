@@ -1,13 +1,8 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.IO.Helpers;
 using DataEntities;
-using Firebase;
 using Firebase.Database;
-using Firebase.Unity.Editor;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Score
@@ -17,19 +12,14 @@ namespace Assets.Scripts.Workers.IO.Score
 
     class FireBaseScoreReader : IScoreReader
     {
-
-        DatabaseReference Database = null;
         public static ScoresLoaded ScoresLoaded;
 
         public Dictionary<int, List<int>> GetScores(string chapter, int level)
         {
-            GetDatabase();
-
             var result = new List<ScoreEntry>();
             try
             {
-                FirebaseDatabase.DefaultInstance
-                                .GetReference($"Scores/{chapter}/LVL {level + 1}")
+                FireBaseDatabase.Database.Child($"Scores/{chapter}/LVL {level + 1}")
                                 .GetValueAsync().ContinueWith(task =>
                                 {
                                     if (task.IsFaulted)
@@ -67,19 +57,6 @@ namespace Assets.Scripts.Workers.IO.Score
             catch { }
 
             return new Dictionary<int, List<int>>();
-        }
-
-        private void GetDatabase()
-        {
-            if (Database != null)
-            {
-                return;
-            }
-            FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
-
-            // Get the root reference location of the database.
-            Database = FirebaseDatabase.DefaultInstance.RootReference;
-
         }
     }
 }

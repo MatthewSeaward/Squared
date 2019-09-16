@@ -16,7 +16,8 @@ namespace Assets.Scripts.Workers.IO
 
         private ILevelLoader levelLoader = new FileLevelLoader();
 
-         ILevelProgressLoader progressLoader = new FireBaseLevelProgressLoader();
+        ILevelProgressReader progressLoader = new FireBaseLevelProgressReader();
+        ILevelProgressWriter progressWriter = new FireBaseLevelProgressWriter();
 
         public Dictionary<string, Level[]> Levels;
 
@@ -28,9 +29,9 @@ namespace Assets.Scripts.Workers.IO
             Levels = levelLoader.GetLevels();
             LoadLevelStars();
 
-            FireBaseLevelProgressLoader.UserDataLoaded += UserDataLoaded;
+            FireBaseLevelProgressReader.UserDataLoaded += UserDataLoaded;
 
-            progressLoader.LoadLevelProgress();
+            progressLoader.LoadLevelProgressAsync();
 
             ILevelOrderLoader loader = new LevelOrderLoader();
             LevelOrder = loader.LoadLevelOrder();
@@ -38,7 +39,7 @@ namespace Assets.Scripts.Workers.IO
 
         private void UserDataLoaded(LevelProgress[] levelProgresses)
         {
-            FireBaseLevelProgressLoader.UserDataLoaded -= UserDataLoaded;
+            FireBaseLevelProgressReader.UserDataLoaded -= UserDataLoaded;
 
             LevelProgress = new List<LevelProgress>();
             if (levelProgresses != null)
@@ -95,13 +96,13 @@ namespace Assets.Scripts.Workers.IO
             {
                 selected = levelinfo;
             }
-            progressLoader.SaveLevelProgress(LevelProgress.ToArray());
+            progressWriter.SaveLevelProgress(LevelProgress.ToArray());
         }
 
         public void ResetSavedData()
         {
             LevelProgress.Clear();
-            progressLoader.ResetData();
+            progressWriter.ResetData();
         }
     }
 }

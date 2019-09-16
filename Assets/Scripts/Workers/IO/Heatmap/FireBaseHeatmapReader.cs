@@ -1,4 +1,5 @@
-﻿using Firebase;
+﻿using Assets.Scripts.Workers.IO.Helpers;
+using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
 using System;
@@ -23,8 +24,7 @@ namespace Assets.Scripts.Workers.IO.Heatmap
 
             try
             {
-                FirebaseDatabase.DefaultInstance
-                             .GetReference($"HeatMap/{chapter}/{level}")
+                FireBaseDatabase.Database.Child($"HeatMap/{chapter}/{level}")
                              .GetValueAsync().ContinueWith(task =>
                              {
                                  if (task.IsFaulted)

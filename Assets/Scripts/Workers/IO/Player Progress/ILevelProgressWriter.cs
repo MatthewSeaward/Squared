@@ -2,9 +2,8 @@
 
 namespace Assets.Scripts.Workers.IO
 {
-    interface ILevelProgressLoader
+    public interface ILevelProgressWriter
     {
-        LevelProgress[] LoadLevelProgress();
         void SaveLevelProgress(LevelProgress[] levelProgress);
         void ResetData();
     }

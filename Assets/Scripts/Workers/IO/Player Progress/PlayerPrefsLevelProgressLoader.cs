@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Player_Progress
 {
-    class PlayerPrefsLevelProgressLoader : ILevelProgressLoader
+    class PlayerPrefsLevelProgressLoader : ILevelProgressReader
     {
         public LevelProgress[] LoadLevelProgress()
         {
@@ -20,6 +20,11 @@ namespace Assets.Scripts.Workers.IO.Player_Progress
             }
 
             return fromJSON;
+        }
+
+        public void LoadLevelProgressAsync()
+        {
+            throw new System.NotImplementedException();
         }
 
         public void ResetData()

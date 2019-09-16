@@ -1,7 +1,5 @@
-﻿using Firebase;
+﻿using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
-using Firebase.Unity.Editor;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,25 +8,19 @@ namespace Assets.Scripts.Workers.IO.Heatmap
     class FirebaseHeatMapWriter : IHeatmapWriter
     {
 
-        private DatabaseReference Database;
-
         public void WriteHeatmapData(string chapter, int level, Dictionary<Vector2Int, int> usedPieces)
         {
-            GetDatabase();
-
-            Database = FirebaseDatabase.DefaultInstance.GetReference($"HeatMap/{chapter}/{level}");
-
             foreach (var item in usedPieces)
             {            
-                UpdateValue(item.Key, item.Value);
+                UpdateValue(chapter, level, item.Key, item.Value);
             }
         }
 
-        private void UpdateValue(Vector2Int pos, int used)
+        private void UpdateValue(string chapter, int level, Vector2Int pos, int used)
         {
             string key = $"{pos.x}:{pos.y}";
 
-            Database.RunTransaction(mutableData =>
+            FireBaseDatabase.Database.Child($"HeatMap /{chapter}/{level}").RunTransaction(mutableData =>
             {
                 List<object> storedData = mutableData.Value as List<object>;
 
@@ -69,13 +61,5 @@ namespace Assets.Scripts.Workers.IO.Heatmap
             );
         }
 
-        private void GetDatabase()
-        {
-            if (Database != null)
-            {
-                return;
-            }
-            FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
-        }
     }
 }

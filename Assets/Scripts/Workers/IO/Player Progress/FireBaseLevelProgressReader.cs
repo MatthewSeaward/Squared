@@ -1,8 +1,7 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO.Data_Entities;
-using Firebase;
+using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
-using Firebase.Unity.Editor;
 using System;
 using UnityEngine;
 
@@ -10,21 +9,20 @@ namespace Assets.Scripts.Workers.IO
 {
     public delegate void UserDataLoaded(LevelProgress[] levelProgresses);
 
-    public class FireBaseLevelProgressLoader : ILevelProgressLoader
+    public class FireBaseLevelProgressReader : ILevelProgressReader
     {
         public static UserDataLoaded UserDataLoaded;
 
-        DatabaseReference Database = null;
-
         public LevelProgress[] LoadLevelProgress()
         {
-            GetDatabase();
+            throw new NotImplementedException();
+        }
 
-            var result =  new LevelProgress[0];
+        public void LoadLevelProgressAsync()
+        {
             try
             {
-                FirebaseDatabase.DefaultInstance
-                             .GetReference($"LevelProgress/{UserManager.UserID}")
+                FireBaseDatabase.Database.Child($"LevelProgress/{UserManager.UserID}")
                              .GetValueAsync().ContinueWith(task =>
                              {
                                  if (task.IsFaulted)
@@ -38,11 +36,15 @@ namespace Assets.Scripts.Workers.IO
 
                                         
                                         string info = snapshot?.GetRawJsonValue()?.ToString();
+
+                                        var result = new LevelProgress[0];
                                         if (info != null)
                                          {
                                              result = JsonHelper.FromJson<LevelProgress>(info);
                                          }
+
                                          UserDataLoaded?.Invoke(result);
+
                                      }
                                      catch(Exception ex)
                                      {
@@ -52,39 +54,6 @@ namespace Assets.Scripts.Workers.IO
                              });
             }
             catch {  }
-
-            return result;
-        }
-
-        public void ResetData()
-        {
-            SaveLevelProgress(new LevelProgress[0]);
-        }
-
-        public void SaveLevelProgress(LevelProgress[] levelProgress)
-        {
-            GetDatabase();
-
-            var toJson = JsonHelper.ToJson(levelProgress);
-
-           var result = System.Threading.Tasks.Task.Run(() => Database.Child("LevelProgress").Child(UserManager.UserID).SetRawJsonValueAsync(toJson));
-            if (result.IsCanceled || result.IsFaulted)
-            {
-                Debug.LogWarning(result.Exception);
-            }
-        }
-
-        private void GetDatabase()
-        {
-            if (Database != null)
-            {
-                return;
-            }
-            FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
-
-            // Get the root reference location of the database.
-            Database = FirebaseDatabase.DefaultInstance.RootReference;
-
         }
 
     }

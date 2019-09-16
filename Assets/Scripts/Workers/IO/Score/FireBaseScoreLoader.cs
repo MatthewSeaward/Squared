@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.IO.Helpers;
 using DataEntities;
 using Firebase;
 using Firebase.Database;
@@ -10,12 +11,8 @@ namespace Assets.Scripts.Workers.IO
 {
     public class FireBaseScoreLoader : IScoreLoader
     {
-        private DatabaseReference Database;
-
         public void SaveScore(string chapter, int level, int star, int score, GameResult result)
-        {
-            GetDatabase();
-            
+        {            
             var entry = new ScoreEntry()
             {
                 Chapter = chapter,
@@ -29,30 +26,17 @@ namespace Assets.Scripts.Workers.IO
 
             var jsonValue = JsonUtility.ToJson(entry);
 
-            var key = Database.Child("Scores").Push().Key;
+            var key = FireBaseDatabase.Database.Child("Scores").Push().Key;
 
-            Database.Child("Scores").Child(chapter).Child("LVL " + level).Child("Star " +star).Child(key).SetRawJsonValueAsync(jsonValue);
+            FireBaseDatabase.Database.Child("Scores").Child(chapter).Child("LVL " + level).Child("Star " +star).Child(key).SetRawJsonValueAsync(jsonValue);
         }
 
         public void WriteData(string path, string data)
         {
-             GetDatabase();
-            string key = Database.Child(path).Push().Key;
+            string key = FireBaseDatabase.Database.Child(path).Push().Key;
 
-             Database.Child(path + $"/{key}").SetValueAsync(data);
+            FireBaseDatabase.Database.Child(path + $"/{key}").SetValueAsync(data);
         }
-
-        private void GetDatabase()
-        {
-            if (Database != null)
-            {
-                return;
-            }
-            FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
-
-            // Get the root reference location of the database.
-            Database = FirebaseDatabase.DefaultInstance.RootReference;
-
-        }
+        
     }
 }
