@@ -21,7 +21,7 @@ namespace Assets.Scripts.Workers.IO.Heatmap
         {
             try
             {
-                FireBaseDatabase.Database.Child($"HeatMap/{chapter}/{level}")
+                FireBaseDatabase.Database.Child(FireBaseSavePaths.HeatMapLocation(chapter, level))
                              .GetValueAsync().ContinueWith(task =>
                              {
                                  if (task.IsFaulted)

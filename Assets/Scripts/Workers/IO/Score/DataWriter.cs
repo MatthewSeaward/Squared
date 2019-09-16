@@ -2,7 +2,7 @@
 {
     public class ScoreManager
     {
-        private IScoreReader _dataWriter = new FireBaseScoreWriter();
+        private IScoreWriter _dataWriter = new FireBaseScoreWriter();
 
         private static ScoreManager _instance;
         

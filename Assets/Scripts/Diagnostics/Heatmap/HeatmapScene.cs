@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Heatmap;
+﻿using Assets.Scripts.Workers.IO;
+using Assets.Scripts.Workers.IO.Heatmap;
 using Assets.Scripts.Workers.IO.Score;
 using DataEntities;
 using System;
@@ -24,7 +25,7 @@ namespace Assets.Scripts
         InputField chapterField;
 
         private IHeatMapReader heatMapReader = new FireBaseHeatmapReader();
-        private IScoreWriter scoreReader = new FireBaseScoreReader();
+        private IScoreReader scoreReader = new FireBaseScoreReader();
 
         private Dictionary<string, int> data;
         private List<ScoreEntry> scores;

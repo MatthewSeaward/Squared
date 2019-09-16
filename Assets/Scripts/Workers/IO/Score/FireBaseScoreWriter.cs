@@ -23,17 +23,7 @@ namespace Assets.Scripts.Workers.IO
 
             var jsonValue = JsonUtility.ToJson(entry);
 
-            var key = FireBaseDatabase.Database.Child("Scores").Push().Key;
-
-            FireBaseDatabase.Database.Child("Scores").Child(chapter).Child("LVL " + level).Child("Star " +star).Child(key).SetRawJsonValueAsync(jsonValue);
-        }
-
-        public void WriteData(string path, string data)
-        {
-            string key = FireBaseDatabase.Database.Child(path).Push().Key;
-
-            FireBaseDatabase.Database.Child(path + $"/{key}").SetValueAsync(data);
-        }
-        
+            FireBaseDatabase.AddUniqueJSON(FireBaseSavePaths.ScoreLocation(chapter, level, star), jsonValue);        
+        }        
     }
 }

@@ -29,5 +29,19 @@ namespace Assets.Scripts.Workers.IO.Helpers
             _database = FirebaseDatabase.DefaultInstance.RootReference;
             _database.Database.SetPersistenceEnabled(true);
         }
+
+        public static void AddUniqueJSON(string path, string json)
+        {
+            var key = Database.Child(path).Push().Key;
+
+            Database.Child(path).Child(key).SetRawJsonValueAsync(json);
+        }
+
+        public static void AddUniqueString(string path, string text)
+        {
+            var key = Database.Child(path).Push().Key;
+
+            Database.Child(path).Child(key).SetValueAsync(text);
+        }
     }
 }

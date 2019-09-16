@@ -1,7 +1,5 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
-using Assets.Scripts.Workers.IO.Helpers;
+﻿using Assets.Scripts.Workers.IO.Helpers;
 using System;
-using System.IO;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Helpers
@@ -40,12 +38,7 @@ namespace Assets.Scripts.Workers.Helpers
 
             Debug.LogError(output);
 
-            var key = FireBaseDatabase.Database.Child("Exceptions").Child(UserManager.UserID).Push().Key;
-
-            System.Threading.Tasks.Task.Run(() => FireBaseDatabase.Database.Child("Exceptions").Child(UserManager.UserID).Child(key).SetValueAsync(output));
-
+            FireBaseDatabase.AddUniqueString(FireBaseSavePaths.ExceptionLocation(), output);
         }
-
-
     }
 }

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Workers.IO
         {
             var toJson = JsonHelper.ToJson(levelProgress);
 
-            var result = System.Threading.Tasks.Task.Run(() => FireBaseDatabase.Database.Child("LevelProgress").Child(UserManager.UserID).SetRawJsonValueAsync(toJson));
+            var result = System.Threading.Tasks.Task.Run(() => FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerProgressLocation()).SetRawJsonValueAsync(toJson));
             if (result.IsCanceled || result.IsFaulted)
             {
                 Debug.LogWarning(result.Exception);

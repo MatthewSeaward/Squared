@@ -23,7 +23,7 @@ namespace Assets.Scripts.Workers.IO.Score
         {
             try
             {
-                FireBaseDatabase.Database.Child($"Scores/{chapter}/LVL {level + 1}")
+                FireBaseDatabase.Database.Child(FireBaseSavePaths.ScoreLocation(chapter, level))
                                 .GetValueAsync().ContinueWith(task =>
                                 {
                                     if (task.IsFaulted)

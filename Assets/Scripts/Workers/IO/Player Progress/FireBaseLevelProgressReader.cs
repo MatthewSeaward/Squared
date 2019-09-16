@@ -22,7 +22,7 @@ namespace Assets.Scripts.Workers.IO
         {
             try
             {
-                FireBaseDatabase.Database.Child($"LevelProgress/{UserManager.UserID}")
+                FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerProgressLocation())
                              .GetValueAsync().ContinueWith(task =>
                              {
                                  if (task.IsFaulted)
