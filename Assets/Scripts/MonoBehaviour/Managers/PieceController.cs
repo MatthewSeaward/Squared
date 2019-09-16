@@ -1,5 +1,6 @@
 ﻿using Assets;
 using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,22 +35,10 @@ public class PieceController
 
     public static bool IsEmptySlot(int x, int y)
     {
-        var pattern = LevelManager.Instance.SelectedLevel.Pattern;
 
-        if (y >= pattern.Length || y < 0)
-        {
-            return true;
-        }
+        var cell = GetPatternAt(x, y);
 
-        var row = pattern[y];
-        if (x >= row.Length || x < 0)
-        {
-            return false;
-        }
-
-        var cell = row[x];
-
-        if (cell == '-')
+        if (cell == '-' || cell == ' ')
         {
             return false;
         }
@@ -82,6 +71,38 @@ public class PieceController
         return true;
     }
 
+    internal static bool EmptyColumn(int column)
+    {
+        for (int row = 0; row < NumberOfRows; row++)
+        {
+            var slot = GetPatternAt(column, row);
+            if (slot != '-' && slot != ' ')
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static char GetPatternAt(int x, int y)
+    {
+        var pattern = LevelManager.Instance.SelectedLevel.Pattern;
+
+        if (y >= pattern.Length || y < 0)
+        {
+            return ' ';
+        }
+
+        var row = pattern[y];
+        if (x >= row.Length || x < 0)
+        {
+            return ' ';
+        }
+
+        var cell = row[x];
+
+        return row[x];
+    }
 
     internal static ISquarePiece GetPiece(int x, int y)
     {

@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -18,7 +19,9 @@ namespace Assets.Scripts
         private int columnsToCheck;
         private GridGenerator _gridGenerator;
         private static int QueuedChecks;
-    
+        private int NumberToPrespawn = 1;
+        private Dictionary<int, Queue<GameObject>> QueuedPieces = new Dictionary<int, Queue<GameObject>>();
+        
         private GridGenerator GridGenerator
         {
             get
@@ -36,10 +39,18 @@ namespace Assets.Scripts
             Instance = this;
         }
 
+        private void Start()
+        {
+            SeedSlots();
+        }
+
         public void CheckForEmptySlots()
         {
             if (!checkInProgress)
             {
+                checkInProgress = true;
+
+                SeedSlots();
                 CheckForEmptySlots_Async();
             }
             else
@@ -48,11 +59,57 @@ namespace Assets.Scripts
             }
         }
 
+        private void SeedSlots()
+        {
+            for (int column = 0; column < PieceController.NumberOfColumns; column++)
+            {
+                SeedColumn(column);
+            }
+        }
+
+        private void SeedColumn(int column)
+        {
+            if (PieceController.EmptyColumn(column))
+            {
+                return;
+            }
+
+            if (!QueuedPieces.ContainsKey(column))
+            {
+                QueuedPieces.Add(column, new Queue<GameObject>());
+            }
+
+            var pieceQueue = QueuedPieces[column];
+
+            if (pieceQueue.Count >= NumberToPrespawn)
+            {
+                return;
+            }
+
+            for (int i = 0; i < NumberToPrespawn; i++)
+            {
+                float worldPosX = PieceController.XPositions[column];
+
+                var piece = GridGenerator.GenerateTile(worldPosX, 4, column, 0);
+                piece.GetComponent<BoxCollider2D>().enabled = false;
+
+                pieceQueue.Enqueue(piece);
+            }
+        }
+
+        private GameObject GetPiece(int column)
+        {
+            var piece = QueuedPieces[column].Dequeue();
+
+            SeedColumn(column);
+
+            return piece;
+        }
+
         private void CheckForEmptySlots_Async()
         {
             DebugLogger.Instance.WriteEntry("CheckForEmptySlots - Start");
 
-            checkInProgress = true;
             columnsToCheck = PieceController.NumberOfColumns;
 
             for (int column = 0; column < PieceController.NumberOfColumns; column++)
@@ -80,10 +137,13 @@ namespace Assets.Scripts
                     float worldPosX = PieceController.XPositions[column];
 
                     DebugLogger.Instance.WriteEntry($"CheckForEmptySlotsInColumn - Spawning piece in {row}, {column}. Wolrd Pos {worldPosX}, {worldPosY}");
+                    
 
+                    var piece = GetPiece(column);
 
-                    var piece = GridGenerator.GenerateTile(worldPosX, 5, column, row);
+                    piece.GetComponent<BoxCollider2D>().enabled = true;
                     SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
+
 
                     if (!PieceController.Pieces.Contains(squarePiece))
                     {
