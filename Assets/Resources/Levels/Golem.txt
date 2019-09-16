@@ -21,12 +21,12 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Time", "30"],
+			"Star2": ["Turns", "8"],
 			"Star3": ["Turns", "10", "Min", "3"]
 		},
 		{
 			"LevelNumber": 2,
-			"Target": 60,
+			"Target": 75,
 			"NumberOfTurns": 8,		
 			"StarsToUnlock": 1,
 			"colours":[0,5,6,7],
@@ -73,7 +73,7 @@
 		},
 		{
 			"LevelNumber": 4,
-			"Target": 90,
+			"Target": 110,
 			"colours":[0,5,6,7],
 			"StarsToUnlock": 3,
 			"Pattern":
@@ -96,7 +96,7 @@
 		},
 		{
 			"LevelNumber": 5,
-			"Target": 35,
+			"Target": 120,
 			"colours":[0,5,6,7,2],
 			"SpecialDropPieces": ["2"],
 			"StarsToUnlock": 6,
@@ -120,7 +120,7 @@
 		},		
 		{
 			"LevelNumber": 6,
-			"Target": 75,
+			"Target": 90,
 			"colours":[2,5,6,7],
 			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 10,

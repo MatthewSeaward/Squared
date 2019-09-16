@@ -61,11 +61,11 @@
 				"--------",
 				"--------",
 				"-xxxxxx-",
-				"dx----xx",
+				"dx2xx2xx",
 				"xx----xx",
 				"ll-ll-ll",
 				"xx----xx",
-				"xx----xx",
+				"xx2xx2xx",
 				"-xxxdxx-",
 				"--------",
 				"--------"
@@ -76,7 +76,7 @@
 		},
 		{
 			"LevelNumber": 4,
-			"Target": 50,
+			"Target": 210,
 			"colours":[0,1,6,8],
 			"SpecialDropPieces": ["2", "3"],
 			"StarsToUnlock": 25,
@@ -100,7 +100,7 @@
 		},
 		{
 			"LevelNumber": 5,
-			"Target": 150,
+			"Target": 250,
 			"colours":[0, 1,6,8],
 			"SpecialDropPieces": ["r", "2"],
 			"StarsToUnlock": 30,
@@ -124,7 +124,7 @@
 		},		
 		{
 			"LevelNumber": 6,
-			"Target": 40,
+			"Target": 170,
 			"SpecialDropPieces": ["2", "d"],
 			"colours":[0,1,6,8],
 			"StarsToUnlock": 35,
@@ -148,7 +148,7 @@
 		},
 		{
 			"LevelNumber": 7,
-			"Target": 100,
+			"Target": 120,
 			"SpecialDropPieces": ["r","s", "t", "3"],
 			"colours":[0,1,2,6,8],
 			"StarsToUnlock": 40,
@@ -172,7 +172,7 @@
 		},
 		{
 			"LevelNumber": 8,
-			"Target": 50,
+			"Target": 150,
 			"colours":[0,1,6,2],
 			"SpecialDropPieces": ["s"],
 			"StarsToUnlock": 43,
@@ -196,7 +196,7 @@
 		},
 		{
 			"LevelNumber": 9,
-			"Target": 20,
+			"Target": 130,
 			"colours":[0,6],
 			"SpecialDropPieces": ["s", "2"],
 			"StarsToUnlock": 46,
@@ -220,7 +220,7 @@
 		},
 		{
 			"LevelNumber": 10,
-			"Target": 110,
+			"Target": 120,
 			"colours":[0,8,6,2],
 			"SpecialDropPieces": ["2", "d"],
 			"StarsToUnlock": 60,
@@ -244,7 +244,7 @@
 		},
 		{
 			"LevelNumber": 11,
-			"Target": 100,
+			"Target": 350,
 			"colours":[0,2,8,6,1],
 			"StarsToUnlock": 80,
 			"SpecialDropPieces": ["r","s", "t"],
@@ -263,8 +263,8 @@
 				"--------"
 			],
 			"Star1": ["Turns", "25"],
-			"Star2": ["Turns", "20", "Max", "4"],
-			"Star3": ["Turns", "20", "Type", "r"]
+			"Star2": ["Turns", "35", "Max", "4"],
+			"Star3": ["Turns", "28", "Type", "r"]
 		},
 		{
 			"LevelNumber": 12,
