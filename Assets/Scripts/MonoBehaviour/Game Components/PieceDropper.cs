@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+﻿using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -48,6 +50,8 @@ namespace Assets.Scripts
 
         private void CheckForEmptySlots_Async()
         {
+            DebugLogger.Instance.WriteEntry("CheckForEmptySlots - Start");
+
             checkInProgress = true;
             columnsToCheck = PieceController.NumberOfColumns;
 
@@ -55,36 +59,56 @@ namespace Assets.Scripts
             {
                 StartCoroutine(CheckForEmptySlotsInColumn(column));
             }
+
+            DebugLogger.Instance.WriteEntry("CheckForEmptySlots - End");
+
         }
 
         private IEnumerator CheckForEmptySlotsInColumn(int column)
         {
+            DebugLogger.Instance.WriteEntry($"CheckForEmptySlotsInColumn - Start - Column {column}");
+            
             int row = 0;
 
             while (PieceController.HasEmptySlotInColumn(column, ref row))
             {
-                row = GetFirstEmptySlotInRow(column, row);
-
-                float worldPosY = PieceController.YPositions[row];
-                float worldPosX = PieceController.XPositions[column];
-
-                var piece = GridGenerator.GenerateTile(worldPosX, 5, column, row);
-                SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
-
-                if (!PieceController.Pieces.Contains(squarePiece))
+                try
                 {
-                    PieceController.Pieces.Add(squarePiece);
+                    row = GetFirstEmptySlotInRow(column, row);
+
+                    float worldPosY = PieceController.YPositions[row];
+                    float worldPosX = PieceController.XPositions[column];
+
+                    DebugLogger.Instance.WriteEntry($"CheckForEmptySlotsInColumn - Spawning piece in {row}, {column}. Wolrd Pos {worldPosX}, {worldPosY}");
+
+
+                    var piece = GridGenerator.GenerateTile(worldPosX, 5, column, row);
+                    SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
+
+                    if (!PieceController.Pieces.Contains(squarePiece))
+                    {
+                        PieceController.Pieces.Add(squarePiece);
+                    }
+
+                    DebugLogger.Instance.WriteEntry($"CheckForEmptySlotsInColumn - Piece Spawned - {squarePiece.Type}");
+
+                    Lerp lerp = squarePiece.GetComponent<Lerp>();
+                    lerp.Setup(new Vector3(worldPosX, worldPosY));
+
+                    squarePiece.Position = new Vector2Int(column, row);
+
                 }
-
-                Lerp lerp = squarePiece.GetComponent<Lerp>();
-                lerp.Setup(new Vector3(worldPosX, worldPosY));
-
-                squarePiece.Position = new Vector2Int(column, row);
+                catch (Exception ex)
+                {
+                    DebugLogger.Instance.WriteException(ex);
+                }
 
                 yield return new WaitForSeconds(0.08f);
             }
 
             ColumnCheckCompleted(column);
+
+            DebugLogger.Instance.WriteEntry($"CheckForEmptySlotsInColumn - End - Column {column}");
         }
 
         private static int GetFirstEmptySlotInRow(int column, int row)
