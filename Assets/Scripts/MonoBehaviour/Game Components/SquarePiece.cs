@@ -149,6 +149,11 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
             return;
         }
 
+        if (DestroyPieceHandler.ToBeDestroyed)
+        {
+            return;
+        }
+
         PieceSelectionManager.Instance.Add(this);
 
         DestroyPieceHandler.OnPressed();

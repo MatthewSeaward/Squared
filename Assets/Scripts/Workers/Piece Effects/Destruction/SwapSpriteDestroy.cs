@@ -12,6 +12,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         private SpriteRenderer _innerSprite;
         private ISquarePiece _squarePiece;
         private Vector3 _initialScale;
+        private bool _toBeDestroyed;
+
+        public bool ToBeDestroyed => _toBeDestroyed;
 
         public SwapSpriteDestroy(ISwapEffect swapEffect, SpriteRenderer innerSprite, ISquarePiece squarePiece, Vector3 initialScale)
         {
@@ -21,8 +24,10 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             _initialScale = initialScale;
         }
 
+
         public void NotifyOfDestroy()
         {
+            _toBeDestroyed = true;
         }
 
         public void OnDestroy()
@@ -47,6 +52,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         public void Reset()
         {
             _innerSprite.gameObject.SetActive(false);
+            _toBeDestroyed = false;
         }
 
         public void Update()
