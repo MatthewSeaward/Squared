@@ -24,7 +24,7 @@ namespace Assets.Scripts
         InputField chapterField;
 
         private IHeatMapReader heatMapReader = new FireBaseHeatmapReader();
-        private IScoreReader scoreReader = new FireBaseScoreReader();
+        private IScoreWriter scoreReader = new FireBaseScoreReader();
 
         private Dictionary<string, int> data;
         private List<ScoreEntry> scores;

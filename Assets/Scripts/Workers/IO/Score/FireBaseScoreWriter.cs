@@ -1,15 +1,12 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO.Helpers;
 using DataEntities;
-using Firebase;
-using Firebase.Database;
-using Firebase.Unity.Editor;
 using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO
 {
-    public class FireBaseScoreLoader : IScoreLoader
+    public class FireBaseScoreWriter : IScoreWriter
     {
         public void SaveScore(string chapter, int level, int star, int score, GameResult result)
         {            
