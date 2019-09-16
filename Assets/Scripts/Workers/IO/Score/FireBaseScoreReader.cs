@@ -16,7 +16,11 @@ namespace Assets.Scripts.Workers.IO.Score
 
         public Dictionary<int, List<int>> GetScores(string chapter, int level)
         {
-            var result = new List<ScoreEntry>();
+            throw new NotImplementedException();
+        }
+
+        public void GetScoresAsync(string chapter, int level)
+        {
             try
             {
                 FireBaseDatabase.Database.Child($"Scores/{chapter}/LVL {level + 1}")
@@ -31,6 +35,7 @@ namespace Assets.Scripts.Workers.IO.Score
                                         {
                                             DataSnapshot snapshot = task.Result;
                                           
+                                            var result = new List<ScoreEntry>();
 
                                             foreach(var child in snapshot.Children)
                                             {
@@ -38,6 +43,7 @@ namespace Assets.Scripts.Workers.IO.Score
                                                 foreach (var item in child.Children)
                                                 {
                                                     string info = item?.GetRawJsonValue()?.ToString();
+
                                                     if (info != null)
                                                     {
                                                         var data = JsonUtility.FromJson<ScoreEntry>(info);
@@ -55,8 +61,6 @@ namespace Assets.Scripts.Workers.IO.Score
                                 });
             }
             catch { }
-
-            return new Dictionary<int, List<int>>();
         }
     }
 }

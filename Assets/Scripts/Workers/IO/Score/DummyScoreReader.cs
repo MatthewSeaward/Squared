@@ -31,5 +31,10 @@ namespace Assets.Scripts.Workers.IO.Score
             };
             
         }
+
+        public void GetScoresAsync(string chapter, int level)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

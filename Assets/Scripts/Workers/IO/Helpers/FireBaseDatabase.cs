@@ -22,9 +22,7 @@ namespace Assets.Scripts.Workers.IO.Helpers
         }
 
         private static void ConfigureDB()
-        {   
-                        FirebaseDatabase.DefaultInstance.SetPersistenceEnabled(true);
-
+        { 
             FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
 
             // Get the root reference location of the database.     

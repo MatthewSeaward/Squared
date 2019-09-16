@@ -84,8 +84,8 @@ namespace Assets.Scripts
             Text.text = selectedLevel.ToString();
 
             Clear();
-            var data = heatMapReader.GetHeatmap(chapter, selectedLevel);
-            var scores = scoreReader.GetScores(chapter, selectedLevel);
+            heatMapReader.GetHeatmapAsync(chapter, selectedLevel);
+            scoreReader.GetScoresAsync(chapter, selectedLevel);
 
         }
 

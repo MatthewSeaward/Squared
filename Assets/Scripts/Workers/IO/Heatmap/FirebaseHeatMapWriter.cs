@@ -20,7 +20,7 @@ namespace Assets.Scripts.Workers.IO.Heatmap
         {
             string key = $"{pos.x}:{pos.y}";
 
-            FireBaseDatabase.Database.Child($"HeatMap /{chapter}/{level}").RunTransaction(mutableData =>
+            FireBaseDatabase.Database.Child($"HeatMap/{chapter}/{level}").RunTransaction(mutableData =>
             {
                 List<object> storedData = mutableData.Value as List<object>;
 

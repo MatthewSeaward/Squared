@@ -1,7 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Helpers;
-using Firebase;
 using Firebase.Database;
-using Firebase.Unity.Editor;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,15 +11,14 @@ namespace Assets.Scripts.Workers.IO.Heatmap
     class FireBaseHeatmapReader : IHeatMapReader
     {
         public static HeatmapLoaded HeatmapLoaded;
-
-        DatabaseReference Database = null;
-
+        
         public Dictionary<string, int> GetHeatmap(string chapter, int level)
-        {           
-            GetDatabase();
+        {
+            throw new NotImplementedException();
+        }
 
-            var result = new Dictionary<string, int>();
-
+        public void GetHeatmapAsync(string chapter, int level)
+        {
             try
             {
                 FireBaseDatabase.Database.Child($"HeatMap/{chapter}/{level}")
@@ -35,14 +32,15 @@ namespace Assets.Scripts.Workers.IO.Heatmap
                                      try
                                      {
                                          DataSnapshot snapshot = task.Result;
+                                         var result = new Dictionary<string, int>();
 
-                                         var list =  snapshot.Value as List<object>;
+                                         var list = snapshot.Value as List<object>;
                                          foreach (var item in list)
                                          {
                                              var parsedChild = item as Dictionary<string, object>;
 
 
-                                             var key = parsedChild["Key"].ToString();                                            
+                                             var key = parsedChild["Key"].ToString();
                                              var uses = parsedChild["Uses"].ToString();
 
                                              int childValue = int.Parse(uses);
@@ -60,22 +58,7 @@ namespace Assets.Scripts.Workers.IO.Heatmap
                              });
             }
             catch { }
-
-            return result;
         }
- 
-
-        private void GetDatabase()
-        {
-            if (Database != null)
-            {
-                return;
-            }
-            FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
-
-            // Get the root reference location of the database.
-            Database = FirebaseDatabase.DefaultInstance.RootReference;
-
-        }
+      
     }
 }

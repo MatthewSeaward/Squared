@@ -23,5 +23,10 @@ namespace Assets.Scripts.Workers.IO.Heatmap
                 { "3,9", 2 },
             };
         }
+
+        public void GetHeatmapAsync(string chapter, int level)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
