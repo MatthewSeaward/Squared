@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.IO.Helpers;
+using System;
 using System.IO;
 using UnityEngine;
 
-namespace Assets.Scripts.Workers.Helpers.Extensions
+namespace Assets.Scripts.Workers.Helpers
 {
     public class DebugLogger      
     {
-        private StreamWriter stream;
-
         private static DebugLogger _instance;
 
         public static DebugLogger Instance
@@ -24,19 +24,13 @@ namespace Assets.Scripts.Workers.Helpers.Extensions
 
         private DebugLogger()
         {
-            stream = new StreamWriter("Log.txt", true);
         }
 
-        ~DebugLogger()
-        {
-            stream.Close();
-        }
-
+     
         public void WriteEntry(string message)
         {
             string output = $"{DateTime.Now} - {message}";
 
-            stream.WriteLine(output);
             Debug.Log(output);
         }
 
@@ -44,8 +38,14 @@ namespace Assets.Scripts.Workers.Helpers.Extensions
         {
             string output = $"{DateTime.Now} - ERROR - {ex.Message}{Environment.NewLine}{ex.StackTrace}";
 
-            stream.WriteLine(output);
             Debug.LogError(output);
+
+            var key = FireBaseDatabase.Database.Child("Exceptions").Child(UserManager.UserID).Push().Key;
+
+            System.Threading.Tasks.Task.Run(() => FireBaseDatabase.Database.Child("Exceptions").Child(UserManager.UserID).Child(key).SetValueAsync(output));
+
         }
+
+
     }
 }
