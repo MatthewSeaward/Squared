@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +11,7 @@ namespace Assets.Scripts
     class AwesomeText : MonoBehaviour
     {
         [SerializeField]
-        private string[] Words = new string[] { "Awesome", "Fantasic", "Great", "Nice", "Epic", "Fantasic", "Perfect", "Amazing", "Incredible" };
+        private ScoreWord[] Words;
 
         Animator animator;
         Text text;
@@ -17,7 +19,7 @@ namespace Assets.Scripts
 
         public void Awake()
         {
-            PieceSelectionManager.SequenceCompleted += ShowText;
+            ScoreKeeper.PointsAwarded += ShowText;
             MenuProvider.MenuDisplayed += HideText;
 
             animator = GetComponent<Animator>();
@@ -29,11 +31,11 @@ namespace Assets.Scripts
         
         public void OnDestroy()
         {
-            PieceSelectionManager.SequenceCompleted -= ShowText;
+            ScoreKeeper.PointsAwarded -= ShowText;
             MenuProvider.MenuDisplayed -= HideText;
         }
 
-        private void ShowText(LinkedList<ISquarePiece> pieces)
+        private void ShowText(int points, LinkedList<ISquarePiece> pieces)
         {
             if (MenuProvider.Instance.OnDisplay)
             {
@@ -41,11 +43,35 @@ namespace Assets.Scripts
                 return;
             }
 
-            if (pieces.Count >= GameSettings.AmountForAwesomeText)
+            var key = ScoreWord.GetScoreThreshold(points);
+            if (key == ScoreThreshold.None)
             {
-                SetEnabled(true);
-                text.text = Words[Random.Range(0, Words.Length)];
-                animator.SetTrigger("Show");
+                return;
+            }
+
+            SetEnabled(true);
+
+            var list = Words.FirstOrDefault(x => x.ScoreThreshold == key).Words;
+
+            text.text = list[Random.Range(0, list.Length)];
+            animator.SetTrigger("Show");
+
+            PlayScoreShotParticleEffect(key);
+        }
+
+        private static void PlayScoreShotParticleEffect(ScoreThreshold key)
+        {
+            if (key == ScoreThreshold.Medium)
+            {
+                GameResources.PlayEffect("Score Shot 1", Vector3.zero);
+            }
+            else if (key == ScoreThreshold.High)
+            {
+                GameResources.PlayEffect("Score Shot 2", Vector3.zero);
+            }
+            else if (key == ScoreThreshold.VeryHigh)
+            {
+                GameResources.PlayEffect("Score Shot 3", Vector3.zero);
             }
         }
 

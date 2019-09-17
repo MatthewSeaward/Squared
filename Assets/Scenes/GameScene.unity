@@ -6056,13 +6056,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Words:
-  - Awesome
-  - Fantasic
-  - Great
-  - Nice
-  - Epic
-  - Fantasic
-  - Perfect
+  - ScoreThreshold: 1
+    Words:
+    - Nice
+    - Good
+    - Sweet
+  - ScoreThreshold: 2
+    Words:
+    - Excellent
+    - Great
+    - Fantasic
+  - ScoreThreshold: 3
+    Words:
+    - Awesome
+    - Amazing
+    - Perfect
+  - ScoreThreshold: 4
+    Words:
+    - Incredible
+    - Epic
+    - Unbelievable
 --- !u!1 &1963977435
 GameObject:
   m_ObjectHideFlags: 0
