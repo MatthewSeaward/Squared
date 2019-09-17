@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ namespace Assets.Scripts.Workers.Enemy
             while (selectedPieces.Count < SelectionAmount && iterationCount < 100)
             {
                 iterationCount++;
-                var piece = PieceController.Pieces[Random.Range(0, PieceController.Pieces.Count)];
+                var piece = PieceController.Pieces[UnityEngine.Random.Range(0, PieceController.Pieces.Count)];
 
                 if (!ValidForRage(piece))
                 {
@@ -38,7 +39,18 @@ namespace Assets.Scripts.Workers.Enemy
                     continue;
                 }
 
+                piece.PieceDestroyed += SquarePiece_PieceDestroyed; 
                 selectedPieces.Add(piece);
+            }
+        }
+
+        private void SquarePiece_PieceDestroyed(SquarePiece piece)
+        {
+            piece.PieceDestroyed -= SquarePiece_PieceDestroyed;
+
+            if (selectedPieces.Contains(piece))
+            {
+                selectedPieces.Remove(piece);
             }
         }
 

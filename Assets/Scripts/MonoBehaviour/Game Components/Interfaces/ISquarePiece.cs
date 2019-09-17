@@ -14,6 +14,7 @@ public interface ISquarePiece
     GameObject gameObject { get; }
     IPieceDestroy DestroyPieceHandler { get; }
     PieceTypes Type { get; set; }
+    PieceDestroyed PieceDestroyed { set; get; }
 
     void Deselected();
     void DestroyPiece();

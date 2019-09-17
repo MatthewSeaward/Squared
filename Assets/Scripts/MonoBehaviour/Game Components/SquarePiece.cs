@@ -6,6 +6,8 @@ using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 using static PieceFactory;
 
+public delegate void PieceDestroyed(SquarePiece piece);
+
 public class SquarePiece : MonoBehaviour, ISquarePiece
 {
 
@@ -32,6 +34,9 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     private Animator _animator;
     private static Vector3 _initialScale;
     private Vector2Int _position;
+
+    public PieceDestroyed PieceDestroyed { set; get; }
+
     public Vector2Int Position
     {
         get
@@ -170,6 +175,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public void Destroy()
     {
         DestroyPieceHandler.OnDestroy();
+        PieceDestroyed?.Invoke(this);
     }
 
     public void Deselected()
