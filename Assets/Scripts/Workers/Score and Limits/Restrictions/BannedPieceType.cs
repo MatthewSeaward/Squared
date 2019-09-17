@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+﻿using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System.Collections.Generic;
 using static PieceFactory;
 
@@ -16,7 +17,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Banned: {BannedPiece.ToString()}";
+            return $"Banned: {BannedPiece.ToString().Spaced()}";
         }
 
         public void Reset()
