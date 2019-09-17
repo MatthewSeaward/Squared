@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Assets.Scripts.Workers.Piece_Effects
 {
-
    public class SwapSpriteBehaviour : IBehaviour, ILayeredSprite
     {
         private const float SwapFrequency = 5f;

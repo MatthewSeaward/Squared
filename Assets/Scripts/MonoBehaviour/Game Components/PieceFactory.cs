@@ -154,6 +154,10 @@ public class PieceFactory : MonoBehaviour
         {
             squarePiece.PieceBehaviour = new SwapSpriteBehaviour();
         }
+        else
+        {
+            squarePiece.PieceBehaviour = null;
+        }
     }
  
     private void BuildScoring(PieceTypes type, SquarePiece squarePiece, int scoreValue)
