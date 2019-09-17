@@ -13,7 +13,6 @@ namespace Assets.Scripts
 
         public static ScoreThreshold GetScoreThreshold(int score)
         {
-            score += 100;
             if (score > 100)
             {
                 return ScoreThreshold.VeryHigh;
