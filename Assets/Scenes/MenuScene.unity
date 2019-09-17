@@ -2459,7 +2459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: GOLEMS REST
+  m_Text: GOLEMS LAIR
 --- !u!222 &1723302086
 CanvasRenderer:
   m_ObjectHideFlags: 0
