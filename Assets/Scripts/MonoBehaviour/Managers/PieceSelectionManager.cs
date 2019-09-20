@@ -42,14 +42,20 @@ namespace Assets.Scripts
                 return;
             }
 
+            if (MenuProvider.Instance.OnDisplay)
+            {
+                return;
+            }
+
             if (!Input.GetMouseButtonUp(0))
             {
                 return;
             }
 
             if (CurrentPieces.Count > 1)
-            {
-                SequenceCompleted(CurrentPieces);
+            {             
+
+                SequenceCompleted?.Invoke(CurrentPieces);
                 LogUsedPieces(CurrentPieces);
 
                 foreach (var square in CurrentPieces)
