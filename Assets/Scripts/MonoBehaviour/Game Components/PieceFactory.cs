@@ -11,6 +11,7 @@ using Assets;
 using Assets.Scripts.Constants;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
+using UnityEngine.UI;
 
 public class PieceFactory : MonoBehaviour
 {
@@ -58,6 +59,7 @@ public class PieceFactory : MonoBehaviour
         BuildBehaviours(type, squarePiece);
         BuildScoring(type, squarePiece, scoreValue);
         BuildLayers(piece, squarePiece);
+        BuildTextLayer(squarePiece);
 
         return piece;
     }
@@ -175,7 +177,34 @@ public class PieceFactory : MonoBehaviour
             squarePiece.Scoring = new SingleScore(scoreValue);
         }
     }
-     
+
+    private void BuildTextLayer(SquarePiece squarePiece)
+    {
+        var textLayer = squarePiece.GetComponentInChildren<Text>();
+        if (textLayer == null)
+        {
+            return;
+        }
+
+        textLayer.text = string.Empty;
+
+        ApplyTextLayer(textLayer, squarePiece.SwapEffect as ITextLayer);
+        ApplyTextLayer(textLayer, squarePiece.PieceConnection as ITextLayer);
+        ApplyTextLayer(textLayer, squarePiece.PieceBehaviour as ITextLayer);
+        ApplyTextLayer(textLayer, squarePiece.DestroyPieceHandler as ITextLayer);
+        ApplyTextLayer(textLayer, squarePiece.Scoring as ITextLayer);
+    }
+
+    private void ApplyTextLayer(Text textLayer, ITextLayer layer)
+    {
+        if (layer == null)
+        {
+            return;
+        }
+
+        textLayer.text = layer.GetText();
+    }
+
     private void BuildLayers(GameObject piece, SquarePiece squarePiece)
     {
         for (int i = 0; i < squarePiece.transform.childCount; i++)

@@ -1,10 +1,8 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using Assets.Scripts.Workers.Piece_Effects.Interfaces;
-using UnityEngine;
+﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 
 namespace Assets.Scripts.Workers.Piece_Effects
 {
-    public class SingleScore : IScoreable, ILayeredSprite
+    public class SingleScore : IScoreable, ITextLayer
     {
         private int scoreValue;
 
@@ -20,15 +18,15 @@ namespace Assets.Scripts.Workers.Piece_Effects
             return currentScore + scoreValue;
         }
 
-        public Sprite GetSprite()
+        public string GetText()
         {
             if (scoreValue > 1)
             {
-                return GameResources.Sprites[scoreValue.ToString()];
+                return scoreValue.ToString();
             }
             else
             {
-                return null;
+                return string.Empty;
             }
         }
     }
