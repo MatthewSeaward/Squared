@@ -96,7 +96,7 @@
 		},
 		{
 			"LevelNumber": 5,
-			"Target": 120,
+			"Target": 110,
 			"colours":[0,5,6,7,2],
 			"SpecialDropPieces": ["2"],
 			"StarsToUnlock": 6,
