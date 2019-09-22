@@ -107,9 +107,9 @@ namespace Assets.Scripts
 
             if (filteredScores.Count() > 0)
             {
-                foreach (var score in filteredScores)
+                foreach (var score in filteredScores.OrderBy(x => x.Score))
                 {
-                    text.text += Environment.NewLine + score.Score;
+                    text.text += Environment.NewLine + $"{score.Score} ({score.Result.ToString()})";
                     total += score.Score;
                 }
 
