@@ -51,6 +51,148 @@
 					"Destroy,Turns,11,16,4",
 					"Destroy,Turns,17,20,5"
 				]
+			},
+			{
+				"LevelNumber": 5,
+				"Star1":
+				[
+					"Destroy,Turns,2,4,4",
+					"Destroy,Turns,8,10,4"
+				],
+				"Star2":
+				[
+					"Destroy,Turns,2,4,4",
+					"Destroy,Turns,10,15,6",
+					"Destroy,Turns,18,23,4"
+				],
+				"Star3":
+				[
+					"Destroy,Turns,2,6,6",
+					"Destroy,Turns,8,12,4"
+				]
+			},
+			{
+				"LevelNumber": 6,
+				"Star1":
+				[
+					"Destroy,Turns,2,6,4",
+					"Destroy,Turns,7,8,2"
+				],
+				"Star2":
+				[
+					""
+				],
+				"Star3":
+				[
+					"Destroy,Turns,2,4,2",
+					"Destroy,Turns,8,9,2"
+				]
+			},
+			{
+				"LevelNumber": 7,
+				"Star1":
+				[
+					"Change,Turns,4,5,2,l"
+				],
+				"Star2":
+				[
+					""
+				],
+				"Star3":
+				[
+					"Change,Turns,2,3,2,l",
+					"Change,Turns,5,7,2,l"
+				]
+			},
+			{
+				"LevelNumber": 8,
+				"Star1":
+				[
+					"Change,Turns,2,5,2,l",
+					"Destroy,Turns,5,7,4"
+				],
+				"Star2":
+				[
+					""
+				],
+				"Star3":
+				[
+					"Change,Turns,2,4,1,l",
+					"Change,Turns,6,8,2,l"
+				]
+			},
+			{
+				"LevelNumber": 9,
+				"Star1":
+				[
+					"Destroy,Turns,2,7,5"
+				],
+				"Star2":
+				[
+					"Destroy,Turns,2,4,2",
+					"Destroy,Turns,5,6,2"
+				],
+				"Star3":
+				[
+					"Change,Turns,2,5,4,l"
+				]
+			},
+				{
+				"LevelNumber": 10,
+				"Star1":
+				[
+					"Change,Turns,4,7,2,h",
+					"Change,Turns,7,10,2,h",
+					"Change,Turns,11,15,2,h"
+				],
+				"Star2":
+				[
+					""
+				],
+				"Star3":
+				[
+					"Change,Turns,2,5,2,l",
+					"Change,Turns,5,7,2,h",
+					"Destroy,Turns,8,10,2"
+				]
+			},
+				{
+				"LevelNumber": 11,
+				"Star1":
+				[
+					"Change,Turns,2,8,4,h",
+					"Change,Turns,15,21,4,h"
+				],
+				"Star2":
+				[
+					"Change,Turns,10,15,2,l",
+					"Destroy,Turns,3,4,2",
+					"Destroy,Turns,15,18,2"
+				],
+				"Star3":
+				[
+					""
+				]
+			},
+				{
+				"LevelNumber": 12,
+				"Star1":
+				[
+					"Change,Turns,2,5,5,h",
+					"Change,Turns,7,10,5,h",
+					"Destroy,Turns,14,20,4"
+				],
+				"Star2":
+				[
+					""
+				],
+				"Star3":
+				[
+					"Destroy,Turns,2,4,2",
+					"Change,Turns,6,8,2,h",
+					"Destroy,Turns,8,10,3",
+					"Change,Turns,15,20,4,h"
+				]
 			}
 		]
-}
+	}

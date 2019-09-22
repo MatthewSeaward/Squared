@@ -11,7 +11,11 @@ namespace Assets.Scripts.Workers.IO.Data_Entities
 
         public static void PlayEffect(string name, Vector3 pos)
         {
-            PlayEffect(name, pos, Color.white);
+            var obj = ParticleEffects[name];
+
+            var effect = ObjectPool.GetGameObject(obj);
+            effect.transform.position = pos;
+            effect.SetActive(true);
         }
 
         public static void PlayEffect(string name, Vector3 pos, Color colour)

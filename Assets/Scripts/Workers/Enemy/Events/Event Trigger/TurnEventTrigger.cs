@@ -23,7 +23,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
        }
 
-        ~TurnEventTrigger()
+        public override void Dispose()
         {
             PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
         }
@@ -32,6 +32,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
         {
             base.Start(enemy);
 
+            TurnsPassed = 0;
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
         }
 

@@ -19,6 +19,7 @@ namespace Assets.Scripts
             ObjectPool.PreLoad(GameResources.ParticleEffects["Score Shot 1"], 2);
             ObjectPool.PreLoad(GameResources.ParticleEffects["Score Shot 2"], 2);
             ObjectPool.PreLoad(GameResources.ParticleEffects["Score Shot 3"], 2);
+            ObjectPool.PreLoad(GameResources.ParticleEffects["Piece Change"], 10);
 
             BonusPoints.Setup();
         }

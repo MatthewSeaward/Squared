@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Assets.Scripts.Workers.Enemy;
 using Assets.Scripts.Workers.Enemy.Events;
+using Assets.Scripts.Workers.Helpers.Extensions;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -24,19 +25,20 @@ namespace Assets.Scripts.Workers.IO
 
                 var parts = str.Split(',');
 
-                var type = parts[0];
-                var trigger = parts[1];
-                var min = parts[2];
-                var max = parts[3];
-                var amount = parts[4];
+                var type = parts.SafeGet(0);
+                var trigger = parts.SafeGet(1);
+                var min = parts.SafeGet(2);
+                var max = parts.SafeGet(3);
+                var amount = parts.SafeGet(4);
+                var parameters = parts.SafeGet(5);
 
-                eEvent.RageEvents.Add(BuildTrigger(type, trigger, min, max, amount));
+                eEvent.RageEvents.Add(BuildTrigger(type, trigger, min, max, amount, parameters));
             }
 
             return eEvent;
         }
 
-        private static EnemyEventTrigger BuildTrigger(string type, string trigger, string min, string max, string amount)
+        private static EnemyEventTrigger BuildTrigger(string type, string trigger, string min, string max, string amount, string parameters)
         {
             EnemyEventTrigger trig = null;
 
@@ -54,6 +56,9 @@ namespace Assets.Scripts.Workers.IO
                     break;
                 case "Swap":
                     trig.EnemyRage = new SwapRage() { SelectionAmount = Convert.ToInt32(amount) };
+                    break;
+                case "Change":
+                    trig.EnemyRage = new ChangePiece() { SelectionAmount = Convert.ToInt32(amount), NewPieceType = (PieceFactory.PieceTypes) parameters[0]  };
                     break;
             }
 

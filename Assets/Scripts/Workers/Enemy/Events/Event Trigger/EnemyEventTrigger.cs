@@ -46,5 +46,9 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
             triggered = true;
         }
+
+        public virtual void Dispose()
+        {
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace Assets.Scripts
             ShowEnemyText(DialogueManager.Instance.GetLevelText());
 
             EnemyEvents = LevelManager.Instance.SelectedLevel.GetCurrentStar().Events;
-            foreach(var e in EnemyEvents.RageEvents)
+            foreach(var e in EnemyEvents?.RageEvents)
             {
                 e.Start(enemy);
             }
@@ -83,6 +83,11 @@ namespace Assets.Scripts
 
         public void OnDestroy()
         {
+            foreach (var e in EnemyEvents?.RageEvents)
+            {
+                e.Dispose();
+            }
+
             SpeechBubbleManager.SpeechBubbleFinishedEvent -= DisplayNextText;
             LevelStart.GameStarted -= GameStarted;
             MenuProvider.MenuDisplayed -= MoveEnemyOffScreen;
