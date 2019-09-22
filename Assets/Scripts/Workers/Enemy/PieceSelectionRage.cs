@@ -14,8 +14,6 @@ namespace Assets.Scripts.Workers.Enemy
         private List<ISquarePiece> selectedPieces = new List<ISquarePiece>();
         private float timer;
 
-        public Vector3 Position { get; set; }
-
         public void InvokeRage()
         {
             if (MenuProvider.Instance.OnDisplay)

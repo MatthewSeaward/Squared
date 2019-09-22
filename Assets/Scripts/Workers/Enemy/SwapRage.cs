@@ -3,12 +3,7 @@
 namespace Assets.Scripts.Workers.Enemy
 {
     public class SwapRage : PieceSelectionRage
-    {       
-        public SwapRage(Vector3 Position)
-        {
-            this.Position = Position;
-        }
-
+    {    
         protected override void InvokeRageAction(ISquarePiece piece)
         {
             Sprite newSprite = null;

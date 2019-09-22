@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
+using Assets.Scripts.Workers.Enemy.Events;
 using System.Collections.Generic;
 using UnityEngine;
 using VikingCrew.Tools.UI;
@@ -20,8 +21,8 @@ namespace Assets.Scripts
         private Queue<string> _queuedText = new Queue<string>();
         private Vector3 _targetPos;
         private Vector3 _startPos;
-        private string _queuedTrigger;
-        private float RageTimer = 0;
+
+        private EnemyEvents EnemyEvents = new EnemyEvents();
 
         public void Start()
         {
@@ -45,20 +46,23 @@ namespace Assets.Scripts
             enemy.transform.position = _startPos;
             enemy.gameObject.AddComponent<Lerp>();
 
-            MenuProvider.MenuDisplayed += MenuDisplayed;
-            PieceSelectionManager.SequenceCompleted += SequenceCompletedEvent;
+            MenuProvider.MenuDisplayed += MoveEnemyOffScreen;
+
             SpeechBubbleManager.SpeechBubbleFinishedEvent += DisplayNextText;
             LevelStart.GameStarted += GameStarted;
 
             ShowEnemyText(DialogueManager.Instance.GetLevelText());
+
+            EnemyEvents = LevelManager.Instance.SelectedLevel.GetCurrentStar().Events;
+            foreach(var e in EnemyEvents.RageEvents)
+            {
+                e.Start(enemy);
+            }
         }
 
         public void Update()
         {
-            if (RageTimer > 0)
-            {
-                RageTimer -= Time.deltaTime;
-            }
+            EnemyEvents.Update(Time.deltaTime);
         }
 
         private void DisplayNextText()
@@ -75,19 +79,13 @@ namespace Assets.Scripts
 
             SpeechBubbleManager.Instance.AddSpeechBubble(enemyHead.transform, nextMessage, timeToLive: time);
 
-            if (!string.IsNullOrEmpty(_queuedTrigger))
-            {
-                enemy.GetComponent<Animator>().SetTrigger(_queuedTrigger);
-                _queuedTrigger = null;
-            }
         }
 
         public void OnDestroy()
         {
-            PieceSelectionManager.SequenceCompleted -= SequenceCompletedEvent;
             SpeechBubbleManager.SpeechBubbleFinishedEvent -= DisplayNextText;
             LevelStart.GameStarted -= GameStarted;
-            MenuProvider.MenuDisplayed -= MenuDisplayed;
+            MenuProvider.MenuDisplayed -= MoveEnemyOffScreen;
         }
 
         public void ShowEnemyText(params string[] text)
@@ -99,7 +97,7 @@ namespace Assets.Scripts
             MoveEnemyOnScreen();
         }
        
-        private void MoveEnemyOnScreen()
+        public void MoveEnemyOnScreen()
         {
             var lerp = enemy.GetComponent<Lerp>();
             lerp.LerpCompleted += DisplayNextText;
@@ -122,44 +120,6 @@ namespace Assets.Scripts
         {
             _queuedText.Clear();
             SpeechBubbleManager.Instance.Clear();
-        }
-
-        private void SequenceCompletedEvent(LinkedList<ISquarePiece> pieces)
-        {
-            if (MenuProvider.Instance.OnDisplay)
-            {
-                return;
-            }
-
-            if (RageTimer <= 0 && pieces.Count >= enemy.PiecesForRage)
-            {
-                PlayRage();
-                EnemyRaged?.Invoke();
-                RageTimer = GameSettings.EnemyRageInterval;
-            }
-        }
-
-        public void PlayRage()
-        {
-            _queuedTrigger = "Angry1";
-
-            enemy.GetComponent<Lerp>().LerpCompleted += PlayEnemyRage;
-
-            ShowEnemyText(DialogueManager.Instance.GetAngryText());
-        }
-
-        private void PlayEnemyRage()
-        {
-            enemy.GetComponent<Lerp>().LerpCompleted -= PlayEnemyRage;
-            enemy.GetComponent<EnemyScript>().EnemyRage.InvokeRage();
-        }
-
-        private void MenuDisplayed()
-        {
-            if (!string.IsNullOrWhiteSpace(_queuedTrigger))
-            {
-                MoveEnemyOffScreen();
-            }
-        }
+        }        
     }
 }

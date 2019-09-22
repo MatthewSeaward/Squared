@@ -7,7 +7,7 @@ namespace Assets.Scripts
 {
     class AvailableMoveChecker : MonoBehaviour
     {
-        DestroyRage rage = new DestroyRage(Vector3.zero);
+        DestroyRage rage = new DestroyRage();
             
 
         private void Start()

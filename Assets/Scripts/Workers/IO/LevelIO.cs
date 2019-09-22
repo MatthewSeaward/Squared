@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.IO.Enemy_Event;
 using Assets.Scripts.Workers.IO.Level_Loader.Order;
 using DataEntities;
 using LevelLoader;
@@ -28,6 +29,7 @@ namespace Assets.Scripts.Workers.IO
         {
             Levels = levelLoader.GetLevels();
             LoadLevelStars();
+            LoadEnemyEvents();
 
             FireBaseLevelProgressReader.UserDataLoaded += UserDataLoaded;
 
@@ -81,6 +83,35 @@ namespace Assets.Scripts.Workers.IO
                     level.Star2Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star2);
                     level.Star3Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star3);
 
+                }
+            }
+        }
+
+        private void LoadEnemyEvents()
+        {
+            var reader = new JSONEventReader();
+            var events = reader.GetEvents();
+
+            foreach (var chapter in Levels)
+            {
+                if (!events.ContainsKey(chapter.Key))
+                {
+                    continue;
+                }
+
+                var eventsForChapter = events[chapter.Key];
+
+                foreach (var level in chapter.Value)
+                {
+                    var eventsForLevel = eventsForChapter.FirstOrDefault(x => x.LevelNumber == level.LevelNumber);
+                    if (eventsForLevel == null)
+                    {
+                        continue;
+                    }
+
+                    level.Star1Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star1);
+                    level.Star2Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star2);
+                    level.Star3Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star3);
                 }
             }
         }

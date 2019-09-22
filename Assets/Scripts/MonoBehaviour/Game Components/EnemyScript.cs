@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    class EnemyScript : MonoBehaviour
+    public class EnemyScript : MonoBehaviour
     {
         [SerializeField]
         private EnemyInfo EnemyInfo;
@@ -13,16 +13,16 @@ namespace Assets.Scripts
 
         public int PiecesForRage => EnemyInfo.PiecesForRage;
 
-        public IEnemyRage EnemyRage { get; private set; }
+        //public IEnemyRage EnemyRage { get; private set; }
 
-        private void Awake()
-        {
-            EnemyRage = EnemyInfo.GetRage(transform.position);
-        }
+        //private void Awake()
+        //{
+        //    EnemyRage = EnemyInfo.GetRage();
+        //}
 
-        private void Update()
-        {
-            EnemyRage.Update(Time.deltaTime);
-        }
+        //private void Update()
+        //{
+        //    EnemyRage.Update(Time.deltaTime);
+        //}
     }
 }

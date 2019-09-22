@@ -3,6 +3,8 @@ using System.Collections;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Writer;
+using Assets.Scripts.Workers.IO.Enemy_Event;
+using DataEntities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +25,8 @@ namespace Assets.Scripts
             LevelIO.DataLoaded += DataLoaded;
             LevelManager.Instance.LoadData();
             ScoreManager.Instance.Initialise();
+
+
 
             StartCoroutine(LoadingText());
         }
