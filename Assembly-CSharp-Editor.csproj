@@ -65,6 +65,7 @@
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\Editor\SpeechbubbleFitterDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\MoveCheckerTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Helpers\Connection Helper\DiagonalTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Helpers\Extensions\SpacedTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\MultipliedScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\SingleScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Swap Effects\LockedSwap.cs" />

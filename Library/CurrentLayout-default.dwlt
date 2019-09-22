@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
-  m_MinSize: {x: 950, y: 544}
+  m_MinSize: {x: 950, y: 394}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -63,16 +63,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 675
-    width: 1261
+    width: 1444
     height: 272
-  m_MinSize: {x: 232, y: 272}
-  m_MaxSize: {x: 10002, y: 10022}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 102, y: 122}
+  m_MaxSize: {x: 4002, y: 4022}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -88,12 +88,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 688
+    x: 772
     y: 0
-    width: 573
+    width: 672
     height: 675
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -187,10 +187,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 887, y: 494}
-  m_MaxSize: {x: 16012, y: 14044}
+  m_MinSize: {x: 885, y: 344}
+  m_MaxSize: {x: 16010, y: 8044}
   vertical: 0
-  controlID: 77
+  controlID: 157
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,12 +210,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1261
+    width: 1444
     height: 947
-  m_MinSize: {x: 610, y: 494}
-  m_MaxSize: {x: 12010, y: 14044}
+  m_MinSize: {x: 610, y: 344}
+  m_MaxSize: {x: 12010, y: 8044}
   vertical: 1
-  controlID: 78
+  controlID: 42
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,12 +236,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1261
+    width: 1444
     height: 675
   m_MinSize: {x: 610, y: 222}
   m_MaxSize: {x: 12010, y: 4022}
   vertical: 0
-  controlID: 79
+  controlID: 43
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,10 +259,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 265
+    width: 432
     height: 675
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -283,9 +283,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 265
+    x: 432
     y: 0
-    width: 423
+    width: 340
     height: 675
   m_MinSize: {x: 204, y: 222}
   m_MaxSize: {x: 4004, y: 4022}
@@ -309,9 +309,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1261
+    x: 1444
     y: 0
-    width: 659
+    width: 476
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
@@ -322,7 +322,7 @@ MonoBehaviour:
   - {fileID: 22}
   - {fileID: 14}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -374,9 +374,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 688
-    y: 73
-    width: 571
+    x: -31228
+    y: -31970
+    width: 670
     height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_VSyncEnabled: 0
@@ -411,25 +411,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 571
+      width: 670
       height: 639
-    m_Scale: {x: 0.49921876, y: 0.49921876}
-    m_Translation: {x: 285.5, y: 319.5}
+    m_Scale: {x: 0.49921873, y: 0.49921876}
+    m_Translation: {x: 335, y: 319.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -571.89355
+      x: -671.0485
       y: -640
-      width: 1143.7871
+      width: 1342.097
       height: 1280
     m_MinimalGUI: 1
   m_defaultScale: 0.49921876
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 571, y: 656}
+  m_LastWindowPixelSize: {x: 670, y: 656}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -455,31 +455,31 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 73
-    width: 265
+    x: -32000
+    y: -31970
+    width: 432
     height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: f43f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: cedafdffc2dbfdfff2dbfdffbcddfdffdeddfdffe6ddfdffb2d3feffd0d4feff7484ffff40a5ffff1ccfffff42d0ffffb4d6ffffaaf9ffff60fbffff22500000945000000251000058510000ca51000038520000885300009053000096610000f662000020860000
+      m_ExpandedIDs: 50ebffffc0efffffacf9ffff76fbffff9c490000ea490000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Panel
+        m_OriginalName: Panel
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 18922
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 11}
       m_SearchString: 
@@ -510,9 +510,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 265
-    y: 73
-    width: 421
+    x: -31568
+    y: -31970
+    width: 338
     height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.7809956, y: -0.508423, z: -0.46289062}
+    m_Target: {x: 121.21384, y: 373.3713, z: -45.245167}
     speed: 2
-    m_Value: {x: -1.7809956, y: -0.508423, z: -0.46289062}
+    m_Value: {x: 121.21384, y: 373.3713, z: -45.245167}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -560,9 +560,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 15.22067
+    m_Target: 857.65924
     speed: 2
-    m_Value: 15.22067
+    m_Value: 857.65924
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -611,7 +611,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 748
-    width: 1261
+    width: 1444
     height: 253
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -627,20 +627,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/MonoBehaviour/Managers
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/MonoBehaviour/Managers
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Development\Unity Projects\Squared
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 355}
-    m_SelectedIDs: 9a400000
-    m_LastClickedID: 16538
-    m_ExpandedIDs: 000000009031000084330000a4370000863800008c380000ca3a0000da3a0000c03b0000923d00006a3e0000b83f000010400000104100001e41000078420000c2450000c445000000ca9a3b
+    scrollPos: {x: 0, y: 579}
+    m_SelectedIDs: b2330000
+    m_LastClickedID: 13234
+    m_ExpandedIDs: 000000007c3100007233000090340000a63700004c380000883800008e380000ce3a0000de3a0000c63b0000983d0000743e0000c43f00001c40000030400000ac4000002441000032410000b4480000b6480000b848000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -668,7 +668,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009031000084330000a4370000863800008c380000ca3a0000da3a0000923d00006a3e0000b83f0000f03f000010400000104100001e41000078420000c2450000c4450000
+    m_ExpandedIDs: 000000007c3100007233000090340000a63700004c380000883800008e380000ce3a0000de3a0000c63b0000983d0000743e0000c43f00001c40000030400000ac4000002441000032410000b4480000b6480000b8480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -693,10 +693,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: f43f0000
+    m_LastClickedInstanceID: 16372
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 863300003c36000042390000742f0000d4af00000a3c0000043a00004e3600002c410000962f00006e390000982f000076390000aa3800007a3b0000f42700009e320000aa2b00008e3300006e3d00007e3d00000000000016400000
+    m_ExpandedInstanceIDs: 863300003c36000042390000742f0000d4af00000a3c0000043a00004e3600002c410000962f00006e390000982f000076390000aa3800007a3b0000f42700009e320000aa2b00008e3300006e3d00007e3d000016400000000000001c4100002638000012390000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -712,7 +712,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 12}
+      m_ClientGUIView: {fileID: 3}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -745,9 +745,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1261
-    y: 73
-    width: 657
+    x: -30556
+    y: -31970
+    width: 474
     height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -781,9 +781,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 748
-    width: 1260
+    x: -32000
+    y: -31295
+    width: 1444
     height: 253
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &21
@@ -806,9 +806,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1261
+    x: 1444
     y: 73
-    width: 657
+    width: 474
     height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -870,7 +870,7 @@ MonoBehaviour:
       name: Squared
       fullName: Squared
       resultStatus: 1
-      duration: 0.2436902
+      duration: 0.0935413
       messages: 
       output: 
       stacktrace: 
@@ -886,7 +886,7 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor.dll
       fullName: D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 1
-      duration: 0.211548
+      duration: 0.0506299
       messages: 
       output: 
       stacktrace: 
@@ -1165,12 +1165,97 @@ MonoBehaviour:
       - Grid Management
       parentId: 1034
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.MoveCheckerTests][suite]
+    - id: 1024
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedPieceTypeTests][suite]
+      name: BannedPieceTypeTests
+      fullName: BannedPieceTypeTests
+      resultStatus: 1
+      duration: 0.2189447
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Restrictions
+      parentId: 1074
+      parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1025
+      uniqueId: Assembly-CSharp-Editor.dll/BannedPieceTypeTests/[Assembly-CSharp-Editor][BannedPieceTypeTests.BannedRainbow_NotUsed]
+      name: BannedRainbow_NotUsed
+      fullName: BannedPieceTypeTests.BannedRainbow_NotUsed
+      resultStatus: 1
+      duration: 0.1879084
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedPieceTypeTests][suite]
+    - id: 1026
+      uniqueId: Assembly-CSharp-Editor.dll/BannedPieceTypeTests/[Assembly-CSharp-Editor][BannedPieceTypeTests.BannedRainbow_Used]
+      name: BannedRainbow_Used
+      fullName: BannedPieceTypeTests.BannedRainbow_Used
+      resultStatus: 1
+      duration: 0.0012347
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedPieceTypeTests][suite]
+    - id: 1027
+      uniqueId: Assembly-CSharp-Editor.dll/BannedPieceTypeTests/[Assembly-CSharp-Editor][BannedPieceTypeTests.BannedSwapping_NotUsed]
+      name: BannedSwapping_NotUsed
+      fullName: BannedPieceTypeTests.BannedSwapping_NotUsed
+      resultStatus: 1
+      duration: 0.0007703
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedPieceTypeTests][suite]
+    - id: 1028
+      uniqueId: Assembly-CSharp-Editor.dll/BannedPieceTypeTests/[Assembly-CSharp-Editor][BannedPieceTypeTests.BannedSwapping_Used]
+      name: BannedSwapping_Used
+      fullName: BannedPieceTypeTests.BannedSwapping_Used
+      resultStatus: 1
+      duration: 0.0011177
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1024
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedPieceTypeTests][suite]
     - id: 1001
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedSprite][suite]
       name: BannedSprite
       fullName: BannedSprite
       resultStatus: 1
-      duration: 0.0070763
+      duration: 0.0364216
       messages: 
       output: 
       stacktrace: 
@@ -1187,7 +1272,7 @@ MonoBehaviour:
       name: False_NoBanned
       fullName: BannedSprite.False_NoBanned
       resultStatus: 1
-      duration: 0.0005697
+      duration: 0.001778
       messages: 
       output: 
       stacktrace: 
@@ -1204,7 +1289,7 @@ MonoBehaviour:
       name: True_ContainsBanned
       fullName: BannedSprite.True_ContainsBanned
       resultStatus: 1
-      duration: 0.0005498
+      duration: 0.0009726
       messages: 
       output: 
       stacktrace: 
@@ -1216,6 +1301,159 @@ MonoBehaviour:
       - Restrictions
       parentId: 1001
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][BannedSprite][suite]
+    - id: 1027
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests][suite]
+      name: DiagonalConnectionRestrictionTests
+      fullName: DiagonalConnectionRestrictionTests
+      resultStatus: 1
+      duration: 0.0170786
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Restrictions
+      parentId: 1064
+      parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1030
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalConnectionRestrictionTests/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests.FourPieces_NoDiagonal]
+      name: FourPieces_NoDiagonal
+      fullName: DiagonalConnectionRestrictionTests.FourPieces_NoDiagonal
+      resultStatus: 1
+      duration: 0.0026012
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1027
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests][suite]
+    - id: 1029
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalConnectionRestrictionTests/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests.FourPieces_OneDiagonal]
+      name: FourPieces_OneDiagonal
+      fullName: DiagonalConnectionRestrictionTests.FourPieces_OneDiagonal
+      resultStatus: 1
+      duration: 0.0012859
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1027
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests][suite]
+    - id: 1028
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalConnectionRestrictionTests/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests.TwoPieces_OneDiagonal]
+      name: TwoPieces_OneDiagonal
+      fullName: DiagonalConnectionRestrictionTests.TwoPieces_OneDiagonal
+      resultStatus: 1
+      duration: 0.0007392
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1027
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalConnectionRestrictionTests][suite]
+    - id: 1001
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalTests][suite]
+      name: DiagonalTests
+      fullName: DiagonalTests
+      resultStatus: 1
+      duration: 0.2361322
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Helpers
+      parentId: 1060
+      parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1002
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalTests/[Assembly-CSharp-Editor][DiagonalTests.PieceIsDiagonal_Test1]
+      name: PieceIsDiagonal_Test1
+      fullName: DiagonalTests.PieceIsDiagonal_Test1
+      resultStatus: 1
+      duration: 0.2110086
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Helpers
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalTests][suite]
+    - id: 1003
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalTests/[Assembly-CSharp-Editor][DiagonalTests.PieceIsDiagonal_Test2]
+      name: PieceIsDiagonal_Test2
+      fullName: DiagonalTests.PieceIsDiagonal_Test2
+      resultStatus: 1
+      duration: 0.0009541
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Helpers
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalTests][suite]
+    - id: 1004
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalTests/[Assembly-CSharp-Editor][DiagonalTests.PieceIsNotDiagonal_Test1]
+      name: PieceIsNotDiagonal_Test1
+      fullName: DiagonalTests.PieceIsNotDiagonal_Test1
+      resultStatus: 1
+      duration: 0.0010614
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Helpers
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalTests][suite]
+    - id: 1005
+      uniqueId: Assembly-CSharp-Editor.dll/DiagonalTests/[Assembly-CSharp-Editor][DiagonalTests.PieceIsNotDiagonal_Test2]
+      name: PieceIsNotDiagonal_Test2
+      fullName: DiagonalTests.PieceIsNotDiagonal_Test2
+      resultStatus: 1
+      duration: 0.0006218
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Helpers
+      parentId: 1001
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalTests][suite]
     - id: 1010
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][LockedSwap][suite]
       name: LockedSwap
@@ -1255,7 +1493,7 @@ MonoBehaviour:
       name: MaxPieceLimit
       fullName: MaxPieceLimit
       resultStatus: 1
-      duration: 0.0193509
+      duration: 0.0122249
       messages: 
       output: 
       stacktrace: 
@@ -1272,7 +1510,7 @@ MonoBehaviour:
       name: False_MaxLimit3_Pieces4
       fullName: MaxPieceLimit.False_MaxLimit3_Pieces4
       resultStatus: 1
-      duration: 0.0005312
+      duration: 0.000913
       messages: 
       output: 
       stacktrace: 
@@ -1289,7 +1527,7 @@ MonoBehaviour:
       name: True_MaxLimit3_Pieces2
       fullName: MaxPieceLimit.True_MaxLimit3_Pieces2
       resultStatus: 1
-      duration: 0.0003845
+      duration: 0.0005334
       messages: 
       output: 
       stacktrace: 
@@ -1306,7 +1544,7 @@ MonoBehaviour:
       name: True_MaxLimit3_Pieces3
       fullName: MaxPieceLimit.True_MaxLimit3_Pieces3
       resultStatus: 1
-      duration: 0.0004438
+      duration: 0.0004558
       messages: 
       output: 
       stacktrace: 
@@ -1323,7 +1561,7 @@ MonoBehaviour:
       name: MinPieceLimit
       fullName: MinPieceLimit
       resultStatus: 1
-      duration: 0.0131892
+      duration: 0.0143912
       messages: 
       output: 
       stacktrace: 
@@ -1340,7 +1578,7 @@ MonoBehaviour:
       name: False_Limit3_Pieces2
       fullName: MinPieceLimit.False_Limit3_Pieces2
       resultStatus: 1
-      duration: 0.0004109
+      duration: 0.0007862
       messages: 
       output: 
       stacktrace: 
@@ -1357,7 +1595,7 @@ MonoBehaviour:
       name: True_Limit3_Pieces3
       fullName: MinPieceLimit.True_Limit3_Pieces3
       resultStatus: 1
-      duration: 0.0003586
+      duration: 0.000566
       messages: 
       output: 
       stacktrace: 
@@ -1374,7 +1612,7 @@ MonoBehaviour:
       name: True_Limit3_Pieces4
       fullName: MinPieceLimit.True_Limit3_Pieces4
       resultStatus: 1
-      duration: 0.000527
+      duration: 0.0005995
       messages: 
       output: 
       stacktrace: 
@@ -1493,7 +1731,7 @@ MonoBehaviour:
       name: NoRestriction
       fullName: NoRestriction
       resultStatus: 1
-      duration: 0.0107512
+      duration: 0.0127201
       messages: 
       output: 
       stacktrace: 
@@ -1510,7 +1748,7 @@ MonoBehaviour:
       name: True_NoRestriction_0Pieces
       fullName: NoRestriction.True_NoRestriction_0Pieces
       resultStatus: 1
-      duration: 0.0002422
+      duration: 0.000562
       messages: 
       output: 
       stacktrace: 
@@ -1527,7 +1765,7 @@ MonoBehaviour:
       name: True_NoRestriction_3Pieces
       fullName: NoRestriction.True_NoRestriction_3Pieces
       resultStatus: 1
-      duration: 0.0003479
+      duration: 0.0006473
       messages: 
       output: 
       stacktrace: 
@@ -1539,6 +1777,91 @@ MonoBehaviour:
       - Restrictions
       parentId: 1012
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][NoRestriction][suite]
+    - id: 1042
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests][suite]
+      name: OnlyDiagonalConnectionTests
+      fullName: OnlyDiagonalConnectionTests
+      resultStatus: 1
+      duration: 0.0201705
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Restrictions
+      parentId: 1069
+      parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1045
+      uniqueId: Assembly-CSharp-Editor.dll/OnlyDiagonalConnectionTests/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests.FourPieces_NoDiagonal]
+      name: FourPieces_NoDiagonal
+      fullName: OnlyDiagonalConnectionTests.FourPieces_NoDiagonal
+      resultStatus: 1
+      duration: 0.001551
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests][suite]
+    - id: 1044
+      uniqueId: Assembly-CSharp-Editor.dll/OnlyDiagonalConnectionTests/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests.ThreePieces_AllDiagonal]
+      name: ThreePieces_AllDiagonal
+      fullName: OnlyDiagonalConnectionTests.ThreePieces_AllDiagonal
+      resultStatus: 1
+      duration: 0.0014657
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests][suite]
+    - id: 1046
+      uniqueId: Assembly-CSharp-Editor.dll/OnlyDiagonalConnectionTests/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests.TwoPieces_NoDiagonal]
+      name: TwoPieces_NoDiagonal
+      fullName: OnlyDiagonalConnectionTests.TwoPieces_NoDiagonal
+      resultStatus: 1
+      duration: 0.0010804
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests][suite]
+    - id: 1043
+      uniqueId: Assembly-CSharp-Editor.dll/OnlyDiagonalConnectionTests/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests.TwoPieces_OneDiagonal]
+      name: TwoPieces_OneDiagonal
+      fullName: OnlyDiagonalConnectionTests.TwoPieces_OneDiagonal
+      resultStatus: 1
+      duration: 0.0007924
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Restrictions
+      parentId: 1042
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][OnlyDiagonalConnectionTests][suite]
     - id: 1007
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SingleScoreTests][suite]
       name: SingleScoreTests
@@ -1590,13 +1913,132 @@ MonoBehaviour:
       - Scoring
       parentId: 1007
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SingleScoreTests][suite]
+    - id: 1006
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
+      name: SpacedTests
+      fullName: SpacedTests
+      resultStatus: 1
+      duration: 0.0396614
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Extensions
+      parentId: 1081
+      parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1011
+      uniqueId: Assembly-CSharp-Editor.dll/SpacedTests/[Assembly-CSharp-Editor][SpacedTests.AllCaps]
+      name: AllCaps
+      fullName: SpacedTests.AllCaps
+      resultStatus: 1
+      duration: 0.0133223
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Extensions
+      parentId: 1006
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
+    - id: 1008
+      uniqueId: Assembly-CSharp-Editor.dll/SpacedTests/[Assembly-CSharp-Editor][SpacedTests.SimpleWord_FourCapital]
+      name: SimpleWord_FourCapital
+      fullName: SpacedTests.SimpleWord_FourCapital
+      resultStatus: 1
+      duration: 0.0003282
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Extensions
+      parentId: 1006
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
+    - id: 1010
+      uniqueId: Assembly-CSharp-Editor.dll/SpacedTests/[Assembly-CSharp-Editor][SpacedTests.SimpleWord_NoCapital]
+      name: SimpleWord_NoCapital
+      fullName: SpacedTests.SimpleWord_NoCapital
+      resultStatus: 1
+      duration: 0.0002697
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Extensions
+      parentId: 1006
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
+    - id: 1009
+      uniqueId: Assembly-CSharp-Editor.dll/SpacedTests/[Assembly-CSharp-Editor][SpacedTests.SimpleWord_OneCapital]
+      name: SimpleWord_OneCapital
+      fullName: SpacedTests.SimpleWord_OneCapital
+      resultStatus: 1
+      duration: 0.0002083
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Extensions
+      parentId: 1006
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
+    - id: 1007
+      uniqueId: Assembly-CSharp-Editor.dll/SpacedTests/[Assembly-CSharp-Editor][SpacedTests.SimpleWord_TwoCapital]
+      name: SimpleWord_TwoCapital
+      fullName: SpacedTests.SimpleWord_TwoCapital
+      resultStatus: 1
+      duration: 0.0002077
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Extensions
+      parentId: 1006
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
+    - id: 1012
+      uniqueId: Assembly-CSharp-Editor.dll/SpacedTests/[Assembly-CSharp-Editor][SpacedTests.WordWithNumbers]
+      name: WordWithNumbers
+      fullName: SpacedTests.WordWithNumbers
+      resultStatus: 1
+      duration: 0.000216
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Extensions
+      parentId: 1006
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SpacedTests][suite]
     - id: 1027
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][StandardScoreCalculationTests][suite]
       name: StandardScoreCalculationTests
       fullName: StandardScoreCalculationTests
-      resultStatus: 1
-      duration: 0.2289911
-      messages: 
+      resultStatus: 2
+      duration: 0.0066558
+      messages: One or more child tests had errors
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1612,7 +2054,7 @@ MonoBehaviour:
       name: Score0SinglePieces_Score0
       fullName: StandardScoreCalculationTests.Score0SinglePieces_Score0
       resultStatus: 1
-      duration: 0.0140105
+      duration: 0.0170058
       messages: 
       output: 
       stacktrace: 
@@ -1629,7 +2071,7 @@ MonoBehaviour:
       name: Score2SinglePieces1Double_Score4
       fullName: StandardScoreCalculationTests.Score2SinglePieces1Double_Score4
       resultStatus: 1
-      duration: 0.184771
+      duration: 0.1820519
       messages: 
       output: 
       stacktrace: 
@@ -1641,12 +2083,12 @@ MonoBehaviour:
       - Score Calculation
       parentId: 1027
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][StandardScoreCalculationTests][suite]
-    - id: 1033
-      uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score31Double3Single_Score3]
-      name: Score31Double3Single_Score3
-      fullName: StandardScoreCalculationTests.Score31Double3Single_Score3
+    - id: 1042
+      uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score31Double3Single_Score6]
+      name: Score31Double3Single_Score6
+      fullName: StandardScoreCalculationTests.Score31Double3Single_Score6
       resultStatus: 1
-      duration: 0.000953
+      duration: 0.001103
       messages: 
       output: 
       stacktrace: 
@@ -1656,14 +2098,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Score Calculation
-      parentId: 1027
+      parentId: 1036
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][StandardScoreCalculationTests][suite]
     - id: 1028
       uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score3SinglePieces_Score3]
       name: Score3SinglePieces_Score3
       fullName: StandardScoreCalculationTests.Score3SinglePieces_Score3
       resultStatus: 1
-      duration: 0.0006749
+      duration: 0.0008608
       messages: 
       output: 
       stacktrace: 
@@ -1675,12 +2117,12 @@ MonoBehaviour:
       - Score Calculation
       parentId: 1027
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][StandardScoreCalculationTests][suite]
-    - id: 1032
-      uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score3SinglePieces1Double1Single_Score7]
-      name: Score3SinglePieces1Double1Single_Score7
-      fullName: StandardScoreCalculationTests.Score3SinglePieces1Double1Single_Score7
-      resultStatus: 1
-      duration: 0.0012078
+    - id: 1041
+      uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score3SinglePieces1Double1Single_Score6]
+      name: Score3SinglePieces1Double1Single_Score6
+      fullName: StandardScoreCalculationTests.Score3SinglePieces1Double1Single_Score6
+      resultStatus: 0
+      duration: 0
       messages: 
       output: 
       stacktrace: 
@@ -1690,14 +2132,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Score Calculation
-      parentId: 1027
+      parentId: 1036
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][StandardScoreCalculationTests][suite]
-    - id: 1029
-      uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score5SinglePieces_Score5]
-      name: Score5SinglePieces_Score5
-      fullName: StandardScoreCalculationTests.Score5SinglePieces_Score5
+    - id: 1038
+      uniqueId: Assembly-CSharp-Editor.dll/StandardScoreCalculationTests/[Assembly-CSharp-Editor][StandardScoreCalculationTests.Score5SinglePieces_GetBonus_Score5]
+      name: Score5SinglePieces_GetBonus_Score5
+      fullName: StandardScoreCalculationTests.Score5SinglePieces_GetBonus_Score5
       resultStatus: 1
-      duration: 0.0011465
+      duration: 0.0013719
       messages: 
       output: 
       stacktrace: 
@@ -1707,14 +2149,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Score Calculation
-      parentId: 1027
+      parentId: 1036
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][StandardScoreCalculationTests][suite]
     - id: 1015
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapEffectLimit][suite]
       name: SwapEffectLimit
       fullName: SwapEffectLimit
       resultStatus: 1
-      duration: 0.0139857
+      duration: 0.0150702
       messages: 
       output: 
       stacktrace: 
@@ -1731,7 +2173,7 @@ MonoBehaviour:
       name: Violated_False_NoLockedPieces
       fullName: SwapEffectLimit.Violated_False_NoLockedPieces
       resultStatus: 1
-      duration: 0.0008759
+      duration: 0.0032911
       messages: 
       output: 
       stacktrace: 
@@ -1748,7 +2190,7 @@ MonoBehaviour:
       name: Violated_True_LockedPieceUsed
       fullName: SwapEffectLimit.Violated_True_LockedPieceUsed
       resultStatus: 1
-      duration: 0.0009814
+      duration: 0.001127
       messages: 
       output: 
       stacktrace: 
@@ -1879,13 +2321,13 @@ MonoBehaviour:
       - Limits
       parentId: 1014
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][TurnLimitTests][suite]
-    m_ResultText: LockedSwap (0.206s)
+    m_ResultText: SpacedTests (0.040s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 1082a586
-      m_LastClickedID: -2035973616
-      m_ExpandedIDs: 85fdbc82af58b0851082a5867ac73e99dd51adb79f7104da74243ee3b85d97e95d7e9ff7245645ff052bb10f5df39e13561d692a0bdfe42cfd502f32c2700f398f9c473915cd533ce9b7f43c9b57bd472d4e8c6f50030770c367cb79ea84cc7981d6487a26cd807bffffff7f
+      m_SelectedIDs: 1e44da7a
+      m_LastClickedID: 2061124638
+      m_ExpandedIDs: 85fdbc82af58b0851082a5867ac73e998a94889bdd51adb79f7104da74243ee3b85d97e95d7e9ff7245645ff052bb10f5df39e13561d692a0bdfe42cfd502f32c2700f398f9c473915cd533ce9b7f43c9b57bd472d4e8c6f50030770c367cb79ea84cc7981d6487a1e44da7a26cd807bffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1908,9 +2350,11 @@ MonoBehaviour:
       FailedHidden: 0
       NotRunHidden: 1
       m_SearchString: 
-      selectedCategoryMask: 4
+      selectedCategoryMask: 1
       availableCategories:
+      - Extensions
       - Grid Management
+      - Helpers
       - Limits
       - Piece Effects
       - Restrictions

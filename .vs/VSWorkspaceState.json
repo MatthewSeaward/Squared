@@ -1,6 +1,17 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Assets",
+    "\\Assets\\Resources",
+    "\\Assets\\Resources\\Levels",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\MonoBehaviour",
+    "\\Assets\\Scripts\\MonoBehaviour\\Game Components",
+    "\\Assets\\Scripts\\MonoBehaviour\\Managers",
+    "\\Assets\\Scripts\\Workers\\Helpers\\Extensions",
+    "\\Assets\\Scripts\\Workers\\Piece Effects\\Destruction",
+    "\\Assets\\Scripts\\Workers\\Piece Effects\\Interfaces"
   ],
+  "SelectedNode": "\\Squared.csproj",
   "PreviewInSolutionExplorer": false
 }
