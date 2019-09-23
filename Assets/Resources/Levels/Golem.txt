@@ -3,7 +3,7 @@
 	[
 	{
 			"LevelNumber" : 1,
-			"Target": 4,
+			"Target": 70,
 			"colours":[0,5,6,7],
 			"StarsToUnlock": 0,
 			"Pattern":
@@ -20,7 +20,7 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "1"],
+			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "8"],
 			"Star3": ["Turns", "10", "Min", "3"]
 		},
