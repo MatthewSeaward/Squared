@@ -27,10 +27,28 @@ namespace Assets.Scripts
 
         public void Start()
         {
-            Instance = this;         
+            Instance = this;
 
+            AddEvents();
+
+            ConfigureEnemy();
+
+            ShowEnemyText(DialogueManager.Instance.GetLevelText());
+        }
+
+        private void SetupEnemyEvents()
+        {
+            EnemyEvents = LevelManager.Instance.SelectedLevel.GetCurrentStar().Events;
+            foreach (var e in EnemyEvents?.RageEvents)
+            {
+                e.Start(enemy);
+            }
+        }
+
+        private void ConfigureEnemy()
+        {
             var enemies = FindObjectsOfType<EnemyScript>();
-            foreach(var enemy in enemies)
+            foreach (var enemy in enemies)
             {
                 if (enemy.name != LevelManager.Instance.SelectedChapter)
                 {
@@ -42,25 +60,21 @@ namespace Assets.Scripts
                 this.enemyHead = enemy.EnemyHead;
             }
 
-             _targetPos = enemy.transform.position;
+            _targetPos = enemy.transform.position;
             _startPos = new Vector3(_targetPos.x - 6, _targetPos.y);
             enemy.transform.position = _startPos;
             enemy.gameObject.AddComponent<Lerp>();
 
+            SetupEnemyEvents();
+        }
+
+        private void AddEvents()
+        {
             MenuProvider.MenuDisplayed += MenuProvider_MenuDisplayed;
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
             SpeechBubbleManager.SpeechBubbleFinishedEvent += DisplayNextText;
             LevelStart.GameStarted += GameStarted;
-
-            ShowEnemyText(DialogueManager.Instance.GetLevelText());
-
-            EnemyEvents = LevelManager.Instance.SelectedLevel.GetCurrentStar().Events;
-            foreach(var e in EnemyEvents?.RageEvents)
-            {
-                e.Start(enemy);
-            }
         }
-
 
         public void Update()
         {
