@@ -11,7 +11,7 @@ namespace Assets.Scripts.Workers.Enemy
         {
             GameResources.PlayEffect("Piece Change", piece.transform.position);
 
-            var newPiece = PieceFactory.Instance.CreateRandomSquarePiece(NewPieceType, false);
+            var newPiece = PieceFactory.Instance.CreateSquarePiece(NewPieceType, false);
 
             newPiece.transform.position = piece.transform.position;
             newPiece.transform.parent = piece.transform.parent;

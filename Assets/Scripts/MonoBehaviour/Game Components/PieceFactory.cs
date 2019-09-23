@@ -38,17 +38,20 @@ public class PieceFactory : MonoBehaviour
     {
         Instance = this;
     }
-    
-    public GameObject CreateRandomSquarePiece(PieceTypes type, bool initlalSetup)
-    {
-        string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
 
+    public GameObject CreateRandomSquarePiece()
+    {
+        var type = GetSpecialPiece();
+
+        return CreateSquarePiece(type, false);
+    }
+
+    public GameObject CreateSquarePiece(PieceTypes type, bool initlalSetup)
+    {
         var piece = ObjectPool.Instantiate(GameResources.GameObjects["Piece"], Vector3.zero);
 
         var squarePiece = piece.GetComponent<SquarePiece>();
         squarePiece.Type = type;
-
-        GetSpecialPiece(ref type, initlalSetup, specialDropPieces);
 
         int scoreValue = GetScoreValue(ref type);
 
@@ -64,18 +67,18 @@ public class PieceFactory : MonoBehaviour
         return piece;
     }
 
-    private static void GetSpecialPiece(ref PieceTypes type, bool initlalSetup, string[] specialDropPieces)
+    private static PieceTypes GetSpecialPiece()
     {
-        if (initlalSetup)
-        {
-            return;
-        }
+        var type = PieceTypes.Normal;
 
+        string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
         if (specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
         {
             var randomSpecial = specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)];
             type = (PieceTypes) randomSpecial[0];
         }
+
+        return type;
     }
 
     private static int GetScoreValue(ref PieceTypes type)
@@ -112,7 +115,9 @@ public class PieceFactory : MonoBehaviour
 
     private void BuildSwapEffects(PieceTypes type, SquarePiece squarePiece, bool initialSetup)
     {
-        if (initialSetup && type.EqualsAny(PieceTypes.Locked, PieceTypes.Rainbow, PieceTypes.Swapping))
+        bool isLocked = type == PieceTypes.Locked;
+        bool lockedAsPartOfSetup = initialSetup && type.EqualsAny(PieceTypes.Rainbow, PieceTypes.Swapping);
+        if (isLocked || lockedAsPartOfSetup)
         {
             squarePiece.SwapEffect = new LockedSwap();
         }

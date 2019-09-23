@@ -93,7 +93,7 @@ namespace Assets.Scripts
                 {
                     float worldPosX = PieceController.XPositions[column];
 
-                    var piece = GridGenerator.GenerateTile(worldPosX, 4, column, 0);
+                    var piece = GridGenerator.GenerateRandomTile(worldPosX, 4, column, 0);
                     piece.GetComponent<BoxCollider2D>().enabled = false;
 
                     pieceQueue.Enqueue(piece);

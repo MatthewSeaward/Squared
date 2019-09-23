@@ -60,7 +60,18 @@ namespace GridGeneration
 
         public GameObject GenerateTile(PieceTypes type, float xPos, float yPos, int x, int y, bool initialSetup = false)
         {
-            var piece = PieceFactory.Instance.CreateRandomSquarePiece(type, initialSetup);                
+            var piece = PieceFactory.Instance.CreateSquarePiece(type, initialSetup);
+            return ConfigurePiece(xPos, yPos, x, y, piece);
+        }
+
+        public GameObject GenerateRandomTile(float xPos, float yPos, int x, int y)
+        {
+            var piece = PieceFactory.Instance.CreateRandomSquarePiece();
+            return ConfigurePiece(xPos, yPos, x, y, piece);
+        }
+
+        private static GameObject ConfigurePiece(float xPos, float yPos, int x, int y, GameObject piece)
+        {
             piece.transform.position = new Vector3(xPos, yPos);
 
             var square = piece.GetComponent<SquarePiece>();
