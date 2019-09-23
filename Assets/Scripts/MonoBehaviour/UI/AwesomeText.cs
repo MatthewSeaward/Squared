@@ -1,8 +1,6 @@
-﻿using Assets.Scripts.Constants;
-using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +18,7 @@ namespace Assets.Scripts
         public void Awake()
         {
             ScoreKeeper.PointsAwarded += ShowText;
-            MenuProvider.MenuDisplayed += HideText;
+            MenuProvider.MenuDisplayed += MenuProvider_MenuDisplayed;
 
             animator = GetComponent<Animator>();
             text = GetComponentInChildren<Text>();
@@ -28,11 +26,16 @@ namespace Assets.Scripts
 
             HideText();
         }
-        
+
+        private void MenuProvider_MenuDisplayed(System.Type type)
+        {
+            HideText();
+        }
+
         public void OnDestroy()
         {
             ScoreKeeper.PointsAwarded -= ShowText;
-            MenuProvider.MenuDisplayed -= HideText;
+            MenuProvider.MenuDisplayed -= MenuProvider_MenuDisplayed;
         }
 
         private void ShowText(int points, LinkedList<ISquarePiece> pieces)

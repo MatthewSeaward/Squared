@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.Enemy.Events;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using VikingCrew.Tools.UI;
@@ -46,7 +47,7 @@ namespace Assets.Scripts
             enemy.transform.position = _startPos;
             enemy.gameObject.AddComponent<Lerp>();
 
-            MenuProvider.MenuDisplayed += MoveEnemyOffScreen;
+            MenuProvider.MenuDisplayed += MenuProvider_MenuDisplayed;
 
             SpeechBubbleManager.SpeechBubbleFinishedEvent += DisplayNextText;
             LevelStart.GameStarted += GameStarted;
@@ -90,7 +91,17 @@ namespace Assets.Scripts
 
             SpeechBubbleManager.SpeechBubbleFinishedEvent -= DisplayNextText;
             LevelStart.GameStarted -= GameStarted;
-            MenuProvider.MenuDisplayed -= MoveEnemyOffScreen;
+            MenuProvider.MenuDisplayed -= MenuProvider_MenuDisplayed;
+        }
+
+        private void MenuProvider_MenuDisplayed(Type type)
+        {
+            if (type == typeof(LevelStart))
+            {
+                return;
+            }
+
+            MoveEnemyOffScreen();
         }
 
         public void ShowEnemyText(params string[] text)

@@ -3,7 +3,7 @@ using Assets.Scripts.UI.Helpers;
 using GridGeneration;
 using UnityEngine;
 
-public delegate void MenuDisplayed();
+public delegate void MenuDisplayed(System.Type type);
 
 public class MenuProvider : MonoBehaviour
 {
@@ -50,7 +50,7 @@ public class MenuProvider : MonoBehaviour
     public void ShowPopup(string title, string body, ButtonArgs button1, ButtonArgs button2)
     {
         GetComponentInChildren<Popup>(true).Show(title, body, button1, button2);
-        MenuDisplayed?.Invoke();
+        MenuDisplayed?.Invoke(typeof(Popup));
     }
 
     public void ShowLevelStart()
@@ -81,7 +81,7 @@ public class MenuProvider : MonoBehaviour
         }
 
         ToggleMenuVisiblity<T>(true);
-        MenuDisplayed?.Invoke();
+        MenuDisplayed?.Invoke(typeof(T));
     }
 
     public void HideMenu<T>()
