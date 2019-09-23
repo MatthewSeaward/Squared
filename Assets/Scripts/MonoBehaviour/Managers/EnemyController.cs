@@ -48,7 +48,7 @@ namespace Assets.Scripts
             enemy.gameObject.AddComponent<Lerp>();
 
             MenuProvider.MenuDisplayed += MenuProvider_MenuDisplayed;
-
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
             SpeechBubbleManager.SpeechBubbleFinishedEvent += DisplayNextText;
             LevelStart.GameStarted += GameStarted;
 
@@ -60,6 +60,7 @@ namespace Assets.Scripts
                 e.Start(enemy);
             }
         }
+
 
         public void Update()
         {
@@ -92,6 +93,7 @@ namespace Assets.Scripts
             SpeechBubbleManager.SpeechBubbleFinishedEvent -= DisplayNextText;
             LevelStart.GameStarted -= GameStarted;
             MenuProvider.MenuDisplayed -= MenuProvider_MenuDisplayed;
+            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
         }
 
         private void MenuProvider_MenuDisplayed(Type type)
@@ -102,6 +104,19 @@ namespace Assets.Scripts
             }
 
             MoveEnemyOffScreen();
+        }
+
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        {
+            if (result == GameResult.ReachedTarget)
+            {
+                ShowEnemyText(DialogueManager.Instance.GetPlayerVictoryText());
+            }
+            else
+            {
+                ShowEnemyText(DialogueManager.Instance.GetPlayerDefeatText());
+                enemy.GetComponent<Animator>().SetTrigger("Angry1");
+            }
         }
 
         public void ShowEnemyText(params string[] text)

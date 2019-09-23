@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using DataEntities;
@@ -33,10 +34,11 @@ namespace Assets.Scripts.Workers
             Barks = BarkIO.GetBarks();
         }
 
-        public string[] GetAngryText()
-        {
-            return new string[] { SelectedBarks.Anger[UnityEngine.Random.Range(0, SelectedBarks.Anger.Length)] };
-        }
+        public string GetAngryText() =>  SelectedBarks.Anger.RandomElement();
+
+        public string GetPlayerVictoryText() => SelectedBarks.PlayerVictory.RandomElement();
+
+        public string GetPlayerDefeatText() => SelectedBarks.PlayerDefeat.RandomElement();
 
         public string[] GetLevelText()
         {

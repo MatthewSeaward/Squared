@@ -18,6 +18,16 @@
 			"Grrrr!",
 			"Rrrr!",
 			"Unfair!"
+		],
+		"PlayerVictory":
+		[
+			"Nooooo",
+			"Next time!\r\nI'll win!"			
+		],
+		"PlayerDefeat":
+		[
+			"Again?\r\nPlay again?",
+			"I win!\r\nI win!"
 		]
 }
 	

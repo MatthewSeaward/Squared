@@ -20,6 +20,17 @@
 			"Grr!",
 			"Rawr!",
 			"Take This!"
+		],
+		"PlayerVictory":
+		[
+			"No! You beat me!",
+			"Grr! I'll get you next time",
+			"I've got to try harder"
+		],
+		"PlayerDefeat":
+		[
+			"Will you try again?",
+			"You were close!"
 		]
-}
+	}
 	
