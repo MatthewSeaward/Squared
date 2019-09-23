@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,12 +14,17 @@ namespace Assets.Scripts
         private void Awake()
         {
             Instance = this;
-            MenuProvider.MenuDisplayed += ClearBolts;
+            MenuProvider.MenuDisplayed += MenuProvider_MenuDisplayed;
         }
-
+        
         private void OnDestroy()
         {
-            MenuProvider.MenuDisplayed -= ClearBolts;
+            MenuProvider.MenuDisplayed -= MenuProvider_MenuDisplayed;
+        }
+
+        private void MenuProvider_MenuDisplayed(Type type)
+        {
+            ClearBolts();
         }
 
         public void ProduceBolt(ISquarePiece piece, Vector3 position)
