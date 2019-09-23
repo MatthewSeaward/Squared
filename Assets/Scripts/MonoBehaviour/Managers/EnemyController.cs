@@ -125,11 +125,12 @@ namespace Assets.Scripts
             if (result == GameResult.ReachedTarget)
             {
                 ShowEnemyText(DialogueManager.Instance.GetPlayerVictoryText());
+                enemy.GetComponent<Animator>().SetTrigger("Angry1");
+
             }
             else
             {
                 ShowEnemyText(DialogueManager.Instance.GetPlayerDefeatText());
-                enemy.GetComponent<Animator>().SetTrigger("Angry1");
             }
         }
 
