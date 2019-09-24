@@ -39,7 +39,12 @@ namespace Assets.Scripts
         private void SetupEnemyEvents()
         {
             EnemyEvents = LevelManager.Instance.SelectedLevel.GetCurrentStar().Events;
-            foreach (var e in EnemyEvents?.RageEvents)
+            if (EnemyEvents == null)
+            {
+                return;
+            }
+
+            foreach (var e in EnemyEvents.RageEvents)
             {
                 e.Start(enemy);
             }
@@ -78,7 +83,7 @@ namespace Assets.Scripts
 
         public void Update()
         {
-            EnemyEvents.Update(Time.deltaTime);
+            EnemyEvents?.Update(Time.deltaTime);
         }
 
         private void DisplayNextText()
@@ -99,9 +104,12 @@ namespace Assets.Scripts
 
         public void OnDestroy()
         {
-            foreach (var e in EnemyEvents?.RageEvents)
+            if (EnemyEvents != null)
             {
-                e.Dispose();
+                foreach (var e in EnemyEvents?.RageEvents)
+                {
+                    e.Dispose();
+                }
             }
 
             SpeechBubbleManager.SpeechBubbleFinishedEvent -= DisplayNextText;
