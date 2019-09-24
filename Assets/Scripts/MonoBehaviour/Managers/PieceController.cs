@@ -1,13 +1,15 @@
-﻿using Assets;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public class PieceController 
 {
     public static List<ISquarePiece> Pieces { get; private set; }
     public static float[] YPositions { get; private set; }
     public static float[] XPositions { get; private set; }
+
+    private static List<Vector2Int> AvaiableSlots = new List<Vector2Int>();
 
     public static int NumberOfRows => YPositions.Length;
     public static int NumberOfColumns => XPositions.Length;
@@ -30,17 +32,20 @@ public class PieceController
         PieceController.Pieces = Pieces;
         PieceController.YPositions = YPositions;
         PieceController.XPositions = XPositions;
+
+        AvaiableSlots.Clear();
+        foreach(var piece in Pieces)
+        {
+            AvaiableSlots.Add(piece.Position);
+        }
     }
 
     public static bool IsEmptySlot(int x, int y)
-    {
-
-        var cell = GetPatternAt(x, y);
-
-        if (cell == '-' || cell == ' ')
-        {
+    {        
+       if (!AvaiableSlots.Contains(new Vector2Int(x, y)))
+       {
             return false;
-        }
+       }
 
         var currentPiece = GetPiece(x, y);
         if (currentPiece == null || !currentPiece.gameObject.activeInHierarchy)
@@ -74,34 +79,14 @@ public class PieceController
     {
         for (int row = 0; row < NumberOfRows; row++)
         {
-            var slot = GetPatternAt(column, row);
-            if (slot != '-' && slot != ' ')
+            if (!AvaiableSlots.Contains(new Vector2Int(row, column)))
             {
                 return false;
             }
         }
         return true;
     }
-
-    private static char GetPatternAt(int x, int y)
-    {
-        var pattern = LevelManager.Instance.SelectedLevel.Pattern;
-
-        if (y >= pattern.Length || y < 0)
-        {
-            return ' ';
-        }
-
-        var row = pattern[y];
-        if (x >= row.Length || x < 0)
-        {
-            return ' ';
-        }
-
-        var cell = row[x];
-
-        return row[x];
-    }
+      
 
     internal static ISquarePiece GetPiece(int x, int y)
     {
