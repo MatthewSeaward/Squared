@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.Enemy.Events;
 using System;
@@ -132,24 +133,34 @@ namespace Assets.Scripts
         {
             if (result == GameResult.ReachedTarget)
             {
-                ShowEnemyText(DialogueManager.Instance.GetPlayerVictoryText());
+                ShowEnemyText_Internal(DialogueManager.Instance.GetPlayerVictoryText());
                 enemy.GetComponent<Animator>().SetTrigger("Angry1");
 
             }
             else
             {
-                ShowEnemyText(DialogueManager.Instance.GetPlayerDefeatText());
+                ShowEnemyText_Internal(DialogueManager.Instance.GetPlayerDefeatText());
             }
         }
 
         public void ShowEnemyText(params string[] text)
+        {
+            if (GameManager.Instance.GameOver)
+            {
+                return;
+            }
+
+            ShowEnemyText_Internal(text);
+        }
+
+        private void ShowEnemyText_Internal(params string[] text)
         {
             foreach (var t in text)
             {
                 _queuedText.Enqueue(t);
             }
             MoveEnemyOnScreen();
-        }
+        }        
        
         public void MoveEnemyOnScreen()
         {

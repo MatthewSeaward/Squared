@@ -19,7 +19,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
             this.TurnRange = turnRange;
 
             int difference = TurnRange.Max - TurnRange.Min;
-            PercentageIncrement = 100 / difference;
+            PercentageIncrement = 100 / (difference > 0 ? difference : 1);
 
        }
 
