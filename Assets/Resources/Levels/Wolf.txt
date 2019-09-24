@@ -52,7 +52,7 @@
 		},
 		{
 			"LevelNumber": 3,
-			"Target": 65,
+			"Target": 90,
 			"colours":[0,1,6,8],
 			"SpecialDropPieces": ["2", "d"],
 			"StarsToUnlock": 20,
@@ -120,7 +120,7 @@
 			],
 			"Star1": ["Turns", "25"],
 			"Star2": ["Turns", "25", "Banned", "0"],
-			"Star3": ["Time", "30"]
+			"Star3": ["Time", "40"]
 		},		
 		{
 			"LevelNumber": 6,
@@ -262,9 +262,9 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "25"],
-			"Star2": ["Turns", "35", "Max", "4"],
-			"Star3": ["Turns", "28", "Type", "r"]
+			"Star1": ["Turns", "20"],
+			"Star2": ["Turns", "25", "Max", "4"],
+			"Star3": ["Turns", "25", "Type", "r"]
 		},
 		{
 			"LevelNumber": 12,
