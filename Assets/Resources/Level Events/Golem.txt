@@ -165,8 +165,8 @@
 				],
 				"Star2":
 				[
-					"Change,Turns,10,15,2,l",
-					"Destroy,Turns,3,4,2",
+					"ChangeS,Turns,4,7,1,l:x",
+					"Change,Turns,9,12,2,l",
 					"Destroy,Turns,15,18,2"
 				],
 				"Star3":

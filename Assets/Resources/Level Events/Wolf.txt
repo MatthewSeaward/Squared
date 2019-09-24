@@ -59,8 +59,8 @@
 				"LevelNumber": 4,
 				"Star1":
 				[
-					"Change,Turns,2,5,2,r",
-					"Swap,Turns,6,8,4",
+					"ChangeS,Turns,6,8,1,r:x",
+					"Swap,Turns,2,5,4",
 					"Swap,Turns,9,10,4"
 				],
 				"Star2":
@@ -71,9 +71,9 @@
 				],
 				"Star3":
 				[
-					"Swap,Turns,1,5,4",
+					"ChangeS,Turns,6,8,1,r:x",
 					"Swap,Turns,8,10,2",
-					"Swap,Turns,12,15,4"
+					"ChangeS,Turns,12,15,1,r:x"
 				]
 			},
 			{
@@ -100,8 +100,8 @@
 				"LevelNumber": 6,
 				"Star1":
 				[
-					"Change,Turns,2,6,4,s",
-					"Swap,Turns,7,8,4"
+					"ChangeS,Turns,4,5,1,r:l",
+					"Swap,Turns,6,7,4"
 				],
 				"Star2":
 				[
@@ -142,8 +142,8 @@
 				],
 				"Star3":
 				[
-					"Change,Turns,2,3,1,s",
-					"Change,Turns,5,10,2,l"
+					"Change,Turns,3,4,2,l",
+					"ChangeS,Turns,5,6,2,l:s"
 				]
 			},
 			{

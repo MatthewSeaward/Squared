@@ -1,17 +1,20 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
-using UnityEngine;
+using Assets.Scripts.Workers.Helpers;
+using static PieceFactory;
 
 namespace Assets.Scripts.Workers.Enemy
 {
-    public class DestroyRage : PieceSelectionRage
+    class ChangeRandomPiece : PieceSelectionRage
     {
+        public PieceTypes NewPieceType = PieceTypes.Empty;
+
         protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = new StandardSelectionPieceValidator();
         protected override IPieceSelection pieceSelection { get; set; } = new RandomPieceSelector();
 
         protected override void InvokeRageAction(ISquarePiece piece)
         {
-            piece.DestroyPiece();
+            SquarePieceHelpers.ChangePiece(piece, NewPieceType);
         }
     }
 }

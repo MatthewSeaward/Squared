@@ -30,7 +30,7 @@ namespace Assets.Scripts.Workers.IO
                 var min = parts.SafeGet(2);
                 var max = parts.SafeGet(3);
                 var amount = parts.SafeGet(4);
-                var parameters = parts.SafeGet(5);
+                var parameters = parts.SafeGet(5)?.Split(':');
 
                 eEvent.RageEvents.Add(BuildTrigger(type, trigger, min, max, amount, parameters));
             }
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Workers.IO
             return eEvent;
         }
 
-        private static EnemyEventTrigger BuildTrigger(string type, string trigger, string min, string max, string amount, string parameters)
+        private static EnemyEventTrigger BuildTrigger(string type, string trigger, string min, string max, string amount, string[] parameters)
         {
             EnemyEventTrigger trig = null;
 
@@ -58,7 +58,13 @@ namespace Assets.Scripts.Workers.IO
                     trig.EnemyRage = new SwapRage() { SelectionAmount = Convert.ToInt32(amount) };
                     break;
                 case "Change":
-                    trig.EnemyRage = new ChangePiece() { SelectionAmount = Convert.ToInt32(amount), NewPieceType = (PieceFactory.PieceTypes) parameters[0]  };
+                    trig.EnemyRage = new ChangeRandomPiece() { SelectionAmount = Convert.ToInt32(amount), NewPieceType = (PieceFactory.PieceTypes) parameters[0][0]  };
+                    break;
+                case "ChangeS":
+                    var from = parameters[0][0];
+                    var to = parameters[1][0];
+
+                    trig.EnemyRage = new ChangeSpecificPiece((PieceFactory.PieceTypes)from, (PieceFactory.PieceTypes)to) { SelectionAmount = Convert.ToInt32(amount) };
                     break;
             }
 

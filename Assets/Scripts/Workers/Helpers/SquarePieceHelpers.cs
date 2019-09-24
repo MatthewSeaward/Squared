@@ -1,17 +1,15 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using static PieceFactory;
 
-namespace Assets.Scripts.Workers.Enemy
+namespace Assets.Scripts.Workers.Helpers
 {
-    class ChangePiece : PieceSelectionRage
+    public static class SquarePieceHelpers
     {
-        public PieceTypes NewPieceType = PieceTypes.Empty;
-
-        protected override void InvokeRageAction(ISquarePiece piece)
+        public static void ChangePiece(ISquarePiece piece, PieceTypes newPieceType)
         {
             GameResources.PlayEffect("Piece Change", piece.transform.position);
 
-            var newPiece = PieceFactory.Instance.CreateSquarePiece(NewPieceType, false);
+            var newPiece = PieceFactory.Instance.CreateSquarePiece(newPieceType, false);
 
             newPiece.transform.position = piece.transform.position;
             newPiece.transform.parent = piece.transform.parent;

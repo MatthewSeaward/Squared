@@ -1,15 +1,16 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
-using System;
+﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
+using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy
 {
-    public class PieceSelectionRage : IEnemyRage
+    public abstract class PieceSelectionRage : IEnemyRage
     {
         public int SelectionAmount;
         private const float DisplayTime = 1.5f;
+
+        protected abstract PieceSelectionValidator pieceSelectionValidator { get; set; }
+        protected abstract IPieceSelection pieceSelection { get; set; }
 
         private List<ISquarePiece> selectedPieces = new List<ISquarePiece>();
         private float timer;
@@ -21,25 +22,9 @@ namespace Assets.Scripts.Workers.Enemy
                 return;
             }
 
-            int iterationCount = 0;
-            while (selectedPieces.Count < SelectionAmount && iterationCount < 100)
-            {
-                iterationCount++;
-                var piece = PieceController.Pieces[UnityEngine.Random.Range(0, PieceController.Pieces.Count)];
+            selectedPieces = pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount);
 
-                if (!ValidForRage(piece))
-                {
-                    continue;
-                }
-
-                if (selectedPieces.Contains(piece))
-                {
-                    continue;
-                }
-
-                piece.PieceDestroyed += SquarePiece_PieceDestroyed; 
-                selectedPieces.Add(piece);
-            }
+            selectedPieces.ForEach(x => x.PieceDestroyed += SquarePiece_PieceDestroyed);
         }
 
         private void SquarePiece_PieceDestroyed(SquarePiece piece)
@@ -76,34 +61,6 @@ namespace Assets.Scripts.Workers.Enemy
             }
         }
 
-        protected virtual void InvokeRageAction(ISquarePiece piece) { }
-
-
-        private bool ValidForRage(ISquarePiece piece)
-        {
-            if (piece == null || !piece.gameObject.activeInHierarchy)
-            {
-                return false;
-            }
-
-            if (piece.gameObject.GetComponent<Lerp>() != null && piece.gameObject.GetComponent<Lerp>().LerpInProgress)
-            {
-                return false;
-            }
-
-            if (piece.SwapEffect is LockedSwap)
-            {
-                return false;
-            }
-
-            if (piece.DestroyPieceHandler is DestroyTriggerFall)
-            {
-                if ((piece.DestroyPieceHandler as DestroyTriggerFall).ToBeDestroyed)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
+        protected abstract void InvokeRageAction(ISquarePiece piece);
     }
 }
