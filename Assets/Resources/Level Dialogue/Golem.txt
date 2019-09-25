@@ -8,10 +8,6 @@
 				"Draw a line between pieces of\r\nthe same colour to earn points.\r\nThe bigger the lines, the more points!",
 				"Try and reach my target!"
 			],
-			"Star2": 
-			[
-				"Can you do it before\r\nthe time runs out?"
-			],
 			"Star3": 
 			[
 				"This time you must make\r\na sequence greater\r\nthan 4"
