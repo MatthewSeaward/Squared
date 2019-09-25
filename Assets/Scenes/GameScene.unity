@@ -3203,6 +3203,11 @@ PrefabInstance:
       propertyPath: _defaultTimeToLive
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 223000013049386044, guid: 0052c7a2273aa0a468757492e71cdaa6,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 32767
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0052c7a2273aa0a468757492e71cdaa6, type: 3}
 --- !u!1 &1032755392
