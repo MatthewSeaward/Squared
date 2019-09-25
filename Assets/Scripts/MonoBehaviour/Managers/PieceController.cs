@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -26,7 +27,8 @@ public class PieceController
         }
         return false;
     }
-    
+
+ 
     public static void Setup(List<ISquarePiece> Pieces, float[] XPositions, float[] YPositions)
     {
         PieceController.Pieces = Pieces;
@@ -38,6 +40,18 @@ public class PieceController
         {
             AvaiableSlots.Add(piece.Position);
         }
+    }
+
+    internal static void AddNewPiece(ISquarePiece newPiece)
+    {
+        Pieces.Add(newPiece);
+        AvaiableSlots.Add(newPiece.Position);
+    }
+
+    internal static void RemovePiece(ISquarePiece piece)
+    {
+        Pieces.Remove(piece);
+        AvaiableSlots.Remove(piece.Position);
     }
 
     public static bool IsEmptySlot(int x, int y)

@@ -37,7 +37,7 @@
 				"LevelNumber": 3,
 				"Star1":
 				[
-					"Swap,Turns,2,4,2",
+					"Add,Turns,4,5,2:5;5:5,x",
 					"Swap,Turns,6,10,4",
 					"Swap,Turns,12,15,6"
 				],
@@ -50,7 +50,7 @@
 				],
 				"Star3":
 				[
-					"Swap,Turns,2,8,4",
+					"Add,Turns,2,8,3:4;4:4;3:6;4:6,x",
 					"Swap,Turns,10,15,6",
 					"Swap,Turns,17,20,2"
 				]
@@ -192,7 +192,7 @@
 				[
 					"Change,Turns,7,12,6,h",
 					"Swap,Turns,3,7,3",
-					"Swap,Turns,15,17,2",
+					"Remove,Turns,15,17,5:2;3:4;0:6;7:8",
 					"Swap,Turns,20,30,3",
 					"Change,Turns,31,35,6,h"
 				],

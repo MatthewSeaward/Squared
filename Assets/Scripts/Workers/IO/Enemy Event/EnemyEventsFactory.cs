@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Assets.Scripts.Workers.Enemy;
 using Assets.Scripts.Workers.Enemy.Events;
+using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.Helpers.Extensions;
+using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -65,6 +67,28 @@ namespace Assets.Scripts.Workers.IO
                     var to = parameters[1][0];
 
                     trig.EnemyRage = new ChangeSpecificPiece((PieceFactory.PieceTypes)from, (PieceFactory.PieceTypes)to) { SelectionAmount = Convert.ToInt32(amount) };
+                    break;
+                case "Add":
+
+                    var positions = new List<Vector2Int>();
+                    foreach (var s in amount.Split(';'))
+                    {
+                        var parts = s.Split(':');
+                        positions.Add(new Vector2Int(Convert.ToInt32(parts[0]), Convert.ToInt32(parts[1])));
+                    }
+
+                    trig.EnemyRage = new AddPieceEvent(positions, (PieceFactory.PieceTypes)parameters[0][0]);
+                    break;
+                case "Remove":
+
+                    var positions2 = new List<Vector2Int>();
+                    foreach (var s in amount.Split(';'))
+                    {
+                        var parts = s.Split(':');
+                        positions2.Add(new Vector2Int(Convert.ToInt32(parts[0]), Convert.ToInt32(parts[1])));
+                    }
+
+                    trig.EnemyRage = new RemovePieceEvent(positions2);
                     break;
             }
 

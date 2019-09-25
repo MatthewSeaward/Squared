@@ -33,6 +33,13 @@ namespace GridGeneration
             {
                 for (int y = 0; y < rows; y++)
                 {
+
+                    float xPos = Start.x + (x * tileSpacing);
+                    float yPos = Start.y - (y * tileSpacing);
+
+                    YPositions[y] = yPos;
+                    XPositions[x] = xPos;
+
                     string row = pattern[y];
                     PieceTypes type = (PieceTypes) row[x];
 
@@ -41,16 +48,14 @@ namespace GridGeneration
                         continue;
                     }                    
 
-                    float xPos = Start.x + (x * tileSpacing);
-                    float yPos = Start.y - (y * tileSpacing);
+                  
 
                     var piece = GenerateTile(type, xPos, yPos, x, y, true);
 
                     piece.transform.parent = GridParent;
 
                     pieces.Add(piece.GetComponent<SquarePiece>());
-                    YPositions[y] = yPos;
-                    XPositions[x] = xPos;
+                  
                 }
             }
             PieceController.Setup(pieces,XPositions, YPositions);
