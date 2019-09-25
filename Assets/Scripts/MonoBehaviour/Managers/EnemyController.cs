@@ -100,7 +100,6 @@ namespace Assets.Scripts
             var time = nextMessage.Length > 10 ? 4f : 2f;
 
             SpeechBubbleManager.Instance.AddSpeechBubble(enemyHead.transform, nextMessage, timeToLive: time);
-
         }
 
         public void OnDestroy()
@@ -164,6 +163,8 @@ namespace Assets.Scripts
        
         public void MoveEnemyOnScreen()
         {
+            GameManager.Instance.GamePaused = true;
+
             var lerp = enemy.GetComponent<Lerp>();
             lerp.LerpCompleted += DisplayNextText;
             lerp.Setup(_targetPos);
@@ -177,6 +178,8 @@ namespace Assets.Scripts
 
         private void MoveEnemyOffScreen()
         {
+            GameManager.Instance.GamePaused = false;
+
             var lerp = enemy.GetComponent<Lerp>();
             lerp.Setup(_startPos);
         }

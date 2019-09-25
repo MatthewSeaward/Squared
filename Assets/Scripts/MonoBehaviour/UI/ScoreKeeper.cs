@@ -1,5 +1,6 @@
 ﻿using Assets;
 using Assets.Scripts;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
@@ -21,7 +22,7 @@ public class ScoreKeeper : MonoBehaviour
     public Text Score;
     public Text Time;
 
-    private bool GameOver = false;
+    private bool scoresUpdated = false;
 
     private IGameLimit GameLimit;
     private IRestriction Restriction;
@@ -73,7 +74,7 @@ public class ScoreKeeper : MonoBehaviour
 
     private void Update()
     {
-        if (MenuProvider.Instance.OnDisplay)
+        if (GameManager.Instance.GamePaused)
         {
             return;
         }
@@ -110,12 +111,12 @@ public class ScoreKeeper : MonoBehaviour
 
     private void SaveProgress(GameResult result)
     {
-        if (GameOver)
+        if (scoresUpdated)
         {
             return;
         }
 
-        GameOver = true;
+        scoresUpdated = true;
         GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, _currentScore, result);
     }
 

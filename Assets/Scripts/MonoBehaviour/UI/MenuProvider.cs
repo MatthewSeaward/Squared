@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Managers;
 using Assets.Scripts.UI.Helpers;
 using GridGeneration;
 using UnityEngine;
@@ -66,6 +67,8 @@ public class MenuProvider : MonoBehaviour
         {
             panel.gameObject.SetActive(false);
         }
+
+        GameManager.Instance.GamePaused = OnDisplay;
     }
 
     public void PauseClicked()
@@ -80,13 +83,18 @@ public class MenuProvider : MonoBehaviour
             return;
         }
 
+
         ToggleMenuVisiblity<T>(true);
         MenuDisplayed?.Invoke(typeof(T));
+
+        GameManager.Instance.GamePaused = OnDisplay;
     }
 
     public void HideMenu<T>()
     {
         ToggleMenuVisiblity<T>(false);
+
+        GameManager.Instance.GamePaused = OnDisplay;
     }
 
     private void ToggleMenuVisiblity<T>(bool show)

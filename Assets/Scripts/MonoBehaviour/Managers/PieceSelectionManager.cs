@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Heatmap;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.IO.Heatmap;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,7 +43,7 @@ namespace Assets.Scripts
                 return;
             }
 
-            if (MenuProvider.Instance.OnDisplay)
+            if (GameManager.Instance.GamePaused)
             {
                 return;
             }

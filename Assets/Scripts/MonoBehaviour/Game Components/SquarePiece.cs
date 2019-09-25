@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
@@ -106,7 +107,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     void Update()
     {
 
-        if (MenuProvider.Instance.OnDisplay)
+        if (GameManager.Instance.GamePaused)
         {
             return;
         }
@@ -139,7 +140,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     public void Pressed()
     {
-        if (MenuProvider.Instance.OnDisplay)
+        if (GameManager.Instance.GamePaused)
         {
             return;
         }
