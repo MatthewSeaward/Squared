@@ -17,7 +17,7 @@ public class PieceController
 
     internal static bool HasEmptySlotInColumn(int x, ref int y)
     {
-        for (int i = 0; i < NumberOfColumns; i++)
+        for (int i = 0; i < NumberOfRows; i++)
         {
             if (IsEmptySlot(x, i))
             {
