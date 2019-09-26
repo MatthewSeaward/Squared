@@ -46,13 +46,13 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "10", "Min", "4"],
+			"Star1": ["Turns", "8", "Min", "4"],
 			"Star2": ["Turns", "10", "Banned", "6"],
 			"Star3": ["Time", "40", "Banned", "8" ]
 		},
 		{
 			"LevelNumber": 3,
-			"Target": 90,
+			"Target": 150,
 			"colours":[0,1,6,8],
 			"SpecialDropPieces": ["2", "d"],
 			"StarsToUnlock": 20,
@@ -94,9 +94,9 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "12"],
-			"Star2": ["Turns", "10", "Only Diagonal", ""],
-			"Star3": ["Turns", "15", "Type", "r"]
+			"Star1": ["Turns", "10"],
+			"Star2": ["Turns", "8", "Only Diagonal", ""],
+			"Star3": ["Turns", "10", "Type", "r"]
 		},
 		{
 			"LevelNumber": 5,
@@ -120,7 +120,7 @@
 			],
 			"Star1": ["Turns", "25"],
 			"Star2": ["Turns", "25", "Banned", "0"],
-			"Star3": ["Time", "40"]
+			"Star3": ["Time", "35"]
 		},		
 		{
 			"LevelNumber": 6,
@@ -143,7 +143,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "8"],
-			"Star2": ["Time", "15", "Type", "s"],
+			"Star2": ["Time", "20", "Type", "s"],
 			"Star3": ["Turns", "10", "Min", "3"]
 		},
 		{
@@ -167,8 +167,9 @@
 				"--------"
 			],
 			"Star1": ["Time", "30"],
-			"Star2": ["Time", "28", "No Diagonal", ""],
-			"Star3": ["Turns", "20", "Type", "t"]
+			"Star2": ["Turns", "20", "Type", "t"],			
+			"Star3": ["Time", "40", "No Diagonal", ""]
+
 		},
 		{
 			"LevelNumber": 8,
@@ -191,7 +192,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "12"],
-			"Star2": ["Time", "15", "Banned", "2"],
+			"Star2": ["Time", "20", "Banned", "2"],
 			"Star3": ["Turns", "10", "Type", "s"]
 		},
 		{
@@ -215,8 +216,8 @@
 				"----x2xx"
 			],
 			"Star1": ["Turns", "8", "No Diagonal", ""],
-			"Star2": ["Time", "12"],
-			"Star3": ["Time", "10"]
+			"Star2": ["Time", "20"],
+			"Star3": ["Turns", "6"]
 		},
 		{
 			"LevelNumber": 10,
@@ -238,9 +239,9 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "25","Type", "s"],
-			"Star2": ["Time", "50"],
-			"Star3": ["Turns", "20"]
+			"Star1": ["Turns", "20","Type", "s"],
+			"Star2": ["Time", "30"],
+			"Star3": ["Turns", "15"]
 		},
 		{
 			"LevelNumber": 11,
@@ -268,7 +269,7 @@
 		},
 		{
 			"LevelNumber": 12,
-			"Target": 60,
+			"Target": 120,
 			"colours":[0,8,6,2],
 			"SpecialDropPieces": ["r","s", "d", "t"],
 			"StarsToUnlock": 90,
