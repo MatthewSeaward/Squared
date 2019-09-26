@@ -74,12 +74,13 @@ public class ScoreKeeper : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.Instance.GamePaused)
+        UpdateRestriction(UnityEngine.Time.deltaTime);
+
+        if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
         {
             return;
         }
 
-        UpdateRestriction(UnityEngine.Time.deltaTime);
         UpdateLimit(UnityEngine.Time.deltaTime);
     }
 
