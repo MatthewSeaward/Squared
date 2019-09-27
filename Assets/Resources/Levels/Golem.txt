@@ -21,7 +21,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Turns", "7", "Time", "7"]],
+			"Star2": ["Turns", "7", "Time", "7"],
 			"Star3": ["Turns", "8", "Min", "4"]
 		},
 		{
@@ -91,7 +91,7 @@
 				"--------"
 			],
 			"Star1": ["Time", "40"],
-			"Star2": ["Turns", "8", "Time", "5"]],
+			"Star2": ["Turns", "8", "Time", "5"],
 			"Star3": ["Time", "30"]
 		},
 		{

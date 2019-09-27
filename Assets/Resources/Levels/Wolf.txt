@@ -166,7 +166,7 @@
 				"---xx---",
 				"--------"
 			],
-			"Star1": ["Turns", "20", "Time", "5"]],
+			"Star1": ["Turns", "20", "Time", "5"],
 			"Star2": ["Turns", "20", "Type", "t"],			
 			"Star3": ["Time", "40", "No Diagonal", ""]
 
@@ -217,7 +217,7 @@
 			],
 			"Star1": ["Turns", "8"],
 			"Star2": ["Time", "20"],
-			"Star3": ["Turns", "10",  "Time", "3"]]
+			"Star3": ["Turns", "10",  "Time", "3"]
 		},
 		{
 			"LevelNumber": 10,
@@ -287,7 +287,7 @@
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "10",  "Time", "5"]],
+			"Star1": ["Turns", "10",  "Time", "5"],
 			"Star2": ["Time", "30", "Min", "4"],
 			"Star3": ["Time", "20", "Only Diagonal", ""]
 		}
