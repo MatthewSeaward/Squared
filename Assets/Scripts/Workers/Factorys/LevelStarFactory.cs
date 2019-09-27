@@ -49,6 +49,8 @@ namespace Assets.Scripts.Workers.IO
                         return new DiagonalRestriction();
                     case "Diagonal Only":
                         return new DiagonalOnlyRestriction();
+                    case "Time":
+                        return new TurnTimeLimit(Convert.ToSingle(parts[3]));
                     default:
                         return new NoRestriction();
                 }

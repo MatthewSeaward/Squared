@@ -20,6 +20,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             return $"Banned: {BannedPiece.ToString().Spaced()}";
         }
 
+        public string GetRestrictionDescription() => GetRestrictionText();
+
         public void Reset()
         {
             _violatedRestriction = false;

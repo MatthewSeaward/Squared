@@ -18,6 +18,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             return $"Min Sequence: {MinLimit}";
         }
 
+        public string GetRestrictionDescription() => GetRestrictionText();
+
         public bool ViolatedRestriction()
         {
             return reachedLimit;

@@ -36,7 +36,7 @@ namespace Assets.Scripts
             }
             
             SetEnabled(true);
-            text.text = currentRestriction.GetRestrictionText();;
+            text.text = currentRestriction.GetRestrictionDescription();;
             animator.SetTrigger("Show Restriction");
         }
 

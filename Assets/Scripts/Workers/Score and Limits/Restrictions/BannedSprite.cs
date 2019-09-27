@@ -20,6 +20,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             return $"Banned: {Sprite}";
         }
 
+        public string GetRestrictionDescription() => GetRestrictionText();
+
         public bool ViolatedRestriction()
         {
             return failed;

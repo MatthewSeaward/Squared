@@ -21,7 +21,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Turns", "7"],
+			"Star2": ["Turns", "7", "Time", "7"]],
 			"Star3": ["Turns", "8", "Min", "4"]
 		},
 		{
@@ -91,7 +91,7 @@
 				"--------"
 			],
 			"Star1": ["Time", "40"],
-			"Star2": ["Time", "35"],
+			"Star2": ["Turns", "8", "Time", "5"]],
 			"Star3": ["Time", "30"]
 		},
 		{
@@ -187,7 +187,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Time", "35"],
+			"Star2": ["Turns", "12", "Time", "3"],
 			"Star3": ["Turns", "10", "Banned Locked", ""]
 		},
 		{
@@ -283,7 +283,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "20"],
-			"Star2": ["Time", "30"],
+			"Star2": ["Turns", "22", "Time", "3"],
 			"Star3": ["Time", "40", "Min", "4"]
 		}
 	]

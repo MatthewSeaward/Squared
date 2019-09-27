@@ -8,6 +8,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
         void Update(float deltaTime);
         void SequenceCompleted(LinkedList<ISquarePiece> sequence);
         string GetRestrictionText();
+        string GetRestrictionDescription();
         bool ViolatedRestriction();
     }
 }

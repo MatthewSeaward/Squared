@@ -14,6 +14,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             return "Only diagonal connections";
         }
 
+        public string GetRestrictionDescription() => GetRestrictionText();
+
         public void Reset()
         {
             _violatedRestriction = false;

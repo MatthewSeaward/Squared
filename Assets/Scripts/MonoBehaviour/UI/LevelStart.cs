@@ -28,7 +28,7 @@ namespace Assets.Scripts
             Level.text = "Level " + (LevelManager.Instance.CurrentLevel + 1).ToString();
             Target.text = LevelManager.Instance.SelectedLevel.Target.ToString();
             Limit.text = LevelManager.Instance.SelectedLevel.GetCurrentLimit().GetDescription();
-            Restriction.text = LevelManager.Instance.SelectedLevel.GetCurrentRestriction().GetRestrictionText();
+            Restriction.text = LevelManager.Instance.SelectedLevel.GetCurrentRestriction().GetRestrictionDescription();
 
             GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.LevelProgress);
         }

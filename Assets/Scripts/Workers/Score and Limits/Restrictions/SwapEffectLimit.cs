@@ -14,10 +14,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             this.effect = typeof(LockedSwap).ToString();
         }
 
-        public string GetDescription()
-        {
-            return $"Do not use pieces that are Locked";
-        }
+        public string GetRestrictionDescription() => GetRestrictionText();
 
         public string GetRestrictionText()
         {

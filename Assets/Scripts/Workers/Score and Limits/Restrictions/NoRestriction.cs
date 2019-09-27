@@ -10,6 +10,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             return "No Restriction";
         }
 
+        public string GetRestrictionDescription() => GetRestrictionText();
+
         public void Reset()
         {
         }
