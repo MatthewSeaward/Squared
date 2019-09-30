@@ -62,6 +62,7 @@ public class ScoreKeeper : MonoBehaviour
 
         _currentScore += scoreEarned;
         UpdateScore();
+        UpdateLimit(UnityEngine.Time.deltaTime);
 
         PointsAwarded?.Invoke(scoreEarned, pieces);
     }
