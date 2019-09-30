@@ -140,7 +140,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     public void Pressed()
     {
-        if (GameManager.Instance.GamePaused)
+        if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
         {
             return;
         }
