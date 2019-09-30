@@ -21,8 +21,8 @@
 				"LevelNumber":2,
 				"Star1":
 				[
-					"Add,Turns,2,3,1:3;2:3,r",
-					"Remove,Turns,4,5,3:3;4:3"
+					"Destroy,Turns,1,5,2",
+					"Destroy,Turns,6,9,2"
 				],
 				"Star2":
 				[
