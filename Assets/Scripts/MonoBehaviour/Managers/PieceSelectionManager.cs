@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Assets.Scripts
     {
         public LinkedList<ISquarePiece> CurrentPieces = new LinkedList<ISquarePiece>();
         public Dictionary<Vector2Int, int> UsedPieces = new Dictionary<Vector2Int, int>();
+        private Vector3 lastMousePostion;
 
         public static event SequenceCompleted SequenceCompleted;
         public static event SelectedPiecesChanged SelectedPiecesChanged;
@@ -51,30 +53,73 @@ namespace Assets.Scripts
                 return;
             }
 
-            if (!Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))
+            {            
+
+                if (CurrentPieces.Count > 1)
+                {
+                    CheckForAdditionalPieces();
+                    ProcessSequenceCompleted();
+                }
+                else
+                {
+                    var firstPiece = CurrentPieces.First.Value;
+                    firstPiece.Deselected();
+                }
+
+                CurrentPieces.Clear();
+                SelectedPiecesChanged?.Invoke(CurrentPieces);
+            }
+
+            lastMousePostion = Input.mousePosition;
+        }
+
+        private void CheckForAdditionalPieces()
+        {
+            int inputX = GetAxisDirection("Mouse X");
+            int inputY = GetAxisDirection("Mouse Y");     
+
+            var lastPiece = CurrentPieces.Last;
+
+            var additionalSelection = PieceController.Pieces.FirstOrDefault(piece => piece.Position.x == LastPiece.Position.x + inputX &&
+                                                                          piece.Position.y == LastPiece.Position.y + inputY);
+
+            if (additionalSelection == null)
             {
                 return;
             }
 
-            if (CurrentPieces.Count > 1)
-            {             
-
-                SequenceCompleted?.Invoke(CurrentPieces.ToArray());
-                LogUsedPieces(CurrentPieces);
-
-                foreach (var square in CurrentPieces)
-                {
-                    square.DestroyPiece();
-                }
-            }
-            else
+            if (!LastPiece.PieceConnection.ConnectionValid(additionalSelection))
             {
-                var firstPiece = CurrentPieces.First.Value;
-                firstPiece.Deselected();
+                return;
             }
 
-            CurrentPieces.Clear();
-            SelectedPiecesChanged?.Invoke(CurrentPieces);
+            CurrentPieces.AddLast(additionalSelection);
+        }      
+
+        private int GetAxisDirection(string axis)
+        {
+            double mouseAxis = Input.GetAxis(axis);
+
+            int result = 0;
+
+            if (mouseAxis != 0)
+            {
+                result = mouseAxis > 0 ? -1 : 1;
+            }
+
+            return result;
+        }
+
+        private void ProcessSequenceCompleted()
+        {
+            SequenceCompleted?.Invoke(CurrentPieces.ToArray());
+            LogUsedPieces(CurrentPieces);
+
+            foreach (var square in CurrentPieces)
+            {
+                square.DestroyPiece();
+            }
         }
 
         private void LogUsedPieces(LinkedList<ISquarePiece> pieces)
