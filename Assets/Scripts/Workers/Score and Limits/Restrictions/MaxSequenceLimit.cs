@@ -15,7 +15,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Max Sequence: {MaxLimit}";
+            return "Max Sequence: " + MaxLimit;
         }
 
         public string GetRestrictionDescription() => GetRestrictionText();
@@ -30,9 +30,9 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             reachedLimit = false;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
-            reachedLimit = sequence.Count > MaxLimit;
+            reachedLimit = sequence.Length > MaxLimit;
         }
 
         public void Update(float deltaTime)

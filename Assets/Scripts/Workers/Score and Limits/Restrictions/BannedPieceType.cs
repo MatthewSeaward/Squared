@@ -17,7 +17,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Banned: {BannedPiece.ToString().Spaced()}";
+            return "Banned: " + BannedPiece.ToString().Spaced();
         }
 
         public string GetRestrictionDescription() => GetRestrictionText();
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             _violatedRestriction = false;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
             foreach(var piece in sequence)
             {

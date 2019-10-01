@@ -18,7 +18,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Banned: Locked";
+            return "Banned: Locked";
         }
 
         public bool ViolatedRestriction()
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             failed = false;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
             foreach (var item in sequence)
             {

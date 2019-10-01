@@ -18,7 +18,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Time per turn: {TimeLeft.ToString("0.00")}";
+            return "Time per turn: " + TimeLeft.ToString("0.00");
         }
 
         public string GetRestrictionDescription()
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             TimeTaken = 0;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
             TimeTaken = 0;
         }

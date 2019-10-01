@@ -38,7 +38,7 @@ namespace Assets.Scripts
             MenuProvider.MenuDisplayed -= MenuProvider_MenuDisplayed;
         }
 
-        private void ShowText(int points, LinkedList<ISquarePiece> pieces)
+        private void ShowText(int points, ISquarePiece[] pieces)
         {
             if (MenuProvider.Instance.OnDisplay)
             {

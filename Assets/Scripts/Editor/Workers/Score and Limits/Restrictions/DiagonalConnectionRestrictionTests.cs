@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
+using System.Linq;
 
 [Category("Restrictions")]
 public class DiagonalConnectionRestrictionTests
@@ -14,7 +15,7 @@ public class DiagonalConnectionRestrictionTests
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(CreatePiece(1, 1));
         sequence.AddLast(CreatePiece(2, 2));
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }
@@ -30,7 +31,7 @@ public class DiagonalConnectionRestrictionTests
         sequence.AddLast(CreatePiece(2, 2));
         sequence.AddLast(CreatePiece(3, 3));
 
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }
@@ -46,7 +47,7 @@ public class DiagonalConnectionRestrictionTests
         sequence.AddLast(CreatePiece(2, 2));
         sequence.AddLast(CreatePiece(2, 3));
 
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse (sut.ViolatedRestriction());
     }

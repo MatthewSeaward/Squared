@@ -6,7 +6,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
     {
         void Reset();
         void Update(float deltaTime);
-        void SequenceCompleted(LinkedList<ISquarePiece> sequence);
+        void SequenceCompleted(ISquarePiece[] sequence);
         string GetRestrictionText();
         string GetRestrictionDescription();
         bool ViolatedRestriction();

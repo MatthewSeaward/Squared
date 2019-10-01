@@ -17,7 +17,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Banned: {Sprite}";
+            return "Banned: " + Sprite;
         }
 
         public string GetRestrictionDescription() => GetRestrictionText();
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             failed = false;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
             foreach(var item in sequence)
             {

@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.Score_and_Limits;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using static Assets.Scripts.Workers.TestHelpers;
 
 [Category("Score Calculation")]
@@ -23,7 +24,7 @@ public class StandardScoreCalculationTests
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
         
-        Assert.AreEqual(3, sut.CalculateScore(sequence));
+        Assert.AreEqual(3, sut.CalculateScore(sequence.ToArray()));
     }
 
 
@@ -39,7 +40,7 @@ public class StandardScoreCalculationTests
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
 
-        Assert.AreEqual(8, sut.CalculateScore(sequence));
+        Assert.AreEqual(8, sut.CalculateScore(sequence.ToArray()));
     }
 
     [Test]
@@ -49,7 +50,7 @@ public class StandardScoreCalculationTests
 
         var sequence = new LinkedList<ISquarePiece>();
 
-        Assert.AreEqual(0, sut.CalculateScore(sequence));
+        Assert.AreEqual(0, sut.CalculateScore(sequence.ToArray()));
     }
 
     [Test]
@@ -62,7 +63,7 @@ public class StandardScoreCalculationTests
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetDoubleScore());
 
-        Assert.AreEqual(4, sut.CalculateScore(sequence));
+        Assert.AreEqual(4, sut.CalculateScore(sequence.ToArray()));
     }
 
 
@@ -78,7 +79,7 @@ public class StandardScoreCalculationTests
         sequence.AddLast(GetStandardScore());
 
 
-        Assert.AreEqual(6, sut.CalculateScore(sequence));
+        Assert.AreEqual(6, sut.CalculateScore(sequence.ToArray()));
     }
 
     [Test]
@@ -93,7 +94,7 @@ public class StandardScoreCalculationTests
         sequence.AddLast(GetStandardScore());
 
 
-        Assert.AreEqual(6, sut.CalculateScore(sequence));
+        Assert.AreEqual(6, sut.CalculateScore(sequence.ToArray()));
     }
 
     private static ISquarePiece GetStandardScore()

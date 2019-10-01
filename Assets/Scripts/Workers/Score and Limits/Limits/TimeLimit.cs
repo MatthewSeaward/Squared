@@ -16,13 +16,13 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetDescription()
         {
-            return $"{Limit} seconds";
+            return Limit + " seconds";
         }
 
         public string GetLimitText()
         {
             var timeLeft = Mathf.Clamp(Limit - TimeTaken, 0, Limit);
-            return $"Time Left: {timeLeft.ToString("0.00")}";
+            return "Time Left: " + timeLeft.ToString("0.00");
         }
 
         public bool ReachedLimit()
@@ -35,7 +35,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             TimeTaken = 0f;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
         }
 

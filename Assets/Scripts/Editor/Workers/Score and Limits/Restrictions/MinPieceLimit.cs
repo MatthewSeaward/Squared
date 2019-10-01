@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
 using static Assets.Scripts.Workers.TestHelpers;
+using System.Linq;
 
 [Category("Restrictions")]
 public class MinPieceLimit
@@ -16,7 +17,7 @@ public class MinPieceLimit
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
@@ -31,7 +32,7 @@ public class MinPieceLimit
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
@@ -44,7 +45,7 @@ public class MinPieceLimit
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }

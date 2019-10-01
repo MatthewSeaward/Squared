@@ -5,6 +5,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
+using UnityEngine.UI;
 using static PieceFactory;
 
 public delegate void PieceDestroyed(SquarePiece piece);
@@ -35,6 +36,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     private Animator _animator;
     private static Vector3 _initialScale;
     private Vector2Int _position;
+    private Canvas canvas;
 
     public PieceDestroyed PieceDestroyed { set; get; }
 
@@ -84,6 +86,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
             _sprite = value;
         }
     }
+    
 
     private void OnEnable()
     {
@@ -97,6 +100,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     {
         _initialScale = transform.localScale;
         GetComponent<Lerp>().LerpCompleted += SquarePiece_LerpCompleted;
+        canvas = GetComponentInChildren<Canvas>();
     }
 
     private void SquarePiece_LerpCompleted()
@@ -189,4 +193,14 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     {
         Animator.SetBool("MouseDown", value);
     }    
+
+    public void SetText(string text)
+    {
+        canvas.gameObject.SetActive(!string.IsNullOrWhiteSpace(text));
+
+        if (canvas.gameObject.activeInHierarchy)
+        {
+            canvas.GetComponentInChildren<Text>().text = text;
+        }
+    }
 }

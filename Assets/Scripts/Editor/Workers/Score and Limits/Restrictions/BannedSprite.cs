@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using NSubstitute;
+using System.Linq;
 
 [Category("Restrictions")]
 public class BannedSprite
@@ -34,7 +35,7 @@ public class BannedSprite
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(normalPiece);
         sequence.AddLast(bannedPiece);
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }
@@ -51,7 +52,7 @@ public class BannedSprite
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(normalPiece);
         sequence.AddLast(normalPiece);
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }

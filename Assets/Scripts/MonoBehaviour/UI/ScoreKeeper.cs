@@ -11,7 +11,7 @@ using UnityEngine.UI;
 [Serializable]
 public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
 
-public delegate void PointsAwarded(int points, LinkedList<ISquarePiece> pieces);
+public delegate void PointsAwarded(int points, ISquarePiece[] sequence);
 public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result);
 
 public class ScoreKeeper : MonoBehaviour
@@ -53,7 +53,7 @@ public class ScoreKeeper : MonoBehaviour
         PieceSelectionManager.SequenceCompleted -= SequenceCompleted;
     }
 
-    public void SequenceCompleted(LinkedList<ISquarePiece> pieces)
+    public void SequenceCompleted(ISquarePiece[] pieces)
     { 
         GameLimit.SequenceCompleted(pieces);
         Restriction.SequenceCompleted(pieces);

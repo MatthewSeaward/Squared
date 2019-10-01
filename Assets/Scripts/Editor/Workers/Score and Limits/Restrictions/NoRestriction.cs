@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using static Assets.Scripts.Workers.TestHelpers;
 
 [Category("Restrictions")]
@@ -15,7 +16,7 @@ public class NoRestriction
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
@@ -26,7 +27,7 @@ public class NoRestriction
         var sut = new Assets.Scripts.Workers.Score_and_Limits.NoRestriction();
 
         var sequence = new LinkedList<ISquarePiece>();
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }

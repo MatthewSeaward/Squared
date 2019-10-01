@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
 using static PieceFactory;
+using System.Linq;
 
 [Category("Restrictions")]
 public class BannedPieceTypeTests
@@ -16,7 +17,7 @@ public class BannedPieceTypeTests
         sequence.AddLast(CreatePiece(PieceTypes.Normal));
         sequence.AddLast(CreatePiece(PieceTypes.Normal));
         sequence.AddLast(CreatePiece(PieceTypes.Normal));
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
@@ -31,7 +32,7 @@ public class BannedPieceTypeTests
         sequence.AddLast(CreatePiece(PieceTypes.Normal));
         sequence.AddLast(CreatePiece(PieceTypes.Rainbow));
         sequence.AddLast(CreatePiece(PieceTypes.Normal));
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }
@@ -45,7 +46,7 @@ public class BannedPieceTypeTests
         sequence.AddLast(CreatePiece(PieceTypes.Rainbow));
         sequence.AddLast(CreatePiece(PieceTypes.ThreePoints));
         sequence.AddLast(CreatePiece(PieceTypes.FourPoints));
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
@@ -61,7 +62,7 @@ public class BannedPieceTypeTests
         sequence.AddLast(CreatePiece(PieceTypes.ThreePoints));
         sequence.AddLast(CreatePiece(PieceTypes.Swapping));
         sequence.AddLast(CreatePiece(PieceTypes.FourPoints));
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }

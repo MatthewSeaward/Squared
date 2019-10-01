@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using static Assets.Scripts.Workers.TestHelpers;
 
 [Category("Restrictions")]
@@ -16,7 +17,7 @@ public class SwapEffectLimit
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
         sequence.AddLast(CreatePiece());
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
@@ -33,7 +34,7 @@ public class SwapEffectLimit
         sequence.AddLast(CreatePiece());
         sequence.AddLast(lockedPiece);
         sequence.AddLast(CreatePiece());
-        sut.SequenceCompleted(sequence);
+        sut.SequenceCompleted(sequence.ToArray());
 
         Assert.IsTrue(sut.ViolatedRestriction());
     }

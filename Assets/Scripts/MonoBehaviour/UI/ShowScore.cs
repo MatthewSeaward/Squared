@@ -25,11 +25,11 @@ namespace Assets.Scripts
             ScoreKeeper.PointsAwarded -= ScoreKeeper_PointsAwarded;
         }
 
-        private void ScoreKeeper_PointsAwarded(int points, LinkedList<ISquarePiece> pieces)
+        private void ScoreKeeper_PointsAwarded(int points, ISquarePiece[] pieces)
         {
-            var position = pieces.Last.Value.transform.position;
+            var position = pieces[pieces.Length-1].transform.position;
 
-            var texture = pieces.First.Value.Sprite.texture;
+            var texture = pieces[0].Sprite.texture;
             var colour = texture.GetTextureColour();
 
             Show(points, position, colour);

@@ -36,7 +36,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
         }
 
-        private void PieceSelectionManager_SequenceCompleted(System.Collections.Generic.LinkedList<ISquarePiece> pieces)
+        private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
             if (TurnRange.WithinRange(TurnsPassed++))
             {

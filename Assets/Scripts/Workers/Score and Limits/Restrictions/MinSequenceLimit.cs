@@ -15,7 +15,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return $"Min Sequence: {MinLimit}";
+            return "Min Sequence: " + MinLimit;
         }
 
         public string GetRestrictionDescription() => GetRestrictionText();
@@ -30,9 +30,9 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             reachedLimit = false;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
-            reachedLimit = sequence.Count < MinLimit;
+            reachedLimit = sequence.Length < MinLimit;
         }
 
         public void Update(float deltaTime)

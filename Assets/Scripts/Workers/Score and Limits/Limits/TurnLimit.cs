@@ -16,10 +16,10 @@ namespace Assets.Scripts.Workers.Score_and_Limits
  
         public string GetLimitText()
         {
-            return $"Turns Left: {MaxTurns- TurnsTaken}";
+            return "Turns Left: " + (MaxTurns- TurnsTaken);
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
             TurnsTaken++;
         }
@@ -35,7 +35,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetDescription()
         {
-            return $"{MaxTurns} turns";
+            return MaxTurns + " turns";
         }
 
         public void Reset()

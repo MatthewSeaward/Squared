@@ -3,16 +3,30 @@ using UnityEngine;
 
 public class LineDrawer : MonoBehaviour
 {
+    private void Awake()
+    {
+        PieceSelectionManager.SelectedPiecesChanged += PieceSelectionManager_SelectedPiecesChanged;
+    }
 
-    public void Update()
+    private void OnDestroy()
+    {
+        PieceSelectionManager.SelectedPiecesChanged -= PieceSelectionManager_SelectedPiecesChanged;
+    }
+
+    private void PieceSelectionManager_SelectedPiecesChanged(System.Collections.Generic.LinkedList<ISquarePiece> pieces)
     {
         Clear();
 
+        if (pieces.Count == 0 || MenuProvider.Instance.OnDisplay)
+        {
+            return;
+        }
+
         Color colour = Color.red;
-        float decrementAmount = 1f / (PieceSelectionManager.Instance.CurrentPieces.Count - 1);
+        float decrementAmount = 1f / (pieces.Count - 1);
 
         Vector3 oldPoint = Vector3.zero;
-        foreach (var item in PieceSelectionManager.Instance.CurrentPieces)
+        foreach (var item in pieces)
         {
             if (oldPoint != Vector3.zero)
             {

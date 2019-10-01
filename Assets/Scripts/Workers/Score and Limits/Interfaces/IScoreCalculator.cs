@@ -4,6 +4,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public interface IScoreCalculator
     {
-        int CalculateScore(LinkedList<ISquarePiece> pieces);
+        int CalculateScore(ISquarePiece[] sequence);
     }
 }

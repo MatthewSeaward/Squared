@@ -184,30 +184,26 @@ public class PieceFactory : MonoBehaviour
     }
 
     private void BuildTextLayer(SquarePiece squarePiece)
-    {
-        var textLayer = squarePiece.GetComponentInChildren<Text>();
-        if (textLayer == null)
-        {
-            return;
-        }
+    {               
+        string displayText = string.Empty;
 
-        textLayer.text = string.Empty;
+        ApplyTextLayer(ref displayText, squarePiece.SwapEffect as ITextLayer);
+        ApplyTextLayer(ref displayText, squarePiece.PieceConnection as ITextLayer);
+        ApplyTextLayer(ref displayText, squarePiece.PieceBehaviour as ITextLayer);
+        ApplyTextLayer(ref displayText, squarePiece.DestroyPieceHandler as ITextLayer);
+        ApplyTextLayer(ref displayText, squarePiece.Scoring as ITextLayer);
 
-        ApplyTextLayer(textLayer, squarePiece.SwapEffect as ITextLayer);
-        ApplyTextLayer(textLayer, squarePiece.PieceConnection as ITextLayer);
-        ApplyTextLayer(textLayer, squarePiece.PieceBehaviour as ITextLayer);
-        ApplyTextLayer(textLayer, squarePiece.DestroyPieceHandler as ITextLayer);
-        ApplyTextLayer(textLayer, squarePiece.Scoring as ITextLayer);
+        squarePiece.SetText(displayText);
     }
 
-    private void ApplyTextLayer(Text textLayer, ITextLayer layer)
+    private void ApplyTextLayer(ref string text, ITextLayer layer)
     {
         if (layer == null)
         {
             return;
         }
 
-        textLayer.text = layer.GetText();
+        text = layer.GetText();
     }
 
     private void BuildLayers(GameObject piece, SquarePiece squarePiece)

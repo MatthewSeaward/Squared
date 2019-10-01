@@ -21,7 +21,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             _violatedRestriction = false;
         }
 
-        public void SequenceCompleted(LinkedList<ISquarePiece> sequence)
+        public void SequenceCompleted(ISquarePiece[] sequence)
         {
             var seqArray = sequence.ToArray();
 

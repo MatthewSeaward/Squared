@@ -1,11 +1,13 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public delegate void SequenceCompleted(LinkedList<ISquarePiece> pieces);
+    public delegate void SequenceCompleted(ISquarePiece[] pieces);
+    public delegate void SelectedPiecesChanged(LinkedList<ISquarePiece> pieces);
 
     public class PieceSelectionManager : MonoBehaviour
     {
@@ -13,9 +15,10 @@ namespace Assets.Scripts
         public Dictionary<Vector2Int, int> UsedPieces = new Dictionary<Vector2Int, int>();
 
         public static event SequenceCompleted SequenceCompleted;
+        public static event SelectedPiecesChanged SelectedPiecesChanged;
 
         public static PieceSelectionManager Instance { private set;  get; }
-
+        
         private void Awake()
         {
             Instance = this;
@@ -56,7 +59,7 @@ namespace Assets.Scripts
             if (CurrentPieces.Count > 1)
             {             
 
-                SequenceCompleted?.Invoke(CurrentPieces);
+                SequenceCompleted?.Invoke(CurrentPieces.ToArray());
                 LogUsedPieces(CurrentPieces);
 
                 foreach (var square in CurrentPieces)
@@ -71,6 +74,7 @@ namespace Assets.Scripts
             }
 
             CurrentPieces.Clear();
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
         private void LogUsedPieces(LinkedList<ISquarePiece> pieces)
@@ -98,10 +102,11 @@ namespace Assets.Scripts
             var lastPiece = CurrentPieces.Last.Value;
             CurrentPieces.RemoveLast();
             lastPiece.Deselected();
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
+
         }
 
-        public bool AlreadySelected(ISquarePiece piece)
-        {
+        public bool AlreadySelected(ISquarePiece piece)        {
             return CurrentPieces.Contains(piece);
         }
 
@@ -112,11 +117,13 @@ namespace Assets.Scripts
                 piece.Deselected();
             }
             CurrentPieces.Clear();
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
         public void Add(ISquarePiece squarePiece)
         {
             CurrentPieces.AddLast(squarePiece);
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
