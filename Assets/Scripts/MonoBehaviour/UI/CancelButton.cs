@@ -39,7 +39,7 @@ namespace Assets.Scripts.Game_Components
                 }
             }
 
-            if (!Input.GetMouseButton(0) || PieceSelectionManager.Instance.CurrentPieces.Count == 0)
+            if (!Input.GetMouseButton(0) || PieceSelectionManager.Instance.CurrentPieces.Count < 2)
             {
                 return;
             }
