@@ -147,7 +147,7 @@ namespace Assets.Scripts
 
                     var piece = GetPiece(column);
 
-                    piece.GetComponent<BoxCollider2D>().enabled = true;
+                    piece.GetComponent<Collider2D>().enabled = true;
                     SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
 
 
