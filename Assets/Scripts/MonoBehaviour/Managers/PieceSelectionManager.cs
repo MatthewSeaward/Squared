@@ -89,17 +89,6 @@ namespace Assets.Scripts
                 return;
             }
 
-            if (!LastPiece.PieceConnection.ConnectionValid(additionalSelection))
-            {
-                return;
-            }
-
-            if (CurrentPieces.Contains(additionalSelection))
-            {
-                return;
-            }
-
-            CurrentPieces.AddLast(additionalSelection);
             additionalSelection.Pressed();
         }
 
