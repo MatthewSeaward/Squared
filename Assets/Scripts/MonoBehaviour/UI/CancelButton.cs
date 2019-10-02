@@ -16,12 +16,16 @@ namespace Assets.Scripts.Game_Components
 
         [SerializeField]
         private float maxDistance = 1;
-        private Vector3 lastPos;
 
+        [SerializeField]
+        private float distanceToStart = 3;
+
+        [SerializeField]
+        private float distanceToEnd = 0.3f;
+        
         private void Start()
         {
             startPos = transform.position;
-            lastPos = startPos;
             OnMouseExit();
         }
 
@@ -30,7 +34,7 @@ namespace Assets.Scripts.Game_Components
             if (Input.GetMouseButtonUp(0))
             {
                 transform.position = startPos;
-                GetComponent<Animator>().SetBool("Enabled", false);
+                GetComponentInChildren<Animator>().SetBool("Enabled", false);
 
                 if (mouseOver)
                 {
@@ -41,34 +45,43 @@ namespace Assets.Scripts.Game_Components
 
             if (!Input.GetMouseButton(0) || PieceSelectionManager.Instance.CurrentPieces.Count < 2)
             {
+                transform.position = startPos;
                 return;
             }
 
-            GetComponent<Animator>().SetBool("Enabled", true);
+            GetComponentInChildren<Animator>().SetBool("Enabled", true);
 
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            float moveAmount = Mathf.Clamp(Vector3.Distance(mousePos, startPos) - maxDistance, 0, maxDistance);
-            transform.position = Vector3.MoveTowards(transform.position, mousePos, maxDistance);            
-
-            if (Vector3.Distance(startPos, transform.position) > maxDistance)
+            mousePos = new Vector3(mousePos.x, mousePos.y, 0);
+            if (Vector3.Distance(startPos, mousePos) > distanceToStart)
             {
-                transform.position = lastPos;
+                transform.position = startPos;
+                return;
             }
 
-            lastPos = transform.position;
+            if (Vector3.Distance(transform.position, mousePos) < distanceToEnd)
+            {
+                return;
+            }
 
+
+            transform.position = Vector3.MoveTowards(startPos, mousePos, maxDistance * Time.deltaTime);
+
+            if (transform.position.y < startPos.y)
+            {
+                transform.position = new Vector3(transform.position.x, startPos.y);
+            }
         }
 
         private void OnMouseEnter()
         {
-            GetComponent<SpriteRenderer>().sprite = mouseOverSprite;
+            GetComponentInChildren<SpriteRenderer>().sprite = mouseOverSprite;
             mouseOver = true;
         }
 
         private void OnMouseExit()
         {
-            GetComponent<SpriteRenderer>().sprite = defaultSprite;
+            GetComponentInChildren<SpriteRenderer>().sprite = defaultSprite;
             mouseOver = false;
         }
     }
