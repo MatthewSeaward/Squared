@@ -64,13 +64,7 @@ namespace Assets.Scripts.Game_Components
                 return;
             }
 
-
             transform.position = Vector3.MoveTowards(startPos, mousePos, maxDistance * Time.deltaTime);
-
-            if (transform.position.y < startPos.y)
-            {
-                transform.position = new Vector3(transform.position.x, startPos.y);
-            }
         }
 
         private void OnMouseEnter()
