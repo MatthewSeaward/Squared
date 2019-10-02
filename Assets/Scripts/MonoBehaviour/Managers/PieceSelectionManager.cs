@@ -1,9 +1,9 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static Assets.Scripts.Constants.GameSettings;
 
 namespace Assets.Scripts
 {
@@ -94,21 +94,30 @@ namespace Assets.Scripts
                 return;
             }
 
+            if (CurrentPieces.Contains(additionalSelection))
+            {
+                return;
+            }
+
             CurrentPieces.AddLast(additionalSelection);
-        }      
+        }
 
         private int GetAxisDirection(string axis)
         {
             double mouseAxis = Input.GetAxis(axis);
 
-            int result = 0;
-
-            if (mouseAxis != 0)
+            if (mouseAxis > AdditionalSquareSensitvity)
             {
-                result = mouseAxis > 0 ? -1 : 1;
+                return -1;
             }
-
-            return result;
+            else if (mouseAxis < -AdditionalSquareSensitvity)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         private void ProcessSequenceCompleted()
@@ -151,7 +160,8 @@ namespace Assets.Scripts
 
         }
 
-        public bool AlreadySelected(ISquarePiece piece)        {
+        public bool AlreadySelected(ISquarePiece piece)
+        {
             return CurrentPieces.Contains(piece);
         }
 
@@ -177,5 +187,4 @@ namespace Assets.Scripts
             heatmap.WriteHeatmapData(chapter, level, UsedPieces);
         }
     }
-
 }
