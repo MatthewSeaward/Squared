@@ -19,4 +19,5 @@ public interface ISquarePiece
     void Deselected();
     void DestroyPiece();
     void Destroy();
+    void Pressed();
 }

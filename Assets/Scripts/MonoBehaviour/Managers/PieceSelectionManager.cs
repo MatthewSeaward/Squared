@@ -82,7 +82,7 @@ namespace Assets.Scripts
             var lastPiece = CurrentPieces.Last;
 
             var additionalSelection = PieceController.Pieces.FirstOrDefault(piece => piece.Position.x == LastPiece.Position.x + inputX &&
-                                                                          piece.Position.y == LastPiece.Position.y + inputY);
+                                                                          piece.Position.y == LastPiece.Position.y - inputY);
 
             if (additionalSelection == null)
             {
@@ -100,6 +100,7 @@ namespace Assets.Scripts
             }
 
             CurrentPieces.AddLast(additionalSelection);
+            additionalSelection.Pressed();
         }
 
         private int GetAxisDirection(string axis)
@@ -108,11 +109,11 @@ namespace Assets.Scripts
 
             if (mouseAxis > AdditionalSquareSensitvity)
             {
-                return -1;
+                return 1;
             }
             else if (mouseAxis < -AdditionalSquareSensitvity)
             {
-                return 1;
+                return -1;
             }
             else
             {
@@ -177,7 +178,14 @@ namespace Assets.Scripts
 
         public void Add(ISquarePiece squarePiece)
         {
+            if (CurrentPieces.Contains(squarePiece))
+            {
+                return;
+            }
+
             CurrentPieces.AddLast(squarePiece);
+            CheckForAdditionalPieces();
+
             SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 

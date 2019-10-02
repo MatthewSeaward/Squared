@@ -41,6 +41,6 @@ namespace Assets.Scripts.Constants
         public const float EnemyRageInterval = 10;
         public const float StarShooterFreq = 1f;
         public const float LoadingTextUpdateTime = 0.25f;
-        public const float AdditionalSquareSensitvity = 0.5f;
+        public const float AdditionalSquareSensitvity = 0.3f;
     }
 }
