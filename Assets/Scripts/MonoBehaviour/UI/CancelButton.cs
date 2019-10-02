@@ -45,7 +45,6 @@ namespace Assets.Scripts.Game_Components
 
             if (!Input.GetMouseButton(0) || PieceSelectionManager.Instance.CurrentPieces.Count < 2)
             {
-                transform.position = startPos;
                 return;
             }
 
