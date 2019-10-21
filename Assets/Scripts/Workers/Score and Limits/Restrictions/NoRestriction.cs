@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System.Collections.Generic;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -25,6 +24,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         }
 
         public bool ViolatedRestriction()
+        {
+            return false;
+        }
+
+        public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
             return false;
         }

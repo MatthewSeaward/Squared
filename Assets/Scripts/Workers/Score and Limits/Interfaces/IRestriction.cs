@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
+﻿namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
 {
     public interface IRestriction
     {
@@ -10,5 +8,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
         string GetRestrictionText();
         string GetRestrictionDescription();
         bool ViolatedRestriction();
+        bool IsRestrictionViolated(ISquarePiece[] sequence);
     }
 }

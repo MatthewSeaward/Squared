@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System.Collections.Generic;
 using static PieceFactory;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
@@ -29,14 +28,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
-            foreach(var piece in sequence)
-            {
-                if (piece.Type == BannedPiece)
-                {
-                    _violatedRestriction = true;
-                    break;
-                }
-            }
+            _violatedRestriction = IsRestrictionViolated(sequence);
         }
 
         public void Update(float deltaTime)
@@ -47,6 +39,18 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public bool ViolatedRestriction()
         {
             return _violatedRestriction;
+        }
+
+        public bool IsRestrictionViolated(ISquarePiece[] sequence)
+        {
+            foreach (var piece in sequence)
+            {
+                if (piece.Type == BannedPiece)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

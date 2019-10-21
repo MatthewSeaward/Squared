@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -89,7 +90,16 @@ namespace Assets.Scripts
                 return;
             }
 
-            additionalSelection.Pressed();
+            var newSelected = new List<ISquarePiece>();
+            newSelected.AddRange(CurrentPieces);
+            newSelected.Add(additionalSelection);
+
+            if (LevelManager.Instance.SelectedLevel.GetCurrentRestriction().IsRestrictionViolated(newSelected.ToArray()))
+            {
+                return;
+            }
+
+            additionalSelection.Pressed(false);
         }
 
         private int GetAxisDirection(string axis)
@@ -165,7 +175,7 @@ namespace Assets.Scripts
             SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
-        public void Add(ISquarePiece squarePiece)
+        public void Add(ISquarePiece squarePiece, bool checkForAdditional)
         {
             if (CurrentPieces.Contains(squarePiece))
             {
@@ -173,7 +183,11 @@ namespace Assets.Scripts
             }
 
             CurrentPieces.AddLast(squarePiece);
-            CheckForAdditionalPieces();
+
+            if (checkForAdditional)
+            {
+                CheckForAdditionalPieces();
+            }
 
             SelectedPiecesChanged?.Invoke(CurrentPieces);
         }

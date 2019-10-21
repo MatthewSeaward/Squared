@@ -23,6 +23,21 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
+            _violatedRestriction = IsRestrictionViolated(sequence);
+        }
+
+        public void Update(float deltaTime)
+        {
+            
+        }
+
+        public bool ViolatedRestriction()
+        {
+            return _violatedRestriction;
+        }
+
+        public bool IsRestrictionViolated(ISquarePiece[] sequence)
+        {
             var seqArray = sequence.ToArray();
 
             for (int i = 0; i < seqArray.Length; i++)
@@ -37,20 +52,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
                 if (ConnectionHelper.DiagonalConnection(firstPiece, secondPiece))
                 {
-                    _violatedRestriction = true;
-                    break;
+                    return true;
                 }
             }
-        }
 
-        public void Update(float deltaTime)
-        {
-            
-        }
-
-        public bool ViolatedRestriction()
-        {
-            return _violatedRestriction;
+            return false;
         }
     }
 }

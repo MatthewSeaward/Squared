@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System.Collections.Generic;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -34,18 +33,24 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
-            foreach(var item in sequence)
-            {
-                if (item.Sprite.name == Sprite || item.Sprite.name == SpriteValue.ToString())
-                {
-                    failed = true;
-                }
-            }
+            failed = IsRestrictionViolated(sequence);
         }
 
         public void Update(float deltaTime)
         {
            
+        }
+
+        public bool IsRestrictionViolated(ISquarePiece[] sequence)
+        {
+            foreach (var item in sequence)
+            {
+                if (item.Sprite.name == Sprite || item.Sprite.name == SpriteValue.ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

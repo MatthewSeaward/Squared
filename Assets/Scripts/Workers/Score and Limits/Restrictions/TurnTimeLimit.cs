@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
@@ -51,6 +50,9 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             return TimeLeft <= 0;
         }
 
-   
+        public bool IsRestrictionViolated(ISquarePiece[] sequence)
+        {
+            return false;
+        }
     }
 }

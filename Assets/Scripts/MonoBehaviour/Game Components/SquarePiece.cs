@@ -122,7 +122,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     void OnMouseDown()
     {
-        Pressed();
+        Pressed(true);
     }
 
     private void OnMouseEnter()
@@ -138,11 +138,11 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         }
         else
         {
-            Pressed();
+            Pressed(true);
         }
     }
 
-    public void Pressed()
+    public void Pressed(bool checkForAdditional)
     {
         if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
         {
@@ -164,7 +164,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
             return;
         }
 
-        PieceSelectionManager.Instance.Add(this);
+        PieceSelectionManager.Instance.Add(this, checkForAdditional);
 
         DestroyPieceHandler.OnPressed();
         SetMouseDown(true);

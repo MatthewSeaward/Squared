@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System.Collections.Generic;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -32,12 +31,17 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
-            reachedLimit = sequence.Length < MinLimit;
+            reachedLimit = IsRestrictionViolated(sequence);
         }
 
         public void Update(float deltaTime)
         {
             
         }
+
+        public bool IsRestrictionViolated(ISquarePiece[] sequence)
+        {
+            return sequence.Length < MinLimit;
+         }
     }
 }
