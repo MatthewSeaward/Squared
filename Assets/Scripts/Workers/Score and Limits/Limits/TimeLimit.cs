@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
@@ -42,6 +41,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void Update(float deltaTime)
         {
             TimeTaken += deltaTime;
+        }
+
+        public float PercentComplete()
+        {
+            return ((float) TimeTaken / (float) Limit) * 100;
         }
     }
 }

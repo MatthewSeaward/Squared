@@ -8,5 +8,6 @@
         string GetLimitText();
         bool ReachedLimit();
         string GetDescription();
+        float PercentComplete();
     }
 }

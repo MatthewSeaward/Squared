@@ -1,6 +1,4 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using System;
-using System.Collections.Generic;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -41,6 +39,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void Reset()
         {
             TurnsTaken = 0;
+        }
+
+        public float PercentComplete()
+        {
+            return ((float) TurnsTaken / (float) MaxTurns) * 100;
         }
     }
 }

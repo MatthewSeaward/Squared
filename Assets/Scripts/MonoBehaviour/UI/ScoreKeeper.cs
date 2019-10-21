@@ -1,6 +1,7 @@
 ﻿using Assets;
 using Assets.Scripts;
 using Assets.Scripts.Managers;
+using Assets.Scripts.UI;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
@@ -21,6 +22,12 @@ public class ScoreKeeper : MonoBehaviour
        
     public Text Score;
     public Text Time;
+
+    [SerializeField]
+    private ProgressBar LimitProgress;
+
+    [SerializeField]
+    private ProgressBar ScoreProgress;
 
     private bool scoresUpdated = false;
 
@@ -45,7 +52,7 @@ public class ScoreKeeper : MonoBehaviour
         Restriction.Reset();
 
         UpdateScore();
-        UpdateLimitText();
+        UpdateLimit();
     }
 
     public void OnDestroy()
@@ -76,6 +83,8 @@ public class ScoreKeeper : MonoBehaviour
     {
         Score.text = $"Score: {_currentScore}/{Target}";
         Score.color = ReachedTarget ? Color.green : Color.white;
+
+        ScoreProgress.UpdateProgressBar(((float)_currentScore / (float)Target) * 100f);
     }
 
     private void Update()
@@ -103,7 +112,7 @@ public class ScoreKeeper : MonoBehaviour
     private void UpdateLimit(float deltaTime)
     {
         GameLimit.Update(UnityEngine.Time.deltaTime);
-        UpdateLimitText();
+        UpdateLimit();
 
         if (GameLimit.ReachedLimit())
         {
@@ -122,7 +131,7 @@ public class ScoreKeeper : MonoBehaviour
         GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, _currentScore, result);
     }
 
-    private void UpdateLimitText()
+    private void UpdateLimit()
     {
         string restrictionText = Restriction.GetRestrictionText();
         if (!string.IsNullOrWhiteSpace(restrictionText))
@@ -131,6 +140,9 @@ public class ScoreKeeper : MonoBehaviour
         }
 
         Time.text = GameLimit.GetLimitText() + restrictionText;
+
+        LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
+
     }
 
 }
