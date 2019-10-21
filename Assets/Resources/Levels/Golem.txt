@@ -187,7 +187,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Turns", "12", "Time", "3"],
+			"Star2": ["Turns", "12", "Time", "6"],
 			"Star3": ["Turns", "10", "Banned Locked", ""]
 		},
 		{
@@ -283,7 +283,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "20"],
-			"Star2": ["Turns", "22", "Time", "4"],
+			"Star2": ["Turns", "22", "Time", "5"],
 			"Star3": ["Time", "40", "Min", "4"]
 		}
 	]
