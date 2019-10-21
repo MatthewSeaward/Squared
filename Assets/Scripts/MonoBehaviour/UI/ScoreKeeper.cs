@@ -64,6 +64,11 @@ public class ScoreKeeper : MonoBehaviour
         UpdateScore();
         UpdateLimit(UnityEngine.Time.deltaTime);
 
+        if (ReachedTarget)
+        {
+            SaveProgress(GameResult.ReachedTarget);
+        }
+
         PointsAwarded?.Invoke(scoreEarned, pieces);
     }
 
@@ -102,13 +107,8 @@ public class ScoreKeeper : MonoBehaviour
 
         if (GameLimit.ReachedLimit())
         {
-            ProcessGameLimitReached();
+            SaveProgress(GameResult.LimitExpired);
         }
-    }
-
-    private void ProcessGameLimitReached()
-    {       
-       SaveProgress(ReachedTarget ? GameResult.ReachedTarget : GameResult.LimitExpired);
     }
 
     private void SaveProgress(GameResult result)
