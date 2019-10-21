@@ -159,7 +159,10 @@ namespace Assets
         public void NextChapter() =>   ChangeChapter(1);
         public void PreviousChapter() => ChangeChapter(-1);
 
-
+        public void SetChapter(string chapter)
+        {
+            chapterInt = LevelOrder.ToList().IndexOf(chapter);
+        }
 
         private void ChangeChapter(int direction)
         {

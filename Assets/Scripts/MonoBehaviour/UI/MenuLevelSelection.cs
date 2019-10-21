@@ -17,7 +17,7 @@ namespace Assets.Scripts
 
         private bool _alreadyLoading = false;
 
-        private void Start()
+        private void OnEnable()
         {
             Refresh();
         }      

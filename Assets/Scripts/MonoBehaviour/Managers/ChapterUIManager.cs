@@ -14,7 +14,7 @@ namespace Assets.Scripts
         [SerializeField]
         private GameObject NextButton;
 
-        private void Start()
+        private void OnEnable()
         {
             UpdateBackgrounds();
         }
