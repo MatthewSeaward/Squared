@@ -116,7 +116,7 @@ public class ScoreKeeper : MonoBehaviour
 
         if (GameLimit.ReachedLimit())
         {
-            SaveProgress(GameResult.LimitExpired);
+            SaveProgress(ReachedTarget ? GameResult.ReachedTarget : GameResult.LimitExpired);
         }
     }
 
