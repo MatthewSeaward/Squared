@@ -1,11 +1,35 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
     class ChapterIcon : MonoBehaviour
     {
         public void OnEnable()
+        {
+            GetComponent<Button>().interactable = CheckIfUnlocked();
+            UpdateLevelProgress();            
+        }
+
+        private bool CheckIfUnlocked()
+        {
+            var matchingLevels = LevelManager.Instance.Levels[this.name];
+            var currentStars = LevelManager.Instance.CurrentStars;
+
+            var unlocked = false;
+            foreach (var level in matchingLevels)
+            {
+                if (currentStars >= level.StarsToUnlock)
+                {
+                    unlocked = true;
+                    break;
+                }
+            }
+
+            return unlocked;
+        }
+
+        private void UpdateLevelProgress()
         {
             var matchingLevels = LevelManager.Instance.Levels[this.name];
             var numberOfStars = 0;
@@ -18,11 +42,10 @@ namespace Assets.Scripts.UI
                 numberOfStars += level.LevelProgress.StarAchieved;
             }
 
-            var calculatedProgress =(float) numberOfStars / (float) (matchingLevels.Length *3);
-            var percent =(int)(calculatedProgress * 100);
+            var calculatedProgress = (float)numberOfStars / (float)(matchingLevels.Length * 3);
+            var percent = (int)(calculatedProgress * 100);
 
             GetComponentInChildren<ProgressBar>().UpdateProgressBar(percent);
-
         }
     }
 }
