@@ -8,6 +8,7 @@ using Assets.Scripts.Workers.Enemy.Events;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.Helpers.Extensions;
 using UnityEngine;
+using static PieceFactory;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -48,6 +49,9 @@ namespace Assets.Scripts.Workers.IO
             {
                 case "Turns":
                     trig = new TurnEventTrigger(Convert.ToInt32(min), Convert.ToInt32(max));
+                    break;
+                case "PiecePercentage":
+                    trig = new PiecePercentEventTrigger((PieceTypes) min[0], Convert.ToInt32(max));
                     break;
             }
 

@@ -20,7 +20,6 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
             int difference = TurnRange.Max - TurnRange.Min;
             PercentageIncrement = 100 / (difference > 0 ? difference : 1);
-
        }
 
         public override void Dispose()

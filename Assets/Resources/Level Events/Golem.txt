@@ -176,7 +176,7 @@
 				],
 				"Star3":
 				[
-					""
+					"ChangeS,PiecePercentage,s,35,4,h:x"
 				]
 			},
 				{
