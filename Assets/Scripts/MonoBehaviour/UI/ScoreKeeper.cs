@@ -5,7 +5,6 @@ using Assets.Scripts.UI;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -142,7 +141,5 @@ public class ScoreKeeper : MonoBehaviour
         Time.text = GameLimit.GetLimitText() + restrictionText;
 
         LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
-
     }
-
 }
