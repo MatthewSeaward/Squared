@@ -96,7 +96,7 @@
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "8", "Only Diagonal", ""],
-			"Star3": ["Turns", "13", "Type", "r"]
+			"Star3": ["Turns", "14", "Type", "r"]
 		},
 		{
 			"LevelNumber": 5,
@@ -264,7 +264,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "20"],
-			"Star2": ["Turns", "50", "Max", "4"],
+			"Star2": ["Turns", "40", "Max", "5"],
 			"Star3": ["Turns", "25", "Type", "r"]
 		},
 		{

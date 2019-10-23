@@ -137,8 +137,9 @@
 				],
 				"Star3":
 				[
-					"Add,Turns,2,3,3:5;4:5,x",
-					"Change,Turns,5,9,4,l"
+					"Add,Turns,0,3,3:5;4:5,x",
+					"Change,Turns,4,5,4,l",
+					"Add,Turns,5,8,1:5;6:5,x"
 				]
 			},
 				{

@@ -212,7 +212,7 @@
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "10", "Min", "4"],
-			"Star3": ["Turns", "15", "No Diagonal", ""]
+			"Star3": ["Turns", "16", "No Diagonal", ""]
 		},
 		{
 			"LevelNumber": 10,
