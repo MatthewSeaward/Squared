@@ -6,7 +6,8 @@ namespace Assets.Scripts.Workers.IO.Helpers
     {
         public static string ScoreLocation(string chapter, int level, int star) => $"Scores/{chapter}/LVL {level}/Star {star}";
         public static string ScoreLocation(string chapter, int level) => $"Scores/{chapter}/LVL {level}";
-        public static string PlayerProgressLocation() => $"LevelProgress/{UserManager.UserID}";
+        public static string PlayerProgressLocation() => $"PlayerProgress/LevelProgress/{UserManager.UserID}";
+        public static string PlayerCollectionLocation() => $"PlayerProgress/PieceCollection/{UserManager.UserID}";
         public static string HeatMapLocation(string chapter, int level) => $"HeatMap/{chapter}/{level}";
         public static string ExceptionLocation() => $"Exceptions/{UserManager.UserID}";
     }

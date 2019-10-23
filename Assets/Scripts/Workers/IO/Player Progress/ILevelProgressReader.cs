@@ -6,6 +6,5 @@ namespace Assets.Scripts.Workers.IO
     {
         LevelProgress[] LoadLevelProgress();
         void LoadLevelProgressAsync();
-
     }
 }

@@ -7,7 +7,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.SwapEffects
     {
         public Sprite ProcessSwap(ISquarePiece currentPiece)
         {
-            return PieceFactory.Instance.CreateRandomSprite();
+            var random =  PieceFactory.Instance.CreateRandomSprite();
+            currentPiece.PieceColour = random.colour;
+            return random.sprite;
         }
     }
 }

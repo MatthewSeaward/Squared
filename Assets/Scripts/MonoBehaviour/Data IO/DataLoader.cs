@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Writer;
 using Assets.Scripts.Workers.IO.Enemy_Event;
@@ -13,12 +14,16 @@ namespace Assets.Scripts
 {
     class DataLoader : MonoBehaviour
     {
-        private bool _loaded = false;
+        private bool levelDataLoaded;
+        private bool userDataLoaded;
+
         private int width = 0;
         private bool _alreadyLoading = false;
 
         [SerializeField]
         private Text text;
+
+        private bool LoadingComplete => levelDataLoaded && userDataLoaded;
 
         public void Start()
         {
@@ -26,19 +31,26 @@ namespace Assets.Scripts
             LevelManager.Instance.LoadData();
             ScoreManager.Instance.Initialise();
 
-
+            UserDataIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
+            UserDataIO.LoadUserData();
 
             StartCoroutine(LoadingText());
         }
-     
+
+        private void PiecesCollectedLoadedEventHandler()
+        {
+            userDataLoaded = true;
+        }
+
         public void OnDestroy()
         {
             LevelIO.DataLoaded -= DataLoaded;
+            UserDataIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
         }
 
         private void Update()
         {
-            if (_loaded && !_alreadyLoading)
+            if (LoadingComplete && !_alreadyLoading)
             {
                 StartCoroutine(LoadSceneAsync());
             }
@@ -46,7 +58,7 @@ namespace Assets.Scripts
 
         public void DataLoaded()
         {
-            _loaded = true;
+            levelDataLoaded = true;
         }
 
         IEnumerator LoadSceneAsync()

@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using UnityEngine;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Enemy
 {
@@ -11,13 +12,14 @@ namespace Assets.Scripts.Workers.Enemy
 
         protected override void InvokeRageAction(ISquarePiece piece)
         {
-            Sprite newSprite = null;
+            (Sprite Sprite, Colour colour) newSprite;
             do
             {
                 newSprite = PieceFactory.Instance.CreateRandomSprite();
-            } while (newSprite == piece.Sprite);
+            }
+            while (newSprite.Sprite == piece.Sprite);
 
-            piece.gameObject.GetComponent<PieceSwapSprite>().SwapSprite(newSprite);
+            piece.gameObject.GetComponent<PieceSwapSprite>().SwapSprite(newSprite.Sprite, newSprite.colour);
         }
     }
 }

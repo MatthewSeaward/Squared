@@ -100,17 +100,20 @@ public class PieceFactory : MonoBehaviour
 
     private void BuildSprite(PieceTypes type, GameObject piece)
     {
-        Sprite sprite; 
+        Sprite sprite;
+        Colour selectedColour = Colour.None;
         if (type == PieceTypes.Rainbow)
         {
             sprite = GameResources.Sprites["Rainbow"];
         }
         else
         {
-            sprite = CreateRandomSprite();
+            var randomSprite = CreateRandomSprite();
+            sprite = randomSprite.sprite;
+            selectedColour = randomSprite.colour;
         }
         piece.GetComponent<SpriteRenderer>().sprite = sprite;
-
+        piece.GetComponent<SquarePiece>().PieceColour = selectedColour;
     }
 
     private void BuildSwapEffects(PieceTypes type, SquarePiece squarePiece, bool initialSetup)
@@ -240,7 +243,7 @@ public class PieceFactory : MonoBehaviour
         }
     }
 
-    public Sprite CreateRandomSprite()
+    public (Sprite sprite, Colour colour) CreateRandomSprite()
     {
         var permittedValues = new List<Colour>();
         permittedValues.AddRange((Colour[]) LevelManager.Instance.SelectedLevel.colours.Clone());
@@ -256,6 +259,6 @@ public class PieceFactory : MonoBehaviour
 
         Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Count)];
         
-        return Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite;
+        return (Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite, selectedColour);
     }
 }

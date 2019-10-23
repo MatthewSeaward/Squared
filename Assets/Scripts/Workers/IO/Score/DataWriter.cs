@@ -29,7 +29,6 @@
         public void Initialise()
         {
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
-
         }
 
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)

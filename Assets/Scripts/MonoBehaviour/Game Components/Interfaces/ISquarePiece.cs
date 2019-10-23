@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 using static PieceFactory;
+using static SquarePiece;
 
 public interface ISquarePiece
 {
@@ -15,6 +16,7 @@ public interface ISquarePiece
     IPieceDestroy DestroyPieceHandler { get; }
     PieceTypes Type { get; set; }
     PieceDestroyed PieceDestroyed { set; get; }
+    Colour PieceColour { get;set; }
 
     void Deselected();
     void DestroyPiece();

@@ -26,7 +26,9 @@ namespace Assets.Scripts.Workers.Piece_Effects
             if (timer > SwapFrequency)
             {
                 timer = 0;
-                piece.Sprite = PieceFactory.Instance.CreateRandomSprite();
+                var randomPiece = PieceFactory.Instance.CreateRandomSprite();
+                piece.Sprite = randomPiece.sprite;
+                piece.PieceColour = randomPiece.colour;
             }
         }
     }

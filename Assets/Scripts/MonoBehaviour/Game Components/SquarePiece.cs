@@ -16,15 +16,16 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     [SerializeField]
     public enum Colour
     {
-        Red,
-        Orange,
-        Yellow,
-        Pink,
-        Purple,
-        Grey,
-        Green,
-        DarkBlue,
-        LightBlue
+        None = -1,
+        Red = 0,
+        Orange = 1,
+        Yellow = 2,
+        Pink = 3,
+        Purple = 4,
+        Grey = 5,
+        Green = 6,
+        DarkBlue = 7,
+        LightBlue = 8
     }
 
 
@@ -59,6 +60,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public IBehaviour PieceBehaviour { get; set; }
     public IScoreable Scoring { get; set; }
 
+    public Colour PieceColour { get; set; }    
     public PieceTypes Type { get; set; }
 
     private Animator Animator => _animator = _animator ?? GetComponent<Animator>();
