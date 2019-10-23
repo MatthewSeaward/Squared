@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelSelect: {fileID: 3105535258145660305}
-  menu: {fileID: 7948728252226952684}
+  Menu: {fileID: 7948728252226952684}
 --- !u!4 &1053646207
 Transform:
   m_ObjectHideFlags: 0

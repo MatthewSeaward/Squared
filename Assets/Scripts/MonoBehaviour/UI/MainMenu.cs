@@ -2,30 +2,40 @@
 
 namespace Assets.Scripts
 {
+    public enum MenuTab { MainMenu, LevelSelect }
+
     class MainMenu : MonoBehaviour
     {
+        private static MenuTab LastTab = MenuTab.MainMenu;
+
         [SerializeField]
         private GameObject LevelSelect;
 
         [SerializeField]
-        private GameObject menu;
+        private GameObject Menu;
 
         public void Start()
         {
-            BackToMainMenu();
+            ChangeTab(LastTab);
         }
 
         public void OnChapterSelected(string chapter)
         {
             LevelManager.Instance.SetChapter(chapter);
-            LevelSelect.SetActive(true);
-            menu.SetActive(false);
+            ChangeTab(MenuTab.LevelSelect);
         }
 
         public void BackToMainMenu()
         {
-            LevelSelect.SetActive(false);
-            menu.SetActive(true);
+            ChangeTab(MenuTab.MainMenu);
+        }
+
+        private void ChangeTab(MenuTab menuTab)
+        {
+            LevelSelect.SetActive(menuTab == MenuTab.LevelSelect);
+            Menu.SetActive(menuTab == MenuTab.MainMenu);
+
+            LastTab = menuTab;
         }
     }
 }
