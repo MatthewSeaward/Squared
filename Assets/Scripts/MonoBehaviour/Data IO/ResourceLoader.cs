@@ -1,9 +1,4 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -20,6 +15,13 @@ namespace Assets.Scripts
                 GameResources.Sprites.Add(item.name, item); 
             }
 
+            GameResources.PieceSprites.Clear();
+
+            var squares = Resources.LoadAll<Sprite>("Graphics/Squares");
+            foreach (var item in squares)
+            {
+                GameResources.PieceSprites.Add(item.name, item);
+            }
 
             GameResources.ParticleEffects.Clear();                        
             foreach (var item in Resources.LoadAll<GameObject>("Particle Effects"))

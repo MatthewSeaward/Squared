@@ -83,7 +83,7 @@ public class ScoreKeeper : MonoBehaviour
         Score.text = $"Score: {_currentScore}/{Target}";
         Score.color = ReachedTarget ? Color.green : Color.white;
 
-        ScoreProgress.UpdateProgressBar(((float)_currentScore / (float)Target) * 100f);
+        ScoreProgress.UpdateProgressBar(_currentScore, Target, false);
     }
 
     private void Update()

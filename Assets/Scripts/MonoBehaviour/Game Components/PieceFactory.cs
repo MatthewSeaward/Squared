@@ -11,7 +11,6 @@ using Assets;
 using Assets.Scripts.Constants;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
-using UnityEngine.UI;
 
 public class PieceFactory : MonoBehaviour
 {

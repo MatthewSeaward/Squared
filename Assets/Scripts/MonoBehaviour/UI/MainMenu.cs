@@ -2,17 +2,20 @@
 
 namespace Assets.Scripts
 {
-    public enum MenuTab { MainMenu, LevelSelect }
+    public enum MenuTab { MainMenu, LevelSelect, Progress }
 
     class MainMenu : MonoBehaviour
     {
-        private static MenuTab LastTab = MenuTab.MainMenu;
+        private static MenuTab LastTab = Scripts.MenuTab.MainMenu;
 
         [SerializeField]
-        private GameObject LevelSelect;
+        private GameObject LevelSelectTab;
 
         [SerializeField]
-        private GameObject Menu;
+        private GameObject MenuTab;
+
+        [SerializeField]
+        private GameObject ProgressTab;
 
         public void Start()
         {
@@ -22,18 +25,24 @@ namespace Assets.Scripts
         public void OnChapterSelected(string chapter)
         {
             LevelManager.Instance.SetChapter(chapter);
-            ChangeTab(MenuTab.LevelSelect);
+            ChangeTab(Scripts.MenuTab.LevelSelect);
         }
 
         public void BackToMainMenu()
         {
-            ChangeTab(MenuTab.MainMenu);
+            ChangeTab(Scripts.MenuTab.MainMenu);
+        }
+
+        public void ProgressTab_Clicked()
+        {
+            ChangeTab(Scripts.MenuTab.Progress);
         }
 
         private void ChangeTab(MenuTab menuTab)
         {
-            LevelSelect.SetActive(menuTab == MenuTab.LevelSelect);
-            Menu.SetActive(menuTab == MenuTab.MainMenu);
+            LevelSelectTab.SetActive(menuTab == Scripts.MenuTab.LevelSelect);
+            MenuTab.SetActive(menuTab == Scripts.MenuTab.MainMenu);
+            ProgressTab.SetActive(menuTab == Scripts.MenuTab.Progress);
 
             LastTab = menuTab;
         }

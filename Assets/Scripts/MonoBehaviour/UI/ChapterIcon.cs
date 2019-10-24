@@ -42,10 +42,7 @@ namespace Assets.Scripts.UI
                 numberOfStars += level.LevelProgress.StarAchieved;
             }
 
-            var calculatedProgress = (float)numberOfStars / (float)(matchingLevels.Length * 3);
-            var percent = (int)(calculatedProgress * 100);
-
-            GetComponentInChildren<ProgressBar>().UpdateProgressBar(percent);
+            GetComponentInChildren<ProgressBar>().UpdateProgressBar(numberOfStars, matchingLevels.Length * 3, false);
         }
     }
 }

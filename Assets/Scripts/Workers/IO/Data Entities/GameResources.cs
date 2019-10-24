@@ -8,6 +8,7 @@ namespace Assets.Scripts.Workers.IO.Data_Entities
         public static Dictionary<string, Sprite> Sprites = new Dictionary<string, Sprite>();
         public static Dictionary<string, GameObject> ParticleEffects = new Dictionary<string, GameObject>();
         public static Dictionary<string, GameObject> GameObjects = new Dictionary<string, GameObject>();
+        public static Dictionary<string, Sprite> PieceSprites = new Dictionary<string, Sprite>();
 
         public static void PlayEffect(string name, Vector3 pos)
         {

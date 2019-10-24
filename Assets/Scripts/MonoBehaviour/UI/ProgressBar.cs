@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Helpers.Extensions;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
@@ -8,7 +9,26 @@ namespace Assets.Scripts.UI
         [SerializeField]
         private RectTransform innerFill;    
 
+        public void UpdateProgressBar(int currentValue, int maxValue, bool showText)
+        {
+            var calculatedPercent = (float)currentValue / (float)maxValue;
+            var percent = (int) (calculatedPercent * 100);
+            setProgress(percent);
+
+            var Text = GetComponentInChildren<Text>();
+
+            if (Text != null)
+            {
+                Text.text = showText ? currentValue + "/" + maxValue : string.Empty;
+            }
+        }
+
         public void UpdateProgressBar(float percent)
+        {
+            setProgress(percent);
+        }
+
+        private void setProgress(float percent)
         {
             var totalWidth = GetComponent<RectTransform>().sizeDelta.x;
             var increment = totalWidth / 100f;
