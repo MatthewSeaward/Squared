@@ -22,6 +22,11 @@ namespace Assets.Scripts
 
         private void PieceCollectionManager_PiecesCollectedEvent(SquarePiece.Colour type, int previous, int gained)
         {
+            if (type == SquarePiece.Colour.None)
+            {
+                return;
+            }
+
             var obj = ObjectPool.Instantiate(PieceProgress, Vector3.zero);
             obj.transform.SetParent(this.transform);
             obj.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
