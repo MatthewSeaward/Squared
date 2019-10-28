@@ -7,5 +7,14 @@ namespace Assets.Scripts.Workers.Powerups
     class MinePowerup : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Mine"];
+
+        public void Invoke()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(float deltaTime)
+        {
+        }
     }
 }

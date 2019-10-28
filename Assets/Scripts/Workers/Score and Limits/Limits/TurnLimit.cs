@@ -45,5 +45,10 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         {
             return ((float) TurnsTaken / (float) MaxTurns) * 100;
         }
+
+        public void Increase(int amount)
+        {
+            MaxTurns += amount;
+        }
     }
 }

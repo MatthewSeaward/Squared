@@ -6,6 +6,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     {
         private readonly int MaxLimit;
         private bool reachedLimit = false;
+        private bool ignored;
 
         public MaxSequenceLimit(int limit)
         {
@@ -32,6 +33,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             reachedLimit = IsRestrictionViolated(sequence);
+
+            ignored = false;
         }
 
         public void Update(float deltaTime)
@@ -41,7 +44,17 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
+           if (ignored)
+           {
+                return false;
+           }
+
            return sequence.Length > MaxLimit;
+        }
+        
+        public void Ignore()
+        {
+            ignored = true;
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     {
         private string effect;
         private bool failed = false;
+        private bool ignored;
 
         public SwapEffectLimit()
         {
@@ -33,6 +34,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             failed = IsRestrictionViolated(sequence);
+            ignored = false;
         }
 
         public void Update(float deltaTime)
@@ -42,6 +44,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
+            if (ignored)
+            {
+                return false;
+            }
+
             foreach(var item in sequence)
             {
                 var str1 = item.SwapEffect.GetType().ToString();
@@ -52,6 +59,12 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 }
             }
             return false;
+        }
+
+
+        public void Ignore()
+        {
+            ignored = true;
         }
     }
 }

@@ -9,5 +9,6 @@
         bool ReachedLimit();
         string GetDescription();
         float PercentComplete();
+        void Increase(int amount);
     }
 }

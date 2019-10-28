@@ -8,6 +8,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     {
         private bool _violatedRestriction = false;
         private PieceTypes BannedPiece;
+        private bool ignored;
 
         public BannedPieceType(string inputString)
         {
@@ -29,6 +30,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             _violatedRestriction = IsRestrictionViolated(sequence);
+
+            ignored = false;
         }
 
         public void Update(float deltaTime)
@@ -43,6 +46,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
+            if (ignored)
+            {
+                return false;
+            }
+
             foreach (var piece in sequence)
             {
                 if (piece.Type == BannedPiece)
@@ -51,6 +59,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 }
             }
             return false;
+        }
+
+        public void Ignore()
+        {
+            ignored = true;
         }
     }
 }

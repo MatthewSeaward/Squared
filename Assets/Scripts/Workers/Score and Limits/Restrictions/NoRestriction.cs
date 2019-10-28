@@ -32,5 +32,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         {
             return false;
         }
+
+        public void Ignore()
+        {
+           
+        }
+
     }
 }

@@ -30,8 +30,8 @@ public class ScoreKeeper : MonoBehaviour
 
     private bool scoresUpdated = false;
 
-    private IGameLimit GameLimit;
-    private IRestriction Restriction;
+    public IGameLimit GameLimit;
+    public IRestriction Restriction;
     private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
 
     private int _currentScore = 0;

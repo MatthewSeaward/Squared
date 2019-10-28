@@ -9,5 +9,6 @@
         string GetRestrictionDescription();
         bool ViolatedRestriction();
         bool IsRestrictionViolated(ISquarePiece[] sequence);
+        void Ignore();
     }
 }

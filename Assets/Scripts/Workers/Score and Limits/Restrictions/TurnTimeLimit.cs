@@ -9,6 +9,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         private float Limit;
         private float TimeTaken;
         private float TimeLeft => Mathf.Clamp(Limit - TimeTaken, 0, Limit);
+        private bool ignored = false;
 
         public TurnTimeLimit(float limit)
         {
@@ -33,11 +34,12 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             TimeTaken = 0;
+            ignored = false;
         }
 
         public void Update(float deltaTime)
         {
-            if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
+            if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay || ignored)
             {
                 return;
             }
@@ -53,6 +55,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
             return false;
+        }
+
+        public void Ignore()
+        {
+            ignored = true;
         }
     }
 }

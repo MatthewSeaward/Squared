@@ -6,6 +6,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     {
         private readonly string Sprite;
         private bool failed = false;
+        private bool ignored;
+
         public int SpriteValue { get; private set; }
 
         public BannedSprite(int spriteValue)
@@ -34,6 +36,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             failed = IsRestrictionViolated(sequence);
+            ignored = false;
         }
 
         public void Update(float deltaTime)
@@ -43,6 +46,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
+            if (ignored)
+            {
+                return false;
+            }
+
             foreach (var item in sequence)
             {
                 if (item.Sprite.name == Sprite || item.Sprite.name == SpriteValue.ToString())
@@ -51,6 +59,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 }
             }
             return false;
+        }
+        
+        public void Ignore()
+        {
+            ignored = true;
         }
     }
 }

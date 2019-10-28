@@ -5,7 +5,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class TimeLimit : IGameLimit
     {
-        private readonly int Limit;
+        private int Limit;
         private float TimeTaken;
 
         public TimeLimit(int limit)
@@ -46,6 +46,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public float PercentComplete()
         {
             return ((float) TimeTaken / (float) Limit) * 100;
+        }
+
+        public void Increase(int amount)
+        {
+            Limit += amount;
         }
     }
 }
