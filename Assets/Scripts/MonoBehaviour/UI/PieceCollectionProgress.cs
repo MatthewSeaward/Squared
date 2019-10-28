@@ -43,6 +43,11 @@ namespace Assets.Scripts
             var multiplier = (piecesCollected / increment) + 1;
 
             ProgressBar.UpdateProgressBar(piecesCollected % increment, increment, $"{piecesCollected}/{(increment * multiplier)}");
+
+            if (piecesCollected % increment == 0)
+            {
+                GameResources.PlayEffect("Powerup Unlocked", Camera.main.ScreenToWorldPoint(Powerup.transform.position));
+            }
         }
 
         IEnumerator IncrementOverTime(Colour pieceColour, int previous, int gained)
