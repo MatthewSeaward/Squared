@@ -27,7 +27,8 @@ namespace Assets.Scripts.UI
                 var collected = PieceCollectionManager.Instance.PiecesCollected.Pieces.FirstOrDefault(x => x.PieceColour == type);
 
                 int piecesCollected = collected != null ? collected.Count : 0;
-                int increment = 50;
+
+                int increment = RemoteConfigHelper.GetCollectionInterval(type);
 
                 var multiplier = (piecesCollected / increment) + 1;
 

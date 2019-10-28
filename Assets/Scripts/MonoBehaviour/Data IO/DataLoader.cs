@@ -16,6 +16,7 @@ namespace Assets.Scripts
     {
         private bool levelDataLoaded;
         private bool userDataLoaded;
+        private bool configLoaded;
 
         private int width = 0;
         private bool _alreadyLoading = false;
@@ -23,7 +24,7 @@ namespace Assets.Scripts
         [SerializeField]
         private Text text;
 
-        private bool LoadingComplete => levelDataLoaded && userDataLoaded;
+        private bool LoadingComplete => levelDataLoaded && userDataLoaded && configLoaded;
 
         public void Start()
         {
@@ -31,11 +32,27 @@ namespace Assets.Scripts
             LevelManager.Instance.LoadData();
             ScoreManager.Instance.Initialise();
 
-            UserDataIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
-            UserDataIO.LoadUserData();
+            PieceCollectionIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
+            PieceCollectionIO.LoadUserData();
+
+
+            StartCoroutine(LoadConfig());
 
             StartCoroutine(LoadingText());
         }
+
+        IEnumerator LoadConfig()
+        {
+            var task = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync();
+            while (!task.IsCompleted)
+            {
+                yield return null;
+            }
+
+            Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
+            configLoaded = true;
+        }
+
 
         private void PiecesCollectedLoadedEventHandler()
         {
@@ -45,7 +62,7 @@ namespace Assets.Scripts
         public void OnDestroy()
         {
             LevelIO.DataLoaded -= DataLoaded;
-            UserDataIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
+            PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
         }
 
         private void Update()
