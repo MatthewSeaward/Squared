@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.UI;
 using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using System;
 using System.Collections;
@@ -34,6 +35,8 @@ namespace Assets.Scripts
         private void SetupSprite(Colour pieceColour)
         {
             Image.sprite = GameResources.PieceSprites[((int)pieceColour).ToString()];
+            var powerup = PowerupFactory.GetPowerup(pieceColour);
+            Powerup.sprite = powerup == null ? null : powerup.Icon;
         }
 
         private void SetupProgressBar(Colour pieceColour, int piecesCollected)

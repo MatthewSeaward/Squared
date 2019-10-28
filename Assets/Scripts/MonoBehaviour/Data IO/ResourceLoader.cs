@@ -9,7 +9,7 @@ namespace Assets.Scripts
         {
             GameResources.Sprites.Clear();
 
-            var resources = Resources.LoadAll<Sprite>("Graphics/Piece Layers");
+            var resources = Resources.LoadAll<Sprite>("Graphics/Sprites");
             foreach(var item in resources)
             {
                 GameResources.Sprites.Add(item.name, item); 
