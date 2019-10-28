@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 7018725867535349261}
   - component: {fileID: 8411909660869393549}
   - component: {fileID: 8025079478607374076}
+  - component: {fileID: 2858272393319900981}
   m_Layer: 5
   m_Name: Piece Collection Progress
   m_TagString: Untagged
@@ -179,6 +180,21 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
+--- !u!114 &2858272393319900981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332746769058575841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0a6700f0a20c849b85c69ca5dbede0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Image: {fileID: 4149860600914740259}
+  ProgressBar: {fileID: 4540142399496009791}
+  Powerup: {fileID: 3373835808975418309}
 --- !u!1 &8993748476165784085
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,3 +400,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7782416793970739621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4540142399496009791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5981169130501255578, guid: 1142b07c0bb0123489cac23f85ae50c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7782416793970739621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00aba4aba6c9dc643bc8f2df3ddc639b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

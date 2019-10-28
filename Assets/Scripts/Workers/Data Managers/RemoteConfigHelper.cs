@@ -16,7 +16,7 @@ namespace Assets.Scripts.Workers.Data_Managers
             }
             catch(Exception e)
             {
-                Debug.LogError($"Error Loading Collection Interval for type {type}.{Environment.NewLine}{e.ToString()}");
+                Debug.LogWarning($"Error Loading Collection Interval for type {type}.{Environment.NewLine}{e.ToString()}");
             }
             return 50;
         }

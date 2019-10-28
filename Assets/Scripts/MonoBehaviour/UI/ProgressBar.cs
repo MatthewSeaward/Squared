@@ -9,9 +9,9 @@ namespace Assets.Scripts.UI
         [SerializeField]
         private RectTransform innerFill;    
 
-        public void UpdateProgressBar(int currentValue, int maxValue, bool showText)
+        public void UpdateProgressBar(int currentValue, int maxValue, string textToShow = "")
         {
-            var calculatedPercent = (float)currentValue / (float)maxValue;
+            var calculatedPercent = (float)(currentValue) / (float)maxValue;
             var percent = (int) (calculatedPercent * 100);
             setProgress(percent);
 
@@ -19,7 +19,7 @@ namespace Assets.Scripts.UI
 
             if (Text != null)
             {
-                Text.text = showText ? currentValue + "/" + maxValue : string.Empty;
+                Text.text = textToShow;
             }
         }
 

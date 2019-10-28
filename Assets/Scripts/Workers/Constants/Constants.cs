@@ -42,5 +42,7 @@ namespace Assets.Scripts.Constants
         public const float StarShooterFreq = 1f;
         public const float LoadingTextUpdateTime = 0.25f;
         public const float AdditionalSquareSensitvity = 0.5f;
+        public const float InGamePieceCollectedShowTime = 2.5f;
+        public const float PieceIncrementSpeed = 0.05f;
     }
 }

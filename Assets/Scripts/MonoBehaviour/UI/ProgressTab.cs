@@ -20,19 +20,7 @@ namespace Assets.Scripts.UI
                     continue;
                 }
 
-                var currentProgress = progress[(int) type];
-
-                currentProgress.Image.sprite = GameResources.PieceSprites[((int) type).ToString()];
-
-                var collected = PieceCollectionManager.Instance.PiecesCollected.Pieces.FirstOrDefault(x => x.PieceColour == type);
-
-                int piecesCollected = collected != null ? collected.Count : 0;
-
-                int increment = RemoteConfigHelper.GetCollectionInterval(type);
-
-                var multiplier = (piecesCollected / increment) + 1;
-
-                currentProgress.ProgressBar.UpdateProgressBar(piecesCollected, increment * multiplier, true);
+                progress[(int) type].Setup(type);
             }
         }
     }

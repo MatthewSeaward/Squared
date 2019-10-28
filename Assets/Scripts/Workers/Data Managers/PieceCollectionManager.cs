@@ -1,11 +1,16 @@
 ﻿using System.Linq;
 using Assets.Scripts.Workers.IO.Collection;
 using Assets.Scripts.Workers.IO.Data_Entities;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Data_Managers
 {
+    public delegate void PiecesCollectedEvent(Colour type, int previousAmount, int gained);
+
     public class PieceCollectionManager
     {
+        public static PiecesCollectedEvent PiecesCollectedEvent;
+
         public PiecesCollected PiecesCollected = new PiecesCollected();
         private IPieceCollectionWriter pieceCollectionWriter = new FireBasePieceCollectionWriter();
 
@@ -39,6 +44,7 @@ namespace Assets.Scripts.Workers.Data_Managers
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
             var grouped = pieces.GroupBy(x => x.PieceColour).Select(group => new { PieceColour = group.Key, Count = group.Count() });
+            var previous = 0;
 
             foreach (var types in grouped)
             {
@@ -46,16 +52,18 @@ namespace Assets.Scripts.Workers.Data_Managers
 
                 if (savedCollection != null)
                 {
+                    previous = savedCollection.Count;
                     savedCollection.Count += types.Count;
                 }
                 else
                 {
                     PiecesCollected.Pieces.Add(new PiecesCollected.PieceCollectionInfo() { PieceColour = types.PieceColour, Count = types.Count });
                 }
+
+                PiecesCollectedEvent?.Invoke(types.PieceColour, previous, types.Count);
             }
         }
-
-
+        
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
         {
             pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
