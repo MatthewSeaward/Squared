@@ -4,6 +4,8 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class NoRestriction : IRestriction
     {
+        public bool Ignored => false;
+
         public string GetRestrictionText()
         {
             return "No Restriction";

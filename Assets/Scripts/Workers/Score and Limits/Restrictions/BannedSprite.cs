@@ -6,7 +6,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     {
         private readonly string Sprite;
         private bool failed = false;
-        private bool ignored;
+        public bool Ignored { get; private set; }
 
         public int SpriteValue { get; private set; }
 
@@ -36,7 +36,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             failed = IsRestrictionViolated(sequence);
-            ignored = false;
+            Ignored = false;
         }
 
         public void Update(float deltaTime)
@@ -46,7 +46,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
-            if (ignored)
+            if (Ignored)
             {
                 return false;
             }
@@ -63,7 +63,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         
         public void Ignore()
         {
-            ignored = true;
+            Ignored = true;
         }
     }
 }

@@ -21,6 +21,7 @@ public class ScoreKeeper : MonoBehaviour
        
     public Text Score;
     public Text Time;
+    public Text RestrictionText;
 
     [SerializeField]
     private ProgressBar LimitProgress;
@@ -39,6 +40,8 @@ public class ScoreKeeper : MonoBehaviour
     private int Target => LevelManager.Instance.SelectedLevel.Target;
     private bool ReachedTarget => _currentScore >= Target;
 
+    private static Color restrictionDisabledColour = new Color(0.7f, 0.7f, 0.7f, 0.7f);
+
     public void Start()
     {
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
@@ -52,6 +55,7 @@ public class ScoreKeeper : MonoBehaviour
 
         UpdateScore();
         UpdateLimit();
+        UpdateRstriction();
     }
 
     public void OnDestroy()
@@ -112,6 +116,7 @@ public class ScoreKeeper : MonoBehaviour
     {
         GameLimit.Update(UnityEngine.Time.deltaTime);
         UpdateLimit();
+        UpdateRstriction();
 
         if (GameLimit.ReachedLimit())
         {
@@ -132,14 +137,14 @@ public class ScoreKeeper : MonoBehaviour
 
     private void UpdateLimit()
     {
-        string restrictionText = Restriction.GetRestrictionText();
-        if (!string.IsNullOrWhiteSpace(restrictionText))
-        {
-            restrictionText = Environment.NewLine + restrictionText;
-        }
-
-        Time.text = GameLimit.GetLimitText() + restrictionText;
+        Time.text = GameLimit.GetLimitText();
 
         LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
+    }
+
+    private void UpdateRstriction()
+    {
+        RestrictionText.text = Restriction.GetRestrictionText();
+        RestrictionText.color = Restriction.Ignored ? restrictionDisabledColour : Color.white;
     }
 }

@@ -7,7 +7,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
     public class DiagonalOnlyRestriction : IRestriction
     {
         private bool _violatedRestriction = false;
-        private bool ignored;
+        public bool Ignored { get; private set; }
 
         public string GetRestrictionText()
         {
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void SequenceCompleted(ISquarePiece[] sequence)
         {
             _violatedRestriction = IsRestrictionViolated(sequence);
-            ignored = false;
+            Ignored = false;
         }
 
         public void Update(float deltaTime)
@@ -39,7 +39,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public bool IsRestrictionViolated(ISquarePiece[] sequence)
         {
-            if (ignored)
+            if (Ignored)
             {
                 return false;
             }
@@ -67,7 +67,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         
         public void Ignore()
         {
-            ignored = true;
+            Ignored = true;
         }
     }
 }

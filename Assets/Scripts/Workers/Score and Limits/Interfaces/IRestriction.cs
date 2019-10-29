@@ -2,6 +2,8 @@
 {
     public interface IRestriction
     {
+        bool Ignored { get; }
+
         void Reset();
         void Update(float deltaTime);
         void SequenceCompleted(ISquarePiece[] sequence);
