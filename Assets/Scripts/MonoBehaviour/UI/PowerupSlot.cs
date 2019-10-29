@@ -14,16 +14,37 @@ namespace Assets.Scripts.UI
 
         private IPowerup powerup;
 
+        private void Start()
+        {
+            PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
+        }
+
+        private void OnDestroy()
+        {
+            PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
+        }
+
         public void Setup(IPowerup powerup)
         {
             this.powerup = powerup;
             Icon.sprite = powerup.Icon;
-            button.onClick.AddListener(() => powerup.Invoke());
+            button.onClick.AddListener(() => PowerupInvoke());
         }
 
         private void Update()
         {
             powerup.Update(Time.deltaTime);
+        }
+
+        private void PowerupInvoke()
+        {
+            powerup.Invoke();
+            button.interactable = false;
+        }
+
+        private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
+        {
+            button.interactable = true;
         }
     }
 }
