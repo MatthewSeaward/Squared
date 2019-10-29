@@ -12,7 +12,12 @@ namespace Assets.Scripts.UI
         [SerializeField]
         private Button button;
 
+        [SerializeField]
+        private Text remainingText;
+
         private IPowerup powerup;
+
+        private int remaining = 2;
 
         private void Start()
         {
@@ -29,6 +34,13 @@ namespace Assets.Scripts.UI
             this.powerup = powerup;
             Icon.sprite = powerup.Icon;
             button.onClick.AddListener(() => PowerupInvoke());
+            UpdateRemainingText();
+        }
+
+        private void UpdateRemainingText()
+        {
+            remainingText.text = remaining.ToString();
+            button.interactable = remaining > 0;
         }
 
         private void Update()
@@ -39,12 +51,14 @@ namespace Assets.Scripts.UI
         private void PowerupInvoke()
         {
             powerup.Invoke();
+            remaining--;
+            UpdateRemainingText();
             button.interactable = false;
         }
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
-            button.interactable = true;
+            button.interactable = remaining > 0;
         }
     }
 }
