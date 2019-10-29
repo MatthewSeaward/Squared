@@ -33,13 +33,11 @@ namespace Assets.Scripts.Workers.Data_Managers
 
         private PieceCollectionManager()
         {
-            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
         }
 
         ~PieceCollectionManager()
         {
-            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
             PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
         }
 
@@ -69,6 +67,8 @@ namespace Assets.Scripts.Workers.Data_Managers
 
                 PiecesCollectedEvent?.Invoke(types.PieceColour, previous, types.Count);
             }
+
+            pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
         }
 
         private void CheckForCompletion(Colour PieceColour, int totalCollected)
@@ -82,11 +82,6 @@ namespace Assets.Scripts.Workers.Data_Managers
             {
                 PieceCollectionComplete?.Invoke(PieceColour);
             }
-        }
-
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
-        {
-            pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
         }
     }
 }
