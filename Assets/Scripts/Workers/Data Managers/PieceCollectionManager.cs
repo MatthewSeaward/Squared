@@ -6,10 +6,12 @@ using static SquarePiece;
 namespace Assets.Scripts.Workers.Data_Managers
 {
     public delegate void PiecesCollectedEvent(Colour type, int previousAmount, int gained);
+    public delegate void PieceCollectionComplete(Colour type);
 
     public class PieceCollectionManager
     {
         public static PiecesCollectedEvent PiecesCollectedEvent;
+        public static PieceCollectionComplete PieceCollectionComplete;
 
         public PiecesCollected PiecesCollected = new PiecesCollected();
         private IPieceCollectionWriter pieceCollectionWriter = new FireBasePieceCollectionWriter();
@@ -45,6 +47,7 @@ namespace Assets.Scripts.Workers.Data_Managers
         {
             var grouped = pieces.GroupBy(x => x.PieceColour).Select(group => new { PieceColour = group.Key, Count = group.Count() });
             var previous = 0;
+            var totalCollected = 0;
 
             foreach (var types in grouped)
             {
@@ -54,16 +57,33 @@ namespace Assets.Scripts.Workers.Data_Managers
                 {
                     previous = savedCollection.Count;
                     savedCollection.Count += types.Count;
+                    totalCollected = savedCollection.Count;
                 }
                 else
                 {
                     PiecesCollected.Pieces.Add(new PiecesCollected.PieceCollectionInfo() { PieceColour = types.PieceColour, Count = types.Count });
+                    totalCollected = types.Count;
                 }
+
+                CheckForCompletion(types.PieceColour, totalCollected);
 
                 PiecesCollectedEvent?.Invoke(types.PieceColour, previous, types.Count);
             }
         }
-        
+
+        private void CheckForCompletion(Colour PieceColour, int totalCollected)
+        {
+            int increment = RemoteConfigHelper.GetCollectionInterval(PieceColour);
+
+            var multiplier = (totalCollected / increment) + 1;
+
+
+            if (totalCollected % increment == 0)
+            {
+                PieceCollectionComplete?.Invoke(PieceColour);
+            }
+        }
+
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
         {
             pieceCollectionWriter.WritePiecesCollected(PiecesCollected);

@@ -24,7 +24,7 @@ namespace Assets.Scripts.Workers
 
         public static void SavePowerupInfo()
         {
-            powerupWriter.WritePowerups(UserPowerupManager.Powerups);
+            powerupWriter.WritePowerups(UserPowerupManager.Instance.Powerups);
         }
 
         private static void ReadPowerupInfo()
@@ -43,7 +43,6 @@ namespace Assets.Scripts.Workers
 
         private static void PiecesCollectedLoadedEventHandler()
         {
-
             PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
             powerupsLoaded = true;
 
@@ -59,7 +58,7 @@ namespace Assets.Scripts.Workers
 
             foreach (var entity in powerups)
             {
-                UserPowerupManager.Powerups.Add(new PowerupCollection() { Powerup =  PowerupFactory.GetPowerup(entity.Name), Count = entity.Count });
+                UserPowerupManager.Instance.Powerups.Add(new PowerupCollection() { Powerup =  PowerupFactory.GetPowerup(entity.Name), Count = entity.Count });
             }
             piecesCollectedLoaded = true;
 

@@ -1,15 +1,49 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Factorys;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Assets.Scripts.Workers.Data_Managers
 {
-    public static class UserPowerupManager
-    {
-        public static List<PowerupCollection> Powerups = new List<PowerupCollection>();
+    public delegate void PowerupCountChanged(IPowerup powerup);
 
-        public static void AddNewPowerup(IPowerup powerup)
+    public class UserPowerupManager
+    {
+        public static PowerupCountChanged PowerupCountChanged;
+
+        private static UserPowerupManager _instance;
+
+        public static UserPowerupManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new UserPowerupManager();
+                }
+                return _instance;
+            }
+        }
+
+        public List<PowerupCollection> Powerups = new List<PowerupCollection>();
+
+        private UserPowerupManager()
+        {
+            PieceCollectionManager.PieceCollectionComplete += PieceCollectionCompleteHandler;
+        }
+        
+        ~UserPowerupManager()
+        {
+            PieceCollectionManager.PieceCollectionComplete -= PieceCollectionCompleteHandler;
+        }
+
+        private void PieceCollectionCompleteHandler(SquarePiece.Colour type)
+        {
+            AddNewPowerup(PowerupFactory.GetPowerup(type));
+        }
+
+        public void AddNewPowerup(IPowerup powerup)
         {
             var match = Powerups.FirstOrDefault(x => x.Powerup.GetType() == powerup.GetType());
             if (match == null)
@@ -21,9 +55,10 @@ namespace Assets.Scripts.Workers.Data_Managers
                 match.Count++;
             }
             UserIO.SavePowerupInfo();
+            PowerupCountChanged?.Invoke(powerup);
         }
 
-        public static void UsePowerup(IPowerup powerup)
+        public void UsePowerup(IPowerup powerup)
         {
             var match = Powerups.FirstOrDefault(x => x.Powerup.GetType() == powerup.GetType());
             if (match != null)
@@ -35,9 +70,10 @@ namespace Assets.Scripts.Workers.Data_Managers
                }
             }
             UserIO.SavePowerupInfo();
+            PowerupCountChanged?.Invoke(powerup);
         }
 
-        public static int GetUses(IPowerup powerup)
+        public int GetUses(IPowerup powerup)
         {
             var match = Powerups.FirstOrDefault(x => x.Powerup.GetType() == powerup.GetType());
             if (match != null)
