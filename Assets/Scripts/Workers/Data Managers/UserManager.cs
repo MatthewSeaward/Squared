@@ -5,7 +5,6 @@ namespace Assets.Scripts.Workers.Data_Managers
 {
     public static class UserManager
     {
-
         private static string _username;
 
         public static string UserID

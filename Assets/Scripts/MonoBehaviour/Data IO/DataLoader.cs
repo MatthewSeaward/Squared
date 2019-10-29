@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Assets.Scripts.Constants;
-using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Writer;
-using Assets.Scripts.Workers.IO.Enemy_Event;
-using DataEntities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,14 +25,14 @@ namespace Assets.Scripts
 
         public void Start()
         {
-            LevelIO.DataLoaded += DataLoaded;
+            LevelIO.DataLoaded += Level_DataLoaded;
+            UserIO.DataLoaded += User_DataLoaded;
+
             LevelManager.Instance.LoadData();
+            UserIO.LoadData();
+
             ScoreManager.Instance.Initialise();
-
-            PieceCollectionIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
-            PieceCollectionIO.LoadUserData();
-
-
+         
             StartCoroutine(LoadConfig());
 
             StartCoroutine(LoadingText());
@@ -52,17 +49,11 @@ namespace Assets.Scripts
             Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
             configLoaded = true;
         }
-
-
-        private void PiecesCollectedLoadedEventHandler()
-        {
-            userDataLoaded = true;
-        }
-
+        
         public void OnDestroy()
         {
-            LevelIO.DataLoaded -= DataLoaded;
-            PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
+            LevelIO.DataLoaded -= Level_DataLoaded;
+            UserIO.DataLoaded -= User_DataLoaded;
         }
 
         private void Update()
@@ -73,9 +64,15 @@ namespace Assets.Scripts
             }
         }
 
-        public void DataLoaded()
+        public void Level_DataLoaded()
         {
             levelDataLoaded = true;
+        }
+
+
+        public void User_DataLoaded()
+        {
+            userDataLoaded = true;
         }
 
         IEnumerator LoadSceneAsync()

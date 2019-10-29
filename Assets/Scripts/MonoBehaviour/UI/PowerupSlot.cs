@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Powerups.Interfaces;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Powerups.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,8 +17,6 @@ namespace Assets.Scripts.UI
         private Text remainingText;
 
         private IPowerup powerup;
-
-        private int remaining = 2;
 
         private void Start()
         {
@@ -39,6 +38,7 @@ namespace Assets.Scripts.UI
 
         private void UpdateRemainingText()
         {
+            int remaining = UserPowerupManager.GetUses(powerup);
             remainingText.text = remaining.ToString();
             button.interactable = remaining > 0;
         }
@@ -51,14 +51,14 @@ namespace Assets.Scripts.UI
         private void PowerupInvoke()
         {
             powerup.Invoke();
-            remaining--;
+            UserPowerupManager.UsePowerup(powerup);
             UpdateRemainingText();
             button.interactable = false;
         }
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
-            button.interactable = remaining > 0;
+            button.interactable = UserPowerupManager.GetUses(powerup) > 0;
         }
     }
 }
