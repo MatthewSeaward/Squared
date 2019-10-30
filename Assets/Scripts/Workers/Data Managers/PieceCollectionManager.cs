@@ -63,7 +63,7 @@ namespace Assets.Scripts.Workers.Data_Managers
                     totalCollected = types.Count;
                 }
 
-                CheckForCompletion(types.PieceColour, totalCollected);
+                CheckForCompletion(types.PieceColour, previous, totalCollected);
 
                 PiecesCollectedEvent?.Invoke(types.PieceColour, previous, types.Count);
             }
@@ -71,14 +71,13 @@ namespace Assets.Scripts.Workers.Data_Managers
             pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
         }
 
-        private void CheckForCompletion(Colour PieceColour, int totalCollected)
+        private void CheckForCompletion(Colour PieceColour, int previous, int totalCollected)
         {
             int increment = RemoteConfigHelper.GetCollectionInterval(PieceColour);
 
-            var multiplier = (totalCollected / increment) + 1;
+            var multiplier = (previous / increment) + 1;
 
-
-            if (totalCollected % increment == 0)
+            if (totalCollected > (multiplier * increment))
             {
                 PieceCollectionComplete?.Invoke(PieceColour);
             }
