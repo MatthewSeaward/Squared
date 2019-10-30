@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7018725867535349261}
   - component: {fileID: 8411909660869393549}
   - component: {fileID: 8025079478607374076}
-  - component: {fileID: 2858272393319900981}
+  - component: {fileID: 988485174089417628}
   m_Layer: 5
   m_Name: Piece Collection Progress
   m_TagString: Untagged
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
---- !u!114 &2858272393319900981
+--- !u!114 &988485174089417628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,6 +271,7 @@ MonoBehaviour:
   Image: {fileID: 4149860600914740259}
   ProgressBar: {fileID: 4540142399496009791}
   Powerup: {fileID: 7949698105728017884}
+  colour: 0
 --- !u!1 &8993748476165784085
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,14 @@ namespace Assets.Scripts
         public ProgressBar ProgressBar;
         public Image Powerup;
 
+        [SerializeField]
+        public Colour colour;
+
+        private void OnEnable()
+        {
+            Setup(colour);
+        }
+
         public void Setup(Colour pieceColour)
         {
             SetupSprite(pieceColour);
@@ -36,7 +44,7 @@ namespace Assets.Scripts
         {
             Image.sprite = GameResources.PieceSprites[((int)pieceColour).ToString()];
             var powerup = PowerupFactory.GetPowerup(pieceColour);
-            Powerup.sprite = powerup == null ? null : powerup.Icon;
+            Powerup.sprite = powerup == null ? GameResources.Sprites["Extra Life"] : powerup.Icon;
         }
 
         private void SetupProgressBar(Colour pieceColour, int piecesCollected)
