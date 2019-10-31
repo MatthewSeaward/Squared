@@ -10,18 +10,25 @@ namespace Assets.Scripts.Workers.Factorys
         {
             switch (pieceType)
             {
-                case Colour.Pink:
-                    return new ExtraLife();
-                case Colour.DarkBlue:
-                    return new IgnoreRestriction();
-                case Colour.Green:
-                    return new ExtraTime();
-                case Colour.Grey:
-                    return new SpecialPieces();
-                case Colour.LightBlue:
-                    return new MinePowerup();
+                case Colour.Red:
+                    return new ExtraPoints();
                 case Colour.Orange:
                     return new PerformBestMove();
+                case Colour.Yellow:
+                    return new DoubleMove();
+                case Colour.Pink:
+                    return new ExtraLife();
+                case Colour.Purple:
+                    return new PaintColour();
+                  case Colour.Grey:
+                    return new SpecialPieces();
+                case Colour.Green:
+                    return new ExtraTime();
+                case Colour.DarkBlue:
+                    return new IgnoreRestriction();
+                case Colour.LightBlue:
+                    return new MinePowerup();              
+               
             }
             return null;
         }        
@@ -42,6 +49,12 @@ namespace Assets.Scripts.Workers.Factorys
                     return new MinePowerup();
                 case nameof(PerformBestMove):
                     return new PerformBestMove();
+                case nameof(ExtraPoints):
+                    return new ExtraPoints();
+                case nameof(DoubleMove):
+                    return new DoubleMove();
+                case nameof(PaintColour):
+                    return new PaintColour();
             }
             return null;
         }
