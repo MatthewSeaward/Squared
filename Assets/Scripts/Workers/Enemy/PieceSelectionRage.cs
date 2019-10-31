@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using System.Collections.Generic;
 
@@ -21,6 +22,7 @@ namespace Assets.Scripts.Workers.Enemy
             {
                 return;
             }
+            GameManager.Instance.GamePaused = true;
 
             selectedPieces = pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount);
 
@@ -49,6 +51,7 @@ namespace Assets.Scripts.Workers.Enemy
                    PieceSelectionManager.Instance.ClearCurrentPieces();
 
                     InvokeRageAction(piece);
+                    GameManager.Instance.GamePaused = false;
                 }
 
                 selectedPieces.Clear();
