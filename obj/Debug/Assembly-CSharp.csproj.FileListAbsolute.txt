@@ -306,3 +306,4 @@ D:\Development\Unity Projects\Squared\Temp\bin\Debug\Unity.VSCode.Editor.dll
 D:\Development\Unity Projects\Squared\Temp\bin\Debug\UnityEditor.SpatialTracking.dll
 D:\Development\Unity Projects\Squared\Temp\bin\Debug\UnityEditor.UI.dll
 D:\Development\Unity Projects\Squared\Temp\bin\Debug\UnityEditor.XR.LegacyInputHelpers.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.RemoteConfig.dll

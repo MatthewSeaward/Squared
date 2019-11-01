@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\PieceSwapSprite.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\SquarePiece.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Game Components\StarShooter.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\DestroyAfterTime.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\Lerp.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\LightningBoltProducer.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Helpers\PieceFallLerp.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\ChapterUIManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\EnemyController.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Managers\InGamePieceCollectionManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\LineDrawer.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\PieceController.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\AwesomeText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ButtonLoadScene.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\CancelButton.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\ChapterIcon.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\EndOfGameMenuProvider.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\GameStats.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Helpers\AnimatedText.cs" />
@@ -110,8 +113,12 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\MenuLevelSelection.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\MenuProvider.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\PauseIcon.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\PieceCollectionProgress.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Popup.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\PowerupPanel.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\PowerupSlot.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ProgressBar.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\ProgressTab.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\RestrictionText.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ShowScore.cs" />
@@ -122,13 +129,17 @@
     <Compile Include="Assets\Scripts\Workers\Constants\Constants.cs" />
     <Compile Include="Assets\Scripts\Workers\Core\Range.cs" />
     <Compile Include="Assets\Scripts\Workers\Data Managers\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Workers\Data Managers\PieceCollectionManager.cs" />
+    <Compile Include="Assets\Scripts\Workers\Data Managers\RemoteConfigHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Data Managers\UserManager.cs" />
+    <Compile Include="Assets\Scripts\Workers\Data Managers\UserPowerupManager.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\AddPieceEvent.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\ChangeRandomPiece.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\ChangeSpecificPiece.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\DestroyRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Events\EnemyEvents.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Events\Event Trigger\EnemyEventTrigger.cs" />
+    <Compile Include="Assets\Scripts\Workers\Enemy\Events\Event Trigger\PiecePercentEventTrigger.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Events\Event Trigger\TurnEventTrigger.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Interfaces\IEnemyRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\Piece Selection Validator\AllPiecesConnectionValidator.cs" />
@@ -145,6 +156,7 @@
     <Compile Include="Assets\Scripts\Workers\Enemy\RemovePieceEvent.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\SwapRage.cs" />
     <Compile Include="Assets\Scripts\Workers\Factorys\LevelStarFactory.cs" />
+    <Compile Include="Assets\Scripts\Workers\Factorys\PowerupFactory.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\BasicGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\Interfaces\IGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\MoveChecker.cs" />
@@ -161,6 +173,12 @@
     <Compile Include="Assets\Scripts\Workers\Helpers\TestHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\BarkLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\IBarkLoader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Collection\FireBasePieceCollectionReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Collection\FireBasePieceCollectionWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Collection\IPieceCollectionReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Collection\IPieceCollectionWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Collection\Piece Collection Iterations\FireBaseRemoteConfigPieceCollectionIterationReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Collection\Piece Collection Iterations\IPieceCollectionIterationReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\Barks.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\GameResources.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\Level.cs" />
@@ -168,6 +186,9 @@
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelEvents.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelProgress.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PieceColour.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PiecesCollected.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PowerupCollection.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PowerupEntity.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\ScoreEntry.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\StarProgress.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Loaders\IDataReader.cs" />
@@ -189,17 +210,23 @@
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\LevelLoader\FileLevelLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\Order\LevelOrderLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\LevelIO.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\PieceCollectionIO.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\FireBaseLevelProgressReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\FireBaseLevelProgressWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\ILevelProgressReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\ILevelProgressWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Player Progress\PlayerPrefsLevelProgressLoader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Powerup\FireBasePowerupReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Powerup\FireBasePowerupWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Powerup\IPowerupReader.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Powerup\IPowerupWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Score\DataWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Score\DummyScoreReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Score\FireBaseScoreReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Score\FireBaseScoreWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Score\IScoreReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Score\IScoreWriter.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\UserIO.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Behaviours\SwapSpriteBehaviour.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\DestroyTriggerFall.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\HeavyDestroyTriggerFall.cs" />
@@ -217,6 +244,16 @@
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Scoring\SingleSCore.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapEffects\LockedSwap.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapEffects\SwapToNext.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\DoubleMove.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\ExtraLife.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\ExtraPoints.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\ExtraTime.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\IgnoreRestriction.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\Interfaces\IPowerup.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\MinePowerup.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\PaintColour.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\PerformBestMove.cs" />
+    <Compile Include="Assets\Scripts\Workers\Powerups\SpecialPieces.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IGameLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IRestriction.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Interfaces\IScoreCalculator.cs" />
@@ -238,6 +275,7 @@
     <None Include="Assets\Resources\Levels\Wolf.txt" />
     <None Include="Assets\Resources\Level Events\Wolf.txt" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
+    <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-config-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
     <None Include="Assets\Resources\Level Dialogue\Wolf.txt" />
@@ -488,6 +526,9 @@
     </Reference>
     <Reference Include="Firebase.Platform">
       <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.RemoteConfig">
+      <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.RemoteConfig.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.TaskExtension">
       <HintPath>D:/Development/Unity Projects/Squared/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
