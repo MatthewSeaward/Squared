@@ -1,30 +1,16 @@
-﻿using Assets.Scripts.Workers.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using static SquarePiece;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.UI
+namespace Assets.Scripts
 {
     class ProgressTab : MonoBehaviour
     {
-        void OnEnable()
+        private void OnEnable()
         {
-            var progress = FindObjectsOfType<PieceCollectionProgress>();
+            var collectionProgress = FindObjectsOfType<PieceCollectionProgress>();
 
-            try
+            foreach (var collection in collectionProgress)
             {
-
-                //for (int i = 0; i < progress.Length; i++)
-                //{
-                //    progress[i].Setup((Colour) i);
-
-                //}
-            }
-            catch (Exception ex)
-            {
-                DebugLogger.Instance.WriteException(ex);
+                collection.Setup();
             }
         }
     }

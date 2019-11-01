@@ -42,7 +42,7 @@ namespace Assets.Scripts.UI
                 numberOfStars += level.LevelProgress.StarAchieved;
             }
 
-            GetComponentInChildren<ProgressBar>().UpdateProgressBar(numberOfStars, matchingLevels.Length * 3);
+            GetComponentInChildren<ProgressBar>().UpdateProgressBar(numberOfStars, matchingLevels.Length * 3, $"{numberOfStars}/{matchingLevels.Length * 3}");
         }
     }
 }

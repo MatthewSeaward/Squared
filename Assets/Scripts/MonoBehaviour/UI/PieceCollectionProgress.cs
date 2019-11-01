@@ -20,7 +20,7 @@ namespace Assets.Scripts
         [SerializeField]
         public Colour colour;
 
-        private void OnEnable()
+        public void Setup()
         {
             Setup(colour);
         }
