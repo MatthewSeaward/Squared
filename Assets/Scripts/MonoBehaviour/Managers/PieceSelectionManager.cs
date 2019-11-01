@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Managers;
+﻿using Assets.Scripts.Game_Components;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,11 @@ namespace Assets.Scripts
             }
 
             if (GameManager.Instance.GamePaused)
+            {
+                return;
+            }
+
+            if(CancelButton.MouseOver)
             {
                 return;
             }

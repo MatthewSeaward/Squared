@@ -10,7 +10,7 @@ namespace Assets.Scripts.Game_Components
         [SerializeField]
         private Sprite mouseOverSprite;
 
-        private bool mouseOver;
+        public static bool MouseOver;
 
         [SerializeField]
         
@@ -27,37 +27,31 @@ namespace Assets.Scripts.Game_Components
 
         private void PieceSelectionManager_SelectedPiecesChanged(System.Collections.Generic.LinkedList<ISquarePiece> pieces)
         {
-            GetComponentInChildren<Animator>().SetBool("Enabled", Input.GetMouseButton(0) && PieceSelectionManager.Instance.CurrentPieces.Count >= 2);
+            gameObject.SetActive(PieceSelectionManager.Instance.CurrentPieces.Count >= 2);
         }
 
         private void Update()
         {
             if (Input.GetMouseButtonUp(0))
             {
-                if (mouseOver)
+                if (MouseOver)
                 {
                     PieceSelectionManager.Instance.ClearCurrentPieces();
                     OnMouseExit();
                 }
             }
-
-            //if (!Input.GetMouseButton(0) || PieceSelectionManager.Instance.CurrentPieces.Count < 2)
-            //{
-            //    return;
-            //}
-
         }
 
         private void OnMouseEnter()
         {
             GetComponentInChildren<SpriteRenderer>().sprite = mouseOverSprite;
-            mouseOver = true;
+            MouseOver = true;
         }
 
         private void OnMouseExit()
         {
             GetComponentInChildren<SpriteRenderer>().sprite = defaultSprite;
-            mouseOver = false;
+            MouseOver = false;
         }
     }
 }
