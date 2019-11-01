@@ -3,14 +3,17 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Data_Managers
 {
     public delegate void PowerupCountChanged(IPowerup powerup);
+    public delegate void PieceCollectionComplete(Colour type);
 
     public class UserPowerupManager
     {
         public static PowerupCountChanged PowerupCountChanged;
+        public static PieceCollectionComplete PieceCollectionComplete;
 
         private static UserPowerupManager _instance;
 
@@ -30,17 +33,13 @@ namespace Assets.Scripts.Workers.Data_Managers
 
         private UserPowerupManager()
         {
-            PieceCollectionManager.PieceCollectionComplete += PieceCollectionCompleteHandler;
+            PieceCollectionManager.PiecesCollectedEvent += CheckForCompletion;
         }
         
         ~UserPowerupManager()
         {
-            PieceCollectionManager.PieceCollectionComplete -= PieceCollectionCompleteHandler;
-        }
+            PieceCollectionManager.PiecesCollectedEvent -= CheckForCompletion;
 
-        private void PieceCollectionCompleteHandler(SquarePiece.Colour type)
-        {
-            AddNewPowerup(PowerupFactory.GetPowerup(type));
         }
 
         public void AddNewPowerup(IPowerup powerup)
@@ -84,6 +83,33 @@ namespace Assets.Scripts.Workers.Data_Managers
             {
                 return 0;
             }
-        }            
+        }
+
+        private void CheckForCompletion(Colour PieceColour, int previous, int totalCollected)
+        {
+            int increment = RemoteConfigHelper.GetCollectionInterval(PieceColour);
+
+            var multiplier = (previous / increment) + 1;
+
+            int powerupsEarned = NumberOfPowerupsEarned(previous, totalCollected, increment);
+            for (int i = 0; i < powerupsEarned; i++)
+            {
+                PieceCollectionComplete?.Invoke(PieceColour);
+                AddNewPowerup(PowerupFactory.GetPowerup(PieceColour));            }
+        }
+
+        public static int NumberOfPowerupsEarned(int previous, int totalCollected, int increment)
+        {
+            var multiplier = (previous / increment) + 1;
+
+            int differenceFromTarget = totalCollected - (multiplier * increment);
+            if (differenceFromTarget < 0)
+            {
+                return 0;
+            }
+
+            return (differenceFromTarget / increment) + 1;
+          
+        }
     }
 }

@@ -6,12 +6,10 @@ using static SquarePiece;
 namespace Assets.Scripts.Workers.Data_Managers
 {
     public delegate void PiecesCollectedEvent(Colour type, int previousAmount, int gained);
-    public delegate void PieceCollectionComplete(Colour type);
 
     public class PieceCollectionManager
     {
         public static PiecesCollectedEvent PiecesCollectedEvent;
-        public static PieceCollectionComplete PieceCollectionComplete;
 
         public PiecesCollected PiecesCollected = new PiecesCollected();
         private IPieceCollectionWriter pieceCollectionWriter = new FireBasePieceCollectionWriter();
@@ -63,24 +61,12 @@ namespace Assets.Scripts.Workers.Data_Managers
                     totalCollected = types.Count;
                 }
 
-                CheckForCompletion(types.PieceColour, previous, totalCollected);
-
                 PiecesCollectedEvent?.Invoke(types.PieceColour, previous, types.Count);
             }
 
             pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
         }
 
-        private void CheckForCompletion(Colour PieceColour, int previous, int totalCollected)
-        {
-            int increment = RemoteConfigHelper.GetCollectionInterval(PieceColour);
-
-            var multiplier = (previous / increment) + 1;
-
-            if (totalCollected > (multiplier * increment))
-            {
-                PieceCollectionComplete?.Invoke(PieceColour);
-            }
-        }
+       
     }
 }
