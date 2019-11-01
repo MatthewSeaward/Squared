@@ -7,6 +7,7 @@ namespace Assets.Scripts.Workers.Powerups
     class PerformBestMove : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Crown"];
+        public bool Enabled => true;
 
         public void Invoke()
         {

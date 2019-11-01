@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
+using Assets.Scripts.Workers.Score_and_Limits;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Powerups
@@ -8,10 +9,20 @@ namespace Assets.Scripts.Workers.Powerups
     {
         public Sprite Icon => GameResources.Sprites["Shield"];
 
+        public bool Enabled
+        {
+            get
+            {
+
+                return LevelManager.Instance.SelectedLevel.GetCurrentRestriction().GetType() != typeof(NoRestriction);
+            }
+        }
+
         public void Invoke()
         {
             var keeper = GameObject.FindObjectOfType<ScoreKeeper>();
             keeper.Restriction.Ignore();
+            keeper.ActivateRestriction();
         }
 
         public void Update(float deltaTime)

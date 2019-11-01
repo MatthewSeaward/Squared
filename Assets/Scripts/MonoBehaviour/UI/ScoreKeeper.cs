@@ -147,4 +147,14 @@ public class ScoreKeeper : MonoBehaviour
         RestrictionText.text = Restriction.GetRestrictionText();
         RestrictionText.color = Restriction.Ignored ? restrictionDisabledColour : Color.white;
     }
+
+    internal void ActivateLimit()
+    {
+        Time.GetComponent<Animator>().SetTrigger("Activate");
+    }
+
+    internal void ActivateRestriction()
+    {
+        RestrictionText.GetComponent<Animator>().SetTrigger("Activate");
+    }
 }

@@ -8,6 +8,7 @@ namespace Assets.Scripts.Workers.Powerups
     class ExtraTime : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Time"];
+        public bool Enabled => true;
 
         public void Invoke()
         {
@@ -23,6 +24,7 @@ namespace Assets.Scripts.Workers.Powerups
                 (limit as TimeLimit).Increase(5);
             }
 
+            keeper.ActivateLimit();
         }
 
         public void Update(float deltaTime)

@@ -50,7 +50,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public void Increase(int amount)
         {
-            Limit += amount;
+            Limit += amount;            
         }
     }
 }

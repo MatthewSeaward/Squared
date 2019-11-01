@@ -8,6 +8,7 @@ namespace Assets.Scripts.Workers.Powerups
     class ExtraPoints : IPowerup
     {
         public Sprite Icon  => GameResources.Sprites["Trophy"];
+        public bool Enabled => true;
 
         public void Invoke()
         {

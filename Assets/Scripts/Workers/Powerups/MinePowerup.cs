@@ -7,6 +7,7 @@ namespace Assets.Scripts.Workers.Powerups
     class MinePowerup : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Mine"];
+        public bool Enabled => true;
 
         public void Invoke()
         {

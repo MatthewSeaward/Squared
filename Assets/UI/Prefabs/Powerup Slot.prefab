@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1362451385490848887}
   - component: {fileID: -9151146058591087407}
   - component: {fileID: 2486647622344266756}
+  - component: {fileID: 3142376040808810357}
   m_Layer: 5
   m_Name: Powerup Slot
   m_TagString: Untagged
@@ -139,6 +140,25 @@ MonoBehaviour:
   Icon: {fileID: 6880089182110463780}
   button: {fileID: -9151146058591087407}
   remainingText: {fileID: 1362393643099059315}
+--- !u!95 &3142376040808810357
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799496853187434349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6269613074526086898
 GameObject:
   m_ObjectHideFlags: 0

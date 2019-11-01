@@ -8,6 +8,7 @@ namespace Assets.Scripts.Workers.Powerups
     class PaintColour : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Potion"];
+        public bool Enabled => true;
 
         public void Invoke()
         {

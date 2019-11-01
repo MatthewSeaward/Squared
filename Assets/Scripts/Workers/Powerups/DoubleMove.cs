@@ -9,6 +9,8 @@ namespace Assets.Scripts.Workers.Powerups
     {
         public Sprite Icon => GameResources.Sprites["Rune"];
 
+        public bool Enabled => true;
+
         public void Invoke()
         {
             throw new NotImplementedException();

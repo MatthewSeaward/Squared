@@ -18,6 +18,9 @@ namespace Assets.Scripts.UI
         private Text remainingText;
 
         private IPowerup powerup;
+        private int previousRemaing;
+        private bool activateOnEnable;
+
 
         private void Start()
         {
@@ -30,12 +33,23 @@ namespace Assets.Scripts.UI
             UserPowerupManager.PowerupCountChanged -= UpdateRemainingText;
          }
 
+        private void OnEnable()
+        {
+            if (activateOnEnable)
+            {
+                GetComponent<Animator>().SetTrigger("Activate");
+            }
+            activateOnEnable = false;
+        }
+
         public void Setup(IPowerup powerup)
         {
             this.powerup = powerup;
             Icon.sprite = powerup.Icon;
             button.onClick.AddListener(() => PowerupInvoke());
+            previousRemaing = UserPowerupManager.Instance.GetUses(powerup);
             UpdateRemainingText(powerup);
+
         }
 
         private void UpdateRemainingText(IPowerup powerup)
@@ -46,8 +60,15 @@ namespace Assets.Scripts.UI
             }
 
             int remaining = UserPowerupManager.Instance.GetUses(powerup);
+
+            if (remaining > previousRemaing)
+            {
+                activateOnEnable = true;
+            }
+
             remainingText.text = remaining.ToString();
-            button.interactable = remaining > 0;
+            button.interactable = remaining > 0 && powerup.Enabled;
+            previousRemaing = remaining;
         }
 
         private void Update()
@@ -64,7 +85,7 @@ namespace Assets.Scripts.UI
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
-            button.interactable = UserPowerupManager.Instance.GetUses(powerup) > 0;
+            button.interactable = UserPowerupManager.Instance.GetUses(powerup) > 0 && powerup.Enabled;
         }
     }
 }

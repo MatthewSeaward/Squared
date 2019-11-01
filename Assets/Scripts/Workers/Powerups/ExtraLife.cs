@@ -7,6 +7,7 @@ namespace Assets.Scripts.Workers.Powerups
     class ExtraLife : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Extra Life"];
+        public bool Enabled => true;
 
         public void Invoke()
         {
