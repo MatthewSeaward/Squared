@@ -38,8 +38,7 @@ namespace Assets.Scripts.Workers.IO.Heatmap
                                          foreach (var item in list)
                                          {
                                              var parsedChild = item as Dictionary<string, object>;
-
-
+                                             
                                              var key = parsedChild["Key"].ToString();
                                              var uses = parsedChild["Uses"].ToString();
 
