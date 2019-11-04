@@ -53,7 +53,7 @@ namespace Assets.Scripts.Workers.Data_Managers
             {
                 match.Count++;
             }
-            UserIO.SavePowerupInfo();
+            UserIO.Instance.SavePowerupInfo();
             PowerupCountChanged?.Invoke(powerup);
         }
 
@@ -68,7 +68,7 @@ namespace Assets.Scripts.Workers.Data_Managers
                    match.Count = 0;
                }
             }
-            UserIO.SavePowerupInfo();
+            UserIO.Instance.SavePowerupInfo();
             PowerupCountChanged?.Invoke(powerup);
         }
 

@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Assets.Scripts.Workers.IO.Collection;
+using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using static SquarePiece;
 
@@ -12,7 +12,6 @@ namespace Assets.Scripts.Workers.Data_Managers
         public static PiecesCollectedEvent PiecesCollectedEvent;
 
         public PiecesCollected PiecesCollected = new PiecesCollected();
-        private IPieceCollectionWriter pieceCollectionWriter = new FireBasePieceCollectionWriter();
 
         private static PieceCollectionManager _instance;
 
@@ -32,13 +31,11 @@ namespace Assets.Scripts.Workers.Data_Managers
         private PieceCollectionManager()
         {
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
-            ResetData.ResetAllData += ResetSavedData;
         }
 
         ~PieceCollectionManager()
         {
             PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
-            ResetData.ResetAllData -= ResetSavedData;
         }
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
@@ -65,14 +62,7 @@ namespace Assets.Scripts.Workers.Data_Managers
 
                 PiecesCollectedEvent?.Invoke(types.PieceColour, previous, types.Count);
             }
-
-            pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
-        }
-
-        private void ResetSavedData()
-        {
-            PiecesCollected.Pieces.Clear();
-            pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
-        }
+            PieceCollectionIO.Instance.SaveCollectionData();
+        }       
     }
 }

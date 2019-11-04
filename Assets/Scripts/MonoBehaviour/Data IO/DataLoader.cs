@@ -29,7 +29,7 @@ namespace Assets.Scripts
             UserIO.DataLoaded += User_DataLoaded;
 
             LevelManager.Instance.LoadData();
-            UserIO.LoadData();
+            UserIO.Instance.LoadData();
 
             ScoreManager.Instance.Initialise();
          

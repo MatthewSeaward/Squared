@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.IO;
@@ -10,42 +9,65 @@ namespace Assets.Scripts.Workers
 {
     public delegate void DataLoaded();
 
-    public static class UserIO
+    public class UserIO
     {
-        private static bool piecesCollectedLoaded;
-        private static bool powerupsLoaded;
+        private bool piecesCollectedLoaded;
+        private bool powerupsLoaded;
 
-        private static bool LoadComplete => piecesCollectedLoaded && powerupsLoaded;
+        private bool LoadComplete => piecesCollectedLoaded && powerupsLoaded;
 
         public static DataLoaded DataLoaded;
 
-        private static IPowerupWriter powerupWriter = new FireBasePowerupWriter();
-        private static IPowerupReader powerupReader = new FireBasePowerupReader();
+        private IPowerupWriter powerupWriter = new FireBasePowerupWriter();
+        private IPowerupReader powerupReader = new FireBasePowerupReader();
 
-        public static void SavePowerupInfo()
+        private static UserIO _instance;
+
+        public static UserIO Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new UserIO();
+                }
+                return _instance;
+            }
+        }
+
+        private UserIO()
+        {
+            PieceCollectionIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
+            FireBasePowerupReader.PowerupsLoaded += FireBasePowerupsLoaded;
+            ResetData.ResetAllData += ResetSavedData;
+        }
+
+        ~UserIO()
+        {
+            PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
+            FireBasePowerupReader.PowerupsLoaded -= FireBasePowerupsLoaded;
+            ResetData.ResetAllData -= ResetSavedData;
+        }
+
+        public void SavePowerupInfo()
         {
             powerupWriter.WritePowerups(UserPowerupManager.Instance.Powerups);
         }
 
-        private static void ReadPowerupInfo()
-        {
-            FireBasePowerupReader.PowerupsLoaded += FireBasePowerupsLoaded;
-            ResetData.ResetAllData += ResetSavedData;
-
+        private void ReadPowerupInfo()
+        { 
             powerupReader.ReadPowerupsAsync();
         }
 
-        public static void LoadData()
+        public void LoadData()
         {
             ReadPowerupInfo();
 
-            PieceCollectionIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
-            PieceCollectionIO.LoadUserData();
+            PieceCollectionIO.Instance.LoadUserData();
         }
 
-        private static void PiecesCollectedLoadedEventHandler()
+        private void PiecesCollectedLoadedEventHandler()
         {
-            PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
             powerupsLoaded = true;
 
             if (LoadComplete)
@@ -54,9 +76,8 @@ namespace Assets.Scripts.Workers
             }
         }
 
-        private static void FireBasePowerupsLoaded(List<PowerupEntity> powerups)
+        private void FireBasePowerupsLoaded(List<PowerupEntity> powerups)
         {
-            FireBasePowerupReader.PowerupsLoaded -= FireBasePowerupsLoaded;
 
             foreach (var entity in powerups)
             {
@@ -70,10 +91,8 @@ namespace Assets.Scripts.Workers
             }
         }
 
-        private static void ResetSavedData()
+        private void ResetSavedData()
         {
-            ResetData.ResetAllData -= ResetSavedData;
-
             UserPowerupManager.Instance.Powerups.Clear();
             SavePowerupInfo();
         }

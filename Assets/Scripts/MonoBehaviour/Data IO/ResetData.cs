@@ -13,7 +13,6 @@ namespace Assets.Scripts
         public void OnClick()
         {
             ResetAllData?.Invoke();
-            LevelManager.Instance.ResetSavedData();
 
             SceneManager.LoadScene(Scenes.Loading);
         }
