@@ -32,11 +32,13 @@ namespace Assets.Scripts.Workers.Data_Managers
         private PieceCollectionManager()
         {
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
+            ResetData.ResetAllData += ResetSavedData;
         }
 
         ~PieceCollectionManager()
         {
             PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
+            ResetData.ResetAllData -= ResetSavedData;
         }
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
@@ -67,6 +69,10 @@ namespace Assets.Scripts.Workers.Data_Managers
             pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
         }
 
-       
+        private void ResetSavedData()
+        {
+            PiecesCollected.Pieces.Clear();
+            pieceCollectionWriter.WritePiecesCollected(PiecesCollected);
+        }
     }
 }

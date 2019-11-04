@@ -30,6 +30,8 @@ namespace Assets.Scripts.Workers
         private static void ReadPowerupInfo()
         {
             FireBasePowerupReader.PowerupsLoaded += FireBasePowerupsLoaded;
+            ResetData.ResetAllData += ResetSavedData;
+
             powerupReader.ReadPowerupsAsync();
         }
 
@@ -66,6 +68,14 @@ namespace Assets.Scripts.Workers
             {
                 DataLoaded?.Invoke();
             }
+        }
+
+        private static void ResetSavedData()
+        {
+            ResetData.ResetAllData -= ResetSavedData;
+
+            UserPowerupManager.Instance.Powerups.Clear();
+            SavePowerupInfo();
         }
     }
 }

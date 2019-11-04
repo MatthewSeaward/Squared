@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using Assets.Scripts.Workers.IO;
 using System.Collections.Generic;
+using Assets.Scripts;
 
 namespace Assets
 {
@@ -90,12 +91,13 @@ namespace Assets
         private LevelManager()
         {
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+            ResetData.ResetAllData += ResetSavedData;
         }
 
         ~LevelManager()
         {
             ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
-
+            ResetData.ResetAllData -= ResetSavedData;
         }
 
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
