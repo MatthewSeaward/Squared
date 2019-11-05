@@ -6,79 +6,67 @@ using System.Linq;
 using static Assets.Scripts.Workers.TestHelpers;
 
 [Category("Score Calculation")]
-public class StandardScoreCalculationTests
+public class StandardScoreCalculationWithBonus
 {
     [OneTimeSetUp]
     public void TestStart()
     {
-        Assets.Scripts.Constants.BonusPoints.Points = new List<(int, int)>();
+        Assets.Scripts.Constants.BonusPoints.Points = new List<(int, int)>()
+        {
+            (2, 2),
+            (3, 3),
+            (4, 5)
+        };
     }
 
     [Test]
-    public void Score3SinglePieces_Score3()
+    public void Score1SinglePieces_Bonus0_Score1()
     {
         var sut = new StandardScoreCalculator();
 
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(GetStandardScore());
+
+        Assert.AreEqual(1, sut.CalculateScore(sequence.ToArray()));
+    }
+
+    [Test]
+    public void Score3SinglePieces_Bonus2_Score4()
+    {
+        var sut = new StandardScoreCalculator();
+
+        var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
         
-        Assert.AreEqual(3, sut.CalculateScore(sequence.ToArray()));
-    }
-    
-    [Test]
-    public void Score0SinglePieces_Score0()
-    {
-        var sut = new StandardScoreCalculator();
-
-        var sequence = new LinkedList<ISquarePiece>();
-
-        Assert.AreEqual(0, sut.CalculateScore(sequence.ToArray()));
-    }
-
-    [Test]
-    public void Score2SinglePieces1Double_Score4()
-    {
-        var sut = new StandardScoreCalculator();
-
-        var sequence = new LinkedList<ISquarePiece>();
-        sequence.AddLast(GetStandardScore());
-        sequence.AddLast(GetStandardScore());
-        sequence.AddLast(GetDoubleScore());
-
         Assert.AreEqual(4, sut.CalculateScore(sequence.ToArray()));
     }
 
-
     [Test]
-    public void Score3SinglePieces1Double1Single_Score6()
+    public void Score3SinglePieces_Bonus3_Score6()
     {
         var sut = new StandardScoreCalculator();
 
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
-        sequence.AddLast(GetDoubleScore());
         sequence.AddLast(GetStandardScore());
-
 
         Assert.AreEqual(6, sut.CalculateScore(sequence.ToArray()));
     }
 
     [Test]
-    public void Score31Double3Single_Score6()
+    public void Score4SinglePieces_Bonus5_Score9()
     {
         var sut = new StandardScoreCalculator();
 
         var sequence = new LinkedList<ISquarePiece>();
-        sequence.AddLast(GetDoubleScore());
+        sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
         sequence.AddLast(GetStandardScore());
 
-
-        Assert.AreEqual(6, sut.CalculateScore(sequence.ToArray()));
+        Assert.AreEqual(9, sut.CalculateScore(sequence.ToArray()));
     }
 
     private static ISquarePiece GetStandardScore()

@@ -2,8 +2,10 @@
 using Assets.Scripts;
 using Assets.Scripts.Managers;
 using Assets.Scripts.UI;
+using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+using Assets.Scripts.Workers.Score_and_Limits.ScoreCalculation;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +24,7 @@ public class ScoreKeeper : MonoBehaviour
     public Text Score;
     public Text Time;
     public Text RestrictionText;
+    public Text BonusText;
 
     [SerializeField]
     private ProgressBar LimitProgress;
@@ -45,6 +48,8 @@ public class ScoreKeeper : MonoBehaviour
     public void Start()
     {
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
+        ExtraPoints.BonusAdded += ExtraPoints_BonusAdded;
+
         var currentLevel = LevelManager.Instance.GetNextLevel();
 
         GameLimit = currentLevel.GetCurrentLimit();
@@ -57,10 +62,11 @@ public class ScoreKeeper : MonoBehaviour
         UpdateLimit();
         UpdateRstriction();
     }
-
+    
     public void OnDestroy()
     {
         PieceSelectionManager.SequenceCompleted -= SequenceCompleted;
+        ExtraPoints.BonusAdded -= ExtraPoints_BonusAdded;
     }
 
     public void SequenceCompleted(ISquarePiece[] pieces)
@@ -82,10 +88,27 @@ public class ScoreKeeper : MonoBehaviour
         PointsAwarded?.Invoke(scoreEarned, pieces);
     }
 
+    private void ExtraPoints_BonusAdded(ScoreBonus bonus)
+    {
+        UpdateScore();
+    }
+
     private void UpdateScore()
     {
         Score.text = $"Score: {_currentScore}/{Target}";
         Score.color = ReachedTarget ? Color.green : Color.white;
+
+        var bonusMultiplier = ScoreCalculator.ActiveBonus;
+        if (string.IsNullOrEmpty(bonusMultiplier))
+        {
+            BonusText.gameObject.SetActive(false);
+        }
+        else
+        {
+            BonusText.gameObject.SetActive(true);
+            BonusText.text = "Multiplier: " + bonusMultiplier + "x";
+            BonusText.GetComponent<Animator>().SetTrigger("Activate");
+        }
 
         ScoreProgress.UpdateProgressBar(_currentScore, Target);
     }

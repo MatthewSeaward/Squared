@@ -4,6 +4,7 @@ using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Data_Managers
@@ -16,7 +17,7 @@ namespace Assets.Scripts.Workers.Data_Managers
         public static PowerupCountChanged PowerupCountChanged;
         public static PieceCollectionComplete PieceCollectionComplete;
 
-        public IPowerup[] SelectedPowerups = new IPowerup[] { new ExtraTime(), new SpecialPieces(), new IgnoreRestriction() };
+        public IPowerup[] SelectedPowerups = new IPowerup[] { new ExtraTime(), new SpecialPieces(), new ExtraPoints() };
 
         private static UserPowerupManager _instance;
 
@@ -84,7 +85,14 @@ namespace Assets.Scripts.Workers.Data_Managers
             }
             else
             {
-                return 0;
+                if (Debug.isDebugBuild)
+                {
+                    return 99;
+                }
+                else
+                {
+                    return 0;
+                }
             }
         }
 
