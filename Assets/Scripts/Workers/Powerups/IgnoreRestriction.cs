@@ -9,6 +9,10 @@ namespace Assets.Scripts.Workers.Powerups
     {
         public Sprite Icon => GameResources.Sprites["Shield"];
 
+        public string Name => "Ignore Restriction";
+
+        public string Description => "Ignore the restriction for this turn.";
+
         public bool Enabled
         {
             get

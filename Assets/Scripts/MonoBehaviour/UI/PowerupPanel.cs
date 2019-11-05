@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Powerups;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Powerups;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +13,9 @@ namespace Assets.Scripts.UI
 
             var buttons = GetComponentsInChildren<PowerupSlot>();
 
-            buttons[0].Setup(new ExtraTime());
-            buttons[1].Setup (new SpecialPieces());
-            buttons[2].Setup(new IgnoreRestriction());
+            buttons[0].Setup(UserPowerupManager.Instance.SelectedPowerups[0]);
+            buttons[1].Setup (UserPowerupManager.Instance.SelectedPowerups[1]);
+            buttons[2].Setup(UserPowerupManager.Instance.SelectedPowerups[2]);
         }     
 
         private void OnDestroy()

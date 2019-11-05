@@ -8,6 +8,11 @@ namespace Assets.Scripts.Workers.Powerups
     class ExtraTime : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Time"];
+        
+        public string Name => "Extra Time";
+
+        public string Description => "Gives you extra time/turns to complete the level in.";
+
         public bool Enabled => true;
 
         public void Invoke()

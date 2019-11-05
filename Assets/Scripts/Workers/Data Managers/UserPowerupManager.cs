@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Assets.Scripts.Workers.Data_Managers
     {
         public static PowerupCountChanged PowerupCountChanged;
         public static PieceCollectionComplete PieceCollectionComplete;
+
+        public IPowerup[] SelectedPowerups = new IPowerup[] { new ExtraTime(), new SpecialPieces(), new IgnoreRestriction() };
 
         private static UserPowerupManager _instance;
 

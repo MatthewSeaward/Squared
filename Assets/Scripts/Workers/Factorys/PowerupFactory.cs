@@ -58,5 +58,21 @@ namespace Assets.Scripts.Workers.Factorys
             }
             return null;
         }
+
+        public static IPowerup[] GetAllPowerups()
+        {
+            return new IPowerup[]
+            {
+                new ExtraLife(),
+                new IgnoreRestriction(),
+                new ExtraTime(),
+                new SpecialPieces(),
+                new MinePowerup(),
+                new PerformBestMove(),
+                new ExtraPoints(),
+                new DoubleMove(),
+                new PaintColour()
+            };
+        }
     }
 }

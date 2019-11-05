@@ -8,6 +8,11 @@ namespace Assets.Scripts.Workers.Powerups
     class SpecialPieces : IPowerup
     {
         public Sprite Icon => GameResources.Sprites["Rainbow Powerup"];
+        
+        public string Name => "Rainbow Rain";
+
+        public string Description => "Randomly replaces some pieces with Rainbows.";
+
         public bool Enabled => true;
 
         private ChangeRandomPiece ChangePiece = new ChangeRandomPiece() { NewPieceType = PieceFactory.PieceTypes.Rainbow, SelectionAmount = 3 };

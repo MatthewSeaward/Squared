@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts
 {
-    public enum MenuTab { MainMenu, LevelSelect, Progress, Settings }
+    public enum MenuTab { MainMenu, LevelSelect, Progress, Settings, Powerups }
 
     class MainMenu : MonoBehaviour
     {
@@ -19,6 +19,9 @@ namespace Assets.Scripts
 
         [SerializeField]
         private GameObject SettingsTab;
+
+        [SerializeField]
+        private GameObject PowerupsTab;
 
         public void Start()
         {
@@ -46,12 +49,18 @@ namespace Assets.Scripts
             ChangeTab(Scripts.MenuTab.Settings);
         }
 
+        public void PoweurpsTab_Clicked()
+        {
+            ChangeTab(Scripts.MenuTab.Powerups);
+        }
+
         private void ChangeTab(MenuTab menuTab)
         {
             LevelSelectTab.SetActive(menuTab == Scripts.MenuTab.LevelSelect);
             MenuTab.SetActive(menuTab == Scripts.MenuTab.MainMenu);
             ProgressTab.SetActive(menuTab == Scripts.MenuTab.Progress);
             SettingsTab.SetActive(menuTab == Scripts.MenuTab.Settings);
+            PowerupsTab.SetActive(menuTab == Scripts.MenuTab.Powerups);
 
             LastTab = menuTab;
         }

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2435953663187899736}
   - component: {fileID: 1362451385490848887}
   - component: {fileID: -9151146058591087407}
-  - component: {fileID: 2486647622344266756}
   - component: {fileID: 3142376040808810357}
+  - component: {fileID: 5654381254068131655}
   m_Layer: 5
   m_Name: Powerup Slot
   m_TagString: Untagged
@@ -125,21 +125,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2486647622344266756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5799496853187434349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d041c096d539ce41975ef2f939348e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Icon: {fileID: 6880089182110463780}
-  button: {fileID: -9151146058591087407}
-  remainingText: {fileID: 1362393643099059315}
 --- !u!95 &3142376040808810357
 Animator:
   serializedVersion: 3
@@ -159,6 +144,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5654381254068131655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5799496853187434349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c7da9c3a5838b4ab1c0d54d9ab9d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 6880089182110463780}
+  button: {fileID: -9151146058591087407}
+  remainingText: {fileID: 1362393643099059315}
 --- !u!1 &6269613074526086898
 GameObject:
   m_ObjectHideFlags: 0
