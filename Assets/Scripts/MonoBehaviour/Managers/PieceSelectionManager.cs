@@ -21,7 +21,8 @@ namespace Assets.Scripts
 
         public static event SequenceCompleted SequenceCompleted;
         public static event SelectedPiecesChanged SelectedPiecesChanged;
-        public IPieceSelectionMode PieceSelection { get; private set; } = new PieceSelectionModeDrawLine();
+        private IPieceSelectionMode DefaultSelectionMode = new PieceSelectionModeDrawLine();
+        public IPieceSelectionMode PieceSelection { get; set; }
 
         public static PieceSelectionManager Instance { private set;  get; }
         
@@ -30,6 +31,7 @@ namespace Assets.Scripts
             Instance = this;
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
             UsedPieces = new Dictionary<Vector2Int, int>();
+            ReturnPieceSelectionModeToDefault();
         }
 
         private void OnDestroy()
@@ -204,6 +206,11 @@ namespace Assets.Scripts
         {
             IHeatmapWriter heatmap = new FirebaseHeatMapWriter();
             heatmap.WriteHeatmapData(chapter, level, UsedPieces);
+        }
+
+        public void ReturnPieceSelectionModeToDefault()
+        {
+            PieceSelection = DefaultSelectionMode;
         }
     }
 }

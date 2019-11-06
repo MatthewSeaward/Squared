@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.Workers.Helpers;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.UserPieceSelection;
-using System;
 
 namespace Assets.Scripts.Workers.Piece_Selection
 {
@@ -8,6 +8,11 @@ namespace Assets.Scripts.Workers.Piece_Selection
     {
         public void Piece_MouseDown(ISquarePiece piece, bool checkForAdditional)
         {
+            if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
+            {
+                return;
+            }
+            
             if (PieceSelectionManager.Instance.AlreadySelected(piece))
             {
                 return;

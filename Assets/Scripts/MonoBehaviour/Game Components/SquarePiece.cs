@@ -120,12 +120,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     }
 
     void OnMouseUp()
-    {
-        if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
-        {
-            return;
-        }
-
+    {   
         PieceSelectionManager.Instance.PieceSelection.Piece_MouseUp(this);
     }
 
@@ -146,11 +141,6 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     public void Pressed(bool checkForAdditional)
     {
-        if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
-        {
-            return;
-        }
-
         PieceSelectionManager.Instance.PieceSelection.Piece_MouseDown(this, checkForAdditional);
     }    
 
