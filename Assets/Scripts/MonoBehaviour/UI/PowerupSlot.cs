@@ -17,7 +17,7 @@ namespace Assets.Scripts.UI
         protected Text remainingText;
 
         public IPowerup powerup;
-        private int previousRemaing;
+        protected int previousRemaing;
         private bool activateOnEnable;
 
 

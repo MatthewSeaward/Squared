@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Data_Managers;
 
 namespace Assets.Scripts.UI
 {
@@ -8,11 +9,13 @@ namespace Assets.Scripts.UI
         protected override void ChildStart()
         {
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
+            GameManager.PauseStateChanged += GameManager_PauseStateChanged;
         }
-
+              
         protected override void ChildOnDestroy()
         {
             PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
+            GameManager.PauseStateChanged += GameManager_PauseStateChanged;
         }
 
         protected override void ChildUpdate(float deltaTime)
@@ -36,5 +39,18 @@ namespace Assets.Scripts.UI
         {
             return remaining > 0 && powerup.Enabled;
         }
+
+        private void GameManager_PauseStateChanged(bool paused)
+        {
+            if (paused)
+            {
+                button.interactable = false;
+            }
+            else
+            {
+                button.interactable = EnableButton(previousRemaing);
+            }
+        }
+
     }
 }
