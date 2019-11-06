@@ -1,7 +1,8 @@
 ﻿using Assets.Scripts.Game_Components;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
-using System;
+using Assets.Scripts.Workers.Piece_Selection;
+using Assets.Scripts.Workers.UserPieceSelection;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,6 +21,7 @@ namespace Assets.Scripts
 
         public static event SequenceCompleted SequenceCompleted;
         public static event SelectedPiecesChanged SelectedPiecesChanged;
+        public IUserPieceSelection PieceSelection { get; private set; } = new PieceSelectionDrawLine();
 
         public static PieceSelectionManager Instance { private set;  get; }
         

@@ -22,4 +22,5 @@ public interface ISquarePiece
     void DestroyPiece();
     void Destroy();
     void Pressed(bool checkForAdditional);
+    void SetMouseDown(bool v);
 }

@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Managers;
-using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
@@ -89,7 +88,6 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         }
     }
     
-
     private void OnEnable()
     {
         _sprite = null;
@@ -112,7 +110,6 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     void Update()
     {
-
         if (GameManager.Instance.GamePaused)
         {
             return;
@@ -122,9 +119,14 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         PieceBehaviour?.Update(this, Time.deltaTime);
     }
 
-    void OnMouseDown()
+    void OnMouseUp()
     {
-        Pressed(true);
+        if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
+        {
+            return;
+        }
+
+        PieceSelectionManager.Instance.PieceSelection.Piece_MouseUp(this);
     }
 
     private void OnMouseEnter()
@@ -133,15 +135,13 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         {
             return;
         }
-       
-        if (ConnectionHelper.AdjancentToLastPiece(this) && PieceSelectionManager.Instance.PieceCanBeRemoved(this))
-        {
-            PieceSelectionManager.Instance.RemovePiece();      
-        }
-        else
-        {
-            Pressed(true);
-        }
+
+        PieceSelectionManager.Instance.PieceSelection.Piece_MouseEnter(this);
+    }
+
+    void OnMouseDown()
+    {
+        Pressed(true);
     }
 
     public void Pressed(bool checkForAdditional)
@@ -151,28 +151,10 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
             return;
         }
 
-        if (PieceSelectionManager.Instance.AlreadySelected(this))
-        {
-            return;
-        }
-
-        if (!PieceConnection.ConnectionValid(this))
-        {
-            return;
-        }
-
-        if (DestroyPieceHandler.ToBeDestroyed)
-        {
-            return;
-        }
-
-        PieceSelectionManager.Instance.Add(this, checkForAdditional);
-
-        DestroyPieceHandler.OnPressed();
-        SetMouseDown(true);
+        PieceSelectionManager.Instance.PieceSelection.Piece_MouseDown(this, checkForAdditional);
     }
+    
 
-     
     public void DestroyPiece()
     {
         Animator.SetTrigger("Destroy");
@@ -191,7 +173,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         SetMouseDown(false);
     }
 
-    private void SetMouseDown(bool value)
+    public void SetMouseDown(bool value)
     {
         Animator.SetBool("MouseDown", value);
     }    
