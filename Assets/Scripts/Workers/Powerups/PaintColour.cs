@@ -1,6 +1,8 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.UI;
+using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Piece_Selection;
 using Assets.Scripts.Workers.Powerups.Interfaces;
-using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Powerups
@@ -15,9 +17,21 @@ namespace Assets.Scripts.Workers.Powerups
 
         public bool Enabled => true;
 
+        private float TimeToPreformAction = 2f;
+
         public void Invoke()
         {
-            throw new NotImplementedException();
+            PieceSelectionManager.Instance.PieceSelection = new PieceSelectionModePaintPieces();
+            CountdownPanel.TimerElapsed += CountdownPanel_TimerElapsed;
+            CountdownPanel.Instance.StartCountDown(TimeToPreformAction);
+            GameManager.Instance.GamePaused = true;
+        }
+
+        private void CountdownPanel_TimerElapsed()
+        {
+            CountdownPanel.TimerElapsed -= CountdownPanel_TimerElapsed;
+            GameManager.Instance.GamePaused = false;
+            PieceSelectionManager.Instance.ReturnPieceSelectionModeToDefault();
         }
 
         public void Update(float deltaTime)
