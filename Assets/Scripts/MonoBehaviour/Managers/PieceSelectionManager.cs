@@ -21,7 +21,7 @@ namespace Assets.Scripts
 
         public static event SequenceCompleted SequenceCompleted;
         public static event SelectedPiecesChanged SelectedPiecesChanged;
-        public IUserPieceSelection PieceSelection { get; private set; } = new PieceSelectionDrawLine();
+        public IPieceSelectionMode PieceSelection { get; private set; } = new PieceSelectionModeDrawLine();
 
         public static PieceSelectionManager Instance { private set;  get; }
         

@@ -152,8 +152,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         }
 
         PieceSelectionManager.Instance.PieceSelection.Piece_MouseDown(this, checkForAdditional);
-    }
-    
+    }    
 
     public void DestroyPiece()
     {
@@ -177,6 +176,12 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     {
         Animator.SetBool("MouseDown", value);
     }    
+
+    public void Selected()
+    {
+        DestroyPieceHandler.OnPressed();
+        SetMouseDown(true);
+    }
 
     public void SetText(string text)
     {

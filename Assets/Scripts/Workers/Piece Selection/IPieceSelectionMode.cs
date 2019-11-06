@@ -1,6 +1,6 @@
 ﻿namespace Assets.Scripts.Workers.UserPieceSelection
 {
-    public interface IUserPieceSelection
+    public interface IPieceSelectionMode
     {
         void Piece_MouseDown(ISquarePiece piece, bool checkForAdditional);
         void Piece_MouseUp(ISquarePiece piece);

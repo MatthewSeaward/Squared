@@ -4,7 +4,7 @@ using System;
 
 namespace Assets.Scripts.Workers.Piece_Selection
 {
-    public class PieceSelectionDrawLine : IUserPieceSelection
+    public class PieceSelectionModeDrawLine : IPieceSelectionMode
     {
         public void Piece_MouseDown(ISquarePiece piece, bool checkForAdditional)
         {
@@ -25,8 +25,7 @@ namespace Assets.Scripts.Workers.Piece_Selection
 
             PieceSelectionManager.Instance.Add(piece, checkForAdditional);
 
-            piece.DestroyPieceHandler.OnPressed();
-            piece.SetMouseDown(true);
+            piece.Selected();       
         }
 
         public void Piece_MouseEnter(ISquarePiece piece)
