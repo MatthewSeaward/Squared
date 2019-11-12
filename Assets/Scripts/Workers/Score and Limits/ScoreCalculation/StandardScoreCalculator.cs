@@ -52,9 +52,12 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 totalScore = piece.Scoring.ScorePiece(totalScore);
             }
 
-            var bonus = Constants.BonusPoints.Points.OrderByDescending(x => x.Item1).FirstOrDefault(x => sequence.Length >= x.Item1);
+            if (Constants.BonusPoints.Points != null)
+            {
+                var bonus = Constants.BonusPoints.Points.OrderByDescending(x => x.Item1).FirstOrDefault(x => sequence.Length >= x.Item1);
 
-            totalScore += bonus.Item2;
+                totalScore += bonus.Item2;
+            }
 
             float mulltiplier = 0f;
             foreach (var b in CurrentBonuses)

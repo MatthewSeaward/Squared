@@ -4,7 +4,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class MinSequenceLimit : IRestriction
     {
-        private readonly int MinLimit;
+        public readonly int MinLimit;
         private bool reachedLimit = false;
         public bool Ignored { get; private set; }
 

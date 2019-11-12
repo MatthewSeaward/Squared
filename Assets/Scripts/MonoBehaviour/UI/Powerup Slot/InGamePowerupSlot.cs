@@ -15,7 +15,7 @@ namespace Assets.Scripts.UI
         protected override void ChildOnDestroy()
         {
             PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
-            GameManager.PauseStateChanged += GameManager_PauseStateChanged;
+            GameManager.PauseStateChanged -= GameManager_PauseStateChanged;
         }
 
         protected override void ChildUpdate(float deltaTime)
@@ -30,9 +30,9 @@ namespace Assets.Scripts.UI
 
         protected override void OnButtonClicked()
         {
+            button.interactable = false;
             powerup.Invoke();
             UserPowerupManager.Instance.UsePowerup(powerup);
-            button.interactable = false;
         }
 
         protected override bool EnableButton(int remaining)

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Assets.Scripts.Workers
+﻿namespace Assets.Scripts.Workers.Grid_Management
 {
     public static class MoveChecker
     {
@@ -16,10 +14,10 @@ namespace Assets.Scripts.Workers
                         continue;
                     }
 
-                    if (CheckSpot(piece, x + 1, y + 1) ||
-                        CheckSpot(piece, x + 1, y) ||
-                        CheckSpot(piece, x + 1, y - 1) ||
-                        CheckSpot(piece, x , y - 1))
+                    if (MoveCheckerHelpers.CheckSpot(piece, x + 1, y + 1) ||
+                        MoveCheckerHelpers.CheckSpot(piece, x + 1, y) ||
+                        MoveCheckerHelpers.CheckSpot(piece, x + 1, y - 1) ||
+                        MoveCheckerHelpers.CheckSpot(piece, x , y - 1))
                     {
                         return true;
                     }
@@ -28,18 +26,6 @@ namespace Assets.Scripts.Workers
             }
 
             return false;
-        }
-
-        private static bool CheckSpot(ISquarePiece piece, int x, int y)
-        {
-            var nextPiece = PieceController.GetPiece(x, y);
-            if (nextPiece == null)
-            {
-                return false;
-            }
-
-            return piece.PieceConnection.ConnectionValid(piece, nextPiece);
-
-        }
+        }   
     }
 }

@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Workers;
+﻿using Assets.Scripts.Workers.Grid_Management;
 using Assets.Scripts.Workers.Piece_Effects;
 using NUnit.Framework;
 using System.Collections.Generic;

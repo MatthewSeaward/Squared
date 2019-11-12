@@ -17,7 +17,6 @@ namespace Assets.Scripts.Workers.Powerups
         {
             get
             {
-
                 return LevelManager.Instance.SelectedLevel.GetCurrentRestriction().GetType() != typeof(NoRestriction);
             }
         }

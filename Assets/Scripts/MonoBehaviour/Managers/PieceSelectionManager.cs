@@ -85,6 +85,19 @@ namespace Assets.Scripts
             lastMousePostion = Input.mousePosition;
         }
 
+        public void PreformMove(List<ISquarePiece> pieces)
+        {
+            CurrentPieces.Clear();
+            foreach (var piece in pieces)
+            {
+                CurrentPieces.AddLast(piece);
+            }
+
+            ProcessSequenceCompleted();
+            CurrentPieces.Clear();
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
+        }
+
         private void CheckForAdditionalPieces()
         {
             int inputX = GetAxisDirection("Mouse X");

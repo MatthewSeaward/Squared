@@ -5,7 +5,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class SwapEffectLimit : IRestriction
     {
-        private string effect;
+        public readonly string effect;
         private bool failed = false;
         public bool Ignored { get; private set; }
 

@@ -7,7 +7,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
    public class BannedPieceType : IRestriction
     {
         private bool _violatedRestriction = false;
-        private PieceTypes BannedPiece;
+        public readonly PieceTypes BannedPiece;
         public bool Ignored { get; private set; }
 
         public BannedPieceType(string inputString)

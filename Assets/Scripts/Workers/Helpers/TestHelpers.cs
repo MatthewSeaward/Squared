@@ -6,7 +6,7 @@ namespace Assets.Scripts.Workers
 {
     public static class TestHelpers
     {
-        private static Dictionary<string, Sprite> CreatedSprites = new Dictionary<string, Sprite>();
+        public static Dictionary<string, Sprite> CreatedSprites = new Dictionary<string, Sprite>();
 
         public static ISquarePiece CreatePiece()
         {

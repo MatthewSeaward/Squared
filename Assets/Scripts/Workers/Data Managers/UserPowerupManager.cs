@@ -17,7 +17,7 @@ namespace Assets.Scripts.Workers.Data_Managers
         public static PowerupCountChanged PowerupCountChanged;
         public static PieceCollectionComplete PieceCollectionComplete;
 
-        public IPowerup[] SelectedPowerups = new IPowerup[] { new PaintColour(), new MinePowerup(), new ExtraPoints() };
+        public IPowerup[] SelectedPowerups = new IPowerup[] { new PaintColour(), new MinePowerup(), new PerformBestMove() };
 
         private static UserPowerupManager _instance;
 

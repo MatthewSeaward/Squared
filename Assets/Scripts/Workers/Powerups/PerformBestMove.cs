@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Grid_Management;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using UnityEngine;
 
@@ -14,9 +15,17 @@ namespace Assets.Scripts.Workers.Powerups
 
         public bool Enabled => true;
 
+        private IBestMoveChecker bestMoveChecker = new BestMoveDepthSearch();
+
         public void Invoke()
         {
-            throw new System.NotImplementedException();
+            var move = bestMoveChecker.GetBestMove(LevelManager.Instance.SelectedLevel.GetCurrentRestriction());
+            if (move == null || move.Count == 0)
+            {
+                return;
+            }
+
+            PieceSelectionManager.Instance.PreformMove(move);
         }
 
         public void Update(float deltaTime)
