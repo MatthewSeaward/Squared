@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Powerups.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Assets.Scripts.Workers.Data_Managers
         public static PowerupCountChanged PowerupCountChanged;
         public static PieceCollectionComplete PieceCollectionComplete;
 
-        public IPowerup[] SelectedPowerups = new IPowerup[] { new ExtraLife(), new SpecialPieces(), new PerformBestMove() };
+        public IPowerup[] EquippedPowerups = new IPowerup[] { new ExtraLife(), new SpecialPieces(), new PerformBestMove() };
 
         private static UserPowerupManager _instance;
 
@@ -96,6 +97,12 @@ namespace Assets.Scripts.Workers.Data_Managers
             }
         }
 
+        internal void EquipPowerup(IPowerup powerup, int slot)
+        {
+            EquippedPowerups[slot] = powerup;
+            UserIO.Instance.SaveEquippedPowerupInfo();
+        }
+
         private void CheckForCompletion(Colour PieceColour, int previous, int totalCollected)
         {
             int increment = RemoteConfigHelper.GetCollectionInterval(PieceColour);
@@ -107,6 +114,11 @@ namespace Assets.Scripts.Workers.Data_Managers
             {
                 PieceCollectionComplete?.Invoke(PieceColour);
                 AddNewPowerup(PowerupFactory.GetPowerup(PieceColour));            }
+        }
+
+        public bool PowerupEquipped(IPowerup powerup)
+        {
+           return EquippedPowerups.Any(x => x.GetType() == powerup.GetType());
         }
 
         public static int NumberOfPowerupsEarned(int previous, int totalCollected, int increment)

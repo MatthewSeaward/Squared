@@ -13,9 +13,9 @@ namespace Assets.Scripts.UI
 
             var buttons = GetComponentsInChildren<PowerupSlot>();
 
-            buttons[0].Setup(UserPowerupManager.Instance.SelectedPowerups[0]);
-            buttons[1].Setup (UserPowerupManager.Instance.SelectedPowerups[1]);
-            buttons[2].Setup(UserPowerupManager.Instance.SelectedPowerups[2]);
+            buttons[0].Setup(UserPowerupManager.Instance.EquippedPowerups[0]);
+            buttons[1].Setup (UserPowerupManager.Instance.EquippedPowerups[1]);
+            buttons[2].Setup(UserPowerupManager.Instance.EquippedPowerups[2]);
         }     
 
         private void OnDestroy()

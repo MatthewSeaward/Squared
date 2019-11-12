@@ -3,5 +3,6 @@
     interface IPowerupReader
     {
         void ReadPowerupsAsync();
+        void ReadEquippedPowerupsAsync();
     }
 }

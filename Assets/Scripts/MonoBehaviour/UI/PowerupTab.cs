@@ -24,6 +24,9 @@ namespace Assets.Scripts
         [SerializeField]
         private PowerupSlot[] selectedPowerups;
 
+        [SerializeField]
+        private Button[] EquipButtons;
+
         private PowerupSlot currentSelected;
 
         internal void SelectPowerup(PowerupSlot slot)
@@ -38,12 +41,22 @@ namespace Assets.Scripts
             slot.button.interactable = false;
 
             currentSelected = slot;
+
+            SetEquipButtons(!UserPowerupManager.Instance.PowerupEquipped(slot.powerup));
         }
 
         private void OnEnable()
         {
             SetupAvaiblePowerups();
             SetupSelectedPowerups();
+        }
+
+        private void SetEquipButtons(bool enable)
+        {
+            foreach(var b in EquipButtons)
+            {
+                b.gameObject.SetActive(enable);
+            }
         }
 
         private void SetupAvaiblePowerups()
@@ -76,8 +89,14 @@ namespace Assets.Scripts
         {
             for (int i = 0; i < selectedPowerups.Length; i++)
             {
-                selectedPowerups[i].Setup(UserPowerupManager.Instance.SelectedPowerups[i]);
+                selectedPowerups[i].Setup(UserPowerupManager.Instance.EquippedPowerups[i]);
             }
+        }
+
+        public void EquipPowerup(int slot)
+        {
+            UserPowerupManager.Instance.EquipPowerup(currentSelected.powerup, slot);
+            OnEnable();
         }
     }
 }

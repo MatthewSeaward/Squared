@@ -4,6 +4,7 @@ using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Powerup;
+using Assets.Scripts.Workers.Powerups.Interfaces;
 
 namespace Assets.Scripts.Workers
 {
@@ -13,8 +14,9 @@ namespace Assets.Scripts.Workers
     {
         private bool piecesCollectedLoaded;
         private bool powerupsLoaded;
+        private bool equippedPowerupsLoaded;
 
-        private bool LoadComplete => piecesCollectedLoaded && powerupsLoaded;
+        private bool LoadComplete => piecesCollectedLoaded && powerupsLoaded && equippedPowerupsLoaded;
 
         public static DataLoaded DataLoaded;
 
@@ -39,6 +41,8 @@ namespace Assets.Scripts.Workers
         {
             PieceCollectionIO.PiecesCollectedLoadedEvent += PiecesCollectedLoadedEventHandler;
             FireBasePowerupReader.PowerupsLoaded += FireBasePowerupsLoaded;
+            FireBasePowerupReader.EquippedPowerupsLoaded += FireBaseEquippedPowerupsLoaded;
+
             ResetData.ResetAllData += ResetSavedData;
         }
 
@@ -46,6 +50,8 @@ namespace Assets.Scripts.Workers
         {
             PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
             FireBasePowerupReader.PowerupsLoaded -= FireBasePowerupsLoaded;
+            FireBasePowerupReader.EquippedPowerupsLoaded -= FireBaseEquippedPowerupsLoaded;
+
             ResetData.ResetAllData -= ResetSavedData;
         }
 
@@ -54,14 +60,20 @@ namespace Assets.Scripts.Workers
             powerupWriter.WritePowerups(UserPowerupManager.Instance.Powerups);
         }
 
-        private void ReadPowerupInfo()
-        { 
+        public void SaveEquippedPowerupInfo()
+        {
+            powerupWriter.WriteEquippedPowerups(UserPowerupManager.Instance.EquippedPowerups);
+        }
+
+        private void LoadPowerupData()
+        {
             powerupReader.ReadPowerupsAsync();
+            powerupReader.ReadEquippedPowerupsAsync();
         }
 
         public void LoadData()
         {
-            ReadPowerupInfo();
+            LoadPowerupData();
 
             PieceCollectionIO.Instance.LoadUserData();
         }
@@ -76,9 +88,25 @@ namespace Assets.Scripts.Workers
             }
         }
 
+        private void FireBaseEquippedPowerupsLoaded(string[] powerups)
+        {
+            var newPowerups = new List<IPowerup>();
+            foreach (var item in powerups)
+            {
+                newPowerups.Add(PowerupFactory.GetPowerup(item));
+            }
+
+            UserPowerupManager.Instance.EquippedPowerups =  newPowerups.ToArray();
+
+            equippedPowerupsLoaded = true;
+            if (LoadComplete)
+            {
+                DataLoaded?.Invoke();
+            }
+        }
+
         private void FireBasePowerupsLoaded(List<PowerupEntity> powerups)
         {
-
             foreach (var entity in powerups)
             {
                 UserPowerupManager.Instance.Powerups.Add(new PowerupCollection() { Powerup =  PowerupFactory.GetPowerup(entity.Name), Count = entity.Count });
