@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Enemy;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using UnityEngine;
 
@@ -10,17 +11,20 @@ namespace Assets.Scripts.Workers.Powerups
 
         public string Name => "Extra Life";
 
-        public string Description => "Sends down some extra life pieces that you can try and collect to restore some Lifes.";
+        public string Description => "Sends down some extra life pieces that you can try and collect to restore some lives.";
 
         public bool Enabled => true;
 
+        private ChangeRandomPiece ChangePiece = new ChangeRandomPiece() { NewPieceType = PieceFactory.PieceTypes.Heart, SelectionAmount = 2 };
+
         public void Invoke()
         {
-            throw new System.NotImplementedException();
+            ChangePiece.InvokeRage();
         }
 
         public void Update(float deltaTime)
         {
+            ChangePiece.Update(deltaTime);
         }
     }
 }

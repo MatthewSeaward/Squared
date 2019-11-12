@@ -150,6 +150,10 @@ namespace Assets.Scripts
 
             foreach (var square in CurrentPieces)
             {
+                if (square.OnCollection != null)
+                {
+                    square.OnCollection.OnCollection();
+                }
                 square.DestroyPiece();
             }
         }

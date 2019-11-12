@@ -2,6 +2,7 @@
 using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
+using Assets.Scripts.Workers.Piece_Effects.Collection;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public IPieceDestroy DestroyPieceHandler { get; set; }
     public IBehaviour PieceBehaviour { get; set; }
     public IScoreable Scoring { get; set; }
+    public IOnCollection OnCollection { get; set; }
 
     public Colour PieceColour { get; set; }    
     public PieceTypes Type { get; set; }

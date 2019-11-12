@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
+﻿using Assets.Scripts.Workers.Piece_Effects.Collection;
+using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 using static PieceFactory;
 using static SquarePiece;
@@ -14,6 +15,7 @@ public interface ISquarePiece
     SpriteRenderer SpriteRenderer { get; }
     GameObject gameObject { get; }
     IPieceDestroy DestroyPieceHandler { get; }
+    IOnCollection OnCollection { get; }
     PieceTypes Type { get; set; }
     PieceDestroyed PieceDestroyed { set; get; }
     Colour PieceColour { get;set; }

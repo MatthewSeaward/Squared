@@ -11,6 +11,7 @@ using Assets;
 using Assets.Scripts.Constants;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.Piece_Effects.Collection;
 
 public class PieceFactory : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class PieceFactory : MonoBehaviour
         TriplePoints = 't',
         TwoPoints = '2',
         ThreePoints = '3',
-        FourPoints = '4'
+        FourPoints = '4',
+        Heart = 'H'
      }
 
     private void Awake()
@@ -59,6 +61,7 @@ public class PieceFactory : MonoBehaviour
         BuildConnection(type, squarePiece);
         BuildDestroyEffect(type, piece, squarePiece);
         BuildBehaviours(type, squarePiece);
+        BuildOnCollection(type, squarePiece);
         BuildScoring(type, squarePiece, scoreValue);
         BuildLayers(piece, squarePiece);
         BuildTextLayer(squarePiece);
@@ -168,7 +171,19 @@ public class PieceFactory : MonoBehaviour
             squarePiece.PieceBehaviour = null;
         }
     }
- 
+
+    private void BuildOnCollection(PieceTypes type, SquarePiece squarePiece)
+    {
+        if (type == PieceTypes.Heart)
+        {
+            squarePiece.OnCollection = new GainHeart();
+        }
+        else
+        {
+            squarePiece.OnCollection = null;
+        }
+    }
+
     private void BuildScoring(PieceTypes type, SquarePiece squarePiece, int scoreValue)
     {
         if (type == PieceTypes.DoublePoints)
@@ -230,6 +245,8 @@ public class PieceFactory : MonoBehaviour
         ApplyLayer(piece, squarePiece.PieceBehaviour as ILayeredSprite);
         ApplyLayer(piece, squarePiece.DestroyPieceHandler as ILayeredSprite);
         ApplyLayer(piece, squarePiece.Scoring as ILayeredSprite);
+        ApplyLayer(piece, squarePiece.OnCollection as ILayeredSprite);
+
     }
 
     private void ApplyLayer(GameObject piece, ILayeredSprite layer)
