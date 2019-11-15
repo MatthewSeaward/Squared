@@ -28,6 +28,10 @@ namespace Assets.Scripts.Workers.Powerups
             keeper.ActivateRestriction();
         }
 
+        public void MoveCompleted()
+        {
+        }
+
         public void Update(float deltaTime)
         {
         }

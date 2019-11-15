@@ -10,6 +10,7 @@ namespace Assets.Scripts.Workers.Powerups.Interfaces
         string Description { get; }
 
         void Invoke();
+        void MoveCompleted();
         void Update(float deltaTime);
     }
 }

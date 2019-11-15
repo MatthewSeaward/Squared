@@ -24,6 +24,11 @@ namespace Assets.Scripts.Workers.Powerups
             BonusAdded?.Invoke(new ScoreBonus(1.5f, 1));
         }
 
+        public void MoveCompleted()
+        {
+
+        }
+
         public void Update(float deltaTime)
         {
         }

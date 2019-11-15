@@ -5,30 +5,18 @@ namespace Assets.Scripts.UI
 {
     public delegate void TimerElapsed();
 
-    public class CountdownPanel : MonoBehaviour
+    public class CountdownPanel : ToastPanel
     {
-        public static TimerElapsed TimerElapsed;
+        public static TimerElapsed TimerElapsed;      
 
-        [SerializeField]
-        private GameObject Panel;
-
-        [SerializeField]
-        private Text text;
-
-        public static CountdownPanel Instance { get; private set; }
+        public static new CountdownPanel Instance { get; private set; }
 
         private float CurrentDuration;
         private float Timer;
-
-        private void Awake()
+  
+        protected override void ChildAwake()
         {
-            Instance = this;           
-        }
-
-        private void Start()
-        {
-            text = Panel.GetComponentInChildren<Text>();
-            Panel.SetActive(false);
+            Instance = this;
         }
 
         private void Update()
@@ -41,14 +29,14 @@ namespace Assets.Scripts.UI
             Timer += Time.deltaTime;
 
             float timeLeft = CurrentDuration - Timer;
-            text.text = timeLeft.ToString("0.00") + " Seconds Remaining";
+            ShowText(timeLeft.ToString("0.00") + " Seconds Remaining");
 
             if (Timer >= CurrentDuration)
             {
                 TimerElapsed?.Invoke();
                 Timer = 0f;
                 CurrentDuration = 0;
-                Panel.SetActive(false);
+                Hide();
             }
         }
 
@@ -56,7 +44,6 @@ namespace Assets.Scripts.UI
         {
             Timer = 0f;
             CurrentDuration = duration;
-            Panel.SetActive(true);
         }
     }
 }

@@ -5,16 +5,16 @@ namespace Assets.Scripts.UI
 {
     public class InGamePowerupSlot : PowerupSlot
     {
-
         protected override void ChildStart()
         {
-            PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
+            PieceSelectionManager.MoveCompleted += PieceSelectionManager_MoveCompleted;
             GameManager.PauseStateChanged += GameManager_PauseStateChanged;
         }
-              
+
         protected override void ChildOnDestroy()
         {
-            PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
+            PieceSelectionManager.MoveCompleted -= PieceSelectionManager_MoveCompleted;
+
             GameManager.PauseStateChanged -= GameManager_PauseStateChanged;
         }
 
@@ -22,10 +22,11 @@ namespace Assets.Scripts.UI
         {
             powerup.Update(deltaTime);
         }
-        
-        private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
+   
+        private void PieceSelectionManager_MoveCompleted()
         {
             button.interactable = UserPowerupManager.Instance.GetUses(powerup) > 0 && powerup.Enabled;
+            powerup.MoveCompleted();
         }
 
         protected override void OnButtonClicked()

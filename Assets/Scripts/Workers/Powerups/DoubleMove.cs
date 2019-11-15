@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.UI;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using UnityEngine;
 
@@ -17,6 +18,12 @@ namespace Assets.Scripts.Workers.Powerups
         public void Invoke()
         {
             PieceSelectionManager.Instance.ChangeMovesAllowedPerTurn(2);
+            ToastPanel.Instance.ShowText("Make two moves");
+        }
+
+        public void MoveCompleted()
+        {
+            ToastPanel.Instance.Hide();
         }
 
         public void Update(float deltaTime)

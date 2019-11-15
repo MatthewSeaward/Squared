@@ -1,4 +1,6 @@
-﻿using Assets.Scripts.Workers.Grid_Management;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.UI;
+using Assets.Scripts.Workers.Grid_Management;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using UnityEngine;
@@ -24,12 +26,20 @@ namespace Assets.Scripts.Workers.Powerups
             {
                 return;
             }
+            GameManager.Instance.GamePaused = true;
+            ToastPanel.Instance.ShowText("Thinking");
 
             PieceSelectionManager.Instance.PreformMove(move);
         }
 
         public void Update(float deltaTime)
         {
+        }
+
+        public void MoveCompleted()
+        {
+            GameManager.Instance.GamePaused = false;
+            ToastPanel.Instance.Hide();
         }
     }
 }

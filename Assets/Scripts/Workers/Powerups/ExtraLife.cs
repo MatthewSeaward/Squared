@@ -26,5 +26,9 @@ namespace Assets.Scripts.Workers.Powerups
         {
             ChangePiece.Update(deltaTime);
         }
+
+        public void MoveCompleted()
+        {
+        }
     }
 }
