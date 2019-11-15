@@ -79,10 +79,6 @@ namespace Assets.Scripts.UI
             }
 
             remainingText.text = remaining.ToString();
-            if (button != null)
-            {
-                button.interactable = EnableButton(remaining);
-            }
             previousRemaing = remaining;
         }
 
