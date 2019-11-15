@@ -48,6 +48,7 @@ public class ScoreKeeper : MonoBehaviour
     public void Start()
     {
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
+
         ExtraPoints.BonusAdded += ExtraPoints_BonusAdded;
 
         var currentLevel = LevelManager.Instance.GetNextLevel();
@@ -68,10 +69,9 @@ public class ScoreKeeper : MonoBehaviour
         PieceSelectionManager.SequenceCompleted -= SequenceCompleted;
         ExtraPoints.BonusAdded -= ExtraPoints_BonusAdded;
     }
-
+    
     public void SequenceCompleted(ISquarePiece[] pieces)
     { 
-        GameLimit.SequenceCompleted(pieces);
         Restriction.SequenceCompleted(pieces);
 
         int scoreEarned = ScoreCalculator.CalculateScore(pieces);

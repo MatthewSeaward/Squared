@@ -10,14 +10,20 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public TurnLimit (int maxTurns)
         {
             this.MaxTurns = maxTurns;
+            PieceSelectionManager.MoveCompleted += MoveCompleted;
         }
- 
+
+        ~TurnLimit()
+        {
+            PieceSelectionManager.MoveCompleted -= MoveCompleted;
+        }
+
         public string GetLimitText()
         {
             return "Turns Left: " + (MaxTurns- TurnsTaken);
         }
 
-        public void SequenceCompleted(ISquarePiece[] sequence)
+        public void MoveCompleted()
         {
             TurnsTaken++;
         }

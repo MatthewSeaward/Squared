@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
-using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Powerups
@@ -17,7 +16,7 @@ namespace Assets.Scripts.Workers.Powerups
 
         public void Invoke()
         {
-            throw new NotImplementedException();
+            PieceSelectionManager.Instance.ChangeMovesAllowedPerTurn(2);
         }
 
         public void Update(float deltaTime)

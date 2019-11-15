@@ -1,4 +1,6 @@
-﻿using Assets.Scripts;
+﻿using System;
+using System.Collections.Generic;
+using Assets.Scripts;
 using UnityEngine;
 
 public class LineDrawer : MonoBehaviour
@@ -13,11 +15,11 @@ public class LineDrawer : MonoBehaviour
         PieceSelectionManager.SelectedPiecesChanged -= PieceSelectionManager_SelectedPiecesChanged;
     }
 
-    private void PieceSelectionManager_SelectedPiecesChanged(System.Collections.Generic.LinkedList<ISquarePiece> pieces)
+    private void PieceSelectionManager_SelectedPiecesChanged(LinkedList<ISquarePiece> pieces)
     {
         Clear();
 
-        if (pieces.Count == 0 || MenuProvider.Instance.OnDisplay)
+        if (MenuProvider.Instance.OnDisplay)
         {
             return;
         }
@@ -37,6 +39,20 @@ public class LineDrawer : MonoBehaviour
             }
 
             oldPoint = item.transform.position;
+        }
+
+        foreach(var storedMoves in PieceSelectionManager.Instance.StoredMoves)
+        {
+            oldPoint = Vector3.zero;
+            foreach (var item in storedMoves)
+            {
+                if (oldPoint != Vector3.zero)
+                {
+                    LineFactory.Instance.GetLine(oldPoint, item.transform.position, 0.02f, Color.gray);
+                }
+
+                oldPoint = item.transform.position;
+            }
         }
     }
 

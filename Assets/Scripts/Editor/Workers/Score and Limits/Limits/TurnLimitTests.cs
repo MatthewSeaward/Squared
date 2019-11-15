@@ -10,7 +10,7 @@ public class TurnLimitTests
     {
         var sut = new Assets.Scripts.Workers.Score_and_Limits.TurnLimit(3);
 
-        sut.SequenceCompleted(new ISquarePiece[0]);
+        sut.MoveCompleted();
 
         Assert.IsFalse (sut.ReachedLimit());
     }
@@ -20,11 +20,10 @@ public class TurnLimitTests
     {
         var sut = new Assets.Scripts.Workers.Score_and_Limits.TurnLimit(3);
 
-        sut.SequenceCompleted(new ISquarePiece[0]);
-        sut.SequenceCompleted(new ISquarePiece[0]);
-        sut.SequenceCompleted(new ISquarePiece[0]);
+        sut.MoveCompleted();
+        sut.MoveCompleted();
+        sut.MoveCompleted();
 
         Assert.IsTrue(sut.ReachedLimit());
     }
-
 }

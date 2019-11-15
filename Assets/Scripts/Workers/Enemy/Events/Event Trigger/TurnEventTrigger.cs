@@ -24,7 +24,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         public override void Dispose()
         {
-            PieceSelectionManager.SequenceCompleted -= PieceSelectionManager_SequenceCompleted;
+            PieceSelectionManager.MoveCompleted -= PieceSelectionManager_MoveCompleted;
         }
 
         public override void Start(EnemyScript enemy)
@@ -32,10 +32,10 @@ namespace Assets.Scripts.Workers.Enemy.Events
             base.Start(enemy);
 
             TurnsPassed = 0;
-            PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
+            PieceSelectionManager.MoveCompleted += PieceSelectionManager_MoveCompleted;
         }
 
-        private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
+        private void PieceSelectionManager_MoveCompleted()
         {
             if (TurnRange.WithinRange(TurnsPassed++))
             {

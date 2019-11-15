@@ -11,6 +11,7 @@ using static Assets.Scripts.Constants.GameSettings;
 namespace Assets.Scripts
 {
     public delegate void SequenceCompleted(ISquarePiece[] pieces);
+    public delegate void MoveCompleted();
     public delegate void SelectedPiecesChanged(LinkedList<ISquarePiece> pieces);
 
     public class PieceSelectionManager : MonoBehaviour
@@ -19,10 +20,16 @@ namespace Assets.Scripts
         public Dictionary<Vector2Int, int> UsedPieces = new Dictionary<Vector2Int, int>();
         private Vector3 lastMousePostion;
 
+        private const int DefaultMovesPerTurn = 1;
+        private int MovesAllowedPerTurn;
+
         public static event SequenceCompleted SequenceCompleted;
         public static event SelectedPiecesChanged SelectedPiecesChanged;
+        public static event MoveCompleted MoveCompleted;
+
         private IPieceSelectionMode DefaultSelectionMode = new PieceSelectionModeDrawLine();
         public IPieceSelectionMode PieceSelection { get; set; }
+        public List<List<ISquarePiece>> StoredMoves { private set; get; } = new List<List<ISquarePiece>>();
 
         public static PieceSelectionManager Instance { private set;  get; }
         
@@ -32,6 +39,8 @@ namespace Assets.Scripts
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
             UsedPieces = new Dictionary<Vector2Int, int>();
             ReturnPieceSelectionModeToDefault();
+
+            ResetMovesAllowedPerTurn();
         }
 
         private void OnDestroy()
@@ -87,14 +96,12 @@ namespace Assets.Scripts
 
         public void PreformMove(List<ISquarePiece> pieces)
         {
-            CurrentPieces.Clear();
             foreach (var piece in pieces)
             {
                 CurrentPieces.AddLast(piece);
             }
 
             ProcessSequenceCompleted();
-            CurrentPieces.Clear();
             SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
@@ -145,20 +152,34 @@ namespace Assets.Scripts
 
         private void ProcessSequenceCompleted()
         {
-            SequenceCompleted?.Invoke(CurrentPieces.ToArray());
-            LogUsedPieces(CurrentPieces);
+            StoredMoves.Add(CurrentPieces.Select(x => x).ToList());
 
-            foreach (var square in CurrentPieces)
+            if (StoredMoves.Count >= MovesAllowedPerTurn)
             {
-                if (square.OnCollection != null)
+                foreach (var currentMoves in StoredMoves)
                 {
-                    square.OnCollection.OnCollection();
+                    SequenceCompleted?.Invoke(currentMoves.ToArray());
+                    LogUsedPieces(currentMoves);
+
+                    foreach (var square in currentMoves)
+                    {
+                        if (square.OnCollection != null)
+                        {
+                            square.OnCollection.OnCollection();
+                        }
+                        square.DestroyPiece();
+                    }
                 }
-                square.DestroyPiece();
+                StoredMoves.Clear();
+                MoveCompleted?.Invoke();
+                ResetMovesAllowedPerTurn();
             }
+
+            CurrentPieces.Clear();
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
-        private void LogUsedPieces(LinkedList<ISquarePiece> pieces)
+        private void LogUsedPieces(List<ISquarePiece> pieces)
         {
             foreach(var piece in pieces)
             {
@@ -184,12 +205,19 @@ namespace Assets.Scripts
             CurrentPieces.RemoveLast();
             lastPiece.Deselected();
             SelectedPiecesChanged?.Invoke(CurrentPieces);
-
         }
 
         public bool AlreadySelected(ISquarePiece piece)
         {
-            return CurrentPieces.Contains(piece);
+            foreach(var move in StoredMoves)
+            {
+                if (move.Contains(piece))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void ClearCurrentPieces()
@@ -228,6 +256,16 @@ namespace Assets.Scripts
         public void ReturnPieceSelectionModeToDefault()
         {
             PieceSelection = DefaultSelectionMode;
+        }
+
+        public void ResetMovesAllowedPerTurn()
+        {
+            MovesAllowedPerTurn = DefaultMovesPerTurn;
+        }
+
+        public void ChangeMovesAllowedPerTurn(int movesPerTurn)
+        {
+            MovesAllowedPerTurn = movesPerTurn;
         }
     }
 }

@@ -34,10 +34,6 @@ namespace Assets.Scripts.Workers.Score_and_Limits
             TimeTaken = 0f;
         }
 
-        public void SequenceCompleted(ISquarePiece[] sequence)
-        {
-        }
-
         public void Update(float deltaTime)
         {
             TimeTaken += deltaTime;

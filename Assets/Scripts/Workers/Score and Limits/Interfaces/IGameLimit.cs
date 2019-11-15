@@ -4,7 +4,6 @@
     {
         void Reset();
         void Update(float deltaTime);
-        void SequenceCompleted(ISquarePiece[] sequence);
         string GetLimitText();
         bool ReachedLimit();
         string GetDescription();
