@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using Assets.Scripts.Workers.Score_and_Limits;
 using UnityEngine;
@@ -17,8 +18,7 @@ namespace Assets.Scripts.Workers.Powerups
 
         public void Invoke()
         {
-            var keeper = GameObject.FindObjectOfType<ScoreKeeper>();
-            var limit = keeper.GameLimit;
+            var limit = GameManager.Instance.GameLimit;
 
             if (limit is TurnLimit)
             {
@@ -29,6 +29,7 @@ namespace Assets.Scripts.Workers.Powerups
                 (limit as TimeLimit).Increase(5);
             }
 
+            var keeper = GameObject.FindObjectOfType<LimitDisplay>();
             keeper.ActivateLimit();
         }
 

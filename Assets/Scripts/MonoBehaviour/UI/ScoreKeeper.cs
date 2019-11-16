@@ -1,14 +1,11 @@
 ﻿using Assets;
 using Assets.Scripts;
-using Assets.Scripts.Managers;
-using Assets.Scripts.UI;
 using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using Assets.Scripts.Workers.Score_and_Limits.ScoreCalculation;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
@@ -24,12 +21,7 @@ public class ScoreKeeper : MonoBehaviour
     public static event GameCompleted GameCompleted;
     public static event CurrentPointsChanged CurrentPointsChanged;
     public static event BonusChanged BonusChanged;
-
-    public Text Time;
-
-    [SerializeField]
-    private ProgressBar LimitProgress;
-
+    
     private bool scoresUpdated = false;
 
     public IGameLimit GameLimit;
@@ -58,13 +50,7 @@ public class ScoreKeeper : MonoBehaviour
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
         ExtraPoints.BonusAdded += ExtraPoints_BonusAdded;
         RestrictionDisplay.RestrictionViolated += RestrictionViolated;
-
-        var currentLevel = LevelManager.Instance.GetNextLevel();
-
-        GameLimit = currentLevel.GetCurrentLimit();
-        GameLimit.Reset();
-
-        UpdateLimit();
+        LimitDisplay.LimitReached += LimitDisplay_LimitReached;               
 
         CurrentScore = 0;
         BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
@@ -75,6 +61,7 @@ public class ScoreKeeper : MonoBehaviour
         PieceSelectionManager.SequenceCompleted -= SequenceCompleted;
         ExtraPoints.BonusAdded -= ExtraPoints_BonusAdded;
         RestrictionDisplay.RestrictionViolated -= RestrictionViolated;
+        LimitDisplay.LimitReached -= LimitDisplay_LimitReached;
     }
 
     public void SequenceCompleted(ISquarePiece[] pieces)
@@ -84,8 +71,6 @@ public class ScoreKeeper : MonoBehaviour
 
         CurrentScore += scoreEarned;
 
-
-        UpdateLimit(UnityEngine.Time.deltaTime);
         BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
 
         if (ReachedTarget)
@@ -99,25 +84,14 @@ public class ScoreKeeper : MonoBehaviour
         BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
     }
 
-    private void Update()
+    private void LimitDisplay_LimitReached()
     {
-        if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
-        {
-            return;
-        }
-
-        UpdateLimit(UnityEngine.Time.deltaTime);
+        SaveProgress(ReachedTarget ? GameResult.ReachedTarget : GameResult.LimitExpired);
     }
 
-    private void UpdateLimit(float deltaTime)
+    private void RestrictionViolated()
     {
-        GameLimit.Update(UnityEngine.Time.deltaTime);
-        UpdateLimit();
-
-        if (GameLimit.ReachedLimit())
-        {
-            SaveProgress(ReachedTarget ? GameResult.ReachedTarget : GameResult.LimitExpired);
-        }
+        SaveProgress(GameResult.ViolatedRestriction);
     }
 
     private void SaveProgress(GameResult result)
@@ -129,22 +103,5 @@ public class ScoreKeeper : MonoBehaviour
 
         scoresUpdated = true;
         GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, result);
-    }
-
-    private void UpdateLimit()
-    {
-        Time.text = GameLimit.GetLimitText();
-
-        LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
-    }
-
-    private void RestrictionViolated()
-    {
-        SaveProgress(GameResult.ViolatedRestriction);
-    }
-
-    internal void ActivateLimit()
-    {
-        Time.GetComponent<Animator>().SetTrigger("Activate");
     }
 }

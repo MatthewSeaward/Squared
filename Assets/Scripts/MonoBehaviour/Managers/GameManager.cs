@@ -34,6 +34,7 @@ namespace Assets.Scripts.Managers
         public static GameManager Instance { get; private set; }
 
         public IRestriction Restriction;
+        public IGameLimit GameLimit;
 
         void Awake()
         {
@@ -46,6 +47,7 @@ namespace Assets.Scripts.Managers
 
             var currentLevel = LevelManager.Instance.GetNextLevel();
             Restriction = currentLevel.GetCurrentRestriction();
+            GameLimit = currentLevel.GetCurrentLimit();
         }
 
         void OnDestroy()

@@ -2349,8 +2349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb7da925ae33f74e855eb19888d61d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Time: {fileID: 84015351}
-  LimitProgress: {fileID: 2019512805}
 --- !u!4 &1696422621
 Transform:
   m_ObjectHideFlags: 0
@@ -4462,6 +4460,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestrictionText: {fileID: 8528289314384567422}
+--- !u!114 &8528289314384567434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528289314384567423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda7a3208dd29a748a033823d4114dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time: {fileID: 84015351}
+  LimitProgress: {fileID: 2019512805}
 --- !u!1001 &8559955982565176901
 PrefabInstance:
   m_ObjectHideFlags: 0
