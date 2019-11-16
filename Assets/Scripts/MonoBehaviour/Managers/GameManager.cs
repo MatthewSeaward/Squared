@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+using UnityEngine;
 
 public delegate void PauseStateChanged(bool paused);
 
@@ -32,6 +33,8 @@ namespace Assets.Scripts.Managers
 
         public static GameManager Instance { get; private set; }
 
+        public IRestriction Restriction;
+
         void Awake()
         {
             Instance = this;
@@ -40,6 +43,9 @@ namespace Assets.Scripts.Managers
         void Start()
         {
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+
+            var currentLevel = LevelManager.Instance.GetNextLevel();
+            Restriction = currentLevel.GetCurrentRestriction();
         }
 
         void OnDestroy()

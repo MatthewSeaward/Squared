@@ -2350,7 +2350,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Time: {fileID: 84015351}
-  RestrictionText: {fileID: 8528289314384567422}
   LimitProgress: {fileID: 2019512805}
 --- !u!4 &1696422621
 Transform:
@@ -4450,6 +4449,19 @@ MonoBehaviour:
   Score: {fileID: 1427673060}
   Bonus: {fileID: 272946110}
   ScoreProgress: {fileID: 386884918}
+--- !u!114 &8528289314384567433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528289314384567427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f581813b6b71eed44a983df8c810a4ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RestrictionText: {fileID: 8528289314384567422}
 --- !u!1001 &8559955982565176901
 PrefabInstance:
   m_ObjectHideFlags: 0

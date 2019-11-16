@@ -26,7 +26,6 @@ public class ScoreKeeper : MonoBehaviour
     public static event BonusChanged BonusChanged;
 
     public Text Time;
-    public Text RestrictionText;
 
     [SerializeField]
     private ProgressBar LimitProgress;
@@ -34,7 +33,6 @@ public class ScoreKeeper : MonoBehaviour
     private bool scoresUpdated = false;
 
     public IGameLimit GameLimit;
-    public IRestriction Restriction;
     private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
 
     private int _currentScore = 0;
@@ -55,23 +53,18 @@ public class ScoreKeeper : MonoBehaviour
         }
     }
 
-    private static Color restrictionDisabledColour = new Color(0.7f, 0.7f, 0.7f, 0.7f);
-
     public void Start()
     {
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
         ExtraPoints.BonusAdded += ExtraPoints_BonusAdded;
+        RestrictionDisplay.RestrictionViolated += RestrictionViolated;
 
         var currentLevel = LevelManager.Instance.GetNextLevel();
 
         GameLimit = currentLevel.GetCurrentLimit();
         GameLimit.Reset();
 
-        Restriction = currentLevel.GetCurrentRestriction();
-        Restriction.Reset();
-
         UpdateLimit();
-        UpdateRstriction();
 
         CurrentScore = 0;
         BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
@@ -81,12 +74,11 @@ public class ScoreKeeper : MonoBehaviour
     {
         PieceSelectionManager.SequenceCompleted -= SequenceCompleted;
         ExtraPoints.BonusAdded -= ExtraPoints_BonusAdded;
+        RestrictionDisplay.RestrictionViolated -= RestrictionViolated;
     }
-    
+
     public void SequenceCompleted(ISquarePiece[] pieces)
     { 
-        Restriction.SequenceCompleted(pieces);
-
         int scoreEarned = ScoreCalculator.CalculateScore(pieces);
         PointsAwarded?.Invoke(scoreEarned, pieces);
 
@@ -109,8 +101,6 @@ public class ScoreKeeper : MonoBehaviour
 
     private void Update()
     {
-        UpdateRestriction(UnityEngine.Time.deltaTime);
-
         if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
         {
             return;
@@ -119,21 +109,10 @@ public class ScoreKeeper : MonoBehaviour
         UpdateLimit(UnityEngine.Time.deltaTime);
     }
 
-    private void UpdateRestriction(float deltaTime)
-    {
-        Restriction.Update(deltaTime);
-
-        if (Restriction.ViolatedRestriction())
-        {
-            SaveProgress(GameResult.ViolatedRestriction);
-        }
-    }
-
     private void UpdateLimit(float deltaTime)
     {
         GameLimit.Update(UnityEngine.Time.deltaTime);
         UpdateLimit();
-        UpdateRstriction();
 
         if (GameLimit.ReachedLimit())
         {
@@ -159,19 +138,13 @@ public class ScoreKeeper : MonoBehaviour
         LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
     }
 
-    private void UpdateRstriction()
+    private void RestrictionViolated()
     {
-        RestrictionText.text = Restriction.GetRestrictionText();
-        RestrictionText.color = Restriction.Ignored ? restrictionDisabledColour : Color.white;
+        SaveProgress(GameResult.ViolatedRestriction);
     }
 
     internal void ActivateLimit()
     {
         Time.GetComponent<Animator>().SetTrigger("Activate");
-    }
-
-    internal void ActivateRestriction()
-    {
-        RestrictionText.GetComponent<Animator>().SetTrigger("Activate");
     }
 }
