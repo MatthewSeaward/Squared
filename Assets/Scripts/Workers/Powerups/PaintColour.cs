@@ -9,7 +9,7 @@ namespace Assets.Scripts.Workers.Powerups
 {
     class PaintColour : IPowerup
     {
-        public Sprite Icon => GameResources.Sprites["Potion"];
+        public Sprite Icon => GameResources.Sprites["Paint"];
         
         public string Name => "Paint Colour";
 

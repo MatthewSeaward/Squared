@@ -7,7 +7,7 @@ namespace Assets.Scripts.Workers.Powerups
 {
     class DoubleMove : IPowerup
     {
-        public Sprite Icon => GameResources.Sprites["Rune"];
+        public Sprite Icon => GameResources.Sprites["Double Move"];
 
         public string Name => "Double Move";
 
