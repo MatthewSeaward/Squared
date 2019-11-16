@@ -2349,12 +2349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb7da925ae33f74e855eb19888d61d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 1427673060}
   Time: {fileID: 84015351}
   RestrictionText: {fileID: 8528289314384567422}
-  BonusText: {fileID: 272946110}
   LimitProgress: {fileID: 2019512805}
-  ScoreProgress: {fileID: 386884918}
 --- !u!4 &1696422621
 Transform:
   m_ObjectHideFlags: 0
@@ -4438,6 +4435,21 @@ MonoBehaviour:
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 0
+--- !u!114 &8528289314384567432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528289314384567430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb6b44e3a8c75c4fb21e1ccf8bebba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Score: {fileID: 1427673060}
+  Bonus: {fileID: 272946110}
+  ScoreProgress: {fileID: 386884918}
 --- !u!1001 &8559955982565176901
 PrefabInstance:
   m_ObjectHideFlags: 0

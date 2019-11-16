@@ -15,22 +15,21 @@ public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
 
 public delegate void PointsAwarded(int points, ISquarePiece[] sequence);
 public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result);
+public delegate void CurrentPointsChanged(int newPoints, int target);
+public delegate void BonusChanged(string currentBonus);
 
 public class ScoreKeeper : MonoBehaviour
 {
     public static event PointsAwarded PointsAwarded;
     public static event GameCompleted GameCompleted;
-       
-    public Text Score;
+    public static event CurrentPointsChanged CurrentPointsChanged;
+    public static event BonusChanged BonusChanged;
+
     public Text Time;
     public Text RestrictionText;
-    public Text BonusText;
 
     [SerializeField]
     private ProgressBar LimitProgress;
-
-    [SerializeField]
-    private ProgressBar ScoreProgress;
 
     private bool scoresUpdated = false;
 
@@ -41,14 +40,26 @@ public class ScoreKeeper : MonoBehaviour
     private int _currentScore = 0;
 
     private int Target => LevelManager.Instance.SelectedLevel.Target;
-    private bool ReachedTarget => _currentScore >= Target;
+    private bool ReachedTarget => CurrentScore >= Target;
+
+    private int CurrentScore
+    {
+        get
+        {
+            return _currentScore;
+        }
+        set
+        {
+            _currentScore = value;
+            CurrentPointsChanged?.Invoke(_currentScore, Target);
+        }
+    }
 
     private static Color restrictionDisabledColour = new Color(0.7f, 0.7f, 0.7f, 0.7f);
 
     public void Start()
     {
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
-
         ExtraPoints.BonusAdded += ExtraPoints_BonusAdded;
 
         var currentLevel = LevelManager.Instance.GetNextLevel();
@@ -59,11 +70,13 @@ public class ScoreKeeper : MonoBehaviour
         Restriction = currentLevel.GetCurrentRestriction();
         Restriction.Reset();
 
-        UpdateScore();
         UpdateLimit();
         UpdateRstriction();
+
+        CurrentScore = 0;
+        BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
     }
-    
+
     public void OnDestroy()
     {
         PieceSelectionManager.SequenceCompleted -= SequenceCompleted;
@@ -75,42 +88,23 @@ public class ScoreKeeper : MonoBehaviour
         Restriction.SequenceCompleted(pieces);
 
         int scoreEarned = ScoreCalculator.CalculateScore(pieces);
+        PointsAwarded?.Invoke(scoreEarned, pieces);
 
-        _currentScore += scoreEarned;
-        UpdateScore();
+        CurrentScore += scoreEarned;
+
+
         UpdateLimit(UnityEngine.Time.deltaTime);
+        BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
 
         if (ReachedTarget)
         {
             SaveProgress(GameResult.ReachedTarget);
         }
-
-        PointsAwarded?.Invoke(scoreEarned, pieces);
     }
 
     private void ExtraPoints_BonusAdded(ScoreBonus bonus)
     {
-        UpdateScore();
-    }
-
-    private void UpdateScore()
-    {
-        Score.text = $"Score: {_currentScore}/{Target}";
-        Score.color = ReachedTarget ? Color.green : Color.white;
-
-        var bonusMultiplier = ScoreCalculator.ActiveBonus;
-        if (string.IsNullOrEmpty(bonusMultiplier))
-        {
-            BonusText.gameObject.SetActive(false);
-        }
-        else
-        {
-            BonusText.gameObject.SetActive(true);
-            BonusText.text = "Multiplier: " + bonusMultiplier + "x";
-            BonusText.GetComponent<Animator>().SetTrigger("Activate");
-        }
-
-        ScoreProgress.UpdateProgressBar(_currentScore, Target);
+        BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
     }
 
     private void Update()
@@ -155,7 +149,7 @@ public class ScoreKeeper : MonoBehaviour
         }
 
         scoresUpdated = true;
-        GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, _currentScore, result);
+        GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, result);
     }
 
     private void UpdateLimit()
