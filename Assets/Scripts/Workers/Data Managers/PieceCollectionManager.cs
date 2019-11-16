@@ -30,6 +30,10 @@ namespace Assets.Scripts.Workers.Data_Managers
 
         private PieceCollectionManager()
         {
+        }
+
+        public void Initialise()
+        { 
             PieceSelectionManager.SequenceCompleted += PieceSelectionManager_SequenceCompleted;
         }
 

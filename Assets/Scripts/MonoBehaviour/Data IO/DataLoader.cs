@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
+using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Writer;
 using UnityEngine;
@@ -32,7 +33,8 @@ namespace Assets.Scripts
             UserIO.Instance.LoadData();
 
             ScoreManager.Instance.Initialise();
-         
+            PieceCollectionManager.Instance.Initialise();
+
             StartCoroutine(LoadConfig());
 
             StartCoroutine(LoadingText());
