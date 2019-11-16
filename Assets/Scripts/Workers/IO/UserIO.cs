@@ -90,13 +90,10 @@ namespace Assets.Scripts.Workers
 
         private void FireBaseEquippedPowerupsLoaded(string[] powerups)
         {
-            var newPowerups = new List<IPowerup>();
-            foreach (var item in powerups)
+            for (int i = 0; i < powerups.Length; i++)
             {
-                newPowerups.Add(PowerupFactory.GetPowerup(item));
+                UserPowerupManager.Instance.EquippedPowerups[i] = PowerupFactory.GetPowerup(powerups[i]);
             }
-
-            UserPowerupManager.Instance.EquippedPowerups =  newPowerups.ToArray();
 
             equippedPowerupsLoaded = true;
             if (LoadComplete)
