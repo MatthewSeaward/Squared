@@ -13,7 +13,7 @@ namespace Assets.Scripts
         public static event LimitReached LimitReached;
 
         [SerializeField]
-        private Text Time;
+        private Text Limit;
 
         [SerializeField]
         private ProgressBar LimitProgress;
@@ -42,7 +42,7 @@ namespace Assets.Scripts
         {
             GameLimit.Update(deltaTime);
 
-            Time.text = GameLimit.GetLimitText();
+            Limit.text = GameLimit.GetLimitText();
 
             LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
 
@@ -54,7 +54,7 @@ namespace Assets.Scripts
 
         internal void ActivateLimit()
         {
-            Time.GetComponent<Animator>().SetTrigger("Activate");
+            Limit.GetComponent<Animator>().SetTrigger("Activate");
         }
     }
 }

@@ -4306,6 +4306,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8528289314300699784, guid: 643833d205940264382a9def7b8a0e00,
+        type: 3}
+      propertyPath: m_Name
+      value: Limit
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528289314729466936, guid: 643833d205940264382a9def7b8a0e00,
+        type: 3}
+      propertyPath: m_Name
+      value: Limit and Restriction
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 643833d205940264382a9def7b8a0e00, type: 3}
 --- !u!114 &8528289314384567422 stripped
@@ -4472,7 +4482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda7a3208dd29a748a033823d4114dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Time: {fileID: 84015351}
+  Limit: {fileID: 84015351}
   LimitProgress: {fileID: 2019512805}
 --- !u!1001 &8559955982565176901
 PrefabInstance:
