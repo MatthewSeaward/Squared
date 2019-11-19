@@ -63,12 +63,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\Editor\SpeechbubbleFitterDrawer.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\BestMoveCount.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\BestMoveRestrictions.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\BestMoveScore.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\MoveCheckerTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Helpers\Connection Helper\DiagonalTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Helpers\Extensions\SpacedTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\MultipliedScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\SingleScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Swap Effects\LockedSwap.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Powerups\PowerupsEarnedTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Limits\TimeLimitTest.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Limits\TurnLimitTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\BannedPieceTypeTests.cs" />
@@ -79,7 +83,9 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\NoRestriction.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\OnlyDiagonalConnectionTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\SwapEffectLimit.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Score Calculation\ScoreCalculationWithBonusMultiplier.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Score Calculation\StandardScoreCalculationTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Score Calculation\StandardScoreCalculationWithBonus.cs" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.124.0.txt" />
     <None Include="Assets\Firebase\Editor\FirebaseAuth_version-6.3.0_manifest.txt" />
     <None Include="Assets\Firebase\Editor\FirebaseAnalytics_version-6.3.0_manifest.txt" />

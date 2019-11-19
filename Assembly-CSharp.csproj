@@ -95,6 +95,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\InGamePieceCollectionManager.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\LevelManager.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\Managers\LimitDisplay.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\LineDrawer.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\PieceController.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\Managers\PieceSelectionManager.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ButtonLoadScene.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\CancelButton.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ChapterIcon.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\CountdownPanel.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\EndOfGameMenuProvider.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\GameStats.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Helpers\AnimatedText.cs" />
@@ -115,15 +117,21 @@
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\PauseIcon.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\PieceCollectionProgress.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\Popup.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\Powerup Slot\InGamePowerupSlot.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\Powerup Slot\UIPowerupSlot.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\PowerupPanel.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\PowerupSlot.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\PowerupTab.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ProgressTab.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\RestrictionDisplay.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\RestrictionText.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\ScoreDisplay.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ScoreKeeper.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\ShowScore.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\StarPanel.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\SwipeButton.cs" />
+    <Compile Include="Assets\Scripts\MonoBehaviour\UI\ToastPanel.cs" />
     <Compile Include="Assets\Scripts\MonoBehaviour\UI\UpNextSlot.cs" />
     <Compile Include="Assets\Scripts\Scriptables\EnemyInfo.cs" />
     <Compile Include="Assets\Scripts\Workers\Constants\Constants.cs" />
@@ -159,7 +167,11 @@
     <Compile Include="Assets\Scripts\Workers\Factorys\PowerupFactory.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\BasicGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\Interfaces\IGridGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\BestMoveDepthSearch.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\BestMoveFinder.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\IBestMoveChecker.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\MoveChecker.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\MoveCheckerHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ConnectionHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\DebugLogger.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\Extensions\ArrayExtensions.cs" />
@@ -203,6 +215,7 @@
     <Compile Include="Assets\Scripts\Workers\IO\Heatmap\IHeatMapReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Heatmap\IHeatmapWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Helpers\FireBaseDatabase.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Helpers\FireBaseReader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Helpers\FireBaseSavePaths.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\Interfaces\ILevelLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Level Loader\Interfaces\ILevelOrderLoader.cs" />
@@ -228,6 +241,8 @@
     <Compile Include="Assets\Scripts\Workers\IO\Score\IScoreWriter.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\UserIO.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Behaviours\SwapSpriteBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Collection\GainHeart.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Effects\Collection\IOnCollection.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\DestroyTriggerFall.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\HeavyDestroyTriggerFall.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Destruction\SwapSpriteDestroy.cs" />
@@ -244,6 +259,10 @@
     <Compile Include="Assets\Scripts\Workers\Piece Effects\Scoring\SingleSCore.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapEffects\LockedSwap.cs" />
     <Compile Include="Assets\Scripts\Workers\Piece Effects\SwapEffects\SwapToNext.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Selection\IPieceSelectionMode.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Selection\PieceSelectionModeDestroyTap.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Selection\PieceSelectionModeDrawLine.cs" />
+    <Compile Include="Assets\Scripts\Workers\Piece Selection\PieceSelectionModePaintPieces.cs" />
     <Compile Include="Assets\Scripts\Workers\Powerups\DoubleMove.cs" />
     <Compile Include="Assets\Scripts\Workers\Powerups\ExtraLife.cs" />
     <Compile Include="Assets\Scripts\Workers\Powerups\ExtraPoints.cs" />
@@ -268,6 +287,7 @@
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\NoRestriction.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\SwapEffectLimit.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\Restrictions\TurnTimeLimit.cs" />
+    <Compile Include="Assets\Scripts\Workers\Score and Limits\ScoreCalculation\ScoreBonus.cs" />
     <Compile Include="Assets\Scripts\Workers\Score and Limits\ScoreCalculation\StandardScoreCalculator.cs" />
     <None Include="Assets\Resources\Level Events\Golem.txt" />
     <None Include="Assets\Resources\Level Dialogue\Golem.txt" />
