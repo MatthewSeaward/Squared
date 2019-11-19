@@ -11,7 +11,7 @@ namespace Assets.Scripts.Workers.Powerups
 
         public string Name => "Double Move";
 
-        public string Description => "Let's you take two moves at once before pieces fall.";
+        public string Description => "Lets you take two moves at once before pieces fall.";
 
         public bool Enabled => true;
 

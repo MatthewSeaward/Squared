@@ -15,7 +15,7 @@ namespace Assets.Scripts.Workers.Powerups
         
         public string Name => "Extra Points";
 
-        public string Description => "Increases the amount of points you earn for next turn.";
+        public string Description => "Increases the amount of points you earn for your next turn.";
 
         public bool Enabled => true;
 
