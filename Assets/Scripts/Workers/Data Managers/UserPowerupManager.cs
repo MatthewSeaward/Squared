@@ -103,17 +103,18 @@ namespace Assets.Scripts.Workers.Data_Managers
             UserIO.Instance.SaveEquippedPowerupInfo();
         }
 
-        private void CheckForCompletion(Colour PieceColour, int previous, int totalCollected)
+        private void CheckForCompletion(Colour PieceColour, int previous, int collected)
         {
             int increment = RemoteConfigHelper.GetCollectionInterval(PieceColour);
 
             var multiplier = (previous / increment) + 1;
 
-            int powerupsEarned = NumberOfPowerupsEarned(previous, totalCollected, increment);
+            int powerupsEarned = NumberOfPowerupsEarned(previous, previous + collected, increment);
             for (int i = 0; i < powerupsEarned; i++)
             {
                 PieceCollectionComplete?.Invoke(PieceColour);
-                AddNewPowerup(PowerupFactory.GetPowerup(PieceColour));            }
+                AddNewPowerup(PowerupFactory.GetPowerup(PieceColour));
+            }
         }
 
         public bool PowerupEquipped(IPowerup powerup)
