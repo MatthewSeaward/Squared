@@ -169,9 +169,18 @@ public class ObjectPool
         }
     }
 
+    public static IEnumerable<GameObject> GetActivePool(GameObject obj)
+    {
+        return GetActivePool(obj.name);
+    }
+
     public static IEnumerable<GameObject> GetActivePool(string key)
     {
-        if (Pool == null) return new GameObject[0];
+        if (Pool == null || !Pool.ContainsKey(key))
+        {
+            return new GameObject[0];
+        }
+
         return Pool[key].Where(x => x != null && x.activeInHierarchy);
     }
 }

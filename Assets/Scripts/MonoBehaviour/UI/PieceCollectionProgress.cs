@@ -42,6 +42,7 @@ namespace Assets.Scripts
 
         private void SetupSprite(Colour pieceColour)
         {
+            this.colour = pieceColour;
             Image.sprite = GameResources.PieceSprites[((int)pieceColour).ToString()];
             var powerup = PowerupFactory.GetPowerup(pieceColour);
             Powerup.sprite = powerup == null ? GameResources.Sprites["Extra Life"] : powerup.Icon;

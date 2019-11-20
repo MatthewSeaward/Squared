@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -27,7 +28,18 @@ namespace Assets.Scripts
                 return;
             }
 
-            var obj = ObjectPool.Instantiate(PieceProgress, Vector3.zero);
+            GameObject obj = null;
+
+            var currentProgressBars = ObjectPool.GetActivePool(PieceProgress);
+            if (currentProgressBars != null)
+            {
+                obj = currentProgressBars.FirstOrDefault(x => x.GetComponent<PieceCollectionProgress>().colour == type);
+            }
+            if (obj == null)
+            {
+                obj = ObjectPool.Instantiate(PieceProgress, Vector3.zero);
+            }
+
             obj.transform.SetParent(this.transform);
             obj.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
             obj.GetComponent<PieceCollectionProgress>().Setup(type, previous, gained);
