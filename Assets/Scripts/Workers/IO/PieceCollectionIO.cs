@@ -51,6 +51,7 @@ namespace Assets.Scripts.Workers.IO
 
         private static void PiecesCollectedLoaded(PiecesCollected piecesCollected)
         {
+            PieceCollectionManager.Instance.PiecesCollected = piecesCollected;
             PiecesCollectedLoadedEvent?.Invoke();
         }
 
