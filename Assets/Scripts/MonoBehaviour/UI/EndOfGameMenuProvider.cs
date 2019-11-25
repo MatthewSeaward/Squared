@@ -35,21 +35,7 @@ namespace Assets.Scripts
 
         private void ShowVictoryPopup(int score, int target)
         {
-            MenuProvider.Instance.ShowPopup
-            (
-                    "Victory", $"You scored {score} out of {target}!",
-                    new ButtonArgs()
-                    {
-                        Text = "Continue",
-                        Enabled = LevelManager.Instance.LevelUnlocked(LevelManager.Instance.CurrentLevel + 1),
-                        Action = () => LoadNextLevel()
-                    },
-                    new ButtonArgs()
-                    {
-                        Text = "Retry",
-                        Action = () => SceneManager.LoadScene(Game)
-                    }
-            );
+            MenuProvider.Instance.ShowVictoryPopup($"You scored {score} out of {target}!");
         }
 
         private void ShowLimitExpiredPopup()
@@ -70,11 +56,6 @@ namespace Assets.Scripts
                     Action = () => SceneManager.LoadScene(Game)
                 });
         }
-
-        public void LoadNextLevel()
-        {
-            LevelManager.Instance.CurrentLevel++;
-            SceneManager.LoadScene(Game);
-        }
+ 
     }
 }

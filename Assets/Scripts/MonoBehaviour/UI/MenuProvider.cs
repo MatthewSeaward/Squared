@@ -54,6 +54,12 @@ public class MenuProvider : MonoBehaviour
         MenuDisplayed?.Invoke(typeof(Popup));
     }
 
+    public void ShowVictoryPopup(string body)
+    {
+        GetComponentInChildren<VictoryScreen>(true).Show( body);
+        MenuDisplayed?.Invoke(typeof(VictoryScreen));
+    }
+
     public void ShowLevelStart()
     {
         BasicGridGenerator.GridGenerated -= ShowLevelStart;
