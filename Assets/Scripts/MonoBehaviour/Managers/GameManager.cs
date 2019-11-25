@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void PauseStateChanged(bool paused);
@@ -9,6 +10,8 @@ namespace Assets.Scripts.Managers
     {
         public static PauseStateChanged PauseStateChanged;
 
+        private List<object> lockers  = new List<object>();
+
         private bool _gamePaused;
 
         public bool GamePaused
@@ -17,7 +20,7 @@ namespace Assets.Scripts.Managers
             {
                 return _gamePaused;
             }
-            set
+            private set
             {
                 if (_gamePaused == value)
                 {
@@ -53,6 +56,29 @@ namespace Assets.Scripts.Managers
         void OnDestroy()
         {
             ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
+        }
+
+        public void ChangePauseState(object locker, bool pauseState)
+        {
+            if (pauseState)
+            {
+                GamePaused = true;
+                if (!lockers.Contains(locker))
+                {
+                    lockers.Add(locker);
+                }
+            }
+            else
+            {
+                if (lockers.Contains(locker))
+                {
+                    lockers.Remove(locker);
+                }
+                if (lockers.Count == 0)
+                {
+                    GamePaused = false;
+                }
+            }
         }
 
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)

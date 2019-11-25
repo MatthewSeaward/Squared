@@ -22,8 +22,8 @@ namespace Assets.Scripts.Workers.Enemy
             {
                 return;
             }
-             
-            GameManager.Instance.GamePaused = true;
+
+            GameManager.Instance.ChangePauseState(this, true);
 
             selectedPieces = pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount);
 
@@ -57,7 +57,7 @@ namespace Assets.Scripts.Workers.Enemy
                    PieceSelectionManager.Instance.ClearCurrentPieces();
 
                     InvokeRageAction(piece);
-                    GameManager.Instance.GamePaused = false;
+                    GameManager.Instance.ChangePauseState(this, false);
                 }
 
                 selectedPieces.Clear();

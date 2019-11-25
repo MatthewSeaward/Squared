@@ -68,7 +68,7 @@ public class MenuProvider : MonoBehaviour
             panel.gameObject.SetActive(false);
         }
 
-        GameManager.Instance.GamePaused = OnDisplay;
+        GameManager.Instance.ChangePauseState(this, OnDisplay);
     }
 
     public void PauseClicked()
@@ -87,14 +87,14 @@ public class MenuProvider : MonoBehaviour
         ToggleMenuVisiblity<T>(true);
         MenuDisplayed?.Invoke(typeof(T));
 
-        GameManager.Instance.GamePaused = OnDisplay;
+        GameManager.Instance.ChangePauseState(this, OnDisplay);
     }
 
     public void HideMenu<T>()
     {
         ToggleMenuVisiblity<T>(false);
 
-        GameManager.Instance.GamePaused = OnDisplay;
+        GameManager.Instance.ChangePauseState(this, OnDisplay);
     }
 
     private void ToggleMenuVisiblity<T>(bool show)

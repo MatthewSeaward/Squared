@@ -24,13 +24,13 @@ namespace Assets.Scripts.Workers.Powerups
             PieceSelectionManager.Instance.PieceSelection = new PieceSelectionModePaintPieces();
             CountdownPanel.TimerElapsed += CountdownPanel_TimerElapsed;
             CountdownPanel.Instance.StartCountDown(TimeToPreformAction);
-            GameManager.Instance.GamePaused = true;
+            GameManager.Instance.ChangePauseState(this, true);
         }
 
         private void CountdownPanel_TimerElapsed()
         {
             CountdownPanel.TimerElapsed -= CountdownPanel_TimerElapsed;
-            GameManager.Instance.GamePaused = false;
+            GameManager.Instance.ChangePauseState(this, false);
             PieceSelectionManager.Instance.ReturnPieceSelectionModeToDefault();
         }
 

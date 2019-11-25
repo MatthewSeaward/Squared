@@ -26,7 +26,7 @@ namespace Assets.Scripts.Workers.Powerups
             {
                 return;
             }
-            GameManager.Instance.GamePaused = true;
+            GameManager.Instance.ChangePauseState(this, true);
             ToastPanel.Instance.ShowText("Thinking");
 
             PieceSelectionManager.Instance.PreformMove(move);
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Workers.Powerups
 
         public void MoveCompleted()
         {
-            GameManager.Instance.GamePaused = false;
+            GameManager.Instance.ChangePauseState(this, false);
             ToastPanel.Instance.Hide();
         }
     }

@@ -163,7 +163,7 @@ namespace Assets.Scripts
        
         public void MoveEnemyOnScreen()
         {
-            GameManager.Instance.GamePaused = true;
+            GameManager.Instance.ChangePauseState(this, true);
 
             var lerp = enemy.GetComponent<Lerp>();
             lerp.LerpCompleted += DisplayNextText;
@@ -194,7 +194,7 @@ namespace Assets.Scripts
             var lerp = enemy.GetComponent<Lerp>();
             lerp.LerpCompleted -= MoveOffScreenCompleted;
 
-            GameManager.Instance.GamePaused = false;
+            GameManager.Instance.ChangePauseState(this, false);
         }
 
         private  void ClearSpeeches()
