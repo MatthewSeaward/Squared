@@ -37,7 +37,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         private void PieceSelectionManager_MoveCompleted()
         {
-            if (TurnRange.WithinRange(TurnsPassed++))
+            if (TurnRange.WithinRange(TurnsPassed++) && EnemyRage.CanBeUsed())
             {
                 CurrentPercentage += PercentageIncrement;
 

@@ -5,5 +5,6 @@ namespace Assets.Scripts.Workers.Enemy
     {
         void InvokeRage();
         void Update(float deltaTime);
+        bool CanBeUsed();
     }
 }

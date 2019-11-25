@@ -29,6 +29,11 @@ namespace Assets.Scripts.Workers.Enemy
             selectedPieces.ForEach(x => x.PieceDestroyed += SquarePiece_PieceDestroyed);
         }
 
+        public bool CanBeUsed()
+        {
+            return pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount).Count > 0;
+        }
+
         private void SquarePiece_PieceDestroyed(SquarePiece piece)
         {
             piece.PieceDestroyed -= SquarePiece_PieceDestroyed;
