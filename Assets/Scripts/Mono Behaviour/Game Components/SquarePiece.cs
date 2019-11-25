@@ -54,7 +54,6 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         }
     }
 
-    public ISwapEffect SwapEffect { get; set; }
     public IPieceConnection PieceConnection { get; set; }
     public IPieceDestroy DestroyPieceHandler { get; set; }
     public IBehaviour PieceBehaviour { get; set; }

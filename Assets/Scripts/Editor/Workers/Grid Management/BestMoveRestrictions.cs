@@ -204,7 +204,7 @@ namespace Assets.Scripts.Editor.Workers
                     else if (piece == "L")
                     {
                         var p = BuildPiece(x, y, "1");
-                        p.SwapEffect = new Scripts.Workers.Piece_Effects.SwapEffects.LockedSwap();
+                        p.DestroyPieceHandler = new Scripts.Workers.Piece_Effects.Destruction.LockedSwap(p);
                         list.Add(p);
                     }
                     else if (piece == "a")

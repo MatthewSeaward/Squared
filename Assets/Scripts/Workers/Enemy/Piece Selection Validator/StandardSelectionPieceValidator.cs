@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 {
@@ -17,7 +16,7 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
                 return false;
             }
 
-            if (piece.SwapEffect is LockedSwap)
+            if (piece.DestroyPieceHandler is LockedSwap)
             {
                 return false;
             }

@@ -6,13 +6,13 @@ public class LockedSwap
 {
     [Test]
     public void SwapPiece_SpriteDoesNotChange()
-    {  
-         var sut = CreatePiece();
+    {
+        var sut = CreatePiece();
 
-        sut.SwapEffect = new Assets.Scripts.Workers.Piece_Effects.SwapEffects.LockedSwap();
+        sut.DestroyPieceHandler = new Assets.Scripts.Workers.Piece_Effects.Destruction.LockedSwap(sut);
         sut.Sprite = GetSprite("1");
 
-        sut.SwapEffect.ProcessSwap(sut);
+        sut.Destroy();
 
         Assert.AreEqual("1", sut.Sprite.name);
     }

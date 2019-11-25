@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.Helpers.Extensions;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -178,7 +178,7 @@ namespace Assets.Scripts
             for (int i = row; i < PieceController.NumberOfRows; i++)
             {
                 var currentPiece = PieceController.GetPiece(column, row);
-                if (currentPiece != null && currentPiece.SwapEffect is LockedSwap)
+                if (currentPiece != null && currentPiece.DestroyPieceHandler is LockedSwap)
                 {
                     row++;
                 }

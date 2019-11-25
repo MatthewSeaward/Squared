@@ -10,11 +10,10 @@ public interface ISquarePiece
     Transform transform { get; }
     Vector2Int Position { get; set; }
     IPieceConnection PieceConnection { get; set; }
-    ISwapEffect SwapEffect { get; set; }
     IScoreable Scoring { get; set; }
     SpriteRenderer SpriteRenderer { get; }
     GameObject gameObject { get; }
-    IPieceDestroy DestroyPieceHandler { get; }
+    IPieceDestroy DestroyPieceHandler { get; set; }
     IOnCollection OnCollection { get; }
     PieceTypes Type { get; set; }
     PieceDestroyed PieceDestroyed { set; get; }

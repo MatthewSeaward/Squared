@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
@@ -51,7 +51,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
             foreach(var item in sequence)
             {
-                var str1 = item.SwapEffect.GetType().ToString();
+                var str1 = item.DestroyPieceHandler.GetType().ToString();
 
                 if (str1 == effect)
                 {

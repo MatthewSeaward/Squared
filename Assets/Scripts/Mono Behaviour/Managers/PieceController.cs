@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -67,7 +67,7 @@ public class PieceController
             return true;
         }
 
-        if (currentPiece.SwapEffect is LockedSwap)
+        if (currentPiece.DestroyPieceHandler is LockedSwap)
         {
             return IsEmptySlot(x, y + 1);
         }

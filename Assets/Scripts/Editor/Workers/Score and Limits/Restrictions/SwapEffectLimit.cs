@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+﻿using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +8,8 @@ using static Assets.Scripts.Workers.TestHelpers;
 public class SwapEffectLimit
 {
 
-	[Test]
-	public void Violated_False_NoLockedPieces()
+    [Test]
+    public void Violated_False_NoLockedPieces()
     {
         var sut = new Assets.Scripts.Workers.Score_and_Limits.SwapEffectLimit();
 
@@ -28,7 +28,7 @@ public class SwapEffectLimit
         var sut = new Assets.Scripts.Workers.Score_and_Limits.SwapEffectLimit();
 
         var lockedPiece = CreatePiece();
-        lockedPiece.SwapEffect = new Assets.Scripts.Workers.Piece_Effects.SwapEffects.LockedSwap();
+        lockedPiece.DestroyPieceHandler = new Assets.Scripts.Workers.Piece_Effects.Destruction.LockedSwap(lockedPiece);
 
         var sequence = new LinkedList<ISquarePiece>();
         sequence.AddLast(CreatePiece());

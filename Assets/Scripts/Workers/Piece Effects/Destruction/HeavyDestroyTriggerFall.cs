@@ -1,7 +1,7 @@
 ﻿using System;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
+using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Piece_Effects.Destruction
@@ -41,7 +41,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
                 return false;
             }
 
-            if (pieceBelow.SwapEffect is LockedSwap)
+            if (pieceBelow.DestroyPieceHandler is LockedSwap)
             {
                 return false;
             }

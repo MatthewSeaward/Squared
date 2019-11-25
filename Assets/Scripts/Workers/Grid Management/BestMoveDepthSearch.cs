@@ -160,7 +160,7 @@ namespace Assets.Scripts.Workers.Grid_Management
                 if (restriction is SwapEffectLimit)
                 {
                     var res = restriction as SwapEffectLimit;
-                    var str1 = p.SwapEffect.GetType().ToString();
+                    var str1 = p.DestroyPieceHandler.GetType().ToString();
 
                     if (str1 == res.effect)
                     {

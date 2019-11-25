@@ -2,7 +2,6 @@
 using UnityEngine;
 using static SquarePiece;
 using DataEntities;
-using Assets.Scripts.Workers.Piece_Effects.SwapEffects;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.IO.Data_Entities;
@@ -69,9 +68,8 @@ public class PieceFactory
         int scoreValue = GetScoreValue(ref type);
 
         BuildSprite(type, piece);
-        BuildSwapEffects(type, squarePiece, initlalSetup);
         BuildConnection(type, squarePiece);
-        BuildDestroyEffect(type, piece, squarePiece);
+        BuildDestroyEffect(type, piece, squarePiece, initlalSetup);
         BuildBehaviours(type, squarePiece);
         BuildOnCollection(type, squarePiece);
         BuildScoring(type, squarePiece, scoreValue);
@@ -130,20 +128,6 @@ public class PieceFactory
         piece.GetComponent<SquarePiece>().PieceColour = selectedColour;
     }
 
-    private void BuildSwapEffects(PieceTypes type, SquarePiece squarePiece, bool initialSetup)
-    {
-        bool isLocked = type == PieceTypes.Locked;
-        bool lockedAsPartOfSetup = initialSetup && type.EqualsAny(PieceTypes.Rainbow, PieceTypes.Swapping);
-        if (isLocked || lockedAsPartOfSetup)
-        {
-            squarePiece.SwapEffect = new LockedSwap();
-        }
-        else
-        {
-            squarePiece.SwapEffect = new SwapToNext();
-        }
-    }
-
     private void BuildConnection(PieceTypes type, SquarePiece squarePiece)
     {
         if (type == PieceTypes.Rainbow)
@@ -156,11 +140,13 @@ public class PieceFactory
         }
     }
 
-    private void BuildDestroyEffect(PieceTypes type, GameObject piece, SquarePiece squarePiece)
+    private void BuildDestroyEffect(PieceTypes type, GameObject piece, SquarePiece squarePiece, bool initialSetup)
     {
-        if (squarePiece.SwapEffect is LockedSwap)
+        bool isLocked = type == PieceTypes.Locked;
+        bool lockedAsPartOfSetup = initialSetup && type.EqualsAny(PieceTypes.Rainbow, PieceTypes.Swapping);
+        if (isLocked || lockedAsPartOfSetup)
         {
-            squarePiece.DestroyPieceHandler = new SwapSpriteDestroy(squarePiece.SwapEffect, squarePiece.InnerSprite, squarePiece, squarePiece.transform.localScale);
+            squarePiece.DestroyPieceHandler = new LockedSwap(squarePiece);
         }
         else if (type == PieceTypes.Heavy)
         {
@@ -216,7 +202,6 @@ public class PieceFactory
     {               
         string displayText = string.Empty;
 
-        ApplyTextLayer(ref displayText, squarePiece.SwapEffect as ITextLayer);
         ApplyTextLayer(ref displayText, squarePiece.PieceConnection as ITextLayer);
         ApplyTextLayer(ref displayText, squarePiece.PieceBehaviour as ITextLayer);
         ApplyTextLayer(ref displayText, squarePiece.DestroyPieceHandler as ITextLayer);
@@ -252,7 +237,6 @@ public class PieceFactory
             child.gameObject.SetActive(false);
         }
 
-        ApplyLayer(piece, squarePiece.SwapEffect as ILayeredSprite);
         ApplyLayer(piece, squarePiece.PieceConnection as ILayeredSprite);
         ApplyLayer(piece, squarePiece.PieceBehaviour as ILayeredSprite);
         ApplyLayer(piece, squarePiece.DestroyPieceHandler as ILayeredSprite);
