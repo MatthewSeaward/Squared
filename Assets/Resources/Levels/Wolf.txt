@@ -96,12 +96,12 @@
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "8", "Only Diagonal", ""],
-			"Star3": ["Turns", "14", "Type", "r"]
+			"Star3": ["Turns", "15", "Type", "r"]
 		},
 		{
 			"LevelNumber": 5,
 			"Target": 250,
-			"colours":[0, 1,6,8],
+			"colours":[2,1,6,8],
 			"SpecialDropPieces": ["r", "2"],
 			"StarsToUnlock": 30,
 			"Pattern":
@@ -126,7 +126,7 @@
 			"LevelNumber": 6,
 			"Target": 170,
 			"SpecialDropPieces": ["2", "d"],
-			"colours":[0,1,6,8],
+			"colours":[2,1,6,8],
 			"StarsToUnlock": 35,
 			"Pattern":
 			[
@@ -168,7 +168,7 @@
 			],
 			"Star1": ["Turns", "20", "Time", "5"],
 			"Star2": ["Turns", "20", "Type", "t"],			
-			"Star3": ["Time", "60", "No Diagonal", ""]
+			"Star3": ["Time", "70", "No Diagonal", ""]
 
 		},
 		{
@@ -222,7 +222,7 @@
 		{
 			"LevelNumber": 10,
 			"Target": 120,
-			"colours":[0,8,6,2],
+			"colours":[1,8,6,2],
 			"SpecialDropPieces": ["2", "d"],
 			"StarsToUnlock": 60,
 			"Pattern":
@@ -270,7 +270,7 @@
 		{
 			"LevelNumber": 12,
 			"Target": 120,
-			"colours":[0,8,6,2],
+			"colours":[1,8,6,2],
 			"SpecialDropPieces": ["r","s", "d", "t"],
 			"StarsToUnlock": 90,
 			"Pattern":

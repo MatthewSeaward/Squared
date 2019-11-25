@@ -74,7 +74,7 @@
 		{
 			"LevelNumber": 4,
 			"Target": 110,
-			"colours":[0,5,6,7],
+			"colours":[2,5,6,7],
 			"StarsToUnlock": 3,
 			"Pattern":
 			[
@@ -217,7 +217,7 @@
 		{
 			"LevelNumber": 10,
 			"Target": 160,
-			"colours":[0,5,6,2],
+			"colours":[7,5,6,2],
 			"SpecialDropPieces": ["h"],
 			"StarsToUnlock": 22,
 			"Pattern":
@@ -260,12 +260,12 @@
 			],
 			"Star1": ["Turns", "25"],
 			"Star2": ["Turns", "20", "Banned Locked", ""],
-			"Star3": ["Time", "60", "Type", "h"]
+			"Star3": ["Time", "80", "Type", "h"]
 		},
 		{
 			"LevelNumber": 12,
 			"Target": 200,
-			"colours":[0,5,6,2],
+			"colours":[7,5,6,2],
 			"SpecialDropPieces": ["h", "2", "3"],
 			"StarsToUnlock": 25,
 			"Pattern":

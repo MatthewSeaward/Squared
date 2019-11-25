@@ -5,7 +5,8 @@
 				"LevelNumber":1,
 				"Star1":
 				[
-					"Destroy,Turns,5,8,2"
+					"Destroy,Turns,1,1,2",
+					"Destroy,Turns,1,2,2"
 				],
 				"Star2":
 				[
