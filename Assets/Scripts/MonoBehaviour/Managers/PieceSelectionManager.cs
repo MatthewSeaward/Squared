@@ -73,7 +73,7 @@ namespace Assets.Scripts
                 return;
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (!Input.GetMouseButton(0))
             {            
 
                 if (CurrentPieces.Count > 1)
