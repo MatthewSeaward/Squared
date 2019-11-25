@@ -12,6 +12,8 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         private bool triggered;
 
+        protected static bool CurrentPlayingTrigger { get; private set; }
+
         protected void InvokeRage()
         {
             if (triggered)
@@ -19,8 +21,15 @@ namespace Assets.Scripts.Workers.Enemy.Events
                 return;
             }
 
+            if (CurrentPlayingTrigger)
+            {
+                return;
+            }
+
+            CurrentPlayingTrigger = true;
+
             enemy.GetComponent<Lerp>().LerpCompleted += PlayEnemyRage;
-            EnemyController.Instance.MoveEnemyOnScreen();
+            EnemyController.Instance.ShowEnemyText(DialogueManager.Instance.GetAngryText());
         }
 
         public virtual void Start(EnemyScript enemy)
@@ -38,13 +47,12 @@ namespace Assets.Scripts.Workers.Enemy.Events
         {
             enemy.GetComponent<Lerp>().LerpCompleted -= PlayEnemyRage;
 
-            EnemyController.Instance.ShowEnemyText(DialogueManager.Instance.GetAngryText());
-
             EnemyRage.InvokeRage();
 
             enemy.GetComponent<Animator>().SetTrigger("Angry1");
 
             triggered = true;
+            CurrentPlayingTrigger = false;
         }
 
         public virtual void Dispose()

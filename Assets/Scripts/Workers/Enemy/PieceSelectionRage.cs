@@ -22,6 +22,7 @@ namespace Assets.Scripts.Workers.Enemy
             {
                 return;
             }
+             
             GameManager.Instance.GamePaused = true;
 
             selectedPieces = pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount);

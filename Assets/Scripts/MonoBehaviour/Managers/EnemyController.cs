@@ -178,10 +178,23 @@ namespace Assets.Scripts
 
         private void MoveEnemyOffScreen()
         {
-            GameManager.Instance.GamePaused = false;
+            if (enemy.transform.position == _startPos)
+            {
+                return;
+            }
 
             var lerp = enemy.GetComponent<Lerp>();
+            lerp.LerpCompleted += MoveOffScreenCompleted;
             lerp.Setup(_startPos);
+
+        }
+
+        private void MoveOffScreenCompleted()
+        {
+            var lerp = enemy.GetComponent<Lerp>();
+            lerp.LerpCompleted -= MoveOffScreenCompleted;
+
+            GameManager.Instance.GamePaused = false;
         }
 
         private  void ClearSpeeches()
