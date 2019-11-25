@@ -13,11 +13,24 @@ using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.Piece_Effects.Collection;
 
-public class PieceFactory : MonoBehaviour
+public class PieceFactory
 {
     public PieceColour[] Sprites;
 
-    public static PieceFactory Instance { private set; get; }
+    private static PieceFactory _instance;
+
+    public static PieceFactory Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new PieceFactory();
+            }
+
+            return _instance;
+        }
+    }
 
     public enum PieceTypes 
     {
@@ -35,9 +48,8 @@ public class PieceFactory : MonoBehaviour
         Heart = 'H'
      }
 
-    private void Awake()
+    private PieceFactory()
     {
-        Instance = this;
     }
 
     public GameObject CreateRandomSquarePiece()
@@ -148,7 +160,7 @@ public class PieceFactory : MonoBehaviour
     {
         if (squarePiece.SwapEffect is LockedSwap)
         {
-            squarePiece.DestroyPieceHandler = new SwapSpriteDestroy(squarePiece.SwapEffect, squarePiece.InnerSprite, squarePiece, transform.localScale);
+            squarePiece.DestroyPieceHandler = new SwapSpriteDestroy(squarePiece.SwapEffect, squarePiece.InnerSprite, squarePiece, squarePiece.transform.localScale);
         }
         else if (type == PieceTypes.Heavy)
         {
@@ -273,8 +285,8 @@ public class PieceFactory : MonoBehaviour
              }
         }
 
-        Colour selectedColour = permittedValues[Random.Range(0, permittedValues.Count)];
+        int selectedColour = (int) permittedValues[Random.Range(0, permittedValues.Count)];
         
-        return (Sprites.FirstOrDefault(x => x.Colour == selectedColour).Sprite, selectedColour);
+        return (GameResources.PieceSprites[selectedColour.ToString()], (Colour) selectedColour);
     }
 }

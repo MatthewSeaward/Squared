@@ -878,7 +878,6 @@ GameObject:
   m_Component:
   - component: {fileID: 660420514}
   - component: {fileID: 660420515}
-  - component: {fileID: 660420513}
   - component: {fileID: 660420516}
   - component: {fileID: 660420517}
   m_Layer: 0
@@ -888,37 +887,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &660420513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660420512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e1654ae7eaed2c48a5683b5fa132608, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sprites:
-  - Colour: 0
-    Sprite: {fileID: 21300000, guid: 277988eb895a41741aa108864a79bf3c, type: 3}
-  - Colour: 1
-    Sprite: {fileID: 21300000, guid: 51e410e0a4e0ef34ca55c6b886e4a573, type: 3}
-  - Colour: 2
-    Sprite: {fileID: 21300000, guid: c3f1c5d2229f94843a3db230ddc3eaac, type: 3}
-  - Colour: 3
-    Sprite: {fileID: 21300000, guid: 10783cdc9e0bb5f4cbde1c7c80d59b7f, type: 3}
-  - Colour: 4
-    Sprite: {fileID: 21300000, guid: 004902a4a38ca0b478cf80e0942fcd73, type: 3}
-  - Colour: 5
-    Sprite: {fileID: 21300000, guid: 74a7dbacdd1564446806ddce21ff9ddc, type: 3}
-  - Colour: 6
-    Sprite: {fileID: 21300000, guid: 677959494bb50b548b2ad65e223ac6d9, type: 3}
-  - Colour: 7
-    Sprite: {fileID: 21300000, guid: 7c118c169ff71754d809eab3c6b139e5, type: 3}
-  - Colour: 8
-    Sprite: {fileID: 21300000, guid: 178c43ff66c14cc40a5eb95f3ab24664, type: 3}
 --- !u!4 &660420514
 Transform:
   m_ObjectHideFlags: 0
