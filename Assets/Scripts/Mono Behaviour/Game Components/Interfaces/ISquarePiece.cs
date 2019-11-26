@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.Collection;
+﻿using Assets.Scripts.Workers.Piece_Effects;
+using Assets.Scripts.Workers.Piece_Effects.Collection;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 using static PieceFactory;
@@ -11,6 +12,7 @@ public interface ISquarePiece
     Vector2Int Position { get; set; }
     IPieceConnection PieceConnection { get; set; }
     IScoreable Scoring { get; set; }
+    IBehaviour PieceBehaviour { get; set; }
     SpriteRenderer SpriteRenderer { get; }
     GameObject gameObject { get; }
     IPieceDestroy DestroyPieceHandler { get; set; }

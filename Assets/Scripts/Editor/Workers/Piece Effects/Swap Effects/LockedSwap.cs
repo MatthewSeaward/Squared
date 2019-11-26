@@ -16,5 +16,4 @@ public class LockedSwap
 
         Assert.AreEqual("1", sut.Sprite.name);
     }
-
 }

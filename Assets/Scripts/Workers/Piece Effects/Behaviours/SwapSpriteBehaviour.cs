@@ -14,7 +14,7 @@ namespace Assets.Scripts.Workers.Piece_Effects
             return GameResources.Sprites["Swap"];
         }
 
-        public void Update(SquarePiece piece, float deltaTime)
+        public void Update(ISquarePiece piece, float deltaTime)
         {
             if (PieceSelectionManager.Instance.AlreadySelected(piece))
             {

@@ -11,6 +11,8 @@ using Assets.Scripts.Constants;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.Piece_Effects.Collection;
+using System;
+using Random = UnityEngine.Random;
 
 public class PieceFactory
 {
@@ -258,15 +260,22 @@ public class PieceFactory
     public (Sprite sprite, Colour colour) CreateRandomSprite()
     {
         var permittedValues = new List<Colour>();
-        permittedValues.AddRange((Colour[]) LevelManager.Instance.SelectedLevel.colours.Clone());
-        
-        if (Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
+        if (LevelManager.Instance == null || LevelManager.Instance.SelectedLevel == null)
         {
-            var bannedSprite = LevelManager.Instance.SelectedLevel.BannedPiece();
-            if (bannedSprite >= 0)
+            permittedValues.AddRange((Colour[]) Enum.GetValues(typeof(Colour))); 
+        }
+        else
+        {
+            permittedValues.AddRange((Colour[])LevelManager.Instance.SelectedLevel.colours.Clone());
+
+            if (Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
             {
-                permittedValues.Remove((Colour)bannedSprite);
-             }
+                var bannedSprite = LevelManager.Instance.SelectedLevel.BannedPiece();
+                if (bannedSprite >= 0)
+                {
+                    permittedValues.Remove((Colour)bannedSprite);
+                }
+            }
         }
 
         int selectedColour = (int) permittedValues[Random.Range(0, permittedValues.Count)];

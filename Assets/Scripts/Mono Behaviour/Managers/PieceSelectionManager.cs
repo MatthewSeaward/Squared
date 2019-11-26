@@ -33,7 +33,7 @@ namespace Assets.Scripts
 
         public static PieceSelectionManager Instance { private set;  get; }
         
-        private void Awake()
+        public void Awake()
         {
             Instance = this;
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
@@ -209,6 +209,11 @@ namespace Assets.Scripts
 
         public bool AlreadySelected(ISquarePiece piece)
         {
+            if (CurrentPieces.Contains(piece))
+            {
+                return true;
+            }
+
             foreach(var move in StoredMoves)
             {
                 if (move.Contains(piece))
