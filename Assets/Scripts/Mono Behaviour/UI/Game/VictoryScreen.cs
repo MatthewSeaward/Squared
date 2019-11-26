@@ -23,7 +23,7 @@ namespace Assets.Scripts
         {
             Body.text = body;
             Continue.interactable = LevelManager.Instance.LevelUnlocked(LevelManager.Instance.CurrentLevel + 1);
-            NextStar.gameObject.SetActive(LevelManager.Instance.CurrentStars < 3);
+            NextStar.gameObject.SetActive(LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved < 3);
             GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.LevelProgress);
             gameObject.SetActive(true);
         }
