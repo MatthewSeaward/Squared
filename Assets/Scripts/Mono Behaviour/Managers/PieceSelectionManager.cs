@@ -73,6 +73,11 @@ namespace Assets.Scripts
                 return;
             }
 
+            if (MenuProvider.Instance.OnDisplay)
+            {
+                return;
+            }
+
             if (!Input.GetMouseButton(0))
             {            
 

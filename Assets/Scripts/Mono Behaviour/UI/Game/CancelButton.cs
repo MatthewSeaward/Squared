@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Managers;
+using UnityEngine;
 
 namespace Assets.Scripts.Game_Components
 {
@@ -32,6 +33,18 @@ namespace Assets.Scripts.Game_Components
 
         private void Update()
         {
+            if (GameManager.Instance.GamePaused)
+            {
+                OnMouseExit();
+                return;
+            }
+
+            if (MenuProvider.Instance.OnDisplay)
+            {
+                OnMouseExit();
+                return;
+            }
+
             if (Input.GetMouseButtonUp(0))
             {
                 if (MouseOver)
@@ -44,6 +57,8 @@ namespace Assets.Scripts.Game_Components
 
         private void OnMouseEnter()
         {
+
+
             GetComponentInChildren<SpriteRenderer>().sprite = mouseOverSprite;
             MouseOver = true;
         }
