@@ -10,7 +10,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
         public IEnemyRage EnemyRage { get; set; }
         public EnemyScript enemy;
 
-        private bool triggered;
+        protected bool triggered;
 
         protected static bool CurrentPlayingTrigger { get; private set; }
 
@@ -28,8 +28,16 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
             CurrentPlayingTrigger = true;
 
-            enemy.GetComponent<Lerp>().LerpCompleted += PlayEnemyRage;
-            EnemyController.Instance.ShowEnemyText(DialogueManager.Instance.GetAngryText());
+            if (enemy != null)
+            {
+                enemy.GetComponent<Lerp>().LerpCompleted += PlayEnemyRage;
+                EnemyController.Instance.ShowEnemyText(DialogueManager.Instance.GetAngryText());
+
+            }
+            else
+            {
+                PlayEnemyRage();
+            }
         }
 
         public virtual void Start(EnemyScript enemy)
@@ -45,11 +53,13 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         private void PlayEnemyRage()
         {
-            enemy.GetComponent<Lerp>().LerpCompleted -= PlayEnemyRage;
+            if (enemy != null)
+            {
+                enemy.GetComponent<Lerp>().LerpCompleted -= PlayEnemyRage;
+                enemy.GetComponent<Animator>().SetTrigger("Angry1");
+            }
 
             EnemyRage.InvokeRage();
-
-            enemy.GetComponent<Animator>().SetTrigger("Angry1");
 
             triggered = true;
             CurrentPlayingTrigger = false;

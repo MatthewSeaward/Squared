@@ -28,10 +28,16 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
+            triggered = false;
+            CheckPieces();
+        }
+
+        public void CheckPieces()
+        {
             var matchingPieces = PieceController.Pieces.Count(x => x.Type == type);
 
-            var calculatedPercentage = (float)matchingPieces / (float) PieceController.Pieces.Count;
-            var percentage = (int) (calculatedPercentage * 100);
+            var calculatedPercentage = (float)matchingPieces / (float)PieceController.Pieces.Count;
+            var percentage = (int)(calculatedPercentage * 100);
 
             if (percentage >= percent)
             {

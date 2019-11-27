@@ -1,6 +1,7 @@
 ﻿using NSubstitute;
 using System.Collections.Generic;
 using UnityEngine;
+using static PieceFactory;
 
 namespace Assets.Scripts.Workers
 {
@@ -11,6 +12,13 @@ namespace Assets.Scripts.Workers
         public static ISquarePiece CreatePiece()
         {
             return Substitute.For<ISquarePiece>();
+        }
+
+        public static ISquarePiece CreatePiece(PieceTypes type)
+        {
+            var piece =  Substitute.For<ISquarePiece>();
+            piece.Type = type;
+            return piece;
         }
 
         public static Sprite GetSprite(string name)
