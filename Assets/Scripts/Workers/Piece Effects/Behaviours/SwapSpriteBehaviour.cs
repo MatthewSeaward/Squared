@@ -6,7 +6,6 @@ namespace Assets.Scripts.Workers.Piece_Effects
 {
    public class SwapSpriteBehaviour : IBehaviour, ILayeredSprite
     {
-        private const float SwapFrequency = 5f;
         private float timer = 0;
 
         public Sprite GetSprite()
@@ -23,10 +22,15 @@ namespace Assets.Scripts.Workers.Piece_Effects
 
             timer += deltaTime;
 
-            if (timer > SwapFrequency)
+            if (timer > Constants.GameSettings.SwapPieceChangeFrequency)
             {
                 timer = 0;
                 var randomPiece = PieceFactory.Instance.CreateRandomSprite();
+                while (randomPiece.sprite == piece.Sprite)
+                {
+                    randomPiece = PieceFactory.Instance.CreateRandomSprite();
+                }
+
                 piece.Sprite = randomPiece.sprite;
                 piece.PieceColour = randomPiece.colour;
             }

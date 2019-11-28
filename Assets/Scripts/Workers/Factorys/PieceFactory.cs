@@ -262,7 +262,8 @@ public class PieceFactory
         var permittedValues = new List<Colour>();
         if (LevelManager.Instance == null || LevelManager.Instance.SelectedLevel == null)
         {
-            permittedValues.AddRange((Colour[]) Enum.GetValues(typeof(Colour))); 
+            permittedValues.AddRange((Colour[]) Enum.GetValues(typeof(Colour)));
+            permittedValues.Remove(Colour.None);
         }
         else
         {

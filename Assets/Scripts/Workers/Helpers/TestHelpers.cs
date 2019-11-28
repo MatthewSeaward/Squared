@@ -25,7 +25,14 @@ namespace Assets.Scripts.Workers
         {
             if (CreatedSprites.ContainsKey(name))
             {
-                return CreatedSprites[name];
+                if (CreatedSprites[name] == null)
+                {
+                    CreatedSprites.Remove(name);
+                }
+                else
+                {
+                    return CreatedSprites[name];
+                }
             }
 
            var sprite = Sprite.Create(new Texture2D(1, 1), new Rect(), new Vector2());

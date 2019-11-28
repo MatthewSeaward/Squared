@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts;
+using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using NUnit.Framework;
@@ -36,7 +37,7 @@ public class SwapSpriteBehaviourTests
         sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
         sut.Sprite = TestHelpers.GetSprite("1");
 
-        sut.PieceBehaviour.Update(sut, 6f);
+        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1);
 
         Assert.AreNotEqual("1", sut.Sprite.name);
     }
@@ -49,7 +50,7 @@ public class SwapSpriteBehaviourTests
         sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
         sut.Sprite = TestHelpers.GetSprite("1");
 
-        sut.PieceBehaviour.Update(sut, 4f);
+        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency - 1f);
 
         Assert.AreEqual("1", sut.Sprite.name);
     }
@@ -64,7 +65,7 @@ public class SwapSpriteBehaviourTests
 
        PieceSelectionManager.Instance.Add(sut, false);
 
-        sut.PieceBehaviour.Update(sut, 6f);
+        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1f);
 
         Assert.AreEqual("1", sut.Sprite.name);
     }
@@ -79,7 +80,7 @@ public class SwapSpriteBehaviourTests
 
         PieceSelectionManager.Instance.StoredMoves.Add(new List<ISquarePiece>() { sut });
 
-        sut.PieceBehaviour.Update(sut, 6f);
+        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1f);
 
         Assert.AreEqual("1", sut.Sprite.name);
     }
