@@ -4,6 +4,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Collection;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
+using Assets.Scripts.Workers.Piece_Effects.On_Destroy;
 using UnityEngine;
 using UnityEngine.UI;
 using static PieceFactory;
@@ -59,6 +60,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public IBehaviour PieceBehaviour { get; set; }
     public IScoreable Scoring { get; set; }
     public IOnCollection OnCollection { get; set; }
+    public IOnDestroy OnDestroy { get; set; }
 
     public Colour PieceColour { get; set; }    
     public PieceTypes Type { get; set; }
@@ -149,6 +151,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     {
         Animator.SetTrigger("Destroy");
         DestroyPieceHandler.NotifyOfDestroy();
+        OnDestroy?.OnDestroy();
     }
 
     public void Destroy()

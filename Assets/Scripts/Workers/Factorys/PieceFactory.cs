@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using static SquarePiece;
 using DataEntities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
@@ -13,6 +12,8 @@ using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.Piece_Effects.Collection;
 using System;
 using Random = UnityEngine.Random;
+using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
+using Assets.Scripts.Workers.Piece_Effects.On_Destroy;
 
 public class PieceFactory
 {
@@ -46,7 +47,8 @@ public class PieceFactory
         TwoPoints = '2',
         ThreePoints = '3',
         FourPoints = '4',
-        Heart = 'H'
+        Heart = 'H',
+        Chest = 'c'
      }
 
     private PieceFactory()
@@ -74,6 +76,7 @@ public class PieceFactory
         BuildDestroyEffect(type, piece, squarePiece, initlalSetup);
         BuildBehaviours(type, squarePiece);
         BuildOnCollection(type, squarePiece);
+        BuildOnDestroy(type, squarePiece);
         BuildScoring(type, squarePiece, scoreValue);
         BuildLayers(piece, squarePiece);
         BuildTextLayer(squarePiece);
@@ -120,6 +123,10 @@ public class PieceFactory
         {
             sprite = GameResources.Sprites["Rainbow"];
         }
+        else if (type == PieceTypes.Chest)
+        {
+            sprite = GameResources.Sprites["Chest"];
+        }
         else
         {
             var randomSprite = CreateRandomSprite();
@@ -135,6 +142,10 @@ public class PieceFactory
         if (type == PieceTypes.Rainbow)
         {
             squarePiece.PieceConnection = new AnyAdjancentConnection();
+        }
+        else if(type == PieceTypes.Chest)
+        {
+            squarePiece.PieceConnection = new NoConnection();
         }
         else
         {
@@ -183,6 +194,19 @@ public class PieceFactory
             squarePiece.OnCollection = null;
         }
     }
+
+    private void BuildOnDestroy(PieceTypes type, SquarePiece squarePiece)
+    {
+        if (type == PieceTypes.Chest)
+        {
+            squarePiece.OnDestroy = new TreasureChest(squarePiece);
+        }
+        else
+        {
+            squarePiece.OnDestroy = null;
+        }
+    }
+
 
     private void BuildScoring(PieceTypes type, SquarePiece squarePiece, int scoreValue)
     {

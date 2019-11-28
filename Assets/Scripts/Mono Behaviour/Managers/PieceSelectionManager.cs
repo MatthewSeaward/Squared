@@ -251,7 +251,7 @@ namespace Assets.Scripts
 
             if (checkForAdditional)
             {
-                CheckForAdditionalPieces();
+               // CheckForAdditionalPieces();
             }
 
             SelectedPiecesChanged?.Invoke(CurrentPieces);

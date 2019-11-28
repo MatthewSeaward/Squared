@@ -67,6 +67,12 @@ public class ScoreKeeper : MonoBehaviour
     public void SequenceCompleted(ISquarePiece[] pieces)
     { 
         int scoreEarned = ScoreCalculator.CalculateScore(pieces);
+
+        GainPoints(scoreEarned, pieces);
+    }
+
+    public void GainPoints(int scoreEarned, ISquarePiece[] pieces)
+    {
         PointsAwarded?.Invoke(scoreEarned, pieces);
 
         CurrentScore += scoreEarned;
