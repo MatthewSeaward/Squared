@@ -39,7 +39,10 @@ namespace Assets.Scripts.Workers.IO.Collection
                                          }
 
                                          var result = new PiecesCollected();
-                                         result.Pieces.AddRange(array);
+                                         if (array != null)
+                                         {
+                                             result.Pieces.AddRange(array);
+                                         }
 
                                          PiecesCollectedLoaded?.Invoke(result);
 

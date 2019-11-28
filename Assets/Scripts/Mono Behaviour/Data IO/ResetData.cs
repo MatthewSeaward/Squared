@@ -14,6 +14,7 @@ namespace Assets.Scripts
         {
             ResetAllData?.Invoke();
 
+            MainMenu.ResetLastTab();
             SceneManager.LoadScene(Scenes.Loading);
         }
     }

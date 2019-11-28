@@ -22,10 +22,15 @@ namespace Assets.Scripts
 
         [SerializeField]
         private GameObject PowerupsTab;
-
+               
         public void Start()
         {
             ChangeTab(LastTab);
+        }
+
+        public static void ResetLastTab()
+        {
+            LastTab = Scripts.MenuTab.MainMenu;
         }
 
         public void OnChapterSelected(string chapter)
