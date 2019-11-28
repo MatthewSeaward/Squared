@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Assets.Scripts.Managers;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy.Events
@@ -16,6 +16,11 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         protected void InvokeRage()
         {
+            if (GameManager.Instance.GameOver || GameManager.Instance.GameLimit.ReachedLimit())
+            {
+                return;
+            }
+
             if (triggered)
             {
                 return;
@@ -32,7 +37,6 @@ namespace Assets.Scripts.Workers.Enemy.Events
             {
                 enemy.GetComponent<Lerp>().LerpCompleted += PlayEnemyRage;
                 EnemyController.Instance.ShowEnemyText(DialogueManager.Instance.GetAngryText());
-
             }
             else
             {

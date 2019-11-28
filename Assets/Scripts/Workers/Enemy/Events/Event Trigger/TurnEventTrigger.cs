@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Workers.Enemy.Events
 {
-    class TurnEventTrigger : EnemyEventTrigger
+    public class TurnEventTrigger : EnemyEventTrigger
     {
         private Range TurnRange;
         private int TurnsPassed;
@@ -36,6 +36,11 @@ namespace Assets.Scripts.Workers.Enemy.Events
         }
 
         private void PieceSelectionManager_MoveCompleted()
+        {
+            CheckForEvent();
+        }
+
+        public void CheckForEvent()
         {
             if (TurnRange.WithinRange(TurnsPassed++) && !CurrentPlayingTrigger && EnemyRage.CanBeUsed())
             {

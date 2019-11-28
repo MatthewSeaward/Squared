@@ -57,8 +57,6 @@ namespace Assets.Scripts.Game_Components
 
         private void OnMouseEnter()
         {
-
-
             GetComponentInChildren<SpriteRenderer>().sprite = mouseOverSprite;
             MouseOver = true;
         }

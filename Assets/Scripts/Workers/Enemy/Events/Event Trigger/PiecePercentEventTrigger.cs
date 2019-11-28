@@ -29,10 +29,10 @@ namespace Assets.Scripts.Workers.Enemy.Events
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
             triggered = false;
-            CheckPieces();
+            CheckForEvent();
         }
 
-        public void CheckPieces()
+        public void CheckForEvent()
         {
             var matchingPieces = PieceController.Pieces.Count(x => x.Type == type);
 

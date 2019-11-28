@@ -16,11 +16,12 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow)
             }, new float[1], new float[1]) ;
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsTrue(enemyEvent.Activated);
         }
@@ -33,11 +34,12 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                 TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
             }, new float[1], new float[1]);
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsTrue(enemyEvent.Activated);
         }
@@ -50,12 +52,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
             }, new float[1], new float[1]);
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsFalse(enemyEvent.Activated);
         }
@@ -68,12 +71,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
             }, new float[1], new float[1]);
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsTrue(enemyEvent.Activated);
         }
@@ -86,20 +90,21 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
             }, new float[1], new float[1]);
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsFalse (enemyEvent.Activated);
         }
@@ -112,20 +117,21 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
             }, new float[1], new float[1]);
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsTrue(enemyEvent.Activated);
         }
@@ -138,20 +144,21 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>() {
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
-            TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
+            PieceController.Setup(new List<ISquarePiece>()
+            {
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Rainbow),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal),
+                TestHelpers.CreatePiece(PieceFactory.PieceTypes.Normal)
             }, new float[1], new float[1]);
 
-            trigger.CheckPieces();
+            trigger.CheckForEvent();
 
             Assert.IsTrue(enemyEvent.Activated);
         }
