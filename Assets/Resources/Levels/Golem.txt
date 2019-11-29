@@ -339,7 +339,7 @@
 			"Target": 75,
 			"colours":[7,6,5],
 			"SpecialDropPieces": ["h", "2"],
-			"StarsToUnlock": 45,
+			"StarsToUnlock": 55,
 			"Pattern":
 			[
 				"x-x-x-x-",
