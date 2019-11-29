@@ -16,9 +16,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             this.piece = piece;
         }
 
-        public Sprite GetSprite()
+        public Sprite[] GetSprites()
         { 
-            return GameResources.Sprites["Padlock"];
+            return new Sprite[] { GameResources.Sprites["Padlock"] };
         }
 
         public void OnPressed()

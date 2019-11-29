@@ -20,14 +20,14 @@ namespace Assets.Scripts.Workers.Piece_Effects
             return currentScore * _factor;
         }
 
-        public Sprite GetSprite()
+        public Sprite[] GetSprites()
         {
-            switch(_factor)
+            switch (_factor)
             {
                 case 2:
-                    return GameResources.Sprites["x2"];
+                    return new Sprite[] { GameResources.Sprites["x2"] };
                 case 3:
-                    return GameResources.Sprites["x3"];
+                    return new Sprite[] { GameResources.Sprites["x3"]};
                 default:
                     return null;
             }

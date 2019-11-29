@@ -224,7 +224,7 @@
 			"Target": 120,
 			"colours":[1,8,6,2],
 			"SpecialDropPieces": ["2", "d"],
-			"StarsToUnlock": 60,
+			"StarsToUnlock": 50,
 			"Pattern":
 			[
 				"--------",
@@ -247,7 +247,7 @@
 			"LevelNumber": 11,
 			"Target": 350,
 			"colours":[0,2,8,6,1],
-			"StarsToUnlock": 80,
+			"StarsToUnlock": 55,
 			"SpecialDropPieces": ["r","s", "t"],
 			"Pattern":
 			[
@@ -272,7 +272,7 @@
 			"Target": 120,
 			"colours":[1,8,6,2],
 			"SpecialDropPieces": ["r","s", "d", "t"],
-			"StarsToUnlock": 90,
+			"StarsToUnlock": 60,
 			"Pattern":
 			[
 				"xxxxxxxx",
@@ -290,6 +290,78 @@
 			"Star1": ["Turns", "10",  "Time", "5"],
 			"Star2": ["Time", "30", "Min", "4"],
 			"Star3": ["Time", "20", "Only Diagonal", ""]
+		},
+		{
+			"LevelNumber": 13,
+			"Target": 50,
+			"colours":[1,8,0,6,2],
+			"SpecialDropPieces": ["s", "d"],
+			"StarsToUnlock": 65,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"xx----xx",
+				"xxx--xxx",
+				"-xxxxxx-",
+				"-xxxxxx-",
+				"-xxxxxx-",
+				"--xxxx--",
+				"---xx---",
+				"-c----c-",
+				"--------"
+			],
+			"Star1": ["Turns", "5"],
+			"Star2": ["Turns", "7", "Time", "5"],
+			"Star3": ["Turns", "10", "Only Diagonal", ""]
+		},
+		{
+			"LevelNumber": 14,
+			"Target": 75,
+			"colours":[1,6,2],
+			"SpecialDropPieces": ["2", "d", "3", "2", "t"],
+			"StarsToUnlock": 70,
+			"Pattern":
+			[
+				"--------",
+				"--------",
+				"--------",							
+				"-xxxxxxx",
+				"-xxxxxxx",
+				"--C-C-C-",
+				"-C-C-C--",
+				"xxxxxxx-",
+				"xxxxxxx-",
+				"--------",	
+				"--------"
+			],
+			"Star1": ["Turns", "8", "Time", "6"],
+			"Star2": ["Time", "30"],
+			"Star3": ["Turns", "8", "Type", "C"]
+		},
+		{
+			"LevelNumber": 15,
+			"Target": 100,
+			"colours":[1,8,2],
+			"SpecialDropPieces": ["s","r"],
+			"StarsToUnlock": 70,
+			"Pattern":
+			[
+				"--------",
+				"---x----",
+				"--xxxx--",
+				"xx-x--C-",
+				"-C--xx--",
+				"--xxx-x-",
+				"x-x-xx--",
+				"-C-x--C-",
+				"-xx-xxx-",
+				"---x--x-",
+				"--------"
+			],
+			"Star1": ["Turns", "16"],
+			"Star2": ["Turns", "20", "Type", "r"],
+			"Star3": ["Turns", "18", "Type", "s"]
 		}
 	]
 }

@@ -1,9 +1,10 @@
-﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 {
-    class SwapToNext : IPieceDestroy
+    class SwapToNext : IPieceDestroy, ILayeredSprite
     {
         private ISquarePiece piece;
 
@@ -36,6 +37,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public void Update()
         {
+        }
+
+        public Sprite[] GetSprites()
+        {
+            return new Sprite[] { GameResources.Sprites["Change"], GameResources.Sprites["Padlock"] };
         }
     }
 }

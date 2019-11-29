@@ -60,9 +60,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             pieceDestroyed = false;
         }
 
-        public Sprite GetSprite()
+        public Sprite[] GetSprites()
         {
-            return GameResources.Sprites["Rock"];
+            return new Sprite[] { GameResources.Sprites["Rock"] };
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
-using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Piece_Effects.Collection
@@ -11,9 +10,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Collection
         {
         }
 
-        public Sprite GetSprite()
+        public Sprite[] GetSprites()
         {
-            return GameResources.Sprites["Heart"];
+            return new Sprite[] { GameResources.Sprites["Heart"] };
         }
     }
 }

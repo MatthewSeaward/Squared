@@ -48,7 +48,8 @@ public class PieceFactory
         ThreePoints = '3',
         FourPoints = '4',
         Heart = 'H',
-        Chest = 'c'
+        Chest = 'c',
+        Change = 'C'
      }
 
     private PieceFactory()
@@ -165,6 +166,10 @@ public class PieceFactory
         {
             squarePiece.DestroyPieceHandler = new HeavyDestroyTriggerFall(squarePiece);
         }
+        else if (type ==PieceTypes.Change)
+        {
+            squarePiece.DestroyPieceHandler = new SwapToNext(squarePiece);
+        }
         else
         {
             squarePiece.DestroyPieceHandler = new DestroyTriggerFall(squarePiece);
@@ -273,11 +278,14 @@ public class PieceFactory
 
     private void ApplyLayer(GameObject piece, ILayeredSprite layer)
     {
-        if (layer != null && layer.GetSprite() != null)
+        if (layer != null && layer.GetSprites() != null)
         {
-            var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
-            l.GetComponent<SpriteRenderer>().sprite = layer.GetSprite();
-            l.transform.parent = piece.transform;
+            foreach (var sprite in layer.GetSprites())
+            {
+                var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
+                l.GetComponent<SpriteRenderer>().sprite = sprite;
+                l.transform.parent = piece.transform;
+            }
         }
     }
 
