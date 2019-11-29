@@ -199,6 +199,58 @@
 					"Destroy,Turns,8,10,3",
 					"Change,Turns,15,20,4,h"
 				]
+			},
+				{
+				"LevelNumber": 13,
+				"Star1":
+				[
+					"Change,Turns,0,5,2,h",
+					"Destroy,Turns,8,10,4",
+					"Change,Turns,13,14,2,c"
+				],
+				"Star2":
+				[
+					"Change,Turns,3,8,2,2",
+					"Change,Turns,10,12,3,3"
+				],
+				"Star3":
+				[
+					""
+				]
+			},
+				{
+				"LevelNumber": 14,
+				"Star1":
+				[
+					"Remove,Turns,3,5,0:5;1:5;2:5;3:5;4:5;5:5;6:5;7:5",
+					"Add,Turns,6,8,3:2;4:2;3:8;4:8,x"
+				],
+				"Star2":
+				[
+					"Add,Turns,3,4,3:2;4:2;2:8;3:8,x",
+					"Remove,Turns,5,6,0:3;0:4;0:5;0:6;0:7;7:3;7:4;7:5;7:6;7:7"
+				],
+				"Star3":
+				[
+					"Change,Turns,5,6,8,h",
+					"Change,Turns,8,9,2,c"
+				]
+				},
+				{
+				"LevelNumber": 15,
+				"Star1":
+				[
+					"Destroy,Turns,1,5,8"
+				],
+				"Star2":
+				[
+					"Change,Turns,4,3,2,3"
+				],
+				"Star3":
+				[
+					"Change,Turns,2,3,8,x:2",
+					"Change,Turns,4,6,5,2:x"
+				]
 			}
 		]
 	}

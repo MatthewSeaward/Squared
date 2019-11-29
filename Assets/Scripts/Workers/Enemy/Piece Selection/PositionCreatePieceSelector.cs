@@ -16,12 +16,29 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection
             this.Type = type;
         }
 
+        public bool CanBeUsed(PieceSelectionValidator validator, int total)
+        {
+            foreach (var position in Positions)
+            {
+                if (PieceController.GetPiece(position.x, position.y) == null)
+                {
+                    return true; 
+                }
+            }
+            return false;
+        }
+
         public List<ISquarePiece> SelectPieces(PieceSelectionValidator validator, int total)
         {
             var selectedPieces = new List<ISquarePiece>();
 
             foreach (var position in Positions)
             {
+                if (PieceController.GetPiece(position.x, position.y) != null)
+                {
+                    continue;
+                }
+
                 var newPiece = PieceFactory.Instance.CreateSquarePiece(Type, false);
 
                 var squarePiece = newPiece.GetComponent<SquarePiece>();

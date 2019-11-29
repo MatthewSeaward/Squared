@@ -23,7 +23,7 @@ namespace Assets.Scripts.Workers.Enemy
                 return;
             }
 
-            GameManager.Instance.ChangePauseState(this, true);
+             GameManager.Instance.ChangePauseState(this, true);
 
             selectedPieces = pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount);
 
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Workers.Enemy
 
         public bool CanBeUsed()
         {
-            return pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount).Count > 0;
+            return pieceSelection.CanBeUsed(pieceSelectionValidator, SelectionAmount);
         }
 
         private void SquarePiece_PieceDestroyed(SquarePiece piece)

@@ -28,7 +28,6 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         private void PieceSelectionManager_SequenceCompleted(ISquarePiece[] pieces)
         {
-            triggered = false;
             CheckForEvent();
         }
 

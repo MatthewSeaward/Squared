@@ -5,8 +5,16 @@ public static class JsonHelper
 {
     public static T[] FromJson<T>(string json)
     {
-        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
-        return wrapper.Items;
+        try
+        {
+            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+            return wrapper.Items;
+        }
+        catch
+        {
+            Debug.LogError($"Error processing{Environment.NewLine}{json}");
+        }
+        return null;
     }
 
     public static string ToJson<T>(T[] array)

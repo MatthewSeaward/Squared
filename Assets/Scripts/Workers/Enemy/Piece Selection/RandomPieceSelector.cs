@@ -6,6 +6,11 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection
 {
     class RandomPieceSelector : IPieceSelection
     {
+        public bool CanBeUsed(PieceSelectionValidator validator, int total)
+        {
+            return true;
+        }
+
         public List<ISquarePiece> SelectPieces(PieceSelectionValidator validator, int total)
         {
             var selectedPieces = new List<ISquarePiece>();

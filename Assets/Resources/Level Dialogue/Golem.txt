@@ -42,6 +42,13 @@
 			[
 				"These heavy rocks\r\nwill crush any\r\npiece below them"
 			]
+		},
+		{
+			"LevelNumber" : 13,
+			"Star1": 
+			[
+				"Crush the chests\r\nfor a reward!"
+			]
 		}	
 	]
 }
