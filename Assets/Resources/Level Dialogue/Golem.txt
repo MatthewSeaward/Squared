@@ -47,7 +47,8 @@
 			"LevelNumber" : 13,
 			"Star1": 
 			[
-				"Crush the chests\r\nfor a reward!"
+				"Crush the chests\r\nfor a reward!",
+				"Heavy pieces are\r\ngood for this!"
 			]
 		}	
 	]

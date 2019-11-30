@@ -32,6 +32,26 @@
 				"Some pieces\r\nswap colours",
 				"Uncontrollable!"
 			]
+		},
+		{
+			"LevelNumber" : 12,
+			"Star1": 
+			[
+				"New pieces!",
+				"Change when\r\nused!"
+			]
+		},
+		{
+			"LevelNumber" : 15,
+			"Star1": 
+			[
+				"Looks crazy",
+				"It will change!"
+			],
+			"Star3": 
+			[
+				"Big changes\r\nare coming"
+			]
 		}
 	]
 }
