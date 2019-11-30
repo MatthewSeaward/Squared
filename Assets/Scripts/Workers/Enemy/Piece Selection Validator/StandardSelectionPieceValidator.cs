@@ -21,6 +21,11 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
                 return false;
             }
 
+            if (piece.Type == PieceFactory.PieceTypes.Chest)
+            {
+                return false;
+            }
+
             if (piece.DestroyPieceHandler is DestroyTriggerFall)
             {
                 if ((piece.DestroyPieceHandler as DestroyTriggerFall).ToBeDestroyed)
