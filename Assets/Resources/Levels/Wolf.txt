@@ -341,10 +341,10 @@
 		},
 		{
 			"LevelNumber": 15,
-			"Target": 100,
+			"Target": 120,
 			"colours":[1,8,2],
 			"SpecialDropPieces": ["s","r"],
-			"StarsToUnlock": 70,
+			"StarsToUnlock": 85,
 			"Pattern":
 			[
 				"--------",
