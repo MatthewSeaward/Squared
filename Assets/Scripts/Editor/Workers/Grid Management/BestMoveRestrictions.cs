@@ -39,7 +39,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(4, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }
@@ -59,7 +59,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(4, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }
@@ -79,7 +79,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(0, BestMoverChecker.GetBestMove(restriction).Count);
+            Assert.AreEqual(0, BestMoverChecker.GetBestMove(restriction).Move.Count);
         }
 
         [Test]
@@ -97,7 +97,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(4, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }
@@ -117,7 +117,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(3, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }
@@ -137,7 +137,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(4, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }
@@ -157,7 +157,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(5, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }
@@ -174,7 +174,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            var move = BestMoverChecker.GetBestMove(restriction);
+            var move = BestMoverChecker.GetBestMove(restriction).Move;
             Assert.AreEqual(2, move.Count);
             Assert.IsFalse(restriction.IsRestrictionViolated(move.ToArray()));
         }

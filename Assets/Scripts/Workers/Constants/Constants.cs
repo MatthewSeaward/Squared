@@ -46,5 +46,6 @@ namespace Assets.Scripts.Constants
         public const float PieceIncrementSpeed = 0.05f;
         public const float SwapPieceChangeFrequency = 5f;
 
+        public static float BestMoveSearchTimeOut = 2f;
     }
 }

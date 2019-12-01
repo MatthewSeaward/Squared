@@ -34,7 +34,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(8, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(8, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(4, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(4, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(10, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(10, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -82,7 +82,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(6, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(6, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(11, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(11, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -113,7 +113,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(3, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(3, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -127,7 +127,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(2, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(2, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -142,7 +142,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(4, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(4, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -157,7 +157,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(3, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(3, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         [Test]
@@ -172,7 +172,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(6, BestMoverChecker.GetBestMove().Count);
+            Assert.AreEqual(6, BestMoverChecker.GetBestMove().Move.Count);
         }
 
         private static void BuildGrid(string[] grid)

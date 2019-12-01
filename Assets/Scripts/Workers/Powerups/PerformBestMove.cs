@@ -20,20 +20,26 @@ namespace Assets.Scripts.Workers.Powerups
         private IBestMoveChecker bestMoveChecker = new BestMoveDepthSearch();
 
         public void Invoke()
-        {
+        { 
             var move = bestMoveChecker.GetBestMove(LevelManager.Instance.SelectedLevel.GetCurrentRestriction());
-            if (move == null || move.Count == 0)
-            {
-                return;
-            }
-            GameManager.Instance.ChangePauseState(this, true);
-            ToastPanel.Instance.ShowText("Thinking");
 
-            PieceSelectionManager.Instance.PreformMove(move);
+            if (move.Result == SearchResult.TimeOut)
+            {
+                ToastPanel.Instance.ShowText("Search timed out", 2f);
+            }
+            else if (move.Result == SearchResult.NoMoves || move.Move == null || move.Move.Count == 0)
+            {
+                ToastPanel.Instance.ShowText("No Reults", 2f);
+            }
+            else
+            {
+                PieceSelectionManager.Instance.PreformMove(move.Move);
+            }
         }
 
         public void Update(float deltaTime)
         {
+           
         }
 
         public void MoveCompleted()

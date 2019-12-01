@@ -11,6 +11,9 @@ namespace Assets.Scripts.UI
         [SerializeField]
         private Text text;
 
+        private float displayTime;
+        private float timer;
+
         public static ToastPanel Instance { get; private set; }
 
         private void Awake()
@@ -28,8 +31,12 @@ namespace Assets.Scripts.UI
             text = Panel.GetComponentInChildren<Text>();
             Hide();
         }
+        public void ShowText(string text)
+        {
+            ShowText(text, 0);
+        }
 
-        public  void ShowText(string text)
+        public  void ShowText(string text, float displayTime)
         {
             if (!Panel.activeInHierarchy)
             {
@@ -37,6 +44,11 @@ namespace Assets.Scripts.UI
             }
 
             this.text.text = text;
+
+            if (displayTime > 0)
+            {
+                Invoke(nameof(Hide), displayTime);
+            }
         }
 
         public void Hide()

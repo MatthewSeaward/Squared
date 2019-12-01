@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,11 +9,15 @@ namespace Assets.Scripts.Workers.Grid_Management
 {
     public class BestMoveDepthSearch : IBestMoveChecker
     {
+
         private List<List<ISquarePiece>> bestMove = new List<List<ISquarePiece>>();
         private IRestriction restriction;
 
         private bool DiagonalAllowed => !(restriction is DiagonalRestriction);
         private bool StraightAllowed => !(restriction is DiagonalOnlyRestriction);
+
+        private DateTime startTime; 
+
         private int MinAllowed
         {
             get
@@ -37,14 +42,23 @@ namespace Assets.Scripts.Workers.Grid_Management
             }
         }
 
-        public List<ISquarePiece> GetBestMove()
+        private bool TimeExpired
+        {
+            get
+            {
+                return (DateTime.Now - startTime).TotalSeconds > Constants.GameSettings.BestMoveSearchTimeOut;
+            }
+        }
+
+        public (SearchResult Result, List<ISquarePiece> Move) GetBestMove()
         {
             return GetBestMove(new NoRestriction());
         }
 
-        public List<ISquarePiece> GetBestMove(IRestriction restriction)
+        public (SearchResult Result, List<ISquarePiece> Move) GetBestMove(IRestriction restriction)
         {
             this.restriction = restriction;
+            startTime = DateTime.Now;
 
             IScoreCalculator scoreCalculator = new StandardScoreCalculator();
             
@@ -66,23 +80,33 @@ namespace Assets.Scripts.Workers.Grid_Management
                     currentPath.Add(piece);
                     ExplorePiece(piece, visited, currentPath);
                 }
+
+                if (TimeExpired)
+                {
+                    return (SearchResult.TimeOut, new List<ISquarePiece>());
+                }
             }
 
             var filtered = bestMove.Where(x => x.Count >= MinAllowed && !restriction.IsRestrictionViolated(x.ToArray()));
             if (filtered.Count() == 0)
             {
-                return new List<ISquarePiece>();
+                return (SearchResult.NoMoves, new List<ISquarePiece>());
             }
 
             var best = filtered.OrderByDescending(x => scoreCalculator.CalculateScore(x.ToArray())).First();
             
         
             Debug.Log(string.Join(", ", best.Select(x => x.Position.ToString())));
-            return best.ToList();
+            return (SearchResult.Success, best.ToList());
         }
 
         private void ExplorePiece(ISquarePiece piece, List<ISquarePiece> currentPath, List<ISquarePiece> visited)
         {
+            if (TimeExpired)
+            {
+                return;
+            }
+
             var neighbours = GetNeighbours(piece);
 
             bool executed = false;

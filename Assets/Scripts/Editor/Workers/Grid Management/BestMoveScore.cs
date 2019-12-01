@@ -36,7 +36,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(0, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(0, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         [Test]
@@ -52,7 +52,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(16, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(16, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(6, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(6, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(7, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(7, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         [Test]
@@ -99,7 +99,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(6, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(6, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         [Test]
@@ -114,7 +114,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(7, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(7, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         [Test]
@@ -129,7 +129,7 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(3, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().ToArray()));
+            Assert.AreEqual(3, scoreCalculator.CalculateScore(BestMoverChecker.GetBestMove().Move.ToArray()));
         }
 
         private static void BuildGrid(string[] grid)
