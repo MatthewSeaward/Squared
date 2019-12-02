@@ -124,16 +124,10 @@ namespace Assets.Scripts.Workers.Data_Managers
 
         public static int NumberOfPowerupsEarned(int previous, int totalCollected, int increment)
         {
-            var multiplier = (previous / increment) + 1;
+            var oldAmount = previous / increment;
+            var newAmount = totalCollected / increment;
 
-            int differenceFromTarget = totalCollected - (multiplier * increment);
-            if (differenceFromTarget < 0)
-            {
-                return 0;
-            }
-
-            return (differenceFromTarget / increment) + 1;
-          
+            return newAmount - oldAmount;
         }
     }
 }
