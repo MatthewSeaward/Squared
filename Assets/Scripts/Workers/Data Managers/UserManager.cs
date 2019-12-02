@@ -6,6 +6,7 @@ namespace Assets.Scripts.Workers.Data_Managers
     public static class UserManager
     {
         private static string _username;
+        private static int _livesRemaining;
 
         public static string UserID
         {
@@ -19,6 +20,18 @@ namespace Assets.Scripts.Workers.Data_Managers
                 }
                 return _username;
             }
+        }
+
+        public static int LivesRemaining
+        {
+            get
+            {
+                if (Debug.isDebugBuild && _livesRemaining == 0)
+                {
+                    _livesRemaining = 1;
+                }
+                return Mathf.Clamp(_livesRemaining, 0, 6);
+            }            
         }
     }
 }
