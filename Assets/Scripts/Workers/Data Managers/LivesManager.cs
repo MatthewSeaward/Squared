@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using Assets.Scripts.Workers.IO.Data_Entities;
+using UnityEngine;
 
 namespace Assets.Scripts.Workers.Data_Managers
 {
@@ -28,6 +30,7 @@ namespace Assets.Scripts.Workers.Data_Managers
                 LivesChanged?.Invoke(value > _livesRemaining, value);               
 
                 _livesRemaining = value;
+                UserIO.Instance.SaveLivesInfo();
             }
         }
 
@@ -44,6 +47,11 @@ namespace Assets.Scripts.Workers.Data_Managers
         public static void LoseALife()
         {
             LivesRemaining--;
+        }
+
+        internal static void Setup(LivesEntity livesEntity)
+        {
+            LivesRemaining = livesEntity.LivesRemaining;
         }
     }
 }
