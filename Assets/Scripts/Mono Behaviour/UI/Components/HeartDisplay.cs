@@ -8,7 +8,7 @@ namespace Assets.Scripts
     {
         private void OnEnable()
         {
-            GetComponentInChildren<Text>().text = $"X{UserManager.LivesRemaining}";
+            GetComponentInChildren<Text>().text = $"X{LivesManager.LivesRemaining}";
         }
     }
 }
