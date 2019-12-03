@@ -6,9 +6,44 @@ namespace Assets.Scripts
 {
     class HeartDisplay : MonoBehaviour
     {
+        private Text remaining;
+        private Animator animator;
+
+        private void Awake()
+        {
+            remaining = GetComponentInChildren<Text>();
+            animator = GetComponentInChildren<Animator>();
+
+            LivesManager.LivesChanged += LivesManager_LivesChanged;
+        }
+
+        private void OnDestroy()
+        {
+            LivesManager.LivesChanged -= LivesManager_LivesChanged;
+        }
+
+        private void LivesManager_LivesChanged(bool gained, int newLives)
+        {
+            UpdateText(newLives);
+
+            if (gained)
+            {
+                animator.SetTrigger("Heart Gain");
+            }
+            else
+            {
+                animator.SetTrigger("Heart Lose");
+            }
+        }
+
         private void OnEnable()
         {
-            GetComponentInChildren<Text>().text = $"X{LivesManager.LivesRemaining}";
+            UpdateText(LivesManager.LivesRemaining);
+        }
+
+        private void UpdateText(int lives)
+        {
+            remaining.text = $"X{lives}";
         }
     }
 }
