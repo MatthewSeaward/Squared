@@ -12,11 +12,9 @@ namespace Assets.Scripts.Editor.Workers.Lives
         {
             LivesManager.Reset();
 
-            var startingLives = LivesManager.LivesRemaining;
-
             LivesManager.GainALife();
 
-            Assert.AreEqual( 1, LivesManager.LivesRemaining);
+            Assert.AreEqual(1, LivesManager.LivesRemaining);
         }
 
         [Test]

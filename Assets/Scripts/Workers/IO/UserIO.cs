@@ -52,7 +52,6 @@ namespace Assets.Scripts.Workers
             ResetData.ResetAllData += ResetSavedData;
         }
 
-
         ~UserIO()
         {
             PieceCollectionIO.PiecesCollectedLoadedEvent -= PiecesCollectedLoadedEventHandler;
@@ -75,7 +74,7 @@ namespace Assets.Scripts.Workers
 
         public void SaveLivesInfo()
         {
-            livesWriter.WriteLives(LivesManager.LivesRemaining, DateTime.Now);
+            livesWriter.WriteLives(LivesManager.LivesRemaining, LivesManager.LastEarnedLife);
         }
 
         private void LoadPowerupData()
@@ -95,10 +94,7 @@ namespace Assets.Scripts.Workers
 
         private void FireBaseLivesLoaded(LivesEntity livesEntity)
         {
-            if (livesEntity != null)
-            {
-                LivesManager.Setup(livesEntity);
-            }
+            LivesManager.Setup(livesEntity);
 
             livesLoaded = true;
 

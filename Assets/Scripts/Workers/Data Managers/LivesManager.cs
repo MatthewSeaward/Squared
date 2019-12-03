@@ -9,6 +9,7 @@ namespace Assets.Scripts.Workers.Data_Managers
     public static class LivesManager
     {
         public static LivesChanged LivesChanged;
+        public static DateTime LastEarnedLife { private set; get; }
 
         private static int _livesRemaining;
         
@@ -51,7 +52,30 @@ namespace Assets.Scripts.Workers.Data_Managers
 
         internal static void Setup(LivesEntity livesEntity)
         {
-            LivesRemaining = livesEntity.LivesRemaining;
+            if (livesEntity == null)
+            {
+                LastEarnedLife = DateTime.Now;
+                LivesRemaining = 6;
+            }
+            else
+            {
+                LivesRemaining = livesEntity.LivesRemaining;
+
+                if (DateTime.TryParse(livesEntity.LastEarnedLife, out var time))
+                {
+                    WorkOutLivesEarned(time);
+                }
+            }
+        }
+
+        public static void WorkOutLivesEarned(DateTime lastEarnedLife)
+        {
+            var minutesPast = (DateTime.Now - lastEarnedLife).TotalMinutes;
+
+            var totalEarned = minutesPast / 10;
+
+            LastEarnedLife = DateTime.Now;
+            LivesRemaining += (int) totalEarned;            
         }
     }
 }
