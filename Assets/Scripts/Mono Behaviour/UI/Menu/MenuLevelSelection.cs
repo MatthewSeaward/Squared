@@ -1,4 +1,6 @@
 ﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.Data_Managers;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -16,6 +18,28 @@ namespace Assets.Scripts
         private Transform ScrollContent;
 
         private bool _alreadyLoading = false;
+
+        private void Awake()
+        {
+            LivesManager.LivesChanged += LivesManager_LivesChanged;
+        }
+
+        private void OnDestroy()
+        {
+            LivesManager.LivesChanged -= LivesManager_LivesChanged;
+        }
+
+        private void LivesManager_LivesChanged(bool gained, int newLives)
+        {
+            try
+            {
+                UnityMainThreadDispatcher.Instance().Enqueue(() => Refresh());                
+            }
+            catch (Exception ex)
+            {
+                Workers.Helpers.DebugLogger.Instance.WriteException(ex);
+            }
+        }
 
         private void OnEnable()
         {
@@ -41,14 +65,14 @@ namespace Assets.Scripts
                 button.transform.localScale = new Vector3(1, 1, 1);
 
 
-                if (LevelManager.Instance.LevelUnlocked(i))
+                if (LevelManager.Instance.CanPlayLevel(i))
                 {
                     button.GetComponent<Button>().interactable = true;
                     button.GetComponentInChildren<Text>().text = (i + 1).ToString();
                 }
                 else
                 {
-                    button.GetComponent<Button>().interactable = Debug.isDebugBuild;
+                    button.GetComponent<Button>().interactable = false; //Debug.isDebugBuild;
                     int starsNeeded = LevelManager.Instance.SelectedChapterLevels[i].StarsToUnlock;
                     button.GetComponentInChildren<Text>().text = starsNeeded + " STARS";
                 }

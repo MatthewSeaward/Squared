@@ -24,15 +24,27 @@ namespace Assets.Scripts
 
         private void LivesManager_LivesChanged(bool gained, int newLives)
         {
-            UpdateText(newLives);
+            UnityMainThreadDispatcher.Instance().Enqueue(() => UpdateHeartDisplay(gained, newLives));
+        }
 
-            if (gained)
+        private void UpdateHeartDisplay(bool gained, int newLives)
+        {
+            try
             {
-                animator.SetTrigger("Heart Gain");
+                UpdateText(newLives);
+
+                if (gained)
+                {
+                    animator.SetTrigger("Heart Gain");
+                }
+                else
+                {
+                    animator.SetTrigger("Heart Lose");
+                }
             }
-            else
+            catch (System.Exception ex)
             {
-                animator.SetTrigger("Heart Lose");
+                Workers.Helpers.DebugLogger.Instance.WriteException(ex);
             }
         }
 

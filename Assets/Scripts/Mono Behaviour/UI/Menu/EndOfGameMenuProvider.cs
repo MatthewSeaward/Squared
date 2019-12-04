@@ -1,4 +1,6 @@
 ﻿using Assets.Scripts.UI.Helpers;
+using Assets.Scripts.Workers.Data_Managers;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static Assets.Scripts.Constants.Scenes;
@@ -40,21 +42,35 @@ namespace Assets.Scripts
 
         private void ShowLimitExpiredPopup()
         {
-            MenuProvider.Instance.ShowPopup("Failed", "You did not reach the target score within the limit.", new ButtonArgs()
+            MenuProvider.Instance.ShowPopup("Failed", "You did not reach the target score within the limit." + GetLivesRemainingText(), new ButtonArgs()
             {
                 Text = "Retry",
-                Action = () => SceneManager.LoadScene(Game)
+                Action = () => SceneManager.LoadScene(Game),
+                Enabled = LivesManager.Instance.LivesRemaining > 0
             });
         }
 
         private void ShowRestrictionViolatedPopup()
         {
-            MenuProvider.Instance.ShowPopup("Failed", "You violated the restriction.",
+            MenuProvider.Instance.ShowPopup("Failed", "You violated the restriction." + GetLivesRemainingText(),
                 new ButtonArgs()
                 {
                     Text = "Retry",
-                    Action = () => SceneManager.LoadScene(Game)
+                    Action = () => SceneManager.LoadScene(Game),
+                    Enabled = LivesManager.Instance.LivesRemaining > 0
                 });
+        }
+
+        private static string GetLivesRemainingText()
+        {
+            if (LivesManager.Instance.LivesRemaining == 0)
+            {
+                return $"{Environment.NewLine}{Environment.NewLine}No Lives Remaining";
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
  
     }

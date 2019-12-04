@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.Data_Managers;
 
 namespace Assets.Scripts
 {
@@ -22,8 +23,8 @@ namespace Assets.Scripts
         public void Show(string body)
         {
             Body.text = body;
-            Continue.interactable = LevelManager.Instance.LevelUnlocked(LevelManager.Instance.CurrentLevel + 1);
-            NextStar.gameObject.SetActive(LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved < 3);
+            Continue.interactable = LevelManager.Instance.CanPlayLevel(LevelManager.Instance.CurrentLevel + 1);
+            NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved < 3);
             GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.LevelProgress);
             gameObject.SetActive(true);
         }

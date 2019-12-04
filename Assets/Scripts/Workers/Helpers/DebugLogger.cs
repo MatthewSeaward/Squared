@@ -23,8 +23,7 @@ namespace Assets.Scripts.Workers.Helpers
         private DebugLogger()
         {
         }
-
-     
+             
         public void WriteEntry(string message)
         {
             string output = $"{DateTime.Now} - {message}";

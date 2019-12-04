@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Timers;
+using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Assets.Scripts.Workers.Data_Managers
 
     public class LivesManager
     {
-        public static LivesChanged LivesChanged;
+        public static event LivesChanged LivesChanged;
 
         private Timer Timer;
 
@@ -50,7 +51,7 @@ namespace Assets.Scripts.Workers.Data_Managers
                 _livesRemaining = value;
                 UserIO.Instance.SaveLivesInfo();
 
-                LivesChanged?.Invoke(increased, value);
+                LivesChanged?.Invoke(increased, LivesRemaining);
             }
         }
 
@@ -60,13 +61,27 @@ namespace Assets.Scripts.Workers.Data_Managers
             Timer.Elapsed += Timer_Elapsed;
             Timer.Interval = 60000;
             Timer.Start();
+
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
         }
 
         ~LivesManager()
         {
             Timer.Elapsed -= Timer_Elapsed;
             Timer.Dispose();
+
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
         }
+
+
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        {
+            if (result != GameResult.ReachedTarget)
+            {
+                LoseALife();
+            }
+        }
+
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
@@ -113,20 +128,28 @@ namespace Assets.Scripts.Workers.Data_Managers
             WorkOutLivesEarned();
         }
 
-            public void WorkOutLivesEarned()
+        public void WorkOutLivesEarned()
         {
-            var minutesPast = (DateTime.Now - LastEarnedLife).TotalMinutes;
-
-            int totalEarned = (int) (minutesPast / 10);
-
-            if (totalEarned > 0 || LastEarnedLife == DateTime.MinValue)
+            try
             {
-                LastEarnedLife = DateTime.Now;
-                LivesRemaining += (int)totalEarned;
+                var minutesPast = (DateTime.Now - LastEarnedLife).TotalMinutes;
 
-                UserIO.Instance.SaveLivesInfo();
+                int totalEarned = (int)(minutesPast / 10);
 
+                if (totalEarned > 0 || LastEarnedLife == DateTime.MinValue)
+                {
+                    LastEarnedLife = DateTime.Now;
+                    LivesRemaining += (int)totalEarned;
+
+                    UserIO.Instance.SaveLivesInfo();
+                    LivesChanged?.Invoke(true, LivesRemaining);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugLogger.Instance.WriteException(ex);
             }
         }
+
     }
 }

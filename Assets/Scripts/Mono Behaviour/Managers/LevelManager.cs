@@ -5,6 +5,7 @@ using System.Linq;
 using Assets.Scripts.Workers.IO;
 using System.Collections.Generic;
 using Assets.Scripts;
+using Assets.Scripts.Workers.Data_Managers;
 
 namespace Assets
 {
@@ -47,18 +48,7 @@ namespace Assets
 
         private int _currentLevel = 0;
         public string SelectedChapter => LevelOrder[chapterInt];
-
-        internal bool LevelUnlocked(int i)
-        {
-            if (i >= SelectedChapterLevels.Length)
-            {
-                return false;
-            }
-            else
-            {
-                return CurrentStars >= SelectedChapterLevels[i].StarsToUnlock;
-            }
-        }
+         
 
         public int CurrentLevel
         {
@@ -153,6 +143,23 @@ namespace Assets
             SelectedChapterLevels[CurrentLevel].LevelProgress.Chapter = SelectedChapter;
 
             LevelIO.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
+        }
+
+        internal bool LevelUnlocked(int i)
+        {
+            if (i >= SelectedChapterLevels.Length)
+            {
+                return false;
+            }
+            else
+            {
+                return CurrentStars >= SelectedChapterLevels[i].StarsToUnlock;
+            }
+        }
+
+        public bool CanPlayLevel(int levelNumber)
+        {
+            return LivesManager.Instance.LivesRemaining > 0 && LevelUnlocked (levelNumber);        
         }
 
         public bool IsNextChapter() =>  chapterInt + 1 < LevelOrder.Length;
