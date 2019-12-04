@@ -20,5 +20,33 @@ namespace Assets.Scripts.Workers.Data_Managers
             }
             return 50;
         }
+
+        public static int GetLivesRefreshTime()
+        {
+            try
+            {
+                return (int)Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("LivesRefreshTime").LongValue;
+
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"Error Loading LivesRefreshTime.{Environment.NewLine}{e.ToString()}");
+            }
+            return 10;
+        }
+
+        public static int GetMaxLives()
+        {
+            try
+            {
+                return (int)Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("MaxLives").LongValue;
+
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"Error Loading MaxLives.{Environment.NewLine}{e.ToString()}");
+            }
+            return 6;
+        }
     }
 }

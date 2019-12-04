@@ -13,7 +13,8 @@ namespace Assets.Scripts.Workers.Data_Managers
         public static event LivesChanged LivesChanged;
 
         private Timer Timer;
-
+        private readonly int LivesRefreshTime;
+        private readonly int MaxLives;
         private int _livesRemaining;
         private static LivesManager _instance;
 
@@ -35,11 +36,11 @@ namespace Assets.Scripts.Workers.Data_Managers
         {
             get
             {
-                return Mathf.Clamp(_livesRemaining, 0, 6);
+                return Mathf.Clamp(_livesRemaining, 0, MaxLives);
             }
             private set
             {
-                value = Mathf.Clamp(value, 0, 6);
+                value = Mathf.Clamp(value, 0, MaxLives);
 
                 if (value == _livesRemaining)
                 {
@@ -59,10 +60,14 @@ namespace Assets.Scripts.Workers.Data_Managers
         {
             Timer = new Timer();
             Timer.Elapsed += Timer_Elapsed;
-            Timer.Interval = 60000;
+            Timer.Interval = Constants.GameSettings.LivesTimerInterval;
             Timer.Start();
 
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+
+            LivesRefreshTime = RemoteConfigHelper.GetLivesRefreshTime();
+            MaxLives = RemoteConfigHelper.GetMaxLives();
+
         }
 
         ~LivesManager()
@@ -134,7 +139,7 @@ namespace Assets.Scripts.Workers.Data_Managers
             {
                 var minutesPast = (DateTime.Now - LastEarnedLife).TotalMinutes;
 
-                int totalEarned = (int)(minutesPast / 10);
+                int totalEarned = (int)(minutesPast / LivesRefreshTime);
 
                 if (totalEarned > 0 || LastEarnedLife == DateTime.MinValue)
                 {
