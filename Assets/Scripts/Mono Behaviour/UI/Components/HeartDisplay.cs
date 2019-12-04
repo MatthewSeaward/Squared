@@ -38,7 +38,7 @@ namespace Assets.Scripts
 
         private void OnEnable()
         {
-            UpdateText(LivesManager.LivesRemaining);
+            UpdateText(LivesManager.Instance.LivesRemaining);
         }
 
         private void UpdateText(int lives)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Timers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
 
@@ -6,14 +7,30 @@ namespace Assets.Scripts.Workers.Data_Managers
 {
     public delegate void LivesChanged(bool gained, int newLives);
 
-    public static class LivesManager
+    public class LivesManager
     {
         public static LivesChanged LivesChanged;
-        public static DateTime LastEarnedLife { private set; get; }
 
-        private static int _livesRemaining;
-        
-        public static int LivesRemaining
+        private Timer Timer;
+
+        private int _livesRemaining;
+        private static LivesManager _instance;
+
+        public static LivesManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new LivesManager();
+                }
+                return _instance;
+            }
+        }
+
+        public DateTime LastEarnedLife { private set; get; } = DateTime.Now;
+
+        public int LivesRemaining
         {
             get
             {
@@ -28,29 +45,50 @@ namespace Assets.Scripts.Workers.Data_Managers
                     return;
                 }
 
-                LivesChanged?.Invoke(value > _livesRemaining, value);               
+                var increased = value > _livesRemaining;
 
                 _livesRemaining = value;
                 UserIO.Instance.SaveLivesInfo();
+
+                LivesChanged?.Invoke(increased, value);
             }
         }
 
-        public static void Reset()
+        private LivesManager()
+        {
+            Timer = new Timer();
+            Timer.Elapsed += Timer_Elapsed;
+            Timer.Interval = 60000;
+            Timer.Start();
+        }
+
+        ~LivesManager()
+        {
+            Timer.Elapsed -= Timer_Elapsed;
+            Timer.Dispose();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            WorkOutLivesEarned();
+        }
+
+        public void Reset()
         {
             LivesRemaining = 0;
         }
 
-        public static void GainALife()
+        public void GainALife()
         {
             LivesRemaining++;
         }
 
-        public static void LoseALife()
+        public void LoseALife()
         {
             LivesRemaining--;
         }
 
-        internal static void Setup(LivesEntity livesEntity)
+        internal void Setup(LivesEntity livesEntity)
         {
             if (livesEntity == null)
             {
@@ -63,19 +101,32 @@ namespace Assets.Scripts.Workers.Data_Managers
 
                 if (DateTime.TryParse(livesEntity.LastEarnedLife, out var time))
                 {
-                    WorkOutLivesEarned(time);
+                    LastEarnedLife = time;
+                    WorkOutLivesEarned();
                 }
             }
         }
 
-        public static void WorkOutLivesEarned(DateTime lastEarnedLife)
+        public void WorkOutLivesEarned(DateTime time)
         {
-            var minutesPast = (DateTime.Now - lastEarnedLife).TotalMinutes;
+            LastEarnedLife = time;
+            WorkOutLivesEarned();
+        }
 
-            var totalEarned = minutesPast / 10;
+            public void WorkOutLivesEarned()
+        {
+            var minutesPast = (DateTime.Now - LastEarnedLife).TotalMinutes;
 
-            LastEarnedLife = DateTime.Now;
-            LivesRemaining += (int) totalEarned;            
+            int totalEarned = (int) (minutesPast / 10);
+
+            if (totalEarned > 0 || LastEarnedLife == DateTime.MinValue)
+            {
+                LastEarnedLife = DateTime.Now;
+                LivesRemaining += (int)totalEarned;
+
+                UserIO.Instance.SaveLivesInfo();
+
+            }
         }
     }
 }

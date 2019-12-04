@@ -9,7 +9,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Collection
     { 
         public void OnCollection()
         {
-            LivesManager.GainALife();
+            LivesManager.Instance.GainALife();
         }
 
         public Sprite[] GetSprites()

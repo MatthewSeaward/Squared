@@ -10,53 +10,53 @@ namespace Assets.Scripts.Editor.Workers.Lives
         [Test]
         public void GainALife_NewLives_1()
         {
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
 
-            LivesManager.GainALife();
+            LivesManager.Instance.GainALife();
 
-            Assert.AreEqual(1, LivesManager.LivesRemaining);
+            Assert.AreEqual(1, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
         public void GainALife_CannotGoAbove_6()
         {
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
             
             for (int i = 0; i < 7; i++)
             {
-                LivesManager.GainALife();
+                LivesManager.Instance.GainALife();
             }
 
-            Assert.AreEqual(6, LivesManager.LivesRemaining);
+            Assert.AreEqual(6, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
         public void LoseALife_NewLives_1()
         {            
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
 
-            LivesManager.GainALife();
-            Assert.AreEqual(1, LivesManager.LivesRemaining);
+            LivesManager.Instance.GainALife();
+            Assert.AreEqual(1, LivesManager.Instance.LivesRemaining);
 
-            LivesManager.LoseALife();
-            Assert.AreEqual(0, LivesManager.LivesRemaining);
+            LivesManager.Instance.LoseALife();
+            Assert.AreEqual(0, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
         public void LoseALife_CannotGoBelow_0()
         {
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
 
-            Assert.AreEqual(0, LivesManager.LivesRemaining);
+            Assert.AreEqual(0, LivesManager.Instance.LivesRemaining);
 
-            LivesManager.LoseALife();
-            Assert.AreEqual(0, LivesManager.LivesRemaining);
+            LivesManager.Instance.LoseALife();
+            Assert.AreEqual(0, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
         public void GainALife_EventThrown()
         {
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
 
             bool? livesGained = null;
             int lives = 0;
@@ -66,7 +66,7 @@ namespace Assets.Scripts.Editor.Workers.Lives
                 lives = newLives;
             };
 
-            LivesManager.GainALife();
+            LivesManager.Instance.GainALife();
 
             Assert.IsTrue(livesGained);
             Assert.AreEqual(1, lives);
@@ -75,10 +75,10 @@ namespace Assets.Scripts.Editor.Workers.Lives
         [Test]
         public void LoseALife_EventThrown()
         {
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
 
-            LivesManager.GainALife();
-            Assert.AreEqual(1, LivesManager.LivesRemaining);
+            LivesManager.Instance.GainALife();
+            Assert.AreEqual(1, LivesManager.Instance.LivesRemaining);
 
             bool? livesGained = null;
             int lives = 0;
@@ -89,7 +89,7 @@ namespace Assets.Scripts.Editor.Workers.Lives
                 lives = newLives;
             };
 
-            LivesManager.LoseALife();
+            LivesManager.Instance.LoseALife();
 
             Assert.IsFalse(livesGained);
             Assert.AreEqual(0, lives);
@@ -98,9 +98,9 @@ namespace Assets.Scripts.Editor.Workers.Lives
         [Test]
         public void LoseALife_At0_NoEventThrown()
         {
-            LivesManager.Reset();
+            LivesManager.Instance.Reset();
 
-            Assert.AreEqual(0, LivesManager.LivesRemaining);
+            Assert.AreEqual(0, LivesManager.Instance.LivesRemaining);
 
             bool? livesGained = null;
             int lives = 0;
@@ -111,7 +111,7 @@ namespace Assets.Scripts.Editor.Workers.Lives
                 lives = newLives;
             };
 
-            LivesManager.LoseALife();
+            LivesManager.Instance.LoseALife();
 
             Assert.IsNull(livesGained);
             Assert.AreEqual(0, lives);

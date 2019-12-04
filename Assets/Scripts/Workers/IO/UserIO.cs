@@ -74,7 +74,7 @@ namespace Assets.Scripts.Workers
 
         public void SaveLivesInfo()
         {
-            livesWriter.WriteLives(LivesManager.LivesRemaining, LivesManager.LastEarnedLife);
+            livesWriter.WriteLives(LivesManager.Instance.LivesRemaining, LivesManager.Instance.LastEarnedLife);
         }
 
         private void LoadPowerupData()
@@ -94,7 +94,7 @@ namespace Assets.Scripts.Workers
 
         private void FireBaseLivesLoaded(LivesEntity livesEntity)
         {
-            LivesManager.Setup(livesEntity);
+            LivesManager.Instance.Setup(livesEntity);
 
             livesLoaded = true;
 
