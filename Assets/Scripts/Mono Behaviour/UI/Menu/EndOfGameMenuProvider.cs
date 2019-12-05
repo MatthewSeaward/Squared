@@ -63,14 +63,14 @@ namespace Assets.Scripts
 
         private static string GetLivesRemainingText()
         {
-            if (LivesManager.Instance.LivesRemaining == 0)
-            {
-                return $"{Environment.NewLine}{Environment.NewLine}No Lives Remaining";
-            }
-            else
-            {
+            //if (LivesManager.Instance.LivesRemaining == 0)
+            //{
+            //    return $"{Environment.NewLine}{Environment.NewLine}No Lives Remaining";
+            //}
+            //else
+            //{
                 return string.Empty;
-            }
+            //}
         }
  
     }

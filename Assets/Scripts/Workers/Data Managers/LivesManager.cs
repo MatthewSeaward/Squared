@@ -59,9 +59,7 @@ namespace Assets.Scripts.Workers.Data_Managers
         private LivesManager()
         {
             Timer = new Timer();
-            Timer.Elapsed += Timer_Elapsed;
-            Timer.Interval = Constants.GameSettings.LivesTimerInterval;
-            Timer.Start();
+            Timer.Elapsed += Timer_Elapsed;  
 
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
 
@@ -148,6 +146,9 @@ namespace Assets.Scripts.Workers.Data_Managers
 
                     UserIO.Instance.SaveLivesInfo();
                     LivesChanged?.Invoke(true, LivesRemaining);
+
+                    Timer.Interval = LivesRefreshTime * 60000;
+                    Timer.Start();
                 }
             }
             catch (Exception ex)

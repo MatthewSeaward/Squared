@@ -70,22 +70,30 @@ public class UnityMainThreadDispatcher : MonoBehaviour {
 	}
 
 	public static UnityMainThreadDispatcher Instance() {
-		if (!Exists ()) {
-			throw new Exception ("UnityMainThreadDispatcher could not find the UnityMainThreadDispatcher object. Please ensure you have added the MainThreadExecutor Prefab to your scene.");
+        if (!Exists ()) {
+
+
+            throw new Exception ("UnityMainThreadDispatcher could not find the UnityMainThreadDispatcher object. Please ensure you have added the MainThreadExecutor Prefab to your scene.");
 		}
 		return _instance;
 	}
 
 
 	void Awake() {
-		if (_instance == null) {
+
+        if (_instance != null && _instance != this) {
+            Destroy(this.gameObject);
+        }
+         else if (_instance == null) {
 			_instance = this;
 			DontDestroyOnLoad(this.gameObject);
 		}
 	}
 
 	void OnDestroy() {
-			_instance = null;
+        if (_instance == this) {
+            _instance = null;
+        }
 	}
 
 
