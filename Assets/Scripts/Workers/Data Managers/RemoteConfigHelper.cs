@@ -25,14 +25,14 @@ namespace Assets.Scripts.Workers.Data_Managers
         {
             try
             {
-                //return (int)Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("LivesRefreshTime").LongValue;
+                return (int)Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("LivesRefreshTime").LongValue;
 
             }
             catch (Exception e)
             {
                 Debug.LogWarning($"Error Loading LivesRefreshTime.{Environment.NewLine}{e.ToString()}");
             }
-            return 1;
+            return 10;
         }
 
         public static int GetMaxLives()

@@ -42,36 +42,13 @@ namespace Assets.Scripts
 
         private void ShowLimitExpiredPopup()
         {
-            MenuProvider.Instance.ShowPopup("Failed", "You did not reach the target score within the limit." + GetLivesRemainingText(), new ButtonArgs()
-            {
-                Text = "Retry",
-                Action = () => SceneManager.LoadScene(Game),
-                Enabled = LivesManager.Instance.LivesRemaining > 0
-            });
+            MenuProvider.Instance.ShowEndOfGameScreen("You did not reach the target score within the limit.");
         }
 
         private void ShowRestrictionViolatedPopup()
         {
-            MenuProvider.Instance.ShowPopup("Failed", "You violated the restriction." + GetLivesRemainingText(),
-                new ButtonArgs()
-                {
-                    Text = "Retry",
-                    Action = () => SceneManager.LoadScene(Game),
-                    Enabled = LivesManager.Instance.LivesRemaining > 0
-                });
+            MenuProvider.Instance.ShowEndOfGameScreen("You violated the restriction.");
         }
-
-        private static string GetLivesRemainingText()
-        {
-            //if (LivesManager.Instance.LivesRemaining == 0)
-            //{
-            //    return $"{Environment.NewLine}{Environment.NewLine}No Lives Remaining";
-            //}
-            //else
-            //{
-                return string.Empty;
-            //}
-        }
- 
+    
     }
 }

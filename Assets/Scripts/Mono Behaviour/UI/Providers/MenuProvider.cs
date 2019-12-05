@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Managers;
-using Assets.Scripts.UI.Helpers;
 using GridGeneration;
 using UnityEngine;
 
@@ -37,21 +36,11 @@ public class MenuProvider : MonoBehaviour
         HideAll();
         BasicGridGenerator.GridGenerated += ShowLevelStart;
     }
-
-    public void ShowPopup(string title, string body)
+ 
+    public void ShowEndOfGameScreen(string body)
     {
-        ShowPopup(title, body, null);
-    }
-
-    public void ShowPopup(string title, string body, ButtonArgs button)
-    {
-        ShowPopup(title, body, button, null);
-    }
-
-    public void ShowPopup(string title, string body, ButtonArgs button1, ButtonArgs button2)
-    {
-        GetComponentInChildren<Popup>(true).Show(title, body, button1, button2);
-        MenuDisplayed?.Invoke(typeof(Popup));
+        GetComponentInChildren<EndOfGameScreen>(true).Show(body);
+        MenuDisplayed?.Invoke(typeof(EndOfGameScreen));
     }
 
     public void ShowVictoryPopup(string body)
@@ -88,7 +77,6 @@ public class MenuProvider : MonoBehaviour
         {
             return;
         }
-
 
         ToggleMenuVisiblity<T>(true);
         MenuDisplayed?.Invoke(typeof(T));

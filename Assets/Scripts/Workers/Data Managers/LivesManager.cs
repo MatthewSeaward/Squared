@@ -156,6 +156,5 @@ namespace Assets.Scripts.Workers.Data_Managers
                 DebugLogger.Instance.WriteException(ex);
             }
         }
-
     }
 }
