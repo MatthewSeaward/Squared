@@ -37,8 +37,6 @@ namespace Assets.Scripts.Constants
     {
         public const int ChanceToUseBannedPiece = 60;
         public const int ChanceToUseSpecialPiece = 10;
-        public const int AmountForAwesomeText = 7;
-        public const float EnemyRageInterval = 10;
         public const float StarShooterFreq = 1f;
         public const float LoadingTextUpdateTime = 0.25f;
         public const float AdditionalSquareSensitvity = 1.25f;
