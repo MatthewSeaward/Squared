@@ -72,7 +72,7 @@ namespace Assets.Scripts
                 }
                 else
                 {
-                    button.GetComponent<Button>().interactable = false; //Debug.isDebugBuild;
+                    button.GetComponent<Button>().interactable = Debug.isDebugBuild;
                     int starsNeeded = LevelManager.Instance.SelectedChapterLevels[i].StarsToUnlock;
                     button.GetComponentInChildren<Text>().text = starsNeeded + " STARS";
                 }
