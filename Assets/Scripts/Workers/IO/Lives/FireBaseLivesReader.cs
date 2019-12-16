@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
@@ -6,11 +7,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Lives
 {
-    public delegate void LivesLoaded(LivesEntity livesEntity);
-
     class FireBaseLivesReader : ILivesReader
     {
-        public static LivesLoaded LivesLoaded;
 
         public void ReadLivesAsync()
         {
@@ -36,7 +34,7 @@ namespace Assets.Scripts.Workers.IO.Lives
                                               result = JsonUtility.FromJson<LivesEntity>(info);
                                           }
 
-                                          LivesLoaded?.Invoke(result);
+                                          LivesManager.Instance.Setup(result);
 
                                       }
                                       catch (Exception ex)

@@ -1,17 +1,14 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Collection
-{
-    public delegate void PiecesCollectedLoaded(PiecesCollected pieceCollected);
-    
+{    
     class FireBasePieceCollectionReader : IPieceCollectionReader
     {
-
-        public static PiecesCollectedLoaded PiecesCollectedLoaded;
 
         public void LoadPieceCollectionAsync()
         {
@@ -44,7 +41,7 @@ namespace Assets.Scripts.Workers.IO.Collection
                                              result.Pieces.AddRange(array);
                                          }
 
-                                         PiecesCollectedLoaded?.Invoke(result);
+                                         PieceCollectionManager.Instance.PiecesCollected = result;
 
                                      }
                                      catch (Exception ex)

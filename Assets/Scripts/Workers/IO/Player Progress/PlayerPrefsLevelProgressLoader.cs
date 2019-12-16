@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Player_Progress

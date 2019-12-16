@@ -6,6 +6,7 @@ using LevelLoader;
 using LevelLoader.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -19,50 +20,22 @@ namespace Assets.Scripts.Workers.IO
 
         ILevelProgressReader progressLoader = new FireBaseLevelProgressReader();
         ILevelProgressWriter progressWriter = new FireBaseLevelProgressWriter();
+        ILevelOrderLoader levelOrderLoader = new LevelOrderLoader();
 
         public Dictionary<string, Level[]> Levels;
 
         public List<LevelProgress> LevelProgress;
         public string[] LevelOrder;
 
-        public void LoadLevelData()
+        public void LoadLevels()
         {
-            Levels = levelLoader.GetLevels();
-            LoadLevelStars();
-            LoadEnemyEvents();
-
-            FireBaseLevelProgressReader.UserDataLoaded += UserDataLoaded;
-
-            progressLoader.LoadLevelProgressAsync();
-
-            ILevelOrderLoader loader = new LevelOrderLoader();
-            LevelOrder = loader.LoadLevelOrder();
+            LevelManager.Instance.Levels = levelLoader.GetLevels();
+            LevelManager.Instance.LevelOrder = levelOrderLoader.LoadLevelOrder();
         }
 
-        private void UserDataLoaded(LevelProgress[] levelProgresses)
-        {
-            FireBaseLevelProgressReader.UserDataLoaded -= UserDataLoaded;
-
-            LevelProgress = new List<LevelProgress>();
-            if (levelProgresses != null)
-            {
-                LevelProgress.AddRange(levelProgresses);
-            }
-
-            foreach (var progress in LevelProgress)
-            {
-                if (!Levels.ContainsKey(progress.Chapter))
-                {
-                    continue;
-                }
-                Levels[progress.Chapter][progress.Level].LevelProgress = progress;
-            }
-            DataLoaded?.Invoke();
-        }
-
-        private void LoadLevelStars()
-        {
-            foreach (var chapter in Levels)
+        public void LoadLevelStars()
+        {            
+            foreach (var chapter in LevelManager.Instance.Levels)
             {
                 foreach (var level in chapter.Value)
                 {
@@ -70,7 +43,7 @@ namespace Assets.Scripts.Workers.IO
                     {
                         continue;
                     }
-                    
+
                     level.Star1Progress.Number = 1;
                     level.Star2Progress.Number = 2;
                     level.Star3Progress.Number = 3;
@@ -82,17 +55,16 @@ namespace Assets.Scripts.Workers.IO
                     level.Star1Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star1);
                     level.Star2Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star2);
                     level.Star3Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star3);
-
                 }
-            }
+            }                   
         }
 
-        private void LoadEnemyEvents()
+        public void LoadEnemyEvents()
         {
             var reader = new JSONEventReader();
             var events = reader.GetEvents();
 
-            foreach (var chapter in Levels)
+            foreach (var chapter in LevelManager.Instance.Levels)
             {
                 if (!events.ContainsKey(chapter.Key))
                 {
@@ -114,6 +86,11 @@ namespace Assets.Scripts.Workers.IO
                     level.Star3Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star3);
                 }
             }
+        }
+
+        public void LoadLevelProgress()
+        {
+            progressLoader.LoadLevelProgressAsync();
         }
 
         internal void SaveLevelProgress(int level, LevelProgress levelinfo)

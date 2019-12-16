@@ -98,13 +98,6 @@ namespace Assets
             }
         }
 
-        public void LoadData()
-        {
-            LevelIO.LoadLevelData();
-            Levels = LevelIO.Levels;
-            LevelOrder = LevelIO.LevelOrder;
-        }
-
         public bool HasCompletedLevel(int i)
         {
             return i <= LevelCompleted;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.Data_Managers;
@@ -12,70 +13,70 @@ namespace Assets.Scripts
 {
     class DataLoader : MonoBehaviour
     {
-        private bool levelDataLoaded;
-        private bool userDataLoaded;
-        private bool configLoaded;
-
         private int width = 0;
         private bool _alreadyLoading = false;
 
         [SerializeField]
         private Text text;
 
-        private bool LoadingComplete => levelDataLoaded && userDataLoaded && configLoaded;
+        [SerializeField]
+        private Text loadingDetails;
 
         public void Start()
         {
-            LevelIO.DataLoaded += Level_DataLoaded;
-            UserIO.DataLoaded += User_DataLoaded;
+            StartCoroutine(LoadData_Start());            
+            StartCoroutine(LoadingText());
+        }
 
-            LevelManager.Instance.LoadData();
-            UserIO.Instance.LoadData();
+        private IEnumerator LoadData_Start()
+        {
+            var levelIO = new LevelIO();
+            var userIO = UserIO.Instance;
+
+            yield return LoadData(() => levelIO.LoadLevels(), "Loading Levels");
+            yield return LoadData(() => levelIO.LoadLevelProgress(), "Loading Level Progress");
+            yield return LoadData(() => levelIO.LoadLevelStars(), "Loading Level Stars");
+            yield return LoadData(() => levelIO.LoadEnemyEvents(), "Loading Level Events");
+            yield return LoadData(() => LoadConfig(), "Loading Config");
+
+            yield return LoadData(() => userIO.LoadPowerupsData(), "Loading Powerups");
+            yield return LoadData(() => userIO.LoadEquippedPowerups(), "Loading Equipped Powerups");
+            yield return LoadData(() => userIO.LoadLives(), "Loading Lives");
+
+            yield return LoadData(() => PieceCollectionIO.Instance.LoadCollectionData(), "Loading Collected Pieces");
 
             ScoreManager.Instance.Initialise();
             PieceCollectionManager.Instance.Initialise();
 
-            StartCoroutine(LoadConfig());
-
-            StartCoroutine(LoadingText());
-        }
-
-        IEnumerator LoadConfig()
-        {
-            var task = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync();
-            while (!task.IsCompleted)
-            {
-                yield return null;
-            }
-
-            Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
-            configLoaded = true;
-        }
-        
-        public void OnDestroy()
-        {
-            LevelIO.DataLoaded -= Level_DataLoaded;
-            UserIO.DataLoaded -= User_DataLoaded;
-        }
-
-        private void Update()
-        {
-            if (LoadingComplete && !_alreadyLoading)
+            if (!_alreadyLoading)
             {
                 StartCoroutine(LoadSceneAsync());
             }
         }
 
-        public void Level_DataLoaded()
+        private object LoadData(Action action, string status)
         {
-            levelDataLoaded = true;
+            ReportStatus(status);
+            action();
+            return null;
+        }
+       
+
+        private void LoadConfig()
+        {            
+            var task = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync();
+            while (!task.IsCompleted)
+            {
+            }
+
+            Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
         }
 
-
-        public void User_DataLoaded()
+        private void ReportStatus(string status)
         {
-            userDataLoaded = true;
-        }
+            Debug.Log(status);
+            loadingDetails.text = status;
+        }  
 
         IEnumerator LoadSceneAsync()
         {

@@ -1,4 +1,5 @@
-﻿using Firebase.Database;
+﻿using Assets.Scripts.Workers.Helpers;
+using Firebase.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,11 +44,15 @@ namespace Assets.Scripts.Workers.IO.Helpers
                         }
                         catch (Exception ex)
                         {
+                            DebugLogger.Instance.WriteException(ex);
                         }
                     }
                 });
             }
-            catch { }
+            catch(Exception ex)
+            {
+                DebugLogger.Instance.WriteException(ex);
+            }
 
             return result;
         }

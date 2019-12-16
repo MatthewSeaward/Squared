@@ -1,4 +1,7 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Factorys;
+using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
@@ -8,13 +11,9 @@ using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Powerup
 {
-    public delegate void PowerupsLoaded(List<PowerupEntity> powerups);
-    public delegate void EquippedPowerupsLoaded(string[] powerups);
 
     class FireBasePowerupReader : IPowerupReader
     {
-        public static PowerupsLoaded PowerupsLoaded;
-        public static EquippedPowerupsLoaded EquippedPowerupsLoaded;
 
         public void ReadPowerupsAsync()
         {
@@ -23,13 +22,18 @@ namespace Assets.Scripts.Workers.IO.Powerup
                 var t = new Task(() =>
                 {
                     var result = FireBaseReader.ReadAsync<PowerupEntity>(FireBaseSavePaths.PlayerPowerupLocation());
-                    PowerupsLoaded?.Invoke(result.Result);
+
+                    foreach (var entity in result.Result)
+                    {
+                        UserPowerupManager.Instance.Powerups.Add(new PowerupCollection() { Powerup = PowerupFactory.GetPowerup(entity.Name), Count = entity.Count });
+                    }
                 });
                 t.Start();
 
             }
             catch (Exception ex)
             {
+                DebugLogger.Instance.WriteException(ex);
             }
         }
 
@@ -57,7 +61,10 @@ namespace Assets.Scripts.Workers.IO.Powerup
                                               result = JsonHelper.FromJson<string>(info);
                                           }
 
-                                          EquippedPowerupsLoaded?.Invoke(result);
+                                          for (int i = 0; i < result.Length; i++)
+                                          {
+                                              UserPowerupManager.Instance.EquippedPowerups[i] = PowerupFactory.GetPowerup(result[i]);
+                                          }
 
                                       }
                                       catch (Exception ex)
@@ -70,6 +77,7 @@ namespace Assets.Scripts.Workers.IO.Powerup
             }
             catch (Exception ex)
             {
+                DebugLogger.Instance.WriteException(ex);
             }
         }
     }

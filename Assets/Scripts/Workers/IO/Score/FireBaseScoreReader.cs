@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Helpers;
+﻿using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.IO.Helpers;
 using DataEntities;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Workers.IO.Score
             }
             catch (Exception ex)
             {
+                DebugLogger.Instance.WriteException(ex);
             }
         }
     }
