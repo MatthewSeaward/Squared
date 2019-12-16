@@ -206,16 +206,16 @@
 				[
 					"Change,Turns,0,5,2,h",
 					"Destroy,Turns,8,10,4",
-					"Change,Turns,13,14,2,c"
+					"Change,Turns,13,14,2,h"
 				],
 				"Star2":
 				[
-					"Change,Turns,3,8,2,2",
-					"Change,Turns,10,12,3,3"
+					"Change,Turns,3,8,2,h",
+					"Change,Turns,10,12,3,h"
 				],
 				"Star3":
 				[
-					""
+					"Change,Turns,2,10,6,h",
 				]
 			},
 				{

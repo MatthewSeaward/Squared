@@ -308,7 +308,7 @@
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Turns", "22", "Max", "4"],
-			"Star3": ["Time", "15", "Time", "6"]
+			"Star3": ["Turns", "15", "Time", "6"]
 		},
 		{
 			"LevelNumber": 14,
