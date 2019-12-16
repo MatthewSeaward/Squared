@@ -8402,6 +8402,11 @@ PrefabInstance:
       propertyPath: HideIfNoLives
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3350039833554979381, guid: fbff356a489258f4c974bca6d08e3e46,
+        type: 3}
+      propertyPath: HideIfLivesFull
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4433437920016481177, guid: fbff356a489258f4c974bca6d08e3e46,
         type: 3}
       propertyPath: m_FontData.m_FontSize

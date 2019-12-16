@@ -61,7 +61,7 @@ namespace Assets.Scripts.Workers.Data_Managers
             Timer = new Timer();
             Timer.Elapsed += Timer_Elapsed;  
 
-            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+            LevelStart.GameStarted += LevelStart_GameStarted;
 
             LivesRefreshTime = RemoteConfigHelper.GetLivesRefreshTime();
             MaxLives = RemoteConfigHelper.GetMaxLives();
@@ -73,18 +73,13 @@ namespace Assets.Scripts.Workers.Data_Managers
             Timer.Elapsed -= Timer_Elapsed;
             Timer.Dispose();
 
-            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+            LevelStart.GameStarted -= LevelStart_GameStarted;
         }
 
-
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        private void LevelStart_GameStarted()
         {
-            if (result != GameResult.ReachedTarget)
-            {
-                LoseALife();
-            }
+            LoseALife();
         }
-
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {

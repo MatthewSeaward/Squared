@@ -9,7 +9,7 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Components
     class LifeCountdown : MonoBehaviour
     {
         [SerializeField]
-        private bool HideIfNoLives = true;
+        private bool HideIfLivesFull = true;
 
         private Text countdown;
 
@@ -30,7 +30,7 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Components
 
         private void OnEnable()
         {
-            if (HideIfNoLives)
+            if (HideIfLivesFull)
             {
                 SetChildrenEnabled(LivesManager.Instance.LivesRemaining == 0);
             }
