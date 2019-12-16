@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using UnityEngine;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection
 {
@@ -39,7 +39,7 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection
                     continue;
                 }
 
-                var newPiece = PieceFactory.Instance.CreateSquarePiece(Type, false);
+                var newPiece = PieceBuilderDirector.Instance.CreateSquarePiece(Type, false);
 
                 var squarePiece = newPiece.GetComponent<SquarePiece>();
                 squarePiece.Position = position;

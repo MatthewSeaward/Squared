@@ -1,5 +1,5 @@
 ﻿using System;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 {

@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public void OnDestroy()
         {
-            var random =  PieceFactory.Instance.CreateRandomSprite();
+            var random =  PieceCreationHelpers.GetRandomSprite();
             piece.PieceColour = random.colour;
             piece.Sprite =  random.sprite;
             piece.Deselected();

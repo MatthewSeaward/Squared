@@ -198,7 +198,7 @@ namespace Assets.Scripts.Editor.Workers
                     else if (piece == "r")
                     {
                         var p = BuildPiece(x, y, "1");
-                        p.Type = PieceFactory.PieceTypes.Rainbow;
+                        p.Type = PieceBuilderDirector.PieceTypes.Rainbow;
                         list.Add(p);
                     }
                     else if (piece == "L")

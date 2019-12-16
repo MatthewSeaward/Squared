@@ -3,7 +3,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using GridGeneration.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace GridGeneration
 {
@@ -65,13 +65,13 @@ namespace GridGeneration
 
         public GameObject GenerateTile(PieceTypes type, float xPos, float yPos, int x, int y, bool initialSetup = false)
         {
-            var piece = PieceFactory.Instance.CreateSquarePiece(type, initialSetup);
+            var piece = PieceBuilderDirector.Instance.CreateSquarePiece(type, initialSetup);
             return ConfigurePiece(xPos, yPos, x, y, piece);
         }
 
         public GameObject GenerateRandomTile(float xPos, float yPos, int x, int y)
         {
-            var piece = PieceFactory.Instance.CreateRandomSquarePiece();
+            var piece = PieceBuilderDirector.Instance.CreateRandomSquarePiece();
             return ConfigurePiece(xPos, yPos, x, y, piece);
         }
 

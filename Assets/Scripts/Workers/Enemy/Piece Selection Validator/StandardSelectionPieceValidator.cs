@@ -21,7 +21,7 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
                 return false;
             }
 
-            if (piece.Type == PieceFactory.PieceTypes.Chest)
+            if (piece.Type == PieceBuilderDirector.PieceTypes.Chest)
             {
                 return false;
             }

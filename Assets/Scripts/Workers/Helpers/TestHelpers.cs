@@ -1,7 +1,7 @@
 ﻿using NSubstitute;
 using System.Collections.Generic;
 using UnityEngine;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers
 {

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
-using static PieceFactory;
+using static PieceBuilderDirector;
 using System.Linq;
 
 [Category("Restrictions")]

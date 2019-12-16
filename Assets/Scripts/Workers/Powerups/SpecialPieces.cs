@@ -15,7 +15,7 @@ namespace Assets.Scripts.Workers.Powerups
 
         public bool Enabled => true;
 
-        private ChangeRandomPiece ChangePiece = new ChangeRandomPiece() { NewPieceType = PieceFactory.PieceTypes.Rainbow, SelectionAmount = 2 };
+        private ChangeRandomPiece ChangePiece = new ChangeRandomPiece() { NewPieceType = PieceBuilderDirector.PieceTypes.Rainbow, SelectionAmount = 2 };
 
         public void Invoke()
         {

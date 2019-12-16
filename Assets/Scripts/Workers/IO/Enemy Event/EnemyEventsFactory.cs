@@ -8,7 +8,7 @@ using Assets.Scripts.Workers.Enemy.Events;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.Helpers.Extensions;
 using UnityEngine;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -66,13 +66,13 @@ namespace Assets.Scripts.Workers.IO
                         trig.EnemyRage = new SwapRage() { SelectionAmount = Convert.ToInt32(amount) };
                         break;
                     case "Change":
-                        trig.EnemyRage = new ChangeRandomPiece() { SelectionAmount = Convert.ToInt32(amount), NewPieceType = (PieceFactory.PieceTypes)parameters[0][0] };
+                        trig.EnemyRage = new ChangeRandomPiece() { SelectionAmount = Convert.ToInt32(amount), NewPieceType = (PieceBuilderDirector.PieceTypes)parameters[0][0] };
                         break;
                     case "ChangeS":
                         var from = parameters[0][0];
                         var to = parameters[1][0];
 
-                        trig.EnemyRage = new ChangeSpecificPiece((PieceFactory.PieceTypes)from, (PieceFactory.PieceTypes)to) { SelectionAmount = Convert.ToInt32(amount) };
+                        trig.EnemyRage = new ChangeSpecificPiece((PieceBuilderDirector.PieceTypes)from, (PieceBuilderDirector.PieceTypes)to) { SelectionAmount = Convert.ToInt32(amount) };
                         break;
                     case "Add":
 
@@ -83,7 +83,7 @@ namespace Assets.Scripts.Workers.IO
                             positions.Add(new Vector2Int(Convert.ToInt32(parts[0]), Convert.ToInt32(parts[1])));
                         }
 
-                        trig.EnemyRage = new AddPieceEvent(positions, (PieceFactory.PieceTypes)parameters[0][0]);
+                        trig.EnemyRage = new AddPieceEvent(positions, (PieceBuilderDirector.PieceTypes)parameters[0][0]);
                         break;
                     case "Remove":
 

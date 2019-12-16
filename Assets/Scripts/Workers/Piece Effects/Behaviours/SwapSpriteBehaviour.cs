@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 
@@ -25,10 +26,10 @@ namespace Assets.Scripts.Workers.Piece_Effects
             if (timer > Constants.GameSettings.SwapPieceChangeFrequency)
             {
                 timer = 0;
-                var randomPiece = PieceFactory.Instance.CreateRandomSprite();
+                var randomPiece = PieceCreationHelpers.GetRandomSprite();
                 while (randomPiece.sprite == piece.Sprite)
                 {
-                    randomPiece = PieceFactory.Instance.CreateRandomSprite();
+                    randomPiece = PieceCreationHelpers.GetRandomSprite();
                 }
 
                 piece.Sprite = randomPiece.sprite;

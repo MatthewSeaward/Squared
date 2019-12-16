@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using System.Collections.Generic;
 using UnityEngine;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 {

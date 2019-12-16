@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Helpers
 {
@@ -9,7 +9,7 @@ namespace Assets.Scripts.Workers.Helpers
         {
             GameResources.PlayEffect("Piece Change", piece.transform.position);
 
-            var newPiece = PieceFactory.Instance.CreateSquarePiece(newPieceType, false);
+            var newPiece = PieceBuilderDirector.Instance.CreateSquarePiece(newPieceType, false);
 
             newPiece.transform.position = piece.transform.position;
             newPiece.transform.parent = piece.transform.parent;

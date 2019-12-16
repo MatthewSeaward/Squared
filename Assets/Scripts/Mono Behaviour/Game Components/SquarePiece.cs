@@ -7,7 +7,7 @@ using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using Assets.Scripts.Workers.Piece_Effects.On_Destroy;
 using UnityEngine;
 using UnityEngine.UI;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 public delegate void PieceDestroyed(SquarePiece piece);
 

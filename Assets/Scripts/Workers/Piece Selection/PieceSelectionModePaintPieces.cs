@@ -11,7 +11,7 @@ namespace Assets.Scripts.Workers.Piece_Selection
 
         public void Piece_MouseDown(ISquarePiece piece, bool checkForAdditional)
         {
-            if (piece.Type == PieceFactory.PieceTypes.Rainbow)
+            if (piece.Type == PieceBuilderDirector.PieceTypes.Rainbow)
             {
                 return;
             }
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Workers.Piece_Selection
                 return;
             }
 
-            if (piece.Type == PieceFactory.PieceTypes.Rainbow)
+            if (piece.Type == PieceBuilderDirector.PieceTypes.Rainbow)
             {
                 return;
             }

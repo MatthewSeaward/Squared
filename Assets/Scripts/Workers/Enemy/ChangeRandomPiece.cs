@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.Helpers;
-using static PieceFactory;
+using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy
 {

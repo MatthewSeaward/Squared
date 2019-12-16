@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
+using Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers;
 using UnityEngine;
 using static SquarePiece;
 
@@ -15,7 +16,7 @@ namespace Assets.Scripts.Workers.Enemy
             (Sprite Sprite, Colour colour) newSprite;
             do
             {
-                newSprite = PieceFactory.Instance.CreateRandomSprite();
+                newSprite = PieceCreationHelpers.GetRandomSprite();
             }
             while (newSprite.Sprite == piece.Sprite);
 
