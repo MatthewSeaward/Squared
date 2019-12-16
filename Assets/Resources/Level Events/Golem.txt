@@ -215,7 +215,7 @@
 				],
 				"Star3":
 				[
-					"Change,Turns,2,10,6,h",
+					"Change,Turns,2,10,6,h"
 				]
 			},
 				{
