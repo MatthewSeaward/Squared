@@ -45,6 +45,8 @@ namespace Assets.Scripts
             currentSelected = slot;
             SelectedPowerup = slot.powerup;
 
+            FindObjectOfType<PowerupCollectionInfo>().Setup(slot.powerup);
+
             SetEquipButtons(!UserPowerupManager.Instance.PowerupEquipped(slot.powerup));
         }
 
