@@ -24,11 +24,11 @@ namespace Assets.Scripts
 
         public void Start()
         {
-            StartCoroutine(LoadData_Start());            
+            StartCoroutine(LoadData());            
             StartCoroutine(LoadingText());
         }
 
-        private IEnumerator LoadData_Start()
+        private IEnumerator LoadData()
         {
             var levelIO = new LevelIO();
             var userIO = UserIO.Instance;
@@ -67,6 +67,10 @@ namespace Assets.Scripts
             var task = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync();
             while (!task.IsCompleted)
             {
+                if (task.IsCanceled || task.IsFaulted)
+                {
+                    break;
+                }
             }
 
             Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
