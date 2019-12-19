@@ -59,13 +59,14 @@ namespace Assets.Scripts.Workers.Data_Managers
         private LivesManager()
         {
             Timer = new Timer();
-            Timer.Elapsed += Timer_Elapsed;  
+            Timer.Elapsed += Timer_Elapsed;
+            Timer.Interval = 6000;
+            Timer.Start();
 
             LevelStart.GameStarted += LevelStart_GameStarted;
 
             LivesRefreshTime = RemoteConfigHelper.GetLivesRefreshTime();
             MaxLives = RemoteConfigHelper.GetMaxLives();
-
         }
 
         ~LivesManager()
@@ -83,7 +84,11 @@ namespace Assets.Scripts.Workers.Data_Managers
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
+            Timer.Stop();
+
             WorkOutLivesEarned();
+
+            Timer.Start();
         }
 
         public void Reset()
@@ -140,10 +145,7 @@ namespace Assets.Scripts.Workers.Data_Managers
                     LivesRemaining += (int)totalEarned;
 
                     UserIO.Instance.SaveLivesInfo();
-                    LivesChanged?.Invoke(true, LivesRemaining);
-
-                    Timer.Interval = LivesRefreshTime * 60000;
-                    Timer.Start();
+                    LivesChanged?.Invoke(true, LivesRemaining);                    
                 }
             }
             catch (Exception ex)
