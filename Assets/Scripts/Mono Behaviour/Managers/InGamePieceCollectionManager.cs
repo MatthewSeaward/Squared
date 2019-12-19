@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
@@ -9,7 +10,6 @@ namespace Assets.Scripts
     {
         [SerializeField]
         private GameObject PieceProgress;
-
   
         private void Awake()
         {
@@ -43,6 +43,8 @@ namespace Assets.Scripts
             obj.transform.SetParent(this.transform);
             obj.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
             obj.GetComponent<PieceCollectionProgress>().Setup(type, previous, gained);
+            obj.GetComponentInChildren<Button>().enabled = false;
+
             var time = obj.AddComponent<DestroyAfterTime>();
             time.Setup(Constants.GameSettings.InGamePieceCollectedShowTime);
         }                

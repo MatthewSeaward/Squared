@@ -29,6 +29,8 @@ namespace Assets.Scripts
 
         private PowerupSlot currentSelected;
 
+        public static IPowerup SelectedPowerup = null;
+
         internal void SelectPowerup(PowerupSlot slot)
         {
             if (currentSelected != null)
@@ -41,6 +43,7 @@ namespace Assets.Scripts
             slot.button.interactable = false;
 
             currentSelected = slot;
+            SelectedPowerup = slot.powerup;
 
             SetEquipButtons(!UserPowerupManager.Instance.PowerupEquipped(slot.powerup));
         }
@@ -48,7 +51,7 @@ namespace Assets.Scripts
         private void OnEnable()
         {
             SetupAvaiblePowerups();
-            SetupSelectedPowerups();
+            SetupEquippedPowerups();
         }
 
         private void SetEquipButtons(bool enable)
@@ -76,7 +79,7 @@ namespace Assets.Scripts
 
                 obj.GetComponent<PowerupSlot>().Setup(powerup);
 
-                if (first == null)
+                if (first == null || SelectedPowerup != null && powerup.GetType() == SelectedPowerup.GetType())
                 {
                     first = obj.GetComponent<PowerupSlot>();
                 }
@@ -85,7 +88,7 @@ namespace Assets.Scripts
             SelectPowerup(first);
         }
 
-        private void SetupSelectedPowerups()
+        private void SetupEquippedPowerups()
         {
             for (int i = 0; i < selectedPowerups.Length; i++)
             {

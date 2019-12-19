@@ -1,6 +1,8 @@
-﻿using Firebase;
+﻿using Assets.Scripts.Workers.Helpers;
+using Firebase;
 using Firebase.Database;
 using Firebase.Unity.Editor;
+using System;
 
 namespace Assets.Scripts.Workers.IO.Helpers
 {
@@ -23,21 +25,19 @@ namespace Assets.Scripts.Workers.IO.Helpers
 
         private static void ConfigureDB()
         {
-
             try
             {
                 FirebaseDatabase.DefaultInstance.SetPersistenceEnabled(true);
                 FirebaseApp.DefaultInstance.SetEditorDatabaseUrl("https://squared-105cf.firebaseio.com/");
+            
+                // Get the root reference location of the database.     
+                _database = FirebaseDatabase.DefaultInstance.RootReference;
+                _database.Database.SetPersistenceEnabled(true);
             }
-            catch
+            catch (Exception ex)
             {
-
+                DebugLogger.Instance.WriteException(ex);
             }
-
-            // Get the root reference location of the database.     
-
-            _database = FirebaseDatabase.DefaultInstance.RootReference;
-            _database.Database.SetPersistenceEnabled(true);
         }
 
         public static void AddUniqueJSON(string path, string json)

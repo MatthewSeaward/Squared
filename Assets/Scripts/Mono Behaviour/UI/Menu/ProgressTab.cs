@@ -11,7 +11,14 @@ namespace Assets.Scripts
             foreach (var collection in collectionProgress)
             {
                 collection.Setup();
+                collection.AddOnClick(() => ShowPowerup(collection));
             }
+        }
+
+        private void ShowPowerup(PieceCollectionProgress collection)
+        {
+            PowerupTab.SelectedPowerup = collection.Powerup;
+            FindObjectOfType<MainMenu>().PoweurpsTab_Clicked();
         }
     }
 }

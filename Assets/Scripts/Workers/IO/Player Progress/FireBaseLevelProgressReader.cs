@@ -1,10 +1,8 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
-using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO
@@ -49,7 +47,10 @@ namespace Assets.Scripts.Workers.IO
                                  }
                              });
             }
-            catch {  }
+            catch (Exception ex)
+            {
+                Debug.LogError(ex);
+            }
         }
 
         private void UserDataLoaded(LevelProgress[] levelProgresses)

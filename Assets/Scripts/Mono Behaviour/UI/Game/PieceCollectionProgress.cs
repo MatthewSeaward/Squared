@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Powerups.Interfaces;
 using System;
 using System.Collections;
 using System.Linq;
@@ -15,10 +16,12 @@ namespace Assets.Scripts
     {
         public Image Image;
         public ProgressBar ProgressBar;
-        public Image Powerup;
+        private PowerupSlot PowerupSlot;
 
         [SerializeField]
         public Colour colour;
+
+        public IPowerup Powerup; 
 
         public void Setup()
         {
@@ -27,6 +30,8 @@ namespace Assets.Scripts
 
         public void Setup(Colour pieceColour)
         {
+            PowerupSlot = GetComponentInChildren<PowerupSlot>();
+
             SetupSprite(pieceColour);
 
             var collected = PieceCollectionManager.Instance.PiecesCollected.Pieces.FirstOrDefault(x => x.PieceColour == pieceColour);
@@ -35,6 +40,8 @@ namespace Assets.Scripts
 
         public void Setup(Colour pieceColour, int previous, int gained)
         {
+            PowerupSlot = GetComponentInChildren<PowerupSlot>();
+
             SetupSprite(pieceColour);
             SetupProgressBar(pieceColour, previous);
             StartCoroutine(IncrementOverTime(pieceColour, previous, gained));
@@ -44,8 +51,9 @@ namespace Assets.Scripts
         {
             this.colour = pieceColour;
             Image.sprite = GameResources.PieceSprites[((int)pieceColour).ToString()];
-            var powerup = PowerupFactory.GetPowerup(pieceColour);
-            Powerup.sprite = powerup == null ? GameResources.Sprites["Extra Life"] : powerup.Icon;
+
+            Powerup = PowerupFactory.GetPowerup(pieceColour);
+            PowerupSlot.Setup(Powerup, false);
         }
 
         private void SetupProgressBar(Colour pieceColour, int piecesCollected)
@@ -58,7 +66,7 @@ namespace Assets.Scripts
 
             if (piecesCollected % increment == 0)
             {
-                GameResources.PlayEffect("Powerup Unlocked", Camera.main.ScreenToWorldPoint(Powerup.transform.position));
+                GameResources.PlayEffect("Powerup Unlocked", Camera.main.ScreenToWorldPoint(PowerupSlot.transform.position));
             }
         }
 
@@ -72,6 +80,13 @@ namespace Assets.Scripts
                 SetupProgressBar(pieceColour, currentTotal);
                 yield return new WaitForSeconds(Constants.GameSettings.PieceIncrementSpeed);
             }
+        }
+
+        internal void AddOnClick(Action action)
+        {
+            var button = PowerupSlot.GetComponent<Button>() != null ? PowerupSlot.GetComponent<Button>() : PowerupSlot.gameObject.AddComponent<Button>();
+
+            button.onClick.AddListener(() => action());
         }
     }
 }

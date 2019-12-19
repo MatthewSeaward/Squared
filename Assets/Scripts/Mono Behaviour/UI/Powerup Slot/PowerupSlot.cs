@@ -1,6 +1,9 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
+﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.Powerups.Interfaces;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
@@ -20,6 +23,7 @@ namespace Assets.Scripts.UI
         protected int previousRemaing;
         private bool activateOnEnable;
 
+        private bool InGame => SceneManager.GetActiveScene().name == Scenes.Game;
 
         private void Start()
         {
@@ -51,15 +55,16 @@ namespace Assets.Scripts.UI
             activateOnEnable = false;
         }
 
-        public void Setup(IPowerup powerup)
+        public virtual void Setup(IPowerup powerup, bool enableClick = true)
         {
             this.powerup = powerup;
 
             Icon.sprite = powerup.Icon;
-            if (button != null)
+            if (button != null && enableClick)
             {
                 button.onClick.AddListener(() => OnButtonClicked());
             }
+
             previousRemaing = UserPowerupManager.Instance.GetUses(powerup);
             UpdateRemainingText(powerup);
         }
@@ -84,6 +89,11 @@ namespace Assets.Scripts.UI
 
         private void Update()
         {
+            if (!InGame)
+            {
+                return;
+            }
+
             ChildUpdate(Time.deltaTime);
         }
 

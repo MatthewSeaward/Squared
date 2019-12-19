@@ -35,7 +35,6 @@ namespace Assets.Scripts.Workers.IO.Lives
                                           }
 
                                           LivesManager.Instance.Setup(result);
-
                                       }
                                       catch (Exception ex)
                                       {
