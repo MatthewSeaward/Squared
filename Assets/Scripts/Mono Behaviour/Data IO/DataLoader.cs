@@ -13,6 +13,7 @@ namespace Assets.Scripts
 {
     class DataLoader : MonoBehaviour
     {
+        private const float LoadConfigTimeout = 5f;
         private int width = 0;
         private bool _alreadyLoading = false;
 
@@ -54,20 +55,31 @@ namespace Assets.Scripts
             }
         }
 
-        private object LoadData(Action action, string status)
+        private IEnumerator LoadData(Action action, string status)
         {
             ReportStatus(status);
+            yield return null;
+
             action();
-            return null;
+            yield return null;
         }
        
 
         private void LoadConfig()
-        {            
+        {
+            var startTime = DateTime.Now;
+
             var task = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync();
+
             while (!task.IsCompleted)
             {
                 if (task.IsCanceled || task.IsFaulted)
+                {
+                    break;
+                }
+
+                var timePast = DateTime.Now - startTime;
+                if (timePast.TotalSeconds >= LoadConfigTimeout)
                 {
                     break;
                 }
