@@ -296,7 +296,7 @@
 			[
 				"--------",
 				"xhxhxhxx",
-				"xxxxxxxx",
+				"xxhxhxhx",
 				"xxxxxxxx",
 				"x-x-x-x-",
 				"x-x-x-x-",
@@ -307,7 +307,7 @@
 				"--------"
 			],
 			"Star1": ["Turns", "10"],
-			"Star2": ["Turns", "22", "Max", "4"],
+			"Star2": ["Turns", "23", "Max", "4"],
 			"Star3": ["Turns", "15", "Time", "6"]
 		},
 		{
