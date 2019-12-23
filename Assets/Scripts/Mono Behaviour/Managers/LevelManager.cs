@@ -11,25 +11,61 @@ namespace Assets
 {
     public class LevelManager
     {
-        public Dictionary<string, Level[]> Levels;
-
-        public string[] LevelOrder { get; set; }
+        private List<LevelProgress> _levelProgress;
+        private Dictionary<string, Level[]> _levels;
+        private string[] _levelOrder;
 
         private LevelIO LevelIO = new LevelIO();
         private int chapterInt = 0;
+        private int _currentLevel = 0;
 
-        private int LevelCompleted
+        public Dictionary<string, Level[]> Levels
         {
             get
             {
-                if (Debug.isDebugBuild)
+                if (_levels == null)
                 {
-                    return SelectedChapterLevels.Length - 1;
+                    _levels = new Dictionary<string, Level[]>();
                 }
-
-                return SelectedChapterLevels.Where(x => x.LevelProgress != null).Select(x => x.LevelProgress.Level).First();
+                return _levels;
+            }
+            private set
+            {
+                _levels = value;
             }
         }
+
+        public List<LevelProgress> LevelProgress
+        {
+            get
+            {
+                if (_levelProgress == null)
+                {
+                    _levelProgress = new List<LevelProgress>();
+                }
+                return _levelProgress;
+            }
+            set
+            {
+                _levelProgress = value;
+            }
+        }
+
+        private string[] LevelOrder
+        {
+            get
+            {
+                if (_levelOrder == null)
+                {
+                    _levelOrder = new string[0];
+                }
+                return _levelOrder;
+            }
+            set
+            {
+                _levelOrder = value;
+            }
+        }   
 
         public int CurrentStars
         {
@@ -40,15 +76,13 @@ namespace Assets
                 {
                     lvl.ToList().ForEach(x => count += x.LevelProgress != null ? x.LevelProgress.StarAchieved : 0);
                 }
-                return count;
+                return count >= 0 ? count : 0;
             }
         }
 
-        public Level[] SelectedChapterLevels => Levels[SelectedChapter];
+        public Level[] SelectedChapterLevels => Levels.ContainsKey(SelectedChapter) ? Levels[SelectedChapter] : new Level[0];
 
-        private int _currentLevel = 0;
-        public string SelectedChapter => LevelOrder[chapterInt];
-         
+        public string SelectedChapter => LevelOrder[chapterInt];         
 
         public int CurrentLevel
         {
@@ -98,14 +132,9 @@ namespace Assets
             }
         }
 
-        public bool HasCompletedLevel(int i)
-        {
-            return i <= LevelCompleted;
-        }
-
         public Level GetNextLevel()
         {
-            if (CurrentLevel > SelectedChapterLevels.Length)
+            if (CurrentLevel >= SelectedChapterLevels.Length)
             {
                 CurrentLevel = SelectedChapterLevels.Length - 1;
             }
@@ -138,7 +167,7 @@ namespace Assets
             LevelIO.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
         }
 
-        internal bool LevelUnlocked(int i)
+        private bool LevelUnlocked(int i)
         {
             if (i >= SelectedChapterLevels.Length)
             {
@@ -152,17 +181,22 @@ namespace Assets
 
         public bool CanPlayLevel(int levelNumber)
         {
-            return LivesManager.Instance.LivesRemaining > 0 && LevelUnlocked (levelNumber);        
+            return LivesManager.Instance.LivesRemaining > 0 && LevelUnlocked(levelNumber);        
         }
 
-        public bool IsNextChapter() =>  chapterInt + 1 < LevelOrder.Length;
+        public bool IsNextChapter() => chapterInt + 1 < LevelOrder.Length;
         public bool IsPreviousChapter() => chapterInt - 1 >= 0;
 
-        public void NextChapter() =>   ChangeChapter(1);
+        public void NextChapter() =>  ChangeChapter(1);
         public void PreviousChapter() => ChangeChapter(-1);
 
         public void SetChapter(string chapter)
         {
+            if (!LevelOrder.Contains(chapter))
+            {
+                return;
+            }
+
             chapterInt = LevelOrder.ToList().IndexOf(chapter);
         }
 
@@ -173,7 +207,29 @@ namespace Assets
 
         public void ResetSavedData()
         {
+            LevelProgress.Clear();
             LevelIO.ResetSavedData();
+        }
+
+        public void SetupLevels(string chapter, Level[] levels)
+        {
+            var dict = new Dictionary<string, Level[]>();
+            dict.Add(chapter, levels);
+
+            SetupLevels(dict);
+        }
+
+        public void SetupLevels(Dictionary<string, Level[]> Levels)
+        {
+            SetupLevels(Levels, Levels.Keys.ToArray());
+        }
+
+        public void SetupLevels(Dictionary<string, Level[]> levels, string[] levelOrder)
+        {
+            this.Levels = levels;
+            this.LevelOrder = levelOrder;
+
+            chapterInt = 0;
         }
     }
 }

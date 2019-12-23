@@ -13,8 +13,6 @@ namespace Assets.Scripts.Workers.IO
 
     public class LevelIO
     {
-        public static DataLoaded DataLoaded;
-
         private ILevelLoader levelLoader = new FileLevelLoader();
 
         ILevelProgressReader progressLoader = new FireBaseLevelProgressReader();
@@ -23,13 +21,14 @@ namespace Assets.Scripts.Workers.IO
 
         public Dictionary<string, Level[]> Levels;
 
-        public List<LevelProgress> LevelProgress;
         public string[] LevelOrder;
 
         public void LoadLevels()
         {
-            LevelManager.Instance.Levels = levelLoader.GetLevels();
-            LevelManager.Instance.LevelOrder = levelOrderLoader.LoadLevelOrder();
+            var Levels = levelLoader.GetLevels();
+            var LevelOrder = levelOrderLoader.LoadLevelOrder();
+
+            LevelManager.Instance.SetupLevels(Levels, LevelOrder);
         }
 
         public void LoadLevelStars()
@@ -94,21 +93,20 @@ namespace Assets.Scripts.Workers.IO
 
         internal void SaveLevelProgress(int level, LevelProgress levelinfo)
         {
-            var selected = LevelProgress.FirstOrDefault(x => x.Level == level && x.Chapter == levelinfo.Chapter);
+            var selected = LevelManager.Instance.LevelProgress.FirstOrDefault(x => x.Level == level && x.Chapter == levelinfo.Chapter);
             if (selected == null)
             {
-                LevelProgress.Add(levelinfo);
+                LevelManager.Instance.LevelProgress.Add(levelinfo);
             }
             else
             {
                 selected = levelinfo;
             }
-            progressWriter.SaveLevelProgress(LevelProgress.ToArray());
+            progressWriter.SaveLevelProgress(LevelManager.Instance.LevelProgress.ToArray());
         }
 
         public void ResetSavedData()
         {
-            LevelProgress.Clear();
             progressWriter.ResetData();
         }
     }

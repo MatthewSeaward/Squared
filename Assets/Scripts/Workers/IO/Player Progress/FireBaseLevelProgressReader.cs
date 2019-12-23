@@ -69,6 +69,8 @@ namespace Assets.Scripts.Workers.IO
                 }
                 LevelManager.Instance.Levels[progress.Chapter][progress.Level].LevelProgress = progress;
             }
+
+            LevelManager.Instance.LevelProgress = LevelProgress;
         }
     }
 }
