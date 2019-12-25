@@ -63,10 +63,10 @@ namespace Assets.Scripts.Workers.IO
             var Levels = levelLoader.GetLevels();
             var LevelOrder = levelOrderLoader.LoadLevelOrder();
 
+            LevelManager.Instance.SetupLevels(Levels, LevelOrder);
+
             LoadEnemyEvents();
             LoadLevelStars();
-
-            LevelManager.Instance.SetupLevels(Levels, LevelOrder);
         }
 
         private void LoadLevelStars()
