@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace LevelLoader.Interfaces
 {
-    interface ILevelLoader
+    public interface ILevelLoader
     {
-        Dictionary<string, Level[]> GetLevels();
-        
+        Dictionary<string, Level[]> GetLevels();        
     }
 }

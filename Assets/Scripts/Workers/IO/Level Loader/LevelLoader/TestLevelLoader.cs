@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using static SquarePiece;
 
-namespace LevelLoader
+namespace Assets.Scripts.Workers.IO
 {
-    class DummyLevelLoader : ILevelLoader
+    public class TestLevelLoader : ILevelLoader
     {
         public Dictionary<string, Level[]> GetLevels()
         {

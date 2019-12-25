@@ -6,38 +6,25 @@ namespace Assets.Scripts.Workers.IO.Player_Progress
 {
     class PlayerPrefsLevelProgressLoader : ILevelProgressReader
     {
-        public LevelProgress[] LoadLevelProgress()
+        public async Task<LevelProgress[]> LoadLevelProgress()
         {
-            var playerPrefs = PlayerPrefs.GetString("LevelProgress");
-            if (string.IsNullOrEmpty(playerPrefs))
+            return await Task.Run(() =>
             {
-                return new LevelProgress[0];
+                var playerPrefs = PlayerPrefs.GetString("LevelProgress");
+                if (string.IsNullOrEmpty(playerPrefs))
+                {
+                    return new LevelProgress[0];
+                }
+
+                var fromJSON = JsonHelper.FromJson<LevelProgress>(playerPrefs);
+                if (fromJSON == null)
+                {
+                    return new LevelProgress[0];
+                }
+
+                return fromJSON;
             }
-
-            var fromJSON = JsonHelper.FromJson<LevelProgress>(playerPrefs);
-            if (fromJSON == null)
-            {
-                return new LevelProgress[0];
-            }
-
-            return fromJSON;
-        }
-
-        public void LoadLevelProgressAsync()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void ResetData()
-        {
-            PlayerPrefs.DeleteAll();
-        }
-
-        public void SaveLevelProgress(LevelProgress[] levelProgress)
-        {
-            var toJson = JsonHelper.ToJson(levelProgress);
-            PlayerPrefs.SetString("LevelProgress", toJson);
-
+        );
         }
     }
 }

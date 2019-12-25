@@ -1,10 +1,10 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using System.Threading.Tasks;
 
 namespace Assets.Scripts.Workers.IO
 {
-    interface ILevelProgressReader
+    public interface ILevelProgressReader
     {
-        LevelProgress[] LoadLevelProgress();
-        void LoadLevelProgressAsync();
+        Task<LevelProgress[]> LoadLevelProgress();
     }
 }

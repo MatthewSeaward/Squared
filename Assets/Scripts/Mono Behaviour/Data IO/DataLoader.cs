@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections;
+using System.Threading.Tasks;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Writer;
+using Assets.Scripts.Workers.IO.Enemy_Event;
+using Assets.Scripts.Workers.IO.Level_Loader.Order;
+using LevelLoader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,19 +27,28 @@ namespace Assets.Scripts
         [SerializeField]
         private Text loadingDetails;
 
-        public void Start()
+        public async void Start()
         {
-            StartCoroutine(LoadData());            
+            LevelIO.Instance.Initialise(new FileLevelLoader(), new FireBaseLevelProgressReader(), new FireBaseLevelProgressWriter(), new LevelOrderLoader(), new JSONEventReader());
+            
+            StartCoroutine(LoadData());
+
+            await LoadDataAsync(() => LoadLevelProgress(), "Loading Level Progress");
+
             StartCoroutine(LoadingText());
+        }
+
+        private async Task LoadLevelProgress()
+        {
+            await LevelIO.Instance.LoadLevelProgress();
         }
 
         private IEnumerator LoadData()
         {
-            var levelIO = new LevelIO();
+            var levelIO = LevelIO.Instance;
             var userIO = UserIO.Instance;
 
             yield return LoadData(() => levelIO.LoadLevels(), "Loading Levels");
-            yield return LoadData(() => levelIO.LoadLevelProgress(), "Loading Level Progress");
             yield return LoadData(() => levelIO.LoadLevelStars(), "Loading Level Stars");
             yield return LoadData(() => levelIO.LoadEnemyEvents(), "Loading Level Events");
             yield return LoadData(() => LoadConfig(), "Loading Config");
@@ -55,6 +68,12 @@ namespace Assets.Scripts
             }
         }
 
+        private async Task LoadDataAsync(Func<Task> task, string status)
+        {
+            ReportStatus(status);
+            await task();
+        }
+
         private IEnumerator LoadData(Action action, string status)
         {
             ReportStatus(status);
@@ -63,8 +82,7 @@ namespace Assets.Scripts
             action();
             yield return null;
         }
-       
-
+     
         private void LoadConfig()
         {
             var startTime = DateTime.Now;
@@ -121,6 +139,5 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(GameSettings.LoadingTextUpdateTime);
             }
         }
-
     }
 }

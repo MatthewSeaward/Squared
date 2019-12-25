@@ -6,6 +6,7 @@ using Assets.Scripts.Workers.IO;
 using System.Collections.Generic;
 using Assets.Scripts;
 using Assets.Scripts.Workers.Data_Managers;
+using System;
 
 namespace Assets
 {
@@ -15,7 +16,6 @@ namespace Assets
         private Dictionary<string, Level[]> _levels;
         private string[] _levelOrder;
 
-        private LevelIO LevelIO = new LevelIO();
         private int chapterInt = 0;
         private int _currentLevel = 0;
 
@@ -161,10 +161,36 @@ namespace Assets
             }
 
             SelectedChapterLevels[CurrentLevel].LevelProgress.StarAchieved = Mathf.Clamp(star, 0, 3);
-            SelectedChapterLevels[CurrentLevel].LevelProgress.HighestScore = Mathf.Max(SelectedChapterLevels[CurrentLevel].LevelProgress.HighestScore, score);
             SelectedChapterLevels[CurrentLevel].LevelProgress.Chapter = SelectedChapter;
 
-            LevelIO.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
+            LevelIO.Instance.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
+        }
+
+        public void SetLevelProgress(LevelProgress[] loadedData)
+        {
+            var levelProgress = new List<LevelProgress>();
+            if (loadedData != null)
+            {
+                levelProgress.AddRange(loadedData);
+            }
+
+            foreach (var progress in levelProgress)
+            {
+                if (!Levels.ContainsKey(progress.Chapter))
+                {
+                    continue;
+                }
+
+                var levels = Levels[progress.Chapter];
+                if (progress.Level >= levels.Length)
+                {
+                    continue;
+                } 
+
+                levels[progress.Level].LevelProgress = progress;
+            }
+
+            this.LevelProgress = levelProgress;
         }
 
         private bool LevelUnlocked(int i)
@@ -208,7 +234,7 @@ namespace Assets
         public void ResetSavedData()
         {
             LevelProgress.Clear();
-            LevelIO.ResetSavedData();
+            LevelIO.Instance.ResetSavedData();
         }
 
         public void SetupLevels(string chapter, Level[] levels)

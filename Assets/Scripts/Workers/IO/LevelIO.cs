@@ -1,11 +1,11 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Enemy_Event;
 using Assets.Scripts.Workers.IO.Level_Loader.Order;
-using DataEntities;
-using LevelLoader;
 using LevelLoader.Interfaces;
-using System.Collections.Generic;
+using System;
 using System.Linq;
+using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -13,18 +13,53 @@ namespace Assets.Scripts.Workers.IO
 
     public class LevelIO
     {
-        private ILevelLoader levelLoader = new FileLevelLoader();
+        private static LevelIO _instance;
 
-        ILevelProgressReader progressLoader = new FireBaseLevelProgressReader();
-        ILevelProgressWriter progressWriter = new FireBaseLevelProgressWriter();
-        ILevelOrderLoader levelOrderLoader = new LevelOrderLoader();
+        private ILevelLoader levelLoader;
+        private ILevelProgressReader progressReader;
+        private ILevelProgressWriter progressWriter;
+        private ILevelOrderLoader levelOrderLoader;
+        private IEventReader eventReader;
 
-        public Dictionary<string, Level[]> Levels;
+        private bool initialised = false;
+        
+        public static LevelIO Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new LevelIO();
+                }
+                return _instance;
+            }
+        }
 
-        public string[] LevelOrder;
+        private LevelIO()
+        {
+        }
+
+        public void Initialise(ILevelLoader levelLoader, ILevelProgressReader progressReader, ILevelProgressWriter progressWriter, ILevelOrderLoader levelOrderLoader, IEventReader eventReader)
+        {
+            if (initialised)
+            {
+                Debug.Log("LevelIO has already been initalised");
+                return;
+            }
+
+            this.progressReader = progressReader;
+            this.progressWriter = progressWriter;
+            this.levelOrderLoader = levelOrderLoader;
+            this.levelLoader = levelLoader;
+            this.eventReader = eventReader;
+
+            initialised = true;
+        }
 
         public void LoadLevels()
         {
+            CheckForInitialisation();
+
             var Levels = levelLoader.GetLevels();
             var LevelOrder = levelOrderLoader.LoadLevelOrder();
 
@@ -32,7 +67,9 @@ namespace Assets.Scripts.Workers.IO
         }
 
         public void LoadLevelStars()
-        {            
+        {
+            CheckForInitialisation();
+            
             foreach (var chapter in LevelManager.Instance.Levels)
             {
                 foreach (var level in chapter.Value)
@@ -59,8 +96,9 @@ namespace Assets.Scripts.Workers.IO
 
         public void LoadEnemyEvents()
         {
-            var reader = new JSONEventReader();
-            var events = reader.GetEvents();
+            CheckForInitialisation();
+
+            var events = eventReader.GetEvents();
 
             foreach (var chapter in LevelManager.Instance.Levels)
             {
@@ -86,13 +124,18 @@ namespace Assets.Scripts.Workers.IO
             }
         }
 
-        public void LoadLevelProgress()
+        public async Task LoadLevelProgress()
         {
-            progressLoader.LoadLevelProgressAsync();
+            CheckForInitialisation();
+
+            var levelProgress = await progressReader.LoadLevelProgress();
+            LevelManager.Instance.SetLevelProgress(levelProgress);
         }
 
         internal void SaveLevelProgress(int level, LevelProgress levelinfo)
         {
+            CheckForInitialisation();
+
             var selected = LevelManager.Instance.LevelProgress.FirstOrDefault(x => x.Level == level && x.Chapter == levelinfo.Chapter);
             if (selected == null)
             {
@@ -107,7 +150,23 @@ namespace Assets.Scripts.Workers.IO
 
         public void ResetSavedData()
         {
+            CheckForInitialisation();
+
             progressWriter.ResetData();
+        }
+
+        private void CheckForInitialisation()
+        {
+            if (!initialised)
+            {
+                throw new InvalidOperationException("LevelIO has not been initialised. Call the initialise method first");
+            }
+        }
+
+        public void Reset()
+        {
+            _instance = null;
+            initialised = false;
         }
     }
 }
