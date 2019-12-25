@@ -1,7 +1,9 @@
-﻿namespace Assets.Scripts.Workers.IO.Collection
+﻿using System.Threading.Tasks;
+
+namespace Assets.Scripts.Workers.IO.Collection
 {
     interface IPieceCollectionReader
     {
-        void LoadPieceCollectionAsync();
+        Task LoadPieceCollectionAsync();
     }
 }

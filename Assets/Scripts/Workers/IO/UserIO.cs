@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO.Lives;
 using Assets.Scripts.Workers.IO.Powerup;
+using System.Threading.Tasks;
 
 namespace Assets.Scripts.Workers
 {
@@ -54,19 +55,15 @@ namespace Assets.Scripts.Workers
             livesWriter.WriteLives(LivesManager.Instance.LivesRemaining, LivesManager.Instance.LastEarnedLife);
         }
 
-        public void LoadPowerupsData()
+        public async Task LoadPowerupsData()
         {
-            powerupReader.ReadPowerupsAsync();
-        }    
-
-        public void LoadEquippedPowerups()
-        {
-            powerupReader.ReadEquippedPowerupsAsync();
+            await powerupReader.ReadPowerupsAsync();
+            await powerupReader.ReadEquippedPowerupsAsync();
         }
 
-        public void LoadLives()
+        public async Task LoadLives()
         {
-            livesReader.ReadLivesAsync();
+            await livesReader.ReadLivesAsync();
         }     
    
         private void ResetSavedData()

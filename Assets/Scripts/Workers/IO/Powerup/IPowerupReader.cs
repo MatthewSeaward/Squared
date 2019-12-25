@@ -1,8 +1,10 @@
-﻿namespace Assets.Scripts.Workers.IO.Powerup
+﻿using System.Threading.Tasks;
+
+namespace Assets.Scripts.Workers.IO.Powerup
 {
     interface IPowerupReader
     {
-        void ReadPowerupsAsync();
-        void ReadEquippedPowerupsAsync();
+        Task ReadPowerupsAsync();
+        Task ReadEquippedPowerupsAsync();
     }
 }

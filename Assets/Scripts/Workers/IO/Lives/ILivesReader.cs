@@ -1,7 +1,9 @@
-﻿namespace Assets.Scripts.Workers.IO.Lives
+﻿using System.Threading.Tasks;
+
+namespace Assets.Scripts.Workers.IO.Lives
 {
     interface ILivesReader
     {
-        void ReadLivesAsync();
+        Task ReadLivesAsync();
     }
 }

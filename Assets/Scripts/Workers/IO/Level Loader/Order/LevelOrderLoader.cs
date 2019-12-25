@@ -9,7 +9,7 @@ namespace Assets.Scripts.Workers.IO.Level_Loader.Order
         private IDataReader DataReader = new JSONDataReader();
 
         public string[] LoadLevelOrder()
-        {
+        {           
             var data = Resources.LoadAll<TextAsset>("Level Order");
 
             foreach (var jsonData in data)

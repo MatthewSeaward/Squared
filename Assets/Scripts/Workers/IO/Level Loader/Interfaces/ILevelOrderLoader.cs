@@ -2,6 +2,6 @@
 {
     public interface ILevelOrderLoader
     {
-        string[] LoadLevelOrder();
+       string[] LoadLevelOrder();
     }
 }

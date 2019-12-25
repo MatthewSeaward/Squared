@@ -29,43 +29,32 @@ namespace Assets.Scripts
 
         public async void Start()
         {
+            StartCoroutine(LoadingText());
+
             LevelIO.Instance.Initialise(new FileLevelLoader(), new FireBaseLevelProgressReader(), new FireBaseLevelProgressWriter(), new LevelOrderLoader(), new JSONEventReader());
             
-            StartCoroutine(LoadData());
-
-            await LoadDataAsync(() => LoadLevelProgress(), "Loading Level Progress");
-
-            StartCoroutine(LoadingText());
+            await LoadData();     
         }
 
-        private async Task LoadLevelProgress()
-        {
-            await LevelIO.Instance.LoadLevelProgress();
-        }
+        
 
-        private IEnumerator LoadData()
+        private async Task LoadData()
         {
             var levelIO = LevelIO.Instance;
             var userIO = UserIO.Instance;
 
-            yield return LoadData(() => levelIO.LoadLevels(), "Loading Levels");
-            yield return LoadData(() => levelIO.LoadLevelStars(), "Loading Level Stars");
-            yield return LoadData(() => levelIO.LoadEnemyEvents(), "Loading Level Events");
-            yield return LoadData(() => LoadConfig(), "Loading Config");
+            LoadData(() => levelIO.LoadLevels(), "Loading Levels");
 
-            yield return LoadData(() => userIO.LoadPowerupsData(), "Loading Powerups");
-            yield return LoadData(() => userIO.LoadEquippedPowerups(), "Loading Equipped Powerups");
-            yield return LoadData(() => userIO.LoadLives(), "Loading Lives");
-
-            yield return LoadData(() => PieceCollectionIO.Instance.LoadCollectionData(), "Loading Collected Pieces");
+            await LoadDataAsync(() => levelIO.LoadLevelProgress(), "Loading Level Progress");
+            await LoadDataAsync(() => LoadConfig(), "Loading Config");
+            await LoadDataAsync(() => userIO.LoadPowerupsData(), "Loading Powerups");
+            await LoadDataAsync(() => userIO.LoadLives(), "Loading Lives");
+            await LoadDataAsync(() => PieceCollectionIO.Instance.LoadCollectionData(), "Loading Collected Pieces");
 
             ScoreManager.Instance.Initialise();
             PieceCollectionManager.Instance.Initialise();
-
-            if (!_alreadyLoading)
-            {
-                StartCoroutine(LoadSceneAsync());
-            }
+           
+             StartCoroutine(LoadSceneAsync());
         }
 
         private async Task LoadDataAsync(Func<Task> task, string status)
@@ -74,34 +63,32 @@ namespace Assets.Scripts
             await task();
         }
 
-        private IEnumerator LoadData(Action action, string status)
+        private void LoadData(Action task, string status)
         {
             ReportStatus(status);
-            yield return null;
-
-            action();
-            yield return null;
+            task();
         }
      
-        private void LoadConfig()
+        private async Task LoadConfig()
         {
             var startTime = DateTime.Now;
 
-            var task = Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync();
-
-            while (!task.IsCompleted)
+            await Firebase.RemoteConfig.FirebaseRemoteConfig.FetchAsync().ContinueWith((task) =>
             {
-                if (task.IsCanceled || task.IsFaulted)
+                while (!task.IsCompleted)
                 {
-                    break;
-                }
+                    if (task.IsCanceled || task.IsFaulted)
+                    {
+                        break;
+                    }
 
-                var timePast = DateTime.Now - startTime;
-                if (timePast.TotalSeconds >= LoadConfigTimeout)
-                {
-                    break;
+                    var timePast = DateTime.Now - startTime;
+                    if (timePast.TotalSeconds >= LoadConfigTimeout)
+                    {
+                        break;
+                    }
                 }
-            }
+            });
 
             Firebase.RemoteConfig.FirebaseRemoteConfig.ActivateFetched();
         }

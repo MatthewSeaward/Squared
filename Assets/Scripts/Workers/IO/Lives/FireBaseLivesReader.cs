@@ -3,6 +3,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Lives
@@ -10,11 +11,11 @@ namespace Assets.Scripts.Workers.IO.Lives
     class FireBaseLivesReader : ILivesReader
     {
 
-        public void ReadLivesAsync()
+        public async Task ReadLivesAsync()
         {
             try
             {
-                FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerLivesLocation())
+                await FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerLivesLocation())
                               .GetValueAsync().ContinueWith(task =>
                               {
                                   if (task.IsFaulted)

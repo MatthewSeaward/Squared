@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.IO.Collection;
+using System.Threading.Tasks;
 
 namespace Assets.Scripts.Workers.IO
 {
@@ -33,9 +34,9 @@ namespace Assets.Scripts.Workers.IO
             ResetData.ResetAllData -= ResetSavedData;
         }
 
-        public void LoadCollectionData()
+        public async Task LoadCollectionData()
         {
-            pieceCollectionReader.LoadPieceCollectionAsync();
+            await pieceCollectionReader.LoadPieceCollectionAsync();
         }
 
         public void SaveCollectionData()

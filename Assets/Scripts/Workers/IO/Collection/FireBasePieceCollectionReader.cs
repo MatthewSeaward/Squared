@@ -3,18 +3,18 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Collection
 {    
     class FireBasePieceCollectionReader : IPieceCollectionReader
     {
-
-        public void LoadPieceCollectionAsync()
+        public async Task LoadPieceCollectionAsync()
         {
             try
             {
-                FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerCollectionLocation())
+               await FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerCollectionLocation())
                              .GetValueAsync().ContinueWith(task =>
                              {
                                  if (task.IsFaulted)

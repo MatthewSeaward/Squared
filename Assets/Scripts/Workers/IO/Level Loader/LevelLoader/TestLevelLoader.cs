@@ -17,41 +17,41 @@ namespace Assets.Scripts.Workers.IO
             {
                 colours = new Colour[] { Colour.Red, Colour.Green, Colour.LightBlue, Colour.Pink },
                 Pattern = new string[] {
-                                        "-xx---",
-                                        "-xxx--",
-                                        "xxxxxx",
-                                        "xxxxxx",
-                                        "xxxxxx",
-                                        "-xxx--",
-                                        "-xxx--",
-                                        "-xxx--",
-                                        "--xx--" }
+                                    "-xx---",
+                                    "-xxx--",
+                                    "xxxxxx",
+                                    "xxxxxx",
+                                    "xxxxxx",
+                                    "-xxx--",
+                                    "-xxx--",
+                                    "-xxx--",
+                                    "--xx--" }
             });
 
             levelList.Add(new Level()
             {
                 colours = new Colour[] { Colour.Red, Colour.Grey, Colour.LightBlue, Colour.Pink },
                 Pattern = new string[] {
-                                        "-----",
-                                        "xxxxx",
-                                        "xxxxx",
-                                        "xx-xx",
-                                        "xx-xx",
-                                        "xxxxx",
-                                        "-----" }
+                                    "-----",
+                                    "xxxxx",
+                                    "xxxxx",
+                                    "xx-xx",
+                                    "xx-xx",
+                                    "xxxxx",
+                                    "-----" }
             });
 
             levelList.Add(new Level()
             {
                 colours = new Colour[] { Colour.Orange, Colour.Green },
                 Pattern = new string[] {
-                                        "--x--",
-                                        "-xxx-",
-                                        "xxxxx",
-                                        "xx-xx",
-                                        "xxxxx",
-                                        "-xxx-",
-                                        "--x--" }
+                                    "--x--",
+                                    "-xxx-",
+                                    "xxxxx",
+                                    "xx-xx",
+                                    "xxxxx",
+                                    "-xxx-",
+                                    "--x--" }
             });
 
             var test = JsonUtility.ToJson(levelList.ToArray());

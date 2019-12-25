@@ -5,7 +5,6 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -14,12 +13,11 @@ namespace Assets.Scripts.Workers.IO.Powerup
 
     class FireBasePowerupReader : IPowerupReader
     {
-
-        public void ReadPowerupsAsync()
+        public async Task ReadPowerupsAsync()
         {
             try
             {
-                var t = new Task(() =>
+                await Task.Run(() =>
                 {
                     var result = FireBaseReader.ReadAsync<PowerupEntity>(FireBaseSavePaths.PlayerPowerupLocation());
 
@@ -28,8 +26,6 @@ namespace Assets.Scripts.Workers.IO.Powerup
                         UserPowerupManager.Instance.Powerups.Add(new PowerupCollection() { Powerup = PowerupFactory.GetPowerup(entity.Name), Count = entity.Count });
                     }
                 });
-                t.Start();
-
             }
             catch (Exception ex)
             {
@@ -37,11 +33,11 @@ namespace Assets.Scripts.Workers.IO.Powerup
             }
         }
 
-        public void ReadEquippedPowerupsAsync()
+        public async Task ReadEquippedPowerupsAsync()
         {
             try
             {
-                FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerEquippedPowerupLocation())
+                await FireBaseDatabase.Database.Child(FireBaseSavePaths.PlayerEquippedPowerupLocation())
                               .GetValueAsync().ContinueWith(task =>
                               {
                                   if (task.IsFaulted)

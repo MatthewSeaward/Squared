@@ -1,24 +1,22 @@
-﻿using Assets.Scripts.Workers.IO.Data_Loaders;
+﻿using Assets.Scripts.Workers.IO.Helpers;
 using DataEntities;
 using LevelLoader.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace LevelLoader
 {
     class FileLevelLoader : ILevelLoader
     {
-        private static Dictionary<string, Level[]> Levels;
-        private IDataReader DataReader = new JSONDataReader();
-
         public Dictionary<string, Level[]> GetLevels()
-        {            
-            Levels = LoadData<Level>("Levels");
+        {
+            Dictionary<string, Level[]> levels = null;
+            Dictionary<string, LevelDialogue[]> dialogue = null;
 
-            var dialogue = LoadData<LevelDialogue>("Level Dialogue");
+            levels = TextAssetHelpers.LoadData<Level>("Levels");
+            dialogue = TextAssetHelpers.LoadData<LevelDialogue>("Level Dialogue");
 
-            foreach (var chapter in Levels)
+            foreach (var chapter in levels)
             {
                 if (!dialogue.ContainsKey(chapter.Key))
                 {
@@ -35,24 +33,9 @@ namespace LevelLoader
 
                     lvl.DiaglogueItems = dialogueItem;
                 }
-            }            
-
-            return Levels;
-        }
-
-        private Dictionary<string, T[]> LoadData<T>(string path)
-        {
-            var data = Resources.LoadAll<TextAsset>(path);
-
-            var list = new Dictionary<string, T[]>();
-
-            foreach (var jsonData in data)
-            {
-                var decodedData = DataReader.ReadData<T>(jsonData.text);
-                list.Add(jsonData.name, decodedData);
             }
 
-            return list;
+            return levels;
         }
     }
 }
