@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
-using Assets.Scripts.Workers.IO.Data_Entities;
-using Assets.Scripts.Workers.IO.Enemy_Event;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using NUnit.Framework;
+using UnityEngine;
 
-namespace Assets.Scripts.Workers.IO
+namespace Assets.Scripts.Editor.Workers.Events.DataEntities
 {
-    public class TestEventReader : IEventReader
+    [Category("Events")]
+    class EventsIO
     {
-        public Dictionary<string, LevelEvents[]> GetEvents()
+        [Test]
+        public void SimpleEvent_ToJSON_FromJSON()
         {
-            var dict = new Dictionary<string, LevelEvents[]>();
+            var levelEvents = new LevelEvents[1];
 
             var e = new LevelEvents();
             e.LevelNumber = 1;
@@ -25,9 +27,21 @@ namespace Assets.Scripts.Workers.IO
                 new LevelEvents.Event() {  EventType="Add", Trigger="Turns", TriggerOn="2-5", PositionsSelected= new string[] {"3:2", "2:4", "3:3" }, NewPieceType ="x" },
                 new LevelEvents.Event() {  EventType="ChangeS", Trigger="Turns", TriggerOn="5-7", TypeOfPieceToSelect="x", NewPieceType ="2"} };
 
-            dict.Add("Golem", new LevelEvents[] { e });
+            levelEvents[0] = e;
 
-            return dict;           
+            var jsonFormat = JsonHelper.ToJson(levelEvents);
+            Debug.Log(jsonFormat);
+
+            Assert.IsFalse(string.IsNullOrWhiteSpace(jsonFormat));
+
+            var decodedJson = JsonHelper.FromJson<LevelEvents>(jsonFormat);
+
+            Assert.IsNotNull(decodedJson);
+            Assert.AreEqual(1, decodedJson.Length);
+            Assert.AreEqual(1, decodedJson[0].LevelNumber);
+            Assert.IsNotNull(decodedJson[0].Star1);
+            Assert.IsNotNull(decodedJson[0].Star2);
+            Assert.IsNotNull(decodedJson[0].Star3);
         }
     }
-}
+}				

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using DataEntities;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Enemy_Event
@@ -7,9 +7,8 @@ namespace Assets.Scripts.Workers.IO.Enemy_Event
     class JSONEventReader : IEventReader
     {
         public Dictionary<string, LevelEvents[]> GetEvents()
-        {      
-            var Barks = LoadData("Level Events");
-            return Barks;
+        {
+            return LoadData("Level Events");
         }
 
         private Dictionary<string, LevelEvents[]> LoadData(string path)

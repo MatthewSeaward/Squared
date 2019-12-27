@@ -9,7 +9,7 @@ namespace Assets.Scripts.Workers.Helpers
         {
             GameResources.PlayEffect("Piece Change", piece.transform.position);
 
-            var newPiece = PieceBuilderDirector.Instance.CreateSquarePiece(newPieceType, false);
+            var newPiece = Instance.CreateSquarePiece(newPieceType, false);
 
             newPiece.transform.position = piece.transform.position;
             newPiece.transform.parent = piece.transform.parent;

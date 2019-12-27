@@ -5,7 +5,7 @@ using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy
 {
-    class ChangeRandomPiece : PieceSelectionRage
+    public class ChangeRandomPiece : PieceSelectionRage
     {
         public PieceTypes NewPieceType = PieceTypes.Empty;
 

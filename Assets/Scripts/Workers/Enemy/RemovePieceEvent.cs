@@ -7,13 +7,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy
 {
-    class RemovePieceEvent : PieceSelectionRage
+    public class RemovePieceEvent : PieceSelectionRage
     {
         protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = null;
         protected override IPieceSelection pieceSelection { get; set; }
 
+        public List<Vector2Int> Positions { get; }
+
         public RemovePieceEvent(List<Vector2Int> positions)
         {
+            this.Positions = positions;
+
             pieceSelection = new SpecificPositionSelector(positions);
         }
 

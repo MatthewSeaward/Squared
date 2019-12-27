@@ -1,17 +1,62 @@
-﻿using System.Linq;
+﻿using Assets.Scripts.Workers.Helpers;
+using System;
+using System.Linq;
 using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy.Events
 {
     public class PiecePercentEventTrigger : EnemyEventTrigger
     {
-        private int percent;
-        private PieceTypes type;
+        public int Percent { private set; get; }
+        public PieceTypes PieceType { private set; get;}
 
         public PiecePercentEventTrigger(PieceTypes type, int percent)
         {
-            this.type = type;
-            this.percent = percent;
+            this.PieceType = type;
+            this.Percent = percent;
+        }
+
+        public PiecePercentEventTrigger(string triggerOn)
+        {
+            if (!triggerOn.Contains("-"))
+            {
+                throw new ArgumentException($"triggerOn in incorrect format. TriggerOn was: {triggerOn}");
+            }
+
+            var parts = triggerOn.Split('-');
+
+            GetPieceType(triggerOn, parts);
+            GetPercent(triggerOn, parts);
+
+        }
+
+        private void GetPercent(string triggerOn, string[] parts)
+        {
+            if (int.TryParse(parts[1], out int percent))
+            {
+                Percent = percent;
+            }
+            else
+            {
+                throw new ArgumentException($"Percent in incorrect format. triggerOn was: {triggerOn}");
+            }
+        }
+
+        private void GetPieceType(string triggerOn, string[] parts)
+        {
+            var type = parts[0];
+
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                throw new ArgumentException($"Piece Type is in incorrect format. TriggerOn was: {triggerOn}");
+            }
+
+            if (!EnumHelpers.IsValue<PieceTypes>(type[0]))
+            {
+                throw new ArgumentException($"Invalid piece type specificed in trigger: {triggerOn}");
+            }
+
+            PieceType = (PieceTypes)type[0];
         }
 
         public override void Start(EnemyScript enemy)
@@ -33,12 +78,12 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         public void CheckForEvent()
         {
-            var matchingPieces = PieceController.Pieces.Count(x => x.Type == type);
+            var matchingPieces = PieceController.Pieces.Count(x => x.Type == PieceType);
 
             var calculatedPercentage = (float)matchingPieces / (float)PieceController.Pieces.Count;
             var percentage = (int)(calculatedPercentage * 100);
 
-            if (percentage >= percent)
+            if (percentage >= Percent)
             {
                 InvokeRage();
             }

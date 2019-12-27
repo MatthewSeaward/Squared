@@ -4,7 +4,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 {
     public class TurnEventTrigger : EnemyEventTrigger
     {
-        private Range TurnRange;
+        public Range TurnRange { private set; get; }
         private int TurnsPassed;
         private int CurrentPercentage;
         private int PercentageIncrement;
