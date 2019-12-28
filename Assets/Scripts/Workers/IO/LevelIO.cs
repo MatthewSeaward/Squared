@@ -3,6 +3,7 @@ using Assets.Scripts.Workers.IO.Enemy_Event;
 using Assets.Scripts.Workers.IO.Level_Loader.Order;
 using LevelLoader.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -60,71 +61,45 @@ namespace Assets.Scripts.Workers.IO
         {
             CheckForInitialisation();
 
-            var Levels = levelLoader.GetLevels();
-            var LevelOrder = levelOrderLoader.LoadLevelOrder();
+            var levelDTOs = levelLoader.GetLevels();
+            var levelOrderDTo = levelOrderLoader.LoadLevelOrder();
 
-            LevelManager.Instance.SetupLevels(Levels, LevelOrder);
 
-            LoadEnemyEvents();
-            LoadLevelStars();
+            var levels = levelDTOs.ToDictionary(x => x.Key, 
+                                                x => x.Value.Select(level => new Level_Info.Level(level)).ToArray());
+
+            LoadLevelStars(levelDTOs, levels);
+
+            LevelManager.Instance.SetupLevels(levels, levelOrderDTo);
+
         }
 
-        private void LoadLevelStars()
-        {
-            CheckForInitialisation();
-            
-            foreach (var chapter in LevelManager.Instance.Levels)
-            {
-                foreach (var level in chapter.Value)
-                {
-                    if (level.Star1 == null)
-                    {
-                        continue;
-                    }
-
-                    level.Star1Progress.Number = 1;
-                    level.Star2Progress.Number = 2;
-                    level.Star3Progress.Number = 3;
-
-                    level.Star1Progress.Limit = LevelStarFactory.GetStarGameLimit(level.Star1);
-                    level.Star2Progress.Limit = LevelStarFactory.GetStarGameLimit(level.Star2);
-                    level.Star3Progress.Limit = LevelStarFactory.GetStarGameLimit(level.Star3);
-
-                    level.Star1Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star1);
-                    level.Star2Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star2);
-                    level.Star3Progress.Restriction = LevelStarFactory.GetStarRestriction(level.Star3);
-                }
-            }                   
-        }
-
-        public void LoadEnemyEvents()
+        private void LoadLevelStars(Dictionary<string, DataEntities.Level[]> levelDTO, Dictionary<string, Level_Info.Level[]> levels)
         {
             CheckForInitialisation();
 
             var events = eventReader.GetEvents();
-
-            foreach (var chapter in LevelManager.Instance.Levels)
+            
+            foreach (var chapter in levels)
             {
-                if (!events.ContainsKey(chapter.Key))
-                {
-                    continue;
-                }
-
-                var eventsForChapter = events[chapter.Key];
+               var eventsForChapter = events.ContainsKey(chapter.Key) ? events[chapter.Key] : null;
 
                 foreach (var level in chapter.Value)
                 {
-                    var eventsForLevel = eventsForChapter.FirstOrDefault(x => x.LevelNumber == level.LevelNumber);
-                    if (eventsForLevel == null)
+                    if (level == null)
                     {
                         continue;
                     }
 
-                    level.Star1Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star1);
-                    level.Star2Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star2);
-                    level.Star3Progress.Events = EnemyEventsFactory.GetLevelEvents(eventsForLevel.Star3);
+                    var eventsForLevel = eventsForChapter?.FirstOrDefault(x => x.LevelNumber == level.LevelNumber);
+
+                    var dto = levelDTO[chapter.Key].FirstOrDefault(x => x.LevelNumber == level.LevelNumber);
+
+                    level.Star1Progress = LevelStarFactory.GetLevelStar(1, dto.Star1, eventsForLevel?.Star1);
+                    level.Star2Progress = LevelStarFactory.GetLevelStar(2, dto.Star2, eventsForLevel?.Star2);
+                    level.Star3Progress = LevelStarFactory.GetLevelStar(3, dto.Star3, eventsForLevel?.Star3);
                 }
-            }
+            }                   
         }
 
         public async Task LoadLevelProgress()

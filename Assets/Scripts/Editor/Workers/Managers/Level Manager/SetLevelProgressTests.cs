@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using DataEntities;
+using Assets.Scripts.Workers.Level_Info;
 using NUnit.Framework;
 using System.Collections.Generic;
 

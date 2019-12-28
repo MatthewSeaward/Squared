@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Assets.Scripts.Workers.Level_Info;
+using NUnit.Framework;
 
 namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
 {
@@ -14,7 +15,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
         [Test]
         public void GetCurrentLevel()
         {
-            LevelManager.Instance.SetupLevels("Golem", new DataEntities.Level[] { GetLevel(1), GetLevel(2) });
+            LevelManager.Instance.SetupLevels("Golem", new Level[] { GetLevel(1), GetLevel(2) });
 
             Assert.AreEqual(0, LevelManager.Instance.CurrentLevel);
         }
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
         [Test]
         public void GetFirstLevel()
         {
-            LevelManager.Instance.SetupLevels("Golem", new DataEntities.Level[] { GetLevel(1), GetLevel(2) });
+            LevelManager.Instance.SetupLevels("Golem", new Level[] { GetLevel(1), GetLevel(2) });
 
             var lvl = LevelManager.Instance.GetNextLevel();
 
@@ -32,7 +33,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
         [Test]
         public void GetLevel_DoesNotExist()
         {
-            LevelManager.Instance.SetupLevels("Golem", new DataEntities.Level[] { GetLevel(1) });
+            LevelManager.Instance.SetupLevels("Golem", new Level[] { GetLevel(1) });
 
             LevelManager.Instance.CurrentLevel++;
 
@@ -41,9 +42,9 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
             Assert.AreEqual(1, lvl.LevelNumber);
         }
 
-        private DataEntities.Level GetLevel(int number)
+        private Level GetLevel(int number)
         {
-            var lvl = new DataEntities.Level();
+            var lvl = new Level();
 
             lvl.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress();
             lvl.LevelNumber = number;

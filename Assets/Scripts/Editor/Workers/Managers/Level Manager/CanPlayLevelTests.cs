@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Workers.Data_Managers;
 using Assets.Scripts.Workers.Helpers;
-using DataEntities;
+using Assets.Scripts.Workers.Level_Info;
 using NUnit.Framework;
 using System.Collections.Generic;
 
@@ -52,9 +52,9 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
             Assert.IsTrue(LevelManager.Instance.CanPlayLevel(0));
         }
 
-        private DataEntities.Level GetLevel(bool completed, int level)
+        private Level GetLevel(bool completed, int level)
         {
-            var lvl = new DataEntities.Level();
+            var lvl = new Level();
 
             if (completed)
             {

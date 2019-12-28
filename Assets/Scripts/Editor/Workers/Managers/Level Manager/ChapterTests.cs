@@ -1,4 +1,4 @@
-﻿using DataEntities;
+﻿using Assets.Scripts.Workers.Level_Info;
 using NUnit.Framework;
 using System.Collections.Generic;
 

@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using DataEntities;
 using UnityEngine;
 using System.Linq;
 using Assets.Scripts.Workers.IO;
@@ -7,6 +6,7 @@ using System.Collections.Generic;
 using Assets.Scripts;
 using Assets.Scripts.Workers.Data_Managers;
 using System;
+using Assets.Scripts.Workers.Level_Info;
 
 namespace Assets
 {
