@@ -7,7 +7,6 @@
 			   "EventType":"Destroy",
 			   "Trigger":"Turns",
 			   "TriggerOn":"1-2",
-			   "NewPieceType":"",
 			   "NumberOfPiecesToSelect":2
 			},
 			{ 
@@ -373,7 +372,7 @@
 				   "Trigger":"Turns",
 				   "TriggerOn":"5-7",
 				   "NumberOfPiecesToSelect":2,
-				   "NewPieceType":"5"			   
+				   "NewPieceType":"4"			   
 				},
 				{ 
 				   "EventType":"ChangeS",
