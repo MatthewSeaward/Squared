@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
-    class TurnTimeLimit : IRestriction
+    public class TurnTimeLimit : IRestriction
     {
         private float Limit;
         private float TimeTaken;

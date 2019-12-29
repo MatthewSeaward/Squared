@@ -16,10 +16,8 @@ namespace Assets.Scripts.Workers.Level_Info
         public string[] SpecialDropPieces;
         public int StarsToUnlock;
 
-        [NonSerialized]
         public LevelProgress LevelProgress;
 
-        [NonSerialized]
         public StarProgress Star1Progress = new StarProgress();
         public StarProgress Star2Progress = new StarProgress();
         public StarProgress Star3Progress = new StarProgress();
