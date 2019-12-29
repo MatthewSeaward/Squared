@@ -12,26 +12,16 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         protected bool triggered;
 
-        protected static bool CurrentPlayingTrigger { get; private set; }
+        protected static bool CurrentlyPlayingTrigger { get; private set; }
 
         protected void InvokeRage()
         {
-            if (GameManager.Instance.GameOver || GameManager.Instance.GameLimit.ReachedLimit())
+            if (!CanPlayRage())
             {
                 return;
             }
 
-            if (triggered)
-            {
-                return;
-            }
-
-            if (CurrentPlayingTrigger)
-            {
-                return;
-            }
-
-            CurrentPlayingTrigger = true;
+            CurrentlyPlayingTrigger = true;
 
             if (enemy != null)
             {
@@ -42,6 +32,33 @@ namespace Assets.Scripts.Workers.Enemy.Events
             {
                 PlayEnemyRage();
             }
+        }
+
+        private bool CanPlayRage()
+        {
+            if (GameManager.Instance != null)
+            {
+                if (GameManager.Instance.GameOver)
+                {
+                    return false;
+                }
+                if (GameManager.Instance.GameLimit != null && GameManager.Instance.GameLimit.ReachedLimit())
+                {
+                    return false;
+                }
+            }
+
+            if (triggered)
+            {
+                return false;
+            }
+
+            if (CurrentlyPlayingTrigger)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public virtual void Start(EnemyScript enemy)
@@ -66,7 +83,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
             EnemyRage.InvokeRage();
 
             triggered = true;
-            CurrentPlayingTrigger = false;
+            CurrentlyPlayingTrigger = false;
         }
 
         public virtual void Dispose()
