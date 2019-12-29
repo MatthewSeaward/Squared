@@ -9,10 +9,10 @@ namespace Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers
 {
     public static class PieceCreationHelpers
     {
-        public static (Sprite sprite, SquarePiece.Colour colour) GetRandomSprite()
+        public static (Sprite sprite, Colour colour) GetRandomSprite()
         {
             var permittedValues = new List<Colour>();
-            if (LevelManager.Instance == null || LevelManager.Instance.SelectedLevel == null)
+            if (LevelManager.Instance?.SelectedLevel?.colours == null)
             {
                 permittedValues.AddRange((Colour[])Enum.GetValues(typeof(Colour)));
                 permittedValues.Remove(Colour.None);
