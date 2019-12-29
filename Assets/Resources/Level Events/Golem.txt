@@ -563,7 +563,7 @@
 				   "Trigger":"Turns",
 				   "TriggerOn":"3-4",
 				   "NewPieceType":"x",
-				   "PositionsSelected": [ "3:2", "4:2", "2:8", "3:8"]
+				   "PositionsSelected": [ "3:2", "4:2", "4:8", "3:8"]
 				},
 				{ 
 				   "EventType":"Remove",
