@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Constants;
-using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using System;
 using UnityEngine;

@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
-using Assets.Scripts.Workers.Score_and_Limits.ScoreCalculation;
+using Assets.Scripts.Workers.Score_and_Limits;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Powerups

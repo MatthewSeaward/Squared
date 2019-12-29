@@ -1,18 +1,16 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Linq;
 using Assets.Scripts.Workers.IO;
 using System.Collections.Generic;
 using Assets.Scripts;
-using Assets.Scripts.Workers.Data_Managers;
-using System;
 using Assets.Scripts.Workers.Level_Info;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets
 {
     public class LevelManager
     {
-        private List<LevelProgress> _levelProgress;
+        private List<Scripts.Workers.IO.Data_Entities.LevelProgress> _levelProgress;
         private Dictionary<string, Level[]> _levels;
         private string[] _levelOrder;
 
@@ -35,13 +33,13 @@ namespace Assets
             }
         }
 
-        public List<LevelProgress> LevelProgress
+        public List<Scripts.Workers.IO.Data_Entities.LevelProgress> LevelProgress
         {
             get
             {
                 if (_levelProgress == null)
                 {
-                    _levelProgress = new List<LevelProgress>();
+                    _levelProgress = new List<Scripts.Workers.IO.Data_Entities.LevelProgress>();
                 }
                 return _levelProgress;
             }
@@ -141,7 +139,7 @@ namespace Assets
             return SelectedLevel = SelectedChapterLevels[CurrentLevel] ;
         }
 
-        public LevelProgress GetLevelProgress(int level)
+        public Scripts.Workers.IO.Data_Entities.LevelProgress GetLevelProgress(int level)
         {
             if (level < SelectedChapterLevels.Length)
             {
@@ -157,7 +155,7 @@ namespace Assets
         {
             if (SelectedChapterLevels[CurrentLevel].LevelProgress == null)
             {
-                SelectedChapterLevels[CurrentLevel].LevelProgress = new LevelProgress() { Level = CurrentLevel };
+                SelectedChapterLevels[CurrentLevel].LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress() { Level = CurrentLevel };
             }
 
             SelectedChapterLevels[CurrentLevel].LevelProgress.StarAchieved = Mathf.Clamp(star, 0, 3);
@@ -166,9 +164,9 @@ namespace Assets
             LevelIO.Instance.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
         }
 
-        public void SetLevelProgress(LevelProgress[] loadedData)
+        public void SetLevelProgress(Scripts.Workers.IO.Data_Entities.LevelProgress[] loadedData)
         {
-            var levelProgress = new List<LevelProgress>();
+            var levelProgress = new List<Scripts.Workers.IO.Data_Entities.LevelProgress>();
             if (loadedData != null)
             {
                 levelProgress.AddRange(loadedData);

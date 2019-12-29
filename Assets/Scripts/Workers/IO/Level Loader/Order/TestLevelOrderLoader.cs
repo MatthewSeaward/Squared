@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Workers.IO.Level_Loader.Order;
+﻿using Assets.Scripts.Workers.IO.Interfaces;
 
 namespace Assets.Scripts.Workers.IO
 {

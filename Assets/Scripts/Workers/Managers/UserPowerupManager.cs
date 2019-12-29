@@ -7,7 +7,7 @@ using System.Linq;
 using UnityEngine;
 using static SquarePiece;
 
-namespace Assets.Scripts.Workers.Data_Managers
+namespace Assets.Scripts.Workers.Managers
 {
     public delegate void PowerupCountChanged(IPowerup powerup);
     public delegate void PieceCollectionComplete(Colour type);

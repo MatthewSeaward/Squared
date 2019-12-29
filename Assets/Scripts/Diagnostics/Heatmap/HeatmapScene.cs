@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Heatmap;
 using Assets.Scripts.Workers.IO.Score;
-using DataEntities;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

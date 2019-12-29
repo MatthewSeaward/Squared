@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Workers.Helpers;
 using NUnit.Framework;
 using UnityEngine;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 [Category("Helpers")]
 public class DiagonalTests

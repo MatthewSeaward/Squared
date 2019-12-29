@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Assets.Scripts.Workers.IO
+namespace Assets.Scripts.Workers.IO.Score
 {
     public interface IScoreReader
     {

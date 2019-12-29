@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
-using Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers;
+using Assets.Scripts.Workers.Factorys.Helpers;
 using UnityEngine;
 using static SquarePiece;
 

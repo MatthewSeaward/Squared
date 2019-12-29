@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
+﻿using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;

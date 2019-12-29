@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 using System.Linq;
 
 [Category("Restrictions")]
@@ -69,7 +69,7 @@ public class BannedPieceTypeTests
 
     private ISquarePiece CreatePiece(PieceTypes type)
     {
-        var piece = Assets.Scripts.Workers.TestHelpers.CreatePiece();
+        var piece = Assets.Scripts.Workers.Helpers.TestHelpers.CreatePiece();
         piece.Type = type;
         return piece;
     }

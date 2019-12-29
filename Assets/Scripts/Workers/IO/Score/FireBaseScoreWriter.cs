@@ -1,8 +1,9 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
-using Assets.Scripts.Workers.IO.Helpers;
-using DataEntities;
+﻿using Assets.Scripts.Workers.IO.Helpers;
+using Assets.Scripts.Workers.Managers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using System;
 using UnityEngine;
+using Assets.Scripts.Workers.IO.Score;
 
 namespace Assets.Scripts.Workers.IO
 {

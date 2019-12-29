@@ -2,9 +2,9 @@
 using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Entities;
-using DataEntities;
+using Assets.Scripts.Workers.IO.Data_Entities;
 
-namespace Assets.Scripts.Workers
+namespace Assets.Scripts.Workers.Managers
 {
     public class DialogueManager
     {

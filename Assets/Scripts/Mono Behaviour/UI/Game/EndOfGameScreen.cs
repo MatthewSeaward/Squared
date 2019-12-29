@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Managers;
 using static Assets.Scripts.Constants.Scenes;
 
 public class EndOfGameScreen : MonoBehaviour

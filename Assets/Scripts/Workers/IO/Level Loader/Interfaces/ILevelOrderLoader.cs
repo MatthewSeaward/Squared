@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Workers.IO.Level_Loader.Order
+﻿namespace Assets.Scripts.Workers.IO.Interfaces
 {
     public interface ILevelOrderLoader
     {

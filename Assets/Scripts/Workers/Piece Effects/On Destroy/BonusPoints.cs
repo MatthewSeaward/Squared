@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Workers.Piece_Effects.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Workers.Piece_Effects.On_Destroy
 {

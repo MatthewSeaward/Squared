@@ -55,7 +55,7 @@ public class DiagonalConnectionRestrictionTests
 
     private ISquarePiece CreatePiece(int x, int y)
     {
-        var piece = Assets.Scripts.Workers.TestHelpers.CreatePiece();
+        var piece = Assets.Scripts.Workers.Helpers.TestHelpers.CreatePiece();
         piece.Position = new UnityEngine.Vector2Int(x, y);
         return piece;
     }

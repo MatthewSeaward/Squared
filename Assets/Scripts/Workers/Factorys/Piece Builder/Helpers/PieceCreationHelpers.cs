@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static SquarePiece;
 
-namespace Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers
+namespace Assets.Scripts.Workers.Factorys.Helpers
 {
     public static class PieceCreationHelpers
     {

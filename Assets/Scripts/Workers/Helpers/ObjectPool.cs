@@ -3,184 +3,187 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-public class ObjectPool 
+namespace Assets.Scripts.Workers.Helpers
 {
-    private static Dictionary<string, List<GameObject>> _pool = new Dictionary<string, List<GameObject>>();
-
-    private static Dictionary<string, List<GameObject>> Pool
+    public class ObjectPool
     {
-        get
+        private static Dictionary<string, List<GameObject>> _pool = new Dictionary<string, List<GameObject>>();
+
+        private static Dictionary<string, List<GameObject>> Pool
         {
-            if (_pool == null) _pool = new Dictionary<string, List<GameObject>>();
-            return _pool;
-        }
-        set
-        {
-            _pool = value;
-        }
-    }
-
-    public static void Clear()
-    {
-        Pool.Clear();
-    }
-
-    public static void PreLoad(GameObject objectToSpawn, int count)
-    {
-        PreLoad(objectToSpawn.name, objectToSpawn, count);
-    }
-
-    public static void PreLoad(string key, GameObject objectToSpawn, int count)
-    {
-        for (int i = 0; i < count; i++)
-        {
-
-            List<GameObject> list = null;
-            if (Pool.ContainsKey(key))
+            get
             {
-                list = Pool[key];
+                if (_pool == null) _pool = new Dictionary<string, List<GameObject>>();
+                return _pool;
             }
-            else
+            set
             {
-                list = new List<GameObject>();
-                Pool.Add(key, list);
+                _pool = value;
             }
-
-            var obj = GameObject.Instantiate(objectToSpawn);
-            list.Add(obj);
-
-            obj.SetActive(false);
         }
-    }
 
-    public static GameObject Instantiate(GameObject objectToSpawn, Vector3 position)
-    {
-       return Instantiate(objectToSpawn, position, new Quaternion(0, 0, 0, 0));
-    }
-
-    public static GameObject Instantiate(GameObject objectToSpawn, Vector3 position, Quaternion rotation)
-    {
-        return Instantiate(objectToSpawn.name, objectToSpawn, position, rotation);
-    }
-
-    public static GameObject Instantiate(string key, GameObject objectToSpawn, Vector3 position, Quaternion rotation)
-    {
-        try
+        public static void Clear()
         {
-            if (!Pool.ContainsKey(key)) Pool.Add(key, new List<GameObject>());
-
-            GameObject firstInactive = GetFirstInactiveObject(objectToSpawn, Pool[key]);
-
-            firstInactive.transform.position = position;
-            firstInactive.transform.rotation = rotation;
-            firstInactive.SetActive(true);
-            return firstInactive;
+            Pool.Clear();
         }
-        catch (Exception)
+
+        public static void PreLoad(GameObject objectToSpawn, int count)
         {
-            return null;
+            PreLoad(objectToSpawn.name, objectToSpawn, count);
         }
-    }
 
-    public static GameObject GetGameObject(GameObject gameObject)
-    {
-        return GetGameObject(gameObject, gameObject.name);
-    }
-
-    public static GameObject GetGameObject(GameObject gameObject, string key)
-    {
-        try
+        public static void PreLoad(string key, GameObject objectToSpawn, int count)
         {
-            if (!Pool.ContainsKey(key)) Pool.Add(key, new List<GameObject>());
-
-            var selectedList = Pool[key];
-            try
+            for (int i = 0; i < count; i++)
             {
-                var obj = selectedList.First(x => x != null && !x.activeInHierarchy);
-                if (obj != null)
+
+                List<GameObject> list = null;
+                if (Pool.ContainsKey(key))
                 {
-                    return obj;
+                    list = Pool[key];
                 }
+                else
+                {
+                    list = new List<GameObject>();
+                    Pool.Add(key, list);
+                }
+
+                var obj = GameObject.Instantiate(objectToSpawn);
+                list.Add(obj);
+
+                obj.SetActive(false);
             }
-            catch
-            { }
-
-            selectedList.Add(gameObject);
-
-            return gameObject;
         }
-        catch (Exception)
+
+        public static GameObject Instantiate(GameObject objectToSpawn, Vector3 position)
         {
-            return null;
+            return Instantiate(objectToSpawn, position, new Quaternion(0, 0, 0, 0));
         }
-    }
 
-    private static GameObject GetFirstInactiveObject(GameObject objectToSpawn, List<GameObject> selectedList)
-    {
-        GameObject firstInactive = null;
-        try
+        public static GameObject Instantiate(GameObject objectToSpawn, Vector3 position, Quaternion rotation)
         {
-            if (selectedList == null) selectedList = new List<GameObject>();
+            return Instantiate(objectToSpawn.name, objectToSpawn, position, rotation);
+        }
 
+        public static GameObject Instantiate(string key, GameObject objectToSpawn, Vector3 position, Quaternion rotation)
+        {
             try
             {
-                firstInactive = selectedList.FirstOrDefault(x => x != null && !x.activeInHierarchy);
-            }
-            catch (MissingReferenceException)
-            {
-                selectedList.Clear();
-            }
-            catch (NullReferenceException)
-            {
-                selectedList.Clear();
-            }
+                if (!Pool.ContainsKey(key)) Pool.Add(key, new List<GameObject>());
 
-            if (firstInactive == null)
+                GameObject firstInactive = GetFirstInactiveObject(objectToSpawn, Pool[key]);
+
+                firstInactive.transform.position = position;
+                firstInactive.transform.rotation = rotation;
+                firstInactive.SetActive(true);
+                return firstInactive;
+            }
+            catch (Exception)
             {
-                firstInactive = GameObject.Instantiate(objectToSpawn);
-                selectedList.Add(firstInactive);
+                return null;
             }
         }
-        catch (Exception)
+
+        public static GameObject GetGameObject(GameObject gameObject)
         {
+            return GetGameObject(gameObject, gameObject.name);
         }
 
-        return firstInactive;
-    }
-
-    public static void DeactivatePool(string key)
-    {
-        try
+        public static GameObject GetGameObject(GameObject gameObject, string key)
         {
-            if (!Pool.ContainsKey(key)) return;
-            foreach (GameObject go in Pool[key])
+            try
             {
+                if (!Pool.ContainsKey(key)) Pool.Add(key, new List<GameObject>());
+
+                var selectedList = Pool[key];
                 try
                 {
-                    go.SetActive(false);
+                    var obj = selectedList.First(x => x != null && !x.activeInHierarchy);
+                    if (obj != null)
+                    {
+                        return obj;
+                    }
                 }
-                catch (Exception)
-                {
-                }
+                catch
+                { }
+
+                selectedList.Add(gameObject);
+
+                return gameObject;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
-        catch (Exception)
+
+        private static GameObject GetFirstInactiveObject(GameObject objectToSpawn, List<GameObject> selectedList)
         {
+            GameObject firstInactive = null;
+            try
+            {
+                if (selectedList == null) selectedList = new List<GameObject>();
+
+                try
+                {
+                    firstInactive = selectedList.FirstOrDefault(x => x != null && !x.activeInHierarchy);
+                }
+                catch (MissingReferenceException)
+                {
+                    selectedList.Clear();
+                }
+                catch (NullReferenceException)
+                {
+                    selectedList.Clear();
+                }
+
+                if (firstInactive == null)
+                {
+                    firstInactive = GameObject.Instantiate(objectToSpawn);
+                    selectedList.Add(firstInactive);
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            return firstInactive;
         }
-    }
 
-    public static IEnumerable<GameObject> GetActivePool(GameObject obj)
-    {
-        return GetActivePool(obj.name);
-    }
-
-    public static IEnumerable<GameObject> GetActivePool(string key)
-    {
-        if (Pool == null || !Pool.ContainsKey(key))
+        public static void DeactivatePool(string key)
         {
-            return new GameObject[0];
+            try
+            {
+                if (!Pool.ContainsKey(key)) return;
+                foreach (GameObject go in Pool[key])
+                {
+                    try
+                    {
+                        go.SetActive(false);
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
-        return Pool[key].Where(x => x != null && x.activeInHierarchy);
+        public static IEnumerable<GameObject> GetActivePool(GameObject obj)
+        {
+            return GetActivePool(obj.name);
+        }
+
+        public static IEnumerable<GameObject> GetActivePool(string key)
+        {
+            if (Pool == null || !Pool.ContainsKey(key))
+            {
+                return new GameObject[0];
+            }
+
+            return Pool[key].Where(x => x != null && x.activeInHierarchy);
+        }
     }
 }

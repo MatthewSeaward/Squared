@@ -2,7 +2,7 @@
 using UnityEngine;
 using static SquarePiece;
 
-namespace Assets.Scripts.Workers.Data_Managers
+namespace Assets.Scripts.Workers.Managers
 {
     public static class RemoteConfigHelper
     {

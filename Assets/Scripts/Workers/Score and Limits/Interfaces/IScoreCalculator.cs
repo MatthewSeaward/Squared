@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Workers.Score_and_Limits
+﻿namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
 {
     public interface IScoreCalculator
     {

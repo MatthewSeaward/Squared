@@ -1,10 +1,9 @@
 ﻿using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Score_and_Limits;
-using Assets.Scripts.Workers.Score_and_Limits.ScoreCalculation;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 [Category("Score Calculation")]
 public class StandardScoreCalculationWithBonusMultiplier

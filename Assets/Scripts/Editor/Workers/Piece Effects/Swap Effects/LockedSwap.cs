@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 [Category("Piece Effects")]
 public class LockedSwap

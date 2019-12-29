@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using Assets.Scripts.Workers.Score_and_Limits;
 using System.Collections.Generic;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 using System.Linq;
 
 [Category("Restrictions")]

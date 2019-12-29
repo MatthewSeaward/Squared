@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataEntities
+namespace Assets.Scripts.Workers.IO.Data_Entities
 {
     [Serializable]
     public class ScoreEntry

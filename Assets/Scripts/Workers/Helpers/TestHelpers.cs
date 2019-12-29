@@ -1,9 +1,9 @@
 ﻿using NSubstitute;
 using System.Collections.Generic;
 using UnityEngine;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
-namespace Assets.Scripts.Workers
+namespace Assets.Scripts.Workers.Helpers
 {
     public static class TestHelpers
     {

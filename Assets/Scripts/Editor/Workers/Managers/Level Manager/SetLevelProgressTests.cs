@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using Assets.Scripts.Workers.Level_Info;
+﻿using Assets.Scripts.Workers.Level_Info;
 using NUnit.Framework;
 using System.Collections.Generic;
 
@@ -23,7 +22,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
 
             LevelManager.Instance.SetupLevels(levels, new string[] { "Golem" });
 
-            LevelManager.Instance.SetLevelProgress(new LevelProgress[] { new LevelProgress() { Chapter = "Golem", StarAchieved = 2, Level = 0 } });
+            LevelManager.Instance.SetLevelProgress(new Scripts.Workers.IO.Data_Entities.LevelProgress[] { new Scripts.Workers.IO.Data_Entities.LevelProgress() { Chapter = "Golem", StarAchieved = 2, Level = 0 } });
 
             Assert.IsNotNull(level.LevelProgress);
             Assert.AreEqual(2, level.LevelProgress.StarAchieved);
@@ -38,7 +37,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
             LevelManager.Instance.SetupLevels(levels, new string[] { "Golem" });
 
             Assert.DoesNotThrow(() =>
-                                 LevelManager.Instance.SetLevelProgress(new LevelProgress[] { new LevelProgress() { Chapter = "Golem", StarAchieved = 2, Level = 20 } })
+                                 LevelManager.Instance.SetLevelProgress(new Scripts.Workers.IO.Data_Entities.LevelProgress[] { new Scripts.Workers.IO.Data_Entities.LevelProgress() { Chapter = "Golem", StarAchieved = 2, Level = 20 } })
                                 );  
         }
 
@@ -51,7 +50,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
             LevelManager.Instance.SetupLevels(levels, new string[] { "Golem" });
 
             Assert.DoesNotThrow(() =>
-                                 LevelManager.Instance.SetLevelProgress(new LevelProgress[] { new LevelProgress() { Chapter = "Wolf", StarAchieved = 2, Level = 20 } })
+                                 LevelManager.Instance.SetLevelProgress(new Scripts.Workers.IO.Data_Entities.LevelProgress[] { new Scripts.Workers.IO.Data_Entities.LevelProgress() { Chapter = "Wolf", StarAchieved = 2, Level = 20 } })
                                 );
         }
 

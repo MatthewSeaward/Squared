@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Managers;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy.Events

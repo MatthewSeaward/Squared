@@ -1,7 +1,6 @@
-﻿using Assets.Scripts.Constants;
-using Assets.Scripts.Managers;
-using Assets.Scripts.Workers;
+﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Enemy.Events;
+using Assets.Scripts.Workers.Managers;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

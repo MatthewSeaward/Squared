@@ -1,8 +1,6 @@
-﻿using System;
-using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using DataEntities;
 using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Level_Info
@@ -27,7 +25,7 @@ namespace Assets.Scripts.Workers.Level_Info
 
         }
 
-        public Level(DataEntities.Level dataEntities)
+        public Level(IO.Data_Entities.Level dataEntities)
         {
             this.LevelNumber = dataEntities.LevelNumber;
             this.Target = dataEntities.Target;

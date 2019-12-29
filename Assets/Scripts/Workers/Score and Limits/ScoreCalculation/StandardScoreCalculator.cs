@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Workers.Powerups;
-using Assets.Scripts.Workers.Score_and_Limits.ScoreCalculation;
+using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -1,10 +1,11 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
+﻿using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Helpers;
 using Firebase.Database;
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using Assets.Scripts.Workers.Helpers;
 
 namespace Assets.Scripts.Workers.IO.Collection
 {    
@@ -25,8 +26,7 @@ namespace Assets.Scripts.Workers.IO.Collection
                                      try
                                      {
                                          DataSnapshot snapshot = task.Result;
-
-
+                                         
                                          string info = snapshot?.GetRawJsonValue()?.ToString();
 
                                          var array = new PiecesCollected.PieceCollectionInfo[0];

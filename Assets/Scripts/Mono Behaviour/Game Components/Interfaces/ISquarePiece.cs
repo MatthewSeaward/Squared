@@ -2,7 +2,7 @@
 using Assets.Scripts.Workers.Piece_Effects.Collection;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 using static SquarePiece;
 
 public interface ISquarePiece

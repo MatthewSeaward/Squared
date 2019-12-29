@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Assets.Scripts.Constants;
-using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets.Scripts
 {

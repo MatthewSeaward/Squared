@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Workers.IO
+﻿namespace Assets.Scripts.Workers.IO.Score
 {
     interface IScoreWriter
     {

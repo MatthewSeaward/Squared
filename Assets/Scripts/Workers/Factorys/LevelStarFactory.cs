@@ -3,7 +3,7 @@ using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
 
-namespace Assets.Scripts.Workers.IO
+namespace Assets.Scripts.Workers.Factorys
 {
     public static class LevelStarFactory
     {

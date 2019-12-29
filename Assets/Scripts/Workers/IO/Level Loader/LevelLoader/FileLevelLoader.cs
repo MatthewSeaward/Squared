@@ -1,10 +1,10 @@
 ﻿using Assets.Scripts.Workers.IO.Helpers;
-using DataEntities;
-using LevelLoader.Interfaces;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Workers.IO.Interfaces;
 
-namespace LevelLoader
+namespace Assets.Scripts.Workers.IO
 {
     class FileLevelLoader : ILevelLoader
     {

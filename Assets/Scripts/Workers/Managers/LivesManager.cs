@@ -4,7 +4,7 @@ using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
 
-namespace Assets.Scripts.Workers.Data_Managers
+namespace Assets.Scripts.Workers.Managers
 {
     public delegate void LivesChanged(bool gained, int newLives);
 

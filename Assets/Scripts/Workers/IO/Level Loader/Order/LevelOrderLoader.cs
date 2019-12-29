@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Loaders;
+using Assets.Scripts.Workers.IO.Interfaces;
 using UnityEngine;
 using IDataReader = Assets.Scripts.Workers.IO.Data_Loaders.IDataReader;
 

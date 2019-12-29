@@ -3,7 +3,7 @@ using Assets.Scripts.Workers.IO;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using static SquarePiece;
 
-namespace Assets.Scripts.Workers.Data_Managers
+namespace Assets.Scripts.Workers.Managers
 {
     public delegate void PiecesCollectedEvent(Colour type, int previousAmount, int gained);
 

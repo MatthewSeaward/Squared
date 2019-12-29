@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 [Category("Restrictions")]
 public class NoRestriction

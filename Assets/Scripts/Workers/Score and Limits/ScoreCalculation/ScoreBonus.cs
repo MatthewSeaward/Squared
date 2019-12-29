@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Workers.Score_and_Limits.ScoreCalculation
+﻿namespace Assets.Scripts.Workers.Score_and_Limits
 {
     public class ScoreBonus
     {

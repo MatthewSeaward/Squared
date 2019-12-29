@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Workers.Helpers;
 using System;
 using System.Linq;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy.Events
 {

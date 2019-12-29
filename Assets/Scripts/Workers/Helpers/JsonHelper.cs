@@ -1,39 +1,42 @@
 ﻿using System;
 using UnityEngine;
 
-public static class JsonHelper
+namespace Assets.Scripts.Workers.Helpers
 {
-    public static T[] FromJson<T>(string json)
+    public static class JsonHelper
     {
-        try
+        public static T[] FromJson<T>(string json)
         {
-            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
-            return wrapper.Items;
+            try
+            {
+                Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+                return wrapper.Items;
+            }
+            catch
+            {
+                Debug.LogError($"Error processing{Environment.NewLine}{json}");
+            }
+            return null;
         }
-        catch
+
+        public static string ToJson<T>(T[] array)
         {
-            Debug.LogError($"Error processing{Environment.NewLine}{json}");
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Items = array;
+            return JsonUtility.ToJson(wrapper);
         }
-        return null;
-    }
 
-    public static string ToJson<T>(T[] array)
-    {
-        Wrapper<T> wrapper = new Wrapper<T>();
-        wrapper.Items = array;
-        return JsonUtility.ToJson(wrapper);
-    }
+        public static string ToJson<T>(T[] array, bool prettyPrint)
+        {
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Items = array;
+            return JsonUtility.ToJson(wrapper, prettyPrint);
+        }
 
-    public static string ToJson<T>(T[] array, bool prettyPrint)
-    {
-        Wrapper<T> wrapper = new Wrapper<T>();
-        wrapper.Items = array;
-        return JsonUtility.ToJson(wrapper, prettyPrint);
-    }
-
-    [Serializable]
-    private class Wrapper<T>
-    {
-        public T[] Items;
+        [Serializable]
+        private class Wrapper<T>
+        {
+            public T[] Items;
+        }
     }
 }

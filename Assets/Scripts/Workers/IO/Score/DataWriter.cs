@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Workers.IO.Data_Writer
+﻿namespace Assets.Scripts.Workers.IO.Score
 {
     public class ScoreManager
     {

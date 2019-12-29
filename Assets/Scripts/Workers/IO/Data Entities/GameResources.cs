@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Workers.Helpers;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.IO.Data_Entities

@@ -2,7 +2,7 @@
 using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.UserPieceSelection;
 
-namespace Assets.Scripts.Workers.Piece_Selection
+namespace Assets.Scripts.Workers.UserPieceSelection
 {
     public class PieceSelectionModeDrawLine : IPieceSelectionMode
     {

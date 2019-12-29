@@ -15,7 +15,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         [Test]
         public void Empty_DataEntities()
         {
-            Assert.IsNotNull(new Level(new DataEntities.Level()));
+            Assert.IsNotNull(new Level(new Scripts.Workers.IO.Data_Entities.Level()));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
             var pattern = new string[] { "xxxxxxx" };
             var dropPieces = new string[] { "r", "s" };
 
-            var dto = new DataEntities.Level()
+            var dto = new Scripts.Workers.IO.Data_Entities.Level()
             {
                 LevelNumber = 1,
                 Target = 100,

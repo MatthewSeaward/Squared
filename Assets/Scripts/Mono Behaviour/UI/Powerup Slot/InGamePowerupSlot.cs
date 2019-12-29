@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Managers;
-using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets.Scripts.UI
 {

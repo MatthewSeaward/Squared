@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 
-namespace Assets.Scripts.Workers.Piece_Effects
+namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
     public class StandardConnection : IPieceConnection
     {

@@ -1,9 +1,10 @@
-﻿using Assets.Scripts.Workers.Factorys.Piece_Builder.Helpers;
+﻿using Assets.Scripts.Workers.Factorys.Helpers;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Destruction;
+using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using UnityEngine;
 
-namespace Assets.Scripts.Workers.Factorys.Piece_Builder.PieceTemplates
+namespace Assets.Scripts.Workers.Factorys.PieceTemplates
 {
     class MultipliedPoints : PieceBuilder
     {

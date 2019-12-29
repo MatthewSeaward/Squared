@@ -1,6 +1,6 @@
 ﻿using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {

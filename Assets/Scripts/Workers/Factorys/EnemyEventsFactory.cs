@@ -6,9 +6,9 @@ using Assets.Scripts.Workers.Enemy.Events;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
-namespace Assets.Scripts.Workers
+namespace Assets.Scripts.Workers.Factorys
 {
     public static class EnemyEventsFactory
     {

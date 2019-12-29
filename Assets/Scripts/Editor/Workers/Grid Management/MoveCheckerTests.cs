@@ -1,8 +1,9 @@
 ﻿using Assets.Scripts.Workers.Grid_Management;
 using Assets.Scripts.Workers.Piece_Effects;
+using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using NUnit.Framework;
 using System.Collections.Generic;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 namespace Assets.Scripts.Editor.Workers
 {

@@ -1,9 +1,10 @@
-﻿using Assets.Scripts.Workers.Helpers.Extensions;
+﻿using Assets.Scripts.Workers.Factorys;
+using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.UserPieceSelection;
 using UnityEngine;
 
-namespace Assets.Scripts.Workers.Piece_Selection
+namespace Assets.Scripts.Workers.UserPieceSelection
 {
     public class PieceSelectionModePaintPieces : IPieceSelectionMode
     {

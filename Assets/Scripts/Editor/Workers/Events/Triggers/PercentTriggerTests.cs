@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.Enemy.Events;
+using Assets.Scripts.Workers.Factorys;
+using Assets.Scripts.Workers.Helpers;
 using NUnit.Framework;
 using System.Collections.Generic;
 

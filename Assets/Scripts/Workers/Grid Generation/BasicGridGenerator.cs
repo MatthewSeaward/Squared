@@ -1,9 +1,9 @@
 ﻿using Assets;
-using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Factorys;
 using GridGeneration.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
-using static PieceBuilderDirector;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
 namespace GridGeneration
 {
@@ -46,9 +46,7 @@ namespace GridGeneration
                     if (type == PieceTypes.Empty)
                     {
                         continue;
-                    }                    
-
-                  
+                    }                                  
 
                     var piece = GenerateTile(type, xPos, yPos, x, y, true);
 

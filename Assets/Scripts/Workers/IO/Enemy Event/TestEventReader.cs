@@ -2,7 +2,7 @@
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Enemy_Event;
 
-namespace Assets.Scripts.Workers.IO
+namespace Assets.Scripts.Workers.IO.Scripts.Workers.IO.Data_Entities
 {
     public class TestEventReader : IEventReader
     {

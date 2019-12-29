@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Enemy;
+using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using UnityEngine;

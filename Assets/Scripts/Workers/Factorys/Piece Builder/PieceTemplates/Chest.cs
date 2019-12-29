@@ -6,7 +6,7 @@ using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using UnityEngine;
 using static SquarePiece;
 
-namespace Assets.Scripts.Workers.Factorys.Piece_Builder.PieceTemplates
+namespace Assets.Scripts.Workers.Factorys.PieceTemplates
 {
     class Chest : PieceBuilder
     {

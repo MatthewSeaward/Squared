@@ -1,8 +1,9 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace Assets.Scripts.Workers.IO.Player_Progress
+namespace Assets.Scripts.Workers.IO
 {
     class PlayerPrefsLevelProgressLoader : ILevelProgressReader
     {

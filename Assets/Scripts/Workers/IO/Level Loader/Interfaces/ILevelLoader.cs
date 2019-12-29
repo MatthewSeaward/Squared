@@ -1,7 +1,7 @@
-﻿using DataEntities;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using System.Collections.Generic;
 
-namespace LevelLoader.Interfaces
+namespace Assets.Scripts.Workers.IO.Interfaces
 {
     public interface ILevelLoader
     {

@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using Assets.Scripts.Workers.Factorys;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.IO.Enemy_Event;
-using Assets.Scripts.Workers.IO.Level_Loader.Order;
-using LevelLoader.Interfaces;
+using Assets.Scripts.Workers.IO.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +64,6 @@ namespace Assets.Scripts.Workers.IO
             var levelDTOs = levelLoader.GetLevels();
             var levelOrderDTo = levelOrderLoader.LoadLevelOrder();
 
-
             var levels = levelDTOs.ToDictionary(x => x.Key, 
                                                 x => x.Value.Select(level => new Level_Info.Level(level)).ToArray());
 
@@ -74,7 +73,7 @@ namespace Assets.Scripts.Workers.IO
 
         }
 
-        private void LoadLevelStars(Dictionary<string, DataEntities.Level[]> levelDTO, Dictionary<string, Level_Info.Level[]> levels)
+        private void LoadLevelStars(Dictionary<string, Level[]> levelDTO, Dictionary<string, Level_Info.Level[]> levels)
         {
             CheckForInitialisation();
 

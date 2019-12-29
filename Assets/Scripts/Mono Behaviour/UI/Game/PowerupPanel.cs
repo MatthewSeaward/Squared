@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers.Data_Managers;
-using Assets.Scripts.Workers.Powerups;
+﻿using Assets.Scripts.Workers.Managers;
 using System.Collections.Generic;
 using UnityEngine;
 

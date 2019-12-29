@@ -2,7 +2,7 @@
 using UnityEngine;
 using static SquarePiece;
 
-namespace DataEntities
+namespace Assets.Scripts.Workers.IO.Data_Entities
 {
     [Serializable]
     public struct PieceColour 

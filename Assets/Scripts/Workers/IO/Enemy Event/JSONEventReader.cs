@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.IO.Enemy_Event;
 using UnityEngine;
 
-namespace Assets.Scripts.Workers.IO.Enemy_Event
+namespace Assets.Scripts.Workers.IO.Scripts.Workers.IO.Data_Entities
 {
     class JSONEventReader : IEventReader
     {

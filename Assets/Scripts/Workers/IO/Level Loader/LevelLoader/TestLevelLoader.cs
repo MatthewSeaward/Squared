@@ -1,5 +1,5 @@
-﻿using DataEntities;
-using LevelLoader.Interfaces;
+﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.IO.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
 using static SquarePiece;

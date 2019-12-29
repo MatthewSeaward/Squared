@@ -1,8 +1,8 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.UI;
 using Assets.Scripts.Workers.IO.Data_Entities;
-using Assets.Scripts.Workers.Piece_Selection;
 using Assets.Scripts.Workers.Powerups.Interfaces;
+using Assets.Scripts.Workers.UserPieceSelection;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Powerups

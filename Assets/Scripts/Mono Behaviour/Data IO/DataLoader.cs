@@ -3,15 +3,14 @@ using System.Collections;
 using System.Threading.Tasks;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers;
-using Assets.Scripts.Workers.Data_Managers;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.IO;
-using Assets.Scripts.Workers.IO.Data_Writer;
-using Assets.Scripts.Workers.IO.Enemy_Event;
 using Assets.Scripts.Workers.IO.Level_Loader.Order;
-using LevelLoader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Scripts.Workers.IO.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.IO.Score;
 
 namespace Assets.Scripts
 {

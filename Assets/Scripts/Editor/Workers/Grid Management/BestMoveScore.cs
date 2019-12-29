@@ -1,11 +1,13 @@
 ﻿using Assets.Scripts.Workers.Grid_Management;
 using Assets.Scripts.Workers.Piece_Effects;
+using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using Assets.Scripts.Workers.Score_and_Limits;
+using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using static Assets.Scripts.Workers.TestHelpers;
+using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 namespace Assets.Scripts.Editor.Workers
 {
