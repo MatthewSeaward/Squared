@@ -546,13 +546,13 @@
 				{ 
 				   "EventType":"Remove",
 				   "Trigger":"Turns",
-				   "TriggerOn":"3-5",
+				   "TriggerOn":"2-3",
 				   "PositionsSelected": [ "0:5", "1:5", "2:5", "3:5", "4:5", "5:5", "6:5", "7:5"]
 				},
 				{ 
 				   "EventType":"Add",
 				   "Trigger":"Turns",
-				   "TriggerOn":"6-8",
+				   "TriggerOn":"4-5",
 				   "NewPieceType":"x",
 				   "PositionsSelected": [ "3:2", "4:2", "3:8", "4:8"]
 				}
