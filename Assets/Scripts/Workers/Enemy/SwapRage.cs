@@ -11,7 +11,7 @@ namespace Assets.Scripts.Workers.Enemy
         protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = new StandardSelectionPieceValidator();
         protected override IPieceSelection pieceSelection { get; set; } = new RandomPieceSelector();
 
-        protected override void InvokeRageAction(ISquarePiece piece)
+        protected override void InvokeRageActionOnPiece(ISquarePiece piece)
         {
             (Sprite Sprite, Colour colour) newSprite;
             do

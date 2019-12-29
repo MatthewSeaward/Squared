@@ -60,7 +60,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         }
 
         [Test]
-        public void GetBannedSprite_WithIvalidRestriction()
+        public void GetBannedSprite_WithInvalidRestriction()
         {
             level.Star1Progress = new Scripts.Workers.IO.Data_Entities.StarProgress() { Restriction = new Scripts.Workers.Score_and_Limits.NoRestriction() };
 

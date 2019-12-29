@@ -21,7 +21,7 @@ namespace Assets.Scripts.Workers.Enemy
             (pieceSelectionValidator as SpecificPieceSelecitonValidator).specificPiece = from;
         }
       
-        protected override void InvokeRageAction(ISquarePiece piece)
+        protected override void InvokeRageActionOnPiece(ISquarePiece piece)
         {
             SquarePieceHelpers.ChangePiece(piece, To);
         }

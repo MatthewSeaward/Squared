@@ -48,10 +48,20 @@ public class PieceController
         AvaiableSlots.Add(newPiece.Position);
     }
 
-    internal static void RemovePiece(ISquarePiece piece)
+    internal static void RemoveSlot(Vector2Int position)
     {
-        Pieces.Remove(piece);
-        AvaiableSlots.Remove(piece.Position);
+        var piece = GetPiece(position.x, position.y);
+        if (piece != null)
+        {
+            piece.DestroyPiece();
+        }
+
+        AvaiableSlots.Remove(position);
+    }
+
+    public static bool SlotExists(Vector2Int position)
+    {
+        return AvaiableSlots.Any(x => x == position);
     }
 
     public static bool IsEmptySlot(int x, int y)
@@ -74,6 +84,11 @@ public class PieceController
 
         return false;
             
+    }
+
+    internal static Vector3 GetPosition(Vector2Int position)
+    {
+        return new Vector3(XPositions[position.x], YPositions[position.y]);
     }
 
     internal static bool AtTop(int x, int y)

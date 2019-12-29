@@ -9,13 +9,33 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
     public class DestroyTriggerFall : IPieceDestroy
     {
         protected SquarePiece _squarePiece;
-        private bool _toBeDestroyed = false;
 
-        public bool ToBeDestroyed => _toBeDestroyed;
+        public bool ToBeDestroyed { get; private set; }
+
+        private PieceFallLerp Lerp
+        {
+            get
+            {
+                var lerp = _squarePiece.GetComponent<PieceFallLerp>();
+                if (lerp == null)
+                {
+                    lerp = _squarePiece.gameObject.AddComponent<PieceFallLerp>();
+                }
+
+                return lerp;
+            }
+        }
+        
 
         public DestroyTriggerFall (SquarePiece squarePiece)
         {
-            _squarePiece = squarePiece; 
+            _squarePiece = squarePiece;
+            Lerp.LerpCompleted += Lerp_LerpCompleted;
+        }
+
+        ~DestroyTriggerFall()
+        {
+            Lerp.LerpCompleted -= Lerp_LerpCompleted;
         }
 
         public virtual void OnDestroy()
@@ -41,6 +61,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
                     continue;
                 }
 
+                if (!PieceController.SlotExists(_squarePiece.Position))
+                {
+                    continue;
+                }
+
                 dest.FallTo(_squarePiece.Position.y);
                 break;
             }            
@@ -51,12 +76,18 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
            float worldPos = PieceController.YPositions[y];            
             
             CheckForAbove();
-
-            PieceFallLerp lerp = _squarePiece.GetComponent<PieceFallLerp>();
-            if (lerp == null) lerp = _squarePiece.gameObject.AddComponent<PieceFallLerp>();
-            lerp.Setup(new Vector3(_squarePiece.transform.position.x, worldPos));
+          
+            Lerp.Setup(new Vector3(_squarePiece.transform.position.x, worldPos));
 
             _squarePiece.Position = new Vector2Int(_squarePiece.Position.x, y);
+        }
+
+        private void Lerp_LerpCompleted()
+        {
+            if (!PieceController.SlotExists(_squarePiece.Position))
+            {
+                _squarePiece.DestroyPiece();
+            }
         }
 
         public void Update()
@@ -69,12 +100,12 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public virtual void Reset()
         {
-            _toBeDestroyed = false;
+            ToBeDestroyed = false;
         }
 
         public void NotifyOfDestroy()
         {
-            _toBeDestroyed = true;
+            ToBeDestroyed = true;
 
             var colour = _squarePiece.Sprite.texture.GetTextureColour();
             GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position, colour);

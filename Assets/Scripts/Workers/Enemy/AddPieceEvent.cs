@@ -1,15 +1,11 @@
-﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using static PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 {
-    public class AddPieceEvent : PieceSelectionRage
+    public class AddPieceEvent : PositionSelectionRage
     {
-        protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = new PositionValidator();
-        protected override IPieceSelection pieceSelection { get; set; }
-
         public List<Vector2Int> Positions { get; }
         public PieceTypes Type { get; }
 
@@ -17,14 +13,25 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
         {
             this.Positions = positions;
             this.Type = type; 
+        }             
 
-            pieceSelection = new PositionCreatePieceSelector(positions, type);
+        protected override List<Vector2Int> GetSelectedPieces()
+        {
+            var newArray = new List<Vector2Int>();
+            newArray.AddRange(Positions.ToArray());
+            return newArray;
         }
 
-        protected override void InvokeRageAction(ISquarePiece piece)
+        protected override void InvokeRageActionOnPosition(Vector2Int position)
         {
-            piece.gameObject.SetActive(true);
-            PieceController.AddNewPiece(piece);
+            var newPiece = Instance.CreateSquarePiece(Type, false);
+
+            var squarePiece = newPiece.GetComponent<SquarePiece>();
+            squarePiece.Position = position;
+            squarePiece.transform.position = new Vector3(PieceController.XPositions[position.x], PieceController.YPositions[position.y]);
+            squarePiece.gameObject.SetActive(true);
+
+            PieceController.AddNewPiece(squarePiece);
         }
     }
 }

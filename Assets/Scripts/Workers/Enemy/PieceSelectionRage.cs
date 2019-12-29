@@ -1,36 +1,26 @@
-﻿using Assets.Scripts.Managers;
-using Assets.Scripts.Workers.Enemy.Piece_Selection;
+﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assets.Scripts.Workers.Enemy
 {
-    public abstract class PieceSelectionRage : IEnemyRage
+    public abstract class PieceSelectionRage : SelectionRage
     {
-        public int SelectionAmount;
-        private const float DisplayTime = 1.5f;
 
         protected abstract PieceSelectionValidator pieceSelectionValidator { get; set; }
         protected abstract IPieceSelection pieceSelection { get; set; }
-
         private List<ISquarePiece> selectedPieces = new List<ISquarePiece>();
-        private float timer;
 
-        public void InvokeRage()
+        protected override void PreformSelection()
         {
-            if (MenuProvider.Instance.OnDisplay)
-            {
-                return;
-            }
-
-             GameManager.Instance.ChangePauseState(this, true);
-
             selectedPieces = pieceSelection.SelectPieces(pieceSelectionValidator, SelectionAmount);
-
             selectedPieces.ForEach(x => x.PieceDestroyed += SquarePiece_PieceDestroyed);
+
+            selectedPositions = selectedPieces.Select(x => x.Position).ToList();
         }
 
-        public bool CanBeUsed()
+        public override bool CanBeUsed()
         {
             return pieceSelection.CanBeUsed(pieceSelectionValidator, SelectionAmount);
         }
@@ -43,33 +33,25 @@ namespace Assets.Scripts.Workers.Enemy
             {
                 selectedPieces.Remove(piece);
             }
-        }
 
-        public void Update(float deltaTime)
-        {
-            timer += deltaTime;
-            if (timer >= DisplayTime)
+            if (selectedPositions.Contains(piece.Position))
             {
-                timer = 0f;
-
-                foreach (var piece in selectedPieces)
-                {
-                   PieceSelectionManager.Instance.ClearCurrentPieces();
-
-                    InvokeRageAction(piece);
-                    GameManager.Instance.ChangePauseState(this, false);
-                }
-
-                selectedPieces.Clear();
-                LightningBoltProducer.Instance.ClearBolts();
-            }
-
-            foreach(var piece in selectedPieces)
-            {
-                LightningBoltProducer.Instance.ProduceBolt(piece, piece.transform.position);
+                selectedPositions.Remove(piece.Position);
             }
         }
 
-        protected abstract void InvokeRageAction(ISquarePiece piece);
+        protected override void InvokeRageAction()
+        {           
+            foreach (var piece in selectedPieces)
+            {
+                PieceSelectionManager.Instance.ClearCurrentPieces();
+
+                InvokeRageActionOnPiece(piece);
+            }
+
+            selectedPieces.Clear();
+        }
+
+        protected abstract void InvokeRageActionOnPiece(ISquarePiece piece);
     }
 }

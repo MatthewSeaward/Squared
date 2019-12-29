@@ -7,7 +7,7 @@ namespace Assets.Scripts
 {
     public class LightningBoltProducer : MonoBehaviour
     {
-        private Dictionary<ISquarePiece, GameObject> currentBolts = new Dictionary<ISquarePiece, GameObject>();
+        private Dictionary<object, GameObject> currentBolts = new Dictionary<object, GameObject>();
 
         public static LightningBoltProducer Instance;
 
@@ -27,7 +27,7 @@ namespace Assets.Scripts
             ClearBolts();
         }
 
-        public void ProduceBolt(ISquarePiece piece, Vector3 position)
+        public void ProduceBolt(object key, Vector3 position)
         {
             if (MenuProvider.Instance.OnDisplay)
             {
@@ -35,14 +35,14 @@ namespace Assets.Scripts
             }
 
             GameObject bolt = null;
-            if (currentBolts.ContainsKey(piece))
+            if (currentBolts.ContainsKey(key))
             {
-                bolt = currentBolts[piece];
+                bolt = currentBolts[key];
             }
             else
             {
                 bolt = ObjectPool.Instantiate(GameResources.GameObjects["LightningBolt"], new Vector3(0, 0, 0));
-                currentBolts.Add(piece, bolt);
+                currentBolts.Add(key, bolt);
             }
 
             var line = bolt.GetComponent<LineRenderer>();

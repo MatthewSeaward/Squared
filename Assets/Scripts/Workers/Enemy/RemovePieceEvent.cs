@@ -1,34 +1,26 @@
-﻿using Assets.Scripts.Workers.Enemy.Piece_Selection;
-using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
-using Assets.Scripts.Workers.Helpers.Extensions;
-using Assets.Scripts.Workers.IO.Data_Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy
 {
-    public class RemovePieceEvent : PieceSelectionRage
+    public class RemovePieceEvent : PositionSelectionRage
     {
-        protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = null;
-        protected override IPieceSelection pieceSelection { get; set; }
-
         public List<Vector2Int> Positions { get; }
 
         public RemovePieceEvent(List<Vector2Int> positions)
         {
             this.Positions = positions;
-
-            pieceSelection = new SpecificPositionSelector(positions);
+        }
+        protected override void InvokeRageActionOnPosition(Vector2Int pos)    
+        {
+           PieceController.RemoveSlot(pos);
         }
 
-        protected override void InvokeRageAction(ISquarePiece piece)
+        protected override List<Vector2Int> GetSelectedPieces()
         {
-            var colour = piece.Sprite.texture.GetTextureColour();
-            GameResources.PlayEffect("Piece Destroy", piece.transform.position, colour);
-
-            piece.gameObject.SetActive(false);
-            PieceController.RemovePiece(piece);
-
+            var newArray = new List<Vector2Int>();
+            newArray.AddRange(Positions.ToArray());
+            return newArray;
         }
     }
 }
