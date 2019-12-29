@@ -74,7 +74,8 @@ namespace Assets.Scripts
                 {
                     button.GetComponent<Button>().interactable = Debug.isDebugBuild;
                     int starsNeeded = LevelManager.Instance.SelectedChapterLevels[i].StarsToUnlock;
-                    button.GetComponentInChildren<Text>().text = starsNeeded + " STARS";
+
+                    button.GetComponentInChildren<Text>().text = LivesManager.Instance.LivesRemaining == 0 ? "NO LIVES":  starsNeeded + " STARS";
                 }
 
                 button.GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.GetLevelProgress(i));
