@@ -18,7 +18,7 @@ namespace Assets.Scripts.Workers.Factorys
                 progress.Restriction = GetStarRestriction(data);
             }
 
-            if (events!= null)
+            if (events != null)
             {
                 progress.Events = EnemyEventsFactory.GetLevelEvents(events);
             }
@@ -32,7 +32,8 @@ namespace Assets.Scripts.Workers.Factorys
             {
                 return null;
             }
-                var type = parts[0];
+
+            var type = parts[0];
             var element = parts[1];
 
             switch (type)
@@ -58,17 +59,13 @@ namespace Assets.Scripts.Workers.Factorys
             switch (type)
             {
                 case "Min":
-                    return new MinSequenceLimit(Convert.ToInt32(parts[3]));
+                    return new MinSequenceLimit(Convert.ToInt32(element));
                 case "Max":
-                    return new MaxSequenceLimit(Convert.ToInt32(parts[3]));
+                    return new MaxSequenceLimit(Convert.ToInt32(element));
                 case "Banned":
-                    if (int.TryParse(element, out int enumValue))
-                    { 
-                        return new BannedSprite(enumValue);
-                    }
-                    break;
+                    return new BannedSprite(Convert.ToInt32(element));
                 case "Type":
-                        return new BannedPieceType(element);
+                    return new BannedPieceType(element);
                 case "Banned Locked":
                     return new SwapEffectLimit();
                 case "No Diagonal":
@@ -76,13 +73,10 @@ namespace Assets.Scripts.Workers.Factorys
                 case "Diagonal Only":
                     return new DiagonalOnlyRestriction();
                 case "Time":
-                    return new TurnTimeLimit(Convert.ToSingle(parts[3]));
+                    return new TurnTimeLimit(Convert.ToSingle(element));
                 default:
                     return new NoRestriction();
             }
-
-            return new NoRestriction();
-
         }
     }
 }

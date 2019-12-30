@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers;
-using Assets.Scripts.Workers.Enemy;
+﻿using Assets.Scripts.Workers.Enemy;
 using Assets.Scripts.Workers.Enemy.Events;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.Factorys;
