@@ -24,8 +24,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
 
             LevelManager.Instance.SetLevelProgress(new Scripts.Workers.IO.Data_Entities.LevelProgress[] { new Scripts.Workers.IO.Data_Entities.LevelProgress() { Chapter = "Golem", StarAchieved = 2, Level = 0 } });
 
-            Assert.IsNotNull(level.LevelProgress);
-            Assert.AreEqual(2, level.LevelProgress.StarAchieved);
+            Assert.AreEqual(2, level.StarAchieved);
         }
 
         [Test]

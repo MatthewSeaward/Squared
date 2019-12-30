@@ -22,6 +22,8 @@ namespace Assets.Scripts.Workers.IO
         private ILevelOrderLoader levelOrderLoader;
         private IEventReader eventReader;
 
+        private List<LevelProgress> LevelProgress = new List<LevelProgress>();
+
         private bool initialised = false;
         
         public static LevelIO Instance
@@ -105,30 +107,39 @@ namespace Assets.Scripts.Workers.IO
         {
             CheckForInitialisation();
 
-            var levelProgress = await progressReader.LoadLevelProgress();
-            LevelManager.Instance.SetLevelProgress(levelProgress);
+            var progress = await progressReader.LoadLevelProgress();
+
+            LevelManager.Instance.SetLevelProgress(progress);
+
+            LevelProgress.Clear();
+            if (progress != null)
+            {
+                LevelProgress.AddRange(progress);
+            }
         }
 
-        internal void SaveLevelProgress(int level, LevelProgress levelinfo)
+        internal void SaveLevelProgress(string chapter, int level, int starAchieved)
         {
             CheckForInitialisation();
 
-            var selected = LevelManager.Instance.LevelProgress.FirstOrDefault(x => x.Level == level && x.Chapter == levelinfo.Chapter);
+            var selected = LevelProgress.FirstOrDefault(x => x.Level == level && x.Chapter == chapter);
             if (selected == null)
             {
-                LevelManager.Instance.LevelProgress.Add(levelinfo);
+                LevelProgress.Add(new LevelProgress() { Chapter = chapter, Level = level, StarAchieved = starAchieved });
             }
             else
             {
-                selected = levelinfo;
+                selected.StarAchieved = starAchieved;
             }
-            progressWriter.SaveLevelProgress(LevelManager.Instance.LevelProgress.ToArray());
+
+            progressWriter.SaveLevelProgress(LevelProgress.ToArray());
         }
 
         public void ResetSavedData()
         {
             CheckForInitialisation();
 
+            LevelProgress.Clear();
             progressWriter.ResetData();
         }
 

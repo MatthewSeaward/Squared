@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
@@ -32,15 +33,8 @@ namespace Assets.Scripts.UI
         private void UpdateLevelProgress()
         {
             var matchingLevels = LevelManager.Instance.Levels[this.name];
-            var numberOfStars = 0;
-            foreach (var level in matchingLevels)
-            {
-                if (level.LevelProgress == null)
-                {
-                    continue;
-                }
-                numberOfStars += level.LevelProgress.StarAchieved;
-            }
+
+            var numberOfStars = matchingLevels.Sum(x => x.StarAchieved);
 
             GetComponentInChildren<ProgressBar>().UpdateProgressBar(numberOfStars, matchingLevels.Length * 3, $"{numberOfStars}/{matchingLevels.Length * 3}");
         }

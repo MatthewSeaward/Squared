@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts
 {
@@ -8,11 +7,11 @@ namespace Assets.Scripts
         [SerializeField]
         private GameObject Star1, Star2, Star3;
 
-        public void Configure(LevelProgress progress)
+        public void Configure(int StarAchieved)
         {
-            Star1.SetActive(progress?.StarAchieved >= 1);
-            Star2.SetActive(progress?.StarAchieved >= 2);
-            Star3.SetActive(progress?.StarAchieved >= 3);           
+            Star1.SetActive(StarAchieved >= 1);
+            Star2.SetActive(StarAchieved >= 2);
+            Star3.SetActive(StarAchieved >= 3);           
         }
     }
 }

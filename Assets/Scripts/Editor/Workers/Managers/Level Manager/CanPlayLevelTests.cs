@@ -58,9 +58,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
 
             if (completed)
             {
-                lvl.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress();
-                lvl.LevelProgress.Level = level;
-                lvl.LevelProgress.StarAchieved = 1;
+                lvl.StarAchieved = 1;
             }
             return lvl;
         }

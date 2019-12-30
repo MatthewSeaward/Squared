@@ -79,7 +79,7 @@ namespace Assets.Scripts
                     button.GetComponentInChildren<Text>().text = LivesManager.Instance.LivesRemaining == 0 ? "NO LIVES":  starsNeeded + " STARS";
                 }
 
-                button.GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.GetLevelProgress(i));
+                button.GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.GetStarAchievedOnLevel(i));
             }
         }
 

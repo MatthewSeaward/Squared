@@ -19,7 +19,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         [Test]
         public void NoProgress_Star1()
         {
-            sut.LevelProgress = null;
+            sut.StarAchieved = 0;
 
             Assert.AreEqual(1, sut.GetCurrentStar().Number);
         }
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         [Test]
         public void CompletedStar1_OnStar2()
         {
-            sut.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress() { StarAchieved = 1 };
+            sut.StarAchieved = 1 ;
 
             Assert.AreEqual(2, sut.GetCurrentStar().Number);
         }
@@ -35,7 +35,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         [Test]
         public void CompletedStar2_OnStar3()
         {
-            sut.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress() { StarAchieved = 2 };
+            sut.StarAchieved = 2;
 
             Assert.AreEqual(3, sut.GetCurrentStar().Number);
         }
@@ -43,7 +43,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         [Test]
         public void ExceededStarCount_OnStar3()
         {
-            sut.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress() { StarAchieved = 5 };
+            sut.StarAchieved = 5;
 
             Assert.AreEqual(3, sut.GetCurrentStar().Number);
         }
@@ -51,7 +51,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
         [Test]
         public void UnderStarCount_OnStar1()
         {
-            sut.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress() { StarAchieved = -5 };
+            sut.StarAchieved = -5;
 
             Assert.AreEqual(1, sut.GetCurrentStar().Number);
         }

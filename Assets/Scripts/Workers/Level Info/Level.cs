@@ -13,9 +13,8 @@ namespace Assets.Scripts.Workers.Level_Info
         public string[] Pattern;
         public string[] SpecialDropPieces;
         public int StarsToUnlock;
-
-        public LevelProgress LevelProgress;
-
+        public int StarAchieved;
+        
         public StarProgress Star1Progress = new StarProgress();
         public StarProgress Star2Progress = new StarProgress();
         public StarProgress Star3Progress = new StarProgress();
@@ -48,17 +47,12 @@ namespace Assets.Scripts.Workers.Level_Info
         }
 
         public StarProgress GetCurrentStar()
-        {
-            if (LevelProgress == null)
-            {
-                return Star1Progress;
-            }
-
-            if (LevelProgress.StarAchieved == 1)
+        {  
+            if (StarAchieved == 1)
             {
                 return Star2Progress;
             }
-            else if (LevelProgress.StarAchieved >= 2)
+            else if (StarAchieved >= 2)
             {
                 return Star3Progress;
             }

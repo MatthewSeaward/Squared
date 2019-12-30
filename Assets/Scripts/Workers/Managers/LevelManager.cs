@@ -10,7 +10,6 @@ namespace Assets
 {
     public class LevelManager
     {
-        private List<Scripts.Workers.IO.Data_Entities.LevelProgress> _levelProgress;
         private Dictionary<string, Level[]> _levels;
         private string[] _levelOrder;
 
@@ -30,22 +29,6 @@ namespace Assets
             private set
             {
                 _levels = value;
-            }
-        }
-
-        public List<Scripts.Workers.IO.Data_Entities.LevelProgress> LevelProgress
-        {
-            get
-            {
-                if (_levelProgress == null)
-                {
-                    _levelProgress = new List<Scripts.Workers.IO.Data_Entities.LevelProgress>();
-                }
-                return _levelProgress;
-            }
-            set
-            {
-                _levelProgress = value;
             }
         }
 
@@ -72,7 +55,7 @@ namespace Assets
                 int count = 0;
                 foreach (var lvl in Levels.Values)
                 {
-                    lvl.ToList().ForEach(x => count += x.LevelProgress != null ? x.LevelProgress.StarAchieved : 0);
+                    lvl.ToList().ForEach(x => count += x.StarAchieved);
                 }
                 return count >= 0 ? count : 0;
             }
@@ -126,7 +109,7 @@ namespace Assets
         {
             if (result == GameResult.ReachedTarget)
             {                
-                RegisterLevelCompleted(star, score);
+                RegisterLevelCompleted(star);
             }
         }
 
@@ -139,29 +122,22 @@ namespace Assets
             return SelectedLevel = SelectedChapterLevels[CurrentLevel] ;
         }
 
-        public Scripts.Workers.IO.Data_Entities.LevelProgress GetLevelProgress(int level)
+        public int GetStarAchievedOnLevel(int level)
         {
             if (level < SelectedChapterLevels.Length)
             {
-                return SelectedChapterLevels[level].LevelProgress;
+                return SelectedChapterLevels[level].StarAchieved;
             }
             else
             {
-                return null;
+                return 0;
             }
         }
 
-        internal void RegisterLevelCompleted(int star, int score)
+        internal void RegisterLevelCompleted(int star)
         {
-            if (SelectedChapterLevels[CurrentLevel].LevelProgress == null)
-            {
-                SelectedChapterLevels[CurrentLevel].LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress() { Level = CurrentLevel };
-            }
-
-            SelectedChapterLevels[CurrentLevel].LevelProgress.StarAchieved = Mathf.Clamp(star, 0, 3);
-            SelectedChapterLevels[CurrentLevel].LevelProgress.Chapter = SelectedChapter;
-
-            LevelIO.Instance.SaveLevelProgress(CurrentLevel, SelectedChapterLevels[CurrentLevel].LevelProgress);
+            SelectedLevel.StarAchieved = star;
+            LevelIO.Instance.SaveLevelProgress(SelectedChapter, CurrentLevel, Mathf.Clamp(star, 0, 3));
         }
 
         public void SetLevelProgress(Scripts.Workers.IO.Data_Entities.LevelProgress[] loadedData)
@@ -185,10 +161,8 @@ namespace Assets
                     continue;
                 } 
 
-                levels[progress.Level].LevelProgress = progress;
+                levels[progress.Level].StarAchieved = progress.StarAchieved;
             }
-
-            this.LevelProgress = levelProgress;
         }
 
         private bool LevelUnlocked(int i)
@@ -231,7 +205,6 @@ namespace Assets
 
         public void ResetSavedData()
         {
-            LevelProgress.Clear();
             LevelIO.Instance.ResetSavedData();
         }
 

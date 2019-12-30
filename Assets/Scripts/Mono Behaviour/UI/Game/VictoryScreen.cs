@@ -25,10 +25,10 @@ namespace Assets.Scripts
             Body.text = body;
 
             Continue.interactable = LevelManager.Instance.CanPlayLevel(LevelManager.Instance.CurrentLevel + 1) && LivesManager.Instance.LivesRemaining > 0;;
-            NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.LevelProgress.StarAchieved < 3);
+            NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.StarAchieved < 3);
             NextStar.interactable = LivesManager.Instance.LivesRemaining > 0;
 
-            GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.LevelProgress);
+            GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
             gameObject.SetActive(true);
         }
 

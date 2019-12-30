@@ -46,7 +46,6 @@ namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager
         {
             var lvl = new Level();
 
-            lvl.LevelProgress = new Scripts.Workers.IO.Data_Entities.LevelProgress();
             lvl.LevelNumber = number;
 
             return lvl;

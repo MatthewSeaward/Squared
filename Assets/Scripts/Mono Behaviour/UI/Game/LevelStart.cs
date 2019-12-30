@@ -30,7 +30,7 @@ namespace Assets.Scripts
             Limit.text = LevelManager.Instance.SelectedLevel.GetCurrentLimit().GetDescription();
             Restriction.text = LevelManager.Instance.SelectedLevel.GetCurrentRestriction().GetRestrictionDescription();
 
-            GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.LevelProgress);
+            GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
         }
 
         public void Play_Clicked()
