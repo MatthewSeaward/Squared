@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 8
-    y: 51
-    width: 1904
-    height: 981
+    x: 0
+    y: 43
+    width: 1920
+    height: 997
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
-  m_MinSize: {x: 950, y: 394}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -62,11 +62,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 650
-    width: 936
-    height: 281
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+    y: 636
+    width: 1298
+    height: 311
+  m_MinSize: {x: 102, y: 122}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -88,12 +88,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 601
+    x: 666
     y: 0
-    width: 335
-    height: 650
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 632
+    height: 636
+  m_MinSize: {x: 204, y: 222}
+  m_MaxSize: {x: 4004, y: 4022}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -119,8 +119,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1904
-    height: 981
+    width: 1920
+    height: 997
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &6
@@ -140,7 +140,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1904
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 961
-    width: 1904
+    y: 977
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -185,12 +185,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1904
-    height: 931
+    width: 1920
+    height: 947
   m_MinSize: {x: 712, y: 344}
   m_MaxSize: {x: 16012, y: 8044}
   vertical: 0
-  controlID: 115
+  controlID: 58
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,12 +210,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 936
-    height: 931
+    width: 1298
+    height: 947
   m_MinSize: {x: 610, y: 344}
   m_MaxSize: {x: 12010, y: 8044}
   vertical: 1
-  controlID: 80
+  controlID: 59
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,8 +236,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 936
-    height: 650
+    width: 1298
+    height: 636
   m_MinSize: {x: 610, y: 222}
   m_MaxSize: {x: 12010, y: 4022}
   vertical: 0
@@ -259,8 +259,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 277
-    height: 650
+    width: 351
+    height: 636
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
@@ -283,12 +283,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 277
+    x: 351
     y: 0
-    width: 324
-    height: 650
-  m_MinSize: {x: 204, y: 222}
-  m_MaxSize: {x: 4004, y: 4022}
+    width: 315
+    height: 636
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -310,10 +310,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 936
+    x: 1298
     y: 0
-    width: 968
-    height: 931
+    width: 622
+    height: 947
   m_MinSize: {x: 102, y: 122}
   m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 22}
@@ -401,10 +401,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 609
-    y: 81
-    width: 333
-    height: 631
+    x: 666
+    y: 73
+    width: 630
+    height: 617
   m_ViewDataDictionary: {fileID: 0}
   m_VSyncEnabled: 0
   m_MaximizeOnPlay: 0
@@ -438,25 +438,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 333
-      height: 614
-    m_Scale: {x: 0.4625, y: 0.46250004}
-    m_Translation: {x: 166.5, y: 307}
+      width: 630
+      height: 600
+    m_Scale: {x: 0.46875, y: 0.46875}
+    m_Translation: {x: 315, y: 300}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -360
-      y: -663.78375
-      width: 720
-      height: 1327.5675
+      x: -672
+      y: -640
+      width: 1344
+      height: 1280
     m_MinimalGUI: 1
-  m_defaultScale: 0.4625
+  m_defaultScale: 0.46875
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 333, y: 631}
+  m_LastWindowPixelSize: {x: 630, y: 617}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -482,17 +482,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 81
-    width: 277
-    height: 631
+    x: 0
+    y: 73
+    width: 351
+    height: 617
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 8a3f0000
       m_LastClickedID: 0
-      m_ExpandedIDs: bcf2ffff60f3ffffa2f3ffffe4f3ffff26f4ffff70f4ffff14f5ffffacf5ffffeef5ffff38f6ffffa0f6ffffdef6ffff20f7ffff62f7ffffacf7ffff80f8ffff86f9ffff7afaffff76fbffff
+      m_ExpandedIDs: 30b7ffff3ad6ffffecdaffff48dbfffff8dfffff7aedfffff8edffff76fbffff4c660000de660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -537,10 +537,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 285
-    y: 81
-    width: 322
-    height: 631
+    x: 351
+    y: 73
+    width: 313
+    height: 617
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 9fb366f125bd97e4ebd492a4f8190e6b
@@ -552,9 +552,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.88095546, y: -2.0717654, z: -1.2753906}
+    m_Target: {x: 332.9591, y: 268.56985, z: -34.84904}
     speed: 2
-    m_Value: {x: -0.88095546, y: -2.0717654, z: -1.2753906}
+    m_Value: {x: 332.9591, y: 268.56985, z: -34.84904}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -587,9 +587,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.060621
+    m_Target: 660.75305
     speed: 2
-    m_Value: 6.060621
+    m_Value: 660.75305
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -637,9 +637,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 734
-    width: 1444
-    height: 267
+    y: 709
+    width: 1298
+    height: 292
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -654,20 +654,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Editor/Workers/Grid Management
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts/Editor/Workers/Grid Management
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Development\Unity Projects\Squared
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 645}
-    m_SelectedIDs: b2320000
-    m_LastClickedID: 12978
-    m_ExpandedIDs: 0000000038320000f8330000ec3400009e3700002e380000683800006e3800009a390000643a0000703a0000b03a00002e3b0000bc3c0000963d0000a23e0000d43e0000f43e0000fa3e0000003f00006e3f0000e23f00000841000006430000084300000a4300000c430000
+    scrollPos: {x: 0, y: 524}
+    m_SelectedIDs: 30400000
+    m_LastClickedID: 16432
+    m_ExpandedIDs: 00000000a63200006c340000683500002e380000c0380000fa38000000390000303a0000fc3a00000c3b00004c3b0000cc3b0000643d0000423e00005c3f0000903f0000b03f0000b63f0000bc3f000030400000a4400000ca410000e8430000ea430000ec430000ee43000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -695,7 +695,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000038320000f8330000ec3400009e3700002e380000683800006e3800009a390000643a0000703a0000b03a00002e3b0000bc3c0000963d0000a23e0000d43e0000f43e0000fa3e0000003f00006e3f0000e23f00000841000006430000084300000a4300000c430000
+    m_ExpandedIDs: 00000000a63200006c340000683500002e380000c0380000fa38000000390000303a0000fc3a00000c3b00004c3b0000cc3b0000643d0000423e00005c3f0000903f0000b03f0000b63f0000bc3f000030400000a4400000ca410000e8430000ea430000ec430000ee430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -720,8 +720,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: aa3e0000
-    m_LastClickedInstanceID: 16042
+    m_SelectedInstanceIDs: 8a3f0000
+    m_LastClickedInstanceID: 16266
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 863300003c36000042390000742f0000d4af00000a3c0000043a00004e3600002c410000962f00006e390000982f000076390000aa3800007a3b0000f42700009e320000aa2b00008e33000016400000000000001c41000026380000123900004c350000d0370000903e0000ec3d0000
     m_RenameOverlay:
@@ -772,9 +772,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1444
+    x: 1298
     y: 73
-    width: 474
+    width: 620
     height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -808,10 +808,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 731
-    width: 936
-    height: 262
+    x: 0
+    y: 709
+    width: 1298
+    height: 292
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &22
 MonoBehaviour:
@@ -833,10 +833,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 944
-    y: 81
-    width: 966
-    height: 912
+    x: 1298
+    y: 73
+    width: 620
+    height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
@@ -896,9 +896,9 @@ MonoBehaviour:
       uniqueId: '[Squared][suite]'
       name: Squared
       fullName: Squared
-      resultStatus: 2
-      duration: 17.090631
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 1.3863286
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -912,9 +912,9 @@ MonoBehaviour:
       uniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
       name: Assembly-CSharp-Editor.dll
       fullName: D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
-      resultStatus: 2
-      duration: 16.945234
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 1.1117166
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -928,9 +928,9 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/[Assets][suite]
       name: Assets
       fullName: Assets
-      resultStatus: 2
-      duration: 16.857395
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.8871293
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -944,9 +944,9 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/[Assets.Scripts][suite]
       name: Scripts
       fullName: Assets.Scripts
-      resultStatus: 2
-      duration: 16.783388
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.7033399
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -960,9 +960,9 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/[Assets.Scripts.Editor][suite]
       name: Editor
       fullName: Assets.Scripts.Editor
-      resultStatus: 2
-      duration: 16.723183
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.5443941
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -976,9 +976,9 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
       name: Workers
       fullName: Assets.Scripts.Editor.Workers
-      resultStatus: 2
-      duration: 16.678356
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 0.4215268
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -989,12 +989,12 @@ MonoBehaviour:
       parentId: 1049
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/[Assets.Scripts.Editor][suite]
     - id: 1083
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
-      name: BestMoveTest
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest
-      resultStatus: 2
-      duration: 16.580088
-      messages: One or more child tests had errors
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+      name: BestMoveCount
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount
+      resultStatus: 1
+      duration: 18.932951
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1003,14 +1003,14 @@ MonoBehaviour:
       isSuite: 1
       categories:
       - Grid Management
-      parentId: 1111
+      parentId: 1127
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
-    - id: 1088
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_2X2_AnyConnection_Best2]
+    - id: 1089
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_2X2_AnyConnection_Best2]
       name: BestMove_2X2_AnyConnection_Best2
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_2X2_AnyConnection_Best2
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_2X2_AnyConnection_Best2
       resultStatus: 1
-      duration: 0.2362656
+      duration: 0.2928416
       messages: 
       output: "--Grid--\r\n12\r\nr3\r\n----\r\n(0, 0), (0, 1), (1, 0)\r\n"
       stacktrace: 
@@ -1021,13 +1021,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
-    - id: 1085
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_2X2_Best2]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+    - id: 1090
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_2X2_Best2]
       name: BestMove_2X2_Best2
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_2X2_Best2
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_2X2_Best2
       resultStatus: 1
-      duration: 0.0241563
+      duration: 0.027053
       messages: 
       output: "--Grid--\r\n12\r\n13\r\n----\r\n(0, 0), (0, 1)\r\n"
       stacktrace: 
@@ -1038,13 +1038,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
-    - id: 1092
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_3X3_AnyConnection_Best6]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+    - id: 1093
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_AnyConnection_Best6]
       name: BestMove_3X3_AnyConnection_Best6
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_3X3_AnyConnection_Best6
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_AnyConnection_Best6
       resultStatus: 1
-      duration: 0.8993459
+      duration: 1.1601878
       messages: 
       output: "--Grid--\r\n110\r\n2r3\r\n122\r\n----\r\n(0, 0), (1, 0), (1, 1), (2,
         2), (1, 2), (0, 1)\r\n"
@@ -1056,13 +1056,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
-    - id: 1087
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_3X3_Best3]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+    - id: 1092
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_Best3]
       name: BestMove_3X3_Best3
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_3X3_Best3
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_Best3
       resultStatus: 1
-      duration: 0.1238148
+      duration: 0.1672954
       messages: 
       output: "--Grid--\r\n121\r\n412\r\n131\r\n----\r\n(0, 0), (1, 1), (2, 0)\r\n"
       stacktrace: 
@@ -1073,13 +1073,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
-    - id: 1086
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_3X3_Best4]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+    - id: 1091
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_Best4]
       name: BestMove_3X3_Best4
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_3X3_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_Best4
       resultStatus: 1
-      duration: 0.1159481
+      duration: 0.138527
       messages: 
       output: "--Grid--\r\n120\r\n131\r\n413\r\n----\r\n(0, 0), (0, 1), (1, 2), (2,
         1)\r\n"
@@ -1091,13 +1091,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
     - id: 1086
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best10]
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10]
       name: BestMove_4X4_Best10
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best10
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10
       resultStatus: 1
-      duration: 7.402663
+      duration: 8.658603
       messages: 
       output: "--Grid--\r\n1111\r\n0010\r\n1100\r\n1110\r\n----\r\n(0, 0), (1, 0),
         (2, 0), (3, 0), (2, 1), (1, 2), (0, 3), (0, 2), (1, 3), (2, 3)\r\n"
@@ -1109,13 +1109,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
     - id: 1085
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4x4_Best4]
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best4]
       name: BestMove_4x4_Best4
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4x4_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best4
       resultStatus: 1
-      duration: 0.4354562
+      duration: 0.4693458
       messages: 
       output: "--Grid--\r\n1201\r\n1121\r\n0101\r\n2020\r\n----\r\n(0, 0), (1, 1),
         (1, 2), (0, 1)\r\n"
@@ -1127,19 +1127,17 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
     - id: 1087
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best6]
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best6]
       name: BestMove_4X4_Best6
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best6
-      resultStatus: 2
-      duration: 0.5023684
-      messages: "  Expected: 7\r\n  But was:  6\r\n"
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best6
+      resultStatus: 1
+      duration: 0.5457096
+      messages: 
       output: "--Grid--\r\n0201\r\n4110\r\n1041\r\n1130\r\n----\r\n(0, 3), (1, 3),
         (0, 2), (1, 1), (2, 1), (3, 0)\r\n"
-      stacktrace: "at Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best6
-        () [0x0002f] in D:\\Development\\Unity Projects\\Squared\\Assets\\Scripts\\Editor\\Workers\\Grid
-        Management\\BestMoveTests.cs:85\r\n"
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
@@ -1147,13 +1145,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
     - id: 1084
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4x4_Best8]
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best8]
       name: BestMove_4x4_Best8
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4x4_Best8
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best8
       resultStatus: 1
-      duration: 1.6113422
+      duration: 1.7368503
       messages: 
       output: "--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----\r\n(0, 0), (1, 1),
         (0, 1), (1, 2), (2, 3), (3, 2), (3, 1), (3, 0)\r\n"
@@ -1165,13 +1163,13 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
-    - id: 1087
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_5X5_Best11]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+    - id: 1088
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11]
       name: BestMove_5X5_Best11
-      fullName: Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_5X5_Best11
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11
       resultStatus: 1
-      duration: 5.1955695
+      duration: 5.6998024
       messages: 
       output: "--Grid--\r\n02101\r\n01310\r\n11002\r\n10213\r\n11100\r\n----\r\n(3,
         3), (2, 4), (1, 4), (0, 4), (0, 3), (1, 2), (0, 2), (1, 1), (2, 0), (3, 1),
@@ -1184,13 +1182,1460 @@ MonoBehaviour:
       categories:
       - Grid Management
       parentId: 1083
-      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveTest][suite]
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
+    - id: 1094
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+      name: BestMoveRestrictions
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions
+      resultStatus: 1
+      duration: 2.5588183
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Grid Management
+      parentId: 1127
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
+    - id: 1099
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.BannedSprite1Restriction_Best4]
+      name: BannedSprite1Restriction_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.BannedSprite1Restriction_Best4
+      resultStatus: 1
+      duration: 0.1667088
+      messages: 
+      output: "--Grid--\r\n1-21\r\n112-\r\n-121\r\n--1-\r\n----\r\n(2, 0), (2, 1),
+        (2, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1100
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.BannedSprite2Restriction_WithAnyConnection_Best4]
+      name: BannedSprite2Restriction_WithAnyConnection_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.BannedSprite2Restriction_WithAnyConnection_Best4
+      resultStatus: 1
+      duration: 0.4909222
+      messages: 
+      output: "--Grid--\r\n1222\r\n11a2\r\n2222\r\n----\r\n----\r\n(0, 0), (0, 1),
+        (1, 1), (2, 1)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1096
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.DiagonalOnlyRestriction_Best4]
+      name: DiagonalOnlyRestriction_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.DiagonalOnlyRestriction_Best4
+      resultStatus: 1
+      duration: 0.1408493
+      messages: 
+      output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n(0, 1), (1, 2),
+        (2, 3), (3, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1102
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.LockedPiecesRestriction_Best2]
+      name: LockedPiecesRestriction_Best2
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.LockedPiecesRestriction_Best2
+      resultStatus: 1
+      duration: 0.0352835
+      messages: 
+      output: "--Grid--\r\nL11L\r\n----\r\n(1, 0), (2, 0)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1098
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.MaxLimitRestriction_Best4]
+      name: MaxLimitRestriction_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.MaxLimitRestriction_Best4
+      resultStatus: 1
+      duration: 0.5141173
+      messages: 
+      output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n(0, 0), (1, 1),
+        (1, 2), (0, 1)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1097
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.MinLimitRestriction_ShouldFindNone]
+      name: MinLimitRestriction_ShouldFindNone
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.MinLimitRestriction_ShouldFindNone
+      resultStatus: 1
+      duration: 0.6782976
+      messages: 
+      output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1095
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.NoDiagonalRestriction_Best4]
+      name: NoDiagonalRestriction_Best4
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.NoDiagonalRestriction_Best4
+      resultStatus: 1
+      duration: 0.1072933
+      messages: 
+      output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n(0, 0), (0, 1),
+        (1, 1), (1, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1101
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveRestrictions/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions.PieceTypeRestriction_Best5]
+      name: PieceTypeRestriction_Best5
+      fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.PieceTypeRestriction_Best5
+      resultStatus: 1
+      duration: 0.3747838
+      messages: 
+      output: "--Grid--\r\n1--1\r\nr1--\r\n-1-1\r\n--1-\r\n----\r\n(0, 0), (1, 1),
+        (1, 2), (2, 3), (3, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1094
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
+    - id: 1103
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+      name: BestMoveScore
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore
+      resultStatus: 1
+      duration: 1.8011582
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Grid Management
+      parentId: 1127
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
+    - id: 1106
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_DoubleScore_Score6]
+      name: BestScore_3x3_DoubleScore_Score6
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_DoubleScore_Score6
+      resultStatus: 1
+      duration: 0.1121391
+      messages: 
+      output: "--Grid--\r\n2--\r\n1--\r\n-d-\r\n----\r\n(0, 0), (0, 1), (1, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1104
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_JustDoubles_Score0]
+      name: BestScore_3x3_JustDoubles_Score0
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_JustDoubles_Score0
+      resultStatus: 1
+      duration: 0.0819526
+      messages: 
+      output: "--Grid--\r\ndd-\r\n--d\r\n---\r\n----\r\n(0, 0), (1, 0), (2, 1)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1108
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_Mixed_TwoOptionsOneLowScore_Score5]
+      name: BestScore_3x3_Mixed_TwoOptionsOneLowScore_Score5
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_Mixed_TwoOptionsOneLowScore_Score5
+      resultStatus: 1
+      duration: 0.0986407
+      messages: 
+      output: "--Grid--\r\n111\r\n---\r\n33-\r\n----\r\n(0, 2), (1, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1105
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_4x4_DoubleDoubleScore_Score16]
+      name: BestScore_4x4_DoubleDoubleScore_Score16
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_4x4_DoubleDoubleScore_Score16
+      resultStatus: 1
+      duration: 0.5266316
+      messages: 
+      output: "--Grid--\r\n-21\r\n-1d\r\nd--\r\n---\r\n----\r\n(0, 2), (1, 1), (2,
+        0), (2, 1), (1, 0)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1107
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_5x5_Mixed_ThreeOptionsOneLowScore_Score7]
+      name: BestScore_5x5_Mixed_ThreeOptionsOneLowScore_Score7
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_5x5_Mixed_ThreeOptionsOneLowScore_Score7
+      resultStatus: 1
+      duration: 0.6617902
+      messages: 
+      output: "--Grid--\r\n2-1--\r\n-3---\r\n----1\r\n13--1\r\n3--11-\r\n----\r\n(0,
+        3), (0, 4), (1, 3)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1110
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_All1_Score3]
+      name: BestScore_All1_Score3
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_All1_Score3
+      resultStatus: 1
+      duration: 0.1336189
+      messages: 
+      output: "--Grid--\r\n1--\r\n-1-\r\n1--\r\n----\r\n(0, 0), (1, 1), (0, 2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1109
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveScore/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_Mixed_Score7]
+      name: BestScore_Mixed_Score7
+      fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_Mixed_Score7
+      resultStatus: 1
+      duration: 0.1587768
+      messages: 
+      output: "--Grid--\r\n12-\r\n-1-\r\n--3\r\n----\r\n(0, 0), (1, 0), (1, 1), (2,
+        2)\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Grid Management
+      parentId: 1103
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveScore][suite]
+    - id: 1141
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Events][suite]
+      name: Events
+      fullName: Assets.Scripts.Editor.Workers.Events
+      resultStatus: 1
+      duration: 0.2965613
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
+    - id: 1142
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Triggers][suite]
+      name: Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers
+      resultStatus: 1
+      duration: 0.2689022
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1141
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Events][suite]
+    - id: 1128
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+      name: PercentTriggerTests
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests
+      resultStatus: 1
+      duration: 0.2207934
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Events
+      parentId: 1142
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Triggers][suite]
+    - id: 1130
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.OnePiece_NoneMatching_0Percent_DoesNotTriggers]
+      name: OnePiece_NoneMatching_0Percent_DoesNotTriggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.OnePiece_NoneMatching_0Percent_DoesNotTriggers
+      resultStatus: 1
+      duration: 0.1838674
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1129
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.OnePiece_OneMatching_100Percent_Triggers]
+      name: OnePiece_OneMatching_100Percent_Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.OnePiece_OneMatching_100Percent_Triggers
+      resultStatus: 1
+      duration: 0.0014614
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1135
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_FiveMatching_30Percent_Triggers]
+      name: TenPieces_FiveMatching_30Percent_Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_FiveMatching_30Percent_Triggers
+      resultStatus: 1
+      duration: 0.002115
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1133
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_OneMatching_50Percent_DoesNotTriggers]
+      name: TenPieces_OneMatching_50Percent_DoesNotTriggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_OneMatching_50Percent_DoesNotTriggers
+      resultStatus: 1
+      duration: 0.0024094
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1134
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_ThreeMatching_30Percent_Triggers]
+      name: TenPieces_ThreeMatching_30Percent_Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_ThreeMatching_30Percent_Triggers
+      resultStatus: 1
+      duration: 0.0022857
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1131
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TwoPieces_OneMatching_100Percent_DoesNotTriggers]
+      name: TwoPieces_OneMatching_100Percent_DoesNotTriggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TwoPieces_OneMatching_100Percent_DoesNotTriggers
+      resultStatus: 1
+      duration: 0.0006907
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1132
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/PercentTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TwoPieces_OneMatching_50Percent_Triggers]
+      name: TwoPieces_OneMatching_50Percent_Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TwoPieces_OneMatching_50Percent_Triggers
+      resultStatus: 1
+      duration: 0.0006869
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests][suite]
+    - id: 1136
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests][suite]
+      name: TurnEventTriggerTests
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests
+      resultStatus: 1
+      duration: 0.026972
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Events
+      parentId: 1144
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Triggers][suite]
+    - id: 1137
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/TurnEventTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersAfterFirstTurn_1TurnPasses_Triggers]
+      name: TriggersAfterFirstTurn_1TurnPasses_Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersAfterFirstTurn_1TurnPasses_Triggers
+      resultStatus: 1
+      duration: 0.0011977
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests][suite]
+    - id: 1138
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/TurnEventTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersAfterThirdtTurn_2TurnPasses_NotTriggered]
+      name: TriggersAfterThirdtTurn_2TurnPasses_NotTriggered
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersAfterThirdtTurn_2TurnPasses_NotTriggered
+      resultStatus: 1
+      duration: 0.0004158
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests][suite]
+    - id: 1139
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/TurnEventTriggerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersBetweenThirdAndFifthTurnTurn_5TurnPasses_Triggers]
+      name: TriggersBetweenThirdAndFifthTurnTurn_5TurnPasses_Triggers
+      fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersBetweenThirdAndFifthTurnTurn_5TurnPasses_Triggers
+      resultStatus: 1
+      duration: 0.0002701
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Triggers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests][suite]
+    - id: 1196
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.IO][suite]
+      name: IO
+      fullName: Assets.Scripts.Editor.Workers.IO
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1192
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
+    - id: 1197
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/[Assets.Scripts.Editor.Workers.IO.Level_IO][suite]
+      name: Level_IO
+      fullName: Assets.Scripts.Editor.Workers.IO.Level_IO
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1196
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.IO][suite]
+    - id: 1173
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation][suite]
+      name: LevelIOInitialisation
+      fullName: Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - IO
+      parentId: 1197
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/[Assets.Scripts.Editor.Workers.IO.Level_IO][suite]
+    - id: 1174
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/LevelIOInitialisation/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.Initialised_CallMethod]
+      name: Initialised_CallMethod
+      fullName: Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.Initialised_CallMethod
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - IO
+      parentId: 1173
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation][suite]
+    - id: 1175
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/LevelIOInitialisation/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.NotInitialised_CallMethod_ExceptionThrown]
+      name: NotInitialised_CallMethod_ExceptionThrown
+      fullName: Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.NotInitialised_CallMethod_ExceptionThrown
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - IO
+      parentId: 1173
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation][suite]
+    - id: 1147
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Lives][suite]
+      name: Lives
+      fullName: Assets.Scripts.Editor.Workers.Lives
+      resultStatus: 1
+      duration: 0.0278539
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
+    - id: 1128
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+      name: GainLivesTests
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests
+      resultStatus: 1
+      duration: 0.0476173
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Lives
+      parentId: 1147
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Lives][suite]
+    - id: 1130
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_CannotGoAbove_6]
+      name: GainALife_CannotGoAbove_6
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_CannotGoAbove_6
+      resultStatus: 1
+      duration: 0.0205579
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1133
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_EventThrown]
+      name: GainALife_EventThrown
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_EventThrown
+      resultStatus: 1
+      duration: 0.0011839
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1129
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_NewLives_1]
+      name: GainALife_NewLives_1
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_NewLives_1
+      resultStatus: 1
+      duration: 0.0003856
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1135
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_At0_NoEventThrown]
+      name: LoseALife_At0_NoEventThrown
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_At0_NoEventThrown
+      resultStatus: 1
+      duration: 0.0008634
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1132
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_CannotGoBelow_0]
+      name: LoseALife_CannotGoBelow_0
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_CannotGoBelow_0
+      resultStatus: 1
+      duration: 0.0004944
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1134
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_EventThrown]
+      name: LoseALife_EventThrown
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_EventThrown
+      resultStatus: 1
+      duration: 0.0011674
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1131
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/GainLivesTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_NewLives_1]
+      name: LoseALife_NewLives_1
+      fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_NewLives_1
+      resultStatus: 1
+      duration: 0.0006255
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.GainLivesTests][suite]
+    - id: 1136
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+      name: LivesEarnedAfterTimeTests
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests
+      resultStatus: 1
+      duration: 0.0153126
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Lives
+      parentId: 1155
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Lives][suite]
+    - id: 1139
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FifteenMinutesPast_OneLifeGained]
+      name: FifteenMinutesPast_OneLifeGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FifteenMinutesPast_OneLifeGained
+      resultStatus: 1
+      duration: 0.0008379
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+    - id: 1137
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FiveMinutesPast_NoLivesGained]
+      name: FiveMinutesPast_NoLivesGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FiveMinutesPast_NoLivesGained
+      resultStatus: 1
+      duration: 0.0005718
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+    - id: 1142
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NegativeTenMinutesPast_NoLivesGained]
+      name: NegativeTenMinutesPast_NoLivesGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NegativeTenMinutesPast_NoLivesGained
+      resultStatus: 1
+      duration: 0.0005304
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+    - id: 1141
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NinetyMinutesPast_NineLivesGained_CapsAtSix]
+      name: NinetyMinutesPast_NineLivesGained_CapsAtSix
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NinetyMinutesPast_NineLivesGained_CapsAtSix
+      resultStatus: 1
+      duration: 0.0006118
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+    - id: 1137
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.TenMinutesPast_OneLifeGained]
+      name: TenMinutesPast_OneLifeGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.TenMinutesPast_OneLifeGained
+      resultStatus: 1
+      duration: 0.0006015
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+    - id: 1140
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.ThirtyMinutesPast_ThreeLivesGained]
+      name: ThirtyMinutesPast_ThreeLivesGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.ThirtyMinutesPast_ThreeLivesGained
+      resultStatus: 1
+      duration: 0.0006468
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Lives
+      parentId: 1136
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
+    - id: 1193
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Managers][suite]
+      name: Managers
+      fullName: Assets.Scripts.Editor.Workers.Managers
+      resultStatus: 1
+      duration: 0.3150408
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1192
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/[Assets.Scripts.Editor.Workers][suite]
+    - id: 1194
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+      name: Level_Manager
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager
+      resultStatus: 1
+      duration: 0.2308873
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1193
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Managers][suite]
+    - id: 1128
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests][suite]
+      name: CanPlayLevelTests
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests
+      resultStatus: 1
+      duration: 0.0700283
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Level Manager
+      parentId: 1194
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+    - id: 1130
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CanPlayLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.CompletedLevelOne_NoLives]
+      name: CompletedLevelOne_NoLives
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.CompletedLevelOne_NoLives
+      resultStatus: 1
+      duration: 0.0390442
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests][suite]
+    - id: 1132
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CanPlayLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.CompletedLevelOne_OneLife]
+      name: CompletedLevelOne_OneLife
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.CompletedLevelOne_OneLife
+      resultStatus: 1
+      duration: 0.005261
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests][suite]
+    - id: 1129
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CanPlayLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.Default_NoCompletedLevels_NoLives]
+      name: Default_NoCompletedLevels_NoLives
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.Default_NoCompletedLevels_NoLives
+      resultStatus: 1
+      duration: 0.0004405
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests][suite]
+    - id: 1131
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CanPlayLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.NoCompletedLevels_OneLife]
+      name: NoCompletedLevels_OneLife
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.NoCompletedLevels_OneLife
+      resultStatus: 1
+      duration: 0.0005042
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1128
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests][suite]
+    - id: 1133
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+      name: ChapterTests
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests
+      resultStatus: 1
+      duration: 0.0435221
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Level Manager
+      parentId: 1194
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+    - id: 1136
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/ChapterTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.ChangeChapter_Next]
+      name: ChangeChapter_Next
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.ChangeChapter_Next
+      resultStatus: 1
+      duration: 0.003913
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+    - id: 1137
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/ChapterTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.ChangeChapter_Previous]
+      name: ChangeChapter_Previous
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.ChangeChapter_Previous
+      resultStatus: 1
+      duration: 0.0003772
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+    - id: 1138
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/ChapterTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.IsNextChapter]
+      name: IsNextChapter
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.IsNextChapter
+      resultStatus: 1
+      duration: 0.0005203
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+    - id: 1139
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/ChapterTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.IsPreviousChapter]
+      name: IsPreviousChapter
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.IsPreviousChapter
+      resultStatus: 1
+      duration: 0.000383
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+    - id: 1135
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/ChapterTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.SetChapter_ToInvalid]
+      name: SetChapter_ToInvalid
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.SetChapter_ToInvalid
+      resultStatus: 1
+      duration: 0.0002976
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+    - id: 1134
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/ChapterTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.SetChapter_ToValid]
+      name: SetChapter_ToValid
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.SetChapter_ToValid
+      resultStatus: 1
+      duration: 0.0003385
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1133
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests][suite]
+    - id: 1140
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest][suite]
+      name: CurrentStarsTest
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest
+      resultStatus: 1
+      duration: 0.020951
+      messages: 
+      output: "Persistence is not currently supported.\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Level Manager
+      parentId: 1194
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+    - id: 1141
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CurrentStarsTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.Default_NoStars]
+      name: Default_NoStars
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.Default_NoStars
+      resultStatus: 1
+      duration: 0.0020046
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest][suite]
+    - id: 1142
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CurrentStarsTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelsNoStars]
+      name: LevelsNoStars
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelsNoStars
+      resultStatus: 1
+      duration: 0.0004559
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest][suite]
+    - id: 1143
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CurrentStarsTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelsWithStars]
+      name: LevelsWithStars
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelsWithStars
+      resultStatus: 1
+      duration: 0.0003307
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest][suite]
+    - id: 1144
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CurrentStarsTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelWithoutProgress]
+      name: LevelWithoutProgress
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelWithoutProgress
+      resultStatus: 1
+      duration: 0.0004332
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest][suite]
+    - id: 1145
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/CurrentStarsTest/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.NonNegative]
+      name: NonNegative
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.NonNegative
+      resultStatus: 1
+      duration: 0.0003084
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1140
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest][suite]
+    - id: 1146
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests][suite]
+      name: GetNextLevelTests
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests
+      resultStatus: 1
+      duration: 0.0131203
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Level Manager
+      parentId: 1194
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+    - id: 1147
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/GetNextLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetCurrentLevel]
+      name: GetCurrentLevel
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetCurrentLevel
+      resultStatus: 1
+      duration: 0.0005787
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests][suite]
+    - id: 1148
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/GetNextLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetFirstLevel]
+      name: GetFirstLevel
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetFirstLevel
+      resultStatus: 1
+      duration: 0.0005105
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests][suite]
+    - id: 1149
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/GetNextLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetLevel_DoesNotExist]
+      name: GetLevel_DoesNotExist
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetLevel_DoesNotExist
+      resultStatus: 1
+      duration: 0.0003444
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1146
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests][suite]
+    - id: 1150
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests][suite]
+      name: LevelProgressTests
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests
+      resultStatus: 1
+      duration: 0.0150894
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Level Manager
+      parentId: 1194
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+    - id: 1153
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/LevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests.AddData]
+      name: AddData
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests.AddData
+      resultStatus: 1
+      duration: 0.0006621
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1150
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests][suite]
+    - id: 1151
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/LevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests.IsNotNull]
+      name: IsNotNull
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests.IsNotNull
+      resultStatus: 1
+      duration: 0.0022665
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1150
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests][suite]
+    - id: 1152
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/LevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests.SetToNull_IsNotNul]
+      name: SetToNull_IsNotNul
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests.SetToNull_IsNotNul
+      resultStatus: 1
+      duration: 0.0002804
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1150
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.LevelProgressTests][suite]
+    - id: 1154
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests][suite]
+      name: SetLevelProgressTests
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests
+      resultStatus: 1
+      duration: 0.0158855
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Level Manager
+      parentId: 1194
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Level_Manager][suite]
+    - id: 1158
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/SetLevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddNullProgress]
+      name: AddNullProgress
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddNullProgress
+      resultStatus: 1
+      duration: 0.0014834
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests][suite]
+    - id: 1157
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/SetLevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddProgressForInvalidChapter]
+      name: AddProgressForInvalidChapter
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddProgressForInvalidChapter
+      resultStatus: 1
+      duration: 0.0007295
+      messages: 
+      output: "Persistence is not currently supported.\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests][suite]
+    - id: 1156
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/SetLevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddProgressForInvalidLevel]
+      name: AddProgressForInvalidLevel
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddProgressForInvalidLevel
+      resultStatus: 1
+      duration: 0.0004667
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests][suite]
+    - id: 1155
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/SetLevelProgressTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.SingleLevelProgress]
+      name: SingleLevelProgress
+      fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.SingleLevelProgress
+      resultStatus: 1
+      duration: 0.0005106
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Level Manager
+      parentId: 1154
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Level_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests][suite]
     - id: 1034
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.MoveCheckerTests][suite]
       name: MoveCheckerTests
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests
       resultStatus: 1
-      duration: 0.0639179
+      duration: 0.0554903
       messages: 
       output: 
       stacktrace: 
@@ -1207,7 +2652,7 @@ MonoBehaviour:
       name: False_NoMatchingPieces_AboveBelow
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_NoMatchingPieces_AboveBelow
       resultStatus: 1
-      duration: 0.0026676
+      duration: 0.002616
       messages: 
       output: 
       stacktrace: 
@@ -1224,7 +2669,7 @@ MonoBehaviour:
       name: False_NoPieces
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_NoPieces
       resultStatus: 1
-      duration: 0.0002897
+      duration: 0.0003686
       messages: 
       output: 
       stacktrace: 
@@ -1241,7 +2686,7 @@ MonoBehaviour:
       name: False_NoTwoMatchingPieces_Diagonal_TopRight
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_NoTwoMatchingPieces_Diagonal_TopRight
       resultStatus: 1
-      duration: 0.0061757
+      duration: 0.0062807
       messages: 
       output: 
       stacktrace: 
@@ -1258,7 +2703,7 @@ MonoBehaviour:
       name: False_ThreePieces_NoMatchingPieces_Adjancent
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_ThreePieces_NoMatchingPieces_Adjancent
       resultStatus: 1
-      duration: 0.0032688
+      duration: 0.0036164
       messages: 
       output: 
       stacktrace: 
@@ -1275,7 +2720,7 @@ MonoBehaviour:
       name: True_ThreePieces_TwoMatchingPieces_Adjancent
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_ThreePieces_TwoMatchingPieces_Adjancent
       resultStatus: 1
-      duration: 0.0027136
+      duration: 0.003042
       messages: 
       output: 
       stacktrace: 
@@ -1292,7 +2737,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_AboveBelow
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_AboveBelow
       resultStatus: 1
-      duration: 0.0021249
+      duration: 0.0020284
       messages: 
       output: 
       stacktrace: 
@@ -1309,7 +2754,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Adjancent
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Adjancent
       resultStatus: 1
-      duration: 0.0015168
+      duration: 0.0015676
       messages: 
       output: 
       stacktrace: 
@@ -1326,7 +2771,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Adjancent_AnyConnection
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Adjancent_AnyConnection
       resultStatus: 1
-      duration: 0.0014112
+      duration: 0.0019167
       messages: 
       output: 
       stacktrace: 
@@ -1343,7 +2788,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Diagonal_BottomRight
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Diagonal_BottomRight
       resultStatus: 1
-      duration: 0.003735
+      duration: 0.0042991
       messages: 
       output: 
       stacktrace: 
@@ -1360,7 +2805,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Diagonal_BottomRight_AnyConnection
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Diagonal_BottomRight_AnyConnection
       resultStatus: 1
-      duration: 0.0014957
+      duration: 0.0016094
       messages: 
       output: 
       stacktrace: 
@@ -1377,7 +2822,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Diagonal_TopRight
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Diagonal_TopRight
       resultStatus: 1
-      duration: 0.0018564
+      duration: 0.0027172
       messages: 
       output: 
       stacktrace: 
@@ -1683,7 +3128,7 @@ MonoBehaviour:
       name: LockedSwap
       fullName: LockedSwap
       resultStatus: 1
-      duration: 0.2064229
+      duration: 0.0306815
       messages: 
       output: 
       stacktrace: 
@@ -1700,7 +3145,7 @@ MonoBehaviour:
       name: SwapPiece_SpriteDoesNotChange
       fullName: LockedSwap.SwapPiece_SpriteDoesNotChange
       resultStatus: 1
-      duration: 0.1852161
+      duration: 0.0012025
       messages: 
       output: 
       stacktrace: 
@@ -2090,8 +3535,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][PowerupsEarnedTests][suite]
       name: PowerupsEarnedTests
       fullName: PowerupsEarnedTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0120484
       messages: 
       output: 
       stacktrace: 
@@ -2107,8 +3552,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/PowerupsEarnedTests/[Assembly-CSharp-Editor][PowerupsEarnedTests.Gained10_10Under_0Powerups]
       name: Gained10_10Under_0Powerups
       fullName: PowerupsEarnedTests.Gained10_10Under_0Powerups
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002942
       messages: 
       output: 
       stacktrace: 
@@ -2124,8 +3569,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/PowerupsEarnedTests/[Assembly-CSharp-Editor][PowerupsEarnedTests.Gained10_Exact_1Powerups]
       name: Gained10_Exact_1Powerups
       fullName: PowerupsEarnedTests.Gained10_Exact_1Powerups
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0001731
       messages: 
       output: 
       stacktrace: 
@@ -2141,8 +3586,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/PowerupsEarnedTests/[Assembly-CSharp-Editor][PowerupsEarnedTests.Gained100_10Over_2Powerups]
       name: Gained100_10Over_2Powerups
       fullName: PowerupsEarnedTests.Gained100_10Over_2Powerups
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0001665
       messages: 
       output: 
       stacktrace: 
@@ -2158,8 +3603,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/PowerupsEarnedTests/[Assembly-CSharp-Editor][PowerupsEarnedTests.Gained100_2Over_10Powerups]
       name: Gained100_2Over_10Powerups
       fullName: PowerupsEarnedTests.Gained100_2Over_10Powerups
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.000165
       messages: 
       output: 
       stacktrace: 
@@ -2175,8 +3620,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/PowerupsEarnedTests/[Assembly-CSharp-Editor][PowerupsEarnedTests.Gained20_10Over_1Powerups]
       name: Gained20_10Over_1Powerups
       fullName: PowerupsEarnedTests.Gained20_10Over_1Powerups
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0001605
       messages: 
       output: 
       stacktrace: 
@@ -2664,6 +4109,91 @@ MonoBehaviour:
       - Restrictions
       parentId: 1015
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapEffectLimit][suite]
+    - id: 1013
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests][suite]
+      name: SwapSpriteBehaviourTests
+      fullName: SwapSpriteBehaviourTests
+      resultStatus: 1
+      duration: 0.0114511
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Piece Effects
+      parentId: 1125
+      parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
+    - id: 1014
+      uniqueId: Assembly-CSharp-Editor.dll/SwapSpriteBehaviourTests/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests.NotSelected_SpriteChangesAfterTime]
+      name: NotSelected_SpriteChangesAfterTime
+      fullName: SwapSpriteBehaviourTests.NotSelected_SpriteChangesAfterTime
+      resultStatus: 1
+      duration: 0.0007467
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Piece Effects
+      parentId: 1013
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests][suite]
+    - id: 1015
+      uniqueId: Assembly-CSharp-Editor.dll/SwapSpriteBehaviourTests/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests.NotSelected_SpriteDoesNotChange_NotEnoughTime]
+      name: NotSelected_SpriteDoesNotChange_NotEnoughTime
+      fullName: SwapSpriteBehaviourTests.NotSelected_SpriteDoesNotChange_NotEnoughTime
+      resultStatus: 1
+      duration: 0.0004173
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Piece Effects
+      parentId: 1013
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests][suite]
+    - id: 1016
+      uniqueId: Assembly-CSharp-Editor.dll/SwapSpriteBehaviourTests/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests.Selected_SpriteDoesNotChange_ItIsSelected]
+      name: Selected_SpriteDoesNotChange_ItIsSelected
+      fullName: SwapSpriteBehaviourTests.Selected_SpriteDoesNotChange_ItIsSelected
+      resultStatus: 1
+      duration: 0.0004
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Piece Effects
+      parentId: 1013
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests][suite]
+    - id: 1017
+      uniqueId: Assembly-CSharp-Editor.dll/SwapSpriteBehaviourTests/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests.Selected_SpriteDoesNotChange_ItIsStoredMoves]
+      name: Selected_SpriteDoesNotChange_ItIsStoredMoves
+      fullName: SwapSpriteBehaviourTests.Selected_SpriteDoesNotChange_ItIsStoredMoves
+      resultStatus: 1
+      duration: 0.0003968
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Piece Effects
+      parentId: 1013
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][SwapSpriteBehaviourTests][suite]
     - id: 1010
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][TimeLimitTests][suite]
       name: TimeLimitTests
@@ -2783,19 +4313,13 @@ MonoBehaviour:
       - Limits
       parentId: 1014
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][TurnLimitTests][suite]
-    m_ResultText: "BestMove_4X4_Best6 (0.502s)\n---\nExpected: 7\r\n  But was:  6\n---\nat
-      Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best6 () [0x0002f] in
-      D:\\Development\\Unity Projects\\Squared\\Assets\\Scripts\\Editor\\Workers\\Grid
-      Management\\BestMoveTests.cs:85\n---\n--Grid--\r\n0201\r\n4110\r\n1041\r\n1130\r\n----\r\n(0,
-      3), (1, 3), (0, 2), (1, 1), (2, 1), (3, 0)"
-    m_ResultStacktrace: "at Assets.Scripts.Editor.Workers.BestMoveTest.BestMove_4X4_Best6
-      () [0x0002f] in D:\\Development\\Unity Projects\\Squared\\Assets\\Scripts\\Editor\\Workers\\Grid
-      Management\\BestMoveTests.cs:85\r\n"
+    m_ResultText: 
+    m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3f3c3be0
-      m_LastClickedID: -532988865
-      m_ExpandedIDs: 85fdbc82af58b0857ac73e99dd51adb7acb85ebda0ec9fc7bf618fd1fe0556d49f7104da74243ee3b85d97e95d7e9ff7245645ff052bb10f5df39e13561d692a0bdfe42cfd502f32c2700f398f9c473915cd533ce9b7f43c9b57bd470816754a2d4e8c6f50030770c367cb79ea84cc7981d6487a26cd807bffffff7f
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 85fdbc82af58b0851082a5867ac73e993b7bb8aedd51adb7acb85ebd517d0ebf5c9904c7a0ec9fc793d35fc9bf618fd1fe0556d49f7104da74243ee3b85d97e95d7e9ff7245645fff6274709052bb10f5df39e132edf0c19d0cda51bb67b2b20561d692a0bdfe42cfd502f32c2700f398f9c473915cd533ce9b7f43cf19172409b57bd4785a82a4a0816754a2d4e8c6f500307701a4f5d73c367cb79ea84cc7981d6487a26cd807bffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2818,12 +4342,16 @@ MonoBehaviour:
       FailedHidden: 0
       NotRunHidden: 1
       m_SearchString: 
-      selectedCategoryMask: 2
+      selectedCategoryMask: 32
       availableCategories:
+      - Events
       - Extensions
       - Grid Management
       - Helpers
+      - IO
+      - Level Manager
       - Limits
+      - Lives
       - Piece Effects
       - Powerups
       - Restrictions

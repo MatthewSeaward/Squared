@@ -328,3 +328,6 @@ D:\Development\Unity Projects\Squared\Temp\bin\Debug\Google.VersionHandlerImpl_v
 D:\Development\Unity Projects\Squared\Temp\bin\Debug\Unity.Compat.dll
 D:\Development\Unity Projects\Squared\Temp\bin\Debug\Unity.Tasks.dll
 D:\Development\Unity Projects\Squared\Temp\bin\Debug\Firebase.RemoteConfig.dll
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Assembly-CSharp-Editor.dll.CodeAnalysisLog.xml
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Assembly-CSharp-Editor.dll.lastcodeanalysissucceeded
+D:\Development\Unity Projects\Squared\Temp\bin\Debug\Assembly-CSharp.pdb
