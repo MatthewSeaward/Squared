@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Grid_Management;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using NUnit.Framework;
@@ -15,7 +16,7 @@ namespace Assets.Scripts.Editor.Workers
         {
             var pieces = new List<ISquarePiece>();
 
-            PieceController.Setup(pieces, new float[0], new float[0]);
+            PieceManager.Instance.Setup(pieces, new float[0], new float[0]);
 
             Assert.IsFalse(MoveChecker.AvailableMove());
         }
@@ -29,7 +30,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(1, 0, "1")
             };
 
-            PieceController.Setup(pieces, new float[2], new float[1]);
+            PieceManager.Instance.Setup(pieces, new float[2], new float[1]);
 
             Assert.IsTrue(MoveChecker.AvailableMove());
         }
@@ -43,7 +44,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(0, 1, "1")
             };
 
-            PieceController.Setup(pieces, new float[1], new float[2]);
+            PieceManager.Instance.Setup(pieces, new float[1], new float[2]);
 
             Assert.IsTrue(MoveChecker.AvailableMove());
         }
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(0, 1, "0")
             };
 
-            PieceController.Setup(pieces, new float[1], new float[2]);
+            PieceManager.Instance.Setup(pieces, new float[1], new float[2]);
 
             Assert.IsFalse(MoveChecker.AvailableMove());
         }
@@ -73,7 +74,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(1, 1, "1")
             };
 
-            PieceController.Setup(pieces, new float[2], new float[2]);
+            PieceManager.Instance.Setup(pieces, new float[2], new float[2]);
 
             Assert.IsTrue(MoveChecker.AvailableMove());
         }
@@ -89,7 +90,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(1, 1, "1")
             };
 
-            PieceController.Setup(pieces, new float[2], new float[2]);
+            PieceManager.Instance.Setup(pieces, new float[2], new float[2]);
 
             Assert.IsFalse(MoveChecker.AvailableMove());
         }
@@ -105,7 +106,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(1, 1, "0")
             };
 
-            PieceController.Setup(pieces, new float[2], new float[2]);
+            PieceManager.Instance.Setup(pieces, new float[2], new float[2]);
 
             Assert.IsTrue(MoveChecker.AvailableMove());
         }
@@ -120,7 +121,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(2, 0, "1")
             };
 
-            PieceController.Setup(pieces, new float[3], new float[1]);
+            PieceManager.Instance.Setup(pieces, new float[3], new float[1]);
 
             Assert.IsTrue(MoveChecker.AvailableMove());
         }
@@ -135,7 +136,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(2, 0, "0")
             };
 
-            PieceController.Setup(pieces, new float[3], new float[1]);
+            PieceManager.Instance.Setup(pieces, new float[3], new float[1]);
 
             Assert.IsFalse(MoveChecker.AvailableMove());
         }
@@ -149,7 +150,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildAnyConnectionPiece(1, 0, "2")
             };
 
-            PieceController.Setup(pieces, new float[2], new float[1]);
+            PieceManager.Instance.Setup(pieces, new float[2], new float[1]);
 
             Assert.IsTrue(MoveChecker.AvailableMove());
         }
@@ -165,7 +166,7 @@ namespace Assets.Scripts.Editor.Workers
                 BuildPiece(1, 1, "0")
             };
 
-            PieceController.Setup(pieces, new float[2], new float[2]);
+            PieceManager.Instance.Setup(pieces, new float[2], new float[2]);
         }
 
         private static ISquarePiece BuildPiece(int x, int y, string sprite)

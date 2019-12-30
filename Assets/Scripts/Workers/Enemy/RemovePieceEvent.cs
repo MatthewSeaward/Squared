@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Workers.Managers;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy
@@ -13,7 +14,7 @@ namespace Assets.Scripts.Workers.Enemy
         }
         protected override void InvokeRageActionOnPosition(Vector2Int pos)    
         {
-           PieceController.RemoveSlot(pos);
+           PieceManager.Instance.RemoveSlot(pos);
         }
 
         protected override List<Vector2Int> GetSelectedPieces()

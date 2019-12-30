@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Game_Components;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Heatmap;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Selection;
 using Assets.Scripts.Workers.UserPieceSelection;
 using System.Collections.Generic;
@@ -117,7 +118,7 @@ namespace Assets.Scripts
 
             var lastPiece = CurrentPieces.Last;
 
-            var additionalSelection = PieceController.Pieces.FirstOrDefault(piece => piece.Position.x == LastPiece.Position.x + inputX &&
+            var additionalSelection = PieceManager.Instance.Pieces.FirstOrDefault(piece => piece.Position.x == LastPiece.Position.x + inputX &&
                                                                           piece.Position.y == LastPiece.Position.y - inputY);
 
             if (additionalSelection == null)

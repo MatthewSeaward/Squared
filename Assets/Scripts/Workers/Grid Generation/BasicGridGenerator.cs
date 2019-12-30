@@ -1,5 +1,6 @@
 ﻿using Assets;
 using Assets.Scripts.Workers.Factorys;
+using Assets.Scripts.Workers.Managers;
 using GridGeneration.Interfaces;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,7 +57,7 @@ namespace GridGeneration
                   
                 }
             }
-            PieceController.Setup(pieces,XPositions, YPositions);
+            PieceManager.Instance.Setup(pieces,XPositions, YPositions);
 
             GridGenerated?.Invoke();
         }

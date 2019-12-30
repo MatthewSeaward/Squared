@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection
 {
@@ -19,7 +20,7 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection
             while (selectedPieces.Count < total && iterationCount < 100)
             {
                 iterationCount++;
-                var piece = PieceController.Pieces[UnityEngine.Random.Range(0, PieceController.Pieces.Count)];
+                var piece = PieceManager.Instance.Pieces[UnityEngine.Random.Range(0, PieceManager.Instance.Pieces.Count)];
 
                 if (!validator.ValidForSelection(piece))
                 {

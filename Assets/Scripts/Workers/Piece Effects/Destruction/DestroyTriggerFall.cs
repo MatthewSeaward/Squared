@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers.Helpers.Extensions;
 using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using System.Linq;
 using UnityEngine;
@@ -41,7 +42,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         public virtual void OnDestroy()
         {
             _squarePiece.gameObject.SetActive(false);
-            PieceController.Pieces.Remove(_squarePiece);
+            PieceManager.Instance.Pieces.Remove(_squarePiece);
             CheckForAbove();
 
             PieceDropper.Instance.CheckForEmptySlots();
@@ -49,7 +50,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         protected void CheckForAbove()
         {
-            ISquarePiece[] pieces = PieceController.GetPiecesAbove(_squarePiece.Position.x, _squarePiece.Position.y);
+            ISquarePiece[] pieces = PieceManager.Instance.GetPiecesAbove(_squarePiece.Position.x, _squarePiece.Position.y);
 
             var sorted = pieces.OrderByDescending(x => x.Position.y);
             
@@ -61,7 +62,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
                     continue;
                 }
 
-                if (!PieceController.SlotExists(_squarePiece.Position))
+                if (!PieceManager.Instance.SlotExists(_squarePiece.Position))
                 {
                     continue;
                 }
@@ -73,7 +74,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public virtual void FallTo(int y)
         {
-           float worldPos = PieceController.YPositions[y];            
+           float worldPos = PieceManager.Instance.YPositions[y];            
             
             CheckForAbove();
           
@@ -84,7 +85,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         private void Lerp_LerpCompleted()
         {
-            if (!PieceController.SlotExists(_squarePiece.Position))
+            if (!PieceManager.Instance.SlotExists(_squarePiece.Position))
             {
                 _squarePiece.DestroyPiece();
             }

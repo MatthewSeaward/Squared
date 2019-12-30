@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Managers;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
 namespace Assets.Scripts.Workers.Helpers
@@ -15,8 +16,8 @@ namespace Assets.Scripts.Workers.Helpers
             newPiece.transform.parent = piece.transform.parent;
             newPiece.GetComponent<SquarePiece>().Position = piece.Position;
 
-            PieceController.Pieces.Remove(piece);
-            PieceController.Pieces.Add(newPiece.GetComponent<SquarePiece>());
+            PieceManager.Instance.Pieces.Remove(piece);
+            PieceManager.Instance.Pieces.Add(newPiece.GetComponent<SquarePiece>());
 
             piece.gameObject.SetActive(false);
         }

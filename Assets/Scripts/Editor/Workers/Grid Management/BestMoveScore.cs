@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Grid_Management;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using Assets.Scripts.Workers.Score_and_Limits;
@@ -164,7 +165,7 @@ namespace Assets.Scripts.Editor.Workers
             }
             Debug.Log("----");
 
-            PieceController.Setup(list, new float[grid[0].Length], new float[grid.Length]);
+            PieceManager.Instance.Setup(list, new float[grid[0].Length], new float[grid.Length]);
         }
 
         private static ISquarePiece BuildRandomPiece(int x, int y)

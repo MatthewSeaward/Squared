@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.Managers;
 using System;
 using System.Linq;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
@@ -78,9 +79,9 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         public void CheckForEvent()
         {
-            var matchingPieces = PieceController.Pieces.Count(x => x.Type == PieceType);
+            var matchingPieces = PieceManager.Instance.Pieces.Count(x => x.Type == PieceType);
 
-            var calculatedPercentage = (float)matchingPieces / (float)PieceController.Pieces.Count;
+            var calculatedPercentage = (float)matchingPieces / (float)PieceManager.Instance.Pieces.Count;
             var percentage = (int)(calculatedPercentage * 100);
 
             if (percentage >= Percent)

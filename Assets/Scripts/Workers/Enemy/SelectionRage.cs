@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Managers;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -55,7 +56,7 @@ namespace Assets.Scripts.Workers.Enemy
 
             foreach (var position in selectedPositions)
             {
-                LightningBoltProducer.Instance.ProduceBolt(position, PieceController.GetPosition(position));
+                LightningBoltProducer.Instance.ProduceBolt(position, PieceManager.Instance.GetPosition(position));
             }
         }
 

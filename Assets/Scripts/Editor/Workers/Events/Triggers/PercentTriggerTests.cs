@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Workers;
-using Assets.Scripts.Workers.Enemy.Events;
+﻿using Assets.Scripts.Workers.Enemy.Events;
 using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.Managers;
 using NUnit.Framework;
 using System.Collections.Generic;
 
@@ -18,7 +18,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow)
             }, new float[1], new float[1]) ;
@@ -36,7 +36,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                  TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Normal)
             }, new float[1], new float[1]);
@@ -54,7 +54,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Normal)
@@ -73,7 +73,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Normal)
@@ -92,7 +92,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Normal),
@@ -119,7 +119,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),
@@ -146,7 +146,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var enemyEvent = new ChangeBoolEvent();
             trigger.EnemyRage = enemyEvent;
 
-            PieceController.Setup(new List<ISquarePiece>()
+            PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),
                 TestHelpers.CreatePiece(PieceBuilderDirector.PieceTypes.Rainbow),

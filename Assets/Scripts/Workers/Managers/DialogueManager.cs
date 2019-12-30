@@ -77,11 +77,11 @@ namespace Assets.Scripts.Workers.Managers
                 default:
                 case 0:
                 case 1:
-                    return dialogue.Star1 != null ? dialogue.Star1 : null;
+                    return dialogue.Star1 ?? null;
                 case 2:
-                    return dialogue.Star2 != null ? dialogue.Star2 : null;
+                    return dialogue.Star2 ?? null;
                 case 3:
-                    return dialogue.Star3 != null ? dialogue.Star3 : null;
+                    return dialogue.Star3 ?? null;
             }
         }
     }

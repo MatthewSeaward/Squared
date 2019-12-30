@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Score_and_Limits;
+﻿using Assets.Scripts.Workers.Managers;
+using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -63,14 +64,14 @@ namespace Assets.Scripts.Workers.Grid_Management
             IScoreCalculator scoreCalculator = new StandardScoreCalculator();
             
             bestMove = new List<List<ISquarePiece>>();
-            for (int x = 0; x < PieceController.NumberOfColumns; x++)
+            for (int x = 0; x < PieceManager.Instance.NumberOfColumns; x++)
             {
-                for (int y = 0; y < PieceController.NumberOfRows; y++)
+                for (int y = 0; y < PieceManager.Instance.NumberOfRows; y++)
                 {
                     var visited = new List<ISquarePiece>();
                     var currentPath = new List<ISquarePiece>();
 
-                    var piece = PieceController.GetPiece(x, y);
+                    var piece = PieceManager.Instance.GetPiece(x, y);
                     if (piece == null)
                     {
                         continue;
@@ -163,7 +164,7 @@ namespace Assets.Scripts.Workers.Grid_Management
         {
             if (MoveCheckerHelpers.CheckSpot(piece, x, y))
             {
-                var p = PieceController.GetPiece(x, y);
+                var p = PieceManager.Instance.GetPiece(x, y);
                 if (restriction is BannedPieceType)
                 {
                     if (p.Type == (restriction as BannedPieceType).BannedPiece)

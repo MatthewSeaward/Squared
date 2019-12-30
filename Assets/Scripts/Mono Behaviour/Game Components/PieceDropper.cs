@@ -1,5 +1,5 @@
 ﻿using Assets.Scripts.Workers.Helpers;
-using Assets.Scripts.Workers.Helpers.Extensions;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using System;
 using System.Collections;
@@ -20,7 +20,7 @@ namespace Assets.Scripts
         private int columnsToCheck;
         private GridGenerator _gridGenerator;
         private static int QueuedChecks;
-        private int NumberToPrespawn = 1;
+        private readonly int NumberToPrespawn = 1;
         private Dictionary<int, Queue<GameObject>> QueuedPieces = new Dictionary<int, Queue<GameObject>>();
         
         private GridGenerator GridGenerator
@@ -62,7 +62,7 @@ namespace Assets.Scripts
 
         private void SeedSlots()
         {
-            for (int column = 0; column < PieceController.NumberOfColumns; column++)
+            for (int column = 0; column < PieceManager.Instance.NumberOfColumns; column++)
             {
                 SeedColumn(column);
             }
@@ -72,7 +72,7 @@ namespace Assets.Scripts
         {
             try
             { 
-                if (PieceController.EmptyColumn(column))
+                if (PieceManager.Instance.EmptyColumn(column))
                 {
                     return;
                 }
@@ -91,7 +91,7 @@ namespace Assets.Scripts
 
                 for (int i = 0; i < NumberToPrespawn; i++)
                 {
-                    float worldPosX = PieceController.XPositions[column];
+                    float worldPosX = PieceManager.Instance.XPositions[column];
 
                     var piece = GridGenerator.GenerateRandomTile(worldPosX, 4, column, 0);
                     piece.GetComponent<Collider2D>().enabled = false;
@@ -118,9 +118,9 @@ namespace Assets.Scripts
         {
             try
             {
-                columnsToCheck = PieceController.NumberOfColumns;
+                columnsToCheck = PieceManager.Instance.NumberOfColumns;
 
-                for (int column = 0; column < PieceController.NumberOfColumns; column++)
+                for (int column = 0; column < PieceManager.Instance.NumberOfColumns; column++)
                 {
                     StartCoroutine(CheckForEmptySlotsInColumn(column));
                 }
@@ -136,14 +136,14 @@ namespace Assets.Scripts
         {
             int row = 0;
 
-            while (PieceController.HasEmptySlotInColumn(column, ref row))
+            while (PieceManager.Instance.HasEmptySlotInColumn(column, ref row))
             {
                 try
                 {
                     row = GetFirstEmptySlotInRow(column, row);
 
-                    float worldPosY = PieceController.YPositions[row];
-                    float worldPosX = PieceController.XPositions[column];                   
+                    float worldPosY = PieceManager.Instance.YPositions[row];
+                    float worldPosX = PieceManager.Instance.XPositions[column];                   
 
                     var piece = GetPiece(column);
 
@@ -151,9 +151,9 @@ namespace Assets.Scripts
                     SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
 
 
-                    if (!PieceController.Pieces.Contains(squarePiece))
+                    if (!PieceManager.Instance.Pieces.Contains(squarePiece))
                     {
-                        PieceController.Pieces.Add(squarePiece);
+                        PieceManager.Instance.Pieces.Add(squarePiece);
                     }
 
                     Lerp lerp = squarePiece.GetComponent<Lerp>();
@@ -175,14 +175,14 @@ namespace Assets.Scripts
 
         private static int GetFirstEmptySlotInRow(int column, int row)
         {
-            for (int i = row; i < PieceController.NumberOfRows; i++)
+            for (int i = row; i < PieceManager.Instance.NumberOfRows; i++)
             {
-                var currentPiece = PieceController.GetPiece(column, row);
+                var currentPiece = PieceManager.Instance.GetPiece(column, row);
                 if (currentPiece != null && currentPiece.DestroyPieceHandler is LockedSwap)
                 {
                     row++;
                 }
-                else if (PieceController.IsEmptySlot(column, row + 1))
+                else if (PieceManager.Instance.IsEmptySlot(column, row + 1))
                 {
                     row++;
                 }

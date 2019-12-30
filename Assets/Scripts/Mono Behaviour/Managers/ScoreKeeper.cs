@@ -1,5 +1,6 @@
 ﻿using Assets;
 using Assets.Scripts;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Level_Info;
+using Assets.Scripts.Workers.Managers;
 using NUnit.Framework;
 
 namespace Assets.Scripts.Editor.Workers.Managers.Level_Manager

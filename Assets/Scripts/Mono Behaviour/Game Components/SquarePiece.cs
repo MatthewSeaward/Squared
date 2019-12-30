@@ -1,13 +1,10 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.IO.Data_Entities;
-using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Collection;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
-using Assets.Scripts.Workers.Piece_Effects.On_Destroy;
 using UnityEngine;
 using UnityEngine.UI;
-using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
 public delegate void PieceDestroyed(SquarePiece piece);

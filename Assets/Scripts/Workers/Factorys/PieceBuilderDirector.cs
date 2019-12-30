@@ -4,6 +4,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.Factorys.PieceTemplates;
 using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets.Scripts.Workers.Factorys
 {
@@ -104,9 +105,9 @@ namespace Assets.Scripts.Workers.Factorys
             var type = PieceTypes.Normal;
 
             string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
-            if (specialDropPieces != null && specialDropPieces.Length > 0 && UnityEngine.Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
+            if (specialDropPieces != null && specialDropPieces.Length > 0 && Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
             {
-                var randomSpecial = specialDropPieces[UnityEngine.Random.Range(0, specialDropPieces.Length)];
+                var randomSpecial = specialDropPieces[Random.Range(0, specialDropPieces.Length)];
                 type = (PieceTypes)randomSpecial[0];
             }
 

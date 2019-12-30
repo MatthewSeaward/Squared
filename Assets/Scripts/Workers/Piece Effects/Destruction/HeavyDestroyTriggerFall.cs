@@ -3,6 +3,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using UnityEngine;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 {
@@ -23,7 +24,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
                 return;
             }
 
-            var pieceBelow = PieceController.GetPiece(_squarePiece.Position.x, _squarePiece.Position.y + 1);
+            var pieceBelow = PieceManager.Instance.GetPiece(_squarePiece.Position.x, _squarePiece.Position.y + 1);
 
             if (pieceBelow == null || !PieceCanBeDestroyed(pieceBelow))
             { 

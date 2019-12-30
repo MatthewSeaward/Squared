@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Workers.Managers;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -10,14 +11,14 @@ namespace Assets.Scripts.Workers.Grid_Management
         {
             var bestMove = new Dictionary<int, List<ISquarePiece>>();
             int currentIndex = 0;
-            for (int x = 0; x < PieceController.NumberOfColumns; x++)
+            for (int x = 0; x < PieceManager.Instance.NumberOfColumns; x++)
             {
-                for (int y = 0; y < PieceController.NumberOfRows; y++)
+                for (int y = 0; y < PieceManager.Instance.NumberOfRows; y++)
                 {
                     var explored = new List<ISquarePiece>();
                     var current = new List<ISquarePiece>();
 
-                    var piece = PieceController.GetPiece(x, y);
+                    var piece = PieceManager.Instance.GetPiece(x, y);
                     if (piece == null)
                     {
                         continue;
@@ -63,7 +64,7 @@ namespace Assets.Scripts.Workers.Grid_Management
                 {
                     moves.Add(currentIndex, new List<ISquarePiece>());
                 }
-                var newPiece = PieceController.GetPiece(x, y);
+                var newPiece = PieceManager.Instance.GetPiece(x, y);
                 if (explored.Contains(newPiece))
                 {
                     return currentIndex;

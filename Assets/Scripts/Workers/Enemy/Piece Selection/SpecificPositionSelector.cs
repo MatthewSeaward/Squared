@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
+using Assets.Scripts.Workers.Managers;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,12 +17,12 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection
 
         public bool CanBeUsed(PieceSelectionValidator validator, int total)
         {
-            return PieceController.Pieces.Any(x => Positions.Contains(x.Position));
+            return PieceManager.Instance.Pieces.Any(x => Positions.Contains(x.Position));
         }
 
         public List<ISquarePiece> SelectPieces(PieceSelectionValidator validator, int total)
         {
-            return PieceController.Pieces.Where(x => Positions.Contains(x.Position)).ToList();
+            return PieceManager.Instance.Pieces.Where(x => Positions.Contains(x.Position)).ToList();
         }
     }
 }

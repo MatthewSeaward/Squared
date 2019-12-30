@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Workers;
 using Assets.Scripts.Workers.Grid_Management;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using NUnit.Framework;
@@ -200,7 +201,7 @@ namespace Assets.Scripts.Editor.Workers
             }
             Debug.Log("----");
 
-            PieceController.Setup(list, new float[grid[0].Length], new float[grid.Length]);
+            PieceManager.Instance.Setup(list, new float[grid[0].Length], new float[grid.Length]);
         }
 
         private static ISquarePiece BuildPiece(int x, int y, string sprite)

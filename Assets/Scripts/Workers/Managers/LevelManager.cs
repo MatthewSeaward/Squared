@@ -6,7 +6,7 @@ using Assets.Scripts;
 using Assets.Scripts.Workers.Level_Info;
 using Assets.Scripts.Workers.Managers;
 
-namespace Assets
+namespace Assets.Scripts.Workers.Managers
 {
     public class LevelManager
     {
@@ -210,8 +210,10 @@ namespace Assets
 
         public void SetupLevels(string chapter, Level[] levels)
         {
-            var dict = new Dictionary<string, Level[]>();
-            dict.Add(chapter, levels);
+            var dict = new Dictionary<string, Level[]>
+            {
+                { chapter, levels }
+            };
 
             SetupLevels(dict);
         }

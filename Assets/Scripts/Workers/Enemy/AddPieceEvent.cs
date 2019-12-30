@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Assets.Scripts.Workers.Managers;
+using System.Collections.Generic;
 using UnityEngine;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 
@@ -28,10 +29,10 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 
             var squarePiece = newPiece.GetComponent<SquarePiece>();
             squarePiece.Position = position;
-            squarePiece.transform.position = new Vector3(PieceController.XPositions[position.x], PieceController.YPositions[position.y]);
+            squarePiece.transform.position = new Vector3(PieceManager.Instance.XPositions[position.x], PieceManager.Instance.YPositions[position.y]);
             squarePiece.gameObject.SetActive(true);
 
-            PieceController.AddNewPiece(squarePiece);
+            PieceManager.Instance.AddNewPiece(squarePiece);
         }
     }
 }

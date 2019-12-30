@@ -1,14 +1,16 @@
-﻿namespace Assets.Scripts.Workers.Grid_Management
+﻿using Assets.Scripts.Workers.Managers;
+
+namespace Assets.Scripts.Workers.Grid_Management
 {
     public static class MoveChecker
     {
         public static bool AvailableMove()
         {
-            for (int x = 0; x < PieceController.NumberOfColumns; x++)
+            for (int x = 0; x < PieceManager.Instance.NumberOfColumns; x++)
             {
-                for (int y = 0; y < PieceController.NumberOfRows; y++)
+                for (int y = 0; y < PieceManager.Instance.NumberOfRows; y++)
                 {
-                    var piece = PieceController.GetPiece(x, y);
+                    var piece = PieceManager.Instance.GetPiece(x, y);
                     if (piece == null )
                     {
                         continue;
