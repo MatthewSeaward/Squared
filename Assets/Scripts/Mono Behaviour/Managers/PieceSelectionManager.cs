@@ -80,8 +80,7 @@ namespace Assets.Scripts
             }
 
             if (!Input.GetMouseButton(0))
-            {            
-
+            {
                 if (CurrentPieces.Count > 1)
                 {
                     CheckForAdditionalPieces();
@@ -250,9 +249,9 @@ namespace Assets.Scripts
 
             CurrentPieces.AddLast(squarePiece);
 
-            if (checkForAdditional)
+            if (CurrentPieces.Count == 1)
             {
-               // CheckForAdditionalPieces();
+               CheckForAdditionalPieces();
             }
 
             SelectedPiecesChanged?.Invoke(CurrentPieces);
