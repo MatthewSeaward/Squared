@@ -87,7 +87,6 @@ namespace Assets.Scripts.Workers.Factorys
             ApplyLayer(squarePiece.DestroyPieceHandler as ILayeredSprite);
             ApplyLayer(squarePiece.Scoring as ILayeredSprite);
             ApplyLayer(squarePiece.OnCollection as ILayeredSprite);
-
         }
 
         private void ApplyLayer(ILayeredSprite layer)
@@ -99,6 +98,7 @@ namespace Assets.Scripts.Workers.Factorys
                     var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
                     l.GetComponent<SpriteRenderer>().sprite = sprite;
                     l.transform.parent = squarePiece.transform;
+                    l.transform.localScale = new Vector3(1, 1, 1);
                 }
             }
         }   
