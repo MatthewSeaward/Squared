@@ -20,16 +20,36 @@ namespace Assets.Scripts
         [SerializeField]
         private Text Body;
 
+        private void Awake()
+        {
+            LivesManager.LivesChanged += LivesManager_LivesChanged;
+        }
+
+        private void OnDestroy()
+        {
+            LivesManager.LivesChanged -= LivesManager_LivesChanged;
+        }
+
+        private void LivesManager_LivesChanged(bool gained, int newLives)
+        {
+            UnityMainThreadDispatcher.Instance().Enqueue(() => SetupButtons());
+        }
+
         public void Show(string body)
         {
             Body.text = body;
 
-            Continue.interactable = LevelManager.Instance.CanPlayLevel(LevelManager.Instance.CurrentLevel + 1) && LivesManager.Instance.LivesRemaining > 0;;
-            NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.StarAchieved < 3);
-            NextStar.interactable = LivesManager.Instance.LivesRemaining > 0;
+            SetupButtons();
 
             GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
             gameObject.SetActive(true);
+        }
+
+        private void SetupButtons()
+        {
+            Continue.interactable = LevelManager.Instance.CanPlayLevel(LevelManager.Instance.CurrentLevel + 1) && LivesManager.Instance.LivesRemaining > 0; ;
+            NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.StarAchieved < 3);
+            NextStar.interactable = LivesManager.Instance.LivesRemaining > 0;
         }
 
         public void LoadNextLevel()
