@@ -201,15 +201,26 @@ namespace Assets.Scripts
 
         public bool PieceCanBeRemoved(ISquarePiece piece)
         {
-            return (CurrentPieces.Count > 1 && piece == CurrentPieces.Last.Previous.Value);
+            return CurrentPieces.Count > 1 && CurrentPieces.Contains(piece);
         }
 
-        public void RemovePiece()
+        public void RemovePiece(ISquarePiece piece)
         {
             var lastPiece = CurrentPieces.Last.Value;
+
+            while (lastPiece != piece)
+            {
+                RemoveLastPiece(lastPiece);
+                lastPiece = CurrentPieces.Last.Value;
+            }
+
+            SelectedPiecesChanged?.Invoke(CurrentPieces);
+        }
+
+        private void RemoveLastPiece(ISquarePiece lastPiece)
+        {
             CurrentPieces.RemoveLast();
             lastPiece.Deselected();
-            SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
         public bool AlreadySelected(ISquarePiece piece)

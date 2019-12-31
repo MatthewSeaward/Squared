@@ -35,9 +35,9 @@ namespace Assets.Scripts.Workers.UserPieceSelection
 
         public void Piece_MouseEnter(ISquarePiece piece)
         {
-            if (ConnectionHelper.AdjancentToLastPiece(piece) && PieceSelectionManager.Instance.PieceCanBeRemoved(piece))
+            if (PieceSelectionManager.Instance.PieceCanBeRemoved(piece))
             {
-                PieceSelectionManager.Instance.RemovePiece();
+                PieceSelectionManager.Instance.RemovePiece(piece);
             }
             else
             {
