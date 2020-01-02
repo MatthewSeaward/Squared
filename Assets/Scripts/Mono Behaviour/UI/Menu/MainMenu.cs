@@ -23,6 +23,10 @@ namespace Assets.Scripts
 
         [SerializeField]
         private GameObject PowerupsTab;
+
+        [SerializeField]
+        private GameObject HomeButton;
+
                
         public void Start()
         {
@@ -67,6 +71,8 @@ namespace Assets.Scripts
             ProgressTab.SetActive(menuTab == Scripts.MenuTab.Progress);
             SettingsTab.SetActive(menuTab == Scripts.MenuTab.Settings);
             PowerupsTab.SetActive(menuTab == Scripts.MenuTab.Powerups);
+
+            HomeButton.SetActive(menuTab != Scripts.MenuTab.MainMenu);
 
             LastTab = menuTab;
         }
