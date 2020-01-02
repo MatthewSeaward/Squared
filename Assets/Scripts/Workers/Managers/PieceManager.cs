@@ -62,18 +62,19 @@ namespace Assets.Scripts.Workers.Managers
             }
         }
 
-        internal void AddNewPiece(ISquarePiece newPiece)
+        public void AddNewPiece(ISquarePiece newPiece)
         {
             Pieces.Add(newPiece);
             AvaiableSlots.Add(newPiece.Position);
         }
 
-        internal void RemoveSlot(Vector2Int position)
+        public void RemoveSlot(Vector2Int position)
         {
             var piece = GetPiece(position.x, position.y);
             if (piece != null)
             {
                 piece.DestroyPiece();
+                piece.gameObject.SetActive(false);
             }
 
             AvaiableSlots.Remove(position);
