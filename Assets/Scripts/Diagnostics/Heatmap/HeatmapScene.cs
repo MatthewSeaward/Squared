@@ -63,13 +63,13 @@ namespace Assets.Scripts
 
         public void NextLevel()
         {
-            selectedLevel = Mathf.Clamp(selectedLevel + 1, 0, 12);
+            selectedLevel = Mathf.Clamp(selectedLevel + 1, 0, 15);
             Refresh();
         }
 
         public void PreviousLevel()
         {
-            selectedLevel = Mathf.Clamp(selectedLevel - 1, 0, 12);
+            selectedLevel = Mathf.Clamp(selectedLevel - 1, 0, 15);
             Refresh();
         }
 

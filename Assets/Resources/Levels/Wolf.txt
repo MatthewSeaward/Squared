@@ -198,7 +198,7 @@
 		{
 			"LevelNumber": 9,
 			"Target": 130,
-			"colours":[0, 6],
+			"colours":[0, 6, 2],
 			"SpecialDropPieces": ["s", "2"],
 			"StarsToUnlock": 46,
 			"Pattern":
@@ -317,7 +317,7 @@
 		},
 		{
 			"LevelNumber": 14,
-			"Target": 75,
+			"Target": 125,
 			"colours":[1,6,2],
 			"SpecialDropPieces": ["2", "d", "3", "2", "t"],
 			"StarsToUnlock": 70,

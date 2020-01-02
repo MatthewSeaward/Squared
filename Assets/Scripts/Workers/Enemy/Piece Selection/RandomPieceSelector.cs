@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.Managers;
 
@@ -9,7 +8,7 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection
     {
         public bool CanBeUsed(PieceSelectionValidator validator, int total)
         {
-            return true;
+            return SelectPieces(validator, total).Count > 0;
         }
 
         public List<ISquarePiece> SelectPieces(PieceSelectionValidator validator, int total)

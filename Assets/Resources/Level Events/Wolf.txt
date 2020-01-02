@@ -417,20 +417,20 @@
 				   "EventType":"Swap",
 				   "Trigger":"Turns",
 				   "TriggerOn":"3-7",
-				   "TypeOfPieceToSelect":"3"
+				   "NumberOfPiecesToSelect":"3"
 				},
 				{ 
 				   "EventType":"Change",
 				   "Trigger":"Turns",
-				   "TriggerOn":"7-12",
+				   "TriggerOn":"7-11",
 				   "NumberOfPiecesToSelect":6,
 				   "NewPieceType":"h"			   
 				},
 				{ 
 				   "EventType":"Remove",
 				   "Trigger":"Turns",
-				   "TriggerOn":"15-17",
-				   "PositionsSelected": [ "3:2", "4:2", "3:3", "4:3", "4:4", "3:5", "4:5", "3:6", "4:6", "3:7", "4:7"]
+				   "TriggerOn":"12-15",
+				   "PositionsSelected": [ "3:2", "4:2", "3:3", "4:3", "3:4", "4:4", "3:5", "4:5", "3:6", "4:6", "3:7", "4:7", "3:8", "4:8"]
 				},
 				{ 
 				   "EventType":"Swap",
