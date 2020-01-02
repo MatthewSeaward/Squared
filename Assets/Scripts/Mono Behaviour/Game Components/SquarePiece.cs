@@ -65,6 +65,8 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
 
     private Animator Animator => _animator = _animator ?? GetComponent<Animator>();
 
+    public bool IsActive => gameObject.activeInHierarchy;
+
     public SpriteRenderer SpriteRenderer => GetComponent<SpriteRenderer>();
     
     public Sprite Sprite

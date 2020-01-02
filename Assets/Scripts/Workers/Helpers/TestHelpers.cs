@@ -1,4 +1,5 @@
-﻿using NSubstitute;
+﻿using Assets.Scripts.Workers.Helpers.Test_Helpers;
+using NSubstitute;
 using System.Collections.Generic;
 using UnityEngine;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
@@ -12,6 +13,30 @@ namespace Assets.Scripts.Workers.Helpers
         public static ISquarePiece CreatePiece()
         {
             return Substitute.For<ISquarePiece>();
+        }
+
+        public static ISquarePiece CreatePiece(int x, int y)
+        {
+            var piece =  Substitute.For<ISquarePiece>();
+            piece.Position = new Vector2Int(x, y);
+            return piece;
+        }
+
+        public static ISquarePiece CreatePiece(int x, int y, bool active)
+        {
+            ISquarePiece piece;
+
+            if (active)
+            {
+                piece = new DummyActiveSquarePiece();
+            }
+            else
+            {
+                piece = new DummyInactiveSquarePiece();
+            }
+
+            piece.Position = new Vector2Int(x, y);
+            return piece;
         }
 
         public static ISquarePiece CreatePiece(PieceTypes type)

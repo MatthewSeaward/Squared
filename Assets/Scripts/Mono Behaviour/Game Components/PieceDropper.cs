@@ -72,7 +72,7 @@ namespace Assets.Scripts
         {
             try
             { 
-                if (PieceManager.Instance.EmptyColumn(column))
+                if (PieceManager.Instance.HasSlotInColumn(column))
                 {
                     return;
                 }
@@ -129,14 +129,13 @@ namespace Assets.Scripts
             {
                 DebugLogger.Instance.WriteException(ex);
             }
-
         }
 
         private IEnumerator CheckForEmptySlotsInColumn(int column)
         {
             int row = 0;
 
-            while (PieceManager.Instance.HasEmptySlotInColumn(column, ref row))
+            while (PieceManager.Instance.HasEmptySlotInColumn(column, out row))
             {
                 try
                 {

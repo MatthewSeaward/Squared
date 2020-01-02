@@ -35,7 +35,7 @@ namespace Assets.Scripts.Workers.Managers
 
         }
 
-        internal bool HasEmptySlotInColumn(int x, ref int y)
+        public bool HasEmptySlotInColumn(int x, out int y)
         {
             for (int i = 0; i < NumberOfRows; i++)
             {
@@ -45,9 +45,10 @@ namespace Assets.Scripts.Workers.Managers
                     return true;
                 }
             }
+
+            y = 0;
             return false;
         }
-
 
         public void Setup(List<ISquarePiece> Pieces, float[] XPositions, float[] YPositions)
         {
@@ -74,7 +75,7 @@ namespace Assets.Scripts.Workers.Managers
             if (piece != null)
             {
                 piece.DestroyPiece();
-                piece.gameObject.SetActive(false);
+                piece?.gameObject?.SetActive(false);
             }
 
             AvaiableSlots.Remove(position);
@@ -93,7 +94,7 @@ namespace Assets.Scripts.Workers.Managers
             }
 
             var currentPiece = GetPiece(x, y);
-            if (currentPiece == null || !currentPiece.gameObject.activeInHierarchy)
+            if (currentPiece == null || !currentPiece.IsActive)
             {
                 return true;
             }
@@ -104,28 +105,14 @@ namespace Assets.Scripts.Workers.Managers
             }
 
             return false;
-
         }
 
-        internal Vector3 GetPosition(Vector2Int position)
+        public Vector3 GetPosition(Vector2Int position)
         {
             return new Vector3(XPositions[position.x], YPositions[position.y]);
         }
 
-        internal bool AtTop(int x, int y)
-        {
-            var piecesAbove = Pieces.Where(p => p.Position.x == x && p.Position.y < y);
-            foreach (var piece in piecesAbove)
-            {
-                if (piece != null)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        internal bool EmptyColumn(int column)
+        public bool HasSlotInColumn(int column)
         {
             for (int row = 0; row < NumberOfRows; row++)
             {
@@ -136,21 +123,15 @@ namespace Assets.Scripts.Workers.Managers
             }
             return true;
         }
-
-
-        internal ISquarePiece GetPiece(int x, int y)
+        
+        public ISquarePiece GetPiece(int x, int y)
         {
             return Pieces.FirstOrDefault(p => p.Position.x == x && p.Position.y == y);
         }
 
-        internal ISquarePiece[] GetPiecesAbove(int x, int y)
+        public ISquarePiece[] GetPiecesAbove(int x, int y)
         {
             return Pieces.Where(p => p.Position.x == x && p.Position.y < y).ToArray();
-        }
-
-        internal ISquarePiece GetPieceAbove(int x, int y)
-        {
-            return Pieces.Where(p => p.Position.x == x && p.Position.y < y).Min();
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.Grid_Management;
-using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
@@ -17,14 +16,13 @@ namespace Assets.Scripts.Editor.Workers
     [Category("Grid Management")]
     public class BestMoveRestrictions
     {
-
         private IBestMoveChecker BestMoverChecker;
 
         [OneTimeSetUp]
         public void TestStart()
         {
             BestMoverChecker = new BestMoveDepthSearch();
-            TestHelpers.CreatedSprites.Clear();
+            CreatedSprites.Clear();
         }
 
         [Test]
@@ -108,7 +106,7 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void BannedSprite1Restriction_Best4()
         {
-            IRestriction restriction = new Assets.Scripts.Workers.Score_and_Limits.BannedSprite(1);
+            IRestriction restriction = new Scripts.Workers.Score_and_Limits.BannedSprite(1);
 
             var pieces = new string[]
             {
@@ -128,7 +126,7 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void BannedSprite2Restriction_WithAnyConnection_Best4()
         {
-            IRestriction restriction = new Assets.Scripts.Workers.Score_and_Limits.BannedSprite(2);
+            IRestriction restriction = new Scripts.Workers.Score_and_Limits.BannedSprite(2);
 
             var pieces = new string[]
             {
@@ -168,7 +166,7 @@ namespace Assets.Scripts.Editor.Workers
         [Test]
         public void LockedPiecesRestriction_Best2()
         {
-            IRestriction restriction = new Assets.Scripts.Workers.Score_and_Limits.SwapEffectLimit();
+            IRestriction restriction = new Scripts.Workers.Score_and_Limits.SwapEffectLimit();
 
             var pieces = new string[]
             {
@@ -249,8 +247,6 @@ namespace Assets.Scripts.Editor.Workers
             piece.PieceConnection = new StandardConnection();
             piece.Scoring = new SingleScore();
             return piece;
-        }
-
-        
+        }        
     }
 }

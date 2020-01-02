@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.Workers.Piece_Effects;
-using Assets.Scripts.Workers.Piece_Effects.Collection;
+﻿using Assets.Scripts.Workers.Piece_Effects.Collection;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
@@ -20,6 +19,7 @@ public interface ISquarePiece
     PieceTypes Type { get; set; }
     PieceDestroyed PieceDestroyed { set; get; }
     Colour PieceColour { get;set; }
+    bool IsActive { get; }
 
     void Deselected();
     void DestroyPiece();
