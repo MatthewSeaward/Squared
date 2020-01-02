@@ -31,6 +31,11 @@ namespace Assets.Scripts.UI
 
         protected override void OnButtonClicked()
         {
+            if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
+            {
+                return;
+            }
+
             button.interactable = false;
             powerup.Invoke();
             UserPowerupManager.Instance.UsePowerup(powerup);
@@ -38,6 +43,11 @@ namespace Assets.Scripts.UI
 
         protected override bool EnableButton(int remaining)
         {
+            if (GameManager.Instance.GamePaused || MenuProvider.Instance.OnDisplay)
+            {
+                return false;
+            }
+
             return remaining > 0 && powerup.Enabled;
         }
 
