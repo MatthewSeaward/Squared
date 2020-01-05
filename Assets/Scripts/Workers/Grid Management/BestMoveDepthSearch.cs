@@ -13,10 +13,7 @@ namespace Assets.Scripts.Workers.Grid_Management
 
         private List<List<ISquarePiece>> bestMove = new List<List<ISquarePiece>>();
         private IRestriction restriction;
-
-        private bool DiagonalAllowed => !(restriction is DiagonalRestriction);
-        private bool StraightAllowed => !(restriction is DiagonalOnlyRestriction);
-
+            
         private DateTime startTime; 
 
         private int MinAllowed
@@ -108,7 +105,7 @@ namespace Assets.Scripts.Workers.Grid_Management
                 return;
             }
 
-            var neighbours = GetNeighbours(piece);
+            var neighbours = AIHelpers.GetNeighbours(restriction, piece);
 
             bool executed = false;
             while (neighbours.Count > 0 && currentPath.Count < MaxAllowed)
@@ -134,68 +131,7 @@ namespace Assets.Scripts.Workers.Grid_Management
             currentPath.Remove(piece);
         }
 
-        private Stack<ISquarePiece> GetNeighbours(ISquarePiece piece)
-        {
-            var neighbours = new Stack<ISquarePiece>();
-
-            var x = piece.Position.x;
-            var y = piece.Position.y;
-
-            if (StraightAllowed)
-            {
-                AddIfNeighbour(ref neighbours, piece, x + 1, y);
-                AddIfNeighbour(ref neighbours, piece, x - 1, y);
-                AddIfNeighbour(ref neighbours, piece, x, y + 1);
-                AddIfNeighbour(ref neighbours, piece, x, y - 1);
-            }
-
-            if (DiagonalAllowed)
-            {
-                AddIfNeighbour(ref neighbours, piece, x + 1, y + 1);
-                AddIfNeighbour(ref neighbours, piece, x - 1, y + 1);
-                AddIfNeighbour(ref neighbours, piece, x + 1, y - 1);
-                AddIfNeighbour(ref neighbours, piece, x - 1, y - 1);
-            }
-
-            return neighbours;
-        }
-
-        private  void AddIfNeighbour(ref Stack<ISquarePiece> neighbours, ISquarePiece piece, int x, int y)
-        {
-            if (MoveCheckerHelpers.CheckSpot(piece, x, y))
-            {
-                var p = PieceManager.Instance.GetPiece(x, y);
-                if (restriction is BannedPieceType)
-                {
-                    if (p.Type == (restriction as BannedPieceType).BannedPiece)
-                    {
-                        return;
-                    }
-                }
-
-                if (restriction is BannedSprite)
-                {
-                    var res = restriction as BannedSprite;
-                    if (p.Sprite.name == res.Sprite || p.Sprite.name == res.SpriteValue.ToString())
-                    {
-                        return;
-                    }
-                }
-
-                if (restriction is SwapEffectLimit)
-                {
-                    var res = restriction as SwapEffectLimit;
-                    var str1 = p.DestroyPieceHandler.GetType().ToString();
-
-                    if (str1 == res.effect)
-                    {
-                        return;
-                    }
-                }
-
-                neighbours.Push(p);
-            }
-        }
+      
 
     }
 }

@@ -4,9 +4,8 @@ using System.Linq;
 using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 [Category("Restrictions")]
-public class NoRestriction
+public class NoRestrictionTests
 {
-
 	[Test]
 	public void True_NoRestriction_3Pieces()
     {
@@ -31,5 +30,4 @@ public class NoRestriction
 
         Assert.IsFalse(sut.ViolatedRestriction());
     }
-
 }
