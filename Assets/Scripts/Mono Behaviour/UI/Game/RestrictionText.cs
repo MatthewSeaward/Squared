@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Managers;
+﻿using Assets.Scripts.Mono_Behaviour.UI.Components;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Score_and_Limits;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,16 +9,20 @@ namespace Assets.Scripts
     class RestrictionText : MonoBehaviour
     {
         Animator animator;
+
+        [SerializeField]
         Text text;
+
+        [SerializeField]
         Image image;
+
+        [SerializeField]
+        Image restrictionImage;
 
         public void Awake()
         {
-
             animator = GetComponent<Animator>();
-            text = GetComponentInChildren<Text>();
-            image = GetComponent<Image>();
-
+   
             HideText();
 
             LevelStart.GameStarted += ShowText;
@@ -37,7 +42,8 @@ namespace Assets.Scripts
             }
             
             SetEnabled(true);
-            text.text = currentRestriction.GetRestrictionDescription();;
+            GetComponentInChildren<RestrictionInfo>().DisplayRestriction(currentRestriction);
+
             animator.SetTrigger("Show Restriction");
         }
 

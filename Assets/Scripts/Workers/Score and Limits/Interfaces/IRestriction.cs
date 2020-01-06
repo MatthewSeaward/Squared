@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
+﻿using UnityEngine;
+
+namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
 {
     public interface IRestriction
     {

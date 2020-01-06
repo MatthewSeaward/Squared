@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Mono_Behaviour.UI.Components;
 using Assets.Scripts.Workers.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,14 +24,17 @@ namespace Assets.Scripts
 
         [SerializeField]
         private Text Restriction;
+
+        [SerializeField]
+        private Image RestrictionImage;
                
         public void OnEnable()
         {
             Level.text = "Level " + (LevelManager.Instance.CurrentLevel + 1).ToString();
             Target.text = LevelManager.Instance.SelectedLevel.Target.ToString();
             Limit.text = LevelManager.Instance.SelectedLevel.GetCurrentLimit().GetDescription();
-            Restriction.text = LevelManager.Instance.SelectedLevel.GetCurrentRestriction().GetRestrictionDescription();
 
+            GetComponentInChildren<RestrictionInfo>().DisplayRestriction(LevelManager.Instance.SelectedLevel.GetCurrentRestriction());
             GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
         }
 

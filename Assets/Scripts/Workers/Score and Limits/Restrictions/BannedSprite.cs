@@ -1,8 +1,11 @@
-﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+﻿using Assets.Scripts.Workers.Generic_Interfaces;
+using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
-    public class BannedSprite : IRestriction
+    public class BannedSprite : IRestriction, IHasSprite
     {
         public readonly string Sprite;
         private bool failed = false;
@@ -18,7 +21,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
         public string GetRestrictionText()
         {
-            return "Banned: " + Sprite;
+            return "Banned: ";
         }
 
         public string GetRestrictionDescription() => GetRestrictionText();
@@ -64,6 +67,11 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public void Ignore()
         {
             Ignored = true;
+        }
+
+        public Sprite GetSprite()
+        {
+            return GameResources.PieceSprites[SpriteValue.ToString()];
         }
     }
 }
