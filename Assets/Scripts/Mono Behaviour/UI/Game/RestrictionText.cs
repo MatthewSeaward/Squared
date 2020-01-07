@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Mono_Behaviour.UI.Components;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Mono_Behaviour.UI.Components;
 using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Score_and_Limits;
 using UnityEngine;
@@ -19,7 +20,7 @@ namespace Assets.Scripts
         [SerializeField]
         Image restrictionImage;
 
-        public void Awake()
+        public void Start()
         {
             animator = GetComponent<Animator>();
    
@@ -61,6 +62,8 @@ namespace Assets.Scripts
                 child.gameObject.SetActive(enabled);
             }
             animator.enabled = enabled;
+
+            GameManager.Instance.ChangePauseState(this, enabled);
         }
     }
 }
