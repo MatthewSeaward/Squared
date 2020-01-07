@@ -99,9 +99,9 @@ namespace Assets.Scripts.Workers.Factorys
                     l.GetComponent<SpriteRenderer>().sprite = sprite;
                     l.transform.parent = squarePiece.transform;
                     l.transform.localScale = new Vector3(1, 1, 1);
+                    l.transform.localPosition = Vector3.zero;
                 }
             }
-        }   
-
+        }
     }
 }
