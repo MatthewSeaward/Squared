@@ -34,10 +34,6 @@ namespace Assets.Scripts.Workers.Powerups
             PieceSelectionManager.Instance.ReturnPieceSelectionModeToDefault();        
         }
 
-        public void Update(float deltaTime)
-        {
-        }
-
         public void MoveCompleted()
         {
         }

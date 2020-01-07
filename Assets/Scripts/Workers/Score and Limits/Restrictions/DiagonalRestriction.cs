@@ -27,12 +27,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
 
             Ignored = false;
         }
-
-        public void Update(float deltaTime)
-        {
-            
-        }
-
+        
         public bool ViolatedRestriction()
         {
             return _violatedRestriction;

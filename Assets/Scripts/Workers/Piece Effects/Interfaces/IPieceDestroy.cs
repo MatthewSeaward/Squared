@@ -5,7 +5,6 @@
         bool ToBeDestroyed { get; }
 
         void OnPressed();
-        void Update();
         void OnDestroy();
         void NotifyOfDestroy();
         void Reset();

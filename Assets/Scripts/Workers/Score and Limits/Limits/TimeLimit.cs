@@ -1,9 +1,10 @@
-﻿using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
+﻿using Assets.Scripts.Workers.Generic_Interfaces;
+using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
-    public class TimeLimit : IGameLimit
+    public class TimeLimit : IGameLimit, IUpdateable
     {
         private int Limit;
         private float TimeTaken;

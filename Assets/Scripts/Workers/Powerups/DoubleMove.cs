@@ -24,10 +24,6 @@ namespace Assets.Scripts.Workers.Powerups
         public void MoveCompleted()
         {
             ToastPanel.Instance.Hide();
-        }
-
-        public void Update(float deltaTime)
-        {
-        }
+        }     
     }
 }

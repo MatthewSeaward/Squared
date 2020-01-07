@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Mono_Behaviour.UI.Components;
+using Assets.Scripts.Workers.Generic_Interfaces;
 using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
@@ -18,8 +19,9 @@ namespace Assets.Scripts
         
         private static Color restrictionDisabledColour = new Color(0.7f, 0.7f, 0.7f, 0.7f);
 
-        private IRestriction Restriction;
-        private RestrictionInfo restrictionInfo;
+        private IRestriction _restriction;
+        private RestrictionInfo _restrictionInfo;
+        private IUpdateable _updateableRestriction;
 
         private void Start()
         {
@@ -27,10 +29,12 @@ namespace Assets.Scripts
 
             var currentLevel = LevelManager.Instance.GetNextLevel();
 
-            Restriction = GameManager.Instance.Restriction;
-            Restriction.Reset();
+            _restriction = GameManager.Instance.Restriction;
+            _restriction.Reset();
 
-            restrictionInfo = GetComponentInParent<RestrictionInfo>();
+            _updateableRestriction = _restriction as IUpdateable;
+
+            _restrictionInfo = GetComponentInParent<RestrictionInfo>();
 
             UpdateRestriction(0);
         }
@@ -42,7 +46,7 @@ namespace Assets.Scripts
 
         private void SequenceCompleted(ISquarePiece[] pieces)
         {
-            Restriction.SequenceCompleted(pieces);
+            _restriction.SequenceCompleted(pieces);
         }
 
         private void Update()
@@ -52,12 +56,12 @@ namespace Assets.Scripts
 
         private void UpdateRestriction(float deltaTime)
         {
-            Restriction.Update(deltaTime);
+            _updateableRestriction?.Update(deltaTime);
 
-            restrictionInfo.DisplayRestriction(Restriction);
-            RestrictionText.color = Restriction.Ignored ? restrictionDisabledColour : Color.white;
+            _restrictionInfo.DisplayRestriction(_restriction);
+            RestrictionText.color = _restriction.Ignored ? restrictionDisabledColour : Color.white;
 
-            if (Restriction.ViolatedRestriction())
+            if (_restriction.ViolatedRestriction())
             {
                 RestrictionViolated?.Invoke();
             }

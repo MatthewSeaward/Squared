@@ -28,9 +28,5 @@ namespace Assets.Scripts.Workers.Powerups
         {
 
         }
-
-        public void Update(float deltaTime)
-        {
-        }
     }
 }

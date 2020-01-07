@@ -36,10 +36,6 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         {
         }
 
-        public void Update()
-        {
-        }
-
         public Sprite[] GetSprites()
         {
             return new Sprite[] { GameResources.Sprites["Change"], GameResources.Sprites["Padlock"] };

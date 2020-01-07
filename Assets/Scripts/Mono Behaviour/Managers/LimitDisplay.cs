@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.UI;
+using Assets.Scripts.Workers.Generic_Interfaces;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,12 +19,15 @@ namespace Assets.Scripts
         [SerializeField]
         private ProgressBar LimitProgress;
 
-        private IGameLimit GameLimit;
+        private IGameLimit _gameLimit;
+        private IUpdateable _updateableLimit;
 
         private void Start()
         {
-            GameLimit = GameManager.Instance.GameLimit;
-            GameLimit.Reset();
+            _gameLimit = GameManager.Instance.GameLimit;
+            _gameLimit.Reset();
+
+            _updateableLimit = _gameLimit as IUpdateable;
 
             UpdateLimit(0);
         }
@@ -35,18 +39,18 @@ namespace Assets.Scripts
                 return;
             }
 
-            UpdateLimit(UnityEngine.Time.deltaTime);
+            UpdateLimit(Time.deltaTime);
         }
 
         private void UpdateLimit(float deltaTime)
         {
-            GameLimit.Update(deltaTime);
+            _updateableLimit?.Update(deltaTime);
 
-            Limit.text = GameLimit.GetLimitText();
+            Limit.text = _gameLimit.GetLimitText();
 
-            LimitProgress.UpdateProgressBar(GameLimit.PercentComplete());
+            LimitProgress.UpdateProgressBar(_gameLimit.PercentComplete());
 
-            if (GameLimit.ReachedLimit())
+            if (_gameLimit.ReachedLimit())
             {
                 LimitReached?.Invoke();
             }

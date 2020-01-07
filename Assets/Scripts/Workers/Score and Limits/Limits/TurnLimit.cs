@@ -31,11 +31,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
         public bool ReachedLimit()
         {
             return TurnsTaken >= MaxTurns;
-        }
-
-        public void Update(float deltaTime)
-        {
-        }
+        }    
 
         public string GetDescription()
         {

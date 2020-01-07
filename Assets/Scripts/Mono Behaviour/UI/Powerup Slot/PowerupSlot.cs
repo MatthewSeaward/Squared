@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.Generic_Interfaces;
 using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Powerups.Interfaces;
 using System;
@@ -20,6 +21,8 @@ namespace Assets.Scripts.UI
         protected Text remainingText;
 
         public IPowerup powerup;
+        protected IUpdateable UpdateablePowerup => powerup as IUpdateable;
+
         protected int previousRemaing;
         private bool activateOnEnable;
 

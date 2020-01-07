@@ -1,13 +1,10 @@
-﻿using UnityEngine;
-
-namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
+﻿namespace Assets.Scripts.Workers.Score_and_Limits.Interfaces
 {
     public interface IRestriction
     {
         bool Ignored { get; }
 
         void Reset();
-        void Update(float deltaTime);
         void SequenceCompleted(ISquarePiece[] sequence);
         string GetRestrictionText();
         string GetRestrictionDescription();

@@ -11,6 +11,5 @@ namespace Assets.Scripts.Workers.Powerups.Interfaces
 
         void Invoke();
         void MoveCompleted();
-        void Update(float deltaTime);
     }
 }

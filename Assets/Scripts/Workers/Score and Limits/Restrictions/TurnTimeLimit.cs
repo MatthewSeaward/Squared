@@ -1,10 +1,11 @@
 ﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Generic_Interfaces;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
-    public class TurnTimeLimit : IRestriction
+    public class TurnTimeLimit : IRestriction, IUpdateable
     {
         private float Limit;
         private float TimeTaken;

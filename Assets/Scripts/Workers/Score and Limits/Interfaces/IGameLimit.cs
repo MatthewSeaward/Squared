@@ -3,7 +3,6 @@
     public interface IGameLimit
     {
         void Reset();
-        void Update(float deltaTime);
         string GetLimitText();
         bool ReachedLimit();
         string GetDescription();

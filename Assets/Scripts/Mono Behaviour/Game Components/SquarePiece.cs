@@ -118,7 +118,6 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
             return;
         }
 
-        DestroyPieceHandler?.Update();
         PieceBehaviour?.Update(this, Time.deltaTime);
     }
 

@@ -89,11 +89,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             {
                 _squarePiece.DestroyPiece();
             }
-        }
-
-        public void Update()
-        {
-        }      
+        }   
        
         public void OnPressed()
         {            

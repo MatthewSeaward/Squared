@@ -20,7 +20,7 @@ namespace Assets.Scripts.UI
 
         protected override void ChildUpdate(float deltaTime)
         {
-            powerup.Update(deltaTime);
+            UpdateablePowerup?.Update(deltaTime);
         }
    
         private void PieceSelectionManager_MoveCompleted()
@@ -62,6 +62,5 @@ namespace Assets.Scripts.UI
                 button.interactable = EnableButton(previousRemaing);
             }
         }
-
     }
 }

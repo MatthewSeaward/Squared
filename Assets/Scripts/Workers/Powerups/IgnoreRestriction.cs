@@ -32,9 +32,5 @@ namespace Assets.Scripts.Workers.Powerups
         public void MoveCompleted()
         {
         }
-
-        public void Update(float deltaTime)
-        {
-        }
     }
 }

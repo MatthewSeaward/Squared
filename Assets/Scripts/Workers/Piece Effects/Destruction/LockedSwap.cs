@@ -25,10 +25,6 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         {
         }
 
-        public void Update()
-        {
-        }
-
         public void OnDestroy()
         {
             piece.Deselected();
