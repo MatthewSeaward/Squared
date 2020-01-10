@@ -12,7 +12,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var sut = new TurnEventTrigger(0, 0);
 
             var enemyEvent = new ChangeBoolEvent();
-            sut.EnemyRage = enemyEvent;
+            sut.EnemyRage.Add(enemyEvent);
             sut.CheckForEvent();
 
             Assert.IsTrue(enemyEvent.Activated);
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var sut = new TurnEventTrigger(3, 3);
 
             var enemyEvent = new ChangeBoolEvent();
-            sut.EnemyRage = enemyEvent;
+            sut.EnemyRage.Add(enemyEvent);
 
             sut.CheckForEvent();
             sut.CheckForEvent();
@@ -38,7 +38,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var sut = new TurnEventTrigger(3, 5);
 
             var enemyEvent = new ChangeBoolEvent();
-            sut.EnemyRage = enemyEvent;
+            sut.EnemyRage.Add(enemyEvent);
             sut.CheckForEvent();
             sut.CheckForEvent();
             sut.CheckForEvent();

@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Managers;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Enemy.Events
@@ -8,12 +10,13 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
     public abstract class EnemyEventTrigger
     {
-        public IEnemyRage EnemyRage { get; set; }
+        public List<IEnemyRage> EnemyRage { get; set; } = new List<IEnemyRage>();
         public EnemyScript enemy;
 
         protected bool triggered;
 
         protected static bool CurrentlyPlayingTrigger { get; private set; }
+        protected bool RageCanBeUsed => EnemyRage.Any(x => x.CanBeUsed());
 
         protected void InvokeRage()
         {
@@ -70,7 +73,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         internal void Update(float deltaTime)
         {
-            EnemyRage.Update(deltaTime);
+            EnemyRage.ForEach(x => x.Update(deltaTime));
         }
 
         private void PlayEnemyRage()
@@ -81,7 +84,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
                 enemy.GetComponent<Animator>().SetTrigger("Angry1");
             }
 
-            EnemyRage.InvokeRage();
+            EnemyRage.ForEach(x => x.InvokeRage());
 
             triggered = true;
             CurrentlyPlayingTrigger = false;

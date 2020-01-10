@@ -42,7 +42,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         public void CheckForEvent()
         {
-            if (TurnRange.WithinRange(TurnsPassed++) && !CurrentlyPlayingTrigger && EnemyRage.CanBeUsed())
+            if (TurnRange.WithinRange(TurnsPassed++) && !CurrentlyPlayingTrigger && RageCanBeUsed)
             {
                 CurrentPercentage += PercentageIncrement;
 

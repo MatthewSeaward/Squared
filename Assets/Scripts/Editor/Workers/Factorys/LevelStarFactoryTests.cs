@@ -163,7 +163,9 @@ namespace Assets.Scripts.Editor.Workers.Factorys
         [Test]
         public void Events()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Destroy", Trigger = "Turns", TriggerOn = "1-2", NumberOfPiecesToSelect = 3 } };
+
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType="Destroy", NumberOfPiecesToSelect=2} } } };
 
             var sut = LevelStarFactory.GetLevelStar(2, null, testEvent);
 

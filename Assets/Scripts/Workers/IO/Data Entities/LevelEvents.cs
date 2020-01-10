@@ -8,16 +8,22 @@ namespace Assets.Scripts.Workers.IO.Data_Entities
     public class LevelEvents
     {
         public int LevelNumber;
-        public Event[] Star1;
-        public Event[] Star2;
-        public Event[] Star3;
+        public EventTrigger[] Star1;
+        public EventTrigger[] Star2;
+        public EventTrigger[] Star3;
+
+        [Serializable]
+        public class EventTrigger
+        {
+            public string Trigger;
+            public string TriggerOn;
+            public Event[] Events;
+        }
 
         [Serializable]
         public class Event
         {
-            public string EventType;
-            public string Trigger;
-            public string TriggerOn;
+            public string EventType;  
             public string NewPieceType;
             public string[] PositionsSelected;
             public int NumberOfPiecesToSelect;

@@ -8,7 +8,7 @@ namespace Assets.Scripts.Workers.Factorys
     public static class LevelStarFactory
     {
 
-        public static StarProgress GetLevelStar(int starNumber, string[] data, LevelEvents.Event[] events)
+        public static StarProgress GetLevelStar(int starNumber, string[] data, LevelEvents.EventTrigger[] events)
         {
             var progress = new StarProgress() { Number = starNumber };
 

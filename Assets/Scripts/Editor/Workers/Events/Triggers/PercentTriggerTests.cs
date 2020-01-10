@@ -16,7 +16,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 100);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
@@ -34,7 +34,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 0);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
@@ -52,7 +52,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 100);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
@@ -71,7 +71,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 50);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
@@ -90,7 +90,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 50);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
@@ -117,7 +117,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 30);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {
@@ -144,7 +144,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Triggers
             var trigger = new PiecePercentEventTrigger(PieceBuilderDirector.PieceTypes.Rainbow, 30);
 
             var enemyEvent = new ChangeBoolEvent();
-            trigger.EnemyRage = enemyEvent;
+            trigger.EnemyRage.Add(enemyEvent);
 
             PieceManager.Instance.Setup(new List<ISquarePiece>()
             {

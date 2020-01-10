@@ -13,7 +13,7 @@ namespace Assets.Scripts.Workers.Factorys
     public static class EnemyEventsFactory
     {
 
-        public static EnemyEvents GetLevelEvents(LevelEvents.Event[] levelEvent)
+        public static EnemyEvents GetLevelEvents(LevelEvents.EventTrigger[] levelEvent)
         {
             var events = new EnemyEvents();
 
@@ -35,16 +35,16 @@ namespace Assets.Scripts.Workers.Factorys
             return events;
         }
 
-        private static EnemyEventTrigger GetEnemyEvent(LevelEvents.Event e)
+        private static EnemyEventTrigger GetEnemyEvent(LevelEvents.EventTrigger e)
         {
             var enemyEvent = GetEnemyEventTrigger(e);
 
-            enemyEvent.EnemyRage = GetEnemyRage(e);
+            enemyEvent.EnemyRage = GetEnemyRageEvents(e);
 
             return enemyEvent;
         }
 
-        private static EnemyEventTrigger GetEnemyEventTrigger(LevelEvents.Event e)
+        private static EnemyEventTrigger GetEnemyEventTrigger(LevelEvents.EventTrigger e)
         {
             switch(e.Trigger)
             {
@@ -57,8 +57,29 @@ namespace Assets.Scripts.Workers.Factorys
             }
         }
 
-        private static IEnemyRage GetEnemyRage(LevelEvents.Event e)
+        private static List<IEnemyRage> GetEnemyRageEvents(LevelEvents.EventTrigger trigger)
         {
+            var list = new List<IEnemyRage>();
+            if (trigger.Events == null)
+            {
+                Debug.LogError($"EventTrigger has null events. Trigger {trigger.Trigger} and TriggerOn {trigger.TriggerOn}");
+            }
+            else
+            {
+                foreach (var e in trigger.Events)
+                {
+                    var rageEvent = GetEnemyRageEvent(e);
+                    if (rageEvent != null)
+                    {
+                        list.Add(rageEvent);
+                    }
+                }
+            }
+            return list;
+        }
+
+        private static IEnemyRage GetEnemyRageEvent(LevelEvents.Event e)
+        { 
             switch (e.EventType)
             { 
                 case "Destroy":

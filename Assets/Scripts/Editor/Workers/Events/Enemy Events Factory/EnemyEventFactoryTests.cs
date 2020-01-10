@@ -15,12 +15,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void TurnTrigger_DestroyEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Destroy", Trigger = "Turns", TriggerOn = "1-2", NumberOfPiecesToSelect = 3 } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "Destroy",  NumberOfPiecesToSelect = 3  } } } };
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as TurnEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as DestroyRage;
+            var rage = sut.RageEvents[0].EnemyRage[0] as DestroyRage;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
@@ -33,12 +34,14 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void TurnTrigger_SwapEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Swap", Trigger = "Turns", TriggerOn = "1-2", NumberOfPiecesToSelect = 3 } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "Swap",  NumberOfPiecesToSelect = 3  } } } };
+
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as TurnEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as SwapRage;
+            var rage = sut.RageEvents[0].EnemyRage[0] as SwapRage;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
@@ -51,12 +54,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void TurnTrigger_ChangeEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Change", Trigger = "Turns", TriggerOn = "1-2", NumberOfPiecesToSelect = 3, NewPieceType = "r" } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "Change",  NumberOfPiecesToSelect = 3, NewPieceType = "r" } } } };
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as TurnEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as ChangeRandomPiece;
+            var rage = sut.RageEvents[0].EnemyRage[0] as ChangeRandomPiece;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
@@ -70,12 +74,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void PercentTrigger_ChangeSpecificPieceEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "ChangeS", Trigger = "Percent", TriggerOn = "r-30", NumberOfPiecesToSelect = 2, NewPieceType="r", TypeOfPieceToSelect="x" } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Percent", TriggerOn="r-30", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "ChangeS", TypeOfPieceToSelect = "x", NumberOfPiecesToSelect = 2, NewPieceType = "r" } } } };
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as PiecePercentEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as ChangeSpecificPiece;
+            var rage = sut.RageEvents[0].EnemyRage[0] as ChangeSpecificPiece;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
@@ -91,12 +96,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void PercentTrigger_DestroyEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Destroy", Trigger = "Percent", TriggerOn = "r-30", NumberOfPiecesToSelect = 2 } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Percent", TriggerOn="r-30", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "Destroy",  NumberOfPiecesToSelect = 2 } } } };
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as PiecePercentEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as DestroyRage;
+            var rage = sut.RageEvents[0].EnemyRage[0] as DestroyRage;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
@@ -109,12 +115,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void PercentTrigger_AddEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Add", Trigger = "Percent", TriggerOn = "r-30", NewPieceType="r", PositionsSelected = new string[] { "1:2", "2:3", "3:4", "4:5" } } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Percent", TriggerOn="r-30", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "Add", NewPieceType = "r", PositionsSelected = new string[] { "1:2", "2:3", "3:4", "4:5" } } } } };
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as PiecePercentEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as AddPieceEvent;
+            var rage = sut.RageEvents[0].EnemyRage[0] as AddPieceEvent;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
@@ -133,12 +140,13 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
         [Test]
         public void PercentTrigger_RemovePieceEvent()
         {
-            var testEvent = new LevelEvents.Event[] { new LevelEvents.Event { EventType = "Remove", Trigger = "Percent", TriggerOn = "r-30", PositionsSelected = new string[] { "1:2", "2:3", "3:4", "4:5" } } };
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Percent", TriggerOn="r-30", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "Remove", PositionsSelected = new string[] { "1:2", "2:3", "3:4", "4:5" } } } } };
 
             var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
 
             var eventType = sut.RageEvents[0] as PiecePercentEventTrigger;
-            var rage = sut.RageEvents[0].EnemyRage as RemovePieceEvent;
+            var rage = sut.RageEvents[0].EnemyRage[0] as RemovePieceEvent;
 
             Assert.NotNull(eventType);
             Assert.NotNull(rage);
