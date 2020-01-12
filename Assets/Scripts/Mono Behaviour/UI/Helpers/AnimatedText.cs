@@ -1,11 +1,14 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
+    public delegate void TextHidden(AnimatedText animatedText);
+
     public class AnimatedText : MonoBehaviour
-    {      
+    {
+        public event TextHidden TextHidden;
+
         public void Show(string text)
         {
             Show(text, Color.white);
@@ -24,7 +27,8 @@ namespace Assets.Scripts
         public void HideText()
         {
             gameObject.SetActive(false);
-        }
-     
+
+            TextHidden?.Invoke(this);
+        }     
     }
 }

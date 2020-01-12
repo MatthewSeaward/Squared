@@ -5,10 +5,32 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
+    public delegate void ShowScoreHidden();
+
     public class ShowScore : MonoBehaviour
     {
-
         public static ShowScore Instance;
+
+        public static event ShowScoreHidden ShowScoreHidden;
+
+        private int _countOfScoreOnShow;
+
+        private int CountOfScoreOnShow
+        {
+            get
+            {
+                return _countOfScoreOnShow;
+            }
+            set
+            {
+                _countOfScoreOnShow = Mathf.Clamp(value, 0, int.MaxValue);
+
+                if (_countOfScoreOnShow == 0)
+                {
+                    ShowScoreHidden?.Invoke();
+                }
+            }
+        }
 
         private void Awake()
         {
@@ -43,9 +65,19 @@ namespace Assets.Scripts
 
             gameObject.GetComponent<RectTransform>().SetParent(transform);
             gameObject.transform.localScale = new Vector3(1, 1, 1);
-            gameObject.transform.SetSiblingIndex(transform.childCount - 1);          
+            gameObject.transform.SetSiblingIndex(transform.childCount - 1);
 
-            gameObject.GetComponent<AnimatedText>().Show($"+{points}", colour);
+            var aniamtedText = gameObject.GetComponent<AnimatedText>();
+            aniamtedText.TextHidden += AniamtedText_TextHidden;
+            aniamtedText.Show($"+{points}", colour);
+
+            CountOfScoreOnShow--;
+        }
+
+        private void AniamtedText_TextHidden(AnimatedText animatedText)
+        {
+            animatedText.TextHidden -= AniamtedText_TextHidden;
+            CountOfScoreOnShow --;
         }
     }
 }

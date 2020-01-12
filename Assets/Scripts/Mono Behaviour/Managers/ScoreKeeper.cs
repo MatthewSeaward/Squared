@@ -23,11 +23,12 @@ public class ScoreKeeper : MonoBehaviour
     public static event BonusChanged BonusChanged;
     
     private bool scoresUpdated = false;
-
+    private GameResult currentResult;
     public IGameLimit GameLimit;
     private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
 
     private int _currentScore = 0;
+    private Action action;
 
     private int Target => LevelManager.Instance.SelectedLevel.Target;
     private bool ReachedTarget => CurrentScore >= Target;
@@ -108,6 +109,15 @@ public class ScoreKeeper : MonoBehaviour
         }
 
         scoresUpdated = true;
-        GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, result);
+        currentResult = result;
+
+        ShowScore.ShowScoreHidden += InvokeGameCompleted;
+    }
+
+    private void InvokeGameCompleted()
+    {
+        ShowScore.ShowScoreHidden -= InvokeGameCompleted;
+
+        GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, currentResult);
     }
 }
