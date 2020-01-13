@@ -1,5 +1,5 @@
-﻿using Assets;
-using Assets.Scripts;
+﻿using Assets.Scripts;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Powerups;
 using Assets.Scripts.Workers.Score_and_Limits;
@@ -8,7 +8,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public enum GameResult { ReachedTarget, LimitExpired, ViolatedRestriction }
+public enum GameResult { None, ReachedTarget, LimitExpired, ViolatedRestriction }
 
 public delegate void PointsAwarded(int points, ISquarePiece[] sequence);
 public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result);
@@ -110,6 +110,7 @@ public class ScoreKeeper : MonoBehaviour
 
         scoresUpdated = true;
         currentResult = result;
+        GameManager.Instance.ChangePauseState(this, true);
 
         ShowScore.ShowScoreHidden += InvokeGameCompleted;
     }
@@ -118,6 +119,13 @@ public class ScoreKeeper : MonoBehaviour
     {
         ShowScore.ShowScoreHidden -= InvokeGameCompleted;
 
-        GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, currentResult);
+        GameManager.Instance.ChangePauseState(this, false);
+
+        if (currentResult != GameResult.None)
+        {
+            GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, currentResult);
+        }
+
+        currentResult = GameResult.None;
     }
 }
