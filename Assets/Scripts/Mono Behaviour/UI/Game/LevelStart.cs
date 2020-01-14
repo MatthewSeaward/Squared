@@ -27,12 +27,17 @@ namespace Assets.Scripts
 
         [SerializeField]
         private Image RestrictionImage;
+
+        [SerializeField]
+        private Button Play;
                
         public void OnEnable()
         {
             Level.text = "Level " + (LevelManager.Instance.CurrentLevel + 1).ToString();
             Target.text = LevelManager.Instance.SelectedLevel.Target.ToString();
             Limit.text = LevelManager.Instance.SelectedLevel.GetCurrentLimit().GetDescription();
+
+            Play.interactable = LivesManager.Instance.LivesRemaining > 0 || Debug.isDebugBuild;
 
             GetComponentInChildren<RestrictionInfo>().DisplayRestriction(LevelManager.Instance.SelectedLevel.GetCurrentRestriction());
             GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
