@@ -2,6 +2,8 @@
 using Assets.Scripts.Workers.Managers;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Assets.Scripts.Editor.Workers.Managers.Piece_Manager
 {
@@ -34,6 +36,33 @@ namespace Assets.Scripts.Editor.Workers.Managers.Piece_Manager
         public void TwoPiecesAbove()
         {
             Assert.AreEqual(2, PieceManager.Instance.GetPiecesAbove(0, 2).Length);
+        }
+
+        [Test]
+        public void GetPieceAbove_SlotDoesNotExist()
+        {
+            // Add the piece but not the slot.
+            PieceManager.Instance.Pieces.Add(TestHelpers.CreatePiece(1, 1));
+
+            Assert.AreEqual(0, PieceManager.Instance.GetPiecesAbove(1, 2).Length);
+        }
+
+        [Test]
+        public void NegativeYPosition()
+        {
+            // Add the piece but not the slot.
+            PieceManager.Instance.AddNewPiece(TestHelpers.CreatePiece(1, -1));
+
+            Assert.AreEqual(0, PieceManager.Instance.GetPiecesAbove(1, 2).Length);
+        }
+
+        [Test]
+        public void NegativeXPosition()
+        {
+            // Add the piece but not the slot.
+            PieceManager.Instance.AddNewPiece(TestHelpers.CreatePiece(-1, 1));
+
+            Assert.AreEqual(0, PieceManager.Instance.GetPiecesAbove(-1, 2).Length);
         }
     }
 }

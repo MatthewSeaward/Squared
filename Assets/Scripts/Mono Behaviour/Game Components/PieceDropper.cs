@@ -93,7 +93,7 @@ namespace Assets.Scripts
                 {
                     float worldPosX = PieceManager.Instance.XPositions[column];
 
-                    var piece = GridGenerator.GenerateRandomTile(worldPosX, 4, column, 0);
+                    var piece = GridGenerator.GenerateRandomTile(worldPosX, 4, column, -1);
                     piece.GetComponent<Collider2D>().enabled = false;
 
                     pieceQueue.Enqueue(piece);
@@ -147,8 +147,9 @@ namespace Assets.Scripts
                     var piece = GetPiece(column);
 
                     piece.GetComponent<Collider2D>().enabled = true;
-                    SquarePiece squarePiece = piece.GetComponent<SquarePiece>();
 
+                    var squarePiece = piece.GetComponent<SquarePiece>();
+                    squarePiece.Position = new Vector2Int(column, row);
 
                     if (!PieceManager.Instance.Pieces.Contains(squarePiece))
                     {
@@ -157,8 +158,6 @@ namespace Assets.Scripts
 
                     Lerp lerp = squarePiece.GetComponent<Lerp>();
                     lerp.Setup(new Vector3(worldPosX, worldPosY));
-
-                    squarePiece.Position = new Vector2Int(column, row);
 
                 }
                 catch (Exception ex)

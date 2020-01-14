@@ -196,7 +196,7 @@ namespace Assets.Scripts
             GameManager.Instance.ChangePauseState(this, false);
         }
 
-        private  void ClearSpeeches()
+        private void ClearSpeeches()
         {
             _queuedText.Clear();
             SpeechBubbleManager.Instance.Clear();

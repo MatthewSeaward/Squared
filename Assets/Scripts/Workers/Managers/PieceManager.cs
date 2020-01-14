@@ -131,7 +131,13 @@ namespace Assets.Scripts.Workers.Managers
 
         public ISquarePiece[] GetPiecesAbove(int x, int y)
         {
-            return Pieces.Where(p => p.Position.x == x && p.Position.y < y).ToArray();
+            return Pieces.Where(p => p.Position.x == x && ValidXPosition(p.Position.x)
+                                  && p.Position.y < y && ValidYPosition(p.Position.y)
+                                  && SlotExists(p.Position)).ToArray();
         }
+
+        private bool ValidXPosition(int x) => x >= 0 && x < NumberOfRows;
+
+        private bool ValidYPosition(int y) => y >= 0 && y < NumberOfColumns;    
     }
 }
