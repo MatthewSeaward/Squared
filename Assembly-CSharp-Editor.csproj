@@ -73,7 +73,9 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\BestMoveCount.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\BestMoveRestrictions.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\BestMoveScore.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\Helpers\BuildGridHelper.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\MoveCheckerTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Grid Management\PathFindingTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Helpers\Connection Helper\DiagonalTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Helpers\EnumHelperTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Helpers\Extensions\SpacedTests.cs" />
@@ -83,11 +85,17 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Level Info\NewLevelTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Lives\GainLivesTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Lives\LivesEArnedAfterTimeTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Game Manager\PauseState.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\CanPlayLevelTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\ChapterTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\CurrentStarsTest.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\GetNextLevelTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\SetLevelProgressTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\EmptySlotTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\GetPiecesAboveTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\HasSlotInColumnTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\SetupPieceManagerTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\SlotTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Behaviours\SwapSpriteBehaviourTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\MultipliedScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\SingleScoreTests.cs" />
@@ -100,7 +108,7 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\DiagonalConnectionRestrictionTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\MaxPieceLimit.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\MinPieceLimit.cs" />
-    <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\NoRestriction.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\NoRestrictionTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\OnlyDiagonalConnectionTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Restrictions\SwapEffectLimit.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Score Calculation\ScoreCalculationWithBonusMultiplier.cs" />

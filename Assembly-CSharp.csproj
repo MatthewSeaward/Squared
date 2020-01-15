@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\HeartDisplay.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\LifeCountdown.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\ProgressBar.cs" />
+    <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\RestrictionInfo.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\StarPanel.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\SwipeButton.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\UpNextSlot.cs" />
@@ -176,11 +177,17 @@
     <Compile Include="Assets\Scripts\Workers\Factorys\Piece Builder\PieceTemplates\Swapping.cs" />
     <Compile Include="Assets\Scripts\Workers\Factorys\PieceBuilderDirector.cs" />
     <Compile Include="Assets\Scripts\Workers\Factorys\PowerupFactory.cs" />
+    <Compile Include="Assets\Scripts\Workers\Generic Interfaces\IHasSprite.cs" />
+    <Compile Include="Assets\Scripts\Workers\Generic Interfaces\IUpdateable.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\BasicGridGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Generation\Interfaces\IGridGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\AIHelpers.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\AStarNode.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\AStarPathFinder.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\BestMoveDepthSearch.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\BestMoveFinder.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\IBestMoveChecker.cs" />
+    <Compile Include="Assets\Scripts\Workers\Grid Management\IPathFinder.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\MoveChecker.cs" />
     <Compile Include="Assets\Scripts\Workers\Grid Management\MoveCheckerHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ConnectionHelper.cs" />
@@ -195,6 +202,8 @@
     <Compile Include="Assets\Scripts\Workers\Helpers\JsonHelper.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\ObjectPool.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\SquarePieceHelpers.cs" />
+    <Compile Include="Assets\Scripts\Workers\Helpers\Test Helpers\DummyActiveSquarePiece.cs" />
+    <Compile Include="Assets\Scripts\Workers\Helpers\Test Helpers\DummyInactiveSquarePiece.cs" />
     <Compile Include="Assets\Scripts\Workers\Helpers\TestHelpers.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\BarkLoader.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Bark Loader\IBarkLoader.cs" />
