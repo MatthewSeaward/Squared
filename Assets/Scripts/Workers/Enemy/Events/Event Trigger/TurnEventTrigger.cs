@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Core;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Workers.Core;
 
 namespace Assets.Scripts.Workers.Enemy.Events
 {
@@ -42,6 +43,11 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         public void CheckForEvent()
         {
+            if (GameManager.Instance.GameOver)
+            {
+                return;
+            }
+
             if (TurnRange.WithinRange(TurnsPassed++) && !CurrentlyPlayingTrigger && RageCanBeUsed)
             {
                 CurrentPercentage += PercentageIncrement;

@@ -111,6 +111,7 @@ public class ScoreKeeper : MonoBehaviour
         scoresUpdated = true;
         currentResult = result;
         GameManager.Instance.ChangePauseState(this, true);
+        GameManager.Instance.GameOver = true;
 
         ShowScore.ShowScoreHidden += InvokeGameCompleted;
     }

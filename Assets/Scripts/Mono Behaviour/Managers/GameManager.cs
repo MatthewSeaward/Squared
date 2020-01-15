@@ -33,7 +33,7 @@ namespace Assets.Scripts.Managers
             }
         }
 
-        public bool GameOver { get; private set; } = false;
+        public bool GameOver { get; set; } = false;
 
         public static GameManager Instance { get; private set; }
 
@@ -47,16 +47,9 @@ namespace Assets.Scripts.Managers
 
         void Start()
         {
-            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
-
             var currentLevel = LevelManager.Instance.GetNextLevel();
             Restriction = currentLevel.GetCurrentRestriction();
             GameLimit = currentLevel.GetCurrentLimit();
-        }
-
-        void OnDestroy()
-        {
-            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
         }
 
         public void ChangePauseState(object locker, bool pauseState)
@@ -80,11 +73,6 @@ namespace Assets.Scripts.Managers
                     GamePaused = false;
                 }
             }
-        }
-
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
-        {
-            GameOver = true;
         }
     }
 }
