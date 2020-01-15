@@ -22,6 +22,7 @@ namespace Assets.Scripts
         private float _loadingtime = 0;
         private int width = 0;
         private bool _alreadyLoading = false;
+        private bool _showStatusMessages => Debug.isDebugBuild;
 
         [SerializeField]
         private Text text;
@@ -100,8 +101,15 @@ namespace Assets.Scripts
 
         private void ReportStatus(string status)
         {
-            Debug.Log(status);
-            loadingDetails.text = status;
+            if (_showStatusMessages)
+            {
+                Debug.Log(status);
+                loadingDetails.text = status;
+            }
+            else
+            {
+                loadingDetails.text = string.Empty;
+            }
         }
 
         private void Update()
