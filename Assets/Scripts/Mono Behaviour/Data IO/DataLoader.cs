@@ -17,6 +17,9 @@ namespace Assets.Scripts
     class DataLoader : MonoBehaviour
     {
         private const float LoadConfigTimeout = 5f;
+        private const float LoadingTimeout = 20f;
+
+        private float _loadingtime = 0;
         private int width = 0;
         private bool _alreadyLoading = false;
 
@@ -26,16 +29,19 @@ namespace Assets.Scripts
         [SerializeField]
         private Text loadingDetails;
 
+        [SerializeField]
+        private Text checkInternet;
+
         public async void Start()
         {
+            checkInternet.text = string.Empty;
+
             StartCoroutine(LoadingText());
 
             LevelIO.Instance.Initialise(new FileLevelLoader(), new FireBaseLevelProgressReader(), new FireBaseLevelProgressWriter(), new LevelOrderLoader(), new JSONEventReader());
             
             await LoadData();     
         }
-
-        
 
         private async Task LoadData()
         {
@@ -96,7 +102,18 @@ namespace Assets.Scripts
         {
             Debug.Log(status);
             loadingDetails.text = status;
-        }  
+        }
+
+        private void Update()
+        {
+            _loadingtime += Time.deltaTime;
+
+            if (_loadingtime > LoadingTimeout)
+            {
+                _loadingtime = 0f;
+                checkInternet.text = "Taking too long? Check your internet connection";
+            }
+        }
 
         IEnumerator LoadSceneAsync()
         {
