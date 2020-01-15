@@ -356,7 +356,7 @@
 			],
 			"Star1": ["Turns", "8", "Max", "5"],
 			"Star2": ["Time", "30"],
-			"Star3": ["Turns", "8", "Type", "7"]
+			"Star3": ["Turns", "8", "Banned", "7"]
 		}
 	]
 }
