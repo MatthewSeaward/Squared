@@ -14,7 +14,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Collection
 
         public Sprite[] GetSprites()
         {
-            return new Sprite[] { GameResources.Sprites["Heart"] };
+            return new Sprite[] { GameResources.Sprites["New Credit"] };
         }
     }
 }

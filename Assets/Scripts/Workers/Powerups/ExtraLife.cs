@@ -9,11 +9,11 @@ namespace Assets.Scripts.Workers.Powerups
 {
     class ExtraLife : IPowerup, IUpdateable
     {
-        public Sprite Icon => GameResources.Sprites["Extra Life"];
+        public Sprite Icon => GameResources.Sprites["New Credit Powerup"];
 
-        public string Name => "Extra Life";
+        public string Name => "New Credit";
 
-        public string Description => "Sends down some extra life pieces that you can try and collect to restore some lives.";
+        public string Description => "Sends down some extra credit pieces that you can try and collect to restore some credits.";
 
         public bool Enabled => true;
 

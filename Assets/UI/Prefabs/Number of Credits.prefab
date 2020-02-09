@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6637512218808840093}
   - component: {fileID: 9017589109738582639}
   m_Layer: 5
-  m_Name: Number of Hearts
+  m_Name: Number of Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,9 +83,8 @@ GameObject:
   - component: {fileID: 3004634552474971736}
   - component: {fileID: 5187429843183441653}
   - component: {fileID: 319314872144786468}
-  - component: {fileID: 7814708456489152282}
   m_Layer: 5
-  m_Name: Heart
+  m_Name: Credit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +137,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8a6f7913434a2364cbaf2912c900aa9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8faea075f2583f34dbd74a248cb9cf2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -148,25 +147,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &7814708456489152282
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3776647286606494827}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ede1de7b5deba1145993616236f85277, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7398099142743637996
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Workers.Managers;
-using Assets.Scripts.Workers.IO.Data_Entities;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +7,8 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Components
 {
     class LifeCountdown : MonoBehaviour
     {
+        public static readonly Color depletedColour = new Color(1f, 1f, 1f, 0.4f);
+
         [SerializeField]
         private bool HideIfLivesFull = true;
 
@@ -41,7 +42,7 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Components
 
             countdown = GetComponentInChildren<Text>();
             var image = GetComponentInChildren<Image>();
-            image.overrideSprite = LivesManager.Instance.LivesRemaining == 0 ? GameResources.Sprites["heart broken"] : GameResources.Sprites["heart big"];
+            image.color = LivesManager.Instance.LivesRemaining == 0 ? depletedColour : Color.white;
         }
 
         private void Update()
@@ -65,12 +66,12 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Components
         {
             if (LivesManager.Instance.LivesRemaining == RemoteConfigHelper.GetMaxLives())
             {
-                countdown.text = "At maximum lives";
+                countdown.text = "At maximum credits";
             }
             else
             {
-                var livesLeft = LivesManager.Instance.LivesRemaining == 0 ? $"No lives remaining{Environment.NewLine}" : string.Empty;
-                countdown.text = $"{livesLeft}Next life in {remainingTime.Minutes} minute(s) and {remainingTime.Seconds} second(s).";
+                var livesLeft = LivesManager.Instance.LivesRemaining == 0 ? $"No credits remaining{Environment.NewLine}" : string.Empty;
+                countdown.text = $"{livesLeft}Next credit in {remainingTime.Minutes} minute(s) and {remainingTime.Seconds} second(s).";
             }
         }
 

@@ -32,15 +32,6 @@ namespace Assets.Scripts
             try
             {
                 UpdateText(newLives);
-
-                if (gained)
-                {
-                    animator.SetTrigger("Heart Gain");
-                }
-                else
-                {
-                    animator.SetTrigger("Heart Lose");
-                }
             }
             catch (System.Exception ex)
             {
