@@ -1,0 +1,34 @@
+{
+	
+		"LevelStart" : 
+		[
+			"Burn!",
+			"Firee!",
+			"Ablaze!"	
+		],
+		"ChallengeIncrease":
+		[
+			"Harder!",
+			"Tougher!",
+			"Stronger!",
+			"Better!"
+		],
+		"Anger":
+		[
+			"!!!",
+			"No!",
+			"What!"
+		],
+		"PlayerVictory":
+		[
+			"Beaten!",
+			"Lost!",
+			"Defeated!"
+		],
+		"PlayerDefeat":
+		[
+			"Again!",
+			"Rematch!"
+		]
+	}
+	
