@@ -5,7 +5,7 @@
 			"LevelNumber" : 1,
 			"Star1": 
 			[
-				"Draw a line between pieces of\r\nthe same colour to earn points.\r\nThe bigger the lines, the more points!",
+				"Draw a line between pieces of\r\nthe same colour to earn points.\r\nThe longer the lines, the more points!",
 				"Try and reach my target!"
 			],
 			"Star3": 

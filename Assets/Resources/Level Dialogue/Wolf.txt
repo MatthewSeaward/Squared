@@ -5,15 +5,14 @@
 			"LevelNumber" : 1,
 			"Star1": 
 			[
-				"I shall not be an\r\neasy opponent!",
-				"<Howl>"
+				"I shall not be an\r\neasy opponent!"
 			]
 		},		
 		{
 			"LevelNumber" : 2,
 			"Star1": 
 			[
-				"Some will\r\ndouble points!",
+				"Some will score\r\ndouble points!",
 				"Double!"
 			]
 		},	
