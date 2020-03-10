@@ -26,6 +26,10 @@ namespace Assets.Scripts.Editor.Workers.Grid_Management.Helpers
                     {
                         list.Add(BuildAnyConnectionPiece(x, y, piece));
                     }
+                    else if (piece == "f")
+                    {
+                        list.Add(BuildFadeConnectionPiece(x, y, piece));
+                    }
                     else
                     {
                         list.Add(BuildPiece(x, y, piece));
@@ -55,6 +59,17 @@ namespace Assets.Scripts.Editor.Workers.Grid_Management.Helpers
             piece.Sprite = GetSprite(sprite);
             piece.PieceColour = SquarePiece.Colour.None;
             piece.PieceConnection = new AnyAdjancentConnection();
+            piece.Scoring = new SingleScore();
+            return piece;
+        }
+
+        private static ISquarePiece BuildFadeConnectionPiece(int x, int y, string sprite)
+        {
+            var piece = CreatePiece();
+            piece.Position = new Vector2Int(x, y);
+            piece.Sprite = GetSprite("1");
+            piece.PieceColour = SquarePiece.Colour.Orange;
+            piece.PieceConnection = new TwoSpriteConnection(SquarePiece.Colour.Yellow);
             piece.Scoring = new SingleScore();
             return piece;
         }

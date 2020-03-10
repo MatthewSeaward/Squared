@@ -12,7 +12,7 @@ namespace Assets.Scripts.Workers.Grid_Management
                 return false;
             }
 
-            return piece.PieceConnection.ConnectionValid(piece, nextPiece);
+            return piece.PieceConnection.ConnectionValid(piece, nextPiece) || nextPiece.PieceConnection.ConnectionValid(nextPiece, piece);
         }
     }
 }

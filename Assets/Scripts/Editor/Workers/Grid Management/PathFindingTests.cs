@@ -189,6 +189,42 @@ namespace Assets.Scripts.Editor.Workers.Grid_Management
             Assert.AreEqual(4, path.Count);
         }
 
+        [Test]
+        public void PathFinding_3x3_Rainbow()
+        {
+            var pieces = new string[]
+            {
+                "1982",
+                "1r72",
+                "5426"
+            };
+
+            BuildGrid(pieces);
+
+            var path = PathFinder.FindPath(new Vector2Int(0, 0), new Vector2Int(3, 0), new NoRestriction());
+
+            LogPath(path);
+            Assert.AreEqual(6, path.Count);
+        }
+
+        [Test]
+        public void PathFinding_3x3_Fade()
+        {
+            var pieces = new string[]
+            {
+                "1982",
+                "1f72",
+                "5426"
+            };
+
+            BuildGrid(pieces);
+
+            var path = PathFinder.FindPath(new Vector2Int(0, 0), new Vector2Int(3, 0), new NoRestriction());
+
+            LogPath(path);
+            Assert.AreEqual(6, path.Count);
+        }
+
         private void LogPath(List<Vector2Int> path)
         {
             Debug.Log(string.Join(", ", path.Select(x => x.x + ":" + x.y)));

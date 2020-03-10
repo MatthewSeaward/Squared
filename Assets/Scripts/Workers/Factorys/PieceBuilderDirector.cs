@@ -42,7 +42,8 @@ namespace Assets.Scripts.Workers.Factorys
             FourPoints = '4',
             Heart = 'H',
             Chest = 'c',
-            Change = 'C'
+            Change = 'C',
+            FadePiece = 'f'
         }
 
         private PieceBuilderDirector()
@@ -63,7 +64,7 @@ namespace Assets.Scripts.Workers.Factorys
             var squarePiece = piece.GetComponent<SquarePiece>();
             squarePiece.Type = type;
 
-            var pieceBuilder = GetPieceBuilder(type);
+            var pieceBuilder = GetPieceBuilder(type, squarePiece);
             pieceBuilder.initialsetup = initlalSetup;
             pieceBuilder.scoreValue = GetScoreValue(ref type);
             pieceBuilder.squarePiece = squarePiece;
@@ -72,7 +73,7 @@ namespace Assets.Scripts.Workers.Factorys
             return piece;
         }
 
-        private PieceBuilder GetPieceBuilder(PieceTypes type)
+        private PieceBuilder GetPieceBuilder(PieceTypes type, ISquarePiece squarePiece)
         {
             switch (type)
             {
@@ -93,6 +94,8 @@ namespace Assets.Scripts.Workers.Factorys
                     return new Rainbow();
                 case PieceTypes.Swapping:
                     return new Swapping();
+                case PieceTypes.FadePiece:
+                    return new FadePiece(squarePiece);
                 case PieceTypes.Normal:
                 case PieceTypes.Empty:
                 default:
