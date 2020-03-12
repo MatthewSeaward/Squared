@@ -109,6 +109,12 @@ namespace Assets.Scripts.Workers.Managers
 
         public Vector3 GetPosition(Vector2Int position)
         {
+            if (position.x > XPositions.Length  || position.x < 0 ||
+                position.y < YPositions.Length  || position.y < 0)
+            {
+                return Vector3.zero;
+            }
+
             return new Vector3(XPositions[position.x], YPositions[position.y]);
         }
 

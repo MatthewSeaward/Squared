@@ -6,6 +6,7 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using NUnit.Framework;
 using UnityEngine;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
+using static SquarePiece;
 
 namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
 {
@@ -67,6 +68,66 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
 
             Assert.AreEqual(3, rage.SelectionAmount);
             Assert.AreEqual(PieceTypes.Rainbow, rage.NewPieceType);
+            Assert.AreEqual(1, eventType.TurnRange.Min);
+            Assert.AreEqual(2, eventType.TurnRange.Max);
+        }
+
+        [Test]
+        public void TurnTrigger_ChangeColourEvent()
+        {
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "ChangeC",  NumberOfPiecesToSelect = 3, NewPieceType = "0", TypeOfPieceToSelect = "1" } } } };
+
+            var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
+
+            var eventType = sut.RageEvents[0] as TurnEventTrigger;
+            var rage = sut.RageEvents[0].EnemyRage[0] as ChangeColourEvent;
+
+            Assert.NotNull(eventType);
+            Assert.NotNull(rage);
+
+            Assert.AreEqual(3, rage.SelectionAmount);
+            Assert.AreEqual(Colour.Orange, rage.From);
+            Assert.AreEqual(Colour.Red, rage.To);
+            Assert.AreEqual(1, eventType.TurnRange.Min);
+            Assert.AreEqual(2, eventType.TurnRange.Max);
+        }
+
+        [Test]
+        public void TurnTrigger_AddColourEvent()
+        {
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "AddC",  NewPieceType = "0" } } } };
+
+            var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
+
+            var eventType = sut.RageEvents[0] as TurnEventTrigger;
+            var rage = sut.RageEvents[0].EnemyRage[0] as AddSpriteEvent;
+
+            Assert.NotNull(eventType);
+            Assert.NotNull(rage);
+
+            Assert.AreEqual(Colour.Red, rage.NewColour);
+            Assert.AreEqual(1, eventType.TurnRange.Min);
+            Assert.AreEqual(2, eventType.TurnRange.Max);
+        }
+
+
+        [Test]
+        public void TurnTrigger_RemoveColourEvent()
+        {
+            var testEvent = new LevelEvents.EventTrigger[] {
+                new LevelEvents.EventTrigger() { Trigger="Turns", TriggerOn="1-2", Events =  new LevelEvents.Event[] { new LevelEvents.Event() { EventType= "RemoveC",  NewPieceType = "0" } } } };
+
+            var sut = EnemyEventsFactory.GetLevelEvents(testEvent);
+
+            var eventType = sut.RageEvents[0] as TurnEventTrigger;
+            var rage = sut.RageEvents[0].EnemyRage[0] as RemoveSpriteEvent;
+
+            Assert.NotNull(eventType);
+            Assert.NotNull(rage);
+
+            Assert.AreEqual(Colour.Red, rage.ColourToRemove);
             Assert.AreEqual(1, eventType.TurnRange.Min);
             Assert.AreEqual(2, eventType.TurnRange.Max);
         }

@@ -4,6 +4,7 @@ using Assets.Scripts.Workers.Piece_Effects.Destruction;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -23,6 +24,15 @@ namespace Assets.Scripts
         private readonly int NumberToPrespawn = 1;
         private Dictionary<int, Queue<GameObject>> QueuedPieces = new Dictionary<int, Queue<GameObject>>();
         
+        public IEnumerable<ISquarePiece> Pieces
+        {
+            get
+            {
+                var allPieces = QueuedPieces.SelectMany(x => x.Value);
+                return allPieces.Select(x => (ISquarePiece) x.GetComponent<SquarePiece>());
+            }
+        }
+
         private GridGenerator GridGenerator
         {
             get

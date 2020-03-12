@@ -20,14 +20,10 @@ namespace Assets.Scripts.Workers.Helpers.Extensions
 
                 if (sb.Length > 0)
                 {
-
-
                     if ((isUpper && !lastWasUpper) || (isNumber && !lastWasNumber))
                     {
                         sb.Append(" ");
-                    }
-
-                    
+                    }                    
                 }
                 lastWasUpper = isUpper;
                 lastWasNumber = isNumber;

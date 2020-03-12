@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Managers;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Helpers
 {
@@ -20,6 +21,14 @@ namespace Assets.Scripts.Workers.Helpers
             PieceManager.Instance.Pieces.Add(newPiece.GetComponent<SquarePiece>());
 
             piece.gameObject.SetActive(false);
+        }
+
+        public static void ChangePieceColour(ISquarePiece piece, Colour newColour)
+        {
+            GameResources.PlayEffect("Piece Change", piece.transform.position);
+
+            piece.PieceColour = newColour;
+            piece.Sprite = GameResources.PieceSprites[((int)newColour).ToString()];
         }
     }
 }

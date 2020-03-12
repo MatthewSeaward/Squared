@@ -13,14 +13,14 @@ namespace Assets.Scripts.Workers.Factorys.Helpers
         public static (Sprite sprite, Colour colour) GetRandomSprite()
         {
             var permittedValues = new List<Colour>();
-            if (LevelManager.Instance?.SelectedLevel?.colours == null)
+            if (LevelManager.Instance?.SelectedLevel?.Colours == null)
             {
                 permittedValues.AddRange((Colour[])Enum.GetValues(typeof(Colour)));
                 permittedValues.Remove(Colour.None);
             }
             else
             {
-                permittedValues.AddRange((Colour[])LevelManager.Instance.SelectedLevel.colours.Clone());
+                permittedValues.AddRange((Colour[])LevelManager.Instance.SelectedLevel.Colours.ToArray());
 
                 if (UnityEngine.Random.Range(0, 100) < GameSettings.ChanceToUseBannedPiece)
                 {

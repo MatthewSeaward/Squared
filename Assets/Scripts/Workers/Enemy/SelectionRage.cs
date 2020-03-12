@@ -56,8 +56,11 @@ namespace Assets.Scripts.Workers.Enemy
 
             foreach (var position in selectedPositions)
             {
-                LightningBoltProducer.Instance.ProduceBolt(position, PieceManager.Instance.GetPosition(position));
-            }
+                var pos = PieceManager.Instance.GetPosition(position);
+                if (pos != Vector3.zero)
+                {
+                    LightningBoltProducer.Instance.ProduceBolt(position, pos);
+                }            }
         }
 
         protected abstract void InvokeRageAction();

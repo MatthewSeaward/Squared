@@ -1,4 +1,7 @@
-﻿using Assets.Scripts.Workers.IO.Data_Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Score_and_Limits;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using static SquarePiece;
@@ -9,15 +12,17 @@ namespace Assets.Scripts.Workers.Level_Info
     {
         public int LevelNumber;
         public int Target;
-        public Colour[] colours;
+        private readonly Colour[] _startingColours;
         public string[] Pattern;
         public string[] SpecialDropPieces;
         public int StarsToUnlock;
         public int StarAchieved;
-        
+
         public StarProgress Star1Progress = new StarProgress();
         public StarProgress Star2Progress = new StarProgress();
         public StarProgress Star3Progress = new StarProgress();
+
+        public List<Colour> Colours { get; set;} = new List<Colour>();
 
         public Level()
         {
@@ -28,7 +33,10 @@ namespace Assets.Scripts.Workers.Level_Info
         {
             this.LevelNumber = dataEntities.LevelNumber;
             this.Target = dataEntities.Target;
-            this.colours = dataEntities.colours;
+
+            _startingColours = dataEntities.colours;
+
+            this.Colours = dataEntities.colours.ToList();
             this.Pattern = dataEntities.Pattern;
             this.SpecialDropPieces = dataEntities.SpecialDropPieces;
             this.StarsToUnlock = dataEntities.StarsToUnlock;
@@ -72,6 +80,11 @@ namespace Assets.Scripts.Workers.Level_Info
             {
                 return -1;
             }
+        }
+
+        public void Reset()
+        {
+            Colours = _startingColours.ToList();
         }
     }
 }

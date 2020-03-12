@@ -7,6 +7,7 @@ using Assets.Scripts.Workers.Enemy.Piece_Selection_Validator;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using UnityEngine;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Factorys
 {
@@ -83,17 +84,23 @@ namespace Assets.Scripts.Workers.Factorys
             switch (e.EventType)
             { 
                 case "Destroy":
-                        return new DestroyRage() { SelectionAmount = e.NumberOfPiecesToSelect };
+                     return new DestroyRage() { SelectionAmount = e.NumberOfPiecesToSelect };
                 case "Swap":
-                        return new SwapRage() { SelectionAmount = e.NumberOfPiecesToSelect };
+                      return new SwapRage() { SelectionAmount = e.NumberOfPiecesToSelect };
                 case "Change":
-                        return new ChangeRandomPiece() { SelectionAmount = e.NumberOfPiecesToSelect, NewPieceType = e.GetNewPieceType() };
+                    return new ChangeRandomPiece() { SelectionAmount = e.NumberOfPiecesToSelect, NewPieceType = e.GetNewPieceType() };
                 case "ChangeS":
                     return new ChangeSpecificPiece(e.GetTypeOfPieceToSelect(), e.GetNewPieceType()) { SelectionAmount = e.NumberOfPiecesToSelect };
+                case "ChangeC":
+                    return new ChangeColourEvent((Colour)(Enum.Parse(typeof(Colour), e.TypeOfPieceToSelect)), (Colour)(Enum.Parse(typeof(Colour), e.NewPieceType))) { SelectionAmount = e.NumberOfPiecesToSelect };
                 case "Add":
                     return new AddPieceEvent(GetPositions(e.PositionsSelected), (PieceTypes) e.NewPieceType[0]);
                 case "Remove":
                     return new RemovePieceEvent(GetPositions(e.PositionsSelected));
+                case "AddC":
+                    return new AddSpriteEvent((Colour) (Enum.Parse(typeof(Colour), e.NewPieceType)));
+                case "RemoveC":
+                    return new RemoveSpriteEvent((Colour)(Enum.Parse(typeof(Colour), e.NewPieceType)));
                 default:
                     throw new ArgumentException($"Invalid EventType specified. EventType specified was {e.EventType}");
             }

@@ -119,7 +119,9 @@ namespace Assets.Scripts.Workers.Managers
             {
                 CurrentLevel = SelectedChapterLevels.Length - 1;
             }
-            return SelectedLevel = SelectedChapterLevels[CurrentLevel] ;
+            SelectedLevel = SelectedChapterLevels[CurrentLevel];
+            SelectedLevel.Reset();
+            return SelectedLevel;
         }
 
         public int GetStarAchievedOnLevel(int level)

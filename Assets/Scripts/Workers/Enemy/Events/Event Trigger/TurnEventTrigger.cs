@@ -43,7 +43,7 @@ namespace Assets.Scripts.Workers.Enemy.Events
 
         public void CheckForEvent()
         {
-            if (GameManager.Instance.GameOver)
+            if (GameManager.Instance != null && GameManager.Instance.GameOver)
             {
                 return;
             }

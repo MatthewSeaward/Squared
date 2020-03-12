@@ -39,7 +39,7 @@ namespace Assets.Scripts.Editor.Workers.Level_Info
 
             Assert.AreEqual(1, sut.LevelNumber);
             Assert.AreEqual(100, sut.Target);
-            CollectionAssert.AreEquivalent(colours, sut.colours);
+            CollectionAssert.AreEquivalent(colours, sut.Colours);
             CollectionAssert.AreEquivalent(pattern, sut.Pattern);
             CollectionAssert.AreEquivalent(dropPieces, sut.SpecialDropPieces);
             Assert.AreEqual(5, sut.StarsToUnlock);

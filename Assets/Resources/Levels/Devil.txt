@@ -3,97 +3,98 @@
 	[
 	{
 			"LevelNumber" : 1,
-			"Target": 70,
-			"colours":[1,2,0,4],
+			"Target": 150,
+			"colours":[1,2,0],
 			"StarsToUnlock": 0,
 			"Pattern":
 			[
+				"--------",		
 				"--------",
-				"-x-x-x-x",
-				"-x-x-x-x",
-				"x-f-x-f-",
-				"x-x-x-x-",
-				"-x-x-x-x",
-				"-f-x-f-x",
-				"x-x-x-x-",
-				"x-x-x-x-",
+				"--------",
+				"---xx---",
+				"--xxxx--",
+				"-xxxxxx-",
+				"--xxxx--",
+				"---xx---",
+				"--------",
 				"--------",
 				"--------"
 			],
 			"Star1": ["Turns", "12"],
-			"Star2": ["Turns", "7", "Time", "7"],
-			"Star3": ["Turns", "8", "Min", "4"]
+			"Star2": ["Turns", "10", "Time", "5"],
+			"Star3": ["Turns", "8", "Max", "5"]
 		},
 		{
 			"LevelNumber": 2,
-			"Target": 100,
-			"NumberOfTurns": 8,		
+			"Target": 85,
 			"StarsToUnlock": 1,
-			"colours":[0,5,6,7],
+			"SpecialDropPieces": ["2", "3", "4"],
+			"colours":[0,2,4,1],
 			"Pattern":
 			[
 				"--------",
 				"--------",
-				"--------",
-				"---xx---",
+				"xx-xx-xx",
+				"-xx--xx-",
+				"-xx--xx-",
 				"-xxxxxx-",
 				"-xxxxxx-",
 				"-xxxxxx-",
-				"---xx---",
 				"--------",
 				"--------",
 				"--------"
 			],
-			"Star1": ["Turns", "10"],
-			"Star2": ["Turns", "12", "Banned", "5"],
-			"Star3": ["Time", "20"]
+			"Star1": ["Turns", "10", "No Diagonal", ""],
+			"Star2": ["Turns", "15", "Banned", "0"],
+			"Star3": ["Time", "90", "No Diagonal", ""]
 		},
 		{
 			"LevelNumber": 3,
-			"Target": 200,
-			"colours":[0,5,6,7],
+			"Target": 100,
+			"colours":[0,1,2,4],
+			"SpecialDropPieces": ["2", "3", "d", "t"],
 			"StarsToUnlock": 1,
 			"Pattern":
 			[
+				"xxxd----",
+				"xxxx----",
+				"xxxx----",
 				"--------",
-				"--------",
-				"---xx---",
-				"--xxxx--",
-				"--xxxx--",
-				"--xxxx--",
-				"--xxxx--",
-				"--xxxx--",
-				"--x--x--",
-				"--------",
-				"--------"
+				"---xxxx-",
+				"---xdxx-",
+				"---xxxx-",
+        "--------",		
+        "dxxx----",
+				"xxxx----",
+				"xxxx----"
 			],
-			"Star1": ["Turns", "14"],
-			"Star2": ["Turns", "14", "Min", "4"],
-			"Star3": ["Turns", "18", "Only Diagonal", ""]
+			"Star1": ["Turns", "16"],
+			"Star2": ["Turns", "17", "Max", "4"],
+			"Star3": ["Turns", "17", "Type", "d"]
 		},
-		{
-			"LevelNumber": 4,
-			"Target": 110,
-			"colours":[2,5,6,7],
-			"StarsToUnlock": 3,
-			"Pattern":
-			[
-				"--------",
-				"--------",
-				"--------",
-				"-xxxxxx-",
-				"--xxxx--",
-				"-xxxxxx-",
-				"--xxxx--",
-				"-x2xxxx-",
-				"--------",
-				"--------",
-				"--------"
-			],
-			"Star1": ["Time", "40"],
-			"Star2": ["Turns", "8", "Time", "5"],
-			"Star3": ["Time", "35"]
-		},
+    {
+      "LevelNumber": 4,
+      "Target": 110,
+      "colours": [ 2, 4, 0, 1 ],
+      "SpecialDropPieces": [ "4", "2", "s", "d", "t" ],
+      "StarsToUnlock": 3,
+      "Pattern": [
+        "--------",
+        "-x-x-x-x",
+        "-x-x-x-x",
+        "x-f-x-f-",
+        "x-x-x-x-",
+        "-x-x-x-x",
+        "-f-x-f-x",
+        "x-x-x-x-",
+        "x-x-x-x-",
+        "--------",
+        "--------"
+      ],
+      "Star1": [ "Turns", "15" ],
+      "Star2": [ "Turns", "13", "Time", "5" ],
+      "Star3": [ "Time", "30" ]
+    },
 		{
 			"LevelNumber": 5,
 			"Target": 110,
