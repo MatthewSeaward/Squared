@@ -5,7 +5,7 @@ using NUnit.Framework;
 namespace Assets.Scripts.Editor.Workers.Events.Events.Validators
 {
     [Category("Events")]
-    class ColourSelectionValditorTests
+    class ColourSelectionValidatorTests
     {
         [Test]
         public void SameColours()
