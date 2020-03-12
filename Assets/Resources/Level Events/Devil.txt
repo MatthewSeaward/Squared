@@ -391,7 +391,7 @@
           ]
         },
         {
-          "Trigger": "Turns"
+          "Trigger": "Turns",
           "TriggerOn": "7-9",
           "Events": [
             {

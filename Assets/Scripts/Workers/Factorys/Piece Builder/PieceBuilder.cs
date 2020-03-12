@@ -51,6 +51,7 @@ namespace Assets.Scripts.Workers.Factorys
             ApplyTextLayer(ref displayText, squarePiece.PieceBehaviour as ITextLayer);
             ApplyTextLayer(ref displayText, squarePiece.DestroyPieceHandler as ITextLayer);
             ApplyTextLayer(ref displayText, squarePiece.Scoring as ITextLayer);
+            ApplyTextLayer(ref displayText, squarePiece.OnDestroy as ITextLayer);
 
             squarePiece.SetText(displayText);
         }
@@ -87,6 +88,8 @@ namespace Assets.Scripts.Workers.Factorys
             ApplyLayer(squarePiece.DestroyPieceHandler as ILayeredSprite);
             ApplyLayer(squarePiece.Scoring as ILayeredSprite);
             ApplyLayer(squarePiece.OnCollection as ILayeredSprite);
+            ApplyLayer(squarePiece.OnDestroy as ILayeredSprite);
+
         }
 
         private void ApplyLayer(ILayeredSprite layer)

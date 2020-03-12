@@ -43,7 +43,8 @@ namespace Assets.Scripts.Workers.Factorys
             Heart = 'H',
             Chest = 'c',
             Change = 'C',
-            FadePiece = 'f'
+            FadePiece = 'f',
+            Bomb = 'b'
         }
 
         private PieceBuilderDirector()
@@ -95,7 +96,9 @@ namespace Assets.Scripts.Workers.Factorys
                 case PieceTypes.Swapping:
                     return new Swapping();
                 case PieceTypes.FadePiece:
-                    return new FadePiece(squarePiece);
+                    return new FadePiece();
+                case PieceTypes.Bomb:
+                    return new Bomb();
                 case PieceTypes.Normal:
                 case PieceTypes.Empty:
                 default:

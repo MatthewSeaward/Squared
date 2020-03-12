@@ -1,13 +1,13 @@
 ﻿using Assets.Scripts.Workers.Factorys.Helpers;
-using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Destruction;
+using Assets.Scripts.Workers.Piece_Effects.On_Destroy;
 using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using UnityEngine;
 
 namespace Assets.Scripts.Workers.Factorys.PieceTemplates
 {
-    class FadePiece : PieceBuilder
+    class Bomb : PieceBuilder
     {
         protected override void BuildBehaviours()
         {
@@ -16,25 +16,12 @@ namespace Assets.Scripts.Workers.Factorys.PieceTemplates
 
         protected override void BuildConnection()
         {
-            var secondPiece = GetSprite();
-            while (secondPiece.sprite == squarePiece.Sprite)
-            {
-                secondPiece = GetSprite();
-            }
-
-            squarePiece.PieceConnection = new TwoSpriteConnection(secondPiece.colour);
+            squarePiece.PieceConnection = new StandardConnection();
         }
 
         protected override void BuildDestroyEffect()
         {
-            if (initialsetup)
-            {
-                squarePiece.DestroyPieceHandler = new LockedSwap(squarePiece);
-            }
-            else
-            {
-                squarePiece.DestroyPieceHandler = new DestroyTriggerFall(squarePiece);
-            }
+            squarePiece.DestroyPieceHandler = new DestroyTriggerFall(squarePiece);
         }
 
         protected override void BuildOnCollection()
@@ -44,7 +31,7 @@ namespace Assets.Scripts.Workers.Factorys.PieceTemplates
 
         protected override void BuildOnDestroy()
         {
-            squarePiece.OnDestroy = null;
+            squarePiece.OnDestroy = new Explosion(squarePiece);
         }
 
         protected override void BuildScoring()
