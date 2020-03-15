@@ -266,7 +266,7 @@ namespace Assets.Scripts
 
             CurrentPieces.AddLast(squarePiece);
 
-            if (CurrentPieces.Count == 1)
+            if (CurrentPieces.Count == 1 & checkForAdditional)
             {
                CheckForAdditionalPieces();
             }

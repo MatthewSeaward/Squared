@@ -19,7 +19,7 @@ namespace Assets.Scripts.Editor.Workers
         }
 
         [Test]
-        public void BestMove_4x4_Best8()
+        public void BestMove_4x4_Best8_ChanceOfTimeout()
         {
             var pieces = new string[]
             {
@@ -31,7 +31,17 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(8, BestMoverChecker.GetBestMove().Move.Count);
+
+            var result = BestMoverChecker.GetBestMove();
+            if (result.Result == SearchResult.TimeOut)
+            {
+                Assert.AreEqual(0, result.Move.Count);
+                Console.WriteLine("Search Timed out");
+            }
+            else
+            {
+                Assert.AreEqual(8, result.Move.Count);
+            }
         }
 
         [Test]

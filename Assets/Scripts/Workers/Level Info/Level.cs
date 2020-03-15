@@ -34,12 +34,12 @@ namespace Assets.Scripts.Workers.Level_Info
             this.LevelNumber = dataEntities.LevelNumber;
             this.Target = dataEntities.Target;
 
-            _startingColours = dataEntities.colours;
+            _startingColours = dataEntities?.colours ?? new Colour[0];
 
-            this.Colours = dataEntities.colours.ToList();
-            this.Pattern = dataEntities.Pattern;
-            this.SpecialDropPieces = dataEntities.SpecialDropPieces;
-            this.StarsToUnlock = dataEntities.StarsToUnlock;
+            this.Colours = dataEntities?.colours?.ToList() ?? new List<Colour>();
+            this.Pattern = dataEntities?.Pattern ?? new string[0];
+            this.SpecialDropPieces = dataEntities?.SpecialDropPieces ?? new string[0];
+            this.StarsToUnlock = dataEntities?.StarsToUnlock ?? 0;
         }
 
         public LevelDialogue DiaglogueItems { get; internal set; }
@@ -84,7 +84,7 @@ namespace Assets.Scripts.Workers.Level_Info
 
         public void Reset()
         {
-            Colours = _startingColours.ToList();
+            Colours = _startingColours?.ToList() ?? new List<Colour>();
         }
     }
 }

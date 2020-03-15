@@ -57,7 +57,7 @@ namespace Assets.Scripts.Editor.Workers.Managers.Piece_Manager
 
             PieceManager.Instance.Setup(pieces, xPos, yPos);
 
-            Assert.Throws<System.IndexOutOfRangeException>(() => PieceManager.Instance.GetPosition(new Vector2Int(3, 3)));
+            Assert.AreEqual(Vector3.zero, PieceManager.Instance.GetPosition(new Vector2Int(3, 3)));
         }
     }
 }

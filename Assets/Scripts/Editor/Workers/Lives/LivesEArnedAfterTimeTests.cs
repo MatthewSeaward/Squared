@@ -8,39 +8,39 @@ namespace Assets.Scripts.Editor.Workers.Lives
     class LivesEarnedAfterTimeTests
     {
         [Test]
-        public void FiveMinutesPast_NoLivesGained()
+        public void FourMinutesPast_NoLivesGained()
         {
             LivesManager.Instance.Reset();
 
-            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-5));
+            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-4));
             Assert.AreEqual(0, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
-        public void TenMinutesPast_OneLifeGained()
+        public void FourteenMinutesPast_TwoLiveeGained()
         {
             LivesManager.Instance.Reset();
 
-            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-10));
-            Assert.AreEqual(1, LivesManager.Instance.LivesRemaining);
+            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-14));
+            Assert.AreEqual(2, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
-        public void FifteenMinutesPast_OneLifeGained()
+        public void SeventeenMinutesPast_ThreeLiveGained()
         {
             LivesManager.Instance.Reset();
 
-            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-15));
-            Assert.AreEqual(1, LivesManager.Instance.LivesRemaining);
-        }
-
-        [Test]
-        public void ThirtyMinutesPast_ThreeLivesGained()
-        {
-            LivesManager.Instance.Reset();
-
-            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-30));
+            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-17));
             Assert.AreEqual(3, LivesManager.Instance.LivesRemaining);
+        }
+
+        [Test]
+        public void TwentyMinutesPast_FourLivesGained()
+        {
+            LivesManager.Instance.Reset();
+
+            LivesManager.Instance.WorkOutLivesEarned(DateTime.Now.AddMinutes(-20));
+            Assert.AreEqual(4, LivesManager.Instance.LivesRemaining);
         }
 
         [Test]
