@@ -1,5 +1,7 @@
 ﻿using Assets.Scripts.Workers.Grid_Management;
 using NUnit.Framework;
+using System;
+using UnityEngine;
 using static Assets.Scripts.Editor.Workers.Grid_Management.Helpers.BuildGridHelper;
 
 namespace Assets.Scripts.Editor.Workers
@@ -49,7 +51,7 @@ namespace Assets.Scripts.Editor.Workers
         }
 
         [Test]
-        public void BestMove_4X4_Best10()
+        public void BestMove_4X4_Best10_ExpectedTimeout()
         {
             var pieces = new string[]
             {
@@ -61,7 +63,16 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(10, BestMoverChecker.GetBestMove().Move.Count);
+            var result = BestMoverChecker.GetBestMove();
+            if (result.Result == SearchResult.TimeOut)
+            {
+                Assert.AreEqual(0, result.Move.Count);
+                Console.WriteLine("Search Timed out");
+            }
+            else
+            {
+                Assert.AreEqual(10, result.Move.Count);
+            }
         }
 
         [Test]
@@ -81,8 +92,8 @@ namespace Assets.Scripts.Editor.Workers
         }
 
         [Test]
-        public void BestMove_5X5_Best11()
-        {
+        public void BestMove_5X5_Best11_ExpectedTimeout()
+        {            
             var pieces = new string[]
             {
                 "02101",
@@ -94,7 +105,16 @@ namespace Assets.Scripts.Editor.Workers
 
             BuildGrid(pieces);
 
-            Assert.AreEqual(11, BestMoverChecker.GetBestMove().Move.Count);
+            var result = BestMoverChecker.GetBestMove();
+            if (result.Result == SearchResult.TimeOut)
+            {
+                Assert.AreEqual(0, result.Move.Count);
+                Console.WriteLine("Search Timed out");
+            }
+            else
+            {
+                Assert.AreEqual(11, result.Move.Count);
+            }
         }
 
         [Test]
