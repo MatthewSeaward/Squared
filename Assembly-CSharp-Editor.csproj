@@ -67,6 +67,10 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Events\DataEntities\EventsIO.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\Enemy Events Factory\EnemyEventFactoryResilenceTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\Enemy Events Factory\EnemyEventFactoryTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Events\Events\Validators\AllPiecesConnectionValidatorTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Events\Events\Validators\ColourSelectionValidatorTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Events\Events\Validators\SpecificPieceSelectionValidatorTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Events\Events\Validators\StandardPieceSelectionValdiatorTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\Triggers\PercentTriggerTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\Triggers\TurnEventTriggerTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Factorys\LevelStarFactoryTests.cs" />
@@ -99,7 +103,7 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Behaviours\SwapSpriteBehaviourTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\MultipliedScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\SingleScoreTests.cs" />
-    <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Swap Effects\LockedSwap.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Swap Effects\LockedSwapTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Powerups\PowerupsEarnedTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Limits\TimeLimitTest.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Score and Limits\Limits\TurnLimitTests.cs" />
