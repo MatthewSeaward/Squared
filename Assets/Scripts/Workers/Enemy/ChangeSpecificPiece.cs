@@ -7,7 +7,7 @@ namespace Assets.Scripts.Workers.Enemy
 {
     public class ChangeSpecificPiece : PieceSelectionRage
     {
-        protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = new SpecificPieceSelecitonValidator();
+        protected override PieceSelectionValidator pieceSelectionValidator { get; set; } = new SpecificPieceSelectionValidator();
         protected override IPieceSelection pieceSelection { get; set; } = new SpecificPieceSelection(false);
 
         public PieceTypes To { get; }
@@ -18,7 +18,7 @@ namespace Assets.Scripts.Workers.Enemy
             this.To = to;
             this.From = from;
 
-            (pieceSelectionValidator as SpecificPieceSelecitonValidator).specificPiece = from;
+            (pieceSelectionValidator as SpecificPieceSelectionValidator).specificPiece = from;
         }
       
         protected override void InvokeRageActionOnPiece(ISquarePiece piece)

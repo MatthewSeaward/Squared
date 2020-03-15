@@ -1,18 +1,19 @@
 ﻿using Assets.Scripts.Workers.Factorys;
 using Assets.Scripts.Workers.Piece_Effects.Destruction;
+using Assets.Scripts.Workers.Test_Mockers.Lerp;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 {
-    class StandardSelectionPieceValidator : PieceSelectionValidator
+    public class StandardSelectionPieceValidator : PieceSelectionValidator
     {
         public override bool ValidForSelection(ISquarePiece piece)
         {
-            if (piece == null || !piece.gameObject.activeInHierarchy)
+            if (piece == null || !piece.IsActive)
             {
                 return false;
             }
 
-            if (piece.gameObject.GetComponent<Lerp>() != null && piece.gameObject.GetComponent<Lerp>().LerpInProgress)
+            if (piece.gameObject.GetComponent<ILerp>() != null && piece.gameObject.GetComponent<ILerp>().LerpInProgress)
             {
                 return false;
             }

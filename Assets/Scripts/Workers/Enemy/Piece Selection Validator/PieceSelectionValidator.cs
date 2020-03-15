@@ -3,7 +3,5 @@
     public abstract class PieceSelectionValidator
     {
         public abstract bool ValidForSelection(ISquarePiece piece);
-
-
     }
 }

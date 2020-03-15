@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Workers.Test_Mockers.Lerp;
+using System.Collections;
 using UnityEngine;
 
 public delegate void LerpCompleted();
 
 namespace Assets.Scripts
 {
-    public class Lerp : MonoBehaviour
+    public class Lerp : MonoBehaviour, ILerp
     {
         private Vector3 _start;
         public Vector3 Target = new Vector3 (0, float.MaxValue);

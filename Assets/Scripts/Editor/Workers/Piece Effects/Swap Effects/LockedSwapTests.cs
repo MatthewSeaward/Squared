@@ -2,7 +2,7 @@
 using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
 [Category("Piece Effects")]
-public class LockedSwap
+public class LockedSwapTests
 {
     [Test]
     public void SwapPiece_SpriteDoesNotChange()

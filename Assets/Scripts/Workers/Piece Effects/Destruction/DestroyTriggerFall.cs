@@ -104,8 +104,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         {
             ToBeDestroyed = true;
 
-            var colour = _squarePiece.Sprite.texture.GetTextureColour();
-            GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position, colour);
+            if (_squarePiece.SpriteRenderer != null)
+            {
+                var colour = _squarePiece.Sprite.texture.GetTextureColour();
+                GameResources.PlayEffect("Piece Destroy", _squarePiece.transform.position, colour);
+            }
         }
     }
 }
