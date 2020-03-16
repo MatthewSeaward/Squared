@@ -102,6 +102,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public void NotifyOfDestroy()
         {
+            if (ToBeDestroyed)
+            {
+                return;
+            }
+
             ToBeDestroyed = true;
 
             if (_squarePiece.SpriteRenderer != null)

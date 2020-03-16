@@ -34,6 +34,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.On_Destroy
             var piece = PieceManager.Instance.GetPiece(squarePiece.Position.x + x, squarePiece.Position.y + y);
             if (piece != null)
             {
+                if (piece.DestroyPieceHandler.ToBeDestroyed)
+                {
+                    return;
+                }
+
                 piece.DestroyPiece();
             }
         }
