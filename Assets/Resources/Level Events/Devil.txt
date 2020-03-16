@@ -10,7 +10,6 @@
             {
               "EventType": "AddC",
               "NewPieceType": "4"
-
             },
             {
               "EventType": "ChangeC",
@@ -512,49 +511,38 @@
     },
     {
       "LevelNumber": 8,
-      "Star1": [
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "2-5",
-          "Events": [
-            {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "l"
-            }
-          ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "5-7",
-          "Events": [
-            {
-              "EventType": "Destroy",
-              "NumberOfPiecesToSelect": 4
-            }
-          ]
-        }
-      ],
       "Star3": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "2-4",
+          "TriggerOn": "5-10",
           "Events": [
             {
               "EventType": "Change",
-              "NumberOfPiecesToSelect": 1,
-              "NewPieceType": "l"
+              "NumberOfPiecesToSelect": 5,
+              "NewPieceType": "h"
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "6-8",
+          "TriggerOn": "11-16",
           "Events": [
             {
               "EventType": "Change",
-              "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "l"
+              "NumberOfPiecesToSelect": 5,
+              "NewPieceType": "h"
+            }
+          ]
+        },
+        {
+          "Trigger": "Percent",
+          "TriggerOn": "b-35",
+          "Events": [
+            {
+              "EventType": "ChangeS",
+              "NewPieceType": "x",
+              "TypeOfPieceToSelect": "b",
+              "NumberOfPiecesToSelect": 4
             }
           ]
         }
@@ -565,11 +553,31 @@
       "Star1": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "2-7",
+          "TriggerOn": "1-2",
           "Events": [
             {
               "EventType": "Destroy",
-              "NumberOfPiecesToSelect": 5
+              "NumberOfPiecesToSelect": 2
+            }
+          ]
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "3-4",
+          "Events": [
+            {
+              "EventType": "Swap",
+              "NumberOfPiecesToSelect": 2
+            }
+          ]
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "5-7",
+          "Events": [
+            {
+              "EventType": "Swap",
+              "NumberOfPiecesToSelect": 2
             }
           ]
         }
@@ -577,79 +585,50 @@
       "Star2": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "12-14",
-          "Events": [
-            {
-              "EventType": "Destroy",
-              "NumberOfPiecesToSelect": 5
-            }
-          ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "0-3",
+          "TriggerOn": "3-5",
           "Events": [
             {
               "EventType": "Add",
-              "NewPieceType": "x",
-              "PositionsSelected": [ "3:5", "4:5" ]
-            }
-          ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "3-6",
-          "Events": [
+              "NewPieceType": "r",
+              "PositionsSelected": [ "6:8" ]
+            },
             {
               "EventType": "Add",
-              "NewPieceType": "x",
-              "PositionsSelected": [ "1:5", "6:5" ]
+              "NewPieceType": "f",
+              "PositionsSelected": [ "5:3", "5:7" ]
             }
           ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "7-9",
-          "Events": [
-            {
-              "EventType": "Add",
-              "NewPieceType": "x",
-              "PositionsSelected": [ "0:5", "7:5" ]
-            }
-          ]
-        }
+        }        
       ],
       "Star3": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "0-3",
+          "TriggerOn": "1-1",
           "Events": [
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "3:5", "4:5" ]
+              "PositionsSelected": [ "0:7", "3:7", "4:7", "5:7", "2:6", "3:6", "2:5", "4:5", "5:5", "0:4", "1:4", "2:4", "4:4", "5:4", "6:4", "7:4" ]
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "4-5",
+          "TriggerOn": "3-3",
           "Events": [
             {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 4,
-              "NewPieceType": "l"
+              "EventType": "Remove",
+              "PositionsSelected": [ "5:9", "6:9", "7:9", "5:10", "6:10", "7:10", "4:2", "5:2", "6:2", "4:1", "5:1", "6:1" ]
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "5-8",
+          "TriggerOn": "3-3",
           "Events": [
             {
-              "EventType": "Add",
-              "NewPieceType": "x",
-              "PositionsSelected": [ "1:5", "6:5" ]
+              "EventType": "RemoveC",
+              "NewPieceType": "0"
             }
           ]
         }
@@ -660,58 +639,37 @@
       "Star1": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "4-7",
+          "TriggerOn": "4-10",
           "Events": [
             {
               "EventType": "Change",
               "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "h"
+              "NewPieceType": "b"
             }
           ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "7-10",
-          "Events": [
-            {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "h"
-            }
-          ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "11-15",
-          "Events": [
-            {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "h"
-            }
-          ]
-        }
+        }       
       ],
       "Star3": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "2-5",
+          "TriggerOn": "3-6",
           "Events": [
             {
-              "EventType": "Add",
-              "NewPieceType": "x",
-              "PositionsSelected": [ "3:2", "4:3", "3:4", "3:6", "4:7", "3:8" ]
+              "EventType": "ChangeS",
+              "NewPieceType": "d",
+              "TypeOfPieceToSelect": "x",
+              "NumberOfPiecesToSelect": 2
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "5-7",
+          "TriggerOn": "7-7",
           "Events": [
             {
               "EventType": "Change",
               "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "4"
+              "NewPieceType": "2"
             }
           ]
         },
@@ -720,10 +678,8 @@
           "TriggerOn": "8-10",
           "Events": [
             {
-              "EventType": "ChangeS",
-              "NewPieceType": "3",
-              "TypeOfPieceToSelect": "x",
-              "NumberOfPiecesToSelect": 5
+              "EventType": "Destroy",
+              "NumberOfPiecesToSelect": 3
             }
           ]
         }
@@ -734,23 +690,31 @@
       "Star1": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "2-8",
+          "TriggerOn": "3-8",
           "Events": [
             {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 4,
-              "NewPieceType": "h"
+              "EventType": "AddC",
+              "NewPieceType": "4"
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "15-21",
+          "TriggerOn": "10-13",
           "Events": [
             {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 4,
-              "NewPieceType": "h"
+              "EventType": "RemoveC",
+              "NewPieceType": "5"
+            }
+          ]
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "14-17",
+          "Events": [
+            {
+              "EventType": "RemoveC",
+              "NewPieceType": "0"
             }
           ]
         }
@@ -758,53 +722,35 @@
       "Star2": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "4-7",
+          "TriggerOn": "2-6",
           "Events": [
             {
               "EventType": "ChangeS",
-              "NumberOfPiecesToSelect": 1,
-              "TypeOfPieceToSelect": "l",
-              "NewPieceType": "x"
+              "NumberOfPiecesToSelect": 2,
+              "TypeOfPieceToSelect": "x",
+              "NewPieceType": "f"
+            },
+            {
+              "EventType": "ChangeS",
+              "NumberOfPiecesToSelect": 2,
+              "TypeOfPieceToSelect": "x",
+              "NewPieceType": "c"
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "9-12",
+          "TriggerOn": "10-12",
           "Events": [
             {
               "EventType": "Change",
-              "NewPieceType": "2",
-              "TypeOfPieceToSelect": "l",
-              "NumberOfPiecesToSelect": 2
-            }
-          ]
-        },
-        {
-          "Trigger": "Turns",
-          "TriggerOn": "15-18",
-          "Events": [
-            {
-              "EventType": "Destroy",
-              "NumberOfPiecesToSelect": 2
+              "NewPieceType": "b",
+              "TypeOfPieceToSelect": "x",
+              "NumberOfPiecesToSelect": 6
             }
           ]
         }
-      ],
-      "Star3": [
-        {
-          "Trigger": "Percent",
-          "TriggerOn": "h-35",
-          "Events": [
-            {
-              "EventType": "ChangeS",
-              "NewPieceType": "x",
-              "TypeOfPieceToSelect": "h",
-              "NumberOfPiecesToSelect": 4
-            }
-          ]
-        }
-      ]
+      ]     
     },
     {
       "LevelNumber": 12,
