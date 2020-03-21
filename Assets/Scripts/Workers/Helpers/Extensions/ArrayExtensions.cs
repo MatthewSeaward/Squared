@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Workers.Helpers.Extensions
+﻿using System.Collections.Generic;
+
+namespace Assets.Scripts.Workers.Helpers.Extensions
 {
     public static class ArrayExtensions
     {
@@ -17,6 +19,11 @@
         public static T RandomElement<T>(this T[] array)
         {
             return array[UnityEngine.Random.Range(0, array.Length)];
+        }
+
+        public static T RandomElement<T>(this List<T> array)
+        {
+            return array[UnityEngine.Random.Range(0, array.Count)];
         }
     }
 }
