@@ -130,6 +130,11 @@
             {
               "EventType": "RemoveC",
               "NewPieceType": "0"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "0",
+              "NewPieceType": "-1"
             }
           ]
         },
@@ -140,6 +145,11 @@
             {
               "EventType": "RemoveC",
               "NewPieceType": "1"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "1",
+              "NewPieceType": "-4"
             }
           ]
         }
@@ -203,7 +213,7 @@
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "17-20",
+          "TriggerOn": "14-14",
           "Events": [
             {
               "EventType": "ChangeS",
@@ -385,7 +395,7 @@
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "2:3", "3:3", "3:3", "4:3", "2:7", "3:7", "3:7", "4:7" ]
+              "PositionsSelected": [ "2:3", "3:3", "4:3", "5:3", "2:7", "3:7", "4:7", "5:7" ]
             }
           ]
         },
@@ -695,6 +705,12 @@
             {
               "EventType": "AddC",
               "NewPieceType": "4"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "-1",
+              "NewPieceType": "4",
+              "NumberOfPiecesToSelect": 5
             }
           ]
         },
@@ -703,7 +719,8 @@
           "TriggerOn": "10-13",
           "Events": [
             {
-              "EventType": "RemoveC",
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "-1",
               "NewPieceType": "5"
             }
           ]
@@ -715,6 +732,11 @@
             {
               "EventType": "RemoveC",
               "NewPieceType": "0"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "0",
+              "NewPieceType": "-1"
             }
           ]
         }
@@ -729,12 +751,6 @@
               "NumberOfPiecesToSelect": 2,
               "TypeOfPieceToSelect": "x",
               "NewPieceType": "f"
-            },
-            {
-              "EventType": "ChangeS",
-              "NumberOfPiecesToSelect": 2,
-              "TypeOfPieceToSelect": "x",
-              "NewPieceType": "c"
             }
           ]
         },
@@ -747,6 +763,12 @@
               "NewPieceType": "b",
               "TypeOfPieceToSelect": "x",
               "NumberOfPiecesToSelect": 6
+            },
+            {
+              "EventType": "ChangeS",
+              "NumberOfPiecesToSelect": 2,
+              "TypeOfPieceToSelect": "x",
+              "NewPieceType": "c"
             }
           ]
         }
@@ -762,7 +784,7 @@
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "2:3", "3:3", "4:3", "3:4", "2:7", "3:7", "4:7", "3:5" ]
+              "PositionsSelected": [ "2:3", "3:3", "4:3", "3:4", "2:7", "3:7", "4:7", "3:6" ]
             }
           ]
         }
@@ -775,7 +797,7 @@
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "4:6", "3:7", "4:7", "5:7", "4:4", "3:3", "4:3", "5:3" ]
+              "PositionsSelected": [ "2:5", "1:4", "1:5", "1:6", "4:5", "5:4", "5:5", "5:6" ]
             }
           ]
         }
@@ -788,6 +810,11 @@
             {
               "EventType": "RemoveC",
               "NewPieceType": "4"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "4",
+              "NewPieceType": "3"
             }
           ]
         }
@@ -887,12 +914,12 @@
             {
               "EventType": "Add",
               "NewPieceType": "r",
-              "PositionsSelected": [ "5:7" ]
+              "PositionsSelected": [ "5:8" ]
             },
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "4:7", "3:7", "5:8", "3:8", "4:8" ]
+              "PositionsSelected": [ "4:7", "3:7", "3:8", "4:8" ]
             }
           ]
         },
@@ -903,7 +930,7 @@
             {
               "EventType": "Change",
               "NewPieceType": "f",
-              "NumberOfPiecesToSelect": 23
+              "NumberOfPiecesToSelect": 4
             }
           ]
         }
@@ -967,7 +994,7 @@
             {
               "EventType": "ChangeS",
               "NewPieceType": "b",
-              "NumberOfPiecesToSelect": 6,
+              "NumberOfPiecesToSelect": 10,
               "TypeOfPieceToSelect": "x"
             }
           ]
