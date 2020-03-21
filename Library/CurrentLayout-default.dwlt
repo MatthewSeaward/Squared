@@ -62,9 +62,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 670
-    width: 1521
-    height: 277
+    y: 675
+    width: 1130
+    height: 272
   m_MinSize: {x: 232, y: 272}
   m_MaxSize: {x: 10002, y: 10022}
   m_ActualView: {fileID: 19}
@@ -88,10 +88,10 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 767
+    x: 570
     y: 0
-    width: 754
-    height: 670
+    width: 560
+    height: 675
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
@@ -187,10 +187,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 887, y: 494}
-  m_MaxSize: {x: 16012, y: 14044}
+  m_MinSize: {x: 885, y: 494}
+  m_MaxSize: {x: 16010, y: 14044}
   vertical: 0
-  controlID: 133
+  controlID: 58
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,12 +210,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1521
+    width: 1130
     height: 947
   m_MinSize: {x: 610, y: 494}
   m_MaxSize: {x: 12010, y: 14044}
   vertical: 1
-  controlID: 38
+  controlID: 59
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -236,12 +236,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1521
-    height: 670
+    width: 1130
+    height: 675
   m_MinSize: {x: 610, y: 222}
   m_MaxSize: {x: 12010, y: 4022}
   vertical: 0
-  controlID: 39
+  controlID: 60
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -259,10 +259,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 402
-    height: 670
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+    width: 287
+    height: 675
+  m_MinSize: {x: 202, y: 222}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -283,12 +283,12 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 402
+    x: 287
     y: 0
-    width: 365
-    height: 670
-  m_MinSize: {x: 204, y: 222}
-  m_MaxSize: {x: 4004, y: 4022}
+    width: 283
+    height: 675
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -310,9 +310,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1521
+    x: 1130
     y: 0
-    width: 399
+    width: 790
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
@@ -401,10 +401,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 767
+    x: 570
     y: 73
-    width: 752
-    height: 651
+    width: 558
+    height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_VSyncEnabled: 0
   m_MaximizeOnPlay: 0
@@ -438,25 +438,25 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 17
-      width: 752
-      height: 634
-    m_Scale: {x: 0.4953125, y: 0.4953125}
-    m_Translation: {x: 376, y: 317}
+      width: 558
+      height: 639
+    m_Scale: {x: 0.49921876, y: 0.49921876}
+    m_Translation: {x: 279, y: 319.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -759.1167
+      x: -558.8732
       y: -640
-      width: 1518.2334
+      width: 1117.7465
       height: 1280
     m_MinimalGUI: 1
-  m_defaultScale: 0.4953125
+  m_defaultScale: 0.49921876
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 752, y: 651}
+  m_LastWindowPixelSize: {x: 558, y: 656}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -484,29 +484,29 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 402
-    height: 651
+    width: 287
+    height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 06580000
+      m_SelectedIDs: 74890000
       m_LastClickedID: 0
-      m_ExpandedIDs: 569dffff1cfbffff
+      m_ExpandedIDs: 7474feff7c78fefffe90feff049bfefffee2feff12e4feff22e4feffbae4feff66ebfeff144afffff652ffffea8effff88b1ffff3ed4ffffb2deffff7cdfffffe4dfffff4ce0ffff9ee0ffff3ce1ffffa6e6ffff40e7ffffd8e7ffff16e8ffff5ce8ffff58e9ffffa2e9ffff4aeaffff90eaffffdaeaffff38f0ffff8ef0ffff3ef1ffffeaf1ffff1ef3ffff8cf3ffff2ef4ffff9cf4ffff3cf5ffffeaf5ffff96f6ffff6ef7ffffbcf7ffff68f8ffff0af9ffffb4f9ffff60faffff76fbffff906e0000ae6e0000b66f00000885000024860000bc860000f0860000cc8900007c8a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Text
+        m_OriginalName: Text
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 35804
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 11}
       m_SearchString: 
@@ -537,10 +537,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 402
+    x: 287
     y: 73
-    width: 363
-    height: 651
+    width: 281
+    height: 656
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 9fb366f125bd97e4ebd492a4f8190e6b
@@ -552,9 +552,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.4282094, y: 1.0609666, z: -0.39222366}
+    m_Target: {x: 260.58554, y: 758.9244, z: -33.530502}
     speed: 2
-    m_Value: {x: -1.4282094, y: 1.0609666, z: -0.39222366}
+    m_Value: {x: 260.58554, y: 758.9244, z: -33.530502}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -587,9 +587,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.201826
+    m_Target: 716.512
     speed: 2
-    m_Value: 3.201826
+    m_Value: 716.512
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -637,9 +637,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 743
-    width: 1521
-    height: 258
+    y: 748
+    width: 1130
+    height: 253
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -654,20 +654,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Particle Effects
+    - Assets/Resources/Graphics/Sprites/UI
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Resources/Particle Effects
+  - Assets/Resources/Graphics/Sprites/UI
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Development\Unity Projects\Squared
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 654}
-    m_SelectedIDs: da350000
-    m_LastClickedID: 13786
-    m_ExpandedIDs: 0000000008330000da330000d6340000da350000b83800004a390000863900008c390000c03a00008c3b0000a43b0000e43b0000683c0000443d0000063e0000e63e00000c3f0000024000003c4000005c400000644000006a400000be400000e24000005641000080420000b0440000b2440000b4440000b644000000ca9a3b
+    scrollPos: {x: 0, y: 563}
+    m_SelectedIDs: f4320000
+    m_LastClickedID: 13044
+    m_ExpandedIDs: 00000000ec320000c0330000bc340000c03500009e380000303900006c39000072390000a63a0000723b00008a3b0000ca3b00004e3c00002e3d0000f03d0000d03e0000f63e0000ec3f000026400000464000004e40000054400000a8400000cc400000404100006e420000a0440000a2440000a4440000a644000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -695,7 +695,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000008330000da330000d6340000da350000b83800004a390000863900008c390000c03a00008c3b0000a43b0000e43b0000683c0000443d0000063e0000e63e00000c3f0000024000003c4000005c400000644000006a400000be400000e24000005641000080420000b0440000b2440000b4440000b6440000
+    m_ExpandedIDs: 00000000ec320000c0330000bc340000c03500009e380000303900006c39000072390000a63a0000723b00008a3b0000ca3b00004e3c00002e3d0000f03d0000d03e0000f63e0000ec3f000026400000464000004e40000054400000a8400000cc400000404100006e420000a0440000a2440000a4440000a6440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -772,9 +772,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1521
+    x: 1130
     y: 73
-    width: 397
+    width: 788
     height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
@@ -808,9 +808,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 740
-    width: 1508
+    x: 0
+    y: 748
+    width: 1130
     height: 253
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &22
@@ -833,9 +833,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1521
+    x: 1190
     y: 73
-    width: 397
+    width: 728
     height: 928
   m_ViewDataDictionary: {fileID: 0}
   m_TestTypeToolbarIndex: 1
@@ -897,7 +897,7 @@ MonoBehaviour:
       name: Squared
       fullName: Squared
       resultStatus: 1
-      duration: 1.4610968
+      duration: 0.2973536
       messages: 
       output: 
       stacktrace: 
@@ -913,7 +913,7 @@ MonoBehaviour:
       name: Assembly-CSharp-Editor.dll
       fullName: D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
       resultStatus: 1
-      duration: 1.2811422
+      duration: 0.2220939
       messages: 
       output: 
       stacktrace: 
@@ -929,7 +929,7 @@ MonoBehaviour:
       name: Assets
       fullName: Assets
       resultStatus: 1
-      duration: 1.15946
+      duration: 0.3217674
       messages: 
       output: 
       stacktrace: 
@@ -945,7 +945,7 @@ MonoBehaviour:
       name: Scripts
       fullName: Assets.Scripts
       resultStatus: 1
-      duration: 1.0487258
+      duration: 0.2360989
       messages: 
       output: 
       stacktrace: 
@@ -961,7 +961,7 @@ MonoBehaviour:
       name: Editor
       fullName: Assets.Scripts.Editor
       resultStatus: 1
-      duration: 0.9671583
+      duration: 0.1670505
       messages: 
       output: 
       stacktrace: 
@@ -977,7 +977,7 @@ MonoBehaviour:
       name: Workers
       fullName: Assets.Scripts.Editor.Workers
       resultStatus: 1
-      duration: 0.9041786
+      duration: 0.1149308
       messages: 
       output: 
       stacktrace: 
@@ -992,9 +992,9 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
       name: BestMoveCount
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount
-      resultStatus: 2
-      duration: 8.813035
-      messages: One or more child tests had errors
+      resultStatus: 1
+      duration: 9.532593
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
       name: BestMove_2X2_AnyConnection_Best2
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_2X2_AnyConnection_Best2
       resultStatus: 1
-      duration: 0.0619636
+      duration: 0.266235
       messages: 
       output: "--Grid--\r\n12\r\nr3\r\n----\r\n(0, 0), (0, 1), (1, 0)\r\n"
       stacktrace: 
@@ -1027,7 +1027,7 @@ MonoBehaviour:
       name: BestMove_2X2_Best2
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_2X2_Best2
       resultStatus: 1
-      duration: 0.0262921
+      duration: 0.037179
       messages: 
       output: "--Grid--\r\n12\r\n13\r\n----\r\n(0, 0), (0, 1)\r\n"
       stacktrace: 
@@ -1044,7 +1044,7 @@ MonoBehaviour:
       name: BestMove_3X3_AnyConnection_Best6
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_AnyConnection_Best6
       resultStatus: 1
-      duration: 1.133573
+      duration: 1.3384613
       messages: 
       output: "--Grid--\r\n110\r\n2r3\r\n122\r\n----\r\n(0, 0), (1, 0), (1, 1), (2,
         2), (1, 2), (0, 1)\r\n"
@@ -1062,7 +1062,7 @@ MonoBehaviour:
       name: BestMove_3X3_Best3
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_Best3
       resultStatus: 1
-      duration: 0.1721487
+      duration: 0.196108
       messages: 
       output: "--Grid--\r\n121\r\n412\r\n131\r\n----\r\n(0, 0), (1, 1), (2, 0)\r\n"
       stacktrace: 
@@ -1079,7 +1079,7 @@ MonoBehaviour:
       name: BestMove_3X3_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_3X3_Best4
       resultStatus: 1
-      duration: 0.1181674
+      duration: 0.1578272
       messages: 
       output: "--Grid--\r\n120\r\n131\r\n413\r\n----\r\n(0, 0), (0, 1), (1, 2), (2,
         1)\r\n"
@@ -1092,31 +1092,29 @@ MonoBehaviour:
       - Grid Management
       parentId: 1083
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
-    - id: 1086
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10]
-      name: BestMove_4X4_Best10
-      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10
-      resultStatus: 2
-      duration: 2.0380652
-      messages: "  Expected: 10\r\n  But was:  0\r\n"
+    - id: 1091
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10_ExpectedTimeout]
+      name: BestMove_4X4_Best10_ExpectedTimeout
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10_ExpectedTimeout
+      resultStatus: 1
+      duration: 2.0307267
+      messages: 
       output: "--Grid--\r\n1111\r\n0010\r\n1100\r\n1110\r\n----\r\n"
-      stacktrace: "at Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best10
-        () [0x0002f] in D:\\Development\\Unity Projects\\Squared\\Assets\\Scripts\\Editor\\Workers\\Grid
-        Management\\BestMoveCount.cs:64\r\n"
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
       categories:
       - Grid Management
-      parentId: 1083
+      parentId: 1088
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
     - id: 1085
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best4]
       name: BestMove_4x4_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best4
       resultStatus: 1
-      duration: 0.543811
+      duration: 0.6574282
       messages: 
       output: "--Grid--\r\n1201\r\n1121\r\n0101\r\n2020\r\n----\r\n(0, 0), (1, 1),
         (1, 2), (0, 1)\r\n"
@@ -1134,7 +1132,7 @@ MonoBehaviour:
       name: BestMove_4X4_Best6
       fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4X4_Best6
       resultStatus: 1
-      duration: 0.6269641
+      duration: 0.7300921
       messages: 
       output: "--Grid--\r\n0201\r\n4110\r\n1041\r\n1130\r\n----\r\n(0, 3), (1, 3),
         (0, 2), (1, 1), (2, 1), (3, 0)\r\n"
@@ -1147,15 +1145,14 @@ MonoBehaviour:
       - Grid Management
       parentId: 1083
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
-    - id: 1084
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best8]
-      name: BestMove_4x4_Best8
-      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best8
+    - id: 1089
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best8_ChanceOfTimeout]
+      name: BestMove_4x4_Best8_ChanceOfTimeout
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_4x4_Best8_ChanceOfTimeout
       resultStatus: 1
-      duration: 2.007135
+      duration: 2.0466366
       messages: 
-      output: "--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----\r\n(0, 0), (1, 1),
-        (0, 1), (1, 2), (2, 3), (3, 2), (3, 1), (3, 0)\r\n"
+      output: "--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -1163,33 +1160,31 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Grid Management
-      parentId: 1083
+      parentId: 1088
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
-    - id: 1088
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11]
-      name: BestMove_5X5_Best11
-      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11
-      resultStatus: 2
-      duration: 2.0689445
-      messages: "  Expected: 11\r\n  But was:  0\r\n"
+    - id: 1093
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/BestMoveCount/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11_ExpectedTimeout]
+      name: BestMove_5X5_Best11_ExpectedTimeout
+      fullName: Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11_ExpectedTimeout
+      resultStatus: 1
+      duration: 2.0367434
+      messages: 
       output: "--Grid--\r\n02101\r\n01310\r\n11002\r\n10213\r\n11100\r\n----\r\n"
-      stacktrace: "at Assets.Scripts.Editor.Workers.BestMoveCount.BestMove_5X5_Best11
-        () [0x00037] in D:\\Development\\Unity Projects\\Squared\\Assets\\Scripts\\Editor\\Workers\\Grid
-        Management\\BestMoveCount.cs:97\r\n"
+      stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
       description: 
       isSuite: 0
       categories:
       - Grid Management
-      parentId: 1083
+      parentId: 1088
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveCount][suite]
     - id: 1094
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.BestMoveRestrictions][suite]
       name: BestMoveRestrictions
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions
       resultStatus: 1
-      duration: 2.976579
+      duration: 3.4965532
       messages: 
       output: 
       stacktrace: 
@@ -1206,7 +1201,7 @@ MonoBehaviour:
       name: BannedSprite1Restriction_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.BannedSprite1Restriction_Best4
       resultStatus: 1
-      duration: 0.1686845
+      duration: 0.2289426
       messages: 
       output: "--Grid--\r\n1-21\r\n112-\r\n-121\r\n--1-\r\n----\r\n(2, 0), (2, 1),
         (2, 2)\r\n"
@@ -1224,7 +1219,7 @@ MonoBehaviour:
       name: BannedSprite2Restriction_WithAnyConnection_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.BannedSprite2Restriction_WithAnyConnection_Best4
       resultStatus: 1
-      duration: 0.5761233
+      duration: 0.6741715
       messages: 
       output: "--Grid--\r\n1222\r\n11a2\r\n2222\r\n----\r\n----\r\n(0, 0), (0, 1),
         (1, 1), (2, 1)\r\n"
@@ -1242,7 +1237,7 @@ MonoBehaviour:
       name: DiagonalOnlyRestriction_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.DiagonalOnlyRestriction_Best4
       resultStatus: 1
-      duration: 0.1655669
+      duration: 0.1814691
       messages: 
       output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n(0, 1), (1, 2),
         (2, 3), (3, 2)\r\n"
@@ -1260,7 +1255,7 @@ MonoBehaviour:
       name: LockedPiecesRestriction_Best2
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.LockedPiecesRestriction_Best2
       resultStatus: 1
-      duration: 0.0411225
+      duration: 0.0431902
       messages: 
       output: "--Grid--\r\nL11L\r\n----\r\n(1, 0), (2, 0)\r\n"
       stacktrace: 
@@ -1277,7 +1272,7 @@ MonoBehaviour:
       name: MaxLimitRestriction_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.MaxLimitRestriction_Best4
       resultStatus: 1
-      duration: 0.5781389
+      duration: 0.7099225
       messages: 
       output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n(0, 0), (1, 1),
         (1, 2), (0, 1)\r\n"
@@ -1295,7 +1290,7 @@ MonoBehaviour:
       name: MinLimitRestriction_ShouldFindNone
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.MinLimitRestriction_ShouldFindNone
       resultStatus: 1
-      duration: 0.7607691
+      duration: 0.9727123
       messages: 
       output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n"
       stacktrace: 
@@ -1312,7 +1307,7 @@ MonoBehaviour:
       name: NoDiagonalRestriction_Best4
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.NoDiagonalRestriction_Best4
       resultStatus: 1
-      duration: 0.1413578
+      duration: 0.150505
       messages: 
       output: "--Grid--\r\n1--1\r\n11--\r\n-1-1\r\n--1-\r\n----\r\n(0, 0), (0, 1),
         (1, 1), (1, 2)\r\n"
@@ -1330,7 +1325,7 @@ MonoBehaviour:
       name: PieceTypeRestriction_Best5
       fullName: Assets.Scripts.Editor.Workers.BestMoveRestrictions.PieceTypeRestriction_Best5
       resultStatus: 1
-      duration: 0.5133761
+      duration: 0.5047992
       messages: 
       output: "--Grid--\r\n1--1\r\nr1--\r\n-1-1\r\n--1-\r\n----\r\n(0, 0), (1, 1),
         (1, 2), (2, 3), (3, 2)\r\n"
@@ -1348,7 +1343,7 @@ MonoBehaviour:
       name: BestMoveScore
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore
       resultStatus: 1
-      duration: 2.0554826
+      duration: 2.2817879
       messages: 
       output: 
       stacktrace: 
@@ -1365,7 +1360,7 @@ MonoBehaviour:
       name: BestScore_3x3_DoubleScore_Score6
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_DoubleScore_Score6
       resultStatus: 1
-      duration: 0.0993678
+      duration: 0.1122718
       messages: 
       output: "--Grid--\r\n2--\r\n1--\r\n-d-\r\n----\r\n(0, 0), (0, 1), (1, 2)\r\n"
       stacktrace: 
@@ -1382,7 +1377,7 @@ MonoBehaviour:
       name: BestScore_3x3_JustDoubles_Score0
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_JustDoubles_Score0
       resultStatus: 1
-      duration: 0.0951026
+      duration: 0.1080937
       messages: 
       output: "--Grid--\r\ndd-\r\n--d\r\n---\r\n----\r\n(0, 0), (1, 0), (2, 1)\r\n"
       stacktrace: 
@@ -1399,7 +1394,7 @@ MonoBehaviour:
       name: BestScore_3x3_Mixed_TwoOptionsOneLowScore_Score5
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_3x3_Mixed_TwoOptionsOneLowScore_Score5
       resultStatus: 1
-      duration: 0.1022091
+      duration: 0.133553
       messages: 
       output: "--Grid--\r\n111\r\n---\r\n33-\r\n----\r\n(0, 2), (1, 2)\r\n"
       stacktrace: 
@@ -1416,7 +1411,7 @@ MonoBehaviour:
       name: BestScore_4x4_DoubleDoubleScore_Score16
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_4x4_DoubleDoubleScore_Score16
       resultStatus: 1
-      duration: 0.6416623
+      duration: 0.7164662
       messages: 
       output: "--Grid--\r\n-21\r\n-1d\r\nd--\r\n---\r\n----\r\n(0, 2), (1, 1), (2,
         0), (2, 1), (1, 0)\r\n"
@@ -1434,7 +1429,7 @@ MonoBehaviour:
       name: BestScore_5x5_Mixed_ThreeOptionsOneLowScore_Score7
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_5x5_Mixed_ThreeOptionsOneLowScore_Score7
       resultStatus: 1
-      duration: 0.8402458
+      duration: 0.875851
       messages: 
       output: "--Grid--\r\n2-1--\r\n-3---\r\n----1\r\n13--1\r\n3--11-\r\n----\r\n(0,
         3), (0, 4), (1, 3)\r\n"
@@ -1452,7 +1447,7 @@ MonoBehaviour:
       name: BestScore_All1_Score3
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_All1_Score3
       resultStatus: 1
-      duration: 0.087768
+      duration: 0.1044258
       messages: 
       output: "--Grid--\r\n1--\r\n-1-\r\n1--\r\n----\r\n(0, 0), (1, 1), (0, 2)\r\n"
       stacktrace: 
@@ -1469,7 +1464,7 @@ MonoBehaviour:
       name: BestScore_Mixed_Score7
       fullName: Assets.Scripts.Editor.Workers.BestMoveScore.BestScore_Mixed_Score7
       resultStatus: 1
-      duration: 0.1648534
+      duration: 0.2082848
       messages: 
       output: "--Grid--\r\n12-\r\n-1-\r\n--3\r\n----\r\n(0, 0), (1, 0), (1, 1), (2,
         2)\r\n"
@@ -1486,8 +1481,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Core][suite]
       name: Core
       fullName: Assets.Scripts.Editor.Workers.Core
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.043693
       messages: 
       output: 
       stacktrace: 
@@ -1502,8 +1497,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests][suite]
       name: RangeTests
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.019215
       messages: 
       output: 
       stacktrace: 
@@ -1519,8 +1514,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.DefaultConstructor]
       name: DefaultConstructor
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.DefaultConstructor
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0025584
       messages: 
       output: 
       stacktrace: 
@@ -1536,8 +1531,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.Numeric_Constrcutor]
       name: Numeric_Constrcutor
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.Numeric_Constrcutor
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004579
       messages: 
       output: 
       stacktrace: 
@@ -1553,8 +1548,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.Numeric_Constrcutor_InverseOrder]
       name: Numeric_Constrcutor_InverseOrder
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.Numeric_Constrcutor_InverseOrder
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002573
       messages: 
       output: 
       stacktrace: 
@@ -1570,8 +1565,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor]
       name: String_Constrcutor
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005545
       messages: 
       output: 
       stacktrace: 
@@ -1587,8 +1582,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor_InvalidMaxValue]
       name: String_Constrcutor_InvalidMaxValue
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor_InvalidMaxValue
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0032352
       messages: 
       output: 
       stacktrace: 
@@ -1604,8 +1599,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor_InvalidMinValue]
       name: String_Constrcutor_InvalidMinValue
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor_InvalidMinValue
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004079
       messages: 
       output: 
       stacktrace: 
@@ -1621,8 +1616,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor_InvalidSeperator]
       name: String_Constrcutor_InvalidSeperator
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.String_Constrcutor_InvalidSeperator
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004644
       messages: 
       output: 
       stacktrace: 
@@ -1638,8 +1633,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.WithinRange_InRange]
       name: WithinRange_InRange
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.WithinRange_InRange
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006446
       messages: 
       output: 
       stacktrace: 
@@ -1655,8 +1650,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Core/RangeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Core.RangeTests.WithinRange_OutOfRange]
       name: WithinRange_OutOfRange
       fullName: Assets.Scripts.Editor.Workers.Core.RangeTests.WithinRange_OutOfRange
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003106
       messages: 
       output: 
       stacktrace: 
@@ -1673,7 +1668,7 @@ MonoBehaviour:
       name: Events
       fullName: Assets.Scripts.Editor.Workers.Events
       resultStatus: 1
-      duration: 0.2965613
+      duration: 0.4638278
       messages: 
       output: 
       stacktrace: 
@@ -1688,8 +1683,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.DataEntities][suite]
       name: DataEntities
       fullName: Assets.Scripts.Editor.Workers.Events.DataEntities
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0204014
       messages: 
       output: 
       stacktrace: 
@@ -1704,8 +1699,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/DataEntities/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.DataEntities.EventsIO][suite]
       name: EventsIO
       fullName: Assets.Scripts.Editor.Workers.Events.DataEntities.EventsIO
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0113507
       messages: 
       output: 
       stacktrace: 
@@ -1721,10 +1716,10 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/DataEntities/EventsIO/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.DataEntities.EventsIO.SimpleEvent_ToJSON_FromJSON]
       name: SimpleEvent_ToJSON_FromJSON
       fullName: Assets.Scripts.Editor.Workers.Events.DataEntities.EventsIO.SimpleEvent_ToJSON_FromJSON
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0043198
       messages: 
-      output: 
+      output: "{\"Items\":[{\"LevelNumber\":1,\"Star1\":[{\"Trigger\":\"Turns\",\"TriggerOn\":\"1-2\",\"Events\":[{\"EventType\":\"Destroy\",\"NewPieceType\":\"\",\"PositionsSelected\":[],\"NumberOfPiecesToSelect\":2,\"TypeOfPieceToSelect\":\"\"}]},{\"Trigger\":\"Turns\",\"TriggerOn\":\"3-4\",\"Events\":[{\"EventType\":\"Destroy\",\"NewPieceType\":\"\",\"PositionsSelected\":[],\"NumberOfPiecesToSelect\":2,\"TypeOfPieceToSelect\":\"\"}]}],\"Star2\":[{\"Trigger\":\"Turns\",\"TriggerOn\":\"2-5\",\"Events\":[{\"EventType\":\"Add\",\"NewPieceType\":\"x\",\"PositionsSelected\":[\"3:2\",\"2:4\",\"3:3\"],\"NumberOfPiecesToSelect\":0,\"TypeOfPieceToSelect\":\"\"},{\"EventType\":\"ChangeS\",\"NewPieceType\":\"2\",\"PositionsSelected\":[],\"NumberOfPiecesToSelect\":0,\"TypeOfPieceToSelect\":\"x\"}]}],\"Star3\":[]}]}\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -1738,8 +1733,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory][suite]
       name: Enemy_Events_Factory
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0974813
       messages: 
       output: 
       stacktrace: 
@@ -1754,8 +1749,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests][suite]
       name: EnemyEventFactoryResilenceTests
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0207312
       messages: 
       output: 
       stacktrace: 
@@ -1771,8 +1766,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.EmptyNewPieceType]
       name: EmptyNewPieceType
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.EmptyNewPieceType
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0031555
       messages: 
       output: 
       stacktrace: 
@@ -1788,8 +1783,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.EmptySelectPieceType]
       name: EmptySelectPieceType
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.EmptySelectPieceType
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0009148
       messages: 
       output: 
       stacktrace: 
@@ -1805,8 +1800,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidEventType]
       name: InvalidEventType
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidEventType
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004073
       messages: 
       output: 
       stacktrace: 
@@ -1822,8 +1817,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidNewPieceType]
       name: InvalidNewPieceType
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidNewPieceType
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004045
       messages: 
       output: 
       stacktrace: 
@@ -1839,8 +1834,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidSelectPieceType]
       name: InvalidSelectPieceType
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidSelectPieceType
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003973
       messages: 
       output: 
       stacktrace: 
@@ -1856,8 +1851,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTrigger]
       name: InvalidTrigger
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTrigger
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003584
       messages: 
       output: 
       stacktrace: 
@@ -1873,8 +1868,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_InvalidValues_Percent]
       name: InvalidTriggerOn_InvalidValues_Percent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_InvalidValues_Percent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.00101
       messages: 
       output: 
       stacktrace: 
@@ -1890,8 +1885,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_InvalidValues_Turns]
       name: InvalidTriggerOn_InvalidValues_Turns
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_InvalidValues_Turns
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005065
       messages: 
       output: 
       stacktrace: 
@@ -1907,8 +1902,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_NoDash_Percent]
       name: InvalidTriggerOn_NoDash_Percent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_NoDash_Percent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004995
       messages: 
       output: 
       stacktrace: 
@@ -1924,8 +1919,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryResilenceTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_NoDash_Turns]
       name: InvalidTriggerOn_NoDash_Turns
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryResilenceTests.InvalidTriggerOn_NoDash_Turns
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003765
       messages: 
       output: 
       stacktrace: 
@@ -1941,8 +1936,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests][suite]
       name: EnemyEventFactoryTests
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0390162
       messages: 
       output: 
       stacktrace: 
@@ -1958,8 +1953,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_AddEvent]
       name: PercentTrigger_AddEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_AddEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0022094
       messages: 
       output: 
       stacktrace: 
@@ -1975,8 +1970,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_ChangeSpecificPieceEvent]
       name: PercentTrigger_ChangeSpecificPieceEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_ChangeSpecificPieceEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006218
       messages: 
       output: 
       stacktrace: 
@@ -1992,8 +1987,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_DestroyEvent]
       name: PercentTrigger_DestroyEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_DestroyEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.000472
       messages: 
       output: 
       stacktrace: 
@@ -2009,8 +2004,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_RemovePieceEvent]
       name: PercentTrigger_RemovePieceEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.PercentTrigger_RemovePieceEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0007514
       messages: 
       output: 
       stacktrace: 
@@ -2026,8 +2021,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_AddColourEvent]
       name: TurnTrigger_AddColourEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_AddColourEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0013801
       messages: 
       output: 
       stacktrace: 
@@ -2043,8 +2038,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_ChangeColourEvent]
       name: TurnTrigger_ChangeColourEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_ChangeColourEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0008506
       messages: 
       output: 
       stacktrace: 
@@ -2060,8 +2055,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_ChangeEvent]
       name: TurnTrigger_ChangeEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_ChangeEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006158
       messages: 
       output: 
       stacktrace: 
@@ -2077,8 +2072,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_DestroyEvent]
       name: TurnTrigger_DestroyEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_DestroyEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004328
       messages: 
       output: 
       stacktrace: 
@@ -2094,8 +2089,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_RemoveColourEvent]
       name: TurnTrigger_RemoveColourEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_RemoveColourEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005365
       messages: 
       output: 
       stacktrace: 
@@ -2111,8 +2106,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Enemy_Events_Factory/EnemyEventFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_SwapEvent]
       name: TurnTrigger_SwapEvent
       fullName: Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory.EnemyEventFactoryTests.TurnTrigger_SwapEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004966
       messages: 
       output: 
       stacktrace: 
@@ -2128,8 +2123,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Events][suite]
       name: Events
       fullName: Assets.Scripts.Editor.Workers.Events.Events
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.1494202
       messages: 
       output: 
       stacktrace: 
@@ -2144,8 +2139,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/[Assets.Scripts.Editor.Workers.Events.Events.Validators][suite]
       name: Validators
       fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0941517
       messages: 
       output: 
       stacktrace: 
@@ -2157,11 +2152,113 @@ MonoBehaviour:
       parentId: 1331
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Events][suite]
     - id: 1275
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests][suite]
+      name: AllPiecesConnectionValidatorTests
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests
+      resultStatus: 1
+      duration: 0.0152916
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Events
+      parentId: 1336
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/[Assets.Scripts.Editor.Workers.Events.Events.Validators][suite]
+    - id: 1277
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/AllPiecesConnectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.InactivePiece]
+      name: InactivePiece
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.InactivePiece
+      resultStatus: 1
+      duration: 0.0008325
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1275
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests][suite]
+    - id: 1278
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/AllPiecesConnectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.LerpInProgress]
+      name: LerpInProgress
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.LerpInProgress
+      resultStatus: 1
+      duration: 0.0010542
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1275
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests][suite]
+    - id: 1276
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/AllPiecesConnectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.NullPiece]
+      name: NullPiece
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.NullPiece
+      resultStatus: 1
+      duration: 0.0002397
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1275
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests][suite]
+    - id: 1279
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/AllPiecesConnectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.ToBeDestroyed]
+      name: ToBeDestroyed
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.ToBeDestroyed
+      resultStatus: 1
+      duration: 0.0011759
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1275
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests][suite]
+    - id: 1280
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/AllPiecesConnectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.ValidSelection]
+      name: ValidSelection
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests.ValidSelection
+      resultStatus: 1
+      duration: 0.0006456
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1275
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.AllPiecesConnectionValidatorTests][suite]
+    - id: 1275
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests][suite]
       name: ColourSelectionValidatorTests
       fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0155264
       messages: 
       output: 
       stacktrace: 
@@ -2177,8 +2274,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/ColourSelectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests.DifferentColours]
       name: DifferentColours
       fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests.DifferentColours
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0007613
       messages: 
       output: 
       stacktrace: 
@@ -2194,8 +2291,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/ColourSelectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests.NoColourSets]
       name: NoColourSets
       fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests.NoColourSets
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004275
       messages: 
       output: 
       stacktrace: 
@@ -2211,8 +2308,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/ColourSelectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests.SameColours]
       name: SameColours
       fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests.SameColours
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0008196
       messages: 
       output: 
       stacktrace: 
@@ -2224,12 +2321,199 @@ MonoBehaviour:
       - Events
       parentId: 1275
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.ColourSelectionValidatorTests][suite]
+    - id: 1285
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests][suite]
+      name: SpecificPieceSelectionValidatorTests
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests
+      resultStatus: 1
+      duration: 0.0113331
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Events
+      parentId: 1341
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/[Assets.Scripts.Editor.Workers.Events.Events.Validators][suite]
+    - id: 1286
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/SpecificPieceSelectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests.CorrectType]
+      name: CorrectType
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests.CorrectType
+      resultStatus: 1
+      duration: 0.0006676
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1285
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests][suite]
+    - id: 1287
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/SpecificPieceSelectionValidatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests.IncorrectType]
+      name: IncorrectType
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests.IncorrectType
+      resultStatus: 1
+      duration: 0.0004393
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1285
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.SpecificPieceSelectionValidatorTests][suite]
+    - id: 1288
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+      name: StandardPieceSelectionValdiatorTests
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests
+      resultStatus: 1
+      duration: 0.0235075
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories:
+      - Events
+      parentId: 1349
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/[Assets.Scripts.Editor.Workers.Events.Events.Validators][suite]
+    - id: 1293
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.ChestPiece]
+      name: ChestPiece
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.ChestPiece
+      resultStatus: 1
+      duration: 0.0012213
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+    - id: 1290
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.InactivePiece]
+      name: InactivePiece
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.InactivePiece
+      resultStatus: 1
+      duration: 0.0004409
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+    - id: 1291
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.LerpInProgress]
+      name: LerpInProgress
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.LerpInProgress
+      resultStatus: 1
+      duration: 0.0006473
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+    - id: 1294
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.LockedSwap]
+      name: LockedSwap
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.LockedSwap
+      resultStatus: 1
+      duration: 0.0005618
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+    - id: 1289
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.NullPiece]
+      name: NullPiece
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.NullPiece
+      resultStatus: 1
+      duration: 0.0002483
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+    - id: 1292
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.ToBeDestroyed]
+      name: ToBeDestroyed
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.ToBeDestroyed
+      resultStatus: 1
+      duration: 0.0005219
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
+    - id: 1295
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/StandardPieceSelectionValdiatorTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.ValidSelection]
+      name: ValidSelection
+      fullName: Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests.ValidSelection
+      resultStatus: 1
+      duration: 0.0004882
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Events
+      parentId: 1288
+      parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/Events/Validators/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Events.Events.Validators.StandardPieceSelectionValdiatorTests][suite]
     - id: 1142
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Events/[Assets.Scripts.Editor.Workers.Events.Triggers][suite]
       name: Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers
       resultStatus: 1
-      duration: 0.2689022
+      duration: 0.0669408
       messages: 
       output: 
       stacktrace: 
@@ -2245,7 +2529,7 @@ MonoBehaviour:
       name: PercentTriggerTests
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests
       resultStatus: 1
-      duration: 0.2207934
+      duration: 0.0221014
       messages: 
       output: 
       stacktrace: 
@@ -2262,7 +2546,7 @@ MonoBehaviour:
       name: OnePiece_NoneMatching_0Percent_DoesNotTriggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.OnePiece_NoneMatching_0Percent_DoesNotTriggers
       resultStatus: 1
-      duration: 0.1838674
+      duration: 0.0021123
       messages: 
       output: 
       stacktrace: 
@@ -2279,7 +2563,7 @@ MonoBehaviour:
       name: OnePiece_OneMatching_100Percent_Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.OnePiece_OneMatching_100Percent_Triggers
       resultStatus: 1
-      duration: 0.0014614
+      duration: 0.0006845
       messages: 
       output: 
       stacktrace: 
@@ -2296,7 +2580,7 @@ MonoBehaviour:
       name: TenPieces_FiveMatching_30Percent_Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_FiveMatching_30Percent_Triggers
       resultStatus: 1
-      duration: 0.002115
+      duration: 0.0022589
       messages: 
       output: 
       stacktrace: 
@@ -2313,7 +2597,7 @@ MonoBehaviour:
       name: TenPieces_OneMatching_50Percent_DoesNotTriggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_OneMatching_50Percent_DoesNotTriggers
       resultStatus: 1
-      duration: 0.0024094
+      duration: 0.0028094
       messages: 
       output: 
       stacktrace: 
@@ -2330,7 +2614,7 @@ MonoBehaviour:
       name: TenPieces_ThreeMatching_30Percent_Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TenPieces_ThreeMatching_30Percent_Triggers
       resultStatus: 1
-      duration: 0.0022857
+      duration: 0.002378
       messages: 
       output: 
       stacktrace: 
@@ -2347,7 +2631,7 @@ MonoBehaviour:
       name: TwoPieces_OneMatching_100Percent_DoesNotTriggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TwoPieces_OneMatching_100Percent_DoesNotTriggers
       resultStatus: 1
-      duration: 0.0006907
+      duration: 0.0007074
       messages: 
       output: 
       stacktrace: 
@@ -2364,7 +2648,7 @@ MonoBehaviour:
       name: TwoPieces_OneMatching_50Percent_Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.PercentTriggerTests.TwoPieces_OneMatching_50Percent_Triggers
       resultStatus: 1
-      duration: 0.0006869
+      duration: 0.0007352
       messages: 
       output: 
       stacktrace: 
@@ -2381,7 +2665,7 @@ MonoBehaviour:
       name: TurnEventTriggerTests
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests
       resultStatus: 1
-      duration: 0.026972
+      duration: 0.0172037
       messages: 
       output: 
       stacktrace: 
@@ -2398,7 +2682,7 @@ MonoBehaviour:
       name: TriggersAfterFirstTurn_1TurnPasses_Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersAfterFirstTurn_1TurnPasses_Triggers
       resultStatus: 1
-      duration: 0.0011977
+      duration: 0.0010891
       messages: 
       output: 
       stacktrace: 
@@ -2415,7 +2699,7 @@ MonoBehaviour:
       name: TriggersAfterThirdtTurn_2TurnPasses_NotTriggered
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersAfterThirdtTurn_2TurnPasses_NotTriggered
       resultStatus: 1
-      duration: 0.0004158
+      duration: 0.0004001
       messages: 
       output: 
       stacktrace: 
@@ -2432,7 +2716,7 @@ MonoBehaviour:
       name: TriggersBetweenThirdAndFifthTurnTurn_5TurnPasses_Triggers
       fullName: Assets.Scripts.Editor.Workers.Events.Triggers.TurnEventTriggerTests.TriggersBetweenThirdAndFifthTurnTurn_5TurnPasses_Triggers
       resultStatus: 1
-      duration: 0.0002701
+      duration: 0.000322
       messages: 
       output: 
       stacktrace: 
@@ -2448,8 +2732,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Factorys][suite]
       name: Factorys
       fullName: Assets.Scripts.Editor.Workers.Factorys
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0778429
       messages: 
       output: 
       stacktrace: 
@@ -2464,8 +2748,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests][suite]
       name: LevelStarFactoryTests
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0389095
       messages: 
       output: 
       stacktrace: 
@@ -2481,8 +2765,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.CorrectStarNumber]
       name: CorrectStarNumber
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.CorrectStarNumber
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.000571
       messages: 
       output: 
       stacktrace: 
@@ -2498,8 +2782,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Events]
       name: Events
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Events
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003623
       messages: 
       output: 
       stacktrace: 
@@ -2515,8 +2799,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_EmptyData]
       name: Limit_EmptyData
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_EmptyData
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0008533
       messages: 
       output: 
       stacktrace: 
@@ -2532,8 +2816,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_NoData]
       name: Limit_NoData
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_NoData
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002757
       messages: 
       output: 
       stacktrace: 
@@ -2549,8 +2833,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_Time]
       name: Limit_Time
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_Time
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005334
       messages: 
       output: 
       stacktrace: 
@@ -2566,8 +2850,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_Turns]
       name: Limit_Turns
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Limit_Turns
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005075
       messages: 
       output: 
       stacktrace: 
@@ -2583,8 +2867,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_BannedLocked]
       name: Restriction_BannedLocked
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_BannedLocked
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003014
       messages: 
       output: 
       stacktrace: 
@@ -2600,8 +2884,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Bannned]
       name: Restriction_Bannned
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Bannned
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004633
       messages: 
       output: 
       stacktrace: 
@@ -2617,8 +2901,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Bannned_InvalidFormat]
       name: Restriction_Bannned_InvalidFormat
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Bannned_InvalidFormat
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0008337
       messages: 
       output: 
       stacktrace: 
@@ -2634,8 +2918,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_DiagonalOnly]
       name: Restriction_DiagonalOnly
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_DiagonalOnly
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006609
       messages: 
       output: 
       stacktrace: 
@@ -2651,8 +2935,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Invalid]
       name: Restriction_Invalid
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Invalid
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002953
       messages: 
       output: 
       stacktrace: 
@@ -2668,8 +2952,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Max]
       name: Restriction_Max
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Max
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004125
       messages: 
       output: 
       stacktrace: 
@@ -2685,8 +2969,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Max_InvalidFormat]
       name: Restriction_Max_InvalidFormat
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Max_InvalidFormat
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003713
       messages: 
       output: 
       stacktrace: 
@@ -2702,8 +2986,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Min]
       name: Restriction_Min
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Min
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003078
       messages: 
       output: 
       stacktrace: 
@@ -2719,8 +3003,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Min_InvalidFormat]
       name: Restriction_Min_InvalidFormat
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Min_InvalidFormat
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003339
       messages: 
       output: 
       stacktrace: 
@@ -2736,8 +3020,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_NoDiagonal]
       name: Restriction_NoDiagonal
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_NoDiagonal
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002579
       messages: 
       output: 
       stacktrace: 
@@ -2753,8 +3037,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_NoValues]
       name: Restriction_NoValues
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_NoValues
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002493
       messages: 
       output: 
       stacktrace: 
@@ -2770,8 +3054,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_TurnTimeLimit]
       name: Restriction_TurnTimeLimit
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_TurnTimeLimit
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006159
       messages: 
       output: 
       stacktrace: 
@@ -2787,8 +3071,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_TurnTimeLimit_InvalidFormat]
       name: Restriction_TurnTimeLimit_InvalidFormat
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_TurnTimeLimit_InvalidFormat
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004214
       messages: 
       output: 
       stacktrace: 
@@ -2804,8 +3088,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Factorys/LevelStarFactoryTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Type]
       name: Restriction_Type
       fullName: Assets.Scripts.Editor.Workers.Factorys.LevelStarFactoryTests.Restriction_Type
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003073
       messages: 
       output: 
       stacktrace: 
@@ -2822,7 +3106,7 @@ MonoBehaviour:
       name: Grid_Management
       fullName: Assets.Scripts.Editor.Workers.Grid_Management
       resultStatus: 1
-      duration: 0.8738905
+      duration: 0.7419666
       messages: 
       output: 
       stacktrace: 
@@ -2838,7 +3122,7 @@ MonoBehaviour:
       name: PathFindingTests
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests
       resultStatus: 1
-      duration: 0.8519492
+      duration: 0.7140717
       messages: 
       output: 
       stacktrace: 
@@ -2855,7 +3139,7 @@ MonoBehaviour:
       name: PathFinding_3x3_DiagonalOnlyRestriction_NoPath
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_3x3_DiagonalOnlyRestriction_NoPath
       resultStatus: 1
-      duration: 0.2010728
+      duration: 0.0281264
       messages: 
       output: "--Grid--\r\n100\r\n100\r\n010\r\n----\r\n\r\n"
       stacktrace: 
@@ -2872,7 +3156,7 @@ MonoBehaviour:
       name: PathFinding_3x3_DiagonalOnlyRestriction_Path
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_3x3_DiagonalOnlyRestriction_Path
       resultStatus: 1
-      duration: 0.0240272
+      duration: 0.0234301
       messages: 
       output: "--Grid--\r\n100\r\n010\r\n001\r\n----\r\n0:0, 1:1, 2:2\r\n"
       stacktrace: 
@@ -2889,7 +3173,7 @@ MonoBehaviour:
       name: PathFinding_3x3_DiagonalRestriction_NoPath
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_3x3_DiagonalRestriction_NoPath
       resultStatus: 1
-      duration: 0.0264305
+      duration: 0.0295725
       messages: 
       output: "--Grid--\r\n100\r\n100\r\n010\r\n----\r\n\r\n"
       stacktrace: 
@@ -2906,7 +3190,7 @@ MonoBehaviour:
       name: PathFinding_3x3_DiagonalRestriction_Path
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_3x3_DiagonalRestriction_Path
       resultStatus: 1
-      duration: 0.023073
+      duration: 0.0254505
       messages: 
       output: "--Grid--\r\n100\r\n100\r\n110\r\n----\r\n0:0, 0:1, 0:2, 1:2\r\n"
       stacktrace: 
@@ -2923,7 +3207,7 @@ MonoBehaviour:
       name: PathFinding_3x3_Fade
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_3x3_Fade
       resultStatus: 1
-      duration: 0.0586069
+      duration: 0.0653351
       messages: 
       output: "--Grid--\r\n1982\r\n1f72\r\n5426\r\n----\r\n0:0, 0:1, 1:1, 2:2, 3:1,
         3:0\r\n"
@@ -2941,7 +3225,7 @@ MonoBehaviour:
       name: PathFinding_3x3_Rainbow
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_3x3_Rainbow
       resultStatus: 1
-      duration: 0.0756211
+      duration: 0.0828096
       messages: 
       output: "--Grid--\r\n1982\r\n1r72\r\n5426\r\n----\r\n0:0, 0:1, 1:1, 2:2, 3:1,
         3:0\r\n"
@@ -2959,7 +3243,7 @@ MonoBehaviour:
       name: PathFinding_4x4_InvalidRoute
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_4x4_InvalidRoute
       resultStatus: 1
-      duration: 0.1073864
+      duration: 0.116759
       messages: 
       output: "--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----\r\n\r\n"
       stacktrace: 
@@ -2976,7 +3260,7 @@ MonoBehaviour:
       name: PathFinding_4x4_LongRoute
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_4x4_LongRoute
       resultStatus: 1
-      duration: 0.0752375
+      duration: 0.0810684
       messages: 
       output: "--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----\r\n0:1, 1:1, 1:2,
         2:3, 3:2, 3:1, 3:0\r\n"
@@ -2994,7 +3278,7 @@ MonoBehaviour:
       name: PathFinding_4x4_ShortRoute
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_4x4_ShortRoute
       resultStatus: 1
-      duration: 0.0457858
+      duration: 0.0477708
       messages: 
       output: "--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----\r\n0:0, 0:1, 1:1,
         1:2\r\n"
@@ -3012,7 +3296,7 @@ MonoBehaviour:
       name: PathFinding_5x5_Route1
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_5x5_Route1
       resultStatus: 1
-      duration: 0.0866894
+      duration: 0.0865352
       messages: 
       output: "--Grid--\r\n01100\r\n00010\r\n01001\r\n10110\r\n10010\r\n----\r\n1:0,
         2:0, 3:1, 4:2, 3:3, 2:3\r\n"
@@ -3030,7 +3314,7 @@ MonoBehaviour:
       name: PathFinding_5x5_Route2
       fullName: Assets.Scripts.Editor.Workers.Grid_Management.PathFindingTests.PathFinding_5x5_Route2
       resultStatus: 1
-      duration: 0.0941912
+      duration: 0.1080599
       messages: 
       output: "--Grid--\r\n01100\r\n00010\r\n01001\r\n10110\r\n10010\r\n----\r\n3:4,
         3:3, 2:3, 1:2, 0:3, 0:4\r\n"
@@ -3047,8 +3331,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Helpers][suite]
       name: Helpers
       fullName: Assets.Scripts.Editor.Workers.Helpers
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0211932
       messages: 
       output: 
       stacktrace: 
@@ -3063,8 +3347,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Helpers/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Helpers.EnumHelperTests][suite]
       name: EnumHelperTests
       fullName: Assets.Scripts.Editor.Workers.Helpers.EnumHelperTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0045691
       messages: 
       output: 
       stacktrace: 
@@ -3080,8 +3364,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Helpers/EnumHelperTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Helpers.EnumHelperTests.InvalidValue]
       name: InvalidValue
       fullName: Assets.Scripts.Editor.Workers.Helpers.EnumHelperTests.InvalidValue
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005964
       messages: 
       output: 
       stacktrace: 
@@ -3097,8 +3381,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Helpers/EnumHelperTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Helpers.EnumHelperTests.ValidValue]
       name: ValidValue
       fullName: Assets.Scripts.Editor.Workers.Helpers.EnumHelperTests.ValidValue
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002465
       messages: 
       output: 
       stacktrace: 
@@ -3114,8 +3398,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.IO][suite]
       name: IO
       fullName: Assets.Scripts.Editor.Workers.IO
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.034349
       messages: 
       output: 
       stacktrace: 
@@ -3130,8 +3414,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/[Assets.Scripts.Editor.Workers.IO.Level_IO][suite]
       name: Level_IO
       fullName: Assets.Scripts.Editor.Workers.IO.Level_IO
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0191615
       messages: 
       output: 
       stacktrace: 
@@ -3146,8 +3430,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation][suite]
       name: LevelIOInitialisation
       fullName: Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0110435
       messages: 
       output: 
       stacktrace: 
@@ -3163,8 +3447,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/LevelIOInitialisation/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.Initialised_CallMethod]
       name: Initialised_CallMethod
       fullName: Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.Initialised_CallMethod
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0027733
       messages: 
       output: 
       stacktrace: 
@@ -3180,8 +3464,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/IO/Level_IO/LevelIOInitialisation/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.NotInitialised_CallMethod_ExceptionThrown]
       name: NotInitialised_CallMethod_ExceptionThrown
       fullName: Assets.Scripts.Editor.Workers.IO.Level_IO.LevelIOInitialisation.NotInitialised_CallMethod_ExceptionThrown
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005187
       messages: 
       output: 
       stacktrace: 
@@ -3197,8 +3481,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Level_Info][suite]
       name: Level_Info
       fullName: Assets.Scripts.Editor.Workers.Level_Info
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0842531
       messages: 
       output: 
       stacktrace: 
@@ -3213,8 +3497,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests][suite]
       name: GetCurrentStarTests
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0094797
       messages: 
       output: 
       stacktrace: 
@@ -3230,8 +3514,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetCurrentStarTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.CompletedStar1_OnStar2]
       name: CompletedStar1_OnStar2
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.CompletedStar1_OnStar2
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005581
       messages: 
       output: 
       stacktrace: 
@@ -3247,8 +3531,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetCurrentStarTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.CompletedStar2_OnStar3]
       name: CompletedStar2_OnStar3
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.CompletedStar2_OnStar3
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002825
       messages: 
       output: 
       stacktrace: 
@@ -3264,8 +3548,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetCurrentStarTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.ExceededStarCount_OnStar3]
       name: ExceededStarCount_OnStar3
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.ExceededStarCount_OnStar3
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002741
       messages: 
       output: 
       stacktrace: 
@@ -3281,8 +3565,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetCurrentStarTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.NoProgress_Star1]
       name: NoProgress_Star1
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.NoProgress_Star1
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002793
       messages: 
       output: 
       stacktrace: 
@@ -3298,8 +3582,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetCurrentStarTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.UnderStarCount_OnStar1]
       name: UnderStarCount_OnStar1
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetCurrentStarTests.UnderStarCount_OnStar1
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002762
       messages: 
       output: 
       stacktrace: 
@@ -3315,8 +3599,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests][suite]
       name: GetRestrictionAndLimitTests
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0193126
       messages: 
       output: 
       stacktrace: 
@@ -3332,8 +3616,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetRestrictionAndLimitTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.GetBannedSprite_WithInvalidRestriction]
       name: GetBannedSprite_WithInvalidRestriction
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.GetBannedSprite_WithInvalidRestriction
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0007248
       messages: 
       output: 
       stacktrace: 
@@ -3349,8 +3633,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetRestrictionAndLimitTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.GetBannedSprite_WithValidRestriction]
       name: GetBannedSprite_WithValidRestriction
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.GetBannedSprite_WithValidRestriction
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003328
       messages: 
       output: 
       stacktrace: 
@@ -3366,8 +3650,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetRestrictionAndLimitTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Limit_Star1]
       name: Limit_Star1
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Limit_Star1
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003227
       messages: 
       output: 
       stacktrace: 
@@ -3383,8 +3667,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetRestrictionAndLimitTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Limit_Star3]
       name: Limit_Star3
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Limit_Star3
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003393
       messages: 
       output: 
       stacktrace: 
@@ -3400,8 +3684,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetRestrictionAndLimitTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Restriction_Star1]
       name: Restriction_Star1
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Restriction_Star1
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004394
       messages: 
       output: 
       stacktrace: 
@@ -3417,8 +3701,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/GetRestrictionAndLimitTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Restriction_Star3]
       name: Restriction_Star3
       fullName: Assets.Scripts.Editor.Workers.Level_Info.GetRestrictionAndLimitTests.Restriction_Star3
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0003565
       messages: 
       output: 
       stacktrace: 
@@ -3434,8 +3718,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests][suite]
       name: NewLevelTests
       fullName: Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0261927
       messages: 
       output: 
       stacktrace: 
@@ -3451,8 +3735,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/NewLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests.Complete_DataEntities]
       name: Complete_DataEntities
       fullName: Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests.Complete_DataEntities
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0034544
       messages: 
       output: 
       stacktrace: 
@@ -3468,8 +3752,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/NewLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests.DefaultConstructor]
       name: DefaultConstructor
       fullName: Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests.DefaultConstructor
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004554
       messages: 
       output: 
       stacktrace: 
@@ -3485,8 +3769,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Level_Info/NewLevelTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests.Empty_DataEntities]
       name: Empty_DataEntities
       fullName: Assets.Scripts.Editor.Workers.Level_Info.NewLevelTests.Empty_DataEntities
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004008
       messages: 
       output: 
       stacktrace: 
@@ -3503,7 +3787,7 @@ MonoBehaviour:
       name: Lives
       fullName: Assets.Scripts.Editor.Workers.Lives
       resultStatus: 1
-      duration: 0.0278539
+      duration: 0.0989402
       messages: 
       output: 
       stacktrace: 
@@ -3519,7 +3803,7 @@ MonoBehaviour:
       name: GainLivesTests
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests
       resultStatus: 1
-      duration: 0.0476173
+      duration: 0.0557315
       messages: 
       output: 
       stacktrace: 
@@ -3536,7 +3820,7 @@ MonoBehaviour:
       name: GainALife_CannotGoAbove_6
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_CannotGoAbove_6
       resultStatus: 1
-      duration: 0.0205579
+      duration: 0.0356336
       messages: 
       output: 
       stacktrace: 
@@ -3553,7 +3837,7 @@ MonoBehaviour:
       name: GainALife_EventThrown
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_EventThrown
       resultStatus: 1
-      duration: 0.0011839
+      duration: 0.0014482
       messages: 
       output: 
       stacktrace: 
@@ -3570,7 +3854,7 @@ MonoBehaviour:
       name: GainALife_NewLives_1
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.GainALife_NewLives_1
       resultStatus: 1
-      duration: 0.0003856
+      duration: 0.0007749
       messages: 
       output: 
       stacktrace: 
@@ -3587,7 +3871,7 @@ MonoBehaviour:
       name: LoseALife_At0_NoEventThrown
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_At0_NoEventThrown
       resultStatus: 1
-      duration: 0.0008634
+      duration: 0.0008176
       messages: 
       output: 
       stacktrace: 
@@ -3604,7 +3888,7 @@ MonoBehaviour:
       name: LoseALife_CannotGoBelow_0
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_CannotGoBelow_0
       resultStatus: 1
-      duration: 0.0004944
+      duration: 0.0003494
       messages: 
       output: 
       stacktrace: 
@@ -3621,7 +3905,7 @@ MonoBehaviour:
       name: LoseALife_EventThrown
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_EventThrown
       resultStatus: 1
-      duration: 0.0011674
+      duration: 0.0013559
       messages: 
       output: 
       stacktrace: 
@@ -3638,7 +3922,7 @@ MonoBehaviour:
       name: LoseALife_NewLives_1
       fullName: Assets.Scripts.Editor.Workers.Lives.GainLivesTests.LoseALife_NewLives_1
       resultStatus: 1
-      duration: 0.0006255
+      duration: 0.0006608
       messages: 
       output: 
       stacktrace: 
@@ -3655,7 +3939,7 @@ MonoBehaviour:
       name: LivesEarnedAfterTimeTests
       fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests
       resultStatus: 1
-      duration: 0.0153126
+      duration: 0.0831524
       messages: 
       output: 
       stacktrace: 
@@ -3667,12 +3951,12 @@ MonoBehaviour:
       - Lives
       parentId: 1155
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Lives][suite]
-    - id: 1139
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FifteenMinutesPast_OneLifeGained]
-      name: FifteenMinutesPast_OneLifeGained
-      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FifteenMinutesPast_OneLifeGained
+    - id: 1201
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FourMinutesPast_NoLivesGained]
+      name: FourMinutesPast_NoLivesGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FourMinutesPast_NoLivesGained
       resultStatus: 1
-      duration: 0.0008379
+      duration: 0.0462558
       messages: 
       output: 
       stacktrace: 
@@ -3682,14 +3966,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Lives
-      parentId: 1136
+      parentId: 1200
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
-    - id: 1137
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FiveMinutesPast_NoLivesGained]
-      name: FiveMinutesPast_NoLivesGained
-      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FiveMinutesPast_NoLivesGained
+    - id: 1202
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FourteenMinutesPast_TwoLiveeGained]
+      name: FourteenMinutesPast_TwoLiveeGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.FourteenMinutesPast_TwoLiveeGained
       resultStatus: 1
-      duration: 0.0005718
+      duration: 0.0041472
       messages: 
       output: 
       stacktrace: 
@@ -3699,14 +3983,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Lives
-      parentId: 1136
+      parentId: 1200
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
     - id: 1142
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NegativeTenMinutesPast_NoLivesGained]
       name: NegativeTenMinutesPast_NoLivesGained
       fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NegativeTenMinutesPast_NoLivesGained
       resultStatus: 1
-      duration: 0.0005304
+      duration: 0.000416
       messages: 
       output: 
       stacktrace: 
@@ -3723,7 +4007,7 @@ MonoBehaviour:
       name: NinetyMinutesPast_NineLivesGained_CapsAtSix
       fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.NinetyMinutesPast_NineLivesGained_CapsAtSix
       resultStatus: 1
-      duration: 0.0006118
+      duration: 0.0005669
       messages: 
       output: 
       stacktrace: 
@@ -3735,12 +4019,12 @@ MonoBehaviour:
       - Lives
       parentId: 1136
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
-    - id: 1137
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.TenMinutesPast_OneLifeGained]
-      name: TenMinutesPast_OneLifeGained
-      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.TenMinutesPast_OneLifeGained
+    - id: 1203
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.SeventeenMinutesPast_ThreeLiveGained]
+      name: SeventeenMinutesPast_ThreeLiveGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.SeventeenMinutesPast_ThreeLiveGained
       resultStatus: 1
-      duration: 0.0006015
+      duration: 0.0007214
       messages: 
       output: 
       stacktrace: 
@@ -3750,14 +4034,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Lives
-      parentId: 1136
+      parentId: 1200
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
-    - id: 1140
-      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.ThirtyMinutesPast_ThreeLivesGained]
-      name: ThirtyMinutesPast_ThreeLivesGained
-      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.ThirtyMinutesPast_ThreeLivesGained
+    - id: 1204
+      uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/LivesEarnedAfterTimeTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.TwentyMinutesPast_FourLivesGained]
+      name: TwentyMinutesPast_FourLivesGained
+      fullName: Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests.TwentyMinutesPast_FourLivesGained
       resultStatus: 1
-      duration: 0.0006468
+      duration: 0.0009364
       messages: 
       output: 
       stacktrace: 
@@ -3767,16 +4051,16 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Lives
-      parentId: 1136
+      parentId: 1200
       parentUniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Lives/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Lives.LivesEarnedAfterTimeTests][suite]
     - id: 1193
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/[Assets.Scripts.Editor.Workers.Managers][suite]
       name: Managers
       fullName: Assets.Scripts.Editor.Workers.Managers
       resultStatus: 1
-      duration: 0.2126048
+      duration: 0.4882974
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -3789,8 +4073,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/[Assets.Scripts.Editor.Workers.Managers.Game_Manager][suite]
       name: Game_Manager
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0372256
       messages: 
       output: 
       stacktrace: 
@@ -3805,10 +4089,11 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState][suite]
       name: PauseState
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0233407
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\nPersistence is not currently
+        supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -3822,8 +4107,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame]
       name: PauseGame
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0012518
       messages: 
       output: 
       stacktrace: 
@@ -3839,8 +4124,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_AlreadyPaused_NoEvent]
       name: PauseGame_AlreadyPaused_NoEvent
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_AlreadyPaused_NoEvent
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0008036
       messages: 
       output: 
       stacktrace: 
@@ -3856,8 +4141,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_EventRaised]
       name: PauseGame_EventRaised
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_EventRaised
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0007384
       messages: 
       output: 
       stacktrace: 
@@ -3873,8 +4158,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_OtherLockTryToUnPause]
       name: PauseGame_OtherLockTryToUnPause
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_OtherLockTryToUnPause
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006831
       messages: 
       output: 
       stacktrace: 
@@ -3890,8 +4175,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_ThenUnpause]
       name: PauseGame_ThenUnpause
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_ThenUnpause
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0006701
       messages: 
       output: 
       stacktrace: 
@@ -3907,8 +4192,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_TwoLockers_1]
       name: PauseGame_TwoLockers_1
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_TwoLockers_1
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005299
       messages: 
       output: 
       stacktrace: 
@@ -3924,8 +4209,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_TwoLockers_2]
       name: PauseGame_TwoLockers_2
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_TwoLockers_2
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004582
       messages: 
       output: 
       stacktrace: 
@@ -3941,8 +4226,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_TwoLockers_BothUnpause]
       name: PauseGame_TwoLockers_BothUnpause
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.PauseGame_TwoLockers_BothUnpause
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004209
       messages: 
       output: 
       stacktrace: 
@@ -3958,8 +4243,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Game_Manager/PauseState/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.UnpauseGame_EventRaised]
       name: UnpauseGame_EventRaised
       fullName: Assets.Scripts.Editor.Workers.Managers.Game_Manager.PauseState.UnpauseGame_EventRaised
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004965
       messages: 
       output: 
       stacktrace: 
@@ -3976,9 +4261,9 @@ MonoBehaviour:
       name: Level_Manager
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager
       resultStatus: 1
-      duration: 0.2146296
+      duration: 0.1483368
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -3992,9 +4277,9 @@ MonoBehaviour:
       name: CanPlayLevelTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests
       resultStatus: 1
-      duration: 0.0825219
+      duration: 0.0127683
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4009,7 +4294,7 @@ MonoBehaviour:
       name: CompletedLevelOne_NoLives
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.CompletedLevelOne_NoLives
       resultStatus: 1
-      duration: 0.042771
+      duration: 0.0019903
       messages: 
       output: 
       stacktrace: 
@@ -4026,7 +4311,7 @@ MonoBehaviour:
       name: CompletedLevelOne_OneLife
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.CompletedLevelOne_OneLife
       resultStatus: 1
-      duration: 0.0060238
+      duration: 0.0012752
       messages: 
       output: 
       stacktrace: 
@@ -4043,7 +4328,7 @@ MonoBehaviour:
       name: Default_NoCompletedLevels_NoLives
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.Default_NoCompletedLevels_NoLives
       resultStatus: 1
-      duration: 0.0005426
+      duration: 0.0003669
       messages: 
       output: 
       stacktrace: 
@@ -4060,7 +4345,7 @@ MonoBehaviour:
       name: NoCompletedLevels_OneLife
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CanPlayLevelTests.NoCompletedLevels_OneLife
       resultStatus: 1
-      duration: 0.0004359
+      duration: 0.0003158
       messages: 
       output: 
       stacktrace: 
@@ -4077,9 +4362,9 @@ MonoBehaviour:
       name: ChapterTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests
       resultStatus: 1
-      duration: 0.0288391
+      duration: 0.0331892
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4094,7 +4379,7 @@ MonoBehaviour:
       name: ChangeChapter_Next
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.ChangeChapter_Next
       resultStatus: 1
-      duration: 0.0039105
+      duration: 0.0009871
       messages: 
       output: 
       stacktrace: 
@@ -4111,7 +4396,7 @@ MonoBehaviour:
       name: ChangeChapter_Previous
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.ChangeChapter_Previous
       resultStatus: 1
-      duration: 0.000418
+      duration: 0.0004641
       messages: 
       output: 
       stacktrace: 
@@ -4128,7 +4413,7 @@ MonoBehaviour:
       name: IsNextChapter
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.IsNextChapter
       resultStatus: 1
-      duration: 0.0003329
+      duration: 0.000544
       messages: 
       output: 
       stacktrace: 
@@ -4145,7 +4430,7 @@ MonoBehaviour:
       name: IsPreviousChapter
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.IsPreviousChapter
       resultStatus: 1
-      duration: 0.0003129
+      duration: 0.0003297
       messages: 
       output: 
       stacktrace: 
@@ -4162,7 +4447,7 @@ MonoBehaviour:
       name: SetChapter_ToInvalid
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.SetChapter_ToInvalid
       resultStatus: 1
-      duration: 0.0002825
+      duration: 0.0002878
       messages: 
       output: 
       stacktrace: 
@@ -4179,7 +4464,7 @@ MonoBehaviour:
       name: SetChapter_ToValid
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.ChapterTests.SetChapter_ToValid
       resultStatus: 1
-      duration: 0.0002717
+      duration: 0.0002741
       messages: 
       output: 
       stacktrace: 
@@ -4196,7 +4481,7 @@ MonoBehaviour:
       name: CurrentStarsTest
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest
       resultStatus: 1
-      duration: 0.0185224
+      duration: 0.0193735
       messages: 
       output: "Persistence is not currently supported.\r\n"
       stacktrace: 
@@ -4213,7 +4498,7 @@ MonoBehaviour:
       name: Default_NoStars
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.Default_NoStars
       resultStatus: 1
-      duration: 0.0019054
+      duration: 0.0005332
       messages: 
       output: 
       stacktrace: 
@@ -4230,7 +4515,7 @@ MonoBehaviour:
       name: LevelsNoStars
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelsNoStars
       resultStatus: 1
-      duration: 0.000397
+      duration: 0.0005499
       messages: 
       output: 
       stacktrace: 
@@ -4247,7 +4532,7 @@ MonoBehaviour:
       name: LevelsWithStars
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.LevelsWithStars
       resultStatus: 1
-      duration: 0.0003168
+      duration: 0.000581
       messages: 
       output: 
       stacktrace: 
@@ -4264,7 +4549,7 @@ MonoBehaviour:
       name: NonNegative
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.CurrentStarsTest.NonNegative
       resultStatus: 1
-      duration: 0.0003062
+      duration: 0.0004936
       messages: 
       output: 
       stacktrace: 
@@ -4281,7 +4566,7 @@ MonoBehaviour:
       name: GetNextLevelTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests
       resultStatus: 1
-      duration: 0.0131259
+      duration: 0.0200124
       messages: 
       output: "Persistence is not currently supported.\r\n"
       stacktrace: 
@@ -4298,7 +4583,7 @@ MonoBehaviour:
       name: GetCurrentLevel
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetCurrentLevel
       resultStatus: 1
-      duration: 0.0006615
+      duration: 0.0007226
       messages: 
       output: 
       stacktrace: 
@@ -4315,7 +4600,7 @@ MonoBehaviour:
       name: GetFirstLevel
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetFirstLevel
       resultStatus: 1
-      duration: 0.0004583
+      duration: 0.0007223
       messages: 
       output: 
       stacktrace: 
@@ -4332,7 +4617,7 @@ MonoBehaviour:
       name: GetLevel_DoesNotExist
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.GetNextLevelTests.GetLevel_DoesNotExist
       resultStatus: 1
-      duration: 0.0003975
+      duration: 0.0005056
       messages: 
       output: 
       stacktrace: 
@@ -4349,7 +4634,7 @@ MonoBehaviour:
       name: SetLevelProgressTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests
       resultStatus: 1
-      duration: 0.0148075
+      duration: 0.0177931
       messages: 
       output: "Persistence is not currently supported.\r\n"
       stacktrace: 
@@ -4366,7 +4651,7 @@ MonoBehaviour:
       name: AddNullProgress
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddNullProgress
       resultStatus: 1
-      duration: 0.0016052
+      duration: 0.0012383
       messages: 
       output: 
       stacktrace: 
@@ -4383,7 +4668,7 @@ MonoBehaviour:
       name: AddProgressForInvalidChapter
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddProgressForInvalidChapter
       resultStatus: 1
-      duration: 0.0006356
+      duration: 0.0009857
       messages: 
       output: 
       stacktrace: 
@@ -4400,7 +4685,7 @@ MonoBehaviour:
       name: AddProgressForInvalidLevel
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.AddProgressForInvalidLevel
       resultStatus: 1
-      duration: 0.0004378
+      duration: 0.0005405
       messages: 
       output: 
       stacktrace: 
@@ -4417,7 +4702,7 @@ MonoBehaviour:
       name: SingleLevelProgress
       fullName: Assets.Scripts.Editor.Workers.Managers.Level_Manager.SetLevelProgressTests.SingleLevelProgress
       resultStatus: 1
-      duration: 0.000357
+      duration: 0.0003906
       messages: 
       output: 
       stacktrace: 
@@ -4434,9 +4719,9 @@ MonoBehaviour:
       name: Piece_Manager
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager
       resultStatus: 1
-      duration: 0.2046627
+      duration: 0.162115
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4449,10 +4734,10 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests][suite]
       name: EmptySlotTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0130258
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4466,8 +4751,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/EmptySlotTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.EmptySlot_PieceBelowLockedMissing]
       name: EmptySlot_PieceBelowLockedMissing
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.EmptySlot_PieceBelowLockedMissing
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0020629
       messages: 
       output: 
       stacktrace: 
@@ -4483,8 +4768,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/EmptySlotTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.EmptySlot_PieceInactive]
       name: EmptySlot_PieceInactive
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.EmptySlot_PieceInactive
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.000475
       messages: 
       output: 
       stacktrace: 
@@ -4500,8 +4785,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/EmptySlotTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.NotEmptySlot_ContainsLockedPiece]
       name: NotEmptySlot_ContainsLockedPiece
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.NotEmptySlot_ContainsLockedPiece
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0004136
       messages: 
       output: 
       stacktrace: 
@@ -4517,8 +4802,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/EmptySlotTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.NotEmptySlot_InvalidXY]
       name: NotEmptySlot_InvalidXY
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.NotEmptySlot_InvalidXY
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002761
       messages: 
       output: 
       stacktrace: 
@@ -4534,8 +4819,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/EmptySlotTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.NotEmptySlot_PieceExists]
       name: NotEmptySlot_PieceExists
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.EmptySlotTests.NotEmptySlot_PieceExists
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0002853
       messages: 
       output: 
       stacktrace: 
@@ -4551,10 +4836,10 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests][suite]
       name: GetPiecesAboveTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0273467
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4568,8 +4853,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/GetPiecesAboveTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.GetPieceAbove_SlotDoesNotExist]
       name: GetPieceAbove_SlotDoesNotExist
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.GetPieceAbove_SlotDoesNotExist
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0031639
       messages: 
       output: 
       stacktrace: 
@@ -4585,8 +4870,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/GetPiecesAboveTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.NegativeXPosition]
       name: NegativeXPosition
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.NegativeXPosition
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0015869
       messages: 
       output: 
       stacktrace: 
@@ -4602,8 +4887,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/GetPiecesAboveTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.NegativeYPosition]
       name: NegativeYPosition
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.NegativeYPosition
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.001168
       messages: 
       output: 
       stacktrace: 
@@ -4619,8 +4904,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/GetPiecesAboveTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.NoPiecesAbove]
       name: NoPiecesAbove
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.NoPiecesAbove
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0010555
       messages: 
       output: 
       stacktrace: 
@@ -4636,8 +4921,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/GetPiecesAboveTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.OnePieceAbove]
       name: OnePieceAbove
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.OnePieceAbove
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0011018
       messages: 
       output: 
       stacktrace: 
@@ -4653,8 +4938,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/GetPiecesAboveTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.TwoPiecesAbove]
       name: TwoPiecesAbove
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.GetPiecesAboveTests.TwoPiecesAbove
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.001195
       messages: 
       output: 
       stacktrace: 
@@ -4670,10 +4955,10 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.HasSlotInColumnTests][suite]
       name: HasSlotInColumnTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.HasSlotInColumnTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0169986
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4687,8 +4972,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/HasSlotInColumnTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.HasSlotInColumnTests.DoesNotHaveSlotInColumn]
       name: DoesNotHaveSlotInColumn
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.HasSlotInColumnTests.DoesNotHaveSlotInColumn
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0015479
       messages: 
       output: 
       stacktrace: 
@@ -4704,8 +4989,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/HasSlotInColumnTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.HasSlotInColumnTests.HasSlotInColumn]
       name: HasSlotInColumn
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.HasSlotInColumnTests.HasSlotInColumn
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0013395
       messages: 
       output: 
       stacktrace: 
@@ -4722,9 +5007,9 @@ MonoBehaviour:
       name: SetupPieceManagerTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests
       resultStatus: 1
-      duration: 0.1979862
+      duration: 0.0182573
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4738,8 +5023,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/SetupPieceManagerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests.GetPosition_InvalidXY]
       name: GetPosition_InvalidXY
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests.GetPosition_InvalidXY
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0016626
       messages: 
       output: 
       stacktrace: 
@@ -4755,8 +5040,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/Assets/Scripts/Editor/Workers/Managers/Piece_Manager/SetupPieceManagerTests/[Assembly-CSharp-Editor][Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests.GetPosition_ValidXY]
       name: GetPosition_ValidXY
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests.GetPosition_ValidXY
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0011199
       messages: 
       output: 
       stacktrace: 
@@ -4773,7 +5058,7 @@ MonoBehaviour:
       name: SetupPieceManager
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests.SetupPieceManager
       resultStatus: 1
-      duration: 0.1750703
+      duration: 0.0007747
       messages: 
       output: 
       stacktrace: 
@@ -4790,7 +5075,7 @@ MonoBehaviour:
       name: SetupPieceManager_RowsAndColumnsTest
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SetupPieceManagerTests.SetupPieceManager_RowsAndColumnsTest
       resultStatus: 1
-      duration: 0.000946
+      duration: 0.0006914
       messages: 
       output: 
       stacktrace: 
@@ -4807,9 +5092,9 @@ MonoBehaviour:
       name: SlotTests
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests
       resultStatus: 1
-      duration: 0.1971926
+      duration: 0.0347909
       messages: 
-      output: 
+      output: "Persistence is not currently supported.\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -4824,7 +5109,7 @@ MonoBehaviour:
       name: SlotExists_InvalidSlot_RemoveSlot
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests.SlotExists_InvalidSlot_RemoveSlot
       resultStatus: 1
-      duration: 0.0127957
+      duration: 0.0031352
       messages: 
       output: 
       stacktrace: 
@@ -4841,7 +5126,7 @@ MonoBehaviour:
       name: SlotExists_InvalidSlot_TooHigh
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests.SlotExists_InvalidSlot_TooHigh
       resultStatus: 1
-      duration: 0.0009584
+      duration: 0.0009756
       messages: 
       output: 
       stacktrace: 
@@ -4858,7 +5143,7 @@ MonoBehaviour:
       name: SlotExists_InvalidSlot_TooLow
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests.SlotExists_InvalidSlot_TooLow
       resultStatus: 1
-      duration: 0.0008407
+      duration: 0.0008647
       messages: 
       output: 
       stacktrace: 
@@ -4875,7 +5160,7 @@ MonoBehaviour:
       name: SlotExists_ValidSlot_AddNewSlot
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests.SlotExists_ValidSlot_AddNewSlot
       resultStatus: 1
-      duration: 0.1765145
+      duration: 0.0010562
       messages: 
       output: 
       stacktrace: 
@@ -4892,7 +5177,7 @@ MonoBehaviour:
       name: SlotExists_ValidSlot_Default
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests.SlotExists_ValidSlot_Default
       resultStatus: 1
-      duration: 0.0011499
+      duration: 0.0008675
       messages: 
       output: 
       stacktrace: 
@@ -4909,7 +5194,7 @@ MonoBehaviour:
       name: SlotExists_ValidSlot_Ends
       fullName: Assets.Scripts.Editor.Workers.Managers.Piece_Manager.SlotTests.SlotExists_ValidSlot_Ends
       resultStatus: 1
-      duration: 0.0008574
+      duration: 0.0008624
       messages: 
       output: 
       stacktrace: 
@@ -4926,7 +5211,7 @@ MonoBehaviour:
       name: MoveCheckerTests
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests
       resultStatus: 1
-      duration: 0.0527738
+      duration: 0.0647239
       messages: 
       output: 
       stacktrace: 
@@ -4943,7 +5228,7 @@ MonoBehaviour:
       name: False_NoMatchingPieces_AboveBelow
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_NoMatchingPieces_AboveBelow
       resultStatus: 1
-      duration: 0.0023815
+      duration: 0.0027234
       messages: 
       output: 
       stacktrace: 
@@ -4960,7 +5245,7 @@ MonoBehaviour:
       name: False_NoPieces
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_NoPieces
       resultStatus: 1
-      duration: 0.000513
+      duration: 0.0003409
       messages: 
       output: 
       stacktrace: 
@@ -4977,7 +5262,7 @@ MonoBehaviour:
       name: False_NoTwoMatchingPieces_Diagonal_TopRight
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_NoTwoMatchingPieces_Diagonal_TopRight
       resultStatus: 1
-      duration: 0.0059063
+      duration: 0.0076313
       messages: 
       output: 
       stacktrace: 
@@ -4994,7 +5279,7 @@ MonoBehaviour:
       name: False_ThreePieces_NoMatchingPieces_Adjancent
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.False_ThreePieces_NoMatchingPieces_Adjancent
       resultStatus: 1
-      duration: 0.0033187
+      duration: 0.0038467
       messages: 
       output: 
       stacktrace: 
@@ -5011,7 +5296,7 @@ MonoBehaviour:
       name: True_ThreePieces_TwoMatchingPieces_Adjancent
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_ThreePieces_TwoMatchingPieces_Adjancent
       resultStatus: 1
-      duration: 0.0027245
+      duration: 0.0027779
       messages: 
       output: 
       stacktrace: 
@@ -5028,7 +5313,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_AboveBelow
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_AboveBelow
       resultStatus: 1
-      duration: 0.0026242
+      duration: 0.0108645
       messages: 
       output: 
       stacktrace: 
@@ -5045,7 +5330,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Adjancent
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Adjancent
       resultStatus: 1
-      duration: 0.0017368
+      duration: 0.0014626
       messages: 
       output: 
       stacktrace: 
@@ -5062,7 +5347,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Adjancent_AnyConnection
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Adjancent_AnyConnection
       resultStatus: 1
-      duration: 0.0014552
+      duration: 0.0019309
       messages: 
       output: 
       stacktrace: 
@@ -5079,7 +5364,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Diagonal_BottomRight
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Diagonal_BottomRight
       resultStatus: 1
-      duration: 0.0035494
+      duration: 0.0043279
       messages: 
       output: 
       stacktrace: 
@@ -5096,7 +5381,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Diagonal_BottomRight_AnyConnection
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Diagonal_BottomRight_AnyConnection
       resultStatus: 1
-      duration: 0.0012867
+      duration: 0.0017733
       messages: 
       output: 
       stacktrace: 
@@ -5113,7 +5398,7 @@ MonoBehaviour:
       name: True_TwoMatchingPieces_Diagonal_TopRight
       fullName: Assets.Scripts.Editor.Workers.MoveCheckerTests.True_TwoMatchingPieces_Diagonal_TopRight
       resultStatus: 1
-      duration: 0.0017883
+      duration: 0.0019859
       messages: 
       output: 
       stacktrace: 
@@ -5130,7 +5415,7 @@ MonoBehaviour:
       name: BannedPieceTypeTests
       fullName: BannedPieceTypeTests
       resultStatus: 1
-      duration: 0.2189447
+      duration: 0.0226084
       messages: 
       output: 
       stacktrace: 
@@ -5147,7 +5432,7 @@ MonoBehaviour:
       name: BannedRainbow_NotUsed
       fullName: BannedPieceTypeTests.BannedRainbow_NotUsed
       resultStatus: 1
-      duration: 0.1879084
+      duration: 0.0016076
       messages: 
       output: 
       stacktrace: 
@@ -5164,7 +5449,7 @@ MonoBehaviour:
       name: BannedRainbow_Used
       fullName: BannedPieceTypeTests.BannedRainbow_Used
       resultStatus: 1
-      duration: 0.0012347
+      duration: 0.0009919
       messages: 
       output: 
       stacktrace: 
@@ -5181,7 +5466,7 @@ MonoBehaviour:
       name: BannedSwapping_NotUsed
       fullName: BannedPieceTypeTests.BannedSwapping_NotUsed
       resultStatus: 1
-      duration: 0.0007703
+      duration: 0.0009815
       messages: 
       output: 
       stacktrace: 
@@ -5198,7 +5483,7 @@ MonoBehaviour:
       name: BannedSwapping_Used
       fullName: BannedPieceTypeTests.BannedSwapping_Used
       resultStatus: 1
-      duration: 0.0011177
+      duration: 0.0009367
       messages: 
       output: 
       stacktrace: 
@@ -5215,7 +5500,7 @@ MonoBehaviour:
       name: BannedSprite
       fullName: BannedSprite
       resultStatus: 1
-      duration: 0.0364216
+      duration: 0.0128642
       messages: 
       output: 
       stacktrace: 
@@ -5232,7 +5517,7 @@ MonoBehaviour:
       name: False_NoBanned
       fullName: BannedSprite.False_NoBanned
       resultStatus: 1
-      duration: 0.001778
+      duration: 0.0010193
       messages: 
       output: 
       stacktrace: 
@@ -5249,7 +5534,7 @@ MonoBehaviour:
       name: True_ContainsBanned
       fullName: BannedSprite.True_ContainsBanned
       resultStatus: 1
-      duration: 0.0009726
+      duration: 0.0007892
       messages: 
       output: 
       stacktrace: 
@@ -5266,7 +5551,7 @@ MonoBehaviour:
       name: DiagonalConnectionRestrictionTests
       fullName: DiagonalConnectionRestrictionTests
       resultStatus: 1
-      duration: 0.0170786
+      duration: 0.0197184
       messages: 
       output: 
       stacktrace: 
@@ -5283,7 +5568,7 @@ MonoBehaviour:
       name: FourPieces_NoDiagonal
       fullName: DiagonalConnectionRestrictionTests.FourPieces_NoDiagonal
       resultStatus: 1
-      duration: 0.0026012
+      duration: 0.0015981
       messages: 
       output: 
       stacktrace: 
@@ -5300,7 +5585,7 @@ MonoBehaviour:
       name: FourPieces_OneDiagonal
       fullName: DiagonalConnectionRestrictionTests.FourPieces_OneDiagonal
       resultStatus: 1
-      duration: 0.0012859
+      duration: 0.0011866
       messages: 
       output: 
       stacktrace: 
@@ -5317,7 +5602,7 @@ MonoBehaviour:
       name: TwoPieces_OneDiagonal
       fullName: DiagonalConnectionRestrictionTests.TwoPieces_OneDiagonal
       resultStatus: 1
-      duration: 0.0007392
+      duration: 0.0006942
       messages: 
       output: 
       stacktrace: 
@@ -5334,7 +5619,7 @@ MonoBehaviour:
       name: DiagonalTests
       fullName: DiagonalTests
       resultStatus: 1
-      duration: 0.2361322
+      duration: 0.0173128
       messages: 
       output: 
       stacktrace: 
@@ -5351,7 +5636,7 @@ MonoBehaviour:
       name: PieceIsDiagonal_Test1
       fullName: DiagonalTests.PieceIsDiagonal_Test1
       resultStatus: 1
-      duration: 0.2110086
+      duration: 0.0009202
       messages: 
       output: 
       stacktrace: 
@@ -5368,7 +5653,7 @@ MonoBehaviour:
       name: PieceIsDiagonal_Test2
       fullName: DiagonalTests.PieceIsDiagonal_Test2
       resultStatus: 1
-      duration: 0.0009541
+      duration: 0.0007453
       messages: 
       output: 
       stacktrace: 
@@ -5385,7 +5670,7 @@ MonoBehaviour:
       name: PieceIsNotDiagonal_Test1
       fullName: DiagonalTests.PieceIsNotDiagonal_Test1
       resultStatus: 1
-      duration: 0.0010614
+      duration: 0.0006384
       messages: 
       output: 
       stacktrace: 
@@ -5402,7 +5687,7 @@ MonoBehaviour:
       name: PieceIsNotDiagonal_Test2
       fullName: DiagonalTests.PieceIsNotDiagonal_Test2
       resultStatus: 1
-      duration: 0.0006218
+      duration: 0.0006788
       messages: 
       output: 
       stacktrace: 
@@ -5414,12 +5699,12 @@ MonoBehaviour:
       - Helpers
       parentId: 1001
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][DiagonalTests][suite]
-    - id: 1010
-      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][LockedSwap][suite]
-      name: LockedSwap
-      fullName: LockedSwap
+    - id: 1027
+      uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][LockedSwapTests][suite]
+      name: LockedSwapTests
+      fullName: LockedSwapTests
       resultStatus: 1
-      duration: 0.0306815
+      duration: 0.0115566
       messages: 
       output: 
       stacktrace: 
@@ -5429,14 +5714,14 @@ MonoBehaviour:
       isSuite: 1
       categories:
       - Piece Effects
-      parentId: 1055
+      parentId: 1319
       parentUniqueId: '[D:/Development/Unity Projects/Squared/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll][suite]'
-    - id: 1011
-      uniqueId: Assembly-CSharp-Editor.dll/LockedSwap/[Assembly-CSharp-Editor][LockedSwap.SwapPiece_SpriteDoesNotChange]
+    - id: 1028
+      uniqueId: Assembly-CSharp-Editor.dll/LockedSwapTests/[Assembly-CSharp-Editor][LockedSwapTests.SwapPiece_SpriteDoesNotChange]
       name: SwapPiece_SpriteDoesNotChange
-      fullName: LockedSwap.SwapPiece_SpriteDoesNotChange
+      fullName: LockedSwapTests.SwapPiece_SpriteDoesNotChange
       resultStatus: 1
-      duration: 0.0012025
+      duration: 0.0009488
       messages: 
       output: 
       stacktrace: 
@@ -5446,14 +5731,14 @@ MonoBehaviour:
       isSuite: 0
       categories:
       - Piece Effects
-      parentId: 1010
-      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][LockedSwap][suite]
+      parentId: 1027
+      parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][LockedSwapTests][suite]
     - id: 1004
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][MaxPieceLimit][suite]
       name: MaxPieceLimit
       fullName: MaxPieceLimit
       resultStatus: 1
-      duration: 0.0122249
+      duration: 0.0266997
       messages: 
       output: 
       stacktrace: 
@@ -5470,7 +5755,7 @@ MonoBehaviour:
       name: False_MaxLimit3_Pieces4
       fullName: MaxPieceLimit.False_MaxLimit3_Pieces4
       resultStatus: 1
-      duration: 0.000913
+      duration: 0.0010205
       messages: 
       output: 
       stacktrace: 
@@ -5487,7 +5772,7 @@ MonoBehaviour:
       name: True_MaxLimit3_Pieces2
       fullName: MaxPieceLimit.True_MaxLimit3_Pieces2
       resultStatus: 1
-      duration: 0.0005334
+      duration: 0.0005388
       messages: 
       output: 
       stacktrace: 
@@ -5504,7 +5789,7 @@ MonoBehaviour:
       name: True_MaxLimit3_Pieces3
       fullName: MaxPieceLimit.True_MaxLimit3_Pieces3
       resultStatus: 1
-      duration: 0.0004558
+      duration: 0.0005514
       messages: 
       output: 
       stacktrace: 
@@ -5521,7 +5806,7 @@ MonoBehaviour:
       name: MinPieceLimit
       fullName: MinPieceLimit
       resultStatus: 1
-      duration: 0.0143912
+      duration: 0.0148257
       messages: 
       output: 
       stacktrace: 
@@ -5538,7 +5823,7 @@ MonoBehaviour:
       name: False_Limit3_Pieces2
       fullName: MinPieceLimit.False_Limit3_Pieces2
       resultStatus: 1
-      duration: 0.0007862
+      duration: 0.0008934
       messages: 
       output: 
       stacktrace: 
@@ -5555,7 +5840,7 @@ MonoBehaviour:
       name: True_Limit3_Pieces3
       fullName: MinPieceLimit.True_Limit3_Pieces3
       resultStatus: 1
-      duration: 0.000566
+      duration: 0.0005605
       messages: 
       output: 
       stacktrace: 
@@ -5572,7 +5857,7 @@ MonoBehaviour:
       name: True_Limit3_Pieces4
       fullName: MinPieceLimit.True_Limit3_Pieces4
       resultStatus: 1
-      duration: 0.0005995
+      duration: 0.0005492
       messages: 
       output: 
       stacktrace: 
@@ -5589,7 +5874,7 @@ MonoBehaviour:
       name: MultipliedScoreTests
       fullName: MultipliedScoreTests
       resultStatus: 1
-      duration: 0.0134142
+      duration: 0.0175277
       messages: 
       output: 
       stacktrace: 
@@ -5606,7 +5891,7 @@ MonoBehaviour:
       name: Equals_Start0_Multipliedby2
       fullName: MultipliedScoreTests.Equals_Start0_Multipliedby2
       resultStatus: 1
-      duration: 0.0002525
+      duration: 0.0003839
       messages: 
       output: 
       stacktrace: 
@@ -5623,7 +5908,7 @@ MonoBehaviour:
       name: Equals_Start1_Multipliedby2
       fullName: MultipliedScoreTests.Equals_Start1_Multipliedby2
       resultStatus: 1
-      duration: 0.0001588
+      duration: 0.0002709
       messages: 
       output: 
       stacktrace: 
@@ -5640,7 +5925,7 @@ MonoBehaviour:
       name: Equals_Start2_Multipliedby3_And3
       fullName: MultipliedScoreTests.Equals_Start2_Multipliedby3_And3
       resultStatus: 1
-      duration: 0.0001499
+      duration: 0.0002699
       messages: 
       output: 
       stacktrace: 
@@ -5657,7 +5942,7 @@ MonoBehaviour:
       name: Equals_Start7_Multipliedby2
       fullName: MultipliedScoreTests.Equals_Start7_Multipliedby2
       resultStatus: 1
-      duration: 0.0001487
+      duration: 0.0002533
       messages: 
       output: 
       stacktrace: 
@@ -5674,7 +5959,7 @@ MonoBehaviour:
       name: Equals_Start7_Multipliedby3
       fullName: MultipliedScoreTests.Equals_Start7_Multipliedby3
       resultStatus: 1
-      duration: 0.0002217
+      duration: 0.0002489
       messages: 
       output: 
       stacktrace: 
@@ -5690,8 +5975,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][NoRestrictionTests][suite]
       name: NoRestrictionTests
       fullName: NoRestrictionTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0129819
       messages: 
       output: 
       stacktrace: 
@@ -5707,8 +5992,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/NoRestrictionTests/[Assembly-CSharp-Editor][NoRestrictionTests.True_NoRestriction_0Pieces]
       name: True_NoRestriction_0Pieces
       fullName: NoRestrictionTests.True_NoRestriction_0Pieces
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0005009
       messages: 
       output: 
       stacktrace: 
@@ -5724,8 +6009,8 @@ MonoBehaviour:
       uniqueId: Assembly-CSharp-Editor.dll/NoRestrictionTests/[Assembly-CSharp-Editor][NoRestrictionTests.True_NoRestriction_3Pieces]
       name: True_NoRestriction_3Pieces
       fullName: NoRestrictionTests.True_NoRestriction_3Pieces
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0009288
       messages: 
       output: 
       stacktrace: 
@@ -5742,7 +6027,7 @@ MonoBehaviour:
       name: OnlyDiagonalConnectionTests
       fullName: OnlyDiagonalConnectionTests
       resultStatus: 1
-      duration: 0.0201705
+      duration: 0.020346
       messages: 
       output: 
       stacktrace: 
@@ -5759,7 +6044,7 @@ MonoBehaviour:
       name: FourPieces_NoDiagonal
       fullName: OnlyDiagonalConnectionTests.FourPieces_NoDiagonal
       resultStatus: 1
-      duration: 0.001551
+      duration: 0.0013432
       messages: 
       output: 
       stacktrace: 
@@ -5776,7 +6061,7 @@ MonoBehaviour:
       name: ThreePieces_AllDiagonal
       fullName: OnlyDiagonalConnectionTests.ThreePieces_AllDiagonal
       resultStatus: 1
-      duration: 0.0014657
+      duration: 0.0010136
       messages: 
       output: 
       stacktrace: 
@@ -5793,7 +6078,7 @@ MonoBehaviour:
       name: TwoPieces_NoDiagonal
       fullName: OnlyDiagonalConnectionTests.TwoPieces_NoDiagonal
       resultStatus: 1
-      duration: 0.0010804
+      duration: 0.0006534
       messages: 
       output: 
       stacktrace: 
@@ -5810,7 +6095,7 @@ MonoBehaviour:
       name: TwoPieces_OneDiagonal
       fullName: OnlyDiagonalConnectionTests.TwoPieces_OneDiagonal
       resultStatus: 1
-      duration: 0.0007924
+      duration: 0.0007504
       messages: 
       output: 
       stacktrace: 
@@ -5827,7 +6112,7 @@ MonoBehaviour:
       name: PowerupsEarnedTests
       fullName: PowerupsEarnedTests
       resultStatus: 1
-      duration: 0.0120484
+      duration: 0.0175651
       messages: 
       output: 
       stacktrace: 
@@ -5844,7 +6129,7 @@ MonoBehaviour:
       name: Gained10_10Under_0Powerups
       fullName: PowerupsEarnedTests.Gained10_10Under_0Powerups
       resultStatus: 1
-      duration: 0.0002942
+      duration: 0.0005532
       messages: 
       output: 
       stacktrace: 
@@ -5861,7 +6146,7 @@ MonoBehaviour:
       name: Gained10_Exact_1Powerups
       fullName: PowerupsEarnedTests.Gained10_Exact_1Powerups
       resultStatus: 1
-      duration: 0.0001731
+      duration: 0.0002698
       messages: 
       output: 
       stacktrace: 
@@ -5878,7 +6163,7 @@ MonoBehaviour:
       name: Gained100_10Over_2Powerups
       fullName: PowerupsEarnedTests.Gained100_10Over_2Powerups
       resultStatus: 1
-      duration: 0.0001665
+      duration: 0.0002867
       messages: 
       output: 
       stacktrace: 
@@ -5895,7 +6180,7 @@ MonoBehaviour:
       name: Gained100_2Over_10Powerups
       fullName: PowerupsEarnedTests.Gained100_2Over_10Powerups
       resultStatus: 1
-      duration: 0.000165
+      duration: 0.000241
       messages: 
       output: 
       stacktrace: 
@@ -5912,7 +6197,7 @@ MonoBehaviour:
       name: Gained20_10Over_1Powerups
       fullName: PowerupsEarnedTests.Gained20_10Over_1Powerups
       resultStatus: 1
-      duration: 0.0001605
+      duration: 0.0003066
       messages: 
       output: 
       stacktrace: 
@@ -5929,7 +6214,7 @@ MonoBehaviour:
       name: SingleScoreTests
       fullName: SingleScoreTests
       resultStatus: 1
-      duration: 0.0171025
+      duration: 0.0131047
       messages: 
       output: 
       stacktrace: 
@@ -5946,7 +6231,7 @@ MonoBehaviour:
       name: Equals_Start0_Score1
       fullName: SingleScoreTests.Equals_Start0_Score1
       resultStatus: 1
-      duration: 0.000312
+      duration: 0.0006922
       messages: 
       output: 
       stacktrace: 
@@ -5963,7 +6248,7 @@ MonoBehaviour:
       name: Equals_Start5_Score1
       fullName: SingleScoreTests.Equals_Start5_Score1
       resultStatus: 1
-      duration: 0.0002892
+      duration: 0.0003834
       messages: 
       output: 
       stacktrace: 
@@ -5980,7 +6265,7 @@ MonoBehaviour:
       name: SpacedTests
       fullName: SpacedTests
       resultStatus: 1
-      duration: 0.0396614
+      duration: 0.0273852
       messages: 
       output: 
       stacktrace: 
@@ -5997,7 +6282,7 @@ MonoBehaviour:
       name: AllCaps
       fullName: SpacedTests.AllCaps
       resultStatus: 1
-      duration: 0.0133223
+      duration: 0.0005964
       messages: 
       output: 
       stacktrace: 
@@ -6014,7 +6299,7 @@ MonoBehaviour:
       name: SimpleWord_FourCapital
       fullName: SpacedTests.SimpleWord_FourCapital
       resultStatus: 1
-      duration: 0.0003282
+      duration: 0.0003266
       messages: 
       output: 
       stacktrace: 
@@ -6031,7 +6316,7 @@ MonoBehaviour:
       name: SimpleWord_NoCapital
       fullName: SpacedTests.SimpleWord_NoCapital
       resultStatus: 1
-      duration: 0.0002697
+      duration: 0.0004244
       messages: 
       output: 
       stacktrace: 
@@ -6048,7 +6333,7 @@ MonoBehaviour:
       name: SimpleWord_OneCapital
       fullName: SpacedTests.SimpleWord_OneCapital
       resultStatus: 1
-      duration: 0.0002083
+      duration: 0.0003407
       messages: 
       output: 
       stacktrace: 
@@ -6065,7 +6350,7 @@ MonoBehaviour:
       name: SimpleWord_TwoCapital
       fullName: SpacedTests.SimpleWord_TwoCapital
       resultStatus: 1
-      duration: 0.0002077
+      duration: 0.0003406
       messages: 
       output: 
       stacktrace: 
@@ -6082,7 +6367,7 @@ MonoBehaviour:
       name: WordWithNumbers
       fullName: SpacedTests.WordWithNumbers
       resultStatus: 1
-      duration: 0.000216
+      duration: 0.0004243
       messages: 
       output: 
       stacktrace: 
@@ -6099,7 +6384,7 @@ MonoBehaviour:
       name: StandardScoreCalculationTests
       fullName: StandardScoreCalculationTests
       resultStatus: 1
-      duration: 0.2237297
+      duration: 0.0202773
       messages: 
       output: 
       stacktrace: 
@@ -6116,7 +6401,7 @@ MonoBehaviour:
       name: Score0SinglePieces_Score0
       fullName: StandardScoreCalculationTests.Score0SinglePieces_Score0
       resultStatus: 1
-      duration: 0.0162313
+      duration: 0.0004732
       messages: 
       output: 
       stacktrace: 
@@ -6133,7 +6418,7 @@ MonoBehaviour:
       name: Score2SinglePieces1Double_Score4
       fullName: StandardScoreCalculationTests.Score2SinglePieces1Double_Score4
       resultStatus: 1
-      duration: 0.1757196
+      duration: 0.0010706
       messages: 
       output: 
       stacktrace: 
@@ -6150,7 +6435,7 @@ MonoBehaviour:
       name: Score31Double3Single_Score6
       fullName: StandardScoreCalculationTests.Score31Double3Single_Score6
       resultStatus: 1
-      duration: 0.0011792
+      duration: 0.0010694
       messages: 
       output: 
       stacktrace: 
@@ -6167,7 +6452,7 @@ MonoBehaviour:
       name: Score3SinglePieces_Score3
       fullName: StandardScoreCalculationTests.Score3SinglePieces_Score3
       resultStatus: 1
-      duration: 0.0008512
+      duration: 0.0008682
       messages: 
       output: 
       stacktrace: 
@@ -6184,7 +6469,7 @@ MonoBehaviour:
       name: Score3SinglePieces1Double1Single_Score6
       fullName: StandardScoreCalculationTests.Score3SinglePieces1Double1Single_Score6
       resultStatus: 1
-      duration: 0.0009676
+      duration: 0.0012083
       messages: 
       output: 
       stacktrace: 
@@ -6201,7 +6486,7 @@ MonoBehaviour:
       name: StandardScoreCalculationWithBonus
       fullName: StandardScoreCalculationWithBonus
       resultStatus: 1
-      duration: 0.0366429
+      duration: 0.0222246
       messages: 
       output: 
       stacktrace: 
@@ -6218,7 +6503,7 @@ MonoBehaviour:
       name: Score1SinglePieces_Bonus0_Score1
       fullName: StandardScoreCalculationWithBonus.Score1SinglePieces_Bonus0_Score1
       resultStatus: 1
-      duration: 0.0008857
+      duration: 0.0008962
       messages: 
       output: 
       stacktrace: 
@@ -6235,7 +6520,7 @@ MonoBehaviour:
       name: Score3SinglePieces_Bonus2_Score4
       fullName: StandardScoreCalculationWithBonus.Score3SinglePieces_Bonus2_Score4
       resultStatus: 1
-      duration: 0.0008509
+      duration: 0.0010409
       messages: 
       output: 
       stacktrace: 
@@ -6252,7 +6537,7 @@ MonoBehaviour:
       name: Score3SinglePieces_Bonus3_Score6
       fullName: StandardScoreCalculationWithBonus.Score3SinglePieces_Bonus3_Score6
       resultStatus: 1
-      duration: 0.0012486
+      duration: 0.0016064
       messages: 
       output: 
       stacktrace: 
@@ -6269,7 +6554,7 @@ MonoBehaviour:
       name: Score4SinglePieces_Bonus5_Score9
       fullName: StandardScoreCalculationWithBonus.Score4SinglePieces_Bonus5_Score9
       resultStatus: 1
-      duration: 0.001275
+      duration: 0.0013785
       messages: 
       output: 
       stacktrace: 
@@ -6286,7 +6571,7 @@ MonoBehaviour:
       name: StandardScoreCalculationWithBonusMultiplier
       fullName: StandardScoreCalculationWithBonusMultiplier
       resultStatus: 1
-      duration: 0.024035
+      duration: 0.0203224
       messages: 
       output: 
       stacktrace: 
@@ -6303,7 +6588,7 @@ MonoBehaviour:
       name: Score3_DoubleHalfBonus_Score6
       fullName: StandardScoreCalculationWithBonusMultiplier.Score3_DoubleHalfBonus_Score6
       resultStatus: 1
-      duration: 0.0016216
+      duration: 0.0016443
       messages: 
       output: 
       stacktrace: 
@@ -6320,7 +6605,7 @@ MonoBehaviour:
       name: Score3_SingleDoubleBonus_Expired_Score3
       fullName: StandardScoreCalculationWithBonusMultiplier.Score3_SingleDoubleBonus_Expired_Score3
       resultStatus: 1
-      duration: 0.0012074
+      duration: 0.0011371
       messages: 
       output: 
       stacktrace: 
@@ -6337,7 +6622,7 @@ MonoBehaviour:
       name: Score3_SingleDoubleBonus_Score6
       fullName: StandardScoreCalculationWithBonusMultiplier.Score3_SingleDoubleBonus_Score6
       resultStatus: 1
-      duration: 0.0012477
+      duration: 0.0009282
       messages: 
       output: 
       stacktrace: 
@@ -6354,7 +6639,7 @@ MonoBehaviour:
       name: SwapEffectLimit
       fullName: SwapEffectLimit
       resultStatus: 1
-      duration: 0.0150702
+      duration: 0.014946
       messages: 
       output: 
       stacktrace: 
@@ -6371,7 +6656,7 @@ MonoBehaviour:
       name: Violated_False_NoLockedPieces
       fullName: SwapEffectLimit.Violated_False_NoLockedPieces
       resultStatus: 1
-      duration: 0.0032911
+      duration: 0.0011282
       messages: 
       output: 
       stacktrace: 
@@ -6388,7 +6673,7 @@ MonoBehaviour:
       name: Violated_True_LockedPieceUsed
       fullName: SwapEffectLimit.Violated_True_LockedPieceUsed
       resultStatus: 1
-      duration: 0.001127
+      duration: 0.0009176
       messages: 
       output: 
       stacktrace: 
@@ -6405,7 +6690,7 @@ MonoBehaviour:
       name: SwapSpriteBehaviourTests
       fullName: SwapSpriteBehaviourTests
       resultStatus: 1
-      duration: 0.0114511
+      duration: 0.2136104
       messages: 
       output: 
       stacktrace: 
@@ -6422,7 +6707,7 @@ MonoBehaviour:
       name: NotSelected_SpriteChangesAfterTime
       fullName: SwapSpriteBehaviourTests.NotSelected_SpriteChangesAfterTime
       resultStatus: 1
-      duration: 0.0007467
+      duration: 0.1790457
       messages: 
       output: 
       stacktrace: 
@@ -6439,7 +6724,7 @@ MonoBehaviour:
       name: NotSelected_SpriteDoesNotChange_NotEnoughTime
       fullName: SwapSpriteBehaviourTests.NotSelected_SpriteDoesNotChange_NotEnoughTime
       resultStatus: 1
-      duration: 0.0004173
+      duration: 0.0007627
       messages: 
       output: 
       stacktrace: 
@@ -6456,7 +6741,7 @@ MonoBehaviour:
       name: Selected_SpriteDoesNotChange_ItIsSelected
       fullName: SwapSpriteBehaviourTests.Selected_SpriteDoesNotChange_ItIsSelected
       resultStatus: 1
-      duration: 0.0004
+      duration: 0.1873215
       messages: 
       output: 
       stacktrace: 
@@ -6473,7 +6758,7 @@ MonoBehaviour:
       name: Selected_SpriteDoesNotChange_ItIsStoredMoves
       fullName: SwapSpriteBehaviourTests.Selected_SpriteDoesNotChange_ItIsStoredMoves
       resultStatus: 1
-      duration: 0.0003968
+      duration: 0.0011437
       messages: 
       output: 
       stacktrace: 
@@ -6490,7 +6775,7 @@ MonoBehaviour:
       name: TimeLimitTests
       fullName: TimeLimitTests
       resultStatus: 1
-      duration: 0.0380037
+      duration: 0.0213494
       messages: 
       output: 
       stacktrace: 
@@ -6507,7 +6792,7 @@ MonoBehaviour:
       name: TenSecondLimit_MultipleSecondsPast_NotReachedLimit
       fullName: TimeLimitTests.TenSecondLimit_MultipleSecondsPast_NotReachedLimit
       resultStatus: 1
-      duration: 0.0105185
+      duration: 0.0005333
       messages: 
       output: 
       stacktrace: 
@@ -6524,7 +6809,7 @@ MonoBehaviour:
       name: TenSecondLimit_OneSecondPast_NotReachedLimit
       fullName: TimeLimitTests.TenSecondLimit_OneSecondPast_NotReachedLimit
       resultStatus: 1
-      duration: 0.000317
+      duration: 0.0002963
       messages: 
       output: 
       stacktrace: 
@@ -6541,7 +6826,7 @@ MonoBehaviour:
       name: TenSecondLimit_TenSecondsPast_ReachedLimit
       fullName: TimeLimitTests.TenSecondLimit_TenSecondsPast_ReachedLimit
       resultStatus: 1
-      duration: 0.000403
+      duration: 0.000245
       messages: 
       output: 
       stacktrace: 
@@ -6558,7 +6843,7 @@ MonoBehaviour:
       name: TurnLimitTests
       fullName: TurnLimitTests
       resultStatus: 1
-      duration: 0.0192279
+      duration: 0.0109863
       messages: 
       output: 
       stacktrace: 
@@ -6575,7 +6860,7 @@ MonoBehaviour:
       name: ThreeTurnLimit_TakeOneTurn_NotReachedLimit
       fullName: TurnLimitTests.ThreeTurnLimit_TakeOneTurn_NotReachedLimit
       resultStatus: 1
-      duration: 0.0005589
+      duration: 0.0004383
       messages: 
       output: 
       stacktrace: 
@@ -6592,7 +6877,7 @@ MonoBehaviour:
       name: ThreeTurnLimit_TakeThreeTurns_ReachedLimit
       fullName: TurnLimitTests.ThreeTurnLimit_TakeThreeTurns_ReachedLimit
       resultStatus: 1
-      duration: 0.0002831
+      duration: 0.0002591
       messages: 
       output: 
       stacktrace: 
@@ -6604,13 +6889,13 @@ MonoBehaviour:
       - Limits
       parentId: 1014
       parentUniqueId: Assembly-CSharp-Editor.dll/[Assembly-CSharp-Editor][TurnLimitTests][suite]
-    m_ResultText: "PathFinding_4x4_InvalidRoute (0.107s)\n---\n--Grid--\r\n1001\r\n1101\r\n0101\r\n0010\r\n----"
+    m_ResultText: 
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ad7c4339
-      m_LastClickedID: 960724141
-      m_ExpandedIDs: 85fdbc82af58b0851082a586a67a35887ac73e993b7bb8aedd51adb7acb85ebd517d0ebf5c9904c7a0ec9fc7bf618fd1fe0556d49f7104da74243ee3b85d97e95d7e9ff7feea85fc245645fff6274709052bb10f27ebe6115df39e132edf0c197e18521bb67b2b20561d692a0bdfe42cfd502f32c2700f398f9c47394decdd3b15cd533ce9b7f43cf19172409b57bd4785a82a4a0816754ae7754b652d4e8c6f500307701a4f5d73c367cb79ea84cc7981d6487a26cd807bffffff7f
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 85fdbc82af58b0851082a586a67a35887ac73e99475b649d3b7bb8aedd51adb7acb85ebd517d0ebf5c9904c7a0ec9fc7bf618fd1fe0556d49f7104da74243ee3b85d97e9c19c45ee5d7e9ff762e151fbfeea85fcfb2e9dfe245645fff6274709052bb10f27ebe6115df39e139035b0172edf0c197e18521bb67b2b20561d692a0bdfe42c0f6c572ffd502f32c2700f398f9c47394decdd3b15cd533ce9b7f43cf19172409b57bd4785a82a4a0816754af96be64fe7754b652d4e8c6f500307701a4f5d73c367cb79ea84cc7981d6487a26cd807bffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -6629,11 +6914,11 @@ MonoBehaviour:
         m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_TestRunnerUIFilter:
-      PassedHidden: 0
-      FailedHidden: 0
-      NotRunHidden: 0
+      PassedHidden: 1
+      FailedHidden: 1
+      NotRunHidden: 1
       m_SearchString: 
-      selectedCategoryMask: 16
+      selectedCategoryMask: -1
       availableCategories:
       - Core
       - Events

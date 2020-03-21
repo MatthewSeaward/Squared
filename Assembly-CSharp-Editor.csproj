@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Helpers\Viking Crew Tools\SpeechBubbleManager\Editor\SpeechbubbleFitterDrawer.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Core\RangeTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Daily Challenge\RandomTest.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\DataEntities\EventsIO.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\Enemy Events Factory\EnemyEventFactoryResilenceTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Events\Enemy Events Factory\EnemyEventFactoryTests.cs" />
