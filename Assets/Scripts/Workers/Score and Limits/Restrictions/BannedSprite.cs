@@ -1,7 +1,9 @@
 ﻿using Assets.Scripts.Workers.Generic_Interfaces;
 using Assets.Scripts.Workers.IO.Data_Entities;
+using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Score_and_Limits
 {
@@ -54,6 +56,15 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 if (item.Sprite.name == Sprite || item.Sprite.name == SpriteValue.ToString())
                 {
                     return true;
+                }
+
+                if (item.PieceConnection is TwoSpriteConnection)
+                {
+                    var fadePiece = item.PieceConnection as TwoSpriteConnection;
+                    if (fadePiece.BannedPiece == (Colour) SpriteValue)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;

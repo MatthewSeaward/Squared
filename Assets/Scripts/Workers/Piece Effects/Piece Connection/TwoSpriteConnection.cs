@@ -8,11 +8,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
     public class TwoSpriteConnection : IPieceConnection, ILayeredSprite
     {
-        private readonly Colour _pieceColour;
+        public Colour BannedPiece { get; private set; }
 
         public TwoSpriteConnection(Colour pieceColour)
         {
-            _pieceColour = pieceColour;
+            BannedPiece = pieceColour;
         }
 
         public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
@@ -27,7 +27,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
                 return true;
             }
 
-            if (nextPiece != null && nextPiece.Sprite != selectedPiece.Sprite && nextPiece.PieceColour != _pieceColour)
+            if (nextPiece != null && nextPiece.Sprite != selectedPiece.Sprite && nextPiece.PieceColour != BannedPiece)
             {
                 return false;
             }
@@ -45,7 +45,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
         {
             return new Sprite[]
             {
-                GameResources.Sprites["Fade" + (int) _pieceColour]
+                GameResources.Sprites["Fade" + (int) BannedPiece]
             };
         }
     }
