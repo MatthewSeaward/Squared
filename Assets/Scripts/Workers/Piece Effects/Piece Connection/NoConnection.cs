@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
-    class NoConnection : IPieceConnection
+    public class NoConnection : IPieceConnection
     {
         public bool ConnectionValid(ISquarePiece selectedPiece)
         {

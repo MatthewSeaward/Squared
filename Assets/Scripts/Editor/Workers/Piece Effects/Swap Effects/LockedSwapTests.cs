@@ -1,19 +1,22 @@
 ﻿using NUnit.Framework;
 using static Assets.Scripts.Workers.Helpers.TestHelpers;
 
-[Category("Piece Effects")]
-public class LockedSwapTests
+namespace Assets.Scripts.Editor.Workers.Piece_Effects.Swap_Effects
 {
-    [Test]
-    public void SwapPiece_SpriteDoesNotChange()
+    [Category("Piece Effects")]
+    public class LockedSwapTests
     {
-        var sut = CreatePiece();
+        [Test]
+        public void SwapPiece_SpriteDoesNotChange()
+        {
+            var sut = CreatePiece();
 
-        sut.DestroyPieceHandler = new Assets.Scripts.Workers.Piece_Effects.Destruction.LockedSwap(sut);
-        sut.Sprite = GetSprite("1");
+            sut.DestroyPieceHandler = new Scripts.Workers.Piece_Effects.Destruction.LockedSwap(sut);
+            sut.Sprite = GetSprite("1");
 
-        sut.Destroy();
+            sut.Destroy();
 
-        Assert.AreEqual("1", sut.Sprite.name);
+            Assert.AreEqual("1", sut.Sprite.name);
+        }
     }
 }

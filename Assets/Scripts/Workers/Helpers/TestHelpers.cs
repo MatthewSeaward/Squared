@@ -23,6 +23,16 @@ namespace Assets.Scripts.Workers.Helpers
             return piece;
         }
 
+        public static ISquarePiece CreatePiece(int x, int y, Colour colour)
+        {
+            var piece = Substitute.For<ISquarePiece>();
+            piece.Position = new Vector2Int(x, y);
+
+            piece.Sprite = GetSprite(colour);
+            piece.PieceColour = colour;
+            return piece;
+        }
+
         public static ISquarePiece CreatePiece(int x, int y, bool active)
         {
             ISquarePiece piece;

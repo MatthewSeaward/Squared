@@ -1,6 +1,4 @@
-﻿using Assets.Scripts;
-using Assets.Scripts.Constants;
-using Assets.Scripts.Workers;
+﻿using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using NUnit.Framework;
@@ -8,81 +6,84 @@ using System.Collections.Generic;
 using UnityEngine;
 using static SquarePiece;
 
-[Category("Piece Effects")]
-public class SwapSpriteBehaviourTests
+namespace Assets.Scripts.Editor.Workers.Piece_Effects.Behaviour
 {
-    [OneTimeSetUp]
-    public void Setup()
+    [Category("Piece Effects")]
+    public class SwapSpriteBehaviourTests
     {
-        GameResources.PieceSprites.Clear();
-
-        foreach (int sprite in System.Enum.GetValues(typeof(Colour)))
+        [OneTimeSetUp]
+        public void Setup()
         {
-            if (sprite < 0)
+            GameResources.PieceSprites.Clear();
+
+            foreach (int sprite in System.Enum.GetValues(typeof(Colour)))
             {
-                continue;
+                if (sprite < 0)
+                {
+                    continue;
+                }
+                GameResources.PieceSprites.Add(sprite.ToString(), TestHelpers.GetSprite(sprite.ToString()));
             }
-            GameResources.PieceSprites.Add(sprite.ToString(), TestHelpers.GetSprite(sprite.ToString()));
+
+            var go = new GameObject();
+            var ps = go.AddComponent<PieceSelectionManager>();
+            ps.Awake();
         }
 
-        var go = new GameObject();
-        var ps = go.AddComponent<PieceSelectionManager>();
-        ps.Awake();
-    }
+        [Test]
+        public void NotSelected_SpriteChangesAfterTime()
+        {
+            var sut = TestHelpers.CreatePiece();
 
-    [Test]
-    public void NotSelected_SpriteChangesAfterTime()
-    {
-        var sut = TestHelpers.CreatePiece();
+            sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
+            sut.Sprite = TestHelpers.GetSprite("1");
 
-        sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
-        sut.Sprite = TestHelpers.GetSprite("1");
+            sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1);
 
-        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1);
+            Assert.AreNotEqual("1", sut.Sprite.name);
+        }
 
-        Assert.AreNotEqual("1", sut.Sprite.name);
-    }
+        [Test]
+        public void NotSelected_SpriteDoesNotChange_NotEnoughTime()
+        {
+            var sut = TestHelpers.CreatePiece();
 
-    [Test]
-    public void NotSelected_SpriteDoesNotChange_NotEnoughTime()
-    {
-        var sut = TestHelpers.CreatePiece();
+            sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
+            sut.Sprite = TestHelpers.GetSprite("1");
 
-        sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
-        sut.Sprite = TestHelpers.GetSprite("1");
+            sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency - 1f);
 
-        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency - 1f);
+            Assert.AreEqual("1", sut.Sprite.name);
+        }
 
-        Assert.AreEqual("1", sut.Sprite.name);
-    }
+        [Test]
+        public void Selected_SpriteDoesNotChange_ItIsSelected()
+        {
+            var sut = TestHelpers.CreatePiece();
 
-    [Test]
-    public void Selected_SpriteDoesNotChange_ItIsSelected()
-    {
-        var sut = TestHelpers.CreatePiece();
+            sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
+            sut.Sprite = TestHelpers.GetSprite("1");
 
-        sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
-        sut.Sprite = TestHelpers.GetSprite("1");
+            PieceSelectionManager.Instance.Add(sut, false);
 
-       PieceSelectionManager.Instance.Add(sut, false);
+            sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1f);
 
-        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1f);
+            Assert.AreEqual("1", sut.Sprite.name);
+        }
 
-        Assert.AreEqual("1", sut.Sprite.name);
-    }
+        [Test]
+        public void Selected_SpriteDoesNotChange_ItIsStoredMoves()
+        {
+            var sut = TestHelpers.CreatePiece();
 
-    [Test]
-    public void Selected_SpriteDoesNotChange_ItIsStoredMoves()
-    {
-        var sut = TestHelpers.CreatePiece();
+            sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
+            sut.Sprite = TestHelpers.GetSprite("1");
 
-        sut.PieceBehaviour = new Assets.Scripts.Workers.Piece_Effects.SwapSpriteBehaviour();
-        sut.Sprite = TestHelpers.GetSprite("1");
+            PieceSelectionManager.Instance.StoredMoves.Add(new List<ISquarePiece>() { sut });
 
-        PieceSelectionManager.Instance.StoredMoves.Add(new List<ISquarePiece>() { sut });
+            sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1f);
 
-        sut.PieceBehaviour.Update(sut, GameSettings.SwapPieceChangeFrequency + 1f);
-
-        Assert.AreEqual("1", sut.Sprite.name);
+            Assert.AreEqual("1", sut.Sprite.name);
+        }
     }
 }

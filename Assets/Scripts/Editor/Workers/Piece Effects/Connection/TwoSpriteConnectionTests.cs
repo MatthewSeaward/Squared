@@ -3,10 +3,6 @@ using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using static SquarePiece;
 
@@ -20,7 +16,7 @@ namespace Assets.Scripts.Editor.Workers.Piece_Effects.Connection
         {
             GameResources.PieceSprites.Clear();
 
-            foreach (int sprite in System.Enum.GetValues(typeof(Colour)))
+            foreach (int sprite in Enum.GetValues(typeof(Colour)))
             {
                 if (sprite < 0)
                 {
@@ -37,97 +33,98 @@ namespace Assets.Scripts.Editor.Workers.Piece_Effects.Connection
         [Test]
         public void FadePiece_ToNormalMatchingPiece()
         {
-            var normalPiece = TestHelpers.CreatePiece(0, 0);
-            normalPiece.PieceColour = Colour.Red;
-            normalPiece.Sprite = TestHelpers.GetSprite(Colour.Red);
+            var normalPiece = TestHelpers.CreatePiece(0, 0, Colour.Red);
             normalPiece.PieceConnection = new StandardConnection();
 
-            var fadePiece = TestHelpers.CreatePiece(1, 0);
-
+            var fadePiece = TestHelpers.CreatePiece(1, 0, Colour.Orange);
             fadePiece.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            Assert.IsTrue(fadePiece.PieceConnection.ConnectionValid(fadePiece, normalPiece) || normalPiece.PieceConnection.ConnectionValid(normalPiece, fadePiece));
+            Assert.IsTrue(ConnectionHelper.ValidConnectionBetween(normalPiece, fadePiece));
         }
 
         [Test]
         public void FadePiece_ToNormalNonMatchingPiece()
         {
-            var normalPiece = TestHelpers.CreatePiece(0, 0);
-            normalPiece.PieceColour = Colour.DarkBlue;
-            normalPiece.Sprite = TestHelpers.GetSprite(Colour.DarkBlue);
+            var normalPiece = TestHelpers.CreatePiece(0, 0, Colour.DarkBlue);
             normalPiece.PieceConnection = new StandardConnection();
 
-            var fadePiece = TestHelpers.CreatePiece(1, 0);
-
+            var fadePiece = TestHelpers.CreatePiece(1, 0, Colour.Orange);
             fadePiece.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            Assert.IsFalse(fadePiece.PieceConnection.ConnectionValid(fadePiece, normalPiece) && normalPiece.PieceConnection.ConnectionValid(normalPiece, fadePiece));
+            Assert.IsFalse(ConnectionHelper.ValidConnectionBetween(normalPiece, fadePiece));
         }
 
         [Test]
         public void FadePiece_ToFadeMatchingPiece()
         {
-            var fadePiece1 = TestHelpers.CreatePiece(0, 0);
-
+            var fadePiece1 = TestHelpers.CreatePiece(0, 0, Colour.Orange);
             fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece1.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            var fadePiece2 = TestHelpers.CreatePiece(1, 0);
-
+            var fadePiece2 = TestHelpers.CreatePiece(1, 0, Colour.Orange);
             fadePiece2.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece2.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            Assert.IsTrue(fadePiece1.PieceConnection.ConnectionValid(fadePiece2, fadePiece1) || fadePiece1.PieceConnection.ConnectionValid(fadePiece1, fadePiece2));
+            Assert.IsTrue(ConnectionHelper.ValidConnectionBetween(fadePiece1, fadePiece2));
         }
 
         [Test]
         public void FadePiece_ToFadePart1MatchingPiece()
         {
-            var fadePiece1 = TestHelpers.CreatePiece(0, 0);
-
+            var fadePiece1 = TestHelpers.CreatePiece(0, 0, Colour.Orange);
             fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.DarkBlue);
-            fadePiece1.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            var fadePiece2 = TestHelpers.CreatePiece(1, 0);
-
+            var fadePiece2 = TestHelpers.CreatePiece(1, 0, Colour.Orange);
             fadePiece2.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece2.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            Assert.IsTrue(fadePiece1.PieceConnection.ConnectionValid(fadePiece2, fadePiece1) || fadePiece1.PieceConnection.ConnectionValid(fadePiece1, fadePiece2));
+            Assert.IsTrue(ConnectionHelper.ValidConnectionBetween(fadePiece1, fadePiece2));
         }
 
         [Test]
         public void FadePiece_ToFadePart2MatchingPiece()
         {
-            var fadePiece1 = TestHelpers.CreatePiece(0, 0);
-
+            var fadePiece1 = TestHelpers.CreatePiece(0, 0, Colour.DarkBlue);
             fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece1.Sprite = TestHelpers.GetSprite(Colour.DarkBlue);
 
-            var fadePiece2 = TestHelpers.CreatePiece(1, 0);
-
+            var fadePiece2 = TestHelpers.CreatePiece(1, 0, Colour.Orange);
             fadePiece2.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece2.Sprite = TestHelpers.GetSprite(Colour.Orange);
 
-            Assert.IsTrue(fadePiece1.PieceConnection.ConnectionValid(fadePiece2, fadePiece1) || fadePiece1.PieceConnection.ConnectionValid(fadePiece1, fadePiece2));
+            Assert.IsTrue(ConnectionHelper.ValidConnectionBetween(fadePiece1, fadePiece2));
         }
+
+        [Test]
+        public void FadePiece_ToFadePart1To2MatchingPiece()
+        {
+            var fadePiece1 = TestHelpers.CreatePiece(0, 0, Colour.DarkBlue);
+            fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.Red);
+
+            var fadePiece2 = TestHelpers.CreatePiece(1, 0, Colour.Red);
+            fadePiece2.PieceConnection = new TwoSpriteConnection(Colour.Orange);
+
+            Assert.IsTrue(ConnectionHelper.ValidConnectionBetween(fadePiece1, fadePiece2));
+        }
+
+        [Test]
+        public void FadePiece_ToFadePart2To1MatchingPiece()
+        {
+            var fadePiece1 = TestHelpers.CreatePiece(0, 0, Colour.DarkBlue);
+            fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.Red);
+
+            var fadePiece2 = TestHelpers.CreatePiece(1, 0, Colour.DarkBlue);
+            fadePiece2.PieceConnection = new TwoSpriteConnection(Colour.Orange);
+
+            Assert.IsTrue(ConnectionHelper.ValidConnectionBetween(fadePiece1, fadePiece2));
+        }
+
 
         [Test]
         public void FadePiece_ToFadeNonMatchingPiece()
         {
-            var fadePiece1 = TestHelpers.CreatePiece(0, 0);
-
+            var fadePiece1 = TestHelpers.CreatePiece(0, 0, Colour.DarkBlue);
             fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.Green);
-            fadePiece1.Sprite = TestHelpers.GetSprite(Colour.DarkBlue);
 
-            var fadePiece2 = TestHelpers.CreatePiece(1, 0);
+            var fadePiece2 = TestHelpers.CreatePiece(1, 0, Colour.Orange);
+            fadePiece1.PieceConnection = new TwoSpriteConnection(Colour.Red);
 
-            fadePiece2.PieceConnection = new TwoSpriteConnection(Colour.Red);
-            fadePiece2.Sprite = TestHelpers.GetSprite(Colour.Orange);
-
-            Assert.IsTrue(fadePiece1.PieceConnection.ConnectionValid(fadePiece2, fadePiece1) && fadePiece1.PieceConnection.ConnectionValid(fadePiece1, fadePiece2));
+            Assert.IsFalse(ConnectionHelper.ValidConnectionBetween(fadePiece1, fadePiece2));
         }
     }
 }

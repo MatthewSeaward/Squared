@@ -2,6 +2,11 @@
 {
     public static class ConnectionHelper
     {
+        public static bool ValidConnectionBetween(ISquarePiece first, ISquarePiece second)
+        {
+            return first.PieceConnection.ConnectionValid(first, second) || second.PieceConnection.ConnectionValid(second, first);
+        }
+
         public static bool AdjancentToLastPiece(ISquarePiece selectedPiece)
         {
             return AdjancentToLastPiece(selectedPiece, PieceSelectionManager.Instance.LastPiece);

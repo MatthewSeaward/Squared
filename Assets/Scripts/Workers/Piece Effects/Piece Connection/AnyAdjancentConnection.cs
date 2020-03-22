@@ -17,6 +17,11 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
                 return false;
             }
 
+            if (nextPiece.PieceConnection is NoConnection)
+            {
+                return false;
+            }
+
             return true;
         }
     }
