@@ -10,14 +10,17 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
     {
         public Colour SecondColour { get; private set; }
 
-        public TwoSpriteConnection(Colour pieceColour)
+        private ISquarePiece _squarePiece;        
+
+        public TwoSpriteConnection(ISquarePiece squarePiece,  Colour pieceColour)
         {
             SecondColour = pieceColour;
+            _squarePiece = squarePiece;
         }
 
-        public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
+        public bool ConnectionValidTo(ISquarePiece nextPiece)
         {
-            if (!ConnectionHelper.AdjancentToLastPiece(selectedPiece, nextPiece))
+            if (!ConnectionHelper.AdjancentToLastPiece(_squarePiece, nextPiece))
             {
                 return false;
             }
@@ -30,25 +33,18 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
             if (nextPiece != null && nextPiece.PieceConnection is TwoSpriteConnection)
             {
                 var fade = nextPiece.PieceConnection as TwoSpriteConnection;
-                if (fade.SecondColour == selectedPiece.PieceColour || fade.SecondColour == SecondColour)
+                if (fade.SecondColour == _squarePiece.PieceColour || fade.SecondColour == SecondColour)
                 {
                     return true;
                 }
             }
 
-            if (nextPiece != null && nextPiece.Sprite != selectedPiece.Sprite && nextPiece.PieceColour != SecondColour)
+            if (nextPiece != null && nextPiece.PieceColour != _squarePiece.PieceColour && nextPiece.PieceColour != SecondColour)
             {
                 return false;
-            }
-
-         
+            }         
 
             return true;
-        }
-
-        public bool ConnectionValid(ISquarePiece selectedPiece)
-        {
-            return ConnectionValid(selectedPiece, PieceSelectionManager.Instance.LastPiece);
         }
 
         public Sprite[] GetSprites()

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Workers.Factorys.PieceTemplates
 
         protected override void BuildConnection()
         {
-            squarePiece.PieceConnection = new AnyAdjancentConnection();
+            squarePiece.PieceConnection = new AnyAdjancentConnection(squarePiece);
         }
 
         protected override void BuildDestroyEffect()

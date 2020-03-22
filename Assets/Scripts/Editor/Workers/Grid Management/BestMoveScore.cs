@@ -175,7 +175,7 @@ namespace Assets.Scripts.Editor.Workers
             piece.PieceColour = (SquarePiece.Colour)UnityEngine.Random.Range(1, 9);
 
             piece.Sprite = GetSprite(piece.PieceColour.ToString());
-            piece.PieceConnection = new StandardConnection();
+            piece.PieceConnection = new StandardConnection(piece);
             piece.Scoring = new SingleScore(0);
 
             return piece;
@@ -187,7 +187,7 @@ namespace Assets.Scripts.Editor.Workers
             piece.Position = new Vector2Int(x, y);
             piece.Sprite = GetSprite("0");
             piece.PieceColour = SquarePiece.Colour.Red;
-            piece.PieceConnection = new StandardConnection();
+            piece.PieceConnection = new StandardConnection(piece);
 
             int value = Convert.ToInt32(sprite);
             piece.Scoring = new SingleScore(value);

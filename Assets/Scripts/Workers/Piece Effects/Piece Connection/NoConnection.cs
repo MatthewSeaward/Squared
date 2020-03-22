@@ -4,12 +4,7 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
     public class NoConnection : IPieceConnection
     {
-        public bool ConnectionValid(ISquarePiece selectedPiece)
-        {
-            return false;
-        }
-
-        public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
+        public bool ConnectionValidTo(ISquarePiece nextPiece)
         {
             return false;
         }

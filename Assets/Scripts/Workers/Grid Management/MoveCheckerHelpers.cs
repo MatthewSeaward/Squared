@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Managers;
+﻿using Assets.Scripts.Workers.Helpers;
+using Assets.Scripts.Workers.Managers;
 
 namespace Assets.Scripts.Workers.Grid_Management
 {
@@ -12,7 +13,7 @@ namespace Assets.Scripts.Workers.Grid_Management
                 return false;
             }
 
-            return piece.PieceConnection.ConnectionValid(piece, nextPiece) || nextPiece.PieceConnection.ConnectionValid(nextPiece, piece);
+            return ConnectionHelper.ValidConnectionBetween(piece, nextPiece);
         }
     }
 }

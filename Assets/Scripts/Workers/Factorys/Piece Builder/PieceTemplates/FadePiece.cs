@@ -22,7 +22,7 @@ namespace Assets.Scripts.Workers.Factorys.PieceTemplates
                 secondPiece = GetSprite();
             }
 
-            squarePiece.PieceConnection = new TwoSpriteConnection(secondPiece.colour);
+            squarePiece.PieceConnection = new TwoSpriteConnection(squarePiece, secondPiece.colour);
         }
 
         protected override void BuildDestroyEffect()

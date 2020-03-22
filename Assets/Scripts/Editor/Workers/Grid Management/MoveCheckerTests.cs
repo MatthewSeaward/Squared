@@ -174,7 +174,7 @@ namespace Assets.Scripts.Editor.Workers
             var piece = CreatePiece();
             piece.Position = new UnityEngine.Vector2Int(x, y);
             piece.Sprite = GetSprite(sprite);
-            piece.PieceConnection = new StandardConnection();
+            piece.PieceConnection = new StandardConnection(piece);
             return piece;
         }
 
@@ -183,7 +183,7 @@ namespace Assets.Scripts.Editor.Workers
             var piece = CreatePiece();
             piece.Position = new UnityEngine.Vector2Int(x, y);
             piece.Sprite = GetSprite(sprite);
-            piece.PieceConnection = new AnyAdjancentConnection();
+            piece.PieceConnection = new AnyAdjancentConnection(piece);
             return piece;
         }
     }

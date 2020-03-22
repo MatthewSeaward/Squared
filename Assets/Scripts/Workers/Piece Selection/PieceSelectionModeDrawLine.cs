@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.Workers.Grid_Management;
+using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.Managers;
 using System.Linq;
 
@@ -26,7 +27,7 @@ namespace Assets.Scripts.Workers.UserPieceSelection
                 return;
             }
 
-            if (piece.PieceConnection.ConnectionValid(piece))
+            if (ConnectionHelper.ValidConnectionBetween(PieceSelectionManager.Instance.LastPiece, piece))
             {
                 PieceSelectionManager.Instance.Add(piece, checkForAdditional);
                 piece.Selected();
@@ -54,7 +55,7 @@ namespace Assets.Scripts.Workers.UserPieceSelection
         }
 
         private static void TryToMapPath(ISquarePiece piece, bool checkForAdditional)
-        {
+        {   
             var path = pathFinder.FindPath(PieceSelectionManager.Instance.LastPiece.Position, piece.Position, GameManager.Instance.Restriction);
             if (path.Count == 0)
             {

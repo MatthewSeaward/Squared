@@ -47,7 +47,7 @@ namespace Assets.Scripts.Editor.Workers.Grid_Management.Helpers
             piece.Position = new Vector2Int(x, y);
             piece.Sprite = GetSprite(sprite);
             piece.PieceColour = (SquarePiece.Colour)Convert.ToInt32(sprite);
-            piece.PieceConnection = new StandardConnection();
+            piece.PieceConnection = new StandardConnection(piece);
             piece.Scoring = new SingleScore();
             return piece;
         }
@@ -58,7 +58,7 @@ namespace Assets.Scripts.Editor.Workers.Grid_Management.Helpers
             piece.Position = new Vector2Int(x, y);
             piece.Sprite = GetSprite(sprite);
             piece.PieceColour = SquarePiece.Colour.None;
-            piece.PieceConnection = new AnyAdjancentConnection();
+            piece.PieceConnection = new AnyAdjancentConnection(piece);
             piece.Scoring = new SingleScore();
             return piece;
         }
@@ -69,7 +69,7 @@ namespace Assets.Scripts.Editor.Workers.Grid_Management.Helpers
             piece.Position = new Vector2Int(x, y);
             piece.Sprite = GetSprite("1");
             piece.PieceColour = SquarePiece.Colour.Orange;
-            piece.PieceConnection = new TwoSpriteConnection(SquarePiece.Colour.Yellow);
+            piece.PieceConnection = new TwoSpriteConnection(piece, SquarePiece.Colour.Yellow);
             piece.Scoring = new SingleScore();
             return piece;
         }

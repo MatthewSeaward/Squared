@@ -74,7 +74,7 @@ public class BannedSprite
 
         var bannedPiece = Substitute.For<ISquarePiece>();
         bannedPiece.Sprite = default1Sprite;
-        bannedPiece.PieceConnection = new TwoSpriteConnection(bannedColour);
+        bannedPiece.PieceConnection = new TwoSpriteConnection(bannedPiece, bannedColour);
 
         var normalPiece = Substitute.For<ISquarePiece>();
         normalPiece.Sprite = default1Sprite;
@@ -94,7 +94,7 @@ public class BannedSprite
 
         var piece1 = Substitute.For<ISquarePiece>();
         piece1.Sprite = default1Sprite;
-        piece1.PieceConnection = new TwoSpriteConnection(defaultColour2);
+        piece1.PieceConnection = new TwoSpriteConnection(piece1, defaultColour2);
 
         var piece2 = Substitute.For<ISquarePiece>();
         piece2.Sprite = default1Sprite;

@@ -2,7 +2,6 @@
 {
     public interface IPieceConnection
     {
-        bool ConnectionValid(ISquarePiece selectedPiece);
-        bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece);
+        bool ConnectionValidTo(ISquarePiece nextPiece);
     }
 }

@@ -5,9 +5,16 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
     public class StandardConnection : IPieceConnection
     {
-        public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
+        public ISquarePiece _squarePiece;
+
+        public StandardConnection(ISquarePiece squarePiece)
         {
-            if (!ConnectionHelper.AdjancentToLastPiece(selectedPiece, nextPiece))
+            _squarePiece = squarePiece;
+        }
+
+        public bool ConnectionValidTo(ISquarePiece nextPiece)
+        {
+            if (!ConnectionHelper.AdjancentToLastPiece(_squarePiece, nextPiece))
             {
                 return false;
             }
@@ -17,18 +24,12 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
                 return true;
             }
 
-            if (nextPiece != null && nextPiece.Sprite != selectedPiece.Sprite)
+            if (nextPiece != null && nextPiece.PieceColour != _squarePiece.PieceColour)
             {
                 return false;
             }
-       
 
             return true;
-        }
-
-        public bool ConnectionValid(ISquarePiece selectedPiece)
-        {
-            return ConnectionValid(selectedPiece, PieceSelectionManager.Instance.LastPiece);
         }
     }
 }

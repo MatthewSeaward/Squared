@@ -1,15 +1,33 @@
-﻿namespace Assets.Scripts.Workers.Helpers
+﻿using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
+
+namespace Assets.Scripts.Workers.Helpers
 {
     public static class ConnectionHelper
     {
         public static bool ValidConnectionBetween(ISquarePiece first, ISquarePiece second)
         {
-            return first.PieceConnection.ConnectionValid(first, second) || second.PieceConnection.ConnectionValid(second, first);
-        }
+            // If the first piece is null (eg we haven't selected anything) then it's valid.
+            if (first == null)
+            {
+                return true;
+            }
 
-        public static bool AdjancentToLastPiece(ISquarePiece selectedPiece)
-        {
-            return AdjancentToLastPiece(selectedPiece, PieceSelectionManager.Instance.LastPiece);
+            if (second == null)
+            {
+                return false;
+            }
+
+            if (first == second)
+            {
+                return false;
+            }
+
+            if (first.PieceConnection is NoConnection || second.PieceConnection is NoConnection)
+            {
+                return false; 
+            }
+
+            return first.PieceConnection.ConnectionValidTo(second) || second.PieceConnection.ConnectionValidTo(first);
         }
 
         public static bool AdjancentToLastPiece(ISquarePiece selectedPiece, ISquarePiece lastPiece)

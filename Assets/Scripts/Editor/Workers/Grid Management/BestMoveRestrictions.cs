@@ -211,7 +211,7 @@ namespace Assets.Scripts.Editor.Workers
                     else if (piece == "a")
                     {
                         var p = BuildPiece(x, y, "1");
-                        p.PieceConnection = new AnyAdjancentConnection();
+                        p.PieceConnection = new AnyAdjancentConnection(p);
                         list.Add(p);
                     }
                     else
@@ -232,7 +232,7 @@ namespace Assets.Scripts.Editor.Workers
             piece.PieceColour = (SquarePiece.Colour)UnityEngine.Random.Range(3, 9);
 
             piece.Sprite = GetSprite(piece.PieceColour.ToString());
-            piece.PieceConnection = new StandardConnection();
+            piece.PieceConnection = new StandardConnection(piece);
             piece.Scoring = new SingleScore(0);
 
             return piece;
@@ -244,7 +244,7 @@ namespace Assets.Scripts.Editor.Workers
             piece.Position = new Vector2Int(x, y);
             piece.Sprite = GetSprite(sprite);
             piece.PieceColour = (SquarePiece.Colour)Convert.ToInt32(sprite);
-            piece.PieceConnection = new StandardConnection();
+            piece.PieceConnection = new StandardConnection(piece);
             piece.Scoring = new SingleScore();
             return piece;
         }        

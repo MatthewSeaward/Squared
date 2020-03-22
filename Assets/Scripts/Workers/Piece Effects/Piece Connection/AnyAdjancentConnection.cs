@@ -5,14 +5,17 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
     public class AnyAdjancentConnection : IPieceConnection
     {
-        public bool ConnectionValid(ISquarePiece selectedPiece)
+        private ISquarePiece _squarePiece;
+
+        public AnyAdjancentConnection(ISquarePiece squarePiece)
         {
-            return ConnectionValid(selectedPiece, PieceSelectionManager.Instance.LastPiece);
+            _squarePiece = squarePiece;
         }
 
-        public bool ConnectionValid(ISquarePiece selectedPiece, ISquarePiece nextPiece)
+
+        public bool ConnectionValidTo(ISquarePiece nextPiece)
         {
-            if (!ConnectionHelper.AdjancentToLastPiece(selectedPiece, nextPiece))
+            if (!ConnectionHelper.AdjancentToLastPiece(_squarePiece, nextPiece))
             {
                 return false;
             }
