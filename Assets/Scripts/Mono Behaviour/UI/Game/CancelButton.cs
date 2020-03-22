@@ -18,6 +18,8 @@ namespace Assets.Scripts.Game_Components
         private void Start()
         {
             PieceSelectionManager.SelectedPiecesChanged += PieceSelectionManager_SelectedPiecesChanged;
+            gameObject.SetActive(false);
+
             OnMouseExit();
         }
 
