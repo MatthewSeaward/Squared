@@ -3,6 +3,7 @@ using NSubstitute;
 using System.Collections.Generic;
 using UnityEngine;
 using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Helpers
 {
@@ -44,6 +45,13 @@ namespace Assets.Scripts.Workers.Helpers
             var piece =  Substitute.For<ISquarePiece>();
             piece.Type = type;
             return piece;
+        }
+
+        public static Sprite GetSprite(Colour colour)
+        {
+            var c = (int)colour;
+
+            return GetSprite(c.ToString());
         }
 
         public static Sprite GetSprite(string name)

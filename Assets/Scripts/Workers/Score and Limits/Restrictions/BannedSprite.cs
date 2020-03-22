@@ -61,7 +61,7 @@ namespace Assets.Scripts.Workers.Score_and_Limits
                 if (item.PieceConnection is TwoSpriteConnection)
                 {
                     var fadePiece = item.PieceConnection as TwoSpriteConnection;
-                    if (fadePiece.BannedPiece == (Colour) SpriteValue)
+                    if (fadePiece.SecondColour == (Colour) SpriteValue)
                     {
                         return true;
                     }
