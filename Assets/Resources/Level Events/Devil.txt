@@ -33,7 +33,7 @@
       "Star2": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "2-5",
+          "TriggerOn": "5-5",
           "Events": [
             {
               "EventType": "AddC",
@@ -61,7 +61,7 @@
       "Star3": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "1-2",
+          "TriggerOn": "10-12",
           "Events": [
             {
               "EventType": "RemoveC",
@@ -96,11 +96,17 @@
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "6-9",
+          "TriggerOn": "2-3",
           "Events": [
             {
-              "EventType": "Swap",
-              "NumberOfPiecesToSelect": 3
+              "EventType": "AddC",
+              "NewPieceType": "6"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "-1",
+              "NewPieceType": "6",
+              "NumberOfPiecesToSelect": 5
             }
           ]
         }
@@ -207,7 +213,7 @@
               "EventType": "ChangeS",
               "TypeOfPieceToSelect": "x",
               "NewPieceType": "d",
-              "NumberOfPiecesToSelect": "4"
+              "NumberOfPiecesToSelect": "2"
             }
           ]
         },
@@ -401,7 +407,7 @@
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "7-9",
+          "TriggerOn": "6-7",
           "Events": [
             {
               "EventType": "AddC",
@@ -411,8 +417,8 @@
             {
               "EventType": "ChangeC",
               "TypeOfPieceToSelect": "-1",
-              "NewPieceType": "4",
-              "NumberOfPiecesToSelect": 3
+              "NewPieceType": "2",
+              "NumberOfPiecesToSelect": 6
             }
           ]
         }
@@ -472,8 +478,7 @@
         {
           "Trigger": "Turns",
           "TriggerOn": "4-5",
-          "Events":
-          [
+          "Events": [
             {
 
               "EventType": "Add",
@@ -481,7 +486,7 @@
               "PositionsSelected": [ "3:2", "4:3" ]
 
             }
-          ]       
+          ]
         },
         {
           "Trigger": "Turns",
@@ -490,7 +495,20 @@
             {
               "EventType": "Change",
               "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "l"
+              "NewPieceType": "r"
+            }
+          ]
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "9-12",
+          "Events": [
+            {
+
+              "EventType": "Add",
+              "NewPieceType": "x",
+              "PositionsSelected": [ "3:6", "4:6", "2:7", "3:7", "4:7", "5:7" ]
+
             }
           ]
         }
@@ -514,6 +532,11 @@
             {
               "EventType": "RemoveC",
               "NewPieceType": "2"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "2",
+              "NewPieceType": "-1"
             }
           ]
         }
@@ -608,7 +631,22 @@
               "PositionsSelected": [ "5:3", "5:7" ]
             }
           ]
-        }        
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "6-6",
+          "Events": [
+            {
+              "EventType": "RemoveC",
+              "NewPieceType": "0"
+            },
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "0",
+              "NewPieceType": "-1"
+            }
+          ]
+        }
       ],
       "Star3": [
         {
@@ -618,7 +656,7 @@
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "0:7", "3:7", "4:7", "5:7", "2:6", "3:6", "2:5", "4:5", "5:5", "0:4", "1:4", "2:4", "4:4", "5:4", "6:4", "7:4" ]
+              "PositionsSelected": [ "0:7", "3:7", "4:7", "5:7", "2:5", "3:6", "2:5", "4:5", "5:5", "0:4", "1:4", "2:4", "4:4", "5:4", "6:4", "7:4" ]
             }
           ]
         },
@@ -720,8 +758,8 @@
           "Events": [
             {
               "EventType": "ChangeC",
-              "TypeOfPieceToSelect": "-1",
-              "NewPieceType": "5"
+              "TypeOfPieceToSelect": "5",
+              "NewPieceType": "-1"
             }
           ]
         },
