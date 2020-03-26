@@ -1,4 +1,5 @@
-﻿using static SquarePiece;
+﻿using Assets.Scripts.Workers.Piece_Effects.Piece_Connection;
+using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 {
@@ -8,7 +9,14 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
 
         public override bool ValidForSelection(ISquarePiece piece)
         {
-            return specificColour == Colour.None || piece.PieceColour == specificColour;
+            if (piece.PieceConnection is TwoSpriteConnection connection && connection.SecondColour == specificColour)
+            {
+                return true;
+            }
+            else
+            {
+                return specificColour == Colour.None || piece.PieceColour == specificColour;
+            }
         }
     }
 }

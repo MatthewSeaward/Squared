@@ -2,6 +2,7 @@
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
+using System.Collections.Generic;
 using UnityEngine;
 using static SquarePiece;
 
@@ -83,7 +84,7 @@ namespace Assets.Scripts.Workers.Factorys
                 child.gameObject.SetActive(false);
             }
 
-            ApplyLayer(squarePiece.PieceConnection as ILayeredSprite);
+            squarePiece.PieceConnection.Layers = ApplyLayer(squarePiece.PieceConnection as ILayeredSprite);
             ApplyLayer(squarePiece.PieceBehaviour as ILayeredSprite);
             ApplyLayer(squarePiece.DestroyPieceHandler as ILayeredSprite);
             ApplyLayer(squarePiece.Scoring as ILayeredSprite);
@@ -92,8 +93,10 @@ namespace Assets.Scripts.Workers.Factorys
 
         }
 
-        private void ApplyLayer(ILayeredSprite layer)
+        private List<GameObject> ApplyLayer(ILayeredSprite layer)
         {
+            var createdLayers = new List<GameObject>();
+
             if (layer != null && layer.GetSprites() != null)
             {
                 foreach (var sprite in layer.GetSprites())
@@ -103,8 +106,12 @@ namespace Assets.Scripts.Workers.Factorys
                     l.transform.parent = squarePiece.transform;
                     l.transform.localScale = new Vector3(1, 1, 1);
                     l.transform.localPosition = Vector3.zero;
+
+                    createdLayers.Add(l);
                 }
             }
+
+            return createdLayers;
         }
     }
 }

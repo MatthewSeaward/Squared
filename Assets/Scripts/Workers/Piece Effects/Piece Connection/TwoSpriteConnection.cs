@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Workers.Helpers;
+﻿using System.Collections.Generic;
+using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.IO.Data_Entities;
 using Assets.Scripts.Workers.Piece_Effects.Interfaces;
 using UnityEngine;
@@ -8,7 +9,8 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
 {
     public class TwoSpriteConnection : IPieceConnection, ILayeredSprite
     {
-        public Colour SecondColour { get; private set; }
+        public Colour SecondColour { get; set; }
+        public List<GameObject> Layers { get ; set; }
 
         private ISquarePiece _squarePiece;        
 

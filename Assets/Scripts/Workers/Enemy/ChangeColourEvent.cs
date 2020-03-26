@@ -23,7 +23,7 @@ namespace Assets.Scripts.Workers.Enemy
 
         protected override void InvokeRageActionOnPiece(ISquarePiece piece)
         {
-            SquarePieceHelpers.ChangePieceColour(piece, To);
+            SquarePieceHelpers.ChangePieceColour(piece, To, From);
         }
     }
 }
