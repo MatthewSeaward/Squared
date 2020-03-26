@@ -142,8 +142,8 @@ namespace Assets.Scripts.Workers.Managers
                                   && SlotExists(p.Position)).ToArray();
         }
 
-        private bool ValidXPosition(int x) => x >= 0 && x < NumberOfRows;
+        private bool ValidXPosition(int x) => x >= 0 && x < NumberOfColumns;
 
-        private bool ValidYPosition(int y) => y >= 0 && y < NumberOfColumns;    
+        private bool ValidYPosition(int y) => y >= 0 && y < NumberOfRows;    
     }
 }

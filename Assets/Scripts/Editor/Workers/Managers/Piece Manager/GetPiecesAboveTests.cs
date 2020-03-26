@@ -39,6 +39,30 @@ namespace Assets.Scripts.Editor.Workers.Managers.Piece_Manager
         }
 
         [Test]
+        public void BottomPiece()
+        {
+            var pieces = new List<ISquarePiece>() { TestHelpers.CreatePiece(0, 0), TestHelpers.CreatePiece(0, 1), TestHelpers.CreatePiece(0, 2) };
+            var xPos = new float[] { 1f, 1.5f, 2f };
+            var yPos = new float[] { -0.5f, 0f, 0.5f };
+
+            PieceManager.Instance.Setup(pieces, xPos, yPos);
+
+            Assert.AreEqual(2, PieceManager.Instance.GetPiecesAbove(0, 2).Length);
+        }
+
+        [Test]
+        public void SingleColumn()
+        {
+            var pieces = new List<ISquarePiece>() { TestHelpers.CreatePiece(0, 0), TestHelpers.CreatePiece(0, 1), TestHelpers.CreatePiece(0, 2) };
+            var xPos = new float[] { 1f };
+            var yPos = new float[] { -0.5f, 0f, 0.5f };
+
+            PieceManager.Instance.Setup(pieces, xPos, yPos);
+
+            Assert.AreEqual(2, PieceManager.Instance.GetPiecesAbove(0, 2).Length);
+        }
+
+        [Test]
         public void GetPieceAbove_SlotDoesNotExist()
         {
             // Add the piece but not the slot.
