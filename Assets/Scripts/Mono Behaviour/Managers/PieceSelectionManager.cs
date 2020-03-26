@@ -175,19 +175,14 @@ namespace Assets.Scripts
                         square.DestroyPiece();
                     }
                 }
+                MoveCompleted?.Invoke();
+
                 StoredMoves.Clear();
-                PieceDropper.BoardRefreshed += BoardRefreshed;
                 ResetMovesAllowedPerTurn();
             }
 
             CurrentPieces.Clear();
             SelectedPiecesChanged?.Invoke(CurrentPieces);
-        }
-
-        private void BoardRefreshed()
-        {
-            PieceDropper.BoardRefreshed -= BoardRefreshed;
-            MoveCompleted?.Invoke();
         }
 
         private void LogUsedPieces(List<ISquarePiece> pieces)
