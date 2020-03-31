@@ -65,6 +65,12 @@ namespace Assets.Scripts.Workers.Managers
 
         public void AddNewPiece(ISquarePiece newPiece)
         {
+            var piecesAtPosition = Pieces.Where(x => x.Position.x == newPiece.Position.x && x.Position.y == newPiece.Position.y);
+            if (piecesAtPosition.Any())
+            {
+                throw new System.InvalidOperationException($"Tried to insert a piece into position {newPiece.Position.x}:{newPiece.Position.y} but there is already a piece there");
+            }
+
             Pieces.Add(newPiece);
             AvaiableSlots.Add(newPiece.Position);
         }

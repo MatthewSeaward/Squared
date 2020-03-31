@@ -656,7 +656,7 @@
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "0:7", "3:7", "4:7", "5:7", "2:5", "3:6", "2:5", "4:5", "5:5", "0:4", "1:4", "2:4", "4:4", "5:4", "6:4", "7:4" ]
+              "PositionsSelected": [ "0:7", "3:7", "4:7", "5:7", "2:6", "3:6", "2:5", "4:5", "5:5", "0:4", "3:4", "6:4", "7:4" ]
             }
           ]
         },
@@ -695,7 +695,7 @@
               "NewPieceType": "b"
             }
           ]
-        }       
+        }
       ],
       "Star3": [
         {
@@ -810,7 +810,7 @@
             }
           ]
         }
-      ]     
+      ]
     },
     {
       "LevelNumber": 12,
@@ -990,10 +990,10 @@
           "TriggerOn": "5-6",
           "Events": [
             {
-                "EventType": "ChangeC",
-                "TypeOfPieceToSelect": "-1",
-                "NewPieceType": "3",
-                "NumberOfPiecesToSelect": 6
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "-1",
+              "NewPieceType": "3",
+              "NumberOfPiecesToSelect": 6
             }
           ]
         }
@@ -1017,7 +1017,7 @@
       ]
     },
     {
-      "LevelNumber": 15,           
+      "LevelNumber": 15,
       "Star3": [
         {
           "Trigger": "Turns",
@@ -1037,7 +1037,7 @@
             }
           ]
         }
-        
+
       ]
     }
   ]
