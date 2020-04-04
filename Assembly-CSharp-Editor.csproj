@@ -96,12 +96,17 @@
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\CurrentStarsTest.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\GetNextLevelTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Level Manager\SetLevelProgressTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\AddPieceTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\EmptySlotTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\GetPiecesAboveTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\HasSlotInColumnTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\SetupPieceManagerTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Managers\Piece Manager\SlotTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Behaviours\SwapSpriteBehaviourTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Connection\AnyAdjancentConnectionTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Connection\NoConnectionTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Connection\StandardConnectionTests.cs" />
+    <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Connection\TwoSpriteConnectionTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\MultipliedScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Scoring\SingleScoreTests.cs" />
     <Compile Include="Assets\Scripts\Editor\Workers\Piece Effects\Swap Effects\LockedSwapTests.cs" />
