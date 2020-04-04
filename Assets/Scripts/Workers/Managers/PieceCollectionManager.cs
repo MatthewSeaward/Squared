@@ -50,6 +50,11 @@ namespace Assets.Scripts.Workers.Managers
 
             foreach (var types in grouped)
             {
+                if (types.PieceColour == Colour.None)
+                {
+                    continue;
+                }
+
                 var savedCollection = PiecesCollected.Pieces.FirstOrDefault(x => x.PieceColour == types.PieceColour);
 
                 if (savedCollection != null)
