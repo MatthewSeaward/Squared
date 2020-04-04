@@ -3,6 +3,7 @@ using Assets.Scripts.Workers.Managers;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assets.Scripts.Editor.Workers.Managers.Piece_Manager
 {
@@ -34,7 +35,11 @@ namespace Assets.Scripts.Editor.Workers.Managers.Piece_Manager
         {
             var piece = TestHelpers.CreatePiece(1, 1);
 
-            Assert.Throws<InvalidOperationException>(() => PieceManager.Instance.AddNewPiece(piece));
+            PieceManager.Instance.AddNewPiece(piece);
+
+            var pieces = PieceManager.Instance.Pieces.Where(x => x.Position.x == 1 && x.Position.y == 1);
+
+            Assert.AreEqual(1, pieces.Count());
         }
     }
 }
