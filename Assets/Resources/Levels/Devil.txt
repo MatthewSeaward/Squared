@@ -83,8 +83,8 @@
         "-x-x-x-x",
         "-x-x-x-x",
         "x-f-x-r-",
-        "x-x-x-x-",
-        "-x-x-x-x",
+        "x-f-x-f-",
+        "-r-x-f-x",
         "-f-x-f-x",
         "x-x-x-x-",
         "x-x-x-x-",
@@ -140,7 +140,7 @@
 				"---xx---"
 			],
 			"Star1": ["Turns", "10", "Max", "5"],
-			"Star2": ["Time", "25"],
+			"Star2": ["Time", "30"],
 			"Star3": ["Turns", "9", "Min", "3"]
 		},
 		{
@@ -157,8 +157,8 @@
 				"xxx--xxx",
 				"---ll---",
 				"--r--r--",
-				"-c------",
-				"-x------",
+				"-c---s--",
+				"-x---x--",
 				"xxxxxxxx",
 				"xxfxx-c-",
 				"xxxxx---"
@@ -175,7 +175,6 @@
 			"StarsToUnlock": 100,
 			"Pattern":
 			[
-				"--------",
 				"--b--b--",
 				"--xxxx--",
 				"-xxxxxx-",
@@ -185,7 +184,8 @@
 				"-cxxxxc-",
 				"--xxxx--",
 				"--cxxc--",
-				"--xxxx--"
+        "--xxxx--",		
+        "--------"
 			],
 			"Star1": ["Turns", "10"],
 			"Star2": ["Time", "40"],
@@ -198,8 +198,7 @@
       "SpecialDropPieces": [ "s", "C", "2", "3", "d" ],
 			"StarsToUnlock": 112,
 			"Pattern":
-			[
-				"--------",
+			[				
 				"----xxx-",
 				"----xxx-",
 				"---f----",
@@ -209,11 +208,12 @@
 				"-xx---xx",
 				"---r----",
 				"----lxx-",
-				"----xxx-"
+        "----xxx-",
+        "--------"
 			],
 			"Star1": ["Turns", "8"],
 			"Star2": ["Turns", "15", "Diagonal Only", ""],
-			"Star3": ["Turns", "15", "No Diagonal", ""]
+			"Star3": ["Turns", "9", "No Diagonal", ""]
 		},
 		{
 			"LevelNumber": 10,
@@ -319,7 +319,6 @@
 			"StarsToUnlock": 130,
 			"Pattern":
 			[
-				"--------",
 				"---xx---",
 				"--x--x--",
 				"xxx--xxx",
@@ -328,7 +327,8 @@
 				"xxx--xxx",
 				"xxx--xxx",
 				"-xx---xx",
-				"x--c-c-x",
+        "x--c-c-x",		
+        "--------",
 				"--------"
 			],
 			"Star1": ["Turns", "20", "Min", "4"],
@@ -344,15 +344,15 @@
 			"Pattern":
 			[
 				"--------",
-				"--------",
-				"--------",
+				"--------",				
 				"---xx---",
 				"--xxxx--",
 				"xxxxxxxx",
 				"xxxxxxxx",
 				"--xxxx--",
 				"---xx---",
-				"--------",
+        "--------",
+        "--------",
 				"--------"
 			],
 			"Star1": ["Turns", "16"],
