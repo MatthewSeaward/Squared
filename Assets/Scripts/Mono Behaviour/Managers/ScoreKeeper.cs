@@ -113,7 +113,7 @@ public class ScoreKeeper : MonoBehaviour
         GameManager.Instance.ChangePauseState(this, true);
         GameManager.Instance.GameOver = true;
 
-        if (result == GameResult.ViolatedRestriction)
+        if (result == GameResult.ViolatedRestriction || !ShowScore.Instance.ScoreOnShow)
         {
             InvokeGameCompleted();
         }

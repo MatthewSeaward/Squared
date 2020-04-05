@@ -32,6 +32,8 @@ namespace Assets.Scripts
             }
         }
 
+        public bool ScoreOnShow => CountOfScoreOnShow > 0;
+
         private void Awake()
         {
             Instance = this;
@@ -71,7 +73,7 @@ namespace Assets.Scripts
             aniamtedText.TextHidden += AniamtedText_TextHidden;
             aniamtedText.Show($"+{points}", colour);
 
-            CountOfScoreOnShow--;
+            CountOfScoreOnShow++;
         }
 
         private void AniamtedText_TextHidden(AnimatedText animatedText)
