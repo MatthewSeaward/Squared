@@ -17,6 +17,8 @@ namespace Assets.Scripts
 
         public static PieceDropper Instance;
 
+        public float YPosition = 4.07f;
+
         private static bool checkInProgress = false;
         private int columnsToCheck;
         private GridGenerator _gridGenerator;
@@ -103,7 +105,7 @@ namespace Assets.Scripts
                 {
                     float worldPosX = PieceManager.Instance.XPositions[column];
 
-                    var piece = GridGenerator.GenerateRandomTile(worldPosX, 4, column, -1);
+                    var piece = GridGenerator.GenerateRandomTile(worldPosX, YPosition, column, -1);
                     piece.GetComponent<Collider2D>().enabled = false;
 
                     pieceQueue.Enqueue(piece);

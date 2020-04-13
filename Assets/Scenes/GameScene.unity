@@ -1298,7 +1298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218f456b27a82e148b62f320cda68004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Startx: {x: -2.3, y: 2.7}
+  Startx: {x: -2.3, y: 3}
   TileSpacing: 0.65
 --- !u!114 &660420516
 MonoBehaviour:
