@@ -21,7 +21,6 @@ namespace Assets.Scripts
 
         private float _loadingtime = 0;
         private int width = 0;
-        private bool _alreadyLoading = false;
         private bool _showStatusMessages => Debug.isDebugBuild;
 
         [SerializeField]
@@ -124,9 +123,7 @@ namespace Assets.Scripts
         }
 
         IEnumerator LoadSceneAsync()
-        {
-            _alreadyLoading = true;
-    
+        {   
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Scenes.MainMenu);
             asyncLoad.allowSceneActivation = false;
 

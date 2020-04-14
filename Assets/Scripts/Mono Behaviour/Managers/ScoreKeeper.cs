@@ -28,8 +28,6 @@ public class ScoreKeeper : MonoBehaviour
     private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
 
     private int _currentScore = 0;
-    private Action action;
-
     private bool _pendingGameCompleted = false;
 
     private int Target => LevelManager.Instance.SelectedLevel.Target;

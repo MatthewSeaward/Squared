@@ -5,13 +5,9 @@ using UnityEngine;
 
 namespace Assets.Scripts
 {
-    public delegate void ShowScoreHidden();
-
     public class ShowScore : MonoBehaviour
     {
         public static ShowScore Instance;
-
-        public static event ShowScoreHidden ShowScoreHidden;
 
         private int _countOfScoreOnShow;
 
@@ -24,11 +20,6 @@ namespace Assets.Scripts
             set
             {
                 _countOfScoreOnShow = Mathf.Clamp(value, 0, int.MaxValue);
-
-                if (_countOfScoreOnShow == 0)
-                {
-                    ShowScoreHidden?.Invoke();
-                }
             }
         }
 
