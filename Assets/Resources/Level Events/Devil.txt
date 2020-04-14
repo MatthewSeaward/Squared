@@ -207,25 +207,25 @@
       "Star3": [
         {
           "Trigger": "Turns",
-          "TriggerOn": "2-8",
+          "TriggerOn": "2-5",
           "Events": [
             {
               "EventType": "ChangeS",
-              "TypeOfPieceToSelect": "x",
-              "NewPieceType": "d",
-              "NumberOfPiecesToSelect": "2"
+              "TypeOfPieceToSelect": "d",
+              "NewPieceType": "x",
+              "NumberOfPiecesToSelect": "5"
             }
           ]
         },
         {
           "Trigger": "Turns",
-          "TriggerOn": "14-14",
+          "TriggerOn": "10-14",
           "Events": [
             {
               "EventType": "ChangeS",
               "TypeOfPieceToSelect": "d",
               "NewPieceType": "t",
-              "NumberOfPiecesToSelect": "4"
+              "NumberOfPiecesToSelect": "5"
             }
           ]
         }
@@ -716,9 +716,10 @@
           "TriggerOn": "7-7",
           "Events": [
             {
-              "EventType": "Change",
-              "NumberOfPiecesToSelect": 2,
-              "NewPieceType": "2"
+              "EventType": "ChangeS",
+              "NewPieceType": "x",
+              "TypeOfPieceToSelect": "t",
+              "NumberOfPiecesToSelect": 3
             }
           ]
         },
@@ -979,12 +980,12 @@
             {
               "EventType": "Add",
               "NewPieceType": "r",
-              "PositionsSelected": [ "5:8" ]
+              "PositionsSelected": [ "4:7" ]
             },
             {
               "EventType": "Add",
               "NewPieceType": "x",
-              "PositionsSelected": [ "4:7", "3:7", "3:8", "4:8" ]
+              "PositionsSelected": [ "3:7", "3:6", "4:6" ]
             }
           ]
         },
