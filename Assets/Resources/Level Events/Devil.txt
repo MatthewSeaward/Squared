@@ -1009,7 +1009,7 @@
             {
               "EventType": "Add",
               "NewPieceType": "b",
-              "PositionsSelected": [ "3:8", "4:8", "5:8" ]
+              "PositionsSelected": [ "2:8", "5:8" ]
             }
           ]
         },
