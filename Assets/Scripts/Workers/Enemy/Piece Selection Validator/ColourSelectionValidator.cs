@@ -15,7 +15,7 @@ namespace Assets.Scripts.Workers.Enemy.Piece_Selection_Validator
             }
             else
             {
-                return specificColour == Colour.None || piece.PieceColour == specificColour;
+                return piece.PieceColour != Colour.None && (specificColour == Colour.None || piece.PieceColour == specificColour);
             }
         }
     }

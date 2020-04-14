@@ -36,7 +36,7 @@ namespace Assets.Scripts.Editor.Workers.Events.Events.Validators
         }
 
         [Test]
-        public void NoColourSets()
+        public void NoColourSet()
         {
             var sut = new ColourSelectionValidator() { specificColour = SquarePiece.Colour.None };
 
@@ -46,6 +46,19 @@ namespace Assets.Scripts.Editor.Workers.Events.Events.Validators
             var validForSelection = sut.ValidForSelection(piece);
 
             Assert.IsTrue(validForSelection);
+        }
+        
+        [Test]
+        public void IgnorePiecesWithoutColour()
+        {
+            var sut = new ColourSelectionValidator() { specificColour = SquarePiece.Colour.None };
+
+            var piece = TestHelpers.CreatePiece();
+            piece.PieceColour = SquarePiece.Colour.None;
+
+            var validForSelection = sut.ValidForSelection(piece);
+
+            Assert.IsFalse(validForSelection);
         }
 
         [Test]
