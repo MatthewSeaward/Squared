@@ -30,6 +30,8 @@ public class ScoreKeeper : MonoBehaviour
     private int _currentScore = 0;
     private Action action;
 
+    private bool _pendingGameCompleted = false;
+
     private int Target => LevelManager.Instance.SelectedLevel.Target;
     private bool ReachedTarget => CurrentScore >= Target;
 
@@ -51,10 +53,20 @@ public class ScoreKeeper : MonoBehaviour
         PieceSelectionManager.SequenceCompleted += SequenceCompleted;
         ExtraPoints.BonusAdded += ExtraPoints_BonusAdded;
         RestrictionDisplay.RestrictionViolated += RestrictionViolated;
-        LimitDisplay.LimitReached += LimitDisplay_LimitReached;               
+        LimitDisplay.LimitReached += LimitDisplay_LimitReached;
 
+        _pendingGameCompleted = false;
         CurrentScore = 0;
+
         BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
+    }
+
+    public void Update()
+    {
+        if (_pendingGameCompleted && !ShowScore.Instance.ScoreOnShow)
+        {
+            InvokeGameCompleted();
+        }
     }
 
     public void OnDestroy()
@@ -113,19 +125,12 @@ public class ScoreKeeper : MonoBehaviour
         GameManager.Instance.ChangePauseState(this, true);
         GameManager.Instance.GameOver = true;
 
-        if (result == GameResult.ViolatedRestriction || !ShowScore.Instance.ScoreOnShow)
-        {
-            InvokeGameCompleted();
-        }
-        else
-        {
-            ShowScore.ShowScoreHidden += InvokeGameCompleted;
-        }
+        _pendingGameCompleted = true;
     }
 
     private void InvokeGameCompleted()
     {
-        ShowScore.ShowScoreHidden -= InvokeGameCompleted;
+        _pendingGameCompleted = false;
 
         GameManager.Instance.ChangePauseState(this, false);
 
