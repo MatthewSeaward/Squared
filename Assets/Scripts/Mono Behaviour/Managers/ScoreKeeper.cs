@@ -32,6 +32,7 @@ public class ScoreKeeper : MonoBehaviour
 
     private int Target => LevelManager.Instance.SelectedLevel.Target;
     private bool ReachedTarget => CurrentScore >= Target;
+    private float _timer = 0f;
 
     private int CurrentScore
     {
@@ -61,9 +62,14 @@ public class ScoreKeeper : MonoBehaviour
 
     public void Update()
     {
-        if (_pendingGameCompleted && !ShowScore.Instance.ScoreOnShow)
+        if (_pendingGameCompleted)
         {
-            InvokeGameCompleted();
+            _timer += Time.deltaTime;
+            if (_timer > 5f || !ShowScore.Instance.ScoreOnShow)
+            {
+                InvokeGameCompleted();
+                _timer = 0f;
+            }
         }
     }
 
