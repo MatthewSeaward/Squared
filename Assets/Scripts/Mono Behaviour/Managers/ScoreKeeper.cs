@@ -28,11 +28,10 @@ public class ScoreKeeper : MonoBehaviour
     private IScoreCalculator ScoreCalculator = new StandardScoreCalculator();
 
     private int _currentScore = 0;
-    private bool _pendingGameCompleted = false;
+    private readonly float TimeDelay = 2f;
 
     private int Target => LevelManager.Instance.SelectedLevel.Target;
     private bool ReachedTarget => CurrentScore >= Target;
-    private float _timer = 0f;
 
     private int CurrentScore
     {
@@ -54,23 +53,9 @@ public class ScoreKeeper : MonoBehaviour
         RestrictionDisplay.RestrictionViolated += RestrictionViolated;
         LimitDisplay.LimitReached += LimitDisplay_LimitReached;
 
-        _pendingGameCompleted = false;
         CurrentScore = 0;
 
         BonusChanged?.Invoke(ScoreCalculator.ActiveBonus);
-    }
-
-    public void Update()
-    {
-        if (_pendingGameCompleted)
-        {
-            _timer += Time.deltaTime;
-            if (_timer > 5f || !ShowScore.Instance.ScoreOnShow)
-            {
-                InvokeGameCompleted();
-                _timer = 0f;
-            }
-        }
     }
 
     public void OnDestroy()
@@ -129,13 +114,11 @@ public class ScoreKeeper : MonoBehaviour
         GameManager.Instance.ChangePauseState(this, true);
         GameManager.Instance.GameOver = true;
 
-        _pendingGameCompleted = true;
+        Invoke(nameof(InvokeGameCompleted), TimeDelay);
     }
 
     private void InvokeGameCompleted()
     {
-        _pendingGameCompleted = false;
-
         GameManager.Instance.ChangePauseState(this, false);
 
         if (currentResult != GameResult.None)
