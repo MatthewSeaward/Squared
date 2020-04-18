@@ -5,7 +5,7 @@
 			"LevelNumber" : 1,
 			"Target": 150,
 			"colours":[1,2,0],
-			"StarsToUnlock": 0,
+			"StarsToUnlock": 38,
 			"Pattern":
 			[
 				"--------",		
