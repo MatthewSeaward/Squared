@@ -100,7 +100,6 @@ namespace Assets.Scripts.Editor.Workers.Events.Enemy_Events_Factory
             Assert.Throws<ArgumentException>(() => EnemyEventsFactory.GetLevelEvents(testEvent));
         }
 
-
         [Test]
         public void InvalidTriggerOn_NoDash_Percent()
         {

@@ -1,48 +1,78 @@
 { 
-	"Items": [		
-		{
-		 "LevelNumber":2,
-		 "Star1":[ 
-			{ 
-			   "Trigger":"Turns",
-			   "TriggerOn":"2-3",
-			     "Events":
-				[{
-					 "EventType":"Swap",
-					"NumberOfPiecesToSelect":2	
-				}]
-			},
-			{ 
-			   "Trigger":"Turns",
-			   "TriggerOn":"5-6",
-			     "Events":
-				[{		
-					"EventType":"Swap",
-					"NumberOfPiecesToSelect":2
-				}]
-			},
-			{ 
-			   "Trigger":"Turns",
-			   "TriggerOn":"7-8",
-			    "Events":
-				[{
-				   "EventType":"Swap",
-				   "NumberOfPiecesToSelect":2
-			   }]
-			}
-		 ],
-		 "Star2":[ 
-			{ 
-			   "Trigger":"Turns",
-			   "TriggerOn":"4-7",
-			   "Events":
-				[{
-					"EventType":"Swap",
-					"TypeOfPieceToSelect":"3"
-			   }]
-			}
-		 ]
-		},
+	"Items": [
+    {
+      "LevelNumber": 2,
+      "Star1": [
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "2-3",
+          "Events": [
+            {
+              "EventType": "Swap",
+              "NumberOfPiecesToSelect": 2
+            }
+          ]
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "5-6",
+          "Events": [
+            {
+              "EventType": "Swap",
+              "NumberOfPiecesToSelect": 2
+            }
+          ]
+        },
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "7-8",
+          "Events": [
+            {
+              "EventType": "Swap",
+              "NumberOfPiecesToSelect": 2
+            }
+          ]
+        }
+      ],
+      "Star2": [
+        {
+          "Trigger": "Turns",
+          "TriggerOn": "4-7",
+          "Events": [
+            {
+              "EventType": "Swap",
+              "TypeOfPieceToSelect": "3"
+            }
+          ]
+        },
+        {
+          "Trigger": "Percent",
+          "TriggerOn": "-35-6",
+          "Events": [
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "6",
+              "NewPieceType": "-1",
+              "NumberOfPiecesToSelect": 6
+            }
+          ]
+        }
+      ],
+      "Star3": [        
+        {
+          "Trigger": "Percent",
+          "TriggerOn": "-35-8",
+          "Events": [
+            {
+              "EventType": "ChangeC",
+              "TypeOfPieceToSelect": "8",
+              "NewPieceType": "-1",
+              "NumberOfPiecesToSelect": 6
+            }
+          ]
+        }
+      ]
+    },
 		{
 		 "LevelNumber":3,
 		 "Star1":[ 
