@@ -244,7 +244,7 @@
 			"Target": 300,
 			"colours":[0,3,5,6,7],
 			"SpecialDropPieces": ["3","f", "2"],
-			"StarsToUnlock": 120,
+			"StarsToUnlock": 118,
 			"Pattern":
 			[
 				"--------",
@@ -268,7 +268,7 @@
 			"Target": 100,
 			"colours":[3,4],
 			"SpecialDropPieces": ["4", "2", "3"],
-			"StarsToUnlock": 125,
+			"StarsToUnlock": 120,
 			"Pattern":
 			[
 				"--------",
@@ -292,7 +292,7 @@
 			"Target": 150,
 			"colours":[3,4,2],
 			"SpecialDropPieces": ["b", "s"],
-			"StarsToUnlock": 127,
+			"StarsToUnlock": 125,
 			"Pattern":
 			[
 				"--------",
@@ -316,7 +316,7 @@
 			"Target": 250,
 			"colours":[3,4,8,0],
 			"SpecialDropPieces": ["b", "h", "s", "3", "d"],
-			"StarsToUnlock": 130,
+			"StarsToUnlock": 128,
 			"Pattern":
 			[
 				"---xx---",
@@ -340,7 +340,7 @@
 			"Target": 175,
 			"colours":[6,4,5],
 			"SpecialDropPieces": ["h", "r", "s", "f", "C"],
-			"StarsToUnlock": 132,
+			"StarsToUnlock": 130,
 			"Pattern":
 			[
 				"--------",
