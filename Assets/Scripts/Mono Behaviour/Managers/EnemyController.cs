@@ -148,11 +148,21 @@ namespace Assets.Scripts
                 return;
             }
 
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                return;
+            }
+
             ShowEnemyText_Internal(text);
         }
 
         private void ShowEnemyText_Internal(params string[] text)
         {
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                return;
+            }
+
             foreach (var t in text)
             {
                 _queuedText.Enqueue(t);

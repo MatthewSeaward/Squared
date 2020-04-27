@@ -7,6 +7,11 @@ namespace Assets.Scripts.UI
     {
         protected override void ChildStart()
         {
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                return;
+            }
+
             PieceSelectionManager.MoveCompleted += PieceSelectionManager_MoveCompleted;
             GameManager.PauseStateChanged += GameManager_PauseStateChanged;
         }

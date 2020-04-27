@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.UI;
+using Assets.Scripts.Workers.Managers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,7 +30,7 @@ namespace Assets.Scripts
 
         private void UpdateScore(int newScore, int target)
         {
-            Score.text = $"Score: {newScore}/{target}";
+            Score.text = LevelManager.Instance.DailyChallenge ? $"Score: {newScore}" :  $"Score: {newScore}/{target}";
             Score.color = Color.white;
 
             ScoreProgress.UpdateProgressBar(newScore, target);

@@ -31,7 +31,7 @@ public class ScoreKeeper : MonoBehaviour
     private readonly float TimeDelay = 2f;
 
     private int Target => LevelManager.Instance.SelectedLevel.Target;
-    private bool ReachedTarget => CurrentScore >= Target;
+    private bool ReachedTarget => Target > 0 && CurrentScore >= Target;
 
     private int CurrentScore
     {
@@ -94,7 +94,14 @@ public class ScoreKeeper : MonoBehaviour
 
     private void LimitDisplay_LimitReached()
     {
-        SaveProgress(ReachedTarget ? GameResult.ReachedTarget : GameResult.LimitExpired);
+        GameResult result = ReachedTarget ? GameResult.ReachedTarget : GameResult.LimitExpired;
+       
+        if (LevelManager.Instance.DailyChallenge)
+        {
+            result = GameResult.ReachedTarget;
+        }
+
+        SaveProgress(result);
     }
 
     private void RestrictionViolated()

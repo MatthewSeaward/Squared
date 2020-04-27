@@ -8,6 +8,12 @@ namespace Assets.Scripts.UI
     {
         private void Start()
         {
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+
             PieceSelectionManager.SelectedPiecesChanged += PieceSelectionManager_SelectedPiecesChanged;
 
             var buttons = GetComponentsInChildren<PowerupSlot>();

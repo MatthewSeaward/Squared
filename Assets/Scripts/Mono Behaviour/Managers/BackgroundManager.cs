@@ -10,9 +10,12 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            foreach(var background in Backgrounds)
+            var chapterName = LevelManager.Instance.DailyChallenge ? "Default" : LevelManager.Instance.SelectedChapter;
+
+            foreach (var background in Backgrounds)
             {
-               background.SetActive(background.name == LevelManager.Instance.SelectedChapter);
+
+               background.SetActive(background.name == chapterName);
             }
         }
     }

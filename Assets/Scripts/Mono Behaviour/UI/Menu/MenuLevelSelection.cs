@@ -94,8 +94,9 @@ namespace Assets.Scripts
             {
                 return;
             }
-
+            LevelManager.Instance.DailyChallenge = false;
             LevelManager.Instance.CurrentLevel = i;
+
             StartCoroutine(LoadSceneAsync(button));
         }
 

@@ -37,7 +37,8 @@ namespace Assets.Scripts
 
         private void ShowVictoryPopup(int score, int target)
         {
-            MenuProvider.Instance.ShowVictoryPopup($"You scored {score} out of {target}!");
+            string body = LevelManager.Instance.DailyChallenge ? $"You scored {score} " : $"You scored {score} out of {target}!";
+            MenuProvider.Instance.ShowVictoryPopup(body);
         }
 
         private void ShowLimitExpiredPopup()

@@ -15,6 +15,7 @@ namespace Assets.Scripts.Workers.Managers
 
         private int chapterInt = 0;
         private int _currentLevel = 0;
+        public bool DailyChallenge { get; set; }
 
         public Dictionary<string, Level[]> Levels
         {
@@ -115,6 +116,11 @@ namespace Assets.Scripts.Workers.Managers
 
         public Level GetNextLevel()
         {
+            if (DailyChallenge)
+            {
+                return SelectedLevel;
+            }
+
             if (CurrentLevel >= SelectedChapterLevels.Length)
             {
                 CurrentLevel = SelectedChapterLevels.Length - 1;

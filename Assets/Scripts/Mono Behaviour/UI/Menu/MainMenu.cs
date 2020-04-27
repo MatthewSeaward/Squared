@@ -1,5 +1,9 @@
-﻿using Assets.Scripts.Workers.Managers;
+﻿using Assets.Scripts.Constants;
+using Assets.Scripts.Workers.Daily_Challenge;
+using Assets.Scripts.Workers.Managers;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts
 {
@@ -26,8 +30,8 @@ namespace Assets.Scripts
 
         [SerializeField]
         private GameObject HomeButton;
+        private bool _alreadyLoading;
 
-               
         public void Start()
         {
             ChangeTab(LastTab);
@@ -64,6 +68,14 @@ namespace Assets.Scripts
             ChangeTab(Scripts.MenuTab.Powerups);
         }
 
+        public void DailyChallenge_Clicked()
+        {
+            LevelManager.Instance.SelectedLevel = RandomLevelGenerator.GenerateRandomLevel(new CurrentDayGenerator());
+            LevelManager.Instance.DailyChallenge = true;
+
+            StartCoroutine(LoadSceneAsync());
+        }
+              
         private void ChangeTab(MenuTab menuTab)
         {
             LevelSelectTab.SetActive(menuTab == Scripts.MenuTab.LevelSelect);
@@ -76,5 +88,26 @@ namespace Assets.Scripts
 
             LastTab = menuTab;
         }
+
+        private IEnumerator LoadSceneAsync()
+        {
+            _alreadyLoading = true;
+
+            //FindObjectOfType<EventSystem>().gameObject.SetActive(false);
+
+          //  button.GetComponentInChildren<Text>().text = "PLEASE WAIT";
+
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(Scenes.Game);
+
+            asyncLoad.allowSceneActivation = false;
+
+            while (asyncLoad.progress < 0.9f)
+            {
+                yield return null;
+            }
+
+            asyncLoad.allowSceneActivation = true;
+        }
+
     }
 }

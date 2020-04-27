@@ -41,20 +41,40 @@ namespace Assets.Scripts
 
             SetupButtons();
 
-            GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                GetComponentInChildren<StarPanel>().gameObject.SetActive(false);
+            }
+            else
+            {
+                GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
+            }
+
             gameObject.SetActive(true);
         }
 
         private void SetupButtons()
         {
-            Continue.interactable = LevelManager.Instance.CanPlayLevel(LevelManager.Instance.CurrentLevel + 1) && LivesManager.Instance.LivesRemaining > 0; ;
-            NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.StarAchieved < 3);
-            NextStar.interactable = LivesManager.Instance.LivesRemaining > 0;
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                Continue.GetComponentInChildren<Text>().text = "Try again";
+                NextStar.gameObject.SetActive(false);
+            }
+            else
+            {
+                Continue.interactable = LevelManager.Instance.CanPlayLevel(LevelManager.Instance.CurrentLevel + 1) && LivesManager.Instance.LivesRemaining > 0; ;
+                NextStar.gameObject.SetActive(LivesManager.Instance.LivesRemaining > 0 && LevelManager.Instance.SelectedLevel.StarAchieved < 3);
+                NextStar.interactable = LivesManager.Instance.LivesRemaining > 0;
+            }
         }
 
         public void LoadNextLevel()
         {
-            LevelManager.Instance.CurrentLevel++;
+            if (!LevelManager.Instance.DailyChallenge)
+            {
+                LevelManager.Instance.CurrentLevel++;
+            }
+
             SceneManager.LoadScene(Scenes.Game);
         }
 
