@@ -9,9 +9,23 @@ namespace Assets.Scripts.Workers.IO
 {
     public class FireBaseScoreWriter : IScoreWriter
     {
+        public void SaveDailyChallenge(int score)
+        {
+            var entry = new ScoreEntry()
+            {
+                User = UserManager.UserID,
+                Score = score,
+                Date = DateTime.Now.ToString()
+            };
+
+            var jsonValue = JsonUtility.ToJson(entry);
+
+            FireBaseDatabase.AddUniqueJSON(FireBaseSavePaths.DailyChallengeLocation(DateTime.Now), jsonValue);
+        }
+
         public void SaveScore(string chapter, int level, int star, int score, GameResult result)
         {            
-            var entry = new ScoreEntry()
+            var entry = new LevelScoreEntry()
             {
                 Chapter = chapter,
                 Level = level,

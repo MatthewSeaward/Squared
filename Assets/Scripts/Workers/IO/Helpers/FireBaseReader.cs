@@ -56,5 +56,48 @@ namespace Assets.Scripts.Workers.IO.Helpers
 
             return result;
         }
+
+        public async static Task<List<T>> ReadSingleAsync<T>(string path)
+        {
+            var result = new List<T>();
+
+            try
+            {
+                await FireBaseDatabase.Database.Child(path).GetValueAsync().ContinueWith(task =>
+                {
+                    if (task.IsFaulted)
+                    {
+                    }
+                    else if (task.IsCompleted)
+                    {
+                        try
+                        {
+                            DataSnapshot snapshot = task.Result;
+
+                            foreach (var child in snapshot.Children)
+                            {
+                                string info = child?.GetRawJsonValue()?.ToString();
+
+                                if (info != null)
+                                {
+                                    var data = JsonUtility.FromJson<T>(info);
+                                    result.Add(data);
+                                }
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            DebugLogger.Instance.WriteException(ex);
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                DebugLogger.Instance.WriteException(ex);
+            }
+
+            return result;
+        }
     }
 }

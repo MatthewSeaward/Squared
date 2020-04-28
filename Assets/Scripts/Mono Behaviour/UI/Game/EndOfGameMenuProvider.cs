@@ -19,7 +19,7 @@ namespace Assets.Scripts
             ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
         }
 
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
         {
             switch(result)
             {
@@ -37,8 +37,7 @@ namespace Assets.Scripts
 
         private void ShowVictoryPopup(int score, int target)
         {
-            string body = LevelManager.Instance.DailyChallenge ? $"You scored {score} " : $"You scored {score} out of {target}!";
-            MenuProvider.Instance.ShowVictoryPopup(body);
+            MenuProvider.Instance.ShowVictoryPopup(score, target);
         }
 
         private void ShowLimitExpiredPopup()

@@ -43,9 +43,9 @@ public class MenuProvider : MonoBehaviour
         MenuDisplayed?.Invoke(typeof(EndOfGameScreen));
     }
 
-    public void ShowVictoryPopup(string body)
+    public void ShowVictoryPopup(int score, int target)
     {
-        GetComponentInChildren<VictoryScreen>(true).Show( body);
+        GetComponentInChildren<VictoryScreen>(true).Show(score, target);
         MenuDisplayed?.Invoke(typeof(VictoryScreen));
     }
 

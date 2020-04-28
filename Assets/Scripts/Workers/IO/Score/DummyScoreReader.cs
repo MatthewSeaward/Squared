@@ -4,6 +4,11 @@ namespace Assets.Scripts.Workers.IO.Score
 {
     class DummyScoreReader : IScoreReader
     {
+        public void GetDailyScoresAsync()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Dictionary<int, List<int>> GetScores(string chapter, int level)
         {
             var scores1 = new List<int>

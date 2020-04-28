@@ -23,7 +23,7 @@ namespace Assets.Scripts
             ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
         }
 
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
         {
             if (result == GameResult.ReachedTarget)
             {

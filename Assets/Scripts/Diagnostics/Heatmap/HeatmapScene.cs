@@ -28,7 +28,7 @@ namespace Assets.Scripts
         private IScoreReader scoreReader = new FireBaseScoreReader();
 
         private Dictionary<string, int> data;
-        private List<ScoreEntry> scores;
+        private List<LevelScoreEntry> scores;
 
         bool drawn = true, drawnScores = true;
         int selectedLevel = 0;
@@ -38,7 +38,7 @@ namespace Assets.Scripts
         private void Start()
         {
             FireBaseHeatmapReader.HeatmapLoaded += HeatmapLoaded;
-            FireBaseScoreReader.ScoresLoaded += ScoresLaodedHandler;
+            FireBaseScoreReader.ScoresLoaded += ScoresLoadedHandler;
 
             for (int y = 0; y < 11; y++)
             {
@@ -55,7 +55,7 @@ namespace Assets.Scripts
             Refresh();
         }
 
-        private void ScoresLaodedHandler(List<ScoreEntry> scores)
+        private void ScoresLoadedHandler(List<LevelScoreEntry> scores)
         {
             this.scores = scores;
             drawnScores = false;
@@ -90,7 +90,7 @@ namespace Assets.Scripts
 
         }
 
-        private void RefreshScores(List<ScoreEntry> scores)
+        private void RefreshScores(List<LevelScoreEntry> scores)
         {          
             AddScores(star1, 1, scores);
             AddScores(star2, 2, scores);
@@ -98,7 +98,7 @@ namespace Assets.Scripts
             AddAverage(average, scores);
         }
 
-        private void AddScores(Text text, int star, List<ScoreEntry> scores)
+        private void AddScores(Text text, int star, List<LevelScoreEntry> scores)
         {
             text.text = "Star " + star;
 
@@ -117,7 +117,7 @@ namespace Assets.Scripts
             }
         }
 
-        private void AddAverage(Text text, List<ScoreEntry> scores)
+        private void AddAverage(Text text, List<LevelScoreEntry> scores)
         {
             int total = 0;
 

@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Workers.IO.Score
+﻿using Assets.Scripts.Workers.Managers;
+
+namespace Assets.Scripts.Workers.IO.Score
 {
     public class ScoreManager
     {
@@ -31,9 +33,16 @@
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
         }
 
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
         {
-            _dataWriter.SaveScore(chapter, level+1, star, score, result);
+            if (dailyChallenge)
+            {
+                _dataWriter.SaveDailyChallenge(score);
+            }
+            else
+            {
+                _dataWriter.SaveScore(chapter, level + 1, star, score, result);
+            }
         }
     }
 }

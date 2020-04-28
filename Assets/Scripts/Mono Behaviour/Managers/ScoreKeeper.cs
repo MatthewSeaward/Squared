@@ -11,7 +11,7 @@ using UnityEngine;
 public enum GameResult { None, ReachedTarget, LimitExpired, ViolatedRestriction }
 
 public delegate void PointsAwarded(int points, ISquarePiece[] sequence);
-public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result);
+public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge);
 public delegate void CurrentPointsChanged(int newPoints, int target);
 public delegate void BonusChanged(string currentBonus);
 
@@ -130,7 +130,7 @@ public class ScoreKeeper : MonoBehaviour
 
         if (currentResult != GameResult.None)
         {
-            GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, currentResult);
+            GameCompleted?.Invoke(LevelManager.Instance.SelectedChapter, LevelManager.Instance.CurrentLevel, LevelManager.Instance.SelectedLevel.GetCurrentStar().Number, CurrentScore, currentResult, LevelManager.Instance.DailyChallenge);
         }
 
         currentResult = GameResult.None;

@@ -269,7 +269,7 @@ namespace Assets.Scripts
             SelectedPiecesChanged?.Invoke(CurrentPieces);
         }
 
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result)
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
         {
             IHeatmapWriter heatmap = new FirebaseHeatMapWriter();
             heatmap.WriteHeatmapData(chapter, level, UsedPieces);

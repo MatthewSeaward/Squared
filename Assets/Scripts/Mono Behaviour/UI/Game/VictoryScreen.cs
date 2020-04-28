@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.Managers;
+using Assets.Scripts.Mono_Behaviour.UI.Game;
 
 namespace Assets.Scripts
 {
@@ -18,7 +19,16 @@ namespace Assets.Scripts
         private Button Continue;
 
         [SerializeField]
-        private Text Body;
+        private Text NormalBody;
+
+        [SerializeField]
+        private Text ChallengeBody;
+
+        [SerializeField]
+        private GameObject NormalView;
+
+        [SerializeField]
+        private ScoreSummaryPanel ScoreSummaryPanel;
 
         private void Awake()
         {
@@ -35,28 +45,34 @@ namespace Assets.Scripts
             UnityMainThreadDispatcher.Instance().Enqueue(() => SetupButtons());
         }
 
-        public void Show(string body)
+        public void Show(int score, int target)
         {
-            Body.text = body;
 
             SetupButtons();
 
             if (LevelManager.Instance.DailyChallenge)
             {
-                GetComponentInChildren<StarPanel>().gameObject.SetActive(false);
+                NormalView.SetActive(false);
+                ScoreSummaryPanel.gameObject.SetActive(true);
+
+                ChallengeBody.text = "You scored " + score;
             }
             else
             {
-                GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
+                NormalView.SetActive(false);
+                ScoreSummaryPanel.gameObject.SetActive(true);
+
+                NormalBody.text = "You scored " + score + " out of " + target;
             }
 
             gameObject.SetActive(true);
         }
-
+               
         private void SetupButtons()
         {
             if (LevelManager.Instance.DailyChallenge)
             {
+                Continue.interactable = LivesManager.Instance.LivesRemaining > 0;
                 Continue.GetComponentInChildren<Text>().text = "Try again";
                 NextStar.gameObject.SetActive(false);
             }
