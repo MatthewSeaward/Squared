@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Managers;
 using Assets.Scripts.UI;
 using Assets.Scripts.Workers.Generic_Interfaces;
+using Assets.Scripts.Workers.Managers;
 using Assets.Scripts.Workers.Score_and_Limits.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,11 @@ namespace Assets.Scripts
 
             _updateableLimit = _gameLimit as IUpdateable;
 
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                LimitProgress.gameObject.SetActive(false);
+            }
+
             UpdateLimit(0);
         }
 
@@ -48,7 +54,10 @@ namespace Assets.Scripts
 
             Limit.text = _gameLimit.GetLimitText();
 
-            LimitProgress.UpdateProgressBar(_gameLimit.PercentComplete());
+            if (!LevelManager.Instance.DailyChallenge)
+            {
+                LimitProgress.UpdateProgressBar(_gameLimit.PercentComplete());
+            }
 
             if (_gameLimit.ReachedLimit())
             {

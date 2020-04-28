@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.UI;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.UI;
 using Assets.Scripts.Workers.Managers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,11 @@ namespace Assets.Scripts
 
         private void Start()
         {
+            if (LevelManager.Instance.DailyChallenge)
+            {
+                ScoreProgress.gameObject.SetActive(false);
+            }
+
             ScoreKeeper.CurrentPointsChanged += UpdateScore;
             ScoreKeeper.BonusChanged += UpdateBonus;
         }
@@ -33,7 +39,10 @@ namespace Assets.Scripts
             Score.text = LevelManager.Instance.DailyChallenge ? $"Score: {newScore}" :  $"Score: {newScore}/{target}";
             Score.color = Color.white;
 
-            ScoreProgress.UpdateProgressBar(newScore, target);
+            if (!LevelManager.Instance.DailyChallenge)
+            {
+                ScoreProgress.UpdateProgressBar(newScore, target);
+            }
         }
 
         private void UpdateBonus(string bonusMultiplier)
