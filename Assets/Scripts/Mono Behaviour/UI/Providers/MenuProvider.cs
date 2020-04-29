@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts;
 using Assets.Scripts.Managers;
+using Assets.Scripts.Mono_Behaviour.UI.Game;
 using GridGeneration;
 using UnityEngine;
 
@@ -47,6 +48,11 @@ public class MenuProvider : MonoBehaviour
     {
         GetComponentInChildren<VictoryScreen>(true).Show(score, target);
         MenuDisplayed?.Invoke(typeof(VictoryScreen));
+    }
+
+    public void ShowHighScore()
+    {
+        GetComponentInChildren<HighScoreScreen>(true).gameObject.SetActive(true);
     }
 
     public void ShowLevelStart()

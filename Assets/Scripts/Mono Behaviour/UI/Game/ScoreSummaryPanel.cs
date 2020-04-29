@@ -46,5 +46,10 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Game
             ScoreSummary.text = "World Best: " + (worldHighest > 0 ? worldHighest.ToString() : "Unset") + Environment.NewLine;
             ScoreSummary.text += "Your Best: " + (myHighest > 0 ? myHighest.ToString() : "Unset");
         }
+
+        public void ShowHighScores()
+        {
+            MenuProvider.Instance.ShowHighScore();
+        }
     }
 }
