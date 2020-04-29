@@ -20,7 +20,7 @@ namespace Assets.Scripts.Workers.Daily_Challenge
 
         private static List<GeneratedSpace> AddSpecialPieces(INumberGenerator numberGenerator, List<GeneratedSpace> populatedGrid)
         {
-            var numberOfSpecialPieces = numberGenerator.Range(0, 10);
+            var numberOfSpecialPieces = numberGenerator.Range(0, 15);
 
             for (int i = 0; i < numberOfSpecialPieces; i++)
             {
