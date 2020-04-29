@@ -60,11 +60,6 @@ namespace Assets.Scripts.UI
 
         public virtual void Setup(IPowerup powerup, bool enableClick = true)
         {
-            if (LevelManager.Instance.DailyChallenge)
-            {
-                return;
-            }
-
             this.powerup = powerup;
 
             Icon.sprite = powerup.Icon;

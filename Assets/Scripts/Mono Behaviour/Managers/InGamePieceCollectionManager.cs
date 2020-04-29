@@ -1,53 +1,77 @@
 ﻿using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.Managers;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using static SquarePiece;
 
 namespace Assets.Scripts
 {
-    class InGamePieceCollectionManager:MonoBehaviour
+    class InGamePieceCollectionManager : MonoBehaviour
     {
         [SerializeField]
         private GameObject PieceProgress;
-  
+
+        private Dictionary<Colour, InGamePieceCollectionProgress> pieceCollectionInProgress = new Dictionary<Colour, InGamePieceCollectionProgress>();
+
         private void Awake()
         {
             PieceCollectionManager.PiecesCollectedEvent += PieceCollectionManager_PiecesCollectedEvent;
+            ScoreKeeper.GameCompleted += ShowPiecesCollected;
         }
 
         private void OnDestroy()
         {
             PieceCollectionManager.PiecesCollectedEvent -= PieceCollectionManager_PiecesCollectedEvent;
+            ScoreKeeper.GameCompleted -= ShowPiecesCollected;
+
         }
 
-        private void PieceCollectionManager_PiecesCollectedEvent(SquarePiece.Colour type, int previous, int gained)
+        private void PieceCollectionManager_PiecesCollectedEvent(Colour colour, int previous, int gained)
         {
-            if (type == SquarePiece.Colour.None)
+            if (colour == Colour.None)
             {
                 return;
             }
 
-            GameObject obj = null;
-
-            var currentProgressBars = ObjectPool.GetActivePool(PieceProgress);
-            if (currentProgressBars != null)
+            if (!pieceCollectionInProgress.ContainsKey(colour))
             {
-                obj = currentProgressBars.FirstOrDefault(x => x.GetComponent<PieceCollectionProgress>().colour == type);
+                pieceCollectionInProgress.Add(colour, new InGamePieceCollectionProgress() { Gained = gained, Previous = previous });
             }
-            if (obj == null)
+            else
             {
-                obj = ObjectPool.Instantiate(PieceProgress, Vector3.zero);
+                pieceCollectionInProgress[colour].Gained += gained;
             }
 
-            obj.transform.SetParent(this.transform);
-            obj.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
-            obj.GetComponent<PieceCollectionProgress>().Setup(type, previous, gained);
-            obj.GetComponentInChildren<Button>().enabled = false;
+        }
 
-            var time = obj.AddComponent<DestroyAfterTime>();
-            time.Setup(Constants.GameSettings.InGamePieceCollectedShowTime);
+        private void ShowPiecesCollected(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
+        {
+            foreach (var ingameProgress in pieceCollectionInProgress)
+            {
+                GameObject obj = null;
+
+                var currentProgressBars = ObjectPool.GetActivePool(PieceProgress);
+                if (currentProgressBars != null)
+                {
+                    obj = currentProgressBars.FirstOrDefault(x => x.GetComponent<PieceCollectionProgress>().colour == ingameProgress.Key);
+                }
+
+                if (obj == null)
+                {
+                    obj = ObjectPool.Instantiate(PieceProgress, Vector3.zero);
+                }
+
+                obj.transform.SetParent(this.transform);
+                obj.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+                obj.GetComponent<PieceCollectionProgress>().Setup(ingameProgress.Key, ingameProgress.Value.Previous, ingameProgress.Value.Gained);
+                obj.GetComponentInChildren<Button>().enabled = false;
+
+                var time = obj.AddComponent<DestroyAfterTime>();
+                time.Setup(Constants.GameSettings.InGamePieceCollectedShowTime);
+            }
         }                
     }
 }
