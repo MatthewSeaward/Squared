@@ -85,7 +85,7 @@ namespace Assets.Scripts.Workers.Daily_Challenge
             for (int i = 0; i < numberOfSpecialPieces; i++)
             {
                 var specialPiece = specialPieces[numberGenerator.Range(0, specialPieces.Count)];
-                result.Add(specialPiece.ToString());
+                result.Add(((char)specialPiece).ToString());
                 specialPieces.Remove(specialPiece);
             }
 
