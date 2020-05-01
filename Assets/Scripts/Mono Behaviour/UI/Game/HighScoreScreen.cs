@@ -63,6 +63,11 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Game
         {
             List<ScoreEntry> filteredScores = null;
 
+            for (int i = 0; i < scoreEntries.Length; i++)
+            {
+                scoreEntries[i].gameObject.SetActive(false);
+            }
+
             if (WorldScores)
             {
                 filteredScores = scores
@@ -77,19 +82,26 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Game
                               .ToList();
             }
 
-            for (int i = 0; i < scoreEntries.Length; i++)
+            if (!filteredScores.Any())
             {
-                if (i >= filteredScores.Count())
+                scoreEntries[0].gameObject.SetActive(true);
+                scoreEntries[0].SetText("No Data");
+            }
+            else
+            {
+                for (int i = 0; i < scoreEntries.Length; i++)
                 {
-                    scoreEntries[i].gameObject.SetActive(false);
-                }
-                else
-                {
-                    scoreEntries[i].gameObject.SetActive(true);
-                    scoreEntries[i].Setup(i + 1, filteredScores[i].User, filteredScores[i].Score);
+                    if (i >= filteredScores.Count())
+                    {
+                        scoreEntries[i].gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        scoreEntries[i].gameObject.SetActive(true);
+                        scoreEntries[i].Setup(i + 1, filteredScores[i].User, filteredScores[i].Score);
+                    }
                 }
             }
-
             Loading = false;
         }
 

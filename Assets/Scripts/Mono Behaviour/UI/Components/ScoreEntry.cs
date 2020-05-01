@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Scripts.Mono_Behaviour.UI.Components
@@ -19,6 +20,13 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Components
             Rank.text = rank.ToString();
             Name.text = name;
             Score.text = score.ToString();
+        }
+
+        internal void SetText(string text)
+        {
+            Rank.text = string.Empty;
+            Name.text = text;
+            Score.text = string.Empty;
         }
     }
 }
