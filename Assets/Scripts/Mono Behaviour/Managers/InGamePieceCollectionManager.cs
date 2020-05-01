@@ -68,9 +68,6 @@ namespace Assets.Scripts
                 obj.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
                 obj.GetComponent<PieceCollectionProgress>().Setup(ingameProgress.Key, ingameProgress.Value.Previous, ingameProgress.Value.Gained);
                 obj.GetComponentInChildren<Button>().enabled = false;
-
-                var time = obj.AddComponent<DestroyAfterTime>();
-                time.Setup(Constants.GameSettings.InGamePieceCollectedShowTime);
             }
         }                
     }
