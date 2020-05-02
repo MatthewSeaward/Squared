@@ -30,7 +30,11 @@ namespace Assets.Scripts.UI
 
         private void Start()
         {
-            UserPowerupManager.PowerupCountChanged += UpdateRemainingText;
+            if (!LevelManager.Instance.DailyChallenge)
+            {
+                UserPowerupManager.PowerupCountChanged += UpdateRemainingText;
+            }
+
             ChildStart();
         }
         private void OnDestroy()
@@ -74,7 +78,12 @@ namespace Assets.Scripts.UI
 
         private void UpdateRemainingText(IPowerup powerup)
         {
-            if (powerup == null || powerup.GetType() != this.powerup.GetType())
+            if (powerup == null || this.powerup == null)
+            {
+                return;
+            }
+
+            if (powerup.GetType() != this.powerup.GetType())
             {
                 return;
             }
