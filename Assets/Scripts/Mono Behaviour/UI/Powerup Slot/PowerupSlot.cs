@@ -74,11 +74,6 @@ namespace Assets.Scripts.UI
 
         private void UpdateRemainingText(IPowerup powerup)
         {
-            if (LevelManager.Instance.DailyChallenge)
-            {
-                return;
-            }
-
             if (powerup.GetType() != this.powerup.GetType())
             {
                 return;
