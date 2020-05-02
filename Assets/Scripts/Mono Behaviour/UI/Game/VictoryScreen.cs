@@ -59,8 +59,9 @@ namespace Assets.Scripts
             }
             else
             {
-                NormalView.SetActive(false);
-                ScoreSummaryPanel.gameObject.SetActive(true);
+                NormalView.SetActive(true);
+                ScoreSummaryPanel.gameObject.SetActive(false);
+                ChallengeBody.text = string.Empty;
 
                 NormalBody.text = "You scored " + score + " out of " + target;
             }
