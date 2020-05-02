@@ -74,7 +74,7 @@ namespace Assets.Scripts.UI
 
         private void UpdateRemainingText(IPowerup powerup)
         {
-            if (powerup.GetType() != this.powerup.GetType())
+            if (powerup == null || powerup.GetType() != this.powerup.GetType())
             {
                 return;
             }
