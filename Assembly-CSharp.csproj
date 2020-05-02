@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\LifeCountdown.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\RestrictionInfo.cs" />
+    <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\ScoreEntry.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\StarPanel.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\SwipeButton.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Components\UpNextSlot.cs" />
@@ -111,7 +112,9 @@
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\CountdownPanel.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\EndOfGameMenuProvider.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\EndOfGameScreen.cs" />
+    <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\HighScoreScreen.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\InGameMenu.cs" />
+    <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\InGamePieceCollectionProgress.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\LevelStart.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\PauseIcon.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\PieceCollectionProgress.cs" />
@@ -119,6 +122,7 @@
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\RestrictionDisplay.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\RestrictionText.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\ScoreDisplay.cs" />
+    <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\ScoreSummaryPanel.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\ShowScore.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\ToastPanel.cs" />
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Game\VictoryScreen.cs" />
@@ -139,6 +143,12 @@
     <Compile Include="Assets\Scripts\Mono Behaviour\UI\Providers\MenuProvider.cs" />
     <Compile Include="Assets\Scripts\Workers\Constants\Constants.cs" />
     <Compile Include="Assets\Scripts\Workers\Core\Range.cs" />
+    <Compile Include="Assets\Scripts\Workers\Daily Challenge\CurrentDayGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Daily Challenge\CustomDayGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Daily Challenge\GeneratedSpace.cs" />
+    <Compile Include="Assets\Scripts\Workers\Daily Challenge\INumberGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Daily Challenge\RandomGridGenerator.cs" />
+    <Compile Include="Assets\Scripts\Workers\Daily Challenge\RandomLevelGenerator.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\AddPieceEvent.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\ChangeColourEvent.cs" />
     <Compile Include="Assets\Scripts\Workers\Enemy\ChangeRandomPiece.cs" />
@@ -223,6 +233,7 @@
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelDialogue.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelEvents.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelProgress.cs" />
+    <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LevelScoreEntry.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\LivesEntity.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PieceColour.cs" />
     <Compile Include="Assets\Scripts\Workers\IO\Data Entities\PiecesCollected.cs" />
