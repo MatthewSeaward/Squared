@@ -51,6 +51,8 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Game
 
             Loading = true;
 
+            ClearScores();
+
             dataReader.GetDailyScoresAsync();
         }
 
@@ -62,11 +64,6 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Game
         private void DisplayDailyScores(List<ScoreEntry> scores)
         {
             List<ScoreEntry> filteredScores = null;
-
-            for (int i = 0; i < scoreEntries.Length; i++)
-            {
-                scoreEntries[i].gameObject.SetActive(false);
-            }
 
             if (WorldScores)
             {
@@ -103,6 +100,14 @@ namespace Assets.Scripts.Mono_Behaviour.UI.Game
                 }
             }
             Loading = false;
+        }
+
+        private void ClearScores()
+        {
+            for (int i = 0; i < scoreEntries.Length; i++)
+            {
+                scoreEntries[i].gameObject.SetActive(false);
+            }
         }
 
         public void Close()

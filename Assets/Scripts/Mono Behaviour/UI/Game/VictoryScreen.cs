@@ -47,7 +47,6 @@ namespace Assets.Scripts
 
         public void Show(int score, int target)
         {
-
             SetupButtons();
 
             if (LevelManager.Instance.DailyChallenge)
