@@ -108,7 +108,7 @@ namespace Assets.Scripts.Workers.Managers
 
         private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
         {
-            if (result == GameResult.ReachedTarget)
+            if (!dailyChallenge && result == GameResult.ReachedTarget)
             {                
                 RegisterLevelCompleted(star);
             }
