@@ -34,7 +34,7 @@ namespace Assets.Scripts.Workers.Daily_Challenge
             {
                 return new StarProgress()
                 {
-                    Limit = new TurnLimit(numberGenerator.Range(1, 1)),
+                    Limit = new TurnLimit(numberGenerator.Range(13, 30)),
                     Restriction = new NoRestriction()
                 };
             }
