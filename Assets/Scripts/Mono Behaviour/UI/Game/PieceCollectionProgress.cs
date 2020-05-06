@@ -35,7 +35,7 @@ namespace Assets.Scripts
             SetupSprite(pieceColour);
 
             var collected = PieceCollectionManager.Instance.PiecesCollected.Pieces.FirstOrDefault(x => x.PieceColour == pieceColour);
-            SetupProgressBar(pieceColour, collected != null ? collected.Count : 0);
+            SetupProgressBar(pieceColour, collected != null ? collected.Count : 0, 0);
         }        
 
         public void Setup(Colour pieceColour, int previous, int gained)
@@ -43,7 +43,7 @@ namespace Assets.Scripts
             PowerupSlot = GetComponentInChildren<PowerupSlot>();
 
             SetupSprite(pieceColour);
-            SetupProgressBar(pieceColour, previous);
+            SetupProgressBar(pieceColour, previous, gained);
             StartCoroutine(IncrementOverTime(pieceColour, previous, gained));
         }
 
@@ -56,13 +56,14 @@ namespace Assets.Scripts
             PowerupSlot.Setup(Powerup, false);
         }
 
-        private void SetupProgressBar(Colour pieceColour, int piecesCollected)
+        private void SetupProgressBar(Colour pieceColour, int piecesCollected, int gained)
         {
             int increment = RemoteConfigHelper.GetCollectionInterval(pieceColour);
 
             var multiplier = (piecesCollected / increment) + 1;
 
-            ProgressBar.UpdateProgressBar(piecesCollected % increment, increment, $"{piecesCollected}/{(increment * multiplier)}");
+            var gainedText = gained > 0 ? $" (+{gained})" : string.Empty;
+            ProgressBar.UpdateProgressBar(piecesCollected % increment, increment, $"{piecesCollected}/{(increment * multiplier)}{gainedText}");
 
             if (piecesCollected % increment == 0)
             {
@@ -77,7 +78,7 @@ namespace Assets.Scripts
             while (currentTotal != previous + gained)
             {
                 currentTotal++;
-                SetupProgressBar(pieceColour, currentTotal);
+                SetupProgressBar(pieceColour, currentTotal, gained);
                 yield return new WaitForSeconds(Constants.GameSettings.PieceIncrementSpeed);
             }
         }
