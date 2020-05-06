@@ -62,6 +62,8 @@ namespace Assets.Scripts
                 ScoreSummaryPanel.gameObject.SetActive(false);
                 ChallengeBody.text = string.Empty;
 
+                GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
+
                 NormalBody.text = "You scored " + score + " out of " + target;
             }
 
