@@ -22,9 +22,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 
         public void OnDestroy()
         {
-            var random =  PieceCreationHelpers.GetRandomSprite();
-            piece.PieceColour = random.colour;
-            piece.Sprite =  random.sprite;
+            var (sprite, colour) =  PieceCreationHelpers.GetRandomSprite();
+            piece.PieceColour = colour;
+            piece.Sprite =  sprite;
             piece.Deselected();
         }
 
@@ -36,9 +36,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
         {
         }
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
-            return new Sprite[] { GameResources.Sprites["Change"], GameResources.Sprites["Padlock"] };
+            return new LayeredSpriteSettings() { Sprites = new Sprite[] { GameResources.Sprites["Change"], GameResources.Sprites["Padlock"] } };
         }
     }
 }

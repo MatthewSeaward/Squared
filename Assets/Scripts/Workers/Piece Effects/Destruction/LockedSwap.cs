@@ -6,7 +6,6 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
 {
     public class LockedSwap : IPieceDestroy, ILayeredSprite
     {
-        private static Sprite _sprite;
         private ISquarePiece piece;
 
         public bool ToBeDestroyed => false;
@@ -16,9 +15,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             this.piece = piece;
         }
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         { 
-            return new Sprite[] { GameResources.Sprites["Padlock"] };
+            return new LayeredSpriteSettings() { Sprites = new Sprite[] { GameResources.Sprites["Padlock"] }, OrderInLayer = 6 };
         }
 
         public void OnPressed()

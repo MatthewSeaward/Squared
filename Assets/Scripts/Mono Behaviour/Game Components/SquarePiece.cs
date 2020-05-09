@@ -168,6 +168,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
     public void SetMouseDown(bool value)
     {
         Animator.SetBool("MouseDown", value);
+        LayersSetMouseDown(value);
     }    
 
     public void Selected()
@@ -183,6 +184,16 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         if (canvas.gameObject.activeInHierarchy)
         {
             canvas.GetComponentInChildren<Text>().text = text;
+        }
+    }
+
+    private void LayersSetMouseDown(bool mouseDown)
+    {
+        var transparency = mouseDown ? 0.7f : 1f;
+
+        foreach (var layer in GetComponentsInChildren<SpriteRenderer>())
+        {
+            layer.color = new Color(layer.color.r, layer.color.g, layer.color.b, transparency);
         }
     }
 }

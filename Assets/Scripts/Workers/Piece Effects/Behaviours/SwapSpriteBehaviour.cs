@@ -9,9 +9,9 @@ namespace Assets.Scripts.Workers.Piece_Effects
     {
         private float timer = 0;
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
-            return new Sprite[] { GameResources.Sprites["Swap"] };
+            return new LayeredSpriteSettings() { Sprites = new Sprite[] { GameResources.Sprites["Swap"] } };
         }
 
         public void Update(ISquarePiece piece, float deltaTime)

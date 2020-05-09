@@ -43,10 +43,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.On_Destroy
             }
         }
 
-
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
-            return new Sprite[] { GameResources.Sprites["Bomb"] };
+            return new LayeredSpriteSettings() { Sprites = new Sprite[] { GameResources.Sprites["Bomb"] } };
         }
     }
 }

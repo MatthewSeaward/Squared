@@ -20,17 +20,22 @@ namespace Assets.Scripts.Workers.Piece_Effects
             return currentScore * _factor;
         }
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
+            Sprite[] sprites = null;
             switch (_factor)
             {
                 case 2:
-                    return new Sprite[] { GameResources.Sprites["x2"] };
+                    sprites = new Sprite[] { GameResources.Sprites["x2"] };
+                    break;
                 case 3:
-                    return new Sprite[] { GameResources.Sprites["x3"]};
+                    sprites = new Sprite[] { GameResources.Sprites["x3"]};
+                    break;
                 default:
                     return null;
             }
+
+            return new LayeredSpriteSettings() { Sprites = sprites };
         }
     }
 }

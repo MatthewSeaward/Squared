@@ -61,9 +61,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Destruction
             pieceDestroyed = false;
         }
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
-            return new Sprite[] { GameResources.Sprites["Rock"] };
+            return new LayeredSpriteSettings() { Sprites = new Sprite[] { GameResources.Sprites["Rock"] } };
         }
     }
 }

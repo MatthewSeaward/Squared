@@ -97,18 +97,23 @@ namespace Assets.Scripts.Workers.Factorys
         {
             var createdLayers = new List<GameObject>();
 
-            if (layer != null && layer.GetSprites() != null)
+            if (layer == null)
             {
-                foreach (var sprite in layer.GetSprites())
-                {
-                    var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
-                    l.GetComponent<SpriteRenderer>().sprite = sprite;
-                    l.transform.parent = squarePiece.transform;
-                    l.transform.localScale = new Vector3(1, 1, 1);
-                    l.transform.localPosition = Vector3.zero;
+                return createdLayers;
+            }
 
-                    createdLayers.Add(l);
-                }
+            var layeredSettings = layer.GetLayeredSprites();
+
+            foreach (var sprite in layeredSettings.Sprites)
+            {
+                var l = ObjectPool.Instantiate(GameResources.GameObjects["PieceLayer"], Vector3.zero);
+                l.GetComponent<SpriteRenderer>().sprite = sprite;
+                l.GetComponent<SpriteRenderer>().sortingOrder = layeredSettings.OrderInLayer;
+                l.transform.parent = squarePiece.transform;
+                l.transform.localScale = new Vector3(1, 1, 1);
+                l.transform.localPosition = Vector3.zero;
+
+                createdLayers.Add(l);
             }
 
             return createdLayers;

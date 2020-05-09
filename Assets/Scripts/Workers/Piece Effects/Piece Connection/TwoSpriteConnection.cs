@@ -49,11 +49,14 @@ namespace Assets.Scripts.Workers.Piece_Effects.Piece_Connection
             return true;
         }
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
-            return new Sprite[]
+            return new LayeredSpriteSettings()
             {
-                GameResources.Sprites["Fade" + (int) SecondColour]
+                Sprites = new Sprite[]
+                {
+                    GameResources.Sprites["Fade" + (int) SecondColour]
+                }
             };
         }
     }

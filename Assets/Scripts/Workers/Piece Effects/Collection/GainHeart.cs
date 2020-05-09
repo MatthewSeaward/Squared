@@ -12,9 +12,9 @@ namespace Assets.Scripts.Workers.Piece_Effects.Collection
             LivesManager.Instance.GainALife();
         }
 
-        public Sprite[] GetSprites()
+        public LayeredSpriteSettings GetLayeredSprites()
         {
-            return new Sprite[] { GameResources.Sprites["New Credit"] };
+            return new LayeredSpriteSettings() { Sprites = new Sprite[] { GameResources.Sprites["New Credit"] } };
         }
     }
 }
