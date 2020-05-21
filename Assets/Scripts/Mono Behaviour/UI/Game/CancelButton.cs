@@ -18,14 +18,22 @@ namespace Assets.Scripts.Game_Components
         private void Start()
         {
             PieceSelectionManager.SelectedPiecesChanged += PieceSelectionManager_SelectedPiecesChanged;
+            ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+
             gameObject.SetActive(false);
 
             OnMouseExit();
         }
 
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
+        {
+            gameObject.SetActive(false);
+        }
+
         private void OnDestroy()
         {
             PieceSelectionManager.SelectedPiecesChanged -= PieceSelectionManager_SelectedPiecesChanged;
+            ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
         }
 
         private void PieceSelectionManager_SelectedPiecesChanged(System.Collections.Generic.LinkedList<ISquarePiece> pieces)
