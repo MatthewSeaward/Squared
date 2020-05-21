@@ -25,11 +25,6 @@ namespace Assets.Scripts.Game_Components
             OnMouseExit();
         }
 
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
-        {
-            gameObject.SetActive(false);
-        }
-
         private void OnDestroy()
         {
             PieceSelectionManager.SelectedPiecesChanged -= PieceSelectionManager_SelectedPiecesChanged;
@@ -39,6 +34,11 @@ namespace Assets.Scripts.Game_Components
         private void PieceSelectionManager_SelectedPiecesChanged(System.Collections.Generic.LinkedList<ISquarePiece> pieces)
         {
             gameObject.SetActive(PieceSelectionManager.Instance.CurrentPieces.Count >= 2);
+        }
+
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
+        {
+            gameObject.SetActive(false);
         }
 
         private void Update()

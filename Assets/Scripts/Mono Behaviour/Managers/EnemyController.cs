@@ -77,10 +77,12 @@ namespace Assets.Scripts
         {
             MenuProvider.MenuDisplayed += MenuProvider_MenuDisplayed;
             ScoreKeeper.GameCompleted += ScoreKeeper_GameCompleted;
+            ScoreKeeper.GameResultChanged += ScoreKeeper_GameResultChanged;
+
             SpeechBubbleManager.SpeechBubbleFinishedEvent += DisplayNextText;
             LevelStart.GameStarted += GameStarted;
         }
-
+        
         public void Update()
         {
             EnemyEvents?.Update(Time.deltaTime);
@@ -115,6 +117,7 @@ namespace Assets.Scripts
             LevelStart.GameStarted -= GameStarted;
             MenuProvider.MenuDisplayed -= MenuProvider_MenuDisplayed;
             ScoreKeeper.GameCompleted -= ScoreKeeper_GameCompleted;
+            ScoreKeeper.GameResultChanged -= ScoreKeeper_GameResultChanged;
         }
 
         private void MenuProvider_MenuDisplayed(Type type)
@@ -127,7 +130,8 @@ namespace Assets.Scripts
             MoveEnemyOffScreen();
         }
 
-        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
+
+        private void ScoreKeeper_GameResultChanged(GameResult result)
         {
             if (result == GameResult.ReachedTarget)
             {
@@ -139,6 +143,11 @@ namespace Assets.Scripts
             {
                 ShowEnemyText_Internal(DialogueManager.Instance.GetPlayerDefeatText());
             }
+        }
+
+        private void ScoreKeeper_GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge)
+        {
+            MoveEnemyOffScreen();
         }
 
         public void ShowEnemyText(params string[] text)

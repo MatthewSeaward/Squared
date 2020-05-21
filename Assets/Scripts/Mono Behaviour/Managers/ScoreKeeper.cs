@@ -12,6 +12,8 @@ public enum GameResult { None, ReachedTarget, LimitExpired, ViolatedRestriction 
 
 public delegate void PointsAwarded(int points, ISquarePiece[] sequence);
 public delegate void GameCompleted(string chapter, int level, int star, int score, GameResult result, bool dailyChallenge);
+public delegate void GameResultChanged(GameResult result);
+
 public delegate void CurrentPointsChanged(int newPoints, int target);
 public delegate void BonusChanged(string currentBonus);
 
@@ -21,7 +23,8 @@ public class ScoreKeeper : MonoBehaviour
     public static event GameCompleted GameCompleted;
     public static event CurrentPointsChanged CurrentPointsChanged;
     public static event BonusChanged BonusChanged;
-    
+    public static event GameResultChanged GameResultChanged;
+
     private bool scoresUpdated = false;
     private GameResult currentResult;
     public IGameLimit GameLimit;
@@ -120,6 +123,8 @@ public class ScoreKeeper : MonoBehaviour
         currentResult = result;
         GameManager.Instance.ChangePauseState(this, true);
         GameManager.Instance.GameOver = true;
+
+        GameResultChanged?.Invoke(result);
 
         Invoke(nameof(InvokeGameCompleted), TimeDelay);
     }

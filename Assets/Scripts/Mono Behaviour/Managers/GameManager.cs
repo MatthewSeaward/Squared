@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public delegate void PauseStateChanged(bool paused);
+public delegate void GameOverStateChanged(bool gameOver);
 
 namespace Assets.Scripts.Managers
 {
     public class GameManager : MonoBehaviour
     {
         public static PauseStateChanged PauseStateChanged;
+        public static GameOverStateChanged GameOverStateChanged;
 
         private List<object> lockers  = new List<object>();
 
         private bool _gamePaused;
+        private bool _gameOver;
 
         public bool GamePaused
         {
@@ -33,7 +36,18 @@ namespace Assets.Scripts.Managers
             }
         }
 
-        public bool GameOver { get; set; } = false;
+        public bool GameOver
+        {
+            get
+            {
+                return _gameOver;
+            }
+            set
+            {
+                _gameOver = value;
+                GameOverStateChanged?.Invoke(_gameOver);
+            }
+        }
 
         public static GameManager Instance { get; private set; }
 
