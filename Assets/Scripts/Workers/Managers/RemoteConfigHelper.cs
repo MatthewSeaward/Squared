@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Assets.Scripts.Constants;
+using System;
 using UnityEngine;
+using static Assets.Scripts.Workers.Factorys.PieceBuilderDirector;
 using static SquarePiece;
 
 namespace Assets.Scripts.Workers.Managers
@@ -47,6 +49,34 @@ namespace Assets.Scripts.Workers.Managers
                 Debug.LogWarning($"Error Loading MaxLives.{Environment.NewLine}{e.ToString()}");
             }
             return 6;
+        }
+
+        public static int MaxCountOfPiece(PieceTypes type)
+        {
+            try
+            {
+                return (int)Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("Max" + (char)type).LongValue;
+
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"Error Loading Max Count for PieceType {type}.{Environment.NewLine}{e.ToString()}");
+            }
+            return int.MaxValue;
+        }
+
+        public static int MaxChanceToUseSpecialPiece()
+        {
+            try
+            {
+                return (int)Firebase.RemoteConfig.FirebaseRemoteConfig.GetValue("ChanceToUseSpecialPiece").LongValue;
+
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"Error Loading Chance To Use Special Piece.{Environment.NewLine}{e.ToString()}");
+            }
+            return GameSettings.ChanceToUseSpecialPiece;
         }
     }
 }

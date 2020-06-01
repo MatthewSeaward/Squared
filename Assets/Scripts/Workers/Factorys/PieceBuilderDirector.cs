@@ -5,6 +5,7 @@ using Assets.Scripts.Constants;
 using Assets.Scripts.Workers.Factorys.PieceTemplates;
 using Assets.Scripts.Workers.Helpers;
 using Assets.Scripts.Workers.Managers;
+using System.Linq;
 
 namespace Assets.Scripts.Workers.Factorys
 {
@@ -111,10 +112,17 @@ namespace Assets.Scripts.Workers.Factorys
             var type = PieceTypes.Normal;
 
             string[] specialDropPieces = LevelManager.Instance.SelectedLevel.SpecialDropPieces;
-            if (specialDropPieces != null && specialDropPieces.Length > 0 && Random.Range(0, 100) <= GameSettings.ChanceToUseSpecialPiece)
+            if (specialDropPieces != null && specialDropPieces.Length > 0 && Random.Range(0, 100) <= RemoteConfigHelper.MaxChanceToUseSpecialPiece())
             {
                 var randomSpecial = specialDropPieces[Random.Range(0, specialDropPieces.Length)];
+
                 type = (PieceTypes)randomSpecial[0];
+
+                var existingCountOfPiece = PieceManager.Instance.Pieces.Where(x => x.Type == type).Count();
+                if (existingCountOfPiece > RemoteConfigHelper.MaxCountOfPiece(type))
+                {
+                    type = PieceTypes.Normal;
+                }
             }
 
             return type;

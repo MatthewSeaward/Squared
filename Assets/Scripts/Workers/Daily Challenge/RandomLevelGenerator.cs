@@ -81,25 +81,11 @@ namespace Assets.Scripts.Workers.Daily_Challenge
                 var specialPiece = specialPieces[numberGenerator.Range(0, specialPieces.Count)];
                 result.Add(((char)specialPiece).ToString());
                 specialPieces.Remove(specialPiece);
-
-                CheckForOtherPiecesToRemove(ref specialPieces, specialPiece);
             }
 
             return result.ToArray();
         }
-
-        private static void CheckForOtherPiecesToRemove(ref List<PieceBuilderDirector.PieceTypes> specialPieces, PieceBuilderDirector.PieceTypes specialPiece)
-        {
-            if (specialPiece == PieceBuilderDirector.PieceTypes.DoublePoints)
-            {
-                specialPieces.Remove(PieceBuilderDirector.PieceTypes.TriplePoints);
-            }
-            else if (specialPiece == PieceBuilderDirector.PieceTypes.TriplePoints)
-            {
-                specialPieces.Remove(PieceBuilderDirector.PieceTypes.DoublePoints);
-            }
-        }
-
+        
         private static List<PieceBuilderDirector.PieceTypes> GetSpecialPieces()
         {
             var specialPieces = new List<PieceBuilderDirector.PieceTypes>();
