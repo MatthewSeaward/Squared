@@ -97,6 +97,7 @@ public class SquarePiece : MonoBehaviour, ISquarePiece
         SetMouseDown(false);
         DestroyPieceHandler?.Reset();
         transform.localScale = _initialScale;
+        LayersSetMouseDown(false);
     }
 
     void Awake()
