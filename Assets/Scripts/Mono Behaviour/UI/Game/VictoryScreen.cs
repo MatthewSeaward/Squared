@@ -19,6 +19,9 @@ namespace Assets.Scripts
         private Button Continue;
 
         [SerializeField]
+        private Text Title;
+
+        [SerializeField]
         private Text NormalBody;
 
         [SerializeField]
@@ -29,7 +32,7 @@ namespace Assets.Scripts
 
         [SerializeField]
         private ScoreSummaryPanel ScoreSummaryPanel;
-
+               
         private void Awake()
         {
             LivesManager.LivesChanged += LivesManager_LivesChanged;
@@ -55,6 +58,7 @@ namespace Assets.Scripts
                 ScoreSummaryPanel.gameObject.SetActive(true);
 
                 ChallengeBody.text = "You scored " + score;
+                Title.text = "Completed";
             }
             else
             {
@@ -65,6 +69,7 @@ namespace Assets.Scripts
                 GetComponentInChildren<StarPanel>().Configure(LevelManager.Instance.SelectedLevel.StarAchieved);
 
                 NormalBody.text = "You scored " + score + " out of " + target;
+                Title.text = "Victory";
             }
 
             gameObject.SetActive(true);
