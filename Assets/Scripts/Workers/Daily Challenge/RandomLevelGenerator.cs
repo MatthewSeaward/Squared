@@ -10,7 +10,7 @@ namespace Assets.Scripts.Workers.Daily_Challenge
     {
         public static Level_Info.Level GenerateRandomLevel(INumberGenerator numberGenerator)
         {
-            var dt = new IO.Data_Entities.Level()
+            var dt = new Level()
             {
                 Target = 0,
                 Pattern = RandomGridGenerator.GenerateRandomGrid(numberGenerator),
@@ -74,6 +74,34 @@ namespace Assets.Scripts.Workers.Daily_Challenge
 
             int numberOfSpecialPieces = numberGenerator.Range(0, 5);
 
+            var specialPieces = GetSpecialPieces();
+
+            for (int i = 0; i < numberOfSpecialPieces; i++)
+            {
+                var specialPiece = specialPieces[numberGenerator.Range(0, specialPieces.Count)];
+                result.Add(((char)specialPiece).ToString());
+                specialPieces.Remove(specialPiece);
+
+                CheckForOtherPiecesToRemove(ref specialPieces, specialPiece);
+            }
+
+            return result.ToArray();
+        }
+
+        private static void CheckForOtherPiecesToRemove(ref List<PieceBuilderDirector.PieceTypes> specialPieces, PieceBuilderDirector.PieceTypes specialPiece)
+        {
+            if (specialPiece == PieceBuilderDirector.PieceTypes.DoublePoints)
+            {
+                specialPieces.Remove(PieceBuilderDirector.PieceTypes.TriplePoints);
+            }
+            else if (specialPiece == PieceBuilderDirector.PieceTypes.TriplePoints)
+            {
+                specialPieces.Remove(PieceBuilderDirector.PieceTypes.DoublePoints);
+            }
+        }
+
+        private static List<PieceBuilderDirector.PieceTypes> GetSpecialPieces()
+        {
             var specialPieces = new List<PieceBuilderDirector.PieceTypes>();
             specialPieces.AddRange((PieceBuilderDirector.PieceTypes[])Enum.GetValues(typeof(PieceBuilderDirector.PieceTypes)));
             specialPieces.Remove(PieceBuilderDirector.PieceTypes.Normal);
@@ -81,15 +109,7 @@ namespace Assets.Scripts.Workers.Daily_Challenge
             specialPieces.Remove(PieceBuilderDirector.PieceTypes.Locked);
             specialPieces.Remove(PieceBuilderDirector.PieceTypes.Chest);
             specialPieces.Remove(PieceBuilderDirector.PieceTypes.Heart);
-
-            for (int i = 0; i < numberOfSpecialPieces; i++)
-            {
-                var specialPiece = specialPieces[numberGenerator.Range(0, specialPieces.Count)];
-                result.Add(((char)specialPiece).ToString());
-                specialPieces.Remove(specialPiece);
-            }
-
-            return result.ToArray();
+            return specialPieces;
         }
     }
 }
